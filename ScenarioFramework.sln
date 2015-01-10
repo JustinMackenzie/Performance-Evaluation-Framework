@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ScenarioFrameworkModels", "ScenarioFrameworkModels\ScenarioFrameworkModels.modelproj", "{295A2F27-510E-4001-B8A3-88D72FA96928}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateChart", "StateChart\StateChart.csproj", "{32304491-F871-4D59-A317-7AE533850B0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{E93ACFDF-C454-4BB8-B0F8-9838AF372E39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{295A2F27-510E-4001-B8A3-88D72FA96928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{295A2F27-510E-4001-B8A3-88D72FA96928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{295A2F27-510E-4001-B8A3-88D72FA96928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{295A2F27-510E-4001-B8A3-88D72FA96928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32304491-F871-4D59-A317-7AE533850B0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32304491-F871-4D59-A317-7AE533850B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32304491-F871-4D59-A317-7AE533850B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32304491-F871-4D59-A317-7AE533850B0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E93ACFDF-C454-4BB8-B0F8-9838AF372E39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E93ACFDF-C454-4BB8-B0F8-9838AF372E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E93ACFDF-C454-4BB8-B0F8-9838AF372E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E93ACFDF-C454-4BB8-B0F8-9838AF372E39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
