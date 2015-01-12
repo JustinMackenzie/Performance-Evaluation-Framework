@@ -33,7 +33,7 @@ namespace ScenarioSim.StateChart
         {
             IList<string> result = new List<string>();
 
-            foreach(State s in dataContainer.ActiveStates())
+            foreach (State s in dataContainer.ActiveStates())
             {
                 result.Add(s.Name);
             }
