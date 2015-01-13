@@ -13,9 +13,15 @@
   <packagedElements>
     <packageHasNamedElement>
       <packageMoniker
-        Id="dd1739de-47ee-40e2-8b17-d48d48281da4"
-        LastKnownName="StateChart"
-        LastKnownLocation="Package1_2239.uml" />
+        Id="f617cd10-7ac4-4f1d-9208-24f05ada17e1"
+        LastKnownName="UmlStateChart"
+        LastKnownLocation="Package_0832.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="a26af724-cf42-4c1f-a7d9-517b2ff1893a"
+        LastKnownName="Core"
+        LastKnownLocation="Package1_0832.uml" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

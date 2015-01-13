@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ScenarioSim.Core">
+  <logicalClassDesignerModelMoniker Id="234477c0-b068-449d-8b96-f55888501f5e" />
+  <nestedChildShapes>
+    <interfaceShape Id="62455a33-5a3b-4bdb-ae4b-7ad232e4f6be" absoluteBounds="0.5, 1.5, 1.5, 1.7309721742073694" hideQualifiedName="false" increaseHeight="0.18800345897674564" customColor="207, 223, 191">
+      <interfaceMoniker Id="19f64209-b28e-4354-acc5-1184eff38adf" LastKnownName="IStateChart" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="ec28d529-6b42-4426-8609-50ca1db82965" absoluteBounds="0.515, 2.0780034589767458, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="73c5ce84-67a9-4a5f-84c4-3468320491da" absoluteBounds="0.515, 2.289175326526165, 1.4700000000000002, 0.84179684768120444" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </interfaceShape>
+    <interfaceShape Id="2e037f7b-94ab-4b1c-b28b-78feb3eaa5dc" absoluteBounds="2.5, 0.5, 1.5, 1.4106596841414769" hideQualifiedName="false" increaseHeight="0.18800345897674564" customColor="207, 223, 191">
+      <interfaceMoniker Id="6a132073-4a5d-434d-8941-68f0c174bd39" LastKnownName="IStateChartEvent" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="b8c2965f-6bae-4c2e-b1ab-ca12b3d69c80" absoluteBounds="2.515, 1.0780034589767458, 1.4700000000000002, 0.52148435761531176" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="042ee3e2-656b-4b75-9fef-d6e50da98c19" absoluteBounds="2.515, 1.6094878165920574, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </interfaceShape>
+    <interfaceShape Id="5ee522b1-224d-446c-9f80-7f0b5e949186" absoluteBounds="2.5, 2.375, 1.5, 1.2505034391085306" hideQualifiedName="false" increaseHeight="0.18800345897674564" customColor="207, 223, 191">
+      <interfaceMoniker Id="cb68aef5-b6b2-4649-8661-e0995d26cbc2" LastKnownName="IStateChartReader" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="d21fc0b6-61ba-4a59-be6f-85546a83082a" absoluteBounds="2.515, 2.9530034589767458, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="82ab948e-be4d-4461-8371-1dfb75836cf3" absoluteBounds="2.515, 3.164175326526165, 1.4700000000000002, 0.36132811258236563" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </interfaceShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

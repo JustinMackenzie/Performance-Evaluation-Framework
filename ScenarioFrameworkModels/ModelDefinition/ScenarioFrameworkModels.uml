@@ -36,6 +36,12 @@
         LastKnownName="ScenarioSim"
         LastKnownLocation="Package_2239.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="19b733c8-c2cf-434e-b7e4-ad53a00a04de"
+        LastKnownName="UmlStateChart"
+        LastKnownLocation="Package_0830.uml" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
