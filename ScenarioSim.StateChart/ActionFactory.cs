@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UmlStateChart;
 
-namespace ScenarioSim.StateChart
+namespace ScenarioSim.UmlStateChart
 {
     class ActionFactory
     {

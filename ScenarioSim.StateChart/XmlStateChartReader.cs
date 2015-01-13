@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ScenarioSim.Core;
 using System.Xml;
+using ScenarioSim.Core;
+using UmlStateChart;
 
-namespace ScenarioSim.StateChart
+namespace ScenarioSim.UmlStateChart
 {
     public class XmlStateChartReader : IStateChartReader
     {
