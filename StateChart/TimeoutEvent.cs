@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ScenarioSim.StateChart
+namespace UmlStateChart
 {
     public class TimeoutEvent : StateChartEvent
     {

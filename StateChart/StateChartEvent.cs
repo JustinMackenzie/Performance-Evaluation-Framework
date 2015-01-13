@@ -1,9 +1,8 @@
 using System;
-using ScenarioSim.Core;
 
-namespace ScenarioSim.StateChart
+namespace UmlStateChart
 {
-    public class StateChartEvent : IStateChartEvent
+    public class StateChartEvent
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -1,6 +1,6 @@
 using System;
 
-namespace ScenarioSim.StateChart
+namespace UmlStateChart
 {
     public abstract class Context : State
     {

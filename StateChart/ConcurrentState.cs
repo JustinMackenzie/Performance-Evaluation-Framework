@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ScenarioSim.StateChart
+namespace UmlStateChart
 {
     /// <summary>
     /// A concurrent state is a type of state that contains atleast two active
@@ -35,7 +35,7 @@ namespace ScenarioSim.StateChart
         {
             _regions.Add(state);
         }
-        
+
         /// <summary>
         /// Activates this concurrent state and all of its regions in the given data container.
         /// </summary>
@@ -139,7 +139,7 @@ namespace ScenarioSim.StateChart
 
             return false;
         }
-        
+
         /// <summary>
         /// Determines if this concurrent state is finished, by checking if all regions are
         /// finished.

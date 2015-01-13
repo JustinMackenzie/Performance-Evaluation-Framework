@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ScenarioSim.StateChart
+namespace UmlStateChart
 {
     public class StateDataContainer
     {

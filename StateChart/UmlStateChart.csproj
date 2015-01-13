@@ -7,8 +7,8 @@
     <ProjectGuid>{32304491-F871-4D59-A317-7AE533850B0B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StateChart</RootNamespace>
-    <AssemblyName>StateChart</AssemblyName>
+    <RootNamespace>UmlStateChart</RootNamespace>
+    <AssemblyName>UmlStateChart</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -20,7 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\StateChart.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\UmlStateChart.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,6 +29,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -40,10 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionFactory.cs" />
     <Compile Include="ConcurrentState.cs" />
     <Compile Include="Context.cs" />
-    <Compile Include="EventFactory.cs" />
     <Compile Include="FinalState.cs" />
     <Compile Include="Guard.cs" />
     <Compile Include="HierarchicalState.cs" />
@@ -54,12 +55,10 @@
     <Compile Include="State.cs" />
     <Compile Include="StateChart.cs" />
     <Compile Include="StateChartEvent.cs" />
-    <Compile Include="StateChartFacade.cs" />
     <Compile Include="StateData.cs" />
     <Compile Include="StateDataContainer.cs" />
     <Compile Include="TimeoutEvent.cs" />
     <Compile Include="Transition.cs" />
-    <Compile Include="XmlStateChartReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
