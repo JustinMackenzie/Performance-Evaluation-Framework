@@ -39,12 +39,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionFactory.cs" />
+    <Compile Include="EventFactory.cs" />
     <Compile Include="IStateChart.cs" />
     <Compile Include="IStateChartEvent.cs" />
     <Compile Include="IStateChartReader.cs" />
     <Compile Include="IUpdatable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scenario.cs" />
+    <Compile Include="StateChartBuilder.cs" />
+    <Compile Include="StateChartFacade.cs" />
+    <Compile Include="Task.cs" />
     <Compile Include="TimeKeeper.cs" />
+    <Compile Include="TreeNode.cs" />
+    <Compile Include="XmlStateChartReader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StateChart\UmlStateChart.csproj">
+      <Project>{32304491-f871-4d59-a317-7ae533850b0b}</Project>
+      <Name>UmlStateChart</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
