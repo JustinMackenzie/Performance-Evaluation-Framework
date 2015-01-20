@@ -40,12 +40,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionFactory.cs" />
+    <Compile Include="CSVResultWriter.cs" />
     <Compile Include="EventFactory.cs" />
+    <Compile Include="IResultWriter.cs" />
     <Compile Include="IStateChart.cs" />
     <Compile Include="IStateChartEvent.cs" />
     <Compile Include="IStateChartReader.cs" />
     <Compile Include="IUpdatable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultManager.cs" />
     <Compile Include="Scenario.cs" />
     <Compile Include="StateChartBuilder.cs" />
     <Compile Include="StateChartFacade.cs" />
