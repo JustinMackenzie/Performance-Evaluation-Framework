@@ -8,7 +8,7 @@ namespace ScenarioSim.Core
 {
     public interface IStateChart
     {
-        void Dispatch(UmlStateChartEvent e);
+        void Dispatch(IStateChartEvent e);
 
         bool IsStateActive(string name);
 

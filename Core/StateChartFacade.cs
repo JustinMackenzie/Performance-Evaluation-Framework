@@ -25,7 +25,7 @@ namespace ScenarioSim.UmlStateChart
             return state.Activate(dataContainer);
         }
 
-        public void Dispatch(UmlStateChartEvent e)
+        public void Dispatch(IStateChartEvent e)
         {
             stateChart.Dispatch(dataContainer, TransformToStateChartEvent(e));
         }
@@ -49,7 +49,7 @@ namespace ScenarioSim.UmlStateChart
             stateChart.Start(dataContainer);
         }
 
-        private StateChartEvent TransformToStateChartEvent(UmlStateChartEvent e)
+        private StateChartEvent TransformToStateChartEvent(IStateChartEvent e)
         {
             return new StateChartEvent(e.Id);
         }
