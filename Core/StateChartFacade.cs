@@ -25,9 +25,9 @@ namespace ScenarioSim.UmlStateChart
             return state.Activate(dataContainer);
         }
 
-        public void Dispatch(IStateChartEvent e)
+        public void Dispatch(UmlStateChartEvent e)
         {
-            stateChart.Dispatch(dataContainer, e as StateChartEvent);
+            stateChart.Dispatch(dataContainer, TransformToStateChartEvent(e));
         }
 
         public IList<string> ActiveStates()
@@ -47,6 +47,11 @@ namespace ScenarioSim.UmlStateChart
             dataContainer = new StateDataContainer();
 
             stateChart.Start(dataContainer);
+        }
+
+        private StateChartEvent TransformToStateChartEvent(UmlStateChartEvent e)
+        {
+            return new StateChartEvent(e.Id);
         }
     }
 }

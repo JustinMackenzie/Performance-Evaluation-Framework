@@ -41,10 +41,10 @@
   <ItemGroup>
     <Compile Include="ActionFactory.cs" />
     <Compile Include="CSVResultWriter.cs" />
+    <Compile Include="DistanceKeeper.cs" />
     <Compile Include="EventFactory.cs" />
     <Compile Include="IResultWriter.cs" />
     <Compile Include="IStateChart.cs" />
-    <Compile Include="IStateChartEvent.cs" />
     <Compile Include="IStateChartReader.cs" />
     <Compile Include="IUpdatable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -54,7 +54,9 @@
     <Compile Include="StateChartFacade.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="TimeKeeper.cs" />
+    <Compile Include="TransformData.cs" />
     <Compile Include="TreeNode.cs" />
+    <Compile Include="UmlStateChartEvent.cs" />
     <Compile Include="XmlStateChartReader.cs" />
   </ItemGroup>
   <ItemGroup>
