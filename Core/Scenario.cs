@@ -11,17 +11,18 @@ namespace ScenarioSim.Core
     class Scenario
     {
         IStateChart stateChart;
+        StateChartBuilder builder;
+        TaskTreeNode task;
 
-        TreeNode<Task> task;
-
-        public Scenario(TreeNode<Task> task)
+        public Scenario(TaskTreeNode task)
         {
             this.task = task;
-            stateChart = new StateChartBuilder().Build(task);
+            builder = new StateChartBuilder();
         }
 
         public void Start()
         {
+            stateChart = builder.Build(task);
             stateChart.Start();
         }
     }
