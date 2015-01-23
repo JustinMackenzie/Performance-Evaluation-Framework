@@ -65,6 +65,7 @@
     <Compile Include="StateChartEventHandler.cs" />
     <Compile Include="StateChartFacade.cs" />
     <Compile Include="Task.cs" />
+    <Compile Include="TaskTransition.cs" />
     <Compile Include="TaskTreeNode.cs" />
     <Compile Include="TimeKeeper.cs" />
     <Compile Include="TransformData.cs" />

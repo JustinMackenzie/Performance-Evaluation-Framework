@@ -18,7 +18,7 @@ namespace ScenarioSim.Core
             states = new Dictionary<string, State>();
         }
 
-        public IStateChart Build(TreeNode<Task> rootTask)
+        public StateChart Build(TreeNode<Task> rootTask)
         {
             StateChart stateChart = new StateChart(rootTask.Value.Name);
 
@@ -33,7 +33,23 @@ namespace ScenarioSim.Core
             string startTaskName = childrenNodes.First<TreeNode<Task>>().Value.Name;
             Transition historyTransition = new Transition(startState, states[startTaskName]);
 
-            return new StateChartFacade(stateChart);
+            states.Add(rootTask.Value.Name, stateChart);
+
+            Action<Task> action = AddTransition;
+
+            rootTask.Traverse(action);
+
+            return stateChart;
+        }
+
+        private void AddTransition(Task task)
+        {
+            State state = states[task.Name];
+
+            foreach(TaskTransition transition in task.Transition)
+                new Transition(state,
+                    states[transition.NextTask.Name],
+                    new StateChartEvent(transition.Id));
         }
 
         private void AddState(TreeNode<Task> taskNode, Context parent)
@@ -58,6 +74,7 @@ namespace ScenarioSim.Core
                 string startTaskName = childNodes.First<TreeNode<Task>>().Value.Name;
                 Transition startTransition = new Transition(startState, historyState);
                 Transition historyTransition = new Transition(historyState, states[startTaskName]);
+                states.Add(name, state);
             }
             else
             {

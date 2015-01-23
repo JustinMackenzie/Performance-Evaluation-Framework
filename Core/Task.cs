@@ -9,5 +9,12 @@ namespace ScenarioSim.Core
     class Task
     {
         public string Name { get; set; }
+
+        public List<TaskTransition> Transition { get; set; }
+
+        public Task()
+        {
+            Transition = new List<TaskTransition>();
+        }
     }
 }

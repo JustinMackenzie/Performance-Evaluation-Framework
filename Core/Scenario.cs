@@ -22,7 +22,7 @@ namespace ScenarioSim.Core
 
         public void Start()
         {
-            stateChart = builder.Build(task);
+            stateChart = new StateChartFacade(builder.Build(task));
             stateChart.Start();
         }
     }
