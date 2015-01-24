@@ -7,7 +7,7 @@ using System.IO;
 
 namespace ScenarioSim.Core
 {
-    class SimulatorEventHandler
+    class SimulatorEventHandler : ISimulatorEventHandler
     {
         List<SimulatorEvent> events;
         StateChartEventHandler stateChartEventReciever;

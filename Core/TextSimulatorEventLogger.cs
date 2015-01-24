@@ -1,0 +1,22 @@
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Text;
+
+namespace ScenarioSim.Core
+{
+    class TextSimulatorEventLogger : FileSimulatorEventLogger
+    {
+        public TextSimulatorEventLogger(string filename) : base(filename) { }
+
+        protected override string GetLogEntry(SimulatorEvent e)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append(string.Format("[{0}] Name: {1}; Description: {2}; Parameters: ",
+                e.Timestamp.ToString(), e.Name, e.Description));
+            foreach (KeyValuePair<string, object> p in e.Parameters)
+                builder.Append(string.Format("[{0} : {1}], ", p.Key, p.Value));
+
+            return builder.ToString();
+        }
+    }
+}

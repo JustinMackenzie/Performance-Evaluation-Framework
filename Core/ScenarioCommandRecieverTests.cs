@@ -45,6 +45,28 @@ namespace ScenarioSim.Core.Test
         }
 
         [Test]
+        public void TestTextSimulatorEventLogger()
+        {
+            string filename = "simEventsLog.txt";
+
+            ISimulatorEventLogger logger = new TextSimulatorEventLogger(filename);
+
+            int Id = 0;
+            string Name = "Test Command";
+            string Description = "A description.";
+            DateTime timestamp = DateTime.Now;
+            Dictionary<string, object> parameters = new Dictionary<string,object>();
+            parameters.Add("A parameter", 5);
+
+            for (int i = 0; i < 60; i++)
+            {
+                logger.Log(new SimulatorEvent() { Id = Id, Name = Name, Description = Description, Timestamp = timestamp, Parameters = parameters });
+            }
+
+            Assert.IsTrue(File.Exists(filename));
+        }
+
+        [Test]
         public void TestStateChartBuilder()
         {
             Task selectLongestAxis = new Task() { Name = "Select Longest Axis" };
