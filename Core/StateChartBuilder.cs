@@ -12,10 +12,12 @@ namespace ScenarioSim.Core
     class StateChartBuilder
     {
         Dictionary<string, State> states;
+        ActionFactory actionFactory;
 
         public StateChartBuilder()
         {
             states = new Dictionary<string, State>();
+            actionFactory = new ActionFactory(new TextLogger("StateChartLog.txt"));
         }
 
         public StateChart Build(TreeNode<Task> rootTask)
@@ -55,8 +57,8 @@ namespace ScenarioSim.Core
         private void AddState(TreeNode<Task> taskNode, Context parent)
         {
             string name = taskNode.Value.Name;
-            IAction entryAction = null;
-            IAction exitAction = null;
+            IAction entryAction = actionFactory.Make(ActionType.LogEntry, name);
+            IAction exitAction = actionFactory.Make(ActionType.LogExit, name);
 
             List<TreeNode<Task>> childNodes = taskNode.children;
 

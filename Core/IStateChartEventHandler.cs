@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ScenarioSim.Core
 {
-    public interface IStateChartReader
+    interface IStateChartEventHandler
     {
-        IStateChartEngine Read(string fileName);
+        void SubmitEvent(IStateChartEvent e);
     }
 }

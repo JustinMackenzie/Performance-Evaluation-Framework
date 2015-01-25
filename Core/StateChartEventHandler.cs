@@ -1,45 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ScenarioSim.Core
 {
-    class StateChartEventHandler
+    class StateChartEventHandler : IStateChartEventHandler
     {
         List<IStateChartEvent> events;
-        IStateChart stateChart;
+        List<IStateChartEventLogger> loggers;
+        IStateChartEngine stateChart;
 
-        public StateChartEventHandler(IStateChart stateChart)
+        public StateChartEventHandler(IStateChartEngine stateChart, List<IStateChartEventLogger> loggers)
         {
             events = new List<IStateChartEvent>();
+            this.loggers = loggers;
             this.stateChart = stateChart;
         }
 
         public void SubmitEvent(IStateChartEvent e)
         {
-            AppendEvent(e);
-            stateChart.Dispatch(e);
-        }
-
-        private void AppendEvent(IStateChartEvent e)
-        {
             events.Add(e);
-        }
-
-        public void Write(string filename)
-        {
-            using (StreamWriter writer = new StreamWriter(filename))
-            {
-                foreach (IStateChartEvent e in events)
-                {
-                    string text = string.Format("[{0}] State Chart Event: {1} : {2} recieved.",
-                        e.Timestamp.ToString(), e.Id, e.Name);
-                    writer.WriteLine(text);
-                }
-            }
+            foreach (IStateChartEventLogger logger in loggers)
+                logger.Log(e);
+            stateChart.Dispatch(e);
         }
     }
 }

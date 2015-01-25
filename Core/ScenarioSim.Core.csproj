@@ -56,8 +56,10 @@
     <Compile Include="IResultWriter.cs" />
     <Compile Include="IScenarioEventLogger.cs" />
     <Compile Include="ISimulatorEventHandler.cs" />
-    <Compile Include="IStateChart.cs" />
+    <Compile Include="IStateChartEngine.cs" />
     <Compile Include="IStateChartEvent.cs" />
+    <Compile Include="IStateChartEventHandler.cs" />
+    <Compile Include="IStateChartEventLogger.cs" />
     <Compile Include="IStateChartReader.cs" />
     <Compile Include="IUpdatable.cs" />
     <Compile Include="LogStateEntryAction.cs" />
@@ -66,20 +68,21 @@
     <Compile Include="ResultManager.cs" />
     <Compile Include="Scenario.cs" />
     <Compile Include="ScenarioCommandRecieverTests.cs" />
+    <Compile Include="ScenarioSimulator.cs" />
     <Compile Include="SimulatorEvent.cs" />
     <Compile Include="SimulatorEventHandler.cs" />
     <Compile Include="StateChartBuilder.cs" />
     <Compile Include="StateChartEventHandler.cs" />
-    <Compile Include="StateChartFacade.cs" />
+    <Compile Include="TextLogger.cs" />
+    <Compile Include="UmlStateChartEngine.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="TaskTransition.cs" />
-    <Compile Include="TaskTreeNode.cs" />
     <Compile Include="TextSimulatorEventLogger.cs" />
+    <Compile Include="TextStateChartEventLogger.cs" />
     <Compile Include="TimeKeeper.cs" />
     <Compile Include="TransformData.cs" />
     <Compile Include="TreeNode.cs" />
     <Compile Include="UmlStateChartEvent.cs" />
-    <Compile Include="XmlStateChartReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StateChart\UmlStateChart.csproj">

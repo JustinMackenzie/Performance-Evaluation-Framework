@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ScenarioSim.Utility;
 
 namespace ScenarioSim.Core
 {
-    class TaskTreeNode : TreeNode<Task>
+    interface IStateChartEventLogger
     {
-        public TaskTreeNode(Task task) : base(task) { }
+        void Log(IStateChartEvent e);
     }
 }

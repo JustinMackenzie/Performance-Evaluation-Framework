@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ScenarioSim.Core
 {
-    public interface IStateChart
+    public interface IStateChartEngine
     {
         void Dispatch(IStateChartEvent e);
 

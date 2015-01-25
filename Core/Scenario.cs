@@ -10,11 +10,11 @@ namespace ScenarioSim.Core
 {
     class Scenario
     {
-        IStateChart stateChart;
+        IStateChartEngine stateChart;
         StateChartBuilder builder;
-        TaskTreeNode task;
+        TreeNode<Task> task;
 
-        public Scenario(TaskTreeNode task)
+        public Scenario(TreeNode<Task> task)
         {
             this.task = task;
             builder = new StateChartBuilder();
@@ -22,7 +22,7 @@ namespace ScenarioSim.Core
 
         public void Start()
         {
-            stateChart = new StateChartFacade(builder.Build(task));
+            stateChart = new UmlStateChartEngine(builder.Build(task));
             stateChart.Start();
         }
     }

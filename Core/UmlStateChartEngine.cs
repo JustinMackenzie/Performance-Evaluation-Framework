@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using ScenarioSim.Core;
 using UmlStateChart;
 
 namespace ScenarioSim.UmlStateChart
 {
-    class StateChartFacade : IStateChart
+    class UmlStateChartEngine : IStateChartEngine
     {
         StateChart stateChart;
         StateDataContainer dataContainer;
 
-        public StateChartFacade(StateChart stateChart)
+        public UmlStateChartEngine(StateChart stateChart)
         {
             this.stateChart = stateChart;
         }
