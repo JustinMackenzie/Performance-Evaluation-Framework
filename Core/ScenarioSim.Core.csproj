@@ -76,6 +76,7 @@
     <Compile Include="SimulatorEventHandler.cs" />
     <Compile Include="StateChartBuilder.cs" />
     <Compile Include="StateChartEventHandler.cs" />
+    <Compile Include="TaskTransitionCollection.cs" />
     <Compile Include="TextLogger.cs" />
     <Compile Include="UmlStateChartEngine.cs" />
     <Compile Include="Task.cs" />
@@ -87,6 +88,8 @@
     <Compile Include="TreeNode.cs" />
     <Compile Include="UmlStateChartEvent.cs" />
     <Compile Include="XmlSimulatorEventCollectionSerializer.cs" />
+    <Compile Include="XmlTaskTransitionCollectionSerializer.cs" />
+    <Compile Include="XmlTreeNodeSerializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StateChart\UmlStateChart.csproj">

@@ -17,8 +17,8 @@ namespace ScenarioSim.Core
         {
             StateChartBuilder builder = new StateChartBuilder();
             TreeNode<Task> rootTask = new TreeNode<Task>(new Task() { Name = "Test Task" });
-
-            stateChart = new UmlStateChartEngine(builder.Build(rootTask));
+            TaskTransitionCollection transitions = new TaskTransitionCollection();
+            stateChart = new UmlStateChartEngine(builder.Build(rootTask, transitions));
 
             List<ISimulatorEventLogger> loggers = new List<ISimulatorEventLogger>();
             loggers.Add(new TextSimulatorEventLogger("SimulatorEvents.txt"));

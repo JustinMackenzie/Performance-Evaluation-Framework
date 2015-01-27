@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace ScenarioSim.Core
 {
-    class TaskTransition
+    public class TaskTransition
     {
-        public Task NextTask { get; set; }
-        public int Id { get; set; }
+        public string Source { get; set; }
+        public string Destination { get; set; }
+        public int EventId { get; set; }
     }
 }

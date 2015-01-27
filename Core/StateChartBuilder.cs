@@ -20,7 +20,7 @@ namespace ScenarioSim.Core
             actionFactory = new ActionFactory(new TextLogger("StateChartLog.txt"));
         }
 
-        public StateChart Build(TreeNode<Task> rootTask)
+        public StateChart Build(TreeNode<Task> rootTask, TaskTransitionCollection transitions)
         {
             StateChart stateChart = new StateChart(rootTask.Value.Name);
 
@@ -37,21 +37,11 @@ namespace ScenarioSim.Core
 
             states.Add(rootTask.Value.Name, stateChart);
 
-            Action<Task> action = AddTransition;
-
-            rootTask.Traverse(action);
+            foreach (TaskTransition transition in transitions)
+                new Transition(states[transition.Source], 
+                    states[transition.Destination], new StateChartEvent(transition.EventId));
 
             return stateChart;
-        }
-
-        private void AddTransition(Task task)
-        {
-            State state = states[task.Name];
-
-            foreach(TaskTransition transition in task.Transition)
-                new Transition(state,
-                    states[transition.NextTask.Name],
-                    new StateChartEvent(transition.Id));
         }
 
         private void AddState(TreeNode<Task> taskNode, Context parent)

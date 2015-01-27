@@ -3,15 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace ScenarioSim.Utility
 {
-    class TreeNode<T>
+    public class TreeNode<T>
     {
-        public List<TreeNode<T>> children { get; private set; }
+        public List<TreeNode<T>> children { get; set; }
 
-        public T Value { get; private set; }
+        public T Value { get; set; }
+
+        [XmlIgnore]
         public TreeNode<T> Parent { get; private set; }
+
+        public TreeNode()
+        {
+            children = new List<TreeNode<T>>();
+        }
 
         public TreeNode(T data)
         {
