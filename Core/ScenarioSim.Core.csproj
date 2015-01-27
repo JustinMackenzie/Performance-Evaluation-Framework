@@ -55,6 +55,7 @@
     <Compile Include="ILogger.cs" />
     <Compile Include="IResultWriter.cs" />
     <Compile Include="IScenarioEventLogger.cs" />
+    <Compile Include="ISimulatorEventCollectionSerializer.cs" />
     <Compile Include="ISimulatorEventHandler.cs" />
     <Compile Include="IStateChartEngine.cs" />
     <Compile Include="IStateChartEvent.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="ScenarioCommandRecieverTests.cs" />
     <Compile Include="ScenarioSimulator.cs" />
     <Compile Include="SimulatorEvent.cs" />
+    <Compile Include="SimulatorEventCollection.cs" />
     <Compile Include="SimulatorEventHandler.cs" />
     <Compile Include="StateChartBuilder.cs" />
     <Compile Include="StateChartEventHandler.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="TransformData.cs" />
     <Compile Include="TreeNode.cs" />
     <Compile Include="UmlStateChartEvent.cs" />
+    <Compile Include="XmlSimulatorEventCollectionSerializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StateChart\UmlStateChart.csproj">
