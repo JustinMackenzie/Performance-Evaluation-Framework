@@ -48,7 +48,7 @@ namespace ScenarioSim.Core.Tests
         [Test]
         public void TestSerialize()
         {
-            ISimulatorEventCollectionSerializer serializer = new XmlSimulatorEventCollectionSerializer();
+            XmlFileSerializer<SimulatorEventCollection> serializer = new XmlFileSerializer<SimulatorEventCollection>();
             serializer.Serialize(filename, collection);
 
 
@@ -58,7 +58,7 @@ namespace ScenarioSim.Core.Tests
         [Test]
         public void TestDeserialize()
         {
-            ISimulatorEventCollectionSerializer serializer = new XmlSimulatorEventCollectionSerializer();
+            XmlFileSerializer<SimulatorEventCollection> serializer = new XmlFileSerializer<SimulatorEventCollection>();
             serializer.Serialize(filename, collection);
 
             SimulatorEventCollection collection2 = serializer.Deserialize(filename);

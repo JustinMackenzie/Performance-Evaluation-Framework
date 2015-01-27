@@ -37,7 +37,7 @@ namespace ScenarioSim.Core.Tests
 
             string filename = "Task Tree.xml";
 
-            XmlTaskTreeNodeSerializer serializer = new XmlTaskTreeNodeSerializer();
+            XmlFileSerializer<TreeNode<Task>> serializer = new XmlFileSerializer<TreeNode<Task>>();
             serializer.Serialize(filename, selectNode);
 
             Assert.IsTrue(File.Exists(filename));
@@ -80,7 +80,7 @@ namespace ScenarioSim.Core.Tests
             transitions.Add(new TaskTransition() { EventId = 8, Source = "Look Camera", Destination = "Pan Camera" });
             transitions.Add(new TaskTransition() { EventId = 9, Source = "Look Camera", Destination = "Zoom Camera" });
 
-            XmlTaskTransitionCollectionSerializer serializer = new XmlTaskTransitionCollectionSerializer();
+            XmlFileSerializer<TaskTransitionCollection> serializer = new XmlFileSerializer<TaskTransitionCollection>();
             serializer.Serialize(filename, transitions);
 
             Assert.IsTrue(File.Exists(filename));
