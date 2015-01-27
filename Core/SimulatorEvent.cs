@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ScenarioSim.Core
 {
-    class SimulatorEvent
+    public class SimulatorEvent
     {
         public string Name { get; set; }
         public int Id { get; set; }
         public string Description { get; set; }
         public DateTime Timestamp { get; set; }
-        public Dictionary<string, object> Parameters { get; set; }
+        public List<EventParameter> Parameters { get; set; }
     }
 }

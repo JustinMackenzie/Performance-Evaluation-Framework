@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 
 namespace ScenarioSim.Core
 {
-    class XmlSimulatorEventCollectionSerializer : ISimulatorEventCollectionSerializer
+    public class XmlSimulatorEventCollectionSerializer : ISimulatorEventCollectionSerializer
     {
         public void Serialize(string filename, SimulatorEventCollection collection)
         {

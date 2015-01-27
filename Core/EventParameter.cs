@@ -6,5 +6,9 @@ using System.Threading.Tasks;
 
 namespace ScenarioSim.Core
 {
-    public class SimulatorEventCollection : List<SimulatorEvent> { }
+    public class EventParameter
+    {
+        public string Name { get; set; }
+        public object Value { get; set; }
+    }
 }

@@ -22,7 +22,7 @@ namespace ScenarioSim.UmlStateChart
             actionFactory = new ActionFactory();
         }
 
-        public IStateChart Read(string fileName)
+        public IStateChartEngine Read(string fileName)
         {
             XmlDocument document = new XmlDocument();
             document.Load(fileName);
@@ -70,7 +70,7 @@ namespace ScenarioSim.UmlStateChart
                 Transition transition = new Transition(tasks[sourceId], tasks[destinationId], stateChartEvent);
             }
 
-            return new StateChartFacade(stateChart);
+            return new UmlStateChartEngine(stateChart);
         }
 
         public void AddTask(XmlNode taskNode, Context context)

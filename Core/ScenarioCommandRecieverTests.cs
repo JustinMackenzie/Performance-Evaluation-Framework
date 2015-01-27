@@ -21,8 +21,8 @@ namespace ScenarioSim.Core.Test
             string Name = "Test Command";
             string Description = "A description.";
             DateTime timestamp = DateTime.Now;
-            Dictionary<string, object> parameters = new Dictionary<string,object>();
-            parameters.Add("A parameter", 5);
+            List<EventParameter> parameters = new List<EventParameter>();
+            parameters.Add(new EventParameter() { Name = "A parameter", Value = 5 });
 
             for (int i = 0; i < 60; i++)
             {

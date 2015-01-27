@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmlStateChart", "StateChart
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Core", "Core\ScenarioSim.Core.csproj", "{E93ACFDF-C454-4BB8-B0F8-9838AF372E39}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Core.Tests", "ScenarioSim.Core.Tests\ScenarioSim.Core.Tests.csproj", "{9A54A7AC-4E61-49AE-8B5A-7E8004898B3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E93ACFDF-C454-4BB8-B0F8-9838AF372E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E93ACFDF-C454-4BB8-B0F8-9838AF372E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E93ACFDF-C454-4BB8-B0F8-9838AF372E39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A54A7AC-4E61-49AE-8B5A-7E8004898B3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A54A7AC-4E61-49AE-8B5A-7E8004898B3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A54A7AC-4E61-49AE-8B5A-7E8004898B3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A54A7AC-4E61-49AE-8B5A-7E8004898B3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
