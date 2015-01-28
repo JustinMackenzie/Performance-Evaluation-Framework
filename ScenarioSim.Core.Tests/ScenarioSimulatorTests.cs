@@ -14,7 +14,7 @@ namespace ScenarioSim.Core.Tests
         [Test]
         public void TestSubmitEvent()
         {
-            ScenarioSimulator simulator = new ScenarioSimulator();
+            IScenarioSimulator simulator = new ScenarioSimulator("Task Tree.xml", "Task Transitions.xml");
 
             List<EventParameter> parameters = new List<EventParameter>();
             parameters.Add(new EventParameter() { Name = "Tip Location", Value = new Vector3f(5, 2, 7) });

@@ -8,7 +8,7 @@ using ScenarioSim.Utility;
 
 namespace ScenarioSim.Core
 {
-    public class ScenarioSimulator
+    public class ScenarioSimulator : IScenarioSimulator
     {
         ISimulatorEventHandler simulatorEventHandler;
         IStateChartEventHandler stateChartEventHandler;
@@ -17,12 +17,12 @@ namespace ScenarioSim.Core
         ParameterKeeper parameterKeeper;
         bool started;
 
-        public ScenarioSimulator()
+        public ScenarioSimulator(string taskTreeFile, string taskTransitionsFile)
         {
             IFileSerializer<TreeNode<Task>> serializer = new XmlFileSerializer<TreeNode<Task>>();
-            TreeNode<Task> rootTask = serializer.Deserialize("Task Tree.xml");
+            TreeNode<Task> rootTask = serializer.Deserialize(taskTreeFile);
             IFileSerializer<TaskTransitionCollection> serializer2 = new XmlFileSerializer<TaskTransitionCollection>();
-            TaskTransitionCollection transitions = serializer2.Deserialize("Task Transitions.xml");
+            TaskTransitionCollection transitions = serializer2.Deserialize(taskTransitionsFile);
 
             StateChartBuilder builder = new StateChartBuilder();
             stateChart = new UmlStateChartEngine(builder.Build(rootTask, transitions));

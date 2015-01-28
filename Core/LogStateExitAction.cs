@@ -19,7 +19,7 @@ namespace ScenarioSim.UmlStateChart
             this.logger = logger;
         }
 
-        public void Execute(StateDataContainer dataContainer)
+        public override void Execute(StateDataContainer dataContainer)
         {
             DateTime timestamp = DateTime.Now;
 

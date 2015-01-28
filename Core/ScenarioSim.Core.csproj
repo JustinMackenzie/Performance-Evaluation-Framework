@@ -49,6 +49,7 @@
     <Compile Include="ActionFactory.cs" />
     <Compile Include="CSVResultWriter.cs" />
     <Compile Include="CsvSimulatorEventLogger.cs" />
+    <Compile Include="IScenarioSimulator.cs" />
     <Compile Include="ParameterKeeper.cs" />
     <Compile Include="EventFactory.cs" />
     <Compile Include="EventParameter.cs" />
