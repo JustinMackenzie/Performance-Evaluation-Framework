@@ -11,6 +11,12 @@ namespace ScenarioSim.Core
     {
         public IAction NextAction { get; set; }
 
-        public abstract void Execute(StateDataContainer container);
+        public void Execute(StateDataContainer container)
+        {
+            if (NextAction != null)
+                NextAction.Execute(container);
+        }
+
+        protected abstract void ExecuteAction(StateDataContainer container);
     }
 }

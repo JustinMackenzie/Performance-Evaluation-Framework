@@ -19,17 +19,14 @@ namespace ScenarioSim.UmlStateChart
             this.logger = logger;
         }
 
-        public override void Execute(StateDataContainer dataContainer)
+        protected override void ExecuteAction(StateDataContainer container)
         {
             DateTime timestamp = DateTime.Now;
 
-            string message = string.Format("[{0}] Now entering: {1} state.", 
+            string message = string.Format("[{0}] Now entering: {1} state.",
                 timestamp.ToString(), name);
 
             logger.Log(message);
-
-            if (NextAction != null)
-                NextAction.Execute(dataContainer);
         }
     }
 }
