@@ -8,7 +8,7 @@ using ScenarioSim.Core;
 
 namespace ScenarioSim.UmlStateChart
 {
-    class LogStateExitAction : IAction
+    class LogStateExitAction : UmlStateChartAction
     {
         string name;
         ILogger logger;
@@ -27,6 +27,9 @@ namespace ScenarioSim.UmlStateChart
                 timestamp.ToString(), name);
 
             logger.Log(message);
+
+            if (NextAction != null)
+                NextAction.Execute(dataContainer);
         }
     }
 }

@@ -55,6 +55,7 @@
     <Compile Include="FileSimulatorEventLogger.cs" />
     <Compile Include="IFileSerializer.cs" />
     <Compile Include="TrackedEventParameters.cs" />
+    <Compile Include="UmlStateChartAction.cs" />
     <Compile Include="XmlFileSerializer.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="IResultWriter.cs" />
