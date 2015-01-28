@@ -13,7 +13,7 @@ namespace ScenarioSim.Core
         public Vector3f Scale;
     }
 
-    struct Vector3f
+    public struct Vector3f
     {
         public float X;
         public float Y;

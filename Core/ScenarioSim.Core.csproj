@@ -49,11 +49,12 @@
     <Compile Include="ActionFactory.cs" />
     <Compile Include="CSVResultWriter.cs" />
     <Compile Include="CsvSimulatorEventLogger.cs" />
-    <Compile Include="DistanceKeeper.cs" />
+    <Compile Include="ParameterKeeper.cs" />
     <Compile Include="EventFactory.cs" />
     <Compile Include="EventParameter.cs" />
     <Compile Include="FileSimulatorEventLogger.cs" />
     <Compile Include="IFileSerializer.cs" />
+    <Compile Include="TrackedEventParameters.cs" />
     <Compile Include="XmlFileSerializer.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="IResultWriter.cs" />
