@@ -47,9 +47,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionFactory.cs" />
+    <Compile Include="Complication.cs" />
+    <Compile Include="ComplicationRepository.cs" />
     <Compile Include="CSVResultWriter.cs" />
     <Compile Include="CsvSimulatorEventLogger.cs" />
+    <Compile Include="EnactComplicationAction.cs" />
+    <Compile Include="IComplicationEnactor.cs" />
+    <Compile Include="IComplicationEnactorRepository.cs" />
     <Compile Include="IScenarioSimulator.cs" />
+    <Compile Include="LogComplicationAction.cs" />
     <Compile Include="ParameterKeeper.cs" />
     <Compile Include="EventFactory.cs" />
     <Compile Include="EventParameter.cs" />
