@@ -6,59 +6,54 @@ using System.Threading.Tasks;
 
 namespace ScenarioSim.Core
 {
-    public class TimeKeeper : IUpdatable
+    public class TimeKeeper
     {
-        Dictionary<string, float> _activeTimes;
-        Dictionary<string, float> _inactiveTimes;
+        Dictionary<string, long> _activeTimes;
+        Dictionary<string, long> _inactiveTimes;
 
-        public Dictionary<string, float> InactiveTimes { get { return _inactiveTimes; } }
+        public Dictionary<string, long> InactiveTimes { get { return _inactiveTimes; } }
 
         public TimeKeeper()
         {
-            _activeTimes = new Dictionary<string, float>();
-            _inactiveTimes = new Dictionary<string, float>();
-        }
-
-        public void Update(float deltaTime)
-        {
-            foreach (string key in _activeTimes.Keys.ToList())
-                _activeTimes[key] += deltaTime;
+            _activeTimes = new Dictionary<string, long>();
+            _inactiveTimes = new Dictionary<string, long>();
         }
 
         public void StartTimer(string state)
         {
             if (!_activeTimes.ContainsKey(state))
-                _activeTimes.Add(state, 0);
+                _activeTimes.Add(state, DateTime.Now.Ticks);
         }
 
         public void StopTimer(string state)
         {
-            if (_inactiveTimes.ContainsKey(state))
-            {
-                _inactiveTimes[state] += _activeTimes[state];
-            }
-            else
-            {
-                _inactiveTimes.Add(state, _activeTimes[state]);
-            }
+            if (!_activeTimes.ContainsKey(state))
+                return;
 
+            long deltaTime = DateTime.Now.Ticks - _activeTimes[state];
             _activeTimes.Remove(state);
+
+            if (_inactiveTimes.ContainsKey(state))
+                _inactiveTimes[state] += deltaTime;
+            else
+                _inactiveTimes.Add(state, deltaTime);
+
         }
 
         public override string ToString()
         {
             string text = "Active States: \n";
 
-            foreach (KeyValuePair<string, float> p in _activeTimes)
+            foreach (KeyValuePair<string, long> p in _activeTimes)
             {
-                text += p.Key + ":" + p.Value + " s. \n";
+                text += p.Key + ":" + ((float)(p.Value - DateTime.Now.Ticks)) / 10000000 + " s. \n";
             }
 
             text += "Inactive States: \n";
 
-            foreach (KeyValuePair<string, float> p in _inactiveTimes)
+            foreach (KeyValuePair<string, long> p in _inactiveTimes)
             {
-                text += p.Key + ":" + p.Value + " s. \n";
+                text += p.Key + ":" + ((float)p.Value)/10000000 + " s. \n";
             }
 
             return text;

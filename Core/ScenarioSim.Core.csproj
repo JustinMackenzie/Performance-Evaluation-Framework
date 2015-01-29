@@ -69,7 +69,6 @@
     <Compile Include="IStateChartEventHandler.cs" />
     <Compile Include="IStateChartEventLogger.cs" />
     <Compile Include="IStateChartReader.cs" />
-    <Compile Include="IUpdatable.cs" />
     <Compile Include="LogStateEntryAction.cs" />
     <Compile Include="LogStateExitAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
