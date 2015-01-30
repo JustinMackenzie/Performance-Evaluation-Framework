@@ -43,7 +43,7 @@ namespace ScenarioSim.Core
 
             parameterKeeper = new ParameterKeeper();
             trackedParameters = new TrackedEventParameters();
-            
+
 
         }
 
@@ -65,6 +65,9 @@ namespace ScenarioSim.Core
 
             IStateChartEvent stateChartEvent = TransformSimulatorEvent(e);
             stateChartEventHandler.SubmitEvent(stateChartEvent);
+
+            if (!IsActive)
+                Complete();
         }
 
         public void AddTrackedParameter(int eventId, string parameterName)
@@ -92,6 +95,11 @@ namespace ScenarioSim.Core
         private IStateChartEvent TransformSimulatorEvent(SimulatorEvent e)
         {
             return new UmlStateChartEvent() { Id = e.Id, Name = e.Name, Timestamp = DateTime.Now };
+        }
+
+        private void Complete()
+        {
+            simulatorEventHandler.Save("SimulatorEvents.xml");
         }
     }
 }

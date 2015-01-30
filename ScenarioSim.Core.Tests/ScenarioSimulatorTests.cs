@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using ScenarioSim.Core;
 using NSubstitute;
+using System.IO;
 
 namespace ScenarioSim.Core.Tests
 {
@@ -67,6 +68,16 @@ namespace ScenarioSim.Core.Tests
             simulator.SubmitSimulatorEvent(e);
 
             Assert.IsFalse(simulator.IsActive);
+        }
+
+        [Test]
+        public void TestMadeEventsFile()
+        {
+            simulator.Start();
+
+            simulator.SubmitSimulatorEvent(e);
+
+            Assert.IsTrue(File.Exists("SimulatorEvents.xml"));
         }
     }
 }
