@@ -16,13 +16,14 @@ namespace ScenarioSim.Core
         TrackedEventParameters trackedParameters;
         ParameterKeeper parameterKeeper;
         bool started;
+        IComplicationEnactorRepository repo = new ComplicationEnactorRepository();
 
         public ScenarioSimulator(string scenarioFile)
         {
             IFileSerializer<Scenario> serializer = new XmlFileSerializer<Scenario>();
             Scenario scenario = serializer.Deserialize(scenarioFile);
 
-            StateChartBuilder builder = new StateChartBuilder();
+            StateChartBuilder builder = new StateChartBuilder(repo);
             stateChart = new UmlStateChartEngine(builder.Build(scenario));
 
             List<ISimulatorEventLogger> loggers = new List<ISimulatorEventLogger>();
@@ -64,6 +65,11 @@ namespace ScenarioSim.Core
         public void AddTrackedParameter(int eventId, string parameterName)
         {
             trackedParameters.Items.Add(new EventParameterPair() { EventId = eventId, ParameterName = parameterName });
+        }
+
+        public void AddEnactor(IComplicationEnactor enactor)
+        {
+            repo.AddEnactor(enactor);
         }
 
         private bool IsTracked(EventParameter parameter, int eventId)

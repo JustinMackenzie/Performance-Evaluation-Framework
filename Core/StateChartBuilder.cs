@@ -13,11 +13,13 @@ namespace ScenarioSim.Core
     {
         Dictionary<string, State> states;
         ActionFactory actionFactory;
+        IComplicationEnactorRepository enactorRepo;
 
-        public StateChartBuilder()
+        public StateChartBuilder(IComplicationEnactorRepository enactorRepo)
         {
             states = new Dictionary<string, State>();
             actionFactory = new ActionFactory(new TextLogger("StateChartLog.txt"));
+            this.enactorRepo = enactorRepo;
         }
 
         public StateChart Build(Scenario scenario)
@@ -40,6 +42,8 @@ namespace ScenarioSim.Core
             foreach (TaskTransition transition in scenario.TaskTransitions)
                 new Transition(states[transition.Source], 
                     states[transition.Destination], new StateChartEvent(transition.EventId));
+
+            AddComplications(scenario.Complications);
 
             return stateChart;
         }
@@ -72,6 +76,23 @@ namespace ScenarioSim.Core
             {
                 State state = new State(name, parent, entryAction, exitAction);
                 states.Add(name, state);
+            }
+        }
+
+        private void AddComplications(ComplicationCollection collection)
+        {
+            foreach(Complication complication in collection)
+            {
+                if(complication is TaskDependantComplication)
+                {
+                    TaskDependantComplication c = complication as TaskDependantComplication;
+                    if (c.Entry)
+                        (states[c.TaskName].EntryAction as UmlStateChartAction).AddAction(
+                            new EnactComplicationAction(enactorRepo, c.Id));
+                    else
+                        (states[c.TaskName].ExitAction as UmlStateChartAction).AddAction(
+                            new EnactComplicationAction(enactorRepo, c.Id));
+                }
             }
         }
     }

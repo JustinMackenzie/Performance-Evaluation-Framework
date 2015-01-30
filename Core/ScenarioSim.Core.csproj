@@ -63,6 +63,7 @@
     <Compile Include="FileSimulatorEventLogger.cs" />
     <Compile Include="IFileSerializer.cs" />
     <Compile Include="StartTimerStateEntryAction.cs" />
+    <Compile Include="TaskDependantComplication.cs" />
     <Compile Include="StopTimerStateExitAction.cs" />
     <Compile Include="TrackedEventParameters.cs" />
     <Compile Include="UmlStateChartAction.cs" />

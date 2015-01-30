@@ -73,7 +73,20 @@ namespace ScenarioSim.Core.Test
                 TaskTransitions = transitions
             };
 
-            StateChartBuilder builder = new StateChartBuilder();
+            scenario.Complications = new ComplicationCollection();
+            scenario.Complications.Add(new TaskDependantComplication()
+            {
+                Id = 1,
+                Name = "Test Complication",
+                TaskName = "Position Tool",
+                Entry = false
+            }
+                );
+
+
+            IComplicationEnactorRepository repo = new ComplicationEnactorRepository();
+
+            StateChartBuilder builder = new StateChartBuilder(repo);
             StateChart stateChart = builder.Build(scenario);
 
             // Should be 12 states. 9 tasks above + 3 pseudo-start states for each hierarchical task.

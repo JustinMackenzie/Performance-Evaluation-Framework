@@ -6,6 +6,7 @@ using NUnit.Framework;
 using System.IO;
 using ScenarioSim.Utility;
 using ScenarioSim.Core;
+using NSubstitute;
 
 namespace ScenarioSim.Core.Tests
 {
@@ -89,6 +90,16 @@ namespace ScenarioSim.Core.Tests
                 TaskTransitions = transitions
             };
 
+            scenario.Complications = new ComplicationCollection();
+            scenario.Complications.Add(new TaskDependantComplication()
+                {
+                    Id = 1,
+                    Name = "Test Complication",
+                    TaskName = "Position Tool",
+                    Entry = false
+                }
+                );
+
             string scenarioFilename = "Scenario.xml";
             XmlFileSerializer<Scenario> serializer1 = new XmlFileSerializer<Scenario>();
             serializer1.Serialize(scenarioFilename, scenario);
@@ -96,6 +107,37 @@ namespace ScenarioSim.Core.Tests
 
             Assert.IsTrue(File.Exists(filename));
             Assert.IsTrue(File.Exists(scenarioFilename));
+
+        }
+
+        [Test]
+        public void TestComplicationEnacts()
+        {
+
+            ScenarioSimulator sim = new ScenarioSimulator("Scenario.xml");
+
+            IComplicationEnactor enactor = Substitute.For<IComplicationEnactor>();
+            enactor.ComplicationId.Returns(1);
+            sim.AddEnactor(enactor);
+
+            List<EventParameter> parameters = new List<EventParameter>();
+            parameters.Add(new EventParameter() { Name = "Tip Location", Value = new Vector3f(5, 2, 7) });
+
+
+            SimulatorEvent e = new SimulatorEvent()
+            {
+                Id = 1,
+                Name = "Test Event",
+                Description = "A description.",
+                Timestamp = DateTime.Now,
+                Parameters = parameters
+            };
+
+            sim.Start();
+
+            sim.SubmitSimulatorEvent(e);
+
+            enactor.Received().Execute();
 
         }
     }
