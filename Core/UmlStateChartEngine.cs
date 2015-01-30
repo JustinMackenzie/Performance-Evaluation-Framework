@@ -9,16 +9,19 @@ namespace ScenarioSim.UmlStateChart
         StateChart stateChart;
         StateDataContainer dataContainer;
 
-        public UmlStateChartEngine(StateChart stateChart)
+        public bool Active { get { return !IsStateActive("Evaluate"); } }
+
+        public UmlStateChartEngine(Scenario scenario, ActionFactory factory, IComplicationEnactorRepository repo)
         {
-            this.stateChart = stateChart;
+            StateChartBuilder builder = new StateChartBuilder(this, factory, repo);
+            stateChart = builder.Build(scenario);
         }
 
         public bool IsStateActive(string name)
         {
             State state = stateChart.States[name];
 
-            return state.Activate(dataContainer);
+            return dataContainer.ActiveStates().Contains(state);
         }
 
         public void Dispatch(IStateChartEvent e)
@@ -26,9 +29,9 @@ namespace ScenarioSim.UmlStateChart
             stateChart.Dispatch(dataContainer, TransformToStateChartEvent(e));
         }
 
-        public IList<string> ActiveStates()
+        public List<string> ActiveStates()
         {
-            IList<string> result = new List<string>();
+            List<string> result = new List<string>();
 
             foreach (State s in dataContainer.ActiveStates())
             {

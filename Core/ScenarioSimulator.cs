@@ -15,10 +15,10 @@ namespace ScenarioSim.Core
         IStateChartEngine stateChart;
         TrackedEventParameters trackedParameters;
         ParameterKeeper parameterKeeper;
-        bool started;
         IComplicationEnactorRepository repo = new ComplicationEnactorRepository();
         TimeKeeper timeKeeper;
 
+        public bool IsActive { get { return stateChart.Active; } }
 
         public ScenarioSimulator(string scenarioFile)
         {
@@ -27,8 +27,9 @@ namespace ScenarioSim.Core
             IFileSerializer<Scenario> serializer = new XmlFileSerializer<Scenario>();
             Scenario scenario = serializer.Deserialize(scenarioFile);
 
-            StateChartBuilder builder = new StateChartBuilder(repo, timeKeeper);
-            stateChart = new UmlStateChartEngine(builder.Build(scenario));
+            ActionFactory actionFactory = new ActionFactory(new TextLogger("StateChartLog.txt"), timeKeeper);
+
+            stateChart = new UmlStateChartEngine(scenario, actionFactory, repo);
 
             List<ISimulatorEventLogger> loggers = new List<ISimulatorEventLogger>();
             loggers.Add(new TextSimulatorEventLogger("SimulatorEvents.txt"));
@@ -49,12 +50,11 @@ namespace ScenarioSim.Core
         public void Start()
         {
             stateChart.Start();
-            started = true;
         }
 
         public void SubmitSimulatorEvent(SimulatorEvent e)
         {
-            if (!started)
+            if (!IsActive)
                 throw new Exception("Simulator has not been started. Please call Start() before submitting events.");
 
             simulatorEventHandler.SubmitEvent(e);
@@ -75,6 +75,11 @@ namespace ScenarioSim.Core
         public void AddEnactor(IComplicationEnactor enactor)
         {
             repo.AddEnactor(enactor);
+        }
+
+        public List<string> ActiveTasks()
+        {
+            return stateChart.ActiveStates();
         }
 
         private bool IsTracked(EventParameter parameter, int eventId)

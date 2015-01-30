@@ -4,6 +4,7 @@ using NUnit.Framework;
 using System.IO;
 using UmlStateChart;
 using ScenarioSim.Utility;
+using ScenarioSim.UmlStateChart;
 
 namespace ScenarioSim.Core.Test
 {
@@ -86,10 +87,12 @@ namespace ScenarioSim.Core.Test
 
             IComplicationEnactorRepository repo = new ComplicationEnactorRepository();
 
-            StateChartBuilder builder = new StateChartBuilder(repo, new TimeKeeper());
+            IStateChartEngine engine = new UmlStateChartEngine(scenario, new ActionFactory(new TextLogger("TestLog.txt"), new TimeKeeper()), repo);
+
+            StateChartBuilder builder = new StateChartBuilder(engine, new ActionFactory(new TextLogger("TestLog.txt"), new TimeKeeper()), repo);
             StateChart stateChart = builder.Build(scenario);
 
-            // Should be 12 states. 9 tasks above + 3 pseudo-start states for each hierarchical task.
+            // Should be 13 states. 9 tasks above + 3 pseudo-start states for each hierarchical task.
             Assert.AreEqual(12, stateChart.States.Count);
 
         }

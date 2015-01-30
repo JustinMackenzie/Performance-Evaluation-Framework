@@ -12,8 +12,10 @@ namespace ScenarioSim.Core
 
         bool IsStateActive(string name);
 
-        IList<string> ActiveStates();
+        List<string> ActiveStates();
 
         void Start();
+
+        bool Active { get; }
     }
 }

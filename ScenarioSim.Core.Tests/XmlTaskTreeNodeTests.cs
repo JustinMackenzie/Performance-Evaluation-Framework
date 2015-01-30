@@ -55,7 +55,7 @@ namespace ScenarioSim.Core.Tests
             Task PanCamera = new Task() { Name = "Pan Camera" };
             Task LookCamera = new Task() { Name = "Look Camera" };
             Task ZoomCamera = new Task() { Name = "Zoom Camera" };
-            Task Selection = new Task() { Name = "Selection" };
+            Task Complete = new Task() { Name = "Evaluate", Final = true };
 
             TreeNode<Task> selectNode = new TreeNode<Task>(selectLongestAxis);
             selectNode.AppendChild(PositionTool);
@@ -65,14 +65,14 @@ namespace ScenarioSim.Core.Tests
             selectNode.children[1].AppendChild(PanCamera);
             selectNode.children[1].AppendChild(LookCamera);
             selectNode.children[1].AppendChild(ZoomCamera);
-            selectNode.AppendChild(Selection);
+            selectNode.AppendChild(Complete);
 
             string filename = "Task Transitions.xml";
 
             TaskTransitionCollection transitions = new TaskTransitionCollection();
 
-            transitions.Add(new TaskTransition() { EventId = 1, Source = "Position Tool", Destination = "Selection" });
-            transitions.Add(new TaskTransition() { EventId = 2, Source = "Change View", Destination = "Selection" });
+            transitions.Add(new TaskTransition() { EventId = 1, Source = "Position Tool", Destination = "Evaluate" });
+            transitions.Add(new TaskTransition() { EventId = 2, Source = "Change View", Destination = "Evaluate" });
             transitions.Add(new TaskTransition() { EventId = 3, Source = "Translate Tool", Destination = "Rotate Tool" });
             transitions.Add(new TaskTransition() { EventId = 4, Source = "Pan Camera", Destination = "Zoom Camera" });
             transitions.Add(new TaskTransition() { EventId = 5, Source = "Pan Camera", Destination = "Look Camera" });
@@ -107,37 +107,6 @@ namespace ScenarioSim.Core.Tests
 
             Assert.IsTrue(File.Exists(filename));
             Assert.IsTrue(File.Exists(scenarioFilename));
-
-        }
-
-        [Test]
-        public void TestComplicationEnacts()
-        {
-
-            ScenarioSimulator sim = new ScenarioSimulator("Scenario.xml");
-
-            IComplicationEnactor enactor = Substitute.For<IComplicationEnactor>();
-            enactor.ComplicationId.Returns(1);
-            sim.AddEnactor(enactor);
-
-            List<EventParameter> parameters = new List<EventParameter>();
-            parameters.Add(new EventParameter() { Name = "Tip Location", Value = new Vector3f(5, 2, 7) });
-
-
-            SimulatorEvent e = new SimulatorEvent()
-            {
-                Id = 1,
-                Name = "Test Event",
-                Description = "A description.",
-                Timestamp = DateTime.Now,
-                Parameters = parameters
-            };
-
-            sim.Start();
-
-            sim.SubmitSimulatorEvent(e);
-
-            enactor.Received().Execute();
 
         }
     }

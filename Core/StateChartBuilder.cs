@@ -13,15 +13,15 @@ namespace ScenarioSim.Core
     {
         Dictionary<string, State> states;
         ActionFactory actionFactory;
-        IComplicationEnactorRepository enactorRepo;
-        TimeKeeper keeper;
+        IComplicationEnactorRepository repo;
+        IStateChartEngine engine;
 
-        public StateChartBuilder(IComplicationEnactorRepository enactorRepo, TimeKeeper keeper)
+        public StateChartBuilder(IStateChartEngine engine, ActionFactory actionFactory, IComplicationEnactorRepository repo)
         {
             states = new Dictionary<string, State>();
-            this.enactorRepo = enactorRepo;
-            this.keeper = keeper;
-            actionFactory = new ActionFactory(new TextLogger("StateChartLog.txt"), keeper);
+            this.actionFactory = actionFactory;
+            this.repo = repo;
+            this.engine = engine;
         }
 
         public StateChart Build(Scenario scenario)
@@ -55,6 +55,14 @@ namespace ScenarioSim.Core
             string name = taskNode.Value.Name;
             UmlStateChartAction entryAction = actionFactory.Make(ActionType.LogEntry, name);
             UmlStateChartAction exitAction = actionFactory.Make(ActionType.LogExit, name);
+
+            if (taskNode.Value.Final)
+            {
+                FinalState state = new FinalState(name, parent);
+                states.Add(name, state);
+                return;
+            }
+
             entryAction.AddAction(actionFactory.Make(ActionType.StartTimer, name));
             exitAction.AddAction(actionFactory.Make(ActionType.StopTimer, name));
 
@@ -92,10 +100,10 @@ namespace ScenarioSim.Core
                     TaskDependantComplication c = complication as TaskDependantComplication;
                     if (c.Entry)
                         (states[c.TaskName].EntryAction as UmlStateChartAction).AddAction(
-                            new EnactComplicationAction(enactorRepo, c.Id));
+                            new EnactComplicationAction(repo, c.Id));
                     else
                         (states[c.TaskName].ExitAction as UmlStateChartAction).AddAction(
-                            new EnactComplicationAction(enactorRepo, c.Id));
+                            new EnactComplicationAction(repo, c.Id));
                 }
             }
         }

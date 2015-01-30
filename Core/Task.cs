@@ -9,5 +9,6 @@ namespace ScenarioSim.Core
     public class Task
     {
         public string Name { get; set; }
+        public bool Final { get; set; }
     }
 }

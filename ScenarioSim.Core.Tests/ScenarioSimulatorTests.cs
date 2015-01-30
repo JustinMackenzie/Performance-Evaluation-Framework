@@ -5,45 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using ScenarioSim.Core;
+using NSubstitute;
 
 namespace ScenarioSim.Core.Tests
 {
     [TestFixture]
     class ScenarioSimulatorTests
     {
-        [Test]
-        public void TestSubmitEvent()
+        IScenarioSimulator simulator;
+        SimulatorEvent e;
+
+        [SetUp]
+        public void Initialize()
         {
-            IScenarioSimulator simulator = new ScenarioSimulator("Scenario.xml");
+            simulator = new ScenarioSimulator("Scenario.xml");
 
             List<EventParameter> parameters = new List<EventParameter>();
             parameters.Add(new EventParameter() { Name = "Tip Location", Value = new Vector3f(5, 2, 7) });
 
 
-            SimulatorEvent e = new SimulatorEvent() 
-            {
-                Id = 1, 
-                Name = "Test Event",
-                Description = "A description.", 
-                Timestamp = DateTime.Now,
-                Parameters = parameters
-            };
-
-            simulator.Start();
-
-            simulator.SubmitSimulatorEvent(e);
-        }
-
-        
-        public void TestComplcation()
-        {
-            IScenarioSimulator simulator = new ScenarioSimulator("Scenario.xml");
-
-            List<EventParameter> parameters = new List<EventParameter>();
-            parameters.Add(new EventParameter() { Name = "Tip Location", Value = new Vector3f(5, 2, 7) });
-
-
-            SimulatorEvent e = new SimulatorEvent()
+            e = new SimulatorEvent()
             {
                 Id = 1,
                 Name = "Test Event",
@@ -51,8 +32,41 @@ namespace ScenarioSim.Core.Tests
                 Timestamp = DateTime.Now,
                 Parameters = parameters
             };
+        }
+
+        [Test]
+        public void TestSubmitEvent()
+        {
+            
 
             simulator.Start();
+
+            simulator.SubmitSimulatorEvent(e);
+        }
+
+        [Test]
+        public void TestComplicationEnacts()
+        {
+
+            IComplicationEnactor enactor = Substitute.For<IComplicationEnactor>();
+            enactor.ComplicationId.Returns(1);
+            simulator.AddEnactor(enactor);
+
+            simulator.Start();
+
+            simulator.SubmitSimulatorEvent(e);
+
+            enactor.Received().Execute();
+        }
+
+        [Test]
+        public void TestIsNotActive()
+        {
+            simulator.Start();
+
+            simulator.SubmitSimulatorEvent(e);
+
+            Assert.IsFalse(simulator.IsActive);
         }
     }
 }
