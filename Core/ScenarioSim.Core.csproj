@@ -53,6 +53,7 @@
     <Compile Include="CSVResultWriter.cs" />
     <Compile Include="CsvSimulatorEventLogger.cs" />
     <Compile Include="EnactComplicationAction.cs" />
+    <Compile Include="Entity.cs" />
     <Compile Include="IComplicationEnactor.cs" />
     <Compile Include="IComplicationEnactorRepository.cs" />
     <Compile Include="IScenarioSimulator.cs" />
