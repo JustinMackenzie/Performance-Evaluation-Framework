@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="ActionFactory.cs" />
     <Compile Include="Complication.cs" />
+    <Compile Include="ComplicationCollection.cs" />
     <Compile Include="ComplicationRepository.cs" />
     <Compile Include="CSVResultWriter.cs" />
     <Compile Include="CsvSimulatorEventLogger.cs" />

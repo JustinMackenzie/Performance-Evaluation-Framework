@@ -83,7 +83,20 @@ namespace ScenarioSim.Core.Tests
             XmlFileSerializer<TaskTransitionCollection> serializer = new XmlFileSerializer<TaskTransitionCollection>();
             serializer.Serialize(filename, transitions);
 
+            Scenario scenario = new Scenario()
+            {
+                Task = selectNode,
+                TaskTransitions = transitions
+            };
+
+            string scenarioFilename = "Scenario.xml";
+            XmlFileSerializer<Scenario> serializer1 = new XmlFileSerializer<Scenario>();
+            serializer1.Serialize(scenarioFilename, scenario);
+
+
             Assert.IsTrue(File.Exists(filename));
+            Assert.IsTrue(File.Exists(scenarioFilename));
+
         }
     }
 }

@@ -20,11 +20,11 @@ namespace ScenarioSim.Core
             actionFactory = new ActionFactory(new TextLogger("StateChartLog.txt"));
         }
 
-        public StateChart Build(TreeNode<Task> rootTask, TaskTransitionCollection transitions)
+        public StateChart Build(Scenario scenario)
         {
-            StateChart stateChart = new StateChart(rootTask.Value.Name);
+            StateChart stateChart = new StateChart(scenario.Task.Value.Name);
 
-            List<TreeNode<Task>> childrenNodes = rootTask.children;
+            List<TreeNode<Task>> childrenNodes = scenario.Task.children;
 
             foreach (TreeNode<Task> taskNode in childrenNodes)
             {
@@ -35,9 +35,9 @@ namespace ScenarioSim.Core
             string startTaskName = childrenNodes.First<TreeNode<Task>>().Value.Name;
             Transition historyTransition = new Transition(startState, states[startTaskName]);
 
-            states.Add(rootTask.Value.Name, stateChart);
+            states.Add(scenario.Task.Value.Name, stateChart);
 
-            foreach (TaskTransition transition in transitions)
+            foreach (TaskTransition transition in scenario.TaskTransitions)
                 new Transition(states[transition.Source], 
                     states[transition.Destination], new StateChartEvent(transition.EventId));
 

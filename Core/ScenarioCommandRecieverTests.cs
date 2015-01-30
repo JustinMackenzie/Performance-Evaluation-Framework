@@ -67,8 +67,14 @@ namespace ScenarioSim.Core.Test
             transitions.Add(new TaskTransition() { EventId = 8, Source = "Look Camera", Destination = "Pan Camera" });
             transitions.Add(new TaskTransition() { EventId = 9, Source = "Look Camera", Destination = "Zoom Camera" });
 
+            Scenario scenario = new Scenario()
+            {
+                Task = selectNode,
+                TaskTransitions = transitions
+            };
+
             StateChartBuilder builder = new StateChartBuilder();
-            StateChart stateChart = builder.Build(selectNode, transitions);
+            StateChart stateChart = builder.Build(scenario);
 
             // Should be 12 states. 9 tasks above + 3 pseudo-start states for each hierarchical task.
             Assert.AreEqual(12, stateChart.States.Count);

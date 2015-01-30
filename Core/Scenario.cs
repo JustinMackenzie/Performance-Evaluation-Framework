@@ -8,13 +8,10 @@ using ScenarioSim.Utility;
 
 namespace ScenarioSim.Core
 {
-    class Scenario
+    public class Scenario
     {
-        TreeNode<Task> task;
-
-        public Scenario(TreeNode<Task> task)
-        {
-            this.task = task;
-        }
+        public TreeNode<Task> Task{get;set;}
+        public TaskTransitionCollection TaskTransitions { get; set; }
+        public ComplicationCollection Complications { get; set; }
     }
 }

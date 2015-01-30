@@ -17,15 +17,13 @@ namespace ScenarioSim.Core
         ParameterKeeper parameterKeeper;
         bool started;
 
-        public ScenarioSimulator(string taskTreeFile, string taskTransitionsFile)
+        public ScenarioSimulator(string scenarioFile)
         {
-            IFileSerializer<TreeNode<Task>> serializer = new XmlFileSerializer<TreeNode<Task>>();
-            TreeNode<Task> rootTask = serializer.Deserialize(taskTreeFile);
-            IFileSerializer<TaskTransitionCollection> serializer2 = new XmlFileSerializer<TaskTransitionCollection>();
-            TaskTransitionCollection transitions = serializer2.Deserialize(taskTransitionsFile);
+            IFileSerializer<Scenario> serializer = new XmlFileSerializer<Scenario>();
+            Scenario scenario = serializer.Deserialize(scenarioFile);
 
             StateChartBuilder builder = new StateChartBuilder();
-            stateChart = new UmlStateChartEngine(builder.Build(rootTask, transitions));
+            stateChart = new UmlStateChartEngine(builder.Build(scenario));
 
             List<ISimulatorEventLogger> loggers = new List<ISimulatorEventLogger>();
             loggers.Add(new TextSimulatorEventLogger("SimulatorEvents.txt"));
