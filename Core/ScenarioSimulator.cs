@@ -32,7 +32,8 @@ namespace ScenarioSim.Core
             IFileSerializer<Scenario> serializer = new XmlFileSerializer<Scenario>();
             Scenario scenario = serializer.Deserialize(scenarioFile);
 
-            ActionFactory actionFactory = new ActionFactory(new TextLogger(this.folderPath + "\\StateChartLog.txt"), timeKeeper);
+            ActionFactory actionFactory = new ActionFactory(new TextLogger(this.folderPath + "\\StateChartLog.txt"), timeKeeper,
+                new TextLogger(this.folderPath + "\\ComplicationLog.txt"));
 
             stateChart = new UmlStateChartEngine(scenario, actionFactory, repo);
 

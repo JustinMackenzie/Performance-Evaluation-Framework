@@ -53,8 +53,8 @@ namespace ScenarioSim.Core
         private void AddState(TreeNode<Task> taskNode, Context parent)
         {
             string name = taskNode.Value.Name;
-            UmlStateChartAction entryAction = actionFactory.Make(ActionType.LogEntry, name);
-            UmlStateChartAction exitAction = actionFactory.Make(ActionType.LogExit, name);
+            UmlStateChartAction entryAction = actionFactory.Make(ActionType.LogEntry, name, null);
+            UmlStateChartAction exitAction = actionFactory.Make(ActionType.LogExit, name, null);
 
             if (taskNode.Value.Final)
             {
@@ -63,8 +63,8 @@ namespace ScenarioSim.Core
                 return;
             }
 
-            entryAction.AddAction(actionFactory.Make(ActionType.StartTimer, name));
-            exitAction.AddAction(actionFactory.Make(ActionType.StopTimer, name));
+            entryAction.AddAction(actionFactory.Make(ActionType.StartTimer, name, null));
+            exitAction.AddAction(actionFactory.Make(ActionType.StopTimer, name, null));
 
             List<TreeNode<Task>> childNodes = taskNode.children;
 
@@ -99,11 +99,19 @@ namespace ScenarioSim.Core
                 {
                     TaskDependantComplication c = complication as TaskDependantComplication;
                     if (c.Entry)
+                    {
+                        (states[c.TaskName].EntryAction as UmlStateChartAction).AddAction(
+                            actionFactory.Make(ActionType.LogComplication, null, c));
                         (states[c.TaskName].EntryAction as UmlStateChartAction).AddAction(
                             new EnactComplicationAction(repo, c.Id));
+                    }
                     else
+                    {
+                        (states[c.TaskName].ExitAction as UmlStateChartAction).AddAction(
+                            actionFactory.Make(ActionType.LogComplication, null, c));
                         (states[c.TaskName].ExitAction as UmlStateChartAction).AddAction(
                             new EnactComplicationAction(repo, c.Id));
+                    }
                 }
             }
         }

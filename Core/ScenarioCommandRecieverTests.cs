@@ -87,9 +87,9 @@ namespace ScenarioSim.Core.Test
 
             IComplicationEnactorRepository repo = new ComplicationEnactorRepository();
 
-            IStateChartEngine engine = new UmlStateChartEngine(scenario, new ActionFactory(new TextLogger("TestLog.txt"), new TimeKeeper()), repo);
+            IStateChartEngine engine = new UmlStateChartEngine(scenario, new ActionFactory(new TextLogger("TestLog.txt"), new TimeKeeper(),  new TextLogger("Complication.txt")), repo);
 
-            StateChartBuilder builder = new StateChartBuilder(engine, new ActionFactory(new TextLogger("TestLog.txt"), new TimeKeeper()), repo);
+            StateChartBuilder builder = new StateChartBuilder(engine, new ActionFactory(new TextLogger("TestLog.txt"), new TimeKeeper(), new TextLogger("Complication.txt")), repo);
             StateChart stateChart = builder.Build(scenario);
 
             // Should be 13 states. 9 tasks above + 3 pseudo-start states for each hierarchical task.

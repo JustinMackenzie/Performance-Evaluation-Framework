@@ -49,7 +49,6 @@ namespace ScenarioSim.Core.Tests
         [Test]
         public void TestComplicationEnacts()
         {
-
             IComplicationEnactor enactor = Substitute.For<IComplicationEnactor>();
             enactor.ComplicationId.Returns(1);
             simulator.AddEnactor(enactor);
