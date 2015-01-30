@@ -8,6 +8,7 @@ using ScenarioSim.Core;
 using NSubstitute;
 using System.IO;
 
+
 namespace ScenarioSim.Core.Tests
 {
     [TestFixture]
@@ -19,7 +20,7 @@ namespace ScenarioSim.Core.Tests
         [SetUp]
         public void Initialize()
         {
-            simulator = new ScenarioSimulator("Scenario.xml");
+            simulator = new ScenarioSimulator("Scenario.xml", "C:\\Users\\Jmac\\Documents");
 
             List<EventParameter> parameters = new List<EventParameter>();
             parameters.Add(new EventParameter() { Name = "Tip Location", Value = new Vector3f(5, 2, 7) });

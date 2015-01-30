@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ScenarioSim.UmlStateChart;
 using ScenarioSim.Utility;
+using System.IO;
 
 namespace ScenarioSim.Core
 {
@@ -17,26 +18,30 @@ namespace ScenarioSim.Core
         ParameterKeeper parameterKeeper;
         IComplicationEnactorRepository repo = new ComplicationEnactorRepository();
         TimeKeeper timeKeeper;
+        string folderPath;
 
         public bool IsActive { get { return stateChart.Active; } }
 
-        public ScenarioSimulator(string scenarioFile)
+        public ScenarioSimulator(string scenarioFile, string folderPath)
         {
+            this.folderPath = folderPath + "\\" + DateTime.Now.ToString("yyyy-MM-dd-HHmm");
+            Directory.CreateDirectory(this.folderPath);
+
             timeKeeper = new TimeKeeper();
 
             IFileSerializer<Scenario> serializer = new XmlFileSerializer<Scenario>();
             Scenario scenario = serializer.Deserialize(scenarioFile);
 
-            ActionFactory actionFactory = new ActionFactory(new TextLogger("StateChartLog.txt"), timeKeeper);
+            ActionFactory actionFactory = new ActionFactory(new TextLogger(this.folderPath + "\\StateChartLog.txt"), timeKeeper);
 
             stateChart = new UmlStateChartEngine(scenario, actionFactory, repo);
 
             List<ISimulatorEventLogger> loggers = new List<ISimulatorEventLogger>();
-            loggers.Add(new TextSimulatorEventLogger("SimulatorEvents.txt"));
-            loggers.Add(new CsvSimulatorEventLogger("SimulatorEvents.csv"));
+            loggers.Add(new TextSimulatorEventLogger(this.folderPath + "\\SimulatorEvents.txt"));
+            loggers.Add(new CsvSimulatorEventLogger(this.folderPath + "\\SimulatorEvents.csv"));
 
             List<IStateChartEventLogger> sLoggers = new List<IStateChartEventLogger>();
-            sLoggers.Add(new TextStateChartEventLogger("StateChartEvents.txt"));
+            sLoggers.Add(new TextStateChartEventLogger(this.folderPath + "\\StateChartEvents.txt"));
 
             simulatorEventHandler = new SimulatorEventHandler(loggers);
             stateChartEventHandler = new StateChartEventHandler(stateChart, sLoggers);
@@ -99,7 +104,7 @@ namespace ScenarioSim.Core
 
         private void Complete()
         {
-            simulatorEventHandler.Save("SimulatorEvents.xml");
+            simulatorEventHandler.Save(folderPath + "\\SimulatorEvents.xml");
         }
     }
 }
