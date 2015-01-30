@@ -86,7 +86,7 @@ namespace ScenarioSim.Core.Test
 
             IComplicationEnactorRepository repo = new ComplicationEnactorRepository();
 
-            StateChartBuilder builder = new StateChartBuilder(repo);
+            StateChartBuilder builder = new StateChartBuilder(repo, new TimeKeeper());
             StateChart stateChart = builder.Build(scenario);
 
             // Should be 12 states. 9 tasks above + 3 pseudo-start states for each hierarchical task.

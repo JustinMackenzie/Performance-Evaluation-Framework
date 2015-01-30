@@ -14,12 +14,14 @@ namespace ScenarioSim.Core
         Dictionary<string, State> states;
         ActionFactory actionFactory;
         IComplicationEnactorRepository enactorRepo;
+        TimeKeeper keeper;
 
-        public StateChartBuilder(IComplicationEnactorRepository enactorRepo)
+        public StateChartBuilder(IComplicationEnactorRepository enactorRepo, TimeKeeper keeper)
         {
             states = new Dictionary<string, State>();
-            actionFactory = new ActionFactory(new TextLogger("StateChartLog.txt"));
             this.enactorRepo = enactorRepo;
+            this.keeper = keeper;
+            actionFactory = new ActionFactory(new TextLogger("StateChartLog.txt"), keeper);
         }
 
         public StateChart Build(Scenario scenario)
@@ -51,8 +53,10 @@ namespace ScenarioSim.Core
         private void AddState(TreeNode<Task> taskNode, Context parent)
         {
             string name = taskNode.Value.Name;
-            IAction entryAction = actionFactory.Make(ActionType.LogEntry, name);
-            IAction exitAction = actionFactory.Make(ActionType.LogExit, name);
+            UmlStateChartAction entryAction = actionFactory.Make(ActionType.LogEntry, name);
+            UmlStateChartAction exitAction = actionFactory.Make(ActionType.LogExit, name);
+            entryAction.AddAction(actionFactory.Make(ActionType.StartTimer, name));
+            exitAction.AddAction(actionFactory.Make(ActionType.StopTimer, name));
 
             List<TreeNode<Task>> childNodes = taskNode.children;
 

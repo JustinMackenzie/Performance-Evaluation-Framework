@@ -17,13 +17,17 @@ namespace ScenarioSim.Core
         ParameterKeeper parameterKeeper;
         bool started;
         IComplicationEnactorRepository repo = new ComplicationEnactorRepository();
+        TimeKeeper timeKeeper;
+
 
         public ScenarioSimulator(string scenarioFile)
         {
+            timeKeeper = new TimeKeeper();
+
             IFileSerializer<Scenario> serializer = new XmlFileSerializer<Scenario>();
             Scenario scenario = serializer.Deserialize(scenarioFile);
 
-            StateChartBuilder builder = new StateChartBuilder(repo);
+            StateChartBuilder builder = new StateChartBuilder(repo, timeKeeper);
             stateChart = new UmlStateChartEngine(builder.Build(scenario));
 
             List<ISimulatorEventLogger> loggers = new List<ISimulatorEventLogger>();
@@ -38,6 +42,7 @@ namespace ScenarioSim.Core
 
             parameterKeeper = new ParameterKeeper();
             trackedParameters = new TrackedEventParameters();
+            
 
         }
 

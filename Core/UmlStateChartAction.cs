@@ -9,7 +9,7 @@ namespace ScenarioSim.Core
 {
     abstract class UmlStateChartAction : IAction
     {
-        public IAction NextAction { get; set; }
+        public UmlStateChartAction NextAction { get; set; }
 
         public void Execute(StateDataContainer container)
         {
@@ -18,7 +18,7 @@ namespace ScenarioSim.Core
                 NextAction.Execute(container);
         }
 
-        public void AddAction(IAction action)
+        public void AddAction(UmlStateChartAction action)
         {
             if (NextAction != null)
             {

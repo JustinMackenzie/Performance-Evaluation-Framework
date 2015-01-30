@@ -11,18 +11,22 @@ namespace ScenarioSim.UmlStateChart
     enum ActionType
     {
         LogEntry,
-        LogExit
+        LogExit,
+        StartTimer,
+        StopTimer
     }
 
     class ActionFactory
     {
         ILogger logger;
+        TimeKeeper keeper;
 
-        public ActionFactory(ILogger logger)
+        public ActionFactory(ILogger logger, TimeKeeper keeper)
         {
             this.logger = logger;
+            this.keeper = keeper;
         }
-        public IAction Make(ActionType type, string stateName)
+        public UmlStateChartAction Make(ActionType type, string stateName)
         {
             switch(type)
             {
@@ -30,6 +34,10 @@ namespace ScenarioSim.UmlStateChart
                     return new LogStateEntryAction(stateName, logger);
                 case ActionType.LogExit:
                     return new LogStateExitAction(stateName, logger);
+                case ActionType.StartTimer:
+                    return new StartTimerStateEntryAction(keeper, stateName);
+                case ActionType.StopTimer:
+                    return new StopTimerStateExitAction(keeper, stateName);
                 default:
                     throw new NotSupportedException();
             }
