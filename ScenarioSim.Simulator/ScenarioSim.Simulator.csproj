@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E93ACFDF-C454-4BB8-B0F8-9838AF372E39}</ProjectGuid>
+    <ProjectGuid>{076F2875-224E-4D46-8EC9-4C1DE33FA3FC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScenarioSim.Core</RootNamespace>
-    <AssemblyName>Core</AssemblyName>
+    <RootNamespace>ScenarioSim.Simulator</RootNamespace>
+    <AssemblyName>ScenarioSim.Simulator</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -20,7 +20,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Core.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,13 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NSubstitute">
-      <HintPath>..\..\..\..\..\Downloads\NSubstitute.1.8.1.0\lib\net45\NSubstitute.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.4\bin\framework\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,30 +39,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Complication.cs" />
-    <Compile Include="ComplicationCollection.cs" />
-    <Compile Include="Entity.cs" />
-    <Compile Include="TaskDependantComplication.cs" />
-    <Compile Include="Vector3f.cs" />
+    <Compile Include="ActionFactory.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="ComplicationRepository.cs" />
+    <Compile Include="CSVResultWriter.cs" />
+    <Compile Include="CsvSimulatorEventLogger.cs" />
+    <Compile Include="EnactComplicationAction.cs" />
+    <Compile Include="EventFactory.cs" />
+    <Compile Include="EventParameter.cs" />
+    <Compile Include="FileSimulatorEventLogger.cs" />
+    <Compile Include="IComplicationEnactor.cs" />
+    <Compile Include="IComplicationEnactorRepository.cs" />
+    <Compile Include="IFileSerializer.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="IResultWriter.cs" />
+    <Compile Include="IScenarioEventLogger.cs" />
+    <Compile Include="IScenarioSimulator.cs" />
+    <Compile Include="ISimulatorEventHandler.cs" />
     <Compile Include="IStateChartEngine.cs" />
     <Compile Include="IStateChartEvent.cs" />
+    <Compile Include="IStateChartEventHandler.cs" />
+    <Compile Include="IStateChartEventLogger.cs" />
     <Compile Include="IStateChartReader.cs" />
+    <Compile Include="LogComplicationAction.cs" />
+    <Compile Include="LogStateEntryAction.cs" />
+    <Compile Include="LogStateExitAction.cs" />
+    <Compile Include="ParameterKeeper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scenario.cs" />
-    <Compile Include="TaskTransitionCollection.cs" />
-    <Compile Include="Task.cs" />
-    <Compile Include="TaskTransition.cs" />
-    <Compile Include="TransformData.cs" />
-    <Compile Include="TreeNode.cs" />
+    <Compile Include="ResultManager.cs" />
+    <Compile Include="ScenarioSimulator.cs" />
+    <Compile Include="SimulatorEvent.cs" />
+    <Compile Include="SimulatorEventCollection.cs" />
+    <Compile Include="SimulatorEventHandler.cs" />
+    <Compile Include="StartTimerStateEntryAction.cs" />
+    <Compile Include="StateChartBuilder.cs" />
+    <Compile Include="StateChartEventHandler.cs" />
+    <Compile Include="StopTimerStateExitAction.cs" />
+    <Compile Include="TextLogger.cs" />
+    <Compile Include="TextSimulatorEventLogger.cs" />
+    <Compile Include="TextStateChartEventLogger.cs" />
+    <Compile Include="TimeKeeper.cs" />
+    <Compile Include="TrackedEventParameters.cs" />
+    <Compile Include="UmlStateChartAction.cs" />
+    <Compile Include="UmlStateChartEngine.cs" />
+    <Compile Include="UmlStateChartEvent.cs" />
+    <Compile Include="XmlFileSerializer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ScenarioSim.Core\ScenarioSim.Core.csproj">
+      <Project>{e93acfdf-c454-4bb8-b0f8-9838af372e39}</Project>
+      <Name>ScenarioSim.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StateChart\UmlStateChart.csproj">
       <Project>{32304491-f871-4d59-a317-7ae533850b0b}</Project>
       <Name>UmlStateChart</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

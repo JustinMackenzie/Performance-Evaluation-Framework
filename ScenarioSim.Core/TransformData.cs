@@ -13,6 +13,7 @@ namespace ScenarioSim.Core
         public Vector3f Scale { get; set; }
 
         public Transform(Vector3f position, Vector3f rotation, Vector3f scale)
+            : this()
         {
             Position = position;
             Rotation = rotation;

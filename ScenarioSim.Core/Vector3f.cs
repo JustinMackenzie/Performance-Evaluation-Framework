@@ -13,6 +13,7 @@ namespace ScenarioSim.Core
         public float Z { get; set; }
 
         public Vector3f(float x, float y, float z)
+            : this()
         {
             X = x;
             Y = y;
