@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Core.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -68,6 +69,7 @@
     <Compile Include="StopTimerStateExitAction.cs" />
     <Compile Include="TrackedEventParameters.cs" />
     <Compile Include="UmlStateChartAction.cs" />
+    <Compile Include="Vector3f.cs" />
     <Compile Include="XmlFileSerializer.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="IResultWriter.cs" />

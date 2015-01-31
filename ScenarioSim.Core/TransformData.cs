@@ -8,9 +8,9 @@ namespace ScenarioSim.Core
 {
     public struct Transform
     {
-        public Vector3f Position;
-        public Vector3f Rotation;
-        public Vector3f Scale;
+        public Vector3f Position { get; set; }
+        public Vector3f Rotation { get; set; }
+        public Vector3f Scale { get; set; }
 
         public Transform(Vector3f position, Vector3f rotation, Vector3f scale)
         {
@@ -22,25 +22,6 @@ namespace ScenarioSim.Core
         public override string ToString()
         {
             return string.Format("Position:{0}; Rotation:{1}; Scale:{2}", Position, Rotation, Scale);
-        }
-    }
-
-    public struct Vector3f
-    {
-        public float X;
-        public float Y;
-        public float Z;
-
-        public Vector3f(float x, float y, float z)
-        {
-            X = x;
-            Y = y;
-            Z = z;
-        }
-
-        public override string ToString()
-        {
-            return string.Format("[{0} {1} {2}]", X, Y, Z);
         }
     }
 }
