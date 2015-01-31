@@ -9,7 +9,7 @@ namespace ScenarioSim.UmlStateChart
         StateChart stateChart;
         StateDataContainer dataContainer;
 
-        public bool Active { get { return !IsStateActive("Evaluate"); } }
+        public bool IsActive { get { return !IsStateActive("Evaluate"); } }
 
         public UmlStateChartEngine(Scenario scenario, ActionFactory factory, IComplicationEnactorRepository repo)
         {

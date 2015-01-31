@@ -54,8 +54,6 @@
     <Compile Include="IScenarioEventLogger.cs" />
     <Compile Include="IScenarioSimulator.cs" />
     <Compile Include="ISimulatorEventHandler.cs" />
-    <Compile Include="IStateChartEngine.cs" />
-    <Compile Include="IStateChartEvent.cs" />
     <Compile Include="IStateChartEventHandler.cs" />
     <Compile Include="IStateChartEventLogger.cs" />
     <Compile Include="IStateChartReader.cs" />

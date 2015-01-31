@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ScenarioSim.Utility;
 using ScenarioSim.UmlStateChart;
 using UmlStateChart;
 
@@ -91,7 +90,7 @@ namespace ScenarioSim.Core
             }
         }
 
-        private void AddComplications(ComplicationCollection collection)
+        private void AddComplications(List<Complication> collection)
         {
             foreach(Complication complication in collection)
             {

@@ -31,13 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NSubstitute">
-      <HintPath>..\..\..\..\..\Downloads\NSubstitute.1.8.1.0\lib\net45\NSubstitute.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.4\bin\framework\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,28 +41,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Complication.cs" />
-    <Compile Include="ComplicationCollection.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="IFileSerializer.cs" />
     <Compile Include="TaskDependantComplication.cs" />
     <Compile Include="Vector3f.cs" />
     <Compile Include="IStateChartEngine.cs" />
     <Compile Include="IStateChartEvent.cs" />
-    <Compile Include="IStateChartReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenario.cs" />
-    <Compile Include="TaskTransitionCollection.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="TaskTransition.cs" />
     <Compile Include="TransformData.cs" />
     <Compile Include="TreeNode.cs" />
     <Compile Include="XmlFileSerializer.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\StateChart\UmlStateChart.csproj">
-      <Project>{32304491-f871-4d59-a317-7ae533850b0b}</Project>
-      <Name>UmlStateChart</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

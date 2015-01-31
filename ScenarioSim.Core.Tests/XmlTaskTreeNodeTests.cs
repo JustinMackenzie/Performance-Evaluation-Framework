@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using System.IO;
-using ScenarioSim.Utility;
 using ScenarioSim.Core;
 using NSubstitute;
 
@@ -45,7 +44,7 @@ namespace ScenarioSim.Core.Tests
         }
 
         [Test]
-        public void TestSerializeTaskTransitionCollection()
+        public void TestSerializeTaskTransitions()
         {
             Task selectLongestAxis = new Task() { Name = "Select Longest Axis" };
             Task PositionTool = new Task() { Name = "Position Tool" };
@@ -69,7 +68,7 @@ namespace ScenarioSim.Core.Tests
 
             string filename = "Task Transitions.xml";
 
-            TaskTransitionCollection transitions = new TaskTransitionCollection();
+            List<TaskTransition> transitions = new List<TaskTransition>();
 
             transitions.Add(new TaskTransition() { EventId = 1, Source = "Position Tool", Destination = "Evaluate" });
             transitions.Add(new TaskTransition() { EventId = 2, Source = "Change View", Destination = "Evaluate" });
@@ -81,7 +80,7 @@ namespace ScenarioSim.Core.Tests
             transitions.Add(new TaskTransition() { EventId = 8, Source = "Look Camera", Destination = "Pan Camera" });
             transitions.Add(new TaskTransition() { EventId = 9, Source = "Look Camera", Destination = "Zoom Camera" });
 
-            XmlFileSerializer<TaskTransitionCollection> serializer = new XmlFileSerializer<TaskTransitionCollection>();
+            XmlFileSerializer<List<TaskTransition>> serializer = new XmlFileSerializer<List<TaskTransition>>();
             serializer.Serialize(filename, transitions);
 
             Scenario scenario = new Scenario()
@@ -90,7 +89,7 @@ namespace ScenarioSim.Core.Tests
                 TaskTransitions = transitions
             };
 
-            scenario.Complications = new ComplicationCollection();
+            scenario.Complications = new List<Complication>();
             scenario.Complications.Add(new TaskDependantComplication()
                 {
                     Id = 1,

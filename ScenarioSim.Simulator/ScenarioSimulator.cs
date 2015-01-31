@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ScenarioSim.UmlStateChart;
-using ScenarioSim.Utility;
 using System.IO;
 
 namespace ScenarioSim.Core
@@ -20,7 +19,7 @@ namespace ScenarioSim.Core
         TimeKeeper timeKeeper;
         string folderPath;
 
-        public bool IsActive { get { return stateChart.Active; } }
+        public bool IsActive { get { return stateChart.IsActive; } }
 
         public ScenarioSimulator(string scenarioFile, string folderPath)
         {
