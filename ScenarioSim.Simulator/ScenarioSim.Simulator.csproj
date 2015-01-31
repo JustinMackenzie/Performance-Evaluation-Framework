@@ -40,7 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionFactory.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="ComplicationRepository.cs" />
     <Compile Include="CSVResultWriter.cs" />
     <Compile Include="CsvSimulatorEventLogger.cs" />
@@ -50,7 +49,6 @@
     <Compile Include="FileSimulatorEventLogger.cs" />
     <Compile Include="IComplicationEnactor.cs" />
     <Compile Include="IComplicationEnactorRepository.cs" />
-    <Compile Include="IFileSerializer.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="IResultWriter.cs" />
     <Compile Include="IScenarioEventLogger.cs" />
@@ -83,7 +81,6 @@
     <Compile Include="UmlStateChartAction.cs" />
     <Compile Include="UmlStateChartEngine.cs" />
     <Compile Include="UmlStateChartEvent.cs" />
-    <Compile Include="XmlFileSerializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ScenarioSim.Core\ScenarioSim.Core.csproj">

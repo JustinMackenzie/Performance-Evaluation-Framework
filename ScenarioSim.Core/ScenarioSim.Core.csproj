@@ -50,6 +50,7 @@
     <Compile Include="Complication.cs" />
     <Compile Include="ComplicationCollection.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="IFileSerializer.cs" />
     <Compile Include="TaskDependantComplication.cs" />
     <Compile Include="Vector3f.cs" />
     <Compile Include="IStateChartEngine.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="TaskTransition.cs" />
     <Compile Include="TransformData.cs" />
     <Compile Include="TreeNode.cs" />
+    <Compile Include="XmlFileSerializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StateChart\UmlStateChart.csproj">
