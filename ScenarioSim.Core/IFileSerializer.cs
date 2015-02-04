@@ -1,5 +1,4 @@
-﻿using System;
-namespace ScenarioSim.Core
+﻿namespace ScenarioSim.Core
 {
     /// <summary>
     /// Represents an abstract serializer that serializes data to a file and 

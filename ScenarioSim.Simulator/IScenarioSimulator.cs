@@ -33,5 +33,12 @@ namespace ScenarioSim.Core
         /// </summary>
         /// <param name="enactor">The enactor to be added to the simulator.</param>
         void AddEnactor(IComplicationEnactor enactor);
+
+        /// <summary>
+        /// Determines if the task with the given name is active.
+        /// </summary>
+        /// <param name="task">The name of the given task.</param>
+        /// <returns>True if the task is active.</returns>
+        bool IsTaskActive(string task);
     }
 }

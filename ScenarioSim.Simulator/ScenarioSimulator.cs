@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using ScenarioSim.UmlStateChart;
 using System.IO;
 
@@ -105,6 +104,11 @@ namespace ScenarioSim.Core
         private void Complete()
         {
             simulatorEventHandler.Save(folderPath + "\\SimulatorEvents.xml");
+        }
+
+        public bool IsTaskActive(string task)
+        {
+            return stateChart.IsStateActive(task);
         }
     }
 }
