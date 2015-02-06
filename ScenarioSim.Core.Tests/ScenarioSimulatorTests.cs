@@ -39,11 +39,27 @@ namespace ScenarioSim.Core.Tests
         [Test]
         public void TestSubmitEvent()
         {
-            
-
             simulator.Start();
 
             simulator.SubmitSimulatorEvent(e);
+        }
+
+        [Test]
+        public void TestSubmitEvent2()
+        {
+            e = new SimulatorEvent()
+            {
+                Id = 5,
+                Name = "Change View",
+                Description = "The user has switched to change view.",
+                Timestamp = DateTime.Now,
+                Parameters = new List<EventParameter>()
+            };
+
+            simulator.Start();
+            simulator.SubmitSimulatorEvent(e);
+
+            Assert.IsTrue(simulator.IsTaskActive("Change View"));
         }
 
         [Test]
@@ -54,6 +70,15 @@ namespace ScenarioSim.Core.Tests
             simulator.AddEnactor(enactor);
 
             simulator.Start();
+
+            e = new SimulatorEvent()
+            {
+                Id = 2,
+                Name = "Collision",
+                Description = "The user has switched to change view.",
+                Timestamp = DateTime.Now,
+                Parameters = new List<EventParameter>()
+            };
 
             simulator.SubmitSimulatorEvent(e);
 

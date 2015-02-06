@@ -44,15 +44,14 @@ namespace ScenarioSim.Core.Tests
         }
 
         [Test]
-        public void TestSerializeTaskTransitions()
+        public void TestSerializeScenario()
         {
             Task selectLongestAxis = new Task() { Name = "Select Longest Axis" };
             Task PositionTool = new Task() { Name = "Position Tool" };
             Task ChangeView = new Task() { Name = "Change View" };
             Task TranslateTool = new Task() { Name = "Translate Tool" };
             Task RotateTool = new Task() { Name = "Rotate Tool" };
-            Task PanCamera = new Task() { Name = "Pan Camera" };
-            Task LookCamera = new Task() { Name = "Look Camera" };
+            Task MoveCamera = new Task() { Name = "Move Camera" };
             Task ZoomCamera = new Task() { Name = "Zoom Camera" };
             Task Complete = new Task() { Name = "Evaluate", Final = true };
 
@@ -61,8 +60,7 @@ namespace ScenarioSim.Core.Tests
             selectNode.AppendChild(ChangeView);
             selectNode.children[0].AppendChild(TranslateTool);
             selectNode.children[0].AppendChild(RotateTool);
-            selectNode.children[1].AppendChild(PanCamera);
-            selectNode.children[1].AppendChild(LookCamera);
+            selectNode.children[1].AppendChild(MoveCamera);
             selectNode.children[1].AppendChild(ZoomCamera);
             selectNode.AppendChild(Complete);
 
@@ -71,14 +69,12 @@ namespace ScenarioSim.Core.Tests
             List<TaskTransition> transitions = new List<TaskTransition>();
 
             transitions.Add(new TaskTransition() { EventId = 1, Source = "Position Tool", Destination = "Evaluate" });
-            transitions.Add(new TaskTransition() { EventId = 2, Source = "Change View", Destination = "Evaluate" });
-            transitions.Add(new TaskTransition() { EventId = 3, Source = "Translate Tool", Destination = "Rotate Tool" });
-            transitions.Add(new TaskTransition() { EventId = 4, Source = "Pan Camera", Destination = "Zoom Camera" });
-            transitions.Add(new TaskTransition() { EventId = 5, Source = "Pan Camera", Destination = "Look Camera" });
-            transitions.Add(new TaskTransition() { EventId = 6, Source = "Zoom Camera", Destination = "Pan Camera" });
-            transitions.Add(new TaskTransition() { EventId = 7, Source = "Zoom Camera", Destination = "Look Camera" });
-            transitions.Add(new TaskTransition() { EventId = 8, Source = "Look Camera", Destination = "Pan Camera" });
-            transitions.Add(new TaskTransition() { EventId = 9, Source = "Look Camera", Destination = "Zoom Camera" });
+            transitions.Add(new TaskTransition() { EventId = 1, Source = "Change View", Destination = "Evaluate" });
+            transitions.Add(new TaskTransition() { EventId = 2, Source = "Translate Tool", Destination = "Rotate Tool" });
+            transitions.Add(new TaskTransition() { EventId = 3, Source = "Move Camera", Destination = "Zoom Camera" });
+            transitions.Add(new TaskTransition() { EventId = 4, Source = "Zoom Camera", Destination = "Move Camera" });
+            transitions.Add(new TaskTransition() { EventId = 6, Source = "Change View", Destination = "Position Tool" });
+            transitions.Add(new TaskTransition() { EventId = 5, Source = "Position Tool", Destination = "Change View" });
 
             XmlFileSerializer<List<TaskTransition>> serializer = new XmlFileSerializer<List<TaskTransition>>();
             serializer.Serialize(filename, transitions);
@@ -94,7 +90,7 @@ namespace ScenarioSim.Core.Tests
                 {
                     Id = 1,
                     Name = "Test Complication",
-                    TaskName = "Position Tool",
+                    TaskName = "Translate Tool",
                     Entry = false
                 }
                 );

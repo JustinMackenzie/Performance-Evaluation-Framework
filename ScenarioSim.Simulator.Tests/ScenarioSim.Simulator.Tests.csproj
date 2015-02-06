@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9A54A7AC-4E61-49AE-8B5A-7E8004898B3D}</ProjectGuid>
+    <ProjectGuid>{CF337552-70C1-4CC0-8839-A9787BA653FE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScenarioSim.Core.Tests</RootNamespace>
-    <AssemblyName>ScenarioSim.Core.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>ScenarioSim.Simulator.Tests</RootNamespace>
+    <AssemblyName>ScenarioSim.Simulator.Tests</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,19 +42,15 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.CSharp">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScenarioSimulatorTests.cs" />
-    <Compile Include="XmlFileSerializerTest.cs" />
-    <Compile Include="XmlSimulatorEventCollectionSerialzerTests.cs" />
-    <Compile Include="XmlTaskTreeNodeTests.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+    <Compile Include="SimulatorEventTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ScenarioSim.Core\ScenarioSim.Core.csproj">
@@ -64,6 +61,9 @@
       <Project>{076f2875-224e-4d46-8ec9-4c1de33fa3fc}</Project>
       <Name>ScenarioSim.Simulator</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
