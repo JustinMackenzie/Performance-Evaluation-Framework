@@ -1,6 +1,6 @@
 ﻿namespace ScenarioSim.Creator
 {
-    partial class Form1
+    partial class HierarchyForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HierarchyForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAddTask = new System.Windows.Forms.ToolStripButton();
@@ -86,6 +86,7 @@
             this.creatorView.ArrowMoveLarge = 10F;
             this.creatorView.ArrowMoveSmall = 1F;
             this.creatorView.BackColor = System.Drawing.Color.White;
+            this.creatorView.CopiesSubtrees = true;
             this.creatorView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.creatorView.Location = new System.Drawing.Point(0, 0);
             this.creatorView.Name = "creatorView";
@@ -93,14 +94,14 @@
             this.creatorView.TabIndex = 0;
             this.creatorView.BackgroundDoubleClicked += new Northwoods.Go.GoInputEventHandler(this.creatorView_DoubleClick);
             // 
-            // Form1
+            // HierarchyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 437);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "Form1";
-            this.Text = "Scenario Creator";
+            this.Name = "HierarchyForm";
+            this.Text = "Hierarchy Viewer";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);

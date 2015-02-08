@@ -11,11 +11,11 @@ using ScenarioSim.Core;
 
 namespace ScenarioSim.Creator
 {
-    public partial class Form1 : Form
+    public partial class HierarchyForm : Form
     {
         ToolType tool;
 
-        public Form1()
+        public HierarchyForm()
         {
             InitializeComponent();
             tool = ToolType.Task;
