@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Simulator", "Sc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Simulator.Tests", "ScenarioSim.Simulator.Tests\ScenarioSim.Simulator.Tests.csproj", "{CF337552-70C1-4CC0-8839-A9787BA653FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Creator", "ScenarioSim.Creator\ScenarioSim.Creator.csproj", "{385011CD-F1EC-4A94-9CCC-58DE5F0A373B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{CF337552-70C1-4CC0-8839-A9787BA653FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF337552-70C1-4CC0-8839-A9787BA653FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF337552-70C1-4CC0-8839-A9787BA653FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{385011CD-F1EC-4A94-9CCC-58DE5F0A373B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{385011CD-F1EC-4A94-9CCC-58DE5F0A373B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{385011CD-F1EC-4A94-9CCC-58DE5F0A373B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{385011CD-F1EC-4A94-9CCC-58DE5F0A373B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
