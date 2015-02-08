@@ -29,6 +29,15 @@ namespace ScenarioSim.Creator
 
         private void toolStripButtonHierarchy_Click(object sender, EventArgs e)
         {
+            foreach (Form child in MdiChildren)
+            {
+                if (child is HierarchyForm)
+                {
+                    child.BringToFront();
+                    return;
+                }
+            }
+
             HierarchyForm form = new HierarchyForm(scenario);
             form.MdiParent = this;
             form.Show();
