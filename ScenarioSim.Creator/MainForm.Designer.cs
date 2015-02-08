@@ -31,13 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonHierarchy = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonFlowChart = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonHierarchy});
+            this.toolStripButtonHierarchy,
+            this.toolStripButtonFlowChart});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(888, 54);
@@ -54,6 +56,16 @@
             this.toolStripButtonHierarchy.Text = "Hierarchy";
             this.toolStripButtonHierarchy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButtonHierarchy.Click += new System.EventHandler(this.toolStripButtonHierarchy_Click);
+            // 
+            // toolStripButtonFlowChart
+            // 
+            this.toolStripButtonFlowChart.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonFlowChart.Image")));
+            this.toolStripButtonFlowChart.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonFlowChart.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonFlowChart.Name = "toolStripButtonFlowChart";
+            this.toolStripButtonFlowChart.Size = new System.Drawing.Size(36, 51);
+            this.toolStripButtonFlowChart.Text = "Flow";
+            this.toolStripButtonFlowChart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // MainForm
             // 
@@ -76,5 +88,6 @@
 
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButtonHierarchy;
+        private System.Windows.Forms.ToolStripButton toolStripButtonFlowChart;
     }
 }

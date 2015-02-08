@@ -41,7 +41,7 @@ namespace ScenarioSim.Creator
         protected override GoShape CreateShape(GoPort p)
         {
             // create the bigger circle/ellipse around and behind the port
-            GoShape e = new GoEllipse();
+            GoShape e = new GoRectangle();
             e.FillEllipseGradient(Color.FromArgb(63 * myRandom.Next(5), 63 * myRandom.Next(5), 63 * myRandom.Next(5)), Color.White);
             e.BrushFocusScales = new SizeF(.2f, .2f);
             e.Size = new SizeF(30, 26);
