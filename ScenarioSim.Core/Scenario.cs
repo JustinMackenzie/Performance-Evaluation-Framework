@@ -8,6 +8,11 @@ namespace ScenarioSim.Core
     public class Scenario
     {
         /// <summary>
+        /// The name of the scenario.
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
         /// The task to be performed in this scenario.
         /// </summary>
         public TreeNode<Task> Task{ get; set; }
