@@ -20,7 +20,7 @@ namespace ScenarioSim.Core
         /// Submits the given event to the simulator to be processed.
         /// </summary>
         /// <param name="e">The event to be processed.</param>
-        void SubmitSimulatorEvent(SimulatorEvent e);
+        void SubmitSimulatorEvent(ScenarioEvent e);
         
         /// <summary>
         /// Determines whether the simulator is active.

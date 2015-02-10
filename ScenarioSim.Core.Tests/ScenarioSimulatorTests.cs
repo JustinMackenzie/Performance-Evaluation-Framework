@@ -15,18 +15,18 @@ namespace ScenarioSim.Core.Tests
     class ScenarioSimulatorTests
     {
         IScenarioSimulator simulator;
-        SimulatorEvent e;
+        ScenarioEvent e;
 
         [SetUp]
         public void Initialize()
         {
             simulator = new ScenarioSimulator("Scenario.xml", "C:\\Users\\Jmac\\Documents");
 
-            List<EventParameter> parameters = new List<EventParameter>();
+            EventParameterCollection parameters = new EventParameterCollection();
             parameters.Add(new EventParameter() { Name = "Tip Location", Value = new Vector3f(5, 2, 7) });
 
 
-            e = new SimulatorEvent()
+            e = new ScenarioEvent()
             {
                 Id = 1,
                 Name = "Test Event",
@@ -47,13 +47,13 @@ namespace ScenarioSim.Core.Tests
         [Test]
         public void TestSubmitEvent2()
         {
-            e = new SimulatorEvent()
+            e = new ScenarioEvent()
             {
                 Id = 5,
                 Name = "Change View",
                 Description = "The user has switched to change view.",
                 Timestamp = DateTime.Now,
-                Parameters = new List<EventParameter>()
+                Parameters = new EventParameterCollection()
             };
 
             simulator.Start();
@@ -71,13 +71,13 @@ namespace ScenarioSim.Core.Tests
 
             simulator.Start();
 
-            e = new SimulatorEvent()
+            e = new ScenarioEvent()
             {
                 Id = 2,
                 Name = "Collision",
                 Description = "The user has switched to change view.",
                 Timestamp = DateTime.Now,
-                Parameters = new List<EventParameter>()
+                Parameters = new EventParameterCollection()
             };
 
             simulator.SubmitSimulatorEvent(e);

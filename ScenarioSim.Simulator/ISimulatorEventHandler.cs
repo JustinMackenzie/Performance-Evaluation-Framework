@@ -3,7 +3,7 @@ namespace ScenarioSim.Core
 {
     interface ISimulatorEventHandler
     {
-        void SubmitEvent(SimulatorEvent e);
+        void SubmitEvent(ScenarioEvent e);
         void Save(string filename);
     }
 }

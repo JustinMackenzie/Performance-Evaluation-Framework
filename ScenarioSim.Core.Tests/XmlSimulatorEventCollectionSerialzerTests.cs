@@ -17,8 +17,8 @@ namespace ScenarioSim.Core.Tests
             string name;
             string description;
             DateTime timestamp;
-            List<EventParameter> parameters;
-            SimulatorEventCollection collection;
+            EventParameterCollection parameters;
+            ScenarioEventCollection collection;
 
         [TestFixtureSetUp]
         public void Initialize()
@@ -27,14 +27,14 @@ namespace ScenarioSim.Core.Tests
             name = "test event";
             description = "test description";
             timestamp = DateTime.Now;
-             parameters = new List<EventParameter>();
+             parameters = new EventParameterCollection();
             parameters.Add(new EventParameter() { Name = "A parameter", Value = 25 });
 
-            collection = new SimulatorEventCollection();
+            collection = new ScenarioEventCollection();
 
             for (int i = 0; i < 25; i++)
             {
-                collection.Add(new SimulatorEvent()
+                collection.Add(new ScenarioEvent()
                 {
                     Id = id,
                     Name = name,
@@ -48,7 +48,7 @@ namespace ScenarioSim.Core.Tests
         [Test]
         public void TestSerialize()
         {
-            XmlFileSerializer<SimulatorEventCollection> serializer = new XmlFileSerializer<SimulatorEventCollection>();
+            XmlFileSerializer<ScenarioEventCollection> serializer = new XmlFileSerializer<ScenarioEventCollection>();
             serializer.Serialize(filename, collection);
 
 
@@ -58,10 +58,10 @@ namespace ScenarioSim.Core.Tests
         [Test]
         public void TestDeserialize()
         {
-            XmlFileSerializer<SimulatorEventCollection> serializer = new XmlFileSerializer<SimulatorEventCollection>();
+            XmlFileSerializer<ScenarioEventCollection> serializer = new XmlFileSerializer<ScenarioEventCollection>();
             serializer.Serialize(filename, collection);
 
-            SimulatorEventCollection collection2 = serializer.Deserialize(filename);
+            ScenarioEventCollection collection2 = serializer.Deserialize(filename);
             Assert.IsNotNull(collection2);
         }
     }

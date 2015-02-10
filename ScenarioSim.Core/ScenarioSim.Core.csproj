@@ -43,7 +43,11 @@
   <ItemGroup>
     <Compile Include="Complication.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="EventParameter.cs" />
+    <Compile Include="EventParameterCollection.cs" />
     <Compile Include="IFileSerializer.cs" />
+    <Compile Include="ScenarioEvent.cs" />
+    <Compile Include="ScenarioEventCollection.cs" />
     <Compile Include="TaskDependantComplication.cs" />
     <Compile Include="Vector3f.cs" />
     <Compile Include="IStateChartEngine.cs" />

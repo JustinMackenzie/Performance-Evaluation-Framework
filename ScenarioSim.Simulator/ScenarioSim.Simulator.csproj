@@ -46,7 +46,6 @@
     <Compile Include="CsvSimulatorEventLogger.cs" />
     <Compile Include="EnactComplicationAction.cs" />
     <Compile Include="EventFactory.cs" />
-    <Compile Include="EventParameter.cs" />
     <Compile Include="FileSimulatorEventLogger.cs" />
     <Compile Include="IComplicationEnactor.cs" />
     <Compile Include="IComplicationEnactorRepository.cs" />
@@ -65,8 +64,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultManager.cs" />
     <Compile Include="ScenarioSimulator.cs" />
-    <Compile Include="SimulatorEvent.cs" />
-    <Compile Include="SimulatorEventCollection.cs" />
     <Compile Include="SimulatorEventHandler.cs" />
     <Compile Include="StartTimerStateEntryAction.cs" />
     <Compile Include="StateChartBuilder.cs" />

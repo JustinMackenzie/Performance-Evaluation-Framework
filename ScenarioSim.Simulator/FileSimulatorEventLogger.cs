@@ -13,12 +13,12 @@ namespace ScenarioSim.Core
             this.filename = filename;
         }
 
-        public void Log(SimulatorEvent e)
+        public void Log(ScenarioEvent e)
         {
             using (StreamWriter writer = File.AppendText(filename))
                 writer.WriteLine(GetLogEntry(e));
         }
 
-        protected abstract string GetLogEntry(SimulatorEvent e);
+        protected abstract string GetLogEntry(ScenarioEvent e);
     }
 }

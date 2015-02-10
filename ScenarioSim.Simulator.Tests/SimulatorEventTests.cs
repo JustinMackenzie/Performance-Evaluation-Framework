@@ -14,16 +14,16 @@ namespace ScenarioSim.Simulator.Tests
         [Test]
         public void TestSerializeEvent()
         {
-            IFileSerializer<SimulatorEvent> serializer = new XmlFileSerializer<SimulatorEvent>();
+            IFileSerializer<ScenarioEvent> serializer = new XmlFileSerializer<ScenarioEvent>();
 
-            List<EventParameter> parameters = new List<EventParameter>();
+            EventParameterCollection parameters = new EventParameterCollection();
             parameters.Add(new EventParameter()
                 {
                     Name = "Test Vector",
                     Value = new Vector3f(1,1,1)
                 });
 
-            SimulatorEvent e = new SimulatorEvent()
+            ScenarioEvent e = new ScenarioEvent()
             {
                 Id = 5,
                 Name = "Name",

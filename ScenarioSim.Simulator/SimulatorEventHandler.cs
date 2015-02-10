@@ -4,16 +4,16 @@ namespace ScenarioSim.Core
 {
     class SimulatorEventHandler : ISimulatorEventHandler
     {
-        SimulatorEventCollection events;
+        ScenarioEventCollection events;
         List<ISimulatorEventLogger> loggers;
 
         public SimulatorEventHandler(List<ISimulatorEventLogger> loggers)
         {
-            events = new SimulatorEventCollection();
+            events = new ScenarioEventCollection();
             this.loggers = loggers;
         }
 
-        public void SubmitEvent(SimulatorEvent e)
+        public void SubmitEvent(ScenarioEvent e)
         {
             events.Add(e);
             foreach (ISimulatorEventLogger logger in loggers)
@@ -22,7 +22,7 @@ namespace ScenarioSim.Core
 
         public void Save(string filename)
         {
-            IFileSerializer<SimulatorEventCollection> serializer = new XmlFileSerializer<SimulatorEventCollection>();
+            IFileSerializer<ScenarioEventCollection> serializer = new XmlFileSerializer<ScenarioEventCollection>();
             serializer.Serialize(filename, events);
         }
     }

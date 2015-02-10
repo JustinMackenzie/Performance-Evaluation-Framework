@@ -10,7 +10,7 @@ namespace ScenarioSim.Core
     {
         public CsvSimulatorEventLogger(string filename) : base(filename) { }
 
-        protected override string GetLogEntry(SimulatorEvent e)
+        protected override string GetLogEntry(ScenarioEvent e)
         {
             StringBuilder builder = new StringBuilder();
             foreach (EventParameter p in e.Parameters)

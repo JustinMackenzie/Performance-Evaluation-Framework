@@ -5,5 +5,5 @@ using System.Text;
 
 namespace ScenarioSim.Core
 {
-    public class SimulatorEventCollection : List<SimulatorEvent> { }
+    public class ScenarioEventCollection : List<ScenarioEvent> { }
 }

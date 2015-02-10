@@ -8,7 +8,7 @@ namespace ScenarioSim.Core
     {
         public TextSimulatorEventLogger(string filename) : base(filename) { }
 
-        protected override string GetLogEntry(SimulatorEvent e)
+        protected override string GetLogEntry(ScenarioEvent e)
         {
             StringBuilder builder = new StringBuilder();
             builder.Append(string.Format("[{0}] Name: {1}; Description: {2}; Parameters: ",

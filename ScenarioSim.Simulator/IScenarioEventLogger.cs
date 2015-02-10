@@ -7,6 +7,6 @@ namespace ScenarioSim.Core
 {
     interface ISimulatorEventLogger
     {
-        void Log(SimulatorEvent e);
+        void Log(ScenarioEvent e);
     }
 }

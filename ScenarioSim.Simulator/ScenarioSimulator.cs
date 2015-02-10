@@ -56,7 +56,7 @@ namespace ScenarioSim.Core
             stateChart.Start();
         }
 
-        public void SubmitSimulatorEvent(SimulatorEvent e)
+        public void SubmitSimulatorEvent(ScenarioEvent e)
         {
             if (!IsActive)
                 throw new Exception("Simulator has not been started. Please call Start() before submitting events.");
@@ -96,7 +96,7 @@ namespace ScenarioSim.Core
                     select p).Count<EventParameterPair>() > 0;
         }
 
-        private IStateChartEvent TransformSimulatorEvent(SimulatorEvent e)
+        private IStateChartEvent TransformSimulatorEvent(ScenarioEvent e)
         {
             return new UmlStateChartEvent() { Id = e.Id, Name = e.Name, Timestamp = DateTime.Now };
         }
