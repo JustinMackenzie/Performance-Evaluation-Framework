@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Simulator.Tests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Creator", "ScenarioSim.Creator\ScenarioSim.Creator.csproj", "{385011CD-F1EC-4A94-9CCC-58DE5F0A373B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Playback", "ScenarioSim.Playback\ScenarioSim.Playback.csproj", "{27886252-69D0-4DA2-8231-249DD6A7F8E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Playback.Tests", "ScenarioSim.Playback.Tests\ScenarioSim.Playback.Tests.csproj", "{0B8241BC-B346-42E4-A2A5-5B0128538740}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{385011CD-F1EC-4A94-9CCC-58DE5F0A373B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{385011CD-F1EC-4A94-9CCC-58DE5F0A373B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{385011CD-F1EC-4A94-9CCC-58DE5F0A373B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27886252-69D0-4DA2-8231-249DD6A7F8E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27886252-69D0-4DA2-8231-249DD6A7F8E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27886252-69D0-4DA2-8231-249DD6A7F8E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27886252-69D0-4DA2-8231-249DD6A7F8E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B8241BC-B346-42E4-A2A5-5B0128538740}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B8241BC-B346-42E4-A2A5-5B0128538740}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B8241BC-B346-42E4-A2A5-5B0128538740}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B8241BC-B346-42E4-A2A5-5B0128538740}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
