@@ -17,6 +17,7 @@ namespace ScenarioSim.Core
         IComplicationEnactorRepository repo = new ComplicationEnactorRepository();
         TimeKeeper timeKeeper;
         string folderPath;
+        Scenario scenario;
 
         public bool IsActive { get { return stateChart.IsActive; } }
 
@@ -28,7 +29,7 @@ namespace ScenarioSim.Core
             timeKeeper = new TimeKeeper();
 
             IFileSerializer<Scenario> serializer = new XmlFileSerializer<Scenario>();
-            Scenario scenario = serializer.Deserialize(scenarioFile);
+            scenario = serializer.Deserialize(scenarioFile);
 
             ActionFactory actionFactory = new ActionFactory(new TextLogger(this.folderPath + "\\StateChartLog.txt"), timeKeeper,
                 new TextLogger(this.folderPath + "\\ComplicationLog.txt"));
@@ -53,6 +54,7 @@ namespace ScenarioSim.Core
 
         public void Start()
         {
+            timeKeeper.StartTimer(scenario.Task.Value.Name);
             stateChart.Start();
         }
 
@@ -103,6 +105,8 @@ namespace ScenarioSim.Core
 
         private void Complete()
         {
+            timeKeeper.StopAllTimers();
+            timeKeeper.LogTimes(folderPath + "\\TaskTimes.csv");
             simulatorEventHandler.Save(folderPath + "\\SimulatorEvents.xml");
         }
 

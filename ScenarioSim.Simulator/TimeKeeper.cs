@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -36,7 +37,23 @@ namespace ScenarioSim.Core
                 _inactiveTimes[state] += deltaTime;
             else
                 _inactiveTimes.Add(state, deltaTime);
+        }
 
+        public void StopAllTimers()
+        {
+            foreach (string state in _activeTimes.Keys.ToList())
+                StopTimer(state);
+        }
+
+        public void LogTimes(string filename)
+        {
+            using (StreamWriter writer = File.AppendText(filename))
+            {
+                foreach (KeyValuePair<string, long> p in InactiveTimes)
+                {
+                    writer.WriteLine(string.Format("{0},{1}", p.Key, (1.0 * p.Value / TimeSpan.TicksPerSecond)));
+                }
+            }
         }
 
         public override string ToString()

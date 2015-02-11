@@ -24,7 +24,9 @@ namespace ScenarioSim.Core
 
         public StateChart Build(Scenario scenario)
         {
-            StateChart stateChart = new StateChart(scenario.Task.Value.Name);
+            string name = scenario.Task.Value.Name;
+
+            StateChart stateChart = new StateChart(name);
 
             List<TreeNode<Task>> childrenNodes = scenario.Task.children;
 
