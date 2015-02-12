@@ -117,6 +117,20 @@ namespace ScenarioSim.Core
             result.TaskResult = BuildTaskResultTree(scenario.Task);
             IFileSerializer<SimulationResult> serializer = new XmlFileSerializer<SimulationResult>();
             serializer.Serialize(folderPath + "\\SimulationResult.xml", result);
+
+            List<ITaskResultLogger> taskResultLoggers = new List<ITaskResultLogger>();
+            taskResultLoggers.Add(new CsvTaskResultLogger());
+
+            LogTaskResult(result.TaskResult, taskResultLoggers);
+        }
+
+        private void LogTaskResult(TreeNode<TaskResult> result, List<ITaskResultLogger> loggers)
+        {
+            foreach (ITaskResultLogger logger in loggers)
+                logger.LogTaskResult(result, string.Format("{0}\\{1}", folderPath, result.Value.TaskName));
+
+            foreach(TreeNode<TaskResult> child in result.children)
+                LogTaskResult(child, loggers);
         }
 
         private TreeNode<TaskResult> BuildTaskResultTree(TreeNode<Task> task)

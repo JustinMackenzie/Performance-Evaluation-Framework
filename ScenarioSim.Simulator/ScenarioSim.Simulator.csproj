@@ -43,6 +43,7 @@
     <Compile Include="ActionFactory.cs" />
     <Compile Include="ComplicationRepository.cs" />
     <Compile Include="CsvSimulatorEventLogger.cs" />
+    <Compile Include="CsvTaskResultLogger.cs" />
     <Compile Include="EnactComplicationAction.cs" />
     <Compile Include="EventFactory.cs" />
     <Compile Include="FileSimulatorEventLogger.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="IStateChartEventHandler.cs" />
     <Compile Include="IStateChartEventLogger.cs" />
     <Compile Include="IStateChartReader.cs" />
+    <Compile Include="ITaskResultLogger.cs" />
     <Compile Include="LogComplicationAction.cs" />
     <Compile Include="LogStateEntryAction.cs" />
     <Compile Include="LogStateExitAction.cs" />
