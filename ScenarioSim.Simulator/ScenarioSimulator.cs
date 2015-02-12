@@ -19,18 +19,22 @@ namespace ScenarioSim.Core
         TimeKeeper timeKeeper;
         string folderPath;
         Scenario scenario;
+        User user;
 
         public bool IsActive { get { return stateChart.IsActive; } }
 
-        public ScenarioSimulator(string scenarioFile, string folderPath)
+        public ScenarioSimulator(string scenarioFile, string folderPath, User user)
         {
-            this.folderPath = folderPath + "\\" + DateTime.Now.ToString("yyyy-MM-dd-HHmm");
-            Directory.CreateDirectory(this.folderPath);
+            
 
             timeKeeper = new TimeKeeper();
 
             IFileSerializer<Scenario> serializer = new XmlFileSerializer<Scenario>();
             scenario = serializer.Deserialize(scenarioFile);
+
+            this.user = user;
+            this.folderPath = folderPath + "\\" + string.Format("{0}-{1}-{2}", user.Name, scenario.Name, DateTime.Now.ToString("yyyy-MM-dd-HHmm"));
+            Directory.CreateDirectory(this.folderPath);
 
             ActionFactory actionFactory = new ActionFactory(new TextLogger(this.folderPath + "\\StateChartLog.txt"), timeKeeper,
                 new TextLogger(this.folderPath + "\\ComplicationLog.txt"));
@@ -113,6 +117,7 @@ namespace ScenarioSim.Core
         private void WriteResults()
         {
             SimulationResult result = new SimulationResult();
+            result.User = user;
             result.Events = simulatorEventHandler.Events;
             result.TaskResult = BuildTaskResultTree(scenario.Task);
             IFileSerializer<SimulationResult> serializer = new XmlFileSerializer<SimulationResult>();

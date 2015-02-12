@@ -7,6 +7,7 @@ using NUnit.Framework;
 using ScenarioSim.Core;
 using NSubstitute;
 using System.IO;
+using ScenarioSim.Simulator;
 
 
 namespace ScenarioSim.Core.Tests
@@ -20,7 +21,7 @@ namespace ScenarioSim.Core.Tests
         [SetUp]
         public void Initialize()
         {
-            simulator = new ScenarioSimulator("Scenario.xml", "C:\\Users\\Jmac\\Documents");
+            simulator = new ScenarioSimulator("Scenario.xml", "C:\\Users\\Jmac\\Documents", new User() { Id = 1, Name = "Justin" });
 
             EventParameterCollection parameters = new EventParameterCollection();
             parameters.Add(new EventParameter() { Name = "Tip Position", Value = new Vector3f(5, 2, 7) });

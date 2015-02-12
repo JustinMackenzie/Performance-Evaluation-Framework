@@ -78,6 +78,7 @@
     <Compile Include="UmlStateChartAction.cs" />
     <Compile Include="UmlStateChartEngine.cs" />
     <Compile Include="UmlStateChartEvent.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ScenarioSim.Core\ScenarioSim.Core.csproj">
