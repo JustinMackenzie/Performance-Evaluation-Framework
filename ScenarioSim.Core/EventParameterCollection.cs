@@ -16,9 +16,13 @@ namespace ScenarioSim.Core
         /// <param name="name">The name of the task.</param>
         public EventParameter FindByName(string name)
         {
-            return (from EventParameter param in this
-                    where param.Name == name
-                    select param).First<EventParameter>();
+            IEnumerable<EventParameter> query = from EventParameter param in this
+                                                where param.Name == name
+                                                select param;
+            if (query.Count() == 0)
+                return null;
+            else
+                return query.First();
         }
     }
 }

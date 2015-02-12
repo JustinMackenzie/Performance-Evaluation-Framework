@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using ScenarioSim.UmlStateChart;
 using System.IO;
+using ScenarioSim.Simulator;
 
 namespace ScenarioSim.Core
 {
@@ -48,8 +49,6 @@ namespace ScenarioSim.Core
 
             parameterKeeper = new ParameterKeeper();
             trackedParameters = new TrackedEventParameters();
-
-
         }
 
         public void Start()
@@ -108,6 +107,49 @@ namespace ScenarioSim.Core
             timeKeeper.StopAllTimers();
             timeKeeper.LogTimes(folderPath + "\\TaskTimes.csv");
             simulatorEventHandler.Save(folderPath + "\\SimulatorEvents.xml");
+            WriteResults();
+        }
+
+        private void WriteResults()
+        {
+            SimulationResult result = new SimulationResult();
+            result.Events = simulatorEventHandler.Events;
+            result.TaskResult = BuildTaskResultTree(scenario.Task);
+            IFileSerializer<SimulationResult> serializer = new XmlFileSerializer<SimulationResult>();
+            serializer.Serialize(folderPath + "\\SimulationResult.xml", result);
+        }
+
+        private TreeNode<TaskResult> BuildTaskResultTree(TreeNode<Task> task)
+        {
+            TaskResult result = new TaskResult();
+            TreeNode<TaskResult> resultTree = new TreeNode<TaskResult>(result);
+
+            result.TaskName = task.Value.Name;
+            result.Speed = timeKeeper.InactiveTimes.ContainsKey(result.TaskName) ?
+                timeKeeper.InactiveTimes[result.TaskName] :
+                0;
+
+            if (task.Value.EvaluateValue)
+            {
+                foreach(AccuracyMetric metric in task.Value.AccuracyMetrics)
+                {
+                    AccuracyMetricResult metricResult = new AccuracyMetricResult();
+                    metricResult.IdealValue = metric.IdealValue;
+                    ScenarioEvent e = (from ScenarioEvent ev in simulatorEventHandler.Events
+                                       where ev.Id == metric.ActualValue.EventId
+                                       select ev).First<ScenarioEvent>();
+                    metricResult.ActualValue = (Vector3f)e.Parameters.FindByName(metric.ActualValue.ParameterName).Value;
+                    metricResult.Error = metric.CalculateError(metricResult.ActualValue);
+                    metricResult.ValueName = metric.ValueName;
+
+                    result.Results.Add(metricResult);
+                }
+            }
+
+            foreach(TreeNode<Task> childTask in task.children)
+                resultTree.AppendChild(BuildTaskResultTree(childTask));
+
+            return resultTree;
         }
 
         public bool IsTaskActive(string task)

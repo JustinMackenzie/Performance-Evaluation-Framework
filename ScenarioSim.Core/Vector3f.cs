@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 namespace ScenarioSim.Core
 {
     /// <summary>
@@ -34,6 +35,42 @@ namespace ScenarioSim.Core
             X = x;
             Y = y;
             Z = z;
+        }
+
+        public float Magnitude
+        {
+            get
+            {
+                return (float)Math.Sqrt(X * X + Y * Y + Z * Z);
+            }
+        }
+
+        public static float Dot(Vector3f a, Vector3f b)
+        {
+            return a.X * b.X + a.Y * b.Y + a.Z * b.Z;
+        }
+
+        public static float AngleBetween(Vector3f a, Vector3f b)
+        {
+            return (float)Math.Acos(Dot(a, b) / (a.Magnitude * b.Magnitude));
+        }
+
+        public static float DistanceBetween(Vector3f a, Vector3f b)
+        {
+            return (float)Math.Sqrt(
+                Math.Pow(a.X - b.X, 2) +
+                Math.Pow(a.Y - b.Y, 2) +
+                Math.Pow(a.Z - b.Z, 2));
+        }
+
+        public static Vector3f operator +(Vector3f a, Vector3f b)
+        {
+            return new Vector3f(a.X + b.X, a.Y + b.Y, a.Z + b.Z);
+        }
+
+        public static Vector3f operator -(Vector3f a, Vector3f b)
+        {
+            return new Vector3f(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
         }
 
         /// <summary>

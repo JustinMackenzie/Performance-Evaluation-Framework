@@ -25,5 +25,11 @@ namespace ScenarioSim.Core
             IFileSerializer<ScenarioEventCollection> serializer = new XmlFileSerializer<ScenarioEventCollection>();
             serializer.Serialize(filename, events);
         }
+
+
+        public ScenarioEventCollection Events
+        {
+            get { return events; }
+        }
     }
 }

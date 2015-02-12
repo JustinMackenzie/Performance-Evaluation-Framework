@@ -5,5 +5,6 @@ namespace ScenarioSim.Core
     {
         void SubmitEvent(ScenarioEvent e);
         void Save(string filename);
+        ScenarioEventCollection Events { get; }
     }
 }

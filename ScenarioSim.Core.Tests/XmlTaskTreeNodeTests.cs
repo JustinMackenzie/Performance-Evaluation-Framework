@@ -46,7 +46,7 @@ namespace ScenarioSim.Core.Tests
         [Test]
         public void TestSerializeScenario()
         {
-            Task selectLongestAxis = new Task() { Name = "Select Longest Axis" };
+            Task selectLongestAxis = new Task() { Name = "Select Longest Axis", EvaluateValue = true };
             Task PositionTool = new Task() { Name = "Position Tool" };
             Task ChangeView = new Task() { Name = "Change View" };
             Task TranslateTool = new Task() { Name = "Translate Tool" };
@@ -54,6 +54,22 @@ namespace ScenarioSim.Core.Tests
             Task MoveCamera = new Task() { Name = "Move Camera" };
             Task ZoomCamera = new Task() { Name = "Zoom Camera" };
             Task Complete = new Task() { Name = "Evaluate", Final = true };
+
+            selectLongestAxis.AccuracyMetrics.Add(
+                new PositionAccuracyMetric()
+                {
+                    IdealValue = new Vector3f(1.389501f, 1.436389f, -9.342558f),
+                    ActualValue = new ActualValueLocation(1, "Tip Position"),
+                    ValueName = "Tool Tip Position"
+                });
+
+            selectLongestAxis.AccuracyMetrics.Add(
+                new DirectionAccuracyMetric()
+                {
+                    IdealValue = new Vector3f(0.1325523f, 0.9609355f, 0.242967f),
+                    ActualValue = new ActualValueLocation(1, "Tool Direction"),
+                    ValueName = "Tool Direction"
+                });
 
             TreeNode<Task> selectNode = new TreeNode<Task>(selectLongestAxis);
             selectNode.AppendChild(PositionTool);

@@ -61,6 +61,12 @@ namespace ScenarioSim.Core
             children.Add(childNode);
         }
 
+        public void AppendChild(TreeNode<T> child)
+        {
+            child.Parent = this;
+            children.Add(child);
+        }
+
         /// <summary>
         /// Creates a tree node with the given data and inserts the node into 
         /// the given index of the collection of children nodes.
@@ -71,6 +77,12 @@ namespace ScenarioSim.Core
         {
             TreeNode<T> childNode = new TreeNode<T>(child) { Parent = this };
             children.Insert(index, childNode);
+        }
+
+        public void InsertChild(int index, TreeNode<T> child)
+        {
+            child.Parent = this;
+            children.Insert(index, child);
         }
 
         /// <summary>

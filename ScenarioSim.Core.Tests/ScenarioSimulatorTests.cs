@@ -23,7 +23,8 @@ namespace ScenarioSim.Core.Tests
             simulator = new ScenarioSimulator("Scenario.xml", "C:\\Users\\Jmac\\Documents");
 
             EventParameterCollection parameters = new EventParameterCollection();
-            parameters.Add(new EventParameter() { Name = "Tip Location", Value = new Vector3f(5, 2, 7) });
+            parameters.Add(new EventParameter() { Name = "Tip Position", Value = new Vector3f(5, 2, 7) });
+            parameters.Add(new EventParameter() { Name = "Tool Direction", Value = new Vector3f(5, 2, 7) });
 
 
             e = new ScenarioEvent()
