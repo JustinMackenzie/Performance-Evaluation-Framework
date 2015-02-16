@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace ScenarioSim.Core
 {
     public interface IScenarioSimulator
@@ -40,5 +42,7 @@ namespace ScenarioSim.Core
         /// <param name="task">The name of the given task.</param>
         /// <returns>True if the task is active.</returns>
         bool IsTaskActive(string task);
+
+        List<string> ActiveTasks();
     }
 }
