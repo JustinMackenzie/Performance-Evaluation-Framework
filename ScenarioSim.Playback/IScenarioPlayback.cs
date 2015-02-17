@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ScenarioSim.Core;
 
 namespace ScenarioSim.Playback
 {
@@ -12,5 +13,8 @@ namespace ScenarioSim.Playback
         void Restart();
         void Stop();
         void EnqueueEnactor(IEventEnactor enactor);
+        List<string> ActiveTasks { get; }
+        List<AccuracyMetricResult> ActiveResults { get; }
+
     }
 }

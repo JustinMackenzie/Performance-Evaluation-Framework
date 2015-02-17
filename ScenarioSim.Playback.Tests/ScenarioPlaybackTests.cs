@@ -16,7 +16,7 @@ namespace ScenarioSim.Playback.Tests
         [Test]
         public void TestCallEnactorNTimes()
         {
-            ScenarioEventCollection collection = new ScenarioEventCollection();
+            /*ScenarioEventCollection collection = new ScenarioEventCollection();
 
             Random r = new Random();
 
@@ -32,7 +32,7 @@ namespace ScenarioSim.Playback.Tests
                 collection.Add(expectedEvent);
             }
 
-            IScenarioPlayback pb = new ScenarioPlayback(collection);
+            IScenarioPlayback pb = new ScenarioPlayback()
             IEventEnactor enactor = Substitute.For<IEventEnactor>();
             enactor.EventId.Returns(1);
             pb.EnqueueEnactor(enactor);
@@ -41,13 +41,13 @@ namespace ScenarioSim.Playback.Tests
 
             System.Threading.Thread.Sleep(150);
             foreach (ScenarioEvent e in collection)
-                enactor.Received().Enact(e);
+                enactor.Received().Enact(e);*/
         }
 
         
         public void TestPause()
         {
-            ScenarioEventCollection collection = new ScenarioEventCollection();
+            /*ScenarioEventCollection collection = new ScenarioEventCollection();
 
             Random r = new Random();
             int n = r.Next(200);
@@ -81,14 +81,14 @@ namespace ScenarioSim.Playback.Tests
 
             System.Threading.Thread.Sleep(210);
 
-            Assert.IsTrue((enactor as TestCountEnactor).Count == m - 1);
+            Assert.IsTrue((enactor as TestCountEnactor).Count == m - 1);*/
         }
 
         [Test]
         public void ReadFroSerializeData()
         {
-            IScenarioPlayback pb = new ScenarioPlayback("C:\\Users\\Jmac\\Documents\\2015-02-09-2002\\SimulatorEvents.xml");
-            pb.Play();
+            /*IScenarioPlayback pb = new ScenarioPlayback("C:\\Users\\Jmac\\Documents\\2015-02-09-2002\\SimulatorEvents.xml");
+            pb.Play();*/
         }
     }
 }

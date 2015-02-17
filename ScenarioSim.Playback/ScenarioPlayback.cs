@@ -4,34 +4,43 @@ using System.Linq;
 using System.Text;
 using ScenarioSim.Core;
 using System.Timers;
+using ScenarioSim.Simulator;
+using ScenarioSim.UmlStateChart;
 
 namespace ScenarioSim.Playback
 {
     public class ScenarioPlayback : IScenarioPlayback
     {
-        IFileSerializer<ScenarioEventCollection> serializer;
         ScenarioEventCollection collection;
         Dictionary<int, IEventEnactor> enactors;
         Timer timer;
         DateTime startTime;
         int nextEventIndex;
+        SimulationResult result;
+        IScenarioSimulator simulator;
+        List<AccuracyMetricResult> activeResults;
+
 
         public ScenarioPlayback(string filename)
         {
-            serializer = new XmlFileSerializer<ScenarioEventCollection>();
-            collection = serializer.Deserialize(filename);
-            ShiftEventTimes(collection);
-            timer = new Timer(1000.0/60);
-            timer.Elapsed += timer_Elapsed;
-            nextEventIndex = 0;
-            enactors = new Dictionary<int, IEventEnactor>();
+            IFileSerializer<SimulationResult> serializer = new XmlFileSerializer<SimulationResult>();
+            result = serializer.Deserialize(filename);
+            collection = result.Events;
+            Initialize();
         }
 
-        public ScenarioPlayback(ScenarioEventCollection collection)
+        public ScenarioPlayback(SimulationResult result)
         {
-            this.collection = collection;
+            this.result = result;
+            collection = result.Events;
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            simulator = new ScenarioSimulator(result.ScenarioFile, null, result.User, false);
             ShiftEventTimes(collection);
-            timer = new Timer(1000.0/60);
+            timer = new Timer(1000.0 / 60);
             timer.Elapsed += timer_Elapsed;
             nextEventIndex = 0;
             enactors = new Dictionary<int, IEventEnactor>();
@@ -47,12 +56,13 @@ namespace ScenarioSim.Playback
 
         private void timer_Elapsed(object source, ElapsedEventArgs e)
         {
-            long currentTime = e.SignalTime.Ticks - startTime.Ticks;   
+            long currentTime = e.SignalTime.Ticks - startTime.Ticks;
             while (nextEventIndex < collection.Count &&
                 collection[nextEventIndex].Timestamp.Ticks < currentTime)
             {
                 ScenarioEvent se = collection[nextEventIndex];
-                if(enactors.ContainsKey(se.Id))
+                simulator.SubmitSimulatorEvent(se);
+                if (enactors.ContainsKey(se.Id))
                     enactors[se.Id].Enact(se);
                 nextEventIndex++;
             }
@@ -81,6 +91,32 @@ namespace ScenarioSim.Playback
         {
             timer.Stop();
             nextEventIndex = 0;
+        }
+
+        public List<string> ActiveTasks
+        {
+            get
+            {
+                return simulator.ActiveTasks();
+            }
+        }
+
+        public List<AccuracyMetricResult> ActiveResults
+        {
+            get
+            {
+                activeResults = new List<AccuracyMetricResult>();
+
+                result.TaskResult.Traverse(GenerateActiveResults);
+
+                return activeResults;
+            }
+        }
+
+        public void GenerateActiveResults(TaskResult taskResult)
+        {
+            if (ActiveTasks.Contains(taskResult.TaskName))
+                activeResults.AddRange(taskResult.Results);
         }
 
         public void EnqueueEnactor(IEventEnactor enactor)

@@ -164,7 +164,7 @@ namespace ScenarioSim.Creator
         {
             if (!this.Collapsible) return;
             SetExpanded(true);
-           
+
             foreach (GoObject obj in (ChildrenAreDestinations ? this.Destinations : this.Sources))
             {
                 if (obj == this) continue;

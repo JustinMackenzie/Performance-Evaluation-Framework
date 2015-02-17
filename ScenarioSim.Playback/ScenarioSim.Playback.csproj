@@ -50,6 +50,14 @@
       <Project>{e93acfdf-c454-4bb8-b0f8-9838af372e39}</Project>
       <Name>ScenarioSim.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ScenarioSim.Simulator\ScenarioSim.Simulator.csproj">
+      <Project>{076f2875-224e-4d46-8ec9-4c1de33fa3fc}</Project>
+      <Name>ScenarioSim.Simulator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StateChart\UmlStateChart.csproj">
+      <Project>{32304491-f871-4d59-a317-7ae533850b0b}</Project>
+      <Name>UmlStateChart</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
