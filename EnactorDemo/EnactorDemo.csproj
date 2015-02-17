@@ -45,10 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalendarClient.cs" />
-    <Compile Include="EnactedObject.cs" />
+    <Compile Include="NewDayEvent.cs" />
     <Compile Include="FridayEnactor.cs" />
-    <Compile Include="IEnactor.cs" />
-    <Compile Include="Invoker.cs" />
+    <Compile Include="INewDayEnactor.cs" />
+    <Compile Include="NewDayInvoker.cs" />
     <Compile Include="MondayEnactor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
