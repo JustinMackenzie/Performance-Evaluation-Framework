@@ -38,12 +38,13 @@ namespace ScenarioSim.Playback
 
         private void Initialize()
         {
-            simulator = new ScenarioSimulator(result.ScenarioFile, null, result.User, false);
+            simulator = new ScenarioSimulator(result.ScenarioFile);
             ShiftEventTimes(collection);
             timer = new Timer(1000.0 / 60);
             timer.Elapsed += timer_Elapsed;
             nextEventIndex = 0;
             enactors = new Dictionary<int, IEventEnactor>();
+            simulator.Start();
         }
 
         private void ShiftEventTimes(ScenarioEventCollection collection)

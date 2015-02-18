@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ScenarioSim.Core
 {
-    interface ILogger
+    public interface ILogger
     {
         void Log(string message);
     }

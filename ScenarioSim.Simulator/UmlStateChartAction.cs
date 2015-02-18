@@ -6,7 +6,7 @@ using UmlStateChart;
 
 namespace ScenarioSim.Core
 {
-    abstract class UmlStateChartAction : IAction
+    public abstract class UmlStateChartAction : IAction
     {
         public UmlStateChartAction NextAction { get; set; }
 

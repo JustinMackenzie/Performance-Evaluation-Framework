@@ -1,7 +1,7 @@
 ﻿using System;
 namespace ScenarioSim.Core
 {
-    interface IComplicationEnactorRepository
+    public interface IComplicationEnactorRepository
     {
         void AddEnactor(IComplicationEnactor enactor);
         IComplicationEnactor GetEnactor(int id);

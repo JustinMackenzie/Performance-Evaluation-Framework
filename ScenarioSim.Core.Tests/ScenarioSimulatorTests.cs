@@ -21,7 +21,7 @@ namespace ScenarioSim.Core.Tests
         [SetUp]
         public void Initialize()
         {
-            simulator = new ScenarioSimulator("Scenario.xml", "C:\\Users\\Jmac\\Documents", new User() { Id = 1, Name = "Justin" }, true);
+            simulator = new ScenarioSimulator("Scenario.xml");
 
             EventParameterCollection parameters = new EventParameterCollection();
             parameters.Add(new EventParameter() { Name = "Tip Position", Value = new Vector3f(5, 2, 7) });
@@ -100,11 +100,15 @@ namespace ScenarioSim.Core.Tests
         [Test]
         public void TestMadeEventsFile()
         {
+            /*string folderPath = "C:\\Users\\Jmac\\Documents";
+            User user = new User() { Id = 1, Name = "Justin" };
+            string path = folderPath + "\\" + string.Format("{0}-{1}-{2}", user.Name, string.Empty, DateTime.Now.ToString("yyyy-MM-dd-HHmm"));
+            simulator = new LoggingScenarioSimulator("Scenario.xml", "C:\\Users\\Jmac\\Documents", user);
             simulator.Start();
 
             simulator.SubmitSimulatorEvent(e);
 
-            Assert.IsTrue(File.Exists("SimulatorEvents.xml"));
+            Assert.IsTrue(File.Exists(folderPath + "\\SimulationResults.xml"));*/
         }
     }
 }

@@ -51,13 +51,18 @@
     <Compile Include="IComplicationEnactorRepository.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="IScenarioEventLogger.cs" />
+    <Compile Include="IScenarioEventRepository.cs" />
     <Compile Include="IScenarioSimulator.cs" />
     <Compile Include="ISimulatorEventHandler.cs" />
+    <Compile Include="IStateChartBuilder.cs" />
     <Compile Include="IStateChartEventHandler.cs" />
     <Compile Include="IStateChartEventLogger.cs" />
     <Compile Include="IStateChartReader.cs" />
     <Compile Include="ITaskResultLogger.cs" />
+    <Compile Include="ListScenarioEventRepository.cs" />
     <Compile Include="LogComplicationAction.cs" />
+    <Compile Include="LoggingScenarioSimulator.cs" />
+    <Compile Include="LoggingUmlStateChartBuilder.cs" />
     <Compile Include="LogStateEntryAction.cs" />
     <Compile Include="LogStateExitAction.cs" />
     <Compile Include="ParameterKeeper.cs" />
@@ -67,7 +72,7 @@
     <Compile Include="SimulationResult.cs" />
     <Compile Include="SimulatorEventHandler.cs" />
     <Compile Include="StartTimerStateEntryAction.cs" />
-    <Compile Include="StateChartBuilder.cs" />
+    <Compile Include="UmlStateChartBuilder.cs" />
     <Compile Include="StateChartEventHandler.cs" />
     <Compile Include="StopTimerStateExitAction.cs" />
     <Compile Include="TextLogger.cs" />

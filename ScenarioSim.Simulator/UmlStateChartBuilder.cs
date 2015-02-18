@@ -4,25 +4,24 @@ using System.Linq;
 using System.Text;
 using ScenarioSim.UmlStateChart;
 using UmlStateChart;
+using ScenarioSim.Simulator;
 
 namespace ScenarioSim.Core
 {
-    class StateChartBuilder
+    public class UmlStateChartBuilder : IStateChartBuilder
     {
-        Dictionary<string, State> states;
-        ActionFactory actionFactory;
-        IComplicationEnactorRepository repo;
-        IStateChartEngine engine;
+        protected Dictionary<string, State> states;
+        protected ActionFactory actionFactory;
+        protected IComplicationEnactorRepository repo;
 
-        public StateChartBuilder(IStateChartEngine engine, ActionFactory actionFactory, IComplicationEnactorRepository repo)
+        public UmlStateChartBuilder(ActionFactory actionFactory, IComplicationEnactorRepository repo)
         {
             states = new Dictionary<string, State>();
             this.actionFactory = actionFactory;
             this.repo = repo;
-            this.engine = engine;
         }
 
-        public StateChart Build(Scenario scenario)
+        public IStateChartEngine Build(Scenario scenario)
         {
             string name = scenario.Task.Value.Name;
 
@@ -47,14 +46,17 @@ namespace ScenarioSim.Core
 
             AddComplications(scenario.Complications);
 
-            return stateChart;
+            return new UmlStateChartEngine(stateChart);
+        }
+
+        protected virtual void AddActions(State state)
+        {
+            
         }
 
         private void AddState(TreeNode<Task> taskNode, Context parent)
         {
             string name = taskNode.Value.Name;
-            UmlStateChartAction entryAction = actionFactory.Make(ActionType.LogEntry, name, null);
-            UmlStateChartAction exitAction = actionFactory.Make(ActionType.LogExit, name, null);
 
             if (taskNode.Value.Final)
             {
@@ -63,14 +65,11 @@ namespace ScenarioSim.Core
                 return;
             }
 
-            entryAction.AddAction(actionFactory.Make(ActionType.StartTimer, name, null));
-            exitAction.AddAction(actionFactory.Make(ActionType.StopTimer, name, null));
-
             List<TreeNode<Task>> childNodes = taskNode.children;
 
             if (childNodes.Count > 0)
             {
-                HierarchicalState state = new HierarchicalState(name, parent, entryAction, exitAction);
+                HierarchicalState state = new HierarchicalState(name, parent, null, null);
 
                 foreach (TreeNode<Task> childNode in childNodes)
                 {
@@ -83,11 +82,26 @@ namespace ScenarioSim.Core
                 Transition startTransition = new Transition(startState, historyState);
                 Transition historyTransition = new Transition(historyState, states[startTaskName]);
                 states.Add(name, state);
+                AddActions(state);
             }
             else
             {
-                State state = new State(name, parent, entryAction, exitAction);
+                State state = new State(name, parent, null, null);
                 states.Add(name, state);
+                AddActions(state);
+            }
+        }
+
+        protected virtual void AddComplicationActions(Complication complication)
+        {
+            if (complication is TaskDependantComplication)
+            {
+                TaskDependantComplication c = complication as TaskDependantComplication;
+                if (c.Entry)
+                    states[c.TaskName].EntryAction = new EnactComplicationAction(repo, c.Id);
+                
+                else
+                    states[c.TaskName].ExitAction = new EnactComplicationAction(repo, c.Id);
             }
         }
 
@@ -95,24 +109,7 @@ namespace ScenarioSim.Core
         {
             foreach(Complication complication in collection)
             {
-                if(complication is TaskDependantComplication)
-                {
-                    TaskDependantComplication c = complication as TaskDependantComplication;
-                    if (c.Entry)
-                    {
-                        (states[c.TaskName].EntryAction as UmlStateChartAction).AddAction(
-                            actionFactory.Make(ActionType.LogComplication, null, c));
-                        (states[c.TaskName].EntryAction as UmlStateChartAction).AddAction(
-                            new EnactComplicationAction(repo, c.Id));
-                    }
-                    else
-                    {
-                        (states[c.TaskName].ExitAction as UmlStateChartAction).AddAction(
-                            actionFactory.Make(ActionType.LogComplication, null, c));
-                        (states[c.TaskName].ExitAction as UmlStateChartAction).AddAction(
-                            new EnactComplicationAction(repo, c.Id));
-                    }
-                }
+                AddComplicationActions(complication);
             }
         }
     }

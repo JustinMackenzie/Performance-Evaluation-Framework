@@ -7,7 +7,7 @@ using ScenarioSim.Core;
 
 namespace ScenarioSim.UmlStateChart
 {
-    enum ActionType
+    public enum ActionType
     {
         LogEntry,
         LogExit,
@@ -16,7 +16,7 @@ namespace ScenarioSim.UmlStateChart
         LogComplication
     }
 
-    class ActionFactory
+    public class ActionFactory
     {
         ILogger logger;
         TimeKeeper keeper;

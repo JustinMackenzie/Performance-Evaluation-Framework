@@ -6,14 +6,6 @@ namespace ScenarioSim.Core
     public interface IScenarioSimulator
     {
         /// <summary>
-        /// Adds a given event parameter to be tracked and recorded during 
-        /// simulation.
-        /// </summary>
-        /// <param name="eventId">The Id of the event that contains the parameter to be tracked..</param>
-        /// <param name="parameterName">The name of the parameter to be tracked.</param>
-        void AddTrackedParameter(int eventId, string parameterName);
-
-        /// <summary>
         /// Starts the simulator. This must be called before submitting an event.
         /// </summary>
         void Start();
