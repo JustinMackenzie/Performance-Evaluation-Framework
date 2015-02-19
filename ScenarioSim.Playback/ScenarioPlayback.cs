@@ -19,6 +19,7 @@ namespace ScenarioSim.Playback
         SimulationResult result;
         IScenarioSimulator simulator;
         List<AccuracyMetricResult> activeResults;
+        List<KeyValuePair<long, ScenarioEvent>> events;
 
 
         public ScenarioPlayback(string filename, IEntityPlacer placer)
@@ -40,32 +41,37 @@ namespace ScenarioSim.Playback
         {
             simulator = new ScenarioSimulator(result.ScenarioFile, placer);
             ShiftEventTimes(collection);
-            timer = new Timer(1000.0 / 60);
-            timer.Elapsed += timer_Elapsed;
             nextEventIndex = 0;
             enactors = new Dictionary<int, IEventEnactor>();
             simulator.Start();
+            timer = new Timer(1000.0 / 60);
+            timer.Elapsed += timer_Elapsed;
         }
 
         private void ShiftEventTimes(ScenarioEventCollection collection)
         {
+            events = new List<KeyValuePair<long, ScenarioEvent>>();
             long startTime = collection[0].Timestamp.Ticks;
 
             foreach (ScenarioEvent e in collection)
-                e.Timestamp = new DateTime(e.Timestamp.Ticks - startTime);
+                events.Add(new KeyValuePair<long, ScenarioEvent>(e.Timestamp.Ticks - startTime, e));
         }
 
         private void timer_Elapsed(object source, ElapsedEventArgs e)
         {
             long currentTime = e.SignalTime.Ticks - startTime.Ticks;
-            while (nextEventIndex < collection.Count &&
-                collection[nextEventIndex].Timestamp.Ticks < currentTime)
+
+            lock (events)
             {
-                ScenarioEvent se = collection[nextEventIndex];
-                simulator.SubmitSimulatorEvent(se);
-                if (enactors.ContainsKey(se.Id))
-                    enactors[se.Id].Enact(se);
-                nextEventIndex++;
+                while (nextEventIndex < collection.Count &&
+                    events[nextEventIndex].Key < currentTime)
+                {
+                    ScenarioEvent se = events[nextEventIndex].Value;
+                    simulator.SubmitSimulatorEvent(se);
+                    if (enactors.ContainsKey(se.Id))
+                        enactors[se.Id].Enact(se);
+                    nextEventIndex++;
+                }
             }
         }
 
