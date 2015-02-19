@@ -13,14 +13,19 @@ namespace ScenarioSim.Core
         protected IStateChartEngine stateChart;
         protected IComplicationEnactorRepository repo;
         protected Scenario scenario;
+        IEntityPlacer placer;
 
         public bool IsActive { get { return stateChart.IsActive; } }
 
-        public ScenarioSimulator(string scenarioFile)
+        public ScenarioSimulator(string scenarioFile, IEntityPlacer placer)
         {
             IFileSerializer<Scenario> serializer = new XmlFileSerializer<Scenario>();
             scenario = serializer.Deserialize(scenarioFile);
             repo = new ComplicationEnactorRepository();
+            this.placer = placer;
+
+            foreach (Entity entity in scenario.Entities)
+                placer.Place(entity);
         }
 
         public virtual void Start()

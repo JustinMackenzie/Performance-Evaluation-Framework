@@ -49,6 +49,7 @@
     <Compile Include="FileSimulatorEventLogger.cs" />
     <Compile Include="IComplicationEnactor.cs" />
     <Compile Include="IComplicationEnactorRepository.cs" />
+    <Compile Include="IEntityPlacer.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="IScenarioEventLogger.cs" />
     <Compile Include="IScenarioEventRepository.cs" />

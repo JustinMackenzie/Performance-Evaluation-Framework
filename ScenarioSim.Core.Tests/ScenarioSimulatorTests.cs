@@ -21,7 +21,8 @@ namespace ScenarioSim.Core.Tests
         [SetUp]
         public void Initialize()
         {
-            simulator = new ScenarioSimulator("Scenario.xml");
+            IEntityPlacer placer = Substitute.For<IEntityPlacer>();
+            simulator = new ScenarioSimulator("Scenario.xml", placer);
 
             EventParameterCollection parameters = new EventParameterCollection();
             parameters.Add(new EventParameter() { Name = "Tip Position", Value = new Vector3f(5, 2, 7) });

@@ -19,8 +19,8 @@ namespace ScenarioSim.Simulator
         IScenarioEventRepository scenarioEventRepository;
         List<ISimulatorEventLogger> loggers;
 
-        public LoggingScenarioSimulator(string scenarioFile, string folderPath, User user)
-            : base(scenarioFile)
+        public LoggingScenarioSimulator(string scenarioFile, IEntityPlacer placer, string folderPath, User user)
+            : base(scenarioFile, placer)
         {
             this.user = user;
             this.scenarioFile = scenarioFile;

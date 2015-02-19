@@ -21,24 +21,24 @@ namespace ScenarioSim.Playback
         List<AccuracyMetricResult> activeResults;
 
 
-        public ScenarioPlayback(string filename)
+        public ScenarioPlayback(string filename, IEntityPlacer placer)
         {
             IFileSerializer<SimulationResult> serializer = new XmlFileSerializer<SimulationResult>();
             result = serializer.Deserialize(filename);
             collection = result.Events;
-            Initialize();
+            Initialize(placer);
         }
 
-        public ScenarioPlayback(SimulationResult result)
+        public ScenarioPlayback(SimulationResult result, IEntityPlacer placer)
         {
             this.result = result;
             collection = result.Events;
-            Initialize();
+            Initialize(placer);
         }
 
-        private void Initialize()
+        private void Initialize(IEntityPlacer placer)
         {
-            simulator = new ScenarioSimulator(result.ScenarioFile);
+            simulator = new ScenarioSimulator(result.ScenarioFile, placer);
             ShiftEventTimes(collection);
             timer = new Timer(1000.0 / 60);
             timer.Elapsed += timer_Elapsed;

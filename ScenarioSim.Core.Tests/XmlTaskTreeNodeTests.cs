@@ -95,10 +95,21 @@ namespace ScenarioSim.Core.Tests
             XmlFileSerializer<List<TaskTransition>> serializer = new XmlFileSerializer<List<TaskTransition>>();
             serializer.Serialize(filename, transitions);
 
+            Transform head = new Transform(new Vector3f(0, 0, 0), new Vector3f(282.1207f, 0, 0), new Vector3f(2.5f, 2.5f, 2.5f));
+            Transform tumour = new Transform(new Vector3f(-0.1f, 2.7f, -31.5f), new Vector3f(-29.6f, -70.2f, -14), new Vector3f(9, 5, 5));
+            Transform tool = new Transform(new Vector3f(0, 0.8f, -90.3f), new Vector3f(270, 180, 0), new Vector3f(0.25f, 0.25f, 0.25f));
+
+            List<Entity> entities = new List<Entity>();
+            entities.Add(new Entity() { Id = 1, Name = "Head", transform = head });
+            entities.Add(new Entity() { Id = 2, Name = "Tool", transform = tool });
+            entities.Add(new Entity() { Id = 3, Name = "Tumour", transform = tumour });
+
+
             Scenario scenario = new Scenario()
             {
                 Task = selectNode,
-                TaskTransitions = transitions
+                TaskTransitions = transitions,
+                Entities = entities
             };
 
             scenario.Complications = new List<Complication>();
