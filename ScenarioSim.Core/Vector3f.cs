@@ -52,7 +52,7 @@ namespace ScenarioSim.Core
 
         public static float AngleBetween(Vector3f a, Vector3f b)
         {
-            return (float)Math.Acos(Dot(a, b) / (a.Magnitude * b.Magnitude));
+            return (float)(Math.Acos(Dot(a, b) / (a.Magnitude * b.Magnitude)) * 180/Math.PI);
         }
 
         public static float DistanceBetween(Vector3f a, Vector3f b)
