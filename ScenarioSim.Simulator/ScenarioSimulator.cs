@@ -66,7 +66,8 @@ namespace ScenarioSim.Core
 
         protected virtual void Complete()
         {
-
+            foreach (IComplicationEnactor enactor in repo.Enactors)
+                enactor.CleanUp();
         }
 
         public bool IsTaskActive(string task)

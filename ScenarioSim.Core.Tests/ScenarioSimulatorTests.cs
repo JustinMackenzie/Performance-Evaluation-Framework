@@ -98,18 +98,19 @@ namespace ScenarioSim.Core.Tests
             Assert.IsFalse(simulator.IsActive);
         }
 
-        [Test]
+        [Ignore]
         public void TestMadeEventsFile()
         {
-            /*string folderPath = "C:\\Users\\Jmac\\Documents";
+            string folderPath = "C:\\Users\\Jmac\\Documents";
+            IEntityPlacer placer = Substitute.For<IEntityPlacer>();
             User user = new User() { Id = 1, Name = "Justin" };
             string path = folderPath + "\\" + string.Format("{0}-{1}-{2}", user.Name, string.Empty, DateTime.Now.ToString("yyyy-MM-dd-HHmm"));
-            simulator = new LoggingScenarioSimulator("Scenario.xml", "C:\\Users\\Jmac\\Documents", user);
+            simulator = new LoggingScenarioSimulator("Scenario.xml", placer, "C:\\Users\\Jmac\\Documents", user);
             simulator.Start();
 
             simulator.SubmitSimulatorEvent(e);
 
-            Assert.IsTrue(File.Exists(folderPath + "\\SimulationResults.xml"));*/
+            Assert.IsTrue(File.Exists(folderPath + "\\SimulationResults.xml"));
         }
     }
 }

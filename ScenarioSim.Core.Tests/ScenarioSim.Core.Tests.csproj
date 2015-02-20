@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScenarioSimulatorTests.cs" />
+    <Compile Include="Vector3fTests.cs" />
     <Compile Include="XmlFileSerializerTest.cs" />
     <Compile Include="XmlSimulatorEventCollectionSerialzerTests.cs" />
     <Compile Include="XmlTaskTreeNodeTests.cs" />

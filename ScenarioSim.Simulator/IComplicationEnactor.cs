@@ -9,5 +9,6 @@ namespace ScenarioSim.Core
     {
         int ComplicationId { get; set; }
         void Execute();
+        void CleanUp();
     }
 }
