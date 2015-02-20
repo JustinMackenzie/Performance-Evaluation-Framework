@@ -46,7 +46,7 @@ namespace ScenarioSim.Simulator
             stateChart = builder.Build(scenario);
 
             timeKeeper.StartTimer(scenario.Task.Value.Name);
-            base.Start();
+            stateChart.Start();
         }
 
         public override void SubmitSimulatorEvent(ScenarioEvent e)
