@@ -98,6 +98,8 @@ namespace ScenarioSim.Simulator
             taskResultLoggers.Add(new CsvTaskResultLogger());
 
             LogTaskResult(result.TaskResult, taskResultLoggers);
+
+            Result = result;
         }
 
         private void LogTaskResult(TreeNode<TaskResult> result, List<ITaskResultLogger> loggers)

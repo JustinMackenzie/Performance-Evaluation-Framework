@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ScenarioSim.Simulator;
 
 namespace ScenarioSim.Core
 {
@@ -36,5 +37,7 @@ namespace ScenarioSim.Core
         bool IsTaskActive(string task);
 
         List<string> ActiveTasks();
+
+        SimulationResult Result { get; }
     }
 }

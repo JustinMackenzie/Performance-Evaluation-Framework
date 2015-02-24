@@ -15,6 +15,8 @@ namespace ScenarioSim.Core
         protected Scenario scenario;
         IEntityPlacer placer;
 
+        public SimulationResult Result { get; protected set; }
+
         public bool IsActive { get { return stateChart.IsActive; } }
 
         public ScenarioSimulator(string scenarioFile, IEntityPlacer placer)
