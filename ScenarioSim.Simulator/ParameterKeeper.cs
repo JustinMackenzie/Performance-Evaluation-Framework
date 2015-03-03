@@ -2,33 +2,32 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ScenarioSim.Simulator;
 
 namespace ScenarioSim.Core
 {
-    class ParameterKeeper
+    public class ParameterKeeper
     {
-        List<KeyValuePair<EventParameter, DateTime>> parameters;
+        List<TrackedEventParameter> parameters;
 
-        public List<KeyValuePair<EventParameter, DateTime>> Parameters { get { return parameters; } }
+        public List<TrackedEventParameter> Parameters { get { return parameters; } }
 
         public ParameterKeeper()
         {
-            parameters = new List<KeyValuePair<EventParameter, DateTime>>();
+            parameters = new List<TrackedEventParameter>();
         }
 
         public void AddParameter(EventParameter parameter, DateTime time)
         {
-            parameters.Add(new KeyValuePair<EventParameter, DateTime>(parameter, time));
+            parameters.Add(new TrackedEventParameter() { Parameter = parameter, Timestamp = time });
         }
 
         public override string ToString()
         {
             string text = "Parameters:";
 
-            foreach (KeyValuePair<EventParameter, DateTime> p in parameters)
-            {
-                text += string.Format("[{0}] {1}:{2}, ", p.Value, p.Key.Name, p.Key.Value);
-            }
+            foreach (TrackedEventParameter p in parameters)
+                text += string.Format("[{0}] {1}:{2}, ", p.Timestamp, p.Parameter.Name, p.Parameter.Value);
 
             return text;
         }

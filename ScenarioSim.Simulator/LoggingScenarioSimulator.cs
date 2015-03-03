@@ -68,6 +68,11 @@ namespace ScenarioSim.Simulator
                 Complete();
         }
 
+        public void AddTrackedParameter(EventParameterPair pair)
+        {
+            trackedParameters.Items.Add(pair);
+        }
+
         private bool IsTracked(EventParameter parameter, int eventId)
         {
             return (from EventParameterPair p in trackedParameters.Items
@@ -91,6 +96,7 @@ namespace ScenarioSim.Simulator
             result.ScenarioFile = scenarioFile;
             result.Events = scenarioEventRepository.Events;
             result.TaskResult = BuildTaskResultTree(scenario.Task);
+            result.TrackedParameters = parameterKeeper;
             IFileSerializer<SimulationResult> serializer = new XmlFileSerializer<SimulationResult>();
             serializer.Serialize(folderPath + "\\SimulationResult.xml", result);
 

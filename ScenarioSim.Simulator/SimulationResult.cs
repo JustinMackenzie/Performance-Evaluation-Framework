@@ -12,5 +12,6 @@ namespace ScenarioSim.Simulator
         public string ScenarioFile { get; set; }
         public TreeNode<TaskResult> TaskResult { get; set; }
         public ScenarioEventCollection Events { get; set; }
+        public ParameterKeeper TrackedParameters { get; set; } 
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ScenarioSim.Core
 {
-    class TrackedEventParameters
+    public class TrackedEventParameters
     {
         public List<EventParameterPair> Items { get; set; }
 
@@ -15,7 +15,7 @@ namespace ScenarioSim.Core
         }
     }
 
-    struct EventParameterPair
+    public struct EventParameterPair
     {
         public int EventId { get; set; }
         public string ParameterName { get; set; }
