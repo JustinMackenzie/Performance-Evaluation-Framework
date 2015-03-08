@@ -54,6 +54,7 @@
     <Compile Include="IScenarioEventLogger.cs" />
     <Compile Include="IScenarioEventRepository.cs" />
     <Compile Include="IScenarioSimulator.cs" />
+    <Compile Include="ISimulationComponent.cs" />
     <Compile Include="ISimulatorEventHandler.cs" />
     <Compile Include="IStateChartBuilder.cs" />
     <Compile Include="IStateChartEventHandler.cs" />
@@ -67,12 +68,14 @@
     <Compile Include="LogStateEntryAction.cs" />
     <Compile Include="LogStateExitAction.cs" />
     <Compile Include="ParameterKeeper.cs" />
+    <Compile Include="ParameterTrackingComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultManager.cs" />
     <Compile Include="ScenarioSimulator.cs" />
     <Compile Include="SimulationResult.cs" />
     <Compile Include="SimulatorEventHandler.cs" />
     <Compile Include="StartTimerStateEntryAction.cs" />
+    <Compile Include="TimeKeeperComponent.cs" />
     <Compile Include="TrackedEventParameter.cs" />
     <Compile Include="UmlStateChartBuilder.cs" />
     <Compile Include="StateChartEventHandler.cs" />

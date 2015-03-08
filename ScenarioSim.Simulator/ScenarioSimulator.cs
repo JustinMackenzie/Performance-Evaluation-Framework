@@ -14,6 +14,7 @@ namespace ScenarioSim.Core
         protected IComplicationEnactorRepository repo;
         protected Scenario scenario;
         IEntityPlacer placer;
+        Dictionary<Type, ISimulationComponent> components;
 
         public SimulationResult Result { get; protected set; }
 
@@ -24,6 +25,9 @@ namespace ScenarioSim.Core
             IFileSerializer<Scenario> serializer = new XmlFileSerializer<Scenario>();
             scenario = serializer.Deserialize(scenarioFile);
             repo = new ComplicationEnactorRepository();
+
+            components = new Dictionary<Type, ISimulationComponent>();
+
             this.placer = placer;
 
             foreach (Entity entity in scenario.Entities)
@@ -38,6 +42,8 @@ namespace ScenarioSim.Core
             stateChart = builder.Build(scenario);
 
             stateChart.Start();
+            foreach (ISimulationComponent c in components.Values)
+                c.Start();
         }
 
         public virtual void SubmitSimulatorEvent(ScenarioEvent e)
@@ -46,6 +52,9 @@ namespace ScenarioSim.Core
                 throw new Exception("Simulator has not been started. Please call Start() before submitting events.");
 
             stateChart.Dispatch(TransformSimulatorEvent(e));
+
+            foreach (ISimulationComponent c in components.Values)
+                c.SubmitEvent(e);
 
             if (!IsActive)
                 Complete();
@@ -70,11 +79,27 @@ namespace ScenarioSim.Core
         {
             foreach (IComplicationEnactor enactor in repo.Enactors)
                 enactor.CleanUp();
+            foreach (ISimulationComponent c in components.Values)
+                c.Complete();
         }
 
         public bool IsTaskActive(string task)
         {
             return stateChart.IsStateActive(task);
+        }
+
+
+        public void AddComponent(ISimulationComponent component)
+        {
+            components.Add(component.GetType(), component);
+        }
+
+
+        public ISimulationComponent GetComponent(Type type)
+        {
+            if (!components.ContainsKey(type))
+                return null;
+            return components[type];
         }
     }
 }

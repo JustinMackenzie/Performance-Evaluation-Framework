@@ -39,5 +39,9 @@ namespace ScenarioSim.Core
         List<string> ActiveTasks();
 
         SimulationResult Result { get; }
+
+        void AddComponent(ISimulationComponent component);
+
+        ISimulationComponent GetComponent(Type type);
     }
 }
