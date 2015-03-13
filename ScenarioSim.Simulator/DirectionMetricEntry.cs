@@ -6,10 +6,9 @@ using ScenarioSim.Core;
 
 namespace ScenarioSim.Simulator
 {
-    public interface ISimulationComponent
+    public class ErrorMetricEntry
     {
-        void Start();
-        void SubmitEvent(ScenarioEvent e);
-        void Complete();
+        public DateTime Timestamp { get; set; }
+        public float Error { get; set; }
     }
 }

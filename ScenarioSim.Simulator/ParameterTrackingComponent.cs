@@ -39,5 +39,11 @@ namespace ScenarioSim.Simulator
         {
             
         }
+
+
+        public void Complete()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

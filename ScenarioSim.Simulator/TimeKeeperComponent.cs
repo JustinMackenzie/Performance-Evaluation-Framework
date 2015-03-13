@@ -35,5 +35,11 @@ namespace ScenarioSim.Simulator
             previousTasks = simulator.ActiveTasks();
             previousTime = DateTime.Now.Ticks;
         }
+
+
+        public void Complete()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
