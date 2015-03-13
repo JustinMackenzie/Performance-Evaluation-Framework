@@ -130,5 +130,35 @@ namespace ScenarioSim.Playback
         {
             enactors.Add(enactor.EventId, enactor);
         }
+
+
+        public void Previous()
+        {
+            if (nextEventIndex - 1 < 0)
+                return;
+
+            nextEventIndex--;
+            ScenarioEvent se = events[nextEventIndex].Value;
+            simulator.SubmitSimulatorEvent(se);
+            if (enactors.ContainsKey(se.Id))
+                enactors[se.Id].Enact(se);
+        }
+
+        public void Next()
+        {
+            if (nextEventIndex + 1 == events.Count)
+                return;
+
+            nextEventIndex++;
+            ScenarioEvent se = events[nextEventIndex].Value;
+            simulator.SubmitSimulatorEvent(se);
+            if (enactors.ContainsKey(se.Id))
+                enactors[se.Id].Enact(se);
+        }
+
+        public int CurrentEventIndex
+        {
+            get { return nextEventIndex - 1; }
+        }
     }
 }

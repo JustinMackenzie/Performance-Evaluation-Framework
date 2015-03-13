@@ -8,6 +8,7 @@ namespace ScenarioSim.Playback
 {
     public interface IScenarioPlayback
     {
+        int CurrentEventIndex { get; }
         void Play();
         void Pause();
         void Restart();
@@ -15,6 +16,9 @@ namespace ScenarioSim.Playback
         void EnqueueEnactor(IEventEnactor enactor);
         List<string> ActiveTasks { get; }
         List<AccuracyMetricResult> ActiveResults { get; }
+
+        void Previous();
+        void Next();
 
     }
 }
