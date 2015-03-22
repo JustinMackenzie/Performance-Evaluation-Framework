@@ -14,7 +14,7 @@ namespace ScenarioSim.Simulator
         protected IComplicationEnactorRepository repo;
         protected Scenario scenario;
         IEntityPlacer placer;
-        Dictionary<Type, ISimulationComponent> components;
+        ISimulationComponentRepository componentRepository;
 
         public SimulationResult Result { get; protected set; }
 
@@ -26,7 +26,7 @@ namespace ScenarioSim.Simulator
             scenario = serializer.Deserialize(scenarioFile);
             repo = new ComplicationEnactorRepository();
 
-            components = new Dictionary<Type, ISimulationComponent>();
+            componentRepository = new SimulationComponentRepository();
 
             this.placer = placer;
 
@@ -42,7 +42,7 @@ namespace ScenarioSim.Simulator
             stateChart = builder.Build(scenario);
 
             stateChart.Start();
-            foreach (ISimulationComponent c in components.Values)
+            foreach (ISimulationComponent c in componentRepository.GetAllComponents())
                 c.Start();
         }
 
@@ -53,7 +53,7 @@ namespace ScenarioSim.Simulator
 
             stateChart.Dispatch(TransformSimulatorEvent(e));
 
-            foreach (ISimulationComponent c in components.Values)
+            foreach (ISimulationComponent c in componentRepository.GetAllComponents())
                 c.SubmitEvent(e);
 
             if (!IsActive)
@@ -79,7 +79,7 @@ namespace ScenarioSim.Simulator
         {
             foreach (IComplicationEnactor enactor in repo.Enactors)
                 enactor.CleanUp();
-            foreach (ISimulationComponent c in components.Values)
+            foreach (ISimulationComponent c in componentRepository.GetAllComponents())
                 c.Complete();
         }
 
@@ -91,15 +91,13 @@ namespace ScenarioSim.Simulator
 
         public void AddComponent(ISimulationComponent component)
         {
-            components.Add(component.GetType(), component);
+            componentRepository.AddComponent(component);
         }
 
 
         public ISimulationComponent GetComponent(Type type)
         {
-            if (!components.ContainsKey(type))
-                return null;
-            return components[type];
+            return componentRepository.GetComponent(type);
         }
     }
 }

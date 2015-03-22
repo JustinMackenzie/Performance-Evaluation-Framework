@@ -1,14 +1,12 @@
-﻿using ScenarioSim.Core;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using ScenarioSim.Core;
 
 namespace ScenarioSim.Simulator
 {
     class TimeKeeperComponent : ISimulationComponent
     {
-        IScenarioSimulator simulator;
+        readonly IScenarioSimulator simulator;
         Dictionary<string, long> times;
         long previousTime;
         IEnumerable<string> previousTasks;
@@ -27,19 +25,23 @@ namespace ScenarioSim.Simulator
 
         public void SubmitEvent(ScenarioEvent e)
         {
-            long deltaTime = DateTime.Now.Ticks - previousTime;
+            long currentTime = e.Timestamp.Ticks;
+            long deltaTime = currentTime - previousTime;
 
             foreach(string task in previousTasks)
                 times[task] += deltaTime;
 
             previousTasks = simulator.ActiveTasks();
-            previousTime = DateTime.Now.Ticks;
+            previousTime = currentTime;
         }
-
 
         public void Complete()
         {
-            throw new NotImplementedException();
+            long currentTime = DateTime.Now.Ticks;
+            long deltaTime = currentTime - previousTime;
+
+            foreach (string task in previousTasks)
+                times[task] += deltaTime;
         }
     }
 }
