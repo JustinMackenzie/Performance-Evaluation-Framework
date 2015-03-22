@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using ScenarioSim.UmlStateChart;
 using System.IO;
-using ScenarioSim.Simulator;
+using ScenarioSim.Core;
 
-namespace ScenarioSim.Core
+namespace ScenarioSim.Simulator
 {
     public class ScenarioSimulator : IScenarioSimulator
     {
@@ -65,7 +65,7 @@ namespace ScenarioSim.Core
             repo.AddEnactor(enactor);
         }
 
-        public List<string> ActiveTasks()
+        public IEnumerable<string> ActiveTasks()
         {
             return stateChart.ActiveStates();
         }

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using ScenarioSim.Simulator;
+using ScenarioSim.Core;
 
-namespace ScenarioSim.Core
+namespace ScenarioSim.Simulator
 {
     public interface IScenarioSimulator
     {
@@ -36,7 +36,7 @@ namespace ScenarioSim.Core
         /// <returns>True if the task is active.</returns>
         bool IsTaskActive(string task);
 
-        List<string> ActiveTasks();
+        IEnumerable<string> ActiveTasks();
 
         SimulationResult Result { get; }
 

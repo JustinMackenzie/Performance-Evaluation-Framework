@@ -11,7 +11,7 @@ namespace ScenarioSim.Simulator
         IScenarioSimulator simulator;
         Dictionary<string, long> times;
         long previousTime;
-        List<string> previousTasks;
+        IEnumerable<string> previousTasks;
 
         public TimeKeeperComponent(IScenarioSimulator simulator)
         {
