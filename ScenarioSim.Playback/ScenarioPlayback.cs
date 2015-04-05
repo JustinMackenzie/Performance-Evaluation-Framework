@@ -100,7 +100,7 @@ namespace ScenarioSim.Playback
             nextEventIndex = 0;
         }
 
-        public List<string> ActiveTasks
+        public IEnumerable<string> ActiveTasks
         {
             get
             {
@@ -108,7 +108,7 @@ namespace ScenarioSim.Playback
             }
         }
 
-        public List<AccuracyMetricResult> ActiveResults
+        public IEnumerable<AccuracyMetricResult> ActiveResults
         {
             get
             {

@@ -13,6 +13,11 @@ namespace ScenarioSim.Core
         public string Name { get; set; }
 
         /// <summary>
+        /// The actor performing this scenario.
+        /// </summary>
+        public Actor Actor { get; set; }
+
+        /// <summary>
         /// The task to be performed in this scenario.
         /// </summary>
         public TreeNode<Task> Task{ get; set; }

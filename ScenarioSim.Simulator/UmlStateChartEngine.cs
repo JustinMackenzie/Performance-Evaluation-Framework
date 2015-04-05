@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using ScenarioSim.Core;
+using ScenarioSim.Simulator;
 using UmlStateChart;
 
 namespace ScenarioSim.UmlStateChart

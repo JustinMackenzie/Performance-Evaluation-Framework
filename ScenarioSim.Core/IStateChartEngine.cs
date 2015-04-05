@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ScenarioSim.Core
+namespace ScenarioSim.Simulator
 {
     /// <summary>
     /// Represents an abstraction of a state chart that accepts events

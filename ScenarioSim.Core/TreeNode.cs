@@ -61,6 +61,10 @@ namespace ScenarioSim.Core
             children.Add(childNode);
         }
 
+        /// <summary>
+        /// Adds the given tree node to the end of the collection of child nodes.
+        /// </summary>
+        /// <param name="child">The child node to be added.</param>
         public void AppendChild(TreeNode<T> child)
         {
             child.Parent = this;
@@ -79,6 +83,11 @@ namespace ScenarioSim.Core
             children.Insert(index, childNode);
         }
 
+        /// <summary>
+        /// Inserts the given tree node into the given index of the collection of child nodes.
+        /// </summary>
+        /// <param name="index">The index of the children where the child will be inserted.</param>
+        /// <param name="child">The child tree node.</param>
         public void InsertChild(int index, TreeNode<T> child)
         {
             child.Parent = this;

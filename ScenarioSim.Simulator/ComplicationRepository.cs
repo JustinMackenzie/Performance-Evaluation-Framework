@@ -29,9 +29,9 @@ namespace ScenarioSim.Core
             return enactors.ContainsKey(id);
         }
 
-        public List<IComplicationEnactor> Enactors
+        public IEnumerable<IComplicationEnactor> Enactors
         {
-            get { return enactors.Values.ToList<IComplicationEnactor>(); }
+            get { return enactors.Values; }
         }
     }
 }

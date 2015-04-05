@@ -14,8 +14,8 @@ namespace ScenarioSim.Playback
         void Restart();
         void Stop();
         void EnqueueEnactor(IEventEnactor enactor);
-        List<string> ActiveTasks { get; }
-        List<AccuracyMetricResult> ActiveResults { get; }
+        IEnumerable<string> ActiveTasks { get; }
+        IEnumerable<AccuracyMetricResult> ActiveResults { get; }
 
         void Previous();
         void Next();

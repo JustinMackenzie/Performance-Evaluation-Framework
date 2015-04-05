@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UmlStateChart;
+using ScenarioSim.Simulator;
 
-namespace ScenarioSim.Core
+namespace ScenarioSim.UmlStateChart
 {
     public class UmlStateChartEvent : IStateChartEvent
     {

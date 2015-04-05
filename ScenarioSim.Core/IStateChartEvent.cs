@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ScenarioSim.Core
+namespace ScenarioSim.Simulator
 {
     /// <summary>
     /// Represents an abstraction of a state chart event that triggers

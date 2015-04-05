@@ -144,7 +144,6 @@ namespace ScenarioSim.Core.Tests
             Task TranslateTool = new Task() { Name = "Translate Tool" };
             Task RotateTool = new Task() { Name = "Rotate Tool" };
             Task MoveCamera = new Task() { Name = "Move Camera" };
-            Task ZoomCamera = new Task() { Name = "Zoom Camera" };
             Task Complete = new Task() { Name = "Evaluate", Final = true };
 
             selectLongestAxis.AccuracyMetrics.Add(
@@ -169,7 +168,6 @@ namespace ScenarioSim.Core.Tests
             selectNode.children[0].AppendChild(TranslateTool);
             selectNode.children[0].AppendChild(RotateTool);
             selectNode.children[1].AppendChild(MoveCamera);
-            selectNode.children[1].AppendChild(ZoomCamera);
             selectNode.AppendChild(Complete);
 
             string filename = "Task Transitions.xml";
@@ -179,8 +177,6 @@ namespace ScenarioSim.Core.Tests
             transitions.Add(new TaskTransition() { EventId = 1, Source = "Position Tool", Destination = "Evaluate" });
             transitions.Add(new TaskTransition() { EventId = 1, Source = "Change View", Destination = "Evaluate" });
             transitions.Add(new TaskTransition() { EventId = 2, Source = "Translate Tool", Destination = "Rotate Tool" });
-            transitions.Add(new TaskTransition() { EventId = 3, Source = "Move Camera", Destination = "Zoom Camera" });
-            transitions.Add(new TaskTransition() { EventId = 4, Source = "Zoom Camera", Destination = "Move Camera" });
             transitions.Add(new TaskTransition() { EventId = 6, Source = "Change View", Destination = "Position Tool" });
             transitions.Add(new TaskTransition() { EventId = 5, Source = "Position Tool", Destination = "Change View" });
 

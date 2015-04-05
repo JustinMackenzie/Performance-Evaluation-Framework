@@ -8,21 +8,21 @@ namespace ScenarioSim.Core
 {
     class EnactComplicationAction : UmlStateChartAction
     {
-        IComplicationEnactorRepository repository;
+        IComplicationEnactorRepository enactorRepository;
         int complicationId;
 
-        public EnactComplicationAction(IComplicationEnactorRepository repository, int complicationId)
+        public EnactComplicationAction(IComplicationEnactorRepository enactorRepository, int complicationId)
         {
-            this.repository = repository;
+            this.enactorRepository = enactorRepository;
             this.complicationId = complicationId;
         }
 
         protected override void ExecuteAction(StateDataContainer container)
         {
-            if (!repository.Contains(complicationId))
+            if (!enactorRepository.Contains(complicationId))
                 return;
-            IComplicationEnactor enactor = repository.GetEnactor(complicationId);
-            enactor.Execute();
+            IComplicationEnactor enactor = enactorRepository.GetEnactor(complicationId);
+            enactor.Enact();
         }
     }
 }

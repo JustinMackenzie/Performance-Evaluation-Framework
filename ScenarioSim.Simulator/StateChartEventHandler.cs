@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ScenarioSim.Simulator;
 
 namespace ScenarioSim.Core
 {

@@ -6,11 +6,15 @@ using ScenarioSim.Core;
 
 namespace ScenarioSim.Simulator
 {
-    public class NormalizedDirectionMetricTracking : DirectionMetricTracking
+    public class NormalizedDirectionErrorTrackingComponent : DirectionErrorTrackingComponent
     {
         float scalingFactor;
 
-        public NormalizedDirectionMetricTracking(Vector3f idealValue, string parameterName, float scalingFactor) : base(idealValue, parameterName) { }
+        public NormalizedDirectionErrorTrackingComponent(Vector3f idealValue, string parameterName, float scalingFactor)
+            : base(idealValue, parameterName)
+        {
+            this.scalingFactor = scalingFactor;
+        }
 
         protected override float Calculate(Vector3f actual, Vector3f idealValue)
         {

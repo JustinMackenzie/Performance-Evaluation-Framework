@@ -85,7 +85,7 @@ namespace ScenarioSim.Core.Tests
 
             simulator.SubmitSimulatorEvent(e);
 
-            enactor.Received().Execute();
+            enactor.Received().Enact();
         }
 
         [Test]
