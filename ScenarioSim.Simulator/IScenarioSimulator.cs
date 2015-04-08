@@ -11,6 +11,8 @@ namespace ScenarioSim.Simulator
         /// </summary>
         void Start();
 
+        void Stop();
+
         /// <summary>
         /// Submits the given event to the simulator to be processed.
         /// </summary>

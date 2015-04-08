@@ -39,7 +39,7 @@ namespace ScenarioSim.Playback
 
         private void Initialize(IEntityPlacer placer)
         {
-            simulator = new ScenarioSimulator(result.ScenarioFile, placer);
+            simulator = new ScenarioSimulator(null, placer, null, null, null);
             ShiftEventTimes(collection);
             nextEventIndex = 0;
             enactors = new Dictionary<int, IEventEnactor>();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ScenarioSim.Simulator
 {
-    interface ISimulationComponentRepository
+    public interface ISimulationComponentRepository
     {
         void AddComponent(ISimulationComponent component);
         ISimulationComponent GetComponent(Type type);

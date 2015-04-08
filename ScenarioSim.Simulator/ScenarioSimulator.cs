@@ -10,40 +10,43 @@ namespace ScenarioSim.Simulator
 {
     public class ScenarioSimulator : IScenarioSimulator
     {
-        protected IStateChartEngine stateChart;
-        protected IComplicationEnactorRepository repo;
+        protected IStateChartEngine engine;
+        protected IComplicationEnactorRepository enactorRepository;
         protected Scenario scenario;
-        IEntityPlacer placer;
-        ISimulationComponentRepository componentRepository;
+        readonly ISimulationComponentRepository componentRepository;
+        private IEntityPlacer placer;
+        private IStateChartBuilder builder;
 
         public SimulationResult Result { get; protected set; }
 
-        public bool IsActive { get { return stateChart.IsActive; } }
+        public bool IsActive { get { return engine.IsActive; } }
 
-        public ScenarioSimulator(string scenarioFile, IEntityPlacer placer)
+        public ScenarioSimulator(IStateChartBuilder builder, IEntityPlacer placer,
+            IComplicationEnactorRepository enactorRepository, ISimulationComponentRepository componentRepository, Scenario scenario)
         {
-            IFileSerializer<Scenario> serializer = new XmlFileSerializer<Scenario>();
-            scenario = serializer.Deserialize(scenarioFile);
-            repo = new ComplicationEnactorRepository();
-
-            componentRepository = new SimulationComponentRepository();
-
+            this.enactorRepository = enactorRepository;
+            this.builder = builder;
+            this.componentRepository = componentRepository;
             this.placer = placer;
-
-            foreach (Entity entity in scenario.Entities)
-                placer.Place(entity);
+            this.scenario = scenario;
         }
 
         public virtual void Start()
         {
-            ActionFactory actionFactory = new ActionFactory(null, null, null);
+            engine = builder.Build(scenario);
 
-            IStateChartBuilder builder = new UmlStateChartBuilder(actionFactory, repo);
-            stateChart = builder.Build(scenario);
+            foreach (Entity entity in scenario.Entities)
+                placer.Place(entity);
 
-            stateChart.Start();
+            engine.Start();
+
             foreach (ISimulationComponent c in componentRepository.GetAllComponents())
                 c.Start();
+        }
+
+        public void Stop()
+        {
+            Complete();
         }
 
         public virtual void SubmitSimulatorEvent(ScenarioEvent e)
@@ -51,7 +54,7 @@ namespace ScenarioSim.Simulator
             if (!IsActive)
                 throw new Exception("Simulator has not been started. Please call Start() before submitting events.");
 
-            stateChart.Dispatch(TransformSimulatorEvent(e));
+            engine.Dispatch(TransformSimulatorEvent(e));
 
             foreach (ISimulationComponent c in componentRepository.GetAllComponents())
                 c.SubmitEvent(e);
@@ -62,12 +65,12 @@ namespace ScenarioSim.Simulator
 
         public void AddEnactor(IComplicationEnactor enactor)
         {
-            repo.AddEnactor(enactor);
+            enactorRepository.AddEnactor(enactor);
         }
 
         public IEnumerable<string> ActiveTasks()
         {
-            return stateChart.ActiveStates();
+            return engine.ActiveStates();
         }
 
         protected IStateChartEvent TransformSimulatorEvent(ScenarioEvent e)
@@ -77,7 +80,7 @@ namespace ScenarioSim.Simulator
 
         protected virtual void Complete()
         {
-            foreach (IComplicationEnactor enactor in repo.Enactors)
+            foreach (IComplicationEnactor enactor in enactorRepository.Enactors)
                 enactor.CleanUp();
             foreach (ISimulationComponent c in componentRepository.GetAllComponents())
                 c.Complete();
@@ -85,15 +88,13 @@ namespace ScenarioSim.Simulator
 
         public bool IsTaskActive(string task)
         {
-            return stateChart.IsStateActive(task);
+            return engine.IsStateActive(task);
         }
-
 
         public void AddComponent(ISimulationComponent component)
         {
             componentRepository.AddComponent(component);
         }
-
 
         public ISimulationComponent GetComponent(Type type)
         {

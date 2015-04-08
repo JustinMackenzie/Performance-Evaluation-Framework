@@ -20,7 +20,7 @@ namespace ScenarioSim.Simulator
         List<ISimulatorEventLogger> loggers;
 
         public LoggingScenarioSimulator(string scenarioFile, IEntityPlacer placer, string folderPath, User user)
-            : base(scenarioFile, placer)
+            : base(null, placer, null, null, null)
         {
             this.user = user;
             this.scenarioFile = scenarioFile;
@@ -42,11 +42,11 @@ namespace ScenarioSim.Simulator
             ActionFactory actionFactory = new ActionFactory(new TextLogger(this.folderPath + "\\StateChartLog.txt"), 
                 timeKeeper, new TextLogger(this.folderPath + "\\ComplicationLog.txt"));
 
-            IStateChartBuilder builder = new LoggingUmlStateChartBuilder(actionFactory, repo);
-            stateChart = builder.Build(scenario);
+            IStateChartBuilder builder = new LoggingUmlStateChartBuilder(actionFactory, enactorRepository);
+            engine = builder.Build(scenario);
 
             timeKeeper.StartTimer(scenario.Task.Value.Name);
-            stateChart.Start();
+            engine.Start();
         }
 
         public override void SubmitSimulatorEvent(ScenarioEvent e)
@@ -59,7 +59,7 @@ namespace ScenarioSim.Simulator
             foreach (ISimulatorEventLogger logger in loggers)
                 logger.Log(e);
             
-            stateChart.Dispatch(TransformSimulatorEvent(e));
+            engine.Dispatch(TransformSimulatorEvent(e));
 
             foreach (EventParameter p in e.Parameters)
                 if (IsTracked(p, e.Id))

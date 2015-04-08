@@ -22,7 +22,7 @@ namespace ScenarioSim.Core.Tests
         public void Initialize()
         {
             IEntityPlacer placer = Substitute.For<IEntityPlacer>();
-            simulator = new ScenarioSimulator("Scenario.xml", placer);
+            simulator = new ScenarioSimulator(null, placer, null, null, null);
 
             EventParameterCollection parameters = new EventParameterCollection();
             parameters.Add(new EventParameter() { Name = "Tip Position", Value = new Vector3f(5, 2, 7) });

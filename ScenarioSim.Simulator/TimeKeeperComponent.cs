@@ -4,12 +4,16 @@ using ScenarioSim.Core;
 
 namespace ScenarioSim.Simulator
 {
-    class TimeKeeperComponent : ISimulationComponent
+    public class TimeKeeperComponent : ISimulationComponent
     {
         readonly IScenarioSimulator simulator;
         Dictionary<string, long> times;
         long previousTime;
         IEnumerable<string> previousTasks;
+
+        public IDictionary<string, long> TaskTimes {
+            get { return times; }
+        }
 
         public TimeKeeperComponent(IScenarioSimulator simulator)
         {
