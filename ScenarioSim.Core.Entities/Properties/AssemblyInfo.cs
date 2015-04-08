@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ScenarioSim.Core.Tests")]
+[assembly: AssemblyTitle("ScenarioSim.Core.Entities.Entities")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ScenarioSim.Core.Tests")]
+[assembly: AssemblyProduct("ScenarioSim.Core.Entities.Entities")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("d9feb45c-3706-4a3e-b2d0-335c2a50f906")]
+[assembly: Guid("1a59e4c6-e649-455b-b49b-453ea35d797b")]
 
 // Version information for an assembly consists of the following four values:
 //

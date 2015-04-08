@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using ScenarioSim.Core;
 using System.IO;
+using NUnit.Framework;
+using ScenarioSim.Core.Entities;
+using ScenarioSim.Infrastructure.Serialization;
 
 namespace ScenarioSim.Core.Tests
 {

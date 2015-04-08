@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9A54A7AC-4E61-49AE-8B5A-7E8004898B3D}</ProjectGuid>
+    <ProjectGuid>{ACB5AD18-C3D8-494E-ACD5-3429DFBDAA7D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScenarioSim.Core.Tests</RootNamespace>
-    <AssemblyName>ScenarioSim.Core.Tests</AssemblyName>
+    <RootNamespace>ScenarioSim.Infrastructure.Simulator.Tests</RootNamespace>
+    <AssemblyName>ScenarioSim.Infrastructure.Simulator.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NSubstitute">
@@ -41,33 +44,29 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vector3fTests.cs" />
-    <Compile Include="XmlFileSerializerTest.cs" />
-    <Compile Include="XmlSimulatorEventCollectionSerialzerTests.cs" />
-    <Compile Include="XmlTaskTreeNodeTests.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+    <Compile Include="ScenarioSimulatorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ScenarioSim.Core.Entities\ScenarioSim.Core.Entities.csproj">
       <Project>{0ca14dc9-3d32-4ad5-bebb-9d6b639861ec}</Project>
       <Name>ScenarioSim.Core.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ScenarioSim.Core.Interfaces\ScenarioSim.Core.Interfaces.csproj">
-      <Project>{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}</Project>
-      <Name>ScenarioSim.Core.Interfaces</Name>
+    <ProjectReference Include="..\ScenarioSim.Infrastructure.Simulator\ScenarioSim.Infrastructure.Simulator.csproj">
+      <Project>{0d3dc69f-512d-4928-b523-b291da053a17}</Project>
+      <Name>ScenarioSim.Infrastructure.Simulator</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ScenarioSim.Infrastructure.Serialization\ScenarioSim.Infrastructure.Serialization.csproj">
-      <Project>{f9861434-2e50-4347-b75e-bb39ef437a0a}</Project>
-      <Name>ScenarioSim.Infrastructure.Serialization</Name>
+    <ProjectReference Include="..\ScenarioSim.Services.Simulator\ScenarioSim.Services.Simulator.csproj">
+      <Project>{ea2178df-7c44-42b8-a82d-c1a7ef1571bd}</Project>
+      <Name>ScenarioSim.Services.Simulator</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

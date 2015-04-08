@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9A54A7AC-4E61-49AE-8B5A-7E8004898B3D}</ProjectGuid>
+    <ProjectGuid>{570AEFA7-9F8F-4D82-A712-A4E76C7C5FC6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScenarioSim.Core.Tests</RootNamespace>
-    <AssemblyName>ScenarioSim.Core.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>ScenarioSim.Infrastructure.Playback.Tests</RootNamespace>
+    <AssemblyName>ScenarioSim.Infrastructure.Playback.Tests</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -41,33 +41,31 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vector3fTests.cs" />
-    <Compile Include="XmlFileSerializerTest.cs" />
-    <Compile Include="XmlSimulatorEventCollectionSerialzerTests.cs" />
-    <Compile Include="XmlTaskTreeNodeTests.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+    <Compile Include="ScenarioPlaybackTests.cs" />
+    <Compile Include="TestCountEnactor.cs" />
+    <Compile Include="TestEnactor.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ScenarioSim.Core.Entities\ScenarioSim.Core.Entities.csproj">
       <Project>{0ca14dc9-3d32-4ad5-bebb-9d6b639861ec}</Project>
       <Name>ScenarioSim.Core.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ScenarioSim.Core.Interfaces\ScenarioSim.Core.Interfaces.csproj">
-      <Project>{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}</Project>
-      <Name>ScenarioSim.Core.Interfaces</Name>
+    <ProjectReference Include="..\ScenarioSim.Infrastructure.Playback\ScenarioSim.Infrastructure.Playback.csproj">
+      <Project>{73080f5a-c595-44ba-ba2f-6ff5dffd8116}</Project>
+      <Name>ScenarioSim.Infrastructure.Playback</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ScenarioSim.Infrastructure.Serialization\ScenarioSim.Infrastructure.Serialization.csproj">
-      <Project>{f9861434-2e50-4347-b75e-bb39ef437a0a}</Project>
-      <Name>ScenarioSim.Infrastructure.Serialization</Name>
+    <ProjectReference Include="..\ScenarioSim.Services.Playback\ScenarioSim.Services.Playback.csproj">
+      <Project>{cb7074d3-80c6-48bc-9889-7ffa8400cef4}</Project>
+      <Name>ScenarioSim.Services.Playback</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

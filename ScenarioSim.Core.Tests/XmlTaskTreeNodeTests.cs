@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NUnit.Framework;
+﻿using System.Collections.Generic;
 using System.IO;
-using ScenarioSim.Core;
-using NSubstitute;
+using NUnit.Framework;
+using ScenarioSim.Core.Entities;
+using ScenarioSim.Infrastructure.Serialization;
 
 namespace ScenarioSim.Core.Tests
 {
