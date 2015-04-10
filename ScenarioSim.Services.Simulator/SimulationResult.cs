@@ -1,4 +1,5 @@
-﻿using ScenarioSim.Core.Entities;
+﻿using System.Collections.Generic;
+using ScenarioSim.Core.Entities;
 
 namespace ScenarioSim.Services.Simulator
 {
@@ -7,7 +8,7 @@ namespace ScenarioSim.Services.Simulator
         public User User { get; set; }
         public string ScenarioFile { get; set; }
         public TreeNode<TaskResult> TaskResult { get; set; }
-        public ScenarioEventCollection Events { get; set; }
-        public ParameterKeeper TrackedParameters { get; set; } 
+        public List<ScenarioEvent> Events { get; set; }
+        public List<TrackedEventParameter> TrackedParameters { get; set; } 
     }
 }

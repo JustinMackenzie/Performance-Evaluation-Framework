@@ -33,11 +33,21 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
             long currentTime = e.Timestamp.Ticks;
             long deltaTime = currentTime - previousTime;
 
-            foreach(string task in previousTasks)
-                times[task] += deltaTime;
+            UpdateTimes(deltaTime);
 
             previousTasks = simulator.ActiveTasks();
             previousTime = currentTime;
+        }
+
+        private void UpdateTimes(long deltaTime)
+        {
+            foreach (string task in previousTasks)
+            {
+                if (times.ContainsKey(task))
+                    times[task] += deltaTime;
+                else
+                    times.Add(task, deltaTime);
+            }
         }
 
         public void Complete()
@@ -45,8 +55,7 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
             long currentTime = DateTime.Now.Ticks;
             long deltaTime = currentTime - previousTime;
 
-            foreach (string task in previousTasks)
-                times[task] += deltaTime;
+            UpdateTimes(deltaTime);
         }
     }
 }

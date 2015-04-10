@@ -7,8 +7,18 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
 {
     public class ParameterTrackingComponent : ISimulationComponent
     {
+        public IEnumerable<TrackedEventParameter> TrackedParameters {
+            get {return trackedEventParameters; }
+        }
+
         private List<TrackedEventParameter> trackedEventParameters;
         private List<EventParameterPair> trackedParametersRegistry;
+
+        public ParameterTrackingComponent()
+        {
+            trackedEventParameters = new List<TrackedEventParameter>();
+            trackedParametersRegistry = new List<EventParameterPair>();
+        }
 
         public void SubmitEvent(ScenarioEvent e)
         {
@@ -34,8 +44,7 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
 
         public void Start()
         {
-            trackedEventParameters = new List<TrackedEventParameter>();
-            trackedParametersRegistry = new List<EventParameterPair>();
+            
         }
 
 

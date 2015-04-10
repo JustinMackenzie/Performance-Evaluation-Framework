@@ -10,7 +10,7 @@ namespace ScenarioSim.Playback
 {
     public class ScenarioPlayback : IScenarioPlayback
     {
-        ScenarioEventCollection collection;
+        List<ScenarioEvent> collection;
         Dictionary<int, IEventEnactor> enactors;
         Timer timer;
         DateTime startTime;
@@ -38,7 +38,7 @@ namespace ScenarioSim.Playback
             timer.Elapsed += timer_Elapsed;
         }
 
-        private void ShiftEventTimes(ScenarioEventCollection collection)
+        private void ShiftEventTimes(List<ScenarioEvent> collection)
         {
             events = new List<KeyValuePair<long, ScenarioEvent>>();
             long startTime = collection[0].Timestamp.Ticks;

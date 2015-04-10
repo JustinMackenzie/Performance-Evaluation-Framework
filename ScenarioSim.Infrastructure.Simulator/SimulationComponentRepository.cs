@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using ScenarioSim.Services.Simulator;
 
-namespace ScenarioSim.Infrastructure.SimulationComponents
+namespace ScenarioSim.Infrastructure.Simulator
 {
     public class SimulationComponentRepository : ISimulationComponentRepository
     {

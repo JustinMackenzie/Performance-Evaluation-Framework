@@ -46,7 +46,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultWritingComponent.cs" />
     <Compile Include="ScenarioEventCollectionComponent.cs" />
-    <Compile Include="SimulationComponentRepository.cs" />
     <Compile Include="TextLoggingComponent.cs" />
     <Compile Include="TimeKeeperComponent.cs" />
   </ItemGroup>

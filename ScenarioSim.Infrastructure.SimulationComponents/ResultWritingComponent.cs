@@ -12,19 +12,23 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
     {
         private TimeKeeperComponent timeKeeper;
         private string folderPath;
-        private ParameterTrackingComponent paramterTracker;
-        private IScenarioEventRepository scenarioEventRepository;
         private User user;
         private string scenarioFile;
         private Scenario scenario;
-        private ParameterKeeper parameterKeeper;
+        private ParameterTrackingComponent trackingComponent;
+        private ScenarioEventCollectionComponent eventCollectionComponent;
 
 
-        public ResultWritingComponent(TimeKeeperComponent timeKeeper, ParameterTrackingComponent paramterTracker, string folderPath)
+        public ResultWritingComponent(TimeKeeperComponent timeKeeper, string folderPath, string scenarioFile,
+            Scenario scenario, ParameterTrackingComponent trackingComponent, 
+            ScenarioEventCollectionComponent eventCollectionComponent)
         {
             this.timeKeeper = timeKeeper;
             this.folderPath = folderPath;
-            this.paramterTracker = paramterTracker;
+            this.scenarioFile = scenarioFile;
+            this.scenario = scenario;
+            this.trackingComponent = trackingComponent;
+            this.eventCollectionComponent = eventCollectionComponent;
         }
 
         public void Start()
@@ -39,7 +43,7 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
 
         public void Complete()
         {
-            
+            WriteResults();   
         }
 
         private void WriteResults()
@@ -47,9 +51,9 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
             SimulationResult result = new SimulationResult();
             result.User = user;
             result.ScenarioFile = scenarioFile;
-            result.Events = scenarioEventRepository.Events;
+            result.Events = eventCollectionComponent.Events.ToList();
             result.TaskResult = BuildTaskResultTree(scenario.Task);
-            result.TrackedParameters = parameterKeeper;
+            result.TrackedParameters = trackingComponent.TrackedParameters.ToList();
             IFileSerializer<SimulationResult> serializer = new XmlFileSerializer<SimulationResult>();
             serializer.Serialize(folderPath + "\\SimulationResult.xml", result);
 
@@ -88,7 +92,7 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
                 {
                     AccuracyMetricResult metricResult = new AccuracyMetricResult();
                     metricResult.IdealValue = metric.IdealValue;
-                    ScenarioEvent e = (from ScenarioEvent ev in scenarioEventRepository.Events
+                    ScenarioEvent e = (from ScenarioEvent ev in eventCollectionComponent.Events
                                        where ev.Id == metric.ActualValue.EventId
                                        select ev).First<ScenarioEvent>();
                     metricResult.ActualValue = (Vector3f)e.Parameters.FindByName(metric.ActualValue.ParameterName).Value;
