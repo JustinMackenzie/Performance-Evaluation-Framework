@@ -157,7 +157,7 @@ namespace UmlStateChart
             Deactivate = new List<State>();
 
 
-            Transition.CalculateStateSet(start, end, Deactivate, Activate);
+            CalculateStateSet(start, end, Deactivate, Activate);
             start.AddTransition(this);
 
             if (end is PseudoState)

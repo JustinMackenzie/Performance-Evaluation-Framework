@@ -19,18 +19,18 @@ namespace ScenarioSim.Infrastructure.Simulator
         public bool IsActive { get { return engine.IsActive; } }
 
         public ScenarioSimulator(IStateChartBuilder builder, IEntityPlacer placer,
-            IComplicationEnactorRepository enactorRepository, ISimulationComponentRepository componentRepository, Scenario scenario)
+            IComplicationEnactorRepository enactorRepository, ISimulationComponentRepository componentRepository)
         {
             this.enactorRepository = enactorRepository;
             this.builder = builder;
             this.componentRepository = componentRepository;
             this.placer = placer;
-            this.scenario = scenario;
         }
 
-        public virtual void Start()
+        public virtual void Start(Scenario scenario)
         {
             engine = builder.Build(scenario);
+            this.scenario = scenario;
 
             foreach (Entity entity in scenario.Entities)
                 placer.Place(entity);

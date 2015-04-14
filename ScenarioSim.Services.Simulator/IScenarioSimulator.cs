@@ -9,7 +9,7 @@ namespace ScenarioSim.Services.Simulator
         /// <summary>
         /// Starts the simulator. This must be called before submitting an event.
         /// </summary>
-        void Start();
+        void Start(Scenario scenario);
 
         void Stop();
 

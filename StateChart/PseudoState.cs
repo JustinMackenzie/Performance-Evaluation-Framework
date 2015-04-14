@@ -108,7 +108,7 @@ namespace UmlStateChart
             if (data != null)
             {
                 data.StateSet.Clear();
-                PseudoState.Calculate(data.StateSet, dataContainer.GetStateData(Context).CurrentState,
+                Calculate(data.StateSet, dataContainer.GetStateData(Context).CurrentState,
                                       dataContainer, PseudoStateType);
 
             }
@@ -200,7 +200,7 @@ namespace UmlStateChart
                 if (data.CurrentState != null)
                 {
                     State subState = data.CurrentState;
-                    PseudoState.Calculate(history, subState, dataContainer, type);
+                    Calculate(history, subState, dataContainer, type);
                 }
             }
         }

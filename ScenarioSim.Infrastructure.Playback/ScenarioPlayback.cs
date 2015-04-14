@@ -20,20 +20,17 @@ namespace ScenarioSim.Playback
         List<AccuracyMetricResult> activeResults;
         List<KeyValuePair<long, ScenarioEvent>> events;
 
-        public ScenarioPlayback(SimulationResult result, IEntityPlacer placer, IScenarioSimulator simulator)
+        public ScenarioPlayback(IScenarioSimulator simulator)
         {
-            this.result = result;
             this.simulator = simulator;
-            collection = result.Events;
-            Initialize(placer);
         }
 
-        private void Initialize(IEntityPlacer placer)
+        private void Initialize()
         {
             ShiftEventTimes(collection);
             nextEventIndex = 0;
             enactors = new Dictionary<int, IEventEnactor>();
-            simulator.Start();
+            simulator.Start(result.Scenario);
             timer = new Timer(1000.0 / 60);
             timer.Elapsed += timer_Elapsed;
         }
@@ -65,8 +62,13 @@ namespace ScenarioSim.Playback
             }
         }
 
-        public void Play()
+        public void Play(SimulationResult result)
         {
+            this.result = result;
+            collection = result.Events;
+
+            Initialize();
+
             startTime = DateTime.Now;
             timer.Start();
         }

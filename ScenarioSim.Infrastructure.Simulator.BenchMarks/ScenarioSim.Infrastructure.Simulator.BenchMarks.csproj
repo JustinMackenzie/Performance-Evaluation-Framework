@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CB7074D3-80C6-48BC-9889-7FFA8400CEF4}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{CFD6CFE6-EFB4-4CDC-A426-8D45E2B470F0}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScenarioSim.Services.Playback</RootNamespace>
-    <AssemblyName>ScenarioSim.Services.Playback</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <RootNamespace>ScenarioSim.Infrastructure.Simulator.BenchMarks</RootNamespace>
+    <AssemblyName>ScenarioSim.Infrastructure.Simulator.BenchMarks</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +30,10 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -38,14 +44,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IEventEnactor.cs" />
-    <Compile Include="IScenarioPlayback.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScenarioSimulatorBenchMark.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ScenarioSim.Core.Entities\ScenarioSim.Core.Entities.csproj">
       <Project>{0ca14dc9-3d32-4ad5-bebb-9d6b639861ec}</Project>
       <Name>ScenarioSim.Core.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScenarioSim.Infrastructure.Simulator\ScenarioSim.Infrastructure.Simulator.csproj">
+      <Project>{0d3dc69f-512d-4928-b523-b291da053a17}</Project>
+      <Name>ScenarioSim.Infrastructure.Simulator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScenarioSim.Infrastructure.UmlStateChart\ScenarioSim.Infrastructure.UmlStateChart.csproj">
+      <Project>{00894bde-6e24-4cea-9616-2e866e510d02}</Project>
+      <Name>ScenarioSim.Infrastructure.UmlStateChart</Name>
     </ProjectReference>
     <ProjectReference Include="..\ScenarioSim.Services.Simulator\ScenarioSim.Services.Simulator.csproj">
       <Project>{ea2178df-7c44-42b8-a82d-c1a7ef1571bd}</Project>

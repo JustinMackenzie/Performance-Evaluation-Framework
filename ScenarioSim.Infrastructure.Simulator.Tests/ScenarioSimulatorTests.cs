@@ -38,13 +38,13 @@ namespace ScenarioSim.Infrastructure.Simulator.Tests
 
             builder.Build(scenario).Returns(engine);
 
-            simulator = new ScenarioSimulator(builder, placer, repository, componentRepository, scenario);
+            simulator = new ScenarioSimulator(builder, placer, repository, componentRepository);
         }
 
         [Test]
         public void TestBuildStateChart()
         {
-            simulator.Start();
+            simulator.Start(scenario);
 
             builder.Received().Build(scenario);
         }
@@ -52,7 +52,7 @@ namespace ScenarioSim.Infrastructure.Simulator.Tests
         [Test]
         public void TestStartStateChart()
         {
-            simulator.Start();
+            simulator.Start(scenario);
            
             engine.Received().Start();
         }
@@ -65,7 +65,7 @@ namespace ScenarioSim.Infrastructure.Simulator.Tests
             for (int i = 0; i < n; i++)
                 scenario.Entities.Add(new Entity());
 
-            simulator.Start();
+            simulator.Start(scenario);
 
             foreach (Entity entity in scenario.Entities)
                 placer.Received().Place(entity);
@@ -84,7 +84,7 @@ namespace ScenarioSim.Infrastructure.Simulator.Tests
 
             componentRepository.GetAllComponents().Returns(components);
 
-            simulator.Start();
+            simulator.Start(scenario);
 
             foreach (ISimulationComponent simulationComponent in components)
                 simulationComponent.Received().Start();
@@ -104,7 +104,7 @@ namespace ScenarioSim.Infrastructure.Simulator.Tests
 
             repository.Enactors.Returns(enactors);
 
-            simulator.Start();
+            simulator.Start(scenario);
 
             simulator.Stop();
 
@@ -126,7 +126,7 @@ namespace ScenarioSim.Infrastructure.Simulator.Tests
 
             componentRepository.GetAllComponents().Returns(components);
 
-            simulator.Start();
+            simulator.Start(scenario);
 
             simulator.Stop();
 

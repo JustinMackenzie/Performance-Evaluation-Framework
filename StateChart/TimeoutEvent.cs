@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace UmlStateChart
+﻿namespace UmlStateChart
 {
     public class TimeoutEvent : StateChartEvent
     {

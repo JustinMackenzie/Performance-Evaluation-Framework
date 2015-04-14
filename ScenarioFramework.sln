@@ -53,6 +53,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Core", "Scenari
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.SimulationComponents.Tests", "ScenarioSim.Infrastructure.SimulationComponents.Tests\ScenarioSim.Infrastructure.SimulationComponents.Tests.csproj", "{F6BBDD90-6927-405F-B176-97E92C37F10E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchMarkTests", "BenchMarkTests\BenchMarkTests.csproj", "{5E0036BF-FB05-44D8-B46D-5588D106A747}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.DependencyResolution", "ScenarioSim.Infrastructure.DependencyResolution\ScenarioSim.Infrastructure.DependencyResolution.csproj", "{9C0093EF-7E24-463F-AC3E-532396D778C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -143,6 +147,14 @@ Global
 		{F6BBDD90-6927-405F-B176-97E92C37F10E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6BBDD90-6927-405F-B176-97E92C37F10E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6BBDD90-6927-405F-B176-97E92C37F10E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E0036BF-FB05-44D8-B46D-5588D106A747}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E0036BF-FB05-44D8-B46D-5588D106A747}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E0036BF-FB05-44D8-B46D-5588D106A747}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E0036BF-FB05-44D8-B46D-5588D106A747}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C0093EF-7E24-463F-AC3E-532396D778C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C0093EF-7E24-463F-AC3E-532396D778C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C0093EF-7E24-463F-AC3E-532396D778C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C0093EF-7E24-463F-AC3E-532396D778C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -161,5 +173,6 @@ Global
 		{ACB5AD18-C3D8-494E-ACD5-3429DFBDAA7D} = {E789DBEC-4FF2-4B15-9A7F-55E1B852E19D}
 		{570AEFA7-9F8F-4D82-A712-A4E76C7C5FC6} = {E789DBEC-4FF2-4B15-9A7F-55E1B852E19D}
 		{F6BBDD90-6927-405F-B176-97E92C37F10E} = {E789DBEC-4FF2-4B15-9A7F-55E1B852E19D}
+		{9C0093EF-7E24-463F-AC3E-532396D778C6} = {85A18757-A2BE-4FDF-943C-6C29B4408BE1}
 	EndGlobalSection
 EndGlobal
