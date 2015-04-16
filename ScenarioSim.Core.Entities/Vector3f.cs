@@ -4,7 +4,7 @@ namespace ScenarioSim.Core.Entities
 {
     /// <summary>
     /// This structure represents a three dimensional vector that holds
-    /// floating point precision numbers.
+    /// floating point precision values.
     /// </summary>
     public struct Vector3f
     {
@@ -37,6 +37,9 @@ namespace ScenarioSim.Core.Entities
             Z = z;
         }
 
+        /// <summary>
+        /// Returns the magnitude of the vector.
+        /// </summary>
         public float Magnitude
         {
             get
@@ -45,16 +48,34 @@ namespace ScenarioSim.Core.Entities
             }
         }
 
+        /// <summary>
+        /// Determines the dot product of two given vectors.
+        /// </summary>
+        /// <param name="a">The first vector.</param>
+        /// <param name="b">The second vector.</param>
+        /// <returns>The dot product of the two vectors.</returns>
         public static float Dot(Vector3f a, Vector3f b)
         {
             return a.X * b.X + a.Y * b.Y + a.Z * b.Z;
         }
 
+        /// <summary>
+        /// Determines the angle between two given vectors.
+        /// </summary>
+        /// <param name="a">The first vector.</param>
+        /// <param name="b">The second vector.</param>
+        /// <returns>The angle between the two vectors.</returns>
         public static float AngleBetween(Vector3f a, Vector3f b)
         {
             return (float)(Math.Acos(Dot(a, b) / (a.Magnitude * b.Magnitude)) * 180/Math.PI);
         }
 
+        /// <summary>
+        /// Determines the euclidean distance between two vectors.
+        /// </summary>
+        /// <param name="a">The first vector.</param>
+        /// <param name="b">The second vector.</param>
+        /// <returns>The euclidean distance between the two vectors.</returns>
         public static float DistanceBetween(Vector3f a, Vector3f b)
         {
             return (float)Math.Sqrt(
@@ -63,11 +84,23 @@ namespace ScenarioSim.Core.Entities
                 Math.Pow(a.Z - b.Z, 2));
         }
 
+        /// <summary>
+        /// Performs vector addition between two vectors.
+        /// </summary>
+        /// <param name="a">The first vector.</param>
+        /// <param name="b">The second vector.</param>
+        /// <returns>A vector that is the sum of the two vectors.</returns>
         public static Vector3f operator +(Vector3f a, Vector3f b)
         {
             return new Vector3f(a.X + b.X, a.Y + b.Y, a.Z + b.Z);
         }
 
+        /// <summary>
+        /// Performs vector subtraction between two vectors.
+        /// </summary>
+        /// <param name="a">The first vector.</param>
+        /// <param name="b">The second vector.</param>
+        /// <returns>A vector that is the difference of the two vectors.</returns>
         public static Vector3f operator -(Vector3f a, Vector3f b)
         {
             return new Vector3f(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
