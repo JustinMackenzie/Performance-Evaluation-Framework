@@ -38,6 +38,11 @@ namespace ScenarioSim.Services.Simulator
         /// </summary>
         bool IsActive { get; }
 
+        /// <summary>
+        /// Creates a state chart event based off of the given scenario event.
+        /// </summary>
+        /// <param name="e">The scenario event.</param>
+        /// <returns>A state chart event.</returns>
         IStateChartEvent MakeStateChartEvent(ScenarioEvent e);
     }
 }
