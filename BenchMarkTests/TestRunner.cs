@@ -145,9 +145,8 @@ namespace BenchMarkTests
 
             for (int i = 0; i < n; i++)
             {
-                IScenarioSimulator simulator = kernel.Get<IScenarioSimulator>();
-                simulator.Start(scenario);
                 StateChartComponent stateChart = new StateChartComponent(kernel.Get<IStateChartBuilder>());
+                stateChart.Start(scenario);
                 tests.Add(new ComponentTest(new TimeKeeperComponent(stateChart), scenario));
             }
 
@@ -180,6 +179,25 @@ namespace BenchMarkTests
             };
 
             RunTest(e, tests, "event collection");
+        }
+
+        public void RunStateChartTest(int n)
+        {
+            List<ITest> tests = new List<ITest>();
+
+            for (int i = 0; i < n; i++)
+                tests.Add(new ComponentTest(new StateChartComponent(kernel.Get<IStateChartBuilder>()), scenario));
+
+            ScenarioEvent e = new ScenarioEvent()
+            {
+                Id = 3,
+                Description = "A test event.",
+                Name = "test",
+                Timestamp = DateTime.Now,
+                Parameters = new EventParameterCollection()
+            };
+
+            RunTest(e, tests, "state chart");
         }
     }
 }

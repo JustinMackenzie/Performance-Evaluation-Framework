@@ -21,6 +21,7 @@ namespace BenchMarkTests
             testRunner.RunTextLoggingTests(1000);
             testRunner.RunTimeKeepingTests(1000);
             testRunner.RunEventCollectionTests(1000);
+            testRunner.RunStateChartTest(1000);
 
             Console.ReadLine();
         }
