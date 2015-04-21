@@ -14,7 +14,7 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
             this.filePath = filePath;
         }
 
-        public void Start()
+        public void Start(Scenario scenario)
         {
             writer = new StreamWriter(filePath);
         }

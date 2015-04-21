@@ -10,7 +10,8 @@ namespace ScenarioSim.Services.Simulator
         /// <summary>
         /// Starts the component's execution.
         /// </summary>
-        void Start();
+        /// <param name="scenario"></param>
+        void Start(Scenario scenario);
 
         /// <summary>
         /// Performs the component's logic when an event is submitted.

@@ -8,10 +8,12 @@ namespace BenchMarkTests
     class ComponentTest : ITest
     {
         private ISimulationComponent component;
+        private Scenario scenario;
 
-        public ComponentTest(ISimulationComponent component)
+        public ComponentTest(ISimulationComponent component, Scenario scenario)
         {
             this.component = component;
+            this.scenario = scenario;
         }
 
         public void Execute(ScenarioEvent e)
@@ -19,7 +21,7 @@ namespace BenchMarkTests
             
             Stopwatch timer = new Stopwatch();
 
-            component.Start();
+            component.Start(scenario);
 
             timer.Start();
             component.SubmitEvent(e);

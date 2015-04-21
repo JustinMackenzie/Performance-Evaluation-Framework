@@ -7,24 +7,24 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
 {
     public class TimeKeeperComponent : ISimulationComponent
     {
-        readonly IScenarioSimulator simulator;
         Dictionary<string, long> times;
         long previousTime;
         IEnumerable<string> previousTasks;
+        private readonly StateChartComponent stateChartComponent;
 
         public IDictionary<string, long> TaskTimes {
             get { return times; }
         }
 
-        public TimeKeeperComponent(IScenarioSimulator simulator)
+        public TimeKeeperComponent(StateChartComponent stateChartComponent)
         {
-            this.simulator = simulator;
+            this.stateChartComponent = stateChartComponent;
         }
 
-        public void Start()
+        public void Start(Scenario scenario)
         {
             times = new Dictionary<string, long>();
-            previousTasks = simulator.ActiveTasks();
+            previousTasks = stateChartComponent.ActiveTasks();
             previousTime = DateTime.Now.Ticks;
         }
 
@@ -35,7 +35,7 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
 
             UpdateTimes(deltaTime);
 
-            previousTasks = simulator.ActiveTasks();
+            previousTasks = stateChartComponent.ActiveTasks();
             previousTime = currentTime;
         }
 

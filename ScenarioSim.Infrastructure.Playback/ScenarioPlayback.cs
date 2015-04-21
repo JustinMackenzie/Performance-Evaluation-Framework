@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Timers;
 using ScenarioSim.Core.Entities;
+using ScenarioSim.Infrastructure.SimulationComponents;
 using ScenarioSim.Services.Playback;
 using ScenarioSim.Services.Simulator;
 
@@ -19,10 +20,12 @@ namespace ScenarioSim.Playback
         IScenarioSimulator simulator;
         List<AccuracyMetricResult> activeResults;
         List<KeyValuePair<long, ScenarioEvent>> events;
+        private StateChartComponent stateChart;
 
         public ScenarioPlayback(IScenarioSimulator simulator)
         {
             this.simulator = simulator;
+            stateChart = simulator.GetComponent(typeof (StateChartComponent)) as StateChartComponent;
         }
 
         private void Initialize()
@@ -96,7 +99,7 @@ namespace ScenarioSim.Playback
         {
             get
             {
-                return simulator.ActiveTasks();
+                return stateChart.ActiveTasks();
             }
         }
 

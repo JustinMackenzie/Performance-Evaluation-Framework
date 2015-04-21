@@ -38,23 +38,7 @@ namespace ScenarioSim.Infrastructure.Simulator.Tests
 
             builder.Build(scenario).Returns(engine);
 
-            simulator = new ScenarioSimulator(builder, placer, repository, componentRepository);
-        }
-
-        [Test]
-        public void TestBuildStateChart()
-        {
-            simulator.Start(scenario);
-
-            builder.Received().Build(scenario);
-        }
-
-        [Test]
-        public void TestStartStateChart()
-        {
-            simulator.Start(scenario);
-           
-            engine.Received().Start();
+            simulator = new ScenarioSimulator(placer, repository, componentRepository);
         }
 
         [Test]
@@ -87,7 +71,7 @@ namespace ScenarioSim.Infrastructure.Simulator.Tests
             simulator.Start(scenario);
 
             foreach (ISimulationComponent simulationComponent in components)
-                simulationComponent.Received().Start();
+                simulationComponent.Received().Start(scenario);
         }
 
         [Test]

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Services.Simulator;
 
@@ -7,38 +6,28 @@ namespace ScenarioSim.Infrastructure.Simulator
 {
     public class ScenarioSimulator : IScenarioSimulator
     {
-        protected IStateChartEngine engine;
         protected IComplicationEnactorRepository enactorRepository;
-        protected Scenario scenario;
         readonly ISimulationComponentRepository componentRepository;
         private IEntityPlacer placer;
-        private IStateChartBuilder builder;
+        private bool started;
 
-        public SimulationResult Result { get; protected set; }
-
-        public bool IsActive { get { return engine.IsActive; } }
-
-        public ScenarioSimulator(IStateChartBuilder builder, IEntityPlacer placer,
+        public ScenarioSimulator(IEntityPlacer placer,
             IComplicationEnactorRepository enactorRepository, ISimulationComponentRepository componentRepository)
         {
             this.enactorRepository = enactorRepository;
-            this.builder = builder;
             this.componentRepository = componentRepository;
             this.placer = placer;
         }
 
-        public virtual void Start(Scenario scenario)
+        public void Start(Scenario scenario)
         {
-            engine = builder.Build(scenario);
-            this.scenario = scenario;
-
             foreach (Entity entity in scenario.Entities)
                 placer.Place(entity);
 
-            engine.Start();
-
             foreach (ISimulationComponent c in componentRepository.GetAllComponents())
-                c.Start();
+                c.Start(scenario);
+
+            started = true;
         }
 
         public void Stop()
@@ -46,18 +35,13 @@ namespace ScenarioSim.Infrastructure.Simulator
             Complete();
         }
 
-        public virtual void SubmitSimulatorEvent(ScenarioEvent e)
+        public void SubmitSimulatorEvent(ScenarioEvent e)
         {
-            if (!IsActive)
+            if (!started)
                 throw new Exception("Simulator has not been started. Please call Start() before submitting events.");
-
-            engine.Dispatch(engine.MakeStateChartEvent(e));
 
             foreach (ISimulationComponent c in componentRepository.GetAllComponents())
                 c.SubmitEvent(e);
-
-            if (!IsActive)
-                Complete();
         }
 
         public void AddEnactor(IComplicationEnactor enactor)
@@ -65,22 +49,12 @@ namespace ScenarioSim.Infrastructure.Simulator
             enactorRepository.AddEnactor(enactor);
         }
 
-        public IEnumerable<string> ActiveTasks()
-        {
-            return engine.ActiveStates();
-        }
-
-        protected virtual void Complete()
+        protected void Complete()
         {
             foreach (IComplicationEnactor enactor in enactorRepository.Enactors)
                 enactor.CleanUp();
             foreach (ISimulationComponent c in componentRepository.GetAllComponents())
                 c.Complete();
-        }
-
-        public bool IsTaskActive(string task)
-        {
-            return engine.IsStateActive(task);
         }
 
         public void AddComponent(ISimulationComponent component)

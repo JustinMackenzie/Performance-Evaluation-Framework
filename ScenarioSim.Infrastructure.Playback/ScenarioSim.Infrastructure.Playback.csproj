@@ -46,6 +46,10 @@
       <Project>{0ca14dc9-3d32-4ad5-bebb-9d6b639861ec}</Project>
       <Name>ScenarioSim.Core.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ScenarioSim.Infrastructure.SimulationComponents\ScenarioSim.Infrastructure.SimulationComponents.csproj">
+      <Project>{440504ce-ec03-4a7f-b397-f33621b33119}</Project>
+      <Name>ScenarioSim.Infrastructure.SimulationComponents</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ScenarioSim.Services.Playback\ScenarioSim.Services.Playback.csproj">
       <Project>{cb7074d3-80c6-48bc-9889-7ffa8400cef4}</Project>
       <Name>ScenarioSim.Services.Playback</Name>

@@ -31,7 +31,7 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
             this.eventCollectionComponent = eventCollectionComponent;
         }
 
-        public void Start()
+        public void Start(Scenario scenario1)
         {
             
         }

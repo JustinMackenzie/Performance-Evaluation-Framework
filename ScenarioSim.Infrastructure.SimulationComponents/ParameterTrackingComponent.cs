@@ -42,7 +42,7 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
                     select p).Any();
         }
 
-        public void Start()
+        public void Start(Scenario scenario)
         {
             
         }

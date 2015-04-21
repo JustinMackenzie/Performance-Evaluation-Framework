@@ -22,7 +22,7 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
             this.serializer = serializer;
         }
 
-        public void Start()
+        public void Start(Scenario scenario)
         {
             eventCollection = new List<ScenarioEvent>();
         }

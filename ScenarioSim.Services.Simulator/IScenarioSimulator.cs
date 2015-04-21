@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using ScenarioSim.Core.Entities;
 
 namespace ScenarioSim.Services.Simulator
@@ -25,11 +24,6 @@ namespace ScenarioSim.Services.Simulator
         /// </summary>
         /// <param name="e">The event to be processed.</param>
         void SubmitSimulatorEvent(ScenarioEvent e);
-        
-        /// <summary>
-        /// Determines whether the simulator is active.
-        /// </summary>
-        bool IsActive { get; }
 
         /// <summary>
         /// Adds the given complication enactor to the simulator. The enactor will
@@ -37,24 +31,6 @@ namespace ScenarioSim.Services.Simulator
         /// </summary>
         /// <param name="enactor">The enactor to be added to the simulator.</param>
         void AddEnactor(IComplicationEnactor enactor);
-
-        /// <summary>
-        /// Determines if the task with the given name is active.
-        /// </summary>
-        /// <param name="task">The name of the given task.</param>
-        /// <returns>True if the task is active.</returns>
-        bool IsTaskActive(string task);
-
-        /// <summary>
-        /// Retrieves a the names of all actives tasks in the scenario.
-        /// </summary>
-        /// <returns></returns>
-        IEnumerable<string> ActiveTasks();
-
-        /// <summary>
-        /// Retrieves the simulation results.
-        /// </summary>
-        SimulationResult Result { get; }
 
         /// <summary>
         /// Adds the given component to the simulator.

@@ -48,13 +48,13 @@ namespace BenchMarkTests
             Console.WriteLine("The variance was: {0}", variance);
             Console.WriteLine("The standard deviation was: {0}", standardDev);
 
-            using (StreamWriter writer = new StreamWriter(string.Format("{0}.csv", type)))
+            /*using (StreamWriter writer = new StreamWriter(string.Format("{0}.csv", type)))
             {
                 foreach (float result in results)
                 {
                     writer.WriteLine(result);
                 }
-            }
+            }*/
         }
 
         public void RunScenarioSimulatorTests(int n)
@@ -82,7 +82,7 @@ namespace BenchMarkTests
 
             for (int i = 0; i < n; i++)
             {
-                tests.Add(new ComponentTest(new ParameterTrackingComponent()));
+                tests.Add(new ComponentTest(new ParameterTrackingComponent(), scenario));
             }
 
             ScenarioEvent e = new ScenarioEvent()
@@ -103,7 +103,7 @@ namespace BenchMarkTests
 
             for (int i = 0; i < n; i++)
             {
-                tests.Add(new ComponentTest(new CsvLoggingComponent("test.csv")));
+                tests.Add(new ComponentTest(new CsvLoggingComponent("test.csv"), scenario));
             }
 
             ScenarioEvent e = new ScenarioEvent()
@@ -124,7 +124,7 @@ namespace BenchMarkTests
 
             for (int i = 0; i < n; i++)
             {
-                tests.Add(new ComponentTest(new TextLoggingComponent("test.txt")));
+                tests.Add(new ComponentTest(new TextLoggingComponent("test.txt"), scenario));
             }
 
             ScenarioEvent e = new ScenarioEvent()
@@ -147,7 +147,8 @@ namespace BenchMarkTests
             {
                 IScenarioSimulator simulator = kernel.Get<IScenarioSimulator>();
                 simulator.Start(scenario);
-                tests.Add(new ComponentTest(new TimeKeeperComponent(simulator)));
+                StateChartComponent stateChart = new StateChartComponent(kernel.Get<IStateChartBuilder>());
+                tests.Add(new ComponentTest(new TimeKeeperComponent(stateChart), scenario));
             }
 
             ScenarioEvent e = new ScenarioEvent()
@@ -167,7 +168,7 @@ namespace BenchMarkTests
             List<ITest> tests = new List<ITest>();
 
             for (int i = 0; i < n; i++)
-                tests.Add(new ComponentTest(new ScenarioEventCollectionComponent("events.xml", kernel.Get<IFileSerializer<List<ScenarioEvent>>>())));
+                tests.Add(new ComponentTest(new ScenarioEventCollectionComponent("events.xml", kernel.Get<IFileSerializer<List<ScenarioEvent>>>()), scenario));
 
             ScenarioEvent e = new ScenarioEvent()
             {
