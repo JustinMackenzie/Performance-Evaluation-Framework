@@ -6,7 +6,7 @@ using ScenarioSim.Services.Simulator;
 
 namespace ScenarioSim.Infrastructure.SimulationComponents
 {
-    public class ActionTimeKeeperComponent : ISimulationComponent
+    public class ActionTimeKeeperComponent : ISimulationComponent, ITimeKeeper
     {
         private readonly StateChartComponent stateChartComponent;
         private readonly Dictionary<string, long> activeTimes;
@@ -21,7 +21,8 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
 
         public void Start(Scenario scenario)
         {
-            scenario.Task.Traverse(RegisterAction);
+            foreach (TreeNode<Task> node in scenario.Task.children)
+                node.Traverse(RegisterAction);
         }
 
         public void SubmitEvent(ScenarioEvent e)
@@ -64,6 +65,11 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
                 inactiveTimes.Add(state, deltaTime);
 
             activeTimes.Remove(state);
+        }
+
+        public IDictionary<string, long> TaskTimes
+        {
+            get { return inactiveTimes; }
         }
     }
 }

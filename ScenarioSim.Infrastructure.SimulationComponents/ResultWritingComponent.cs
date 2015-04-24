@@ -10,7 +10,7 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
     //TODO
     public class ResultWritingComponent : ISimulationComponent
     {
-        private TimeKeeperComponent timeKeeper;
+        private ITimeKeeper timeKeeper;
         private string folderPath;
         private User user;
         private string scenarioFile;
@@ -19,7 +19,7 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
         private ScenarioEventCollectionComponent eventCollectionComponent;
 
 
-        public ResultWritingComponent(TimeKeeperComponent timeKeeper, string folderPath, string scenarioFile,
+        public ResultWritingComponent(ITimeKeeper timeKeeper, string folderPath, string scenarioFile,
             Scenario scenario, ParameterTrackingComponent trackingComponent, 
             ScenarioEventCollectionComponent eventCollectionComponent)
         {

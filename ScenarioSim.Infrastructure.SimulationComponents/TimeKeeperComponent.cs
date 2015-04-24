@@ -5,7 +5,12 @@ using ScenarioSim.Services.Simulator;
 
 namespace ScenarioSim.Infrastructure.SimulationComponents
 {
-    public class TimeKeeperComponent : ISimulationComponent
+    public interface ITimeKeeper
+    {
+        IDictionary<string, long> TaskTimes { get; }
+    }
+
+    public class TimeKeeperComponent : ISimulationComponent, ITimeKeeper
     {
         Dictionary<string, long> times;
         long previousTime;
