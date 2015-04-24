@@ -10,7 +10,8 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
     {
         private readonly StateChartComponent stateChartComponent;
         private readonly Dictionary<string, long> activeTimes;
-        private readonly Dictionary<string, long> inactiveTimes; 
+        private readonly Dictionary<string, long> inactiveTimes;
+        private string rootTaskName;
 
         public ActionTimeKeeperComponent(StateChartComponent stateChartComponent)
         {
@@ -21,8 +22,10 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
 
         public void Start(Scenario scenario)
         {
+            rootTaskName = scenario.Task.Value.Name;
             foreach (TreeNode<Task> node in scenario.Task.children)
                 node.Traverse(RegisterAction);
+            StartTimer(rootTaskName);
         }
 
         public void SubmitEvent(ScenarioEvent e)
