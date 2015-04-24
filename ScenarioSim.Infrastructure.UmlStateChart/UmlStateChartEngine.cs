@@ -22,6 +22,40 @@ namespace ScenarioSim.Infrastructure.UmlStateChart
             };
         }
 
+        public void AddAction(ActionPoint actionPoint, string state, IStateChartAction action)
+        {
+            State s = stateChart.States[state];
+
+            switch (actionPoint)
+            {
+                case ActionPoint.Entry:
+                    if (s.EntryAction == null)
+                    {
+                        s.EntryAction = new UmlStateChartAction(action);
+                    }
+                    else
+                    {
+                        UmlStateChartAction stateChartAction = s.EntryAction as UmlStateChartAction;
+                        if (stateChartAction != null)
+                            stateChartAction.AddAction(new UmlStateChartAction(action));
+                    }
+
+                    break;
+                case ActionPoint.Exit:
+                    if (s.ExitAction == null)
+                    {
+                        s.ExitAction = new UmlStateChartAction(action);
+                    }
+                    else
+                    {
+                        UmlStateChartAction stateChartAction = s.ExitAction as UmlStateChartAction;
+                        if (stateChartAction != null)
+                            stateChartAction.AddAction(new UmlStateChartAction(action));
+                    }
+                    break;
+            }
+        }
+
         public UmlStateChartEngine(StateChart stateChart)
         {
             this.stateChart = stateChart;

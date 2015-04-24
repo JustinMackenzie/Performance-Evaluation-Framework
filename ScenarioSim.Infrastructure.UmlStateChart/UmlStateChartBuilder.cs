@@ -9,12 +9,10 @@ namespace ScenarioSim.Infrastructure.UmlStateChart
     public class UmlStateChartBuilder : IStateChartBuilder
     {
         protected Dictionary<string, State> states;
-        protected IComplicationEnactorRepository repo;
 
-        public UmlStateChartBuilder(IComplicationEnactorRepository repo)
+        public UmlStateChartBuilder()
         {
             states = new Dictionary<string, State>();
-            this.repo = repo;
         }
 
         public IStateChartEngine Build(Scenario scenario)
@@ -41,15 +39,7 @@ namespace ScenarioSim.Infrastructure.UmlStateChart
                 new Transition(states[transition.Source], 
                     states[transition.Destination], new StateChartEvent(transition.EventId));
 
-            // Add complications to the state chart.
-            AddComplications(scenario.Complications);
-
             return new UmlStateChartEngine(stateChart);
-        }
-
-        protected virtual void AddActions(State state)
-        {
-            
         }
 
         private void AddState(TreeNode<Task> taskNode, Context parent)
@@ -84,35 +74,13 @@ namespace ScenarioSim.Infrastructure.UmlStateChart
                 Transition startTransition = new Transition(startState, historyState);
                 Transition historyTransition = new Transition(historyState, states[startTaskName]);
                 states.Add(name, state);
-                AddActions(state);
             }
             else
             {
                 // Add a simple state, since this task did not have children.
                 State state = new State(name, parent, null, null);
                 states.Add(name, state);
-                AddActions(state);
             }
-        }
-
-        protected virtual void AddComplicationActions(Complication complication)
-        {
-            if (!(complication is TaskDependantComplication)) 
-                return;
-
-            TaskDependantComplication c = (TaskDependantComplication) complication;
-            if (c.Entry)
-                states[c.TaskName].EntryAction = new EnactComplicationAction(repo, c.Id);
-                
-            else
-                states[c.TaskName].ExitAction = new EnactComplicationAction(repo, c.Id);
-        }
-
-        private void AddComplications(IEnumerable<Complication> collection)
-        {
-            foreach(Complication complication in collection)
-                AddComplicationActions(complication);
-            
         }
     }
 }

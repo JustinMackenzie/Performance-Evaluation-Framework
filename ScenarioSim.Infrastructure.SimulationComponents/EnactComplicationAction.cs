@@ -1,9 +1,8 @@
 ﻿using ScenarioSim.Services.Simulator;
-using UmlStateChart;
 
-namespace ScenarioSim.Infrastructure.UmlStateChart
+namespace ScenarioSim.Infrastructure.SimulationComponents
 {
-    class EnactComplicationAction : UmlStateChartAction
+    public class EnactComplicationAction : IStateChartAction
     {
         IComplicationEnactorRepository enactorRepository;
         int complicationId;
@@ -14,7 +13,7 @@ namespace ScenarioSim.Infrastructure.UmlStateChart
             this.complicationId = complicationId;
         }
 
-        protected override void ExecuteAction(StateDataContainer container)
+        public void Execute()
         {
             if (!enactorRepository.Contains(complicationId))
                 return;

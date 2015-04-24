@@ -44,5 +44,13 @@ namespace ScenarioSim.Services.Simulator
         /// <param name="e">The scenario event.</param>
         /// <returns>A state chart event.</returns>
         IStateChartEvent MakeStateChartEvent(ScenarioEvent e);
+
+        void AddAction(ActionPoint actionPoint, string state, IStateChartAction action);
+    }
+
+    public enum ActionPoint
+    {
+        Entry,
+        Exit
     }
 }

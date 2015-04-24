@@ -19,7 +19,6 @@ namespace ScenarioSim.Infrastructure.DependencyResolution
         {
             Bind<IScenarioSimulator>().
                 To<ScenarioSimulator>()
-                .WithConstructorArgument("builder", context => context.Kernel.Get<IStateChartBuilder>())
                 .WithConstructorArgument("placer", placer)
                 .WithConstructorArgument("enactorRepository",
                     context => context.Kernel.Get<IComplicationEnactorRepository>())
@@ -29,8 +28,7 @@ namespace ScenarioSim.Infrastructure.DependencyResolution
             Bind<ISimulationComponentRepository>().To<SimulationComponentRepository>();
             Bind<IComplicationEnactorRepository>().To<ComplicationEnactorRepository>().InSingletonScope();
             Bind<IStateChartBuilder>()
-                .To<UmlStateChartBuilder>()
-                .WithConstructorArgument("repo", context => context.Kernel.Get<IComplicationEnactorRepository>());
+                .To<UmlStateChartBuilder>();
         }
     }
 }

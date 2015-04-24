@@ -38,7 +38,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EnactComplicationAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UmlStateChartAction.cs" />
     <Compile Include="UmlStateChartBuilder.cs" />

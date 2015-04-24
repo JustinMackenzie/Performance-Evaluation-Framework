@@ -47,6 +47,7 @@
     <Compile Include="IScenarioSimulator.cs" />
     <Compile Include="ISimulationComponent.cs" />
     <Compile Include="ISimulationComponentRepository.cs" />
+    <Compile Include="IStateChartAction.cs" />
     <Compile Include="IStateChartBuilder.cs" />
     <Compile Include="IStateChartEngine.cs" />
     <Compile Include="IStateChartEvent.cs" />

@@ -1,14 +1,23 @@
-﻿using UmlStateChart;
+﻿using ScenarioSim.Services.Simulator;
+using UmlStateChart;
 
 namespace ScenarioSim.Infrastructure.UmlStateChart
 {
-    public abstract class UmlStateChartAction : IAction
+    public class UmlStateChartAction : IAction
     {
+        private readonly IStateChartAction action;
+
+        public UmlStateChartAction(IStateChartAction action)
+        {
+            this.action = action;
+        }
+
         public UmlStateChartAction NextAction { get; set; }
 
         public void Execute(StateDataContainer container)
         {
-            ExecuteAction(container);
+            action.Execute();
+
             if (NextAction != null)
                 NextAction.Execute(container);
         }
@@ -16,17 +25,9 @@ namespace ScenarioSim.Infrastructure.UmlStateChart
         public void AddAction(UmlStateChartAction action)
         {
             if (NextAction != null)
-            {
-                if (NextAction is UmlStateChartAction)
-                {
-                    (NextAction as UmlStateChartAction).AddAction(action);
-                }
-            }
+                NextAction.AddAction(action);
             else
                 NextAction = action;
         }
-
-
-        protected abstract void ExecuteAction(StateDataContainer container);
     }
 }
