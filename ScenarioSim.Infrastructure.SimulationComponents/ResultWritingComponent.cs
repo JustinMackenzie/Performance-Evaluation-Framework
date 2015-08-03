@@ -2,7 +2,7 @@
 using System.Linq;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Core.Interfaces;
-using ScenarioSim.Infrastructure.Serialization;
+using ScenarioSim.Infrastructure.XmlSerialization;
 using ScenarioSim.Services.Simulator;
 
 namespace ScenarioSim.Infrastructure.SimulationComponents
@@ -49,6 +49,7 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
         private void WriteResults()
         {
             SimulationResult result = new SimulationResult();
+            result.Scenario = scenario;
             result.User = user;
             result.ScenarioFile = scenarioFile;
             result.Events = eventCollectionComponent.Events.ToList();

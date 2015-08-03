@@ -64,9 +64,9 @@
       <Project>{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}</Project>
       <Name>ScenarioSim.Core.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ScenarioSim.Infrastructure.Serialization\ScenarioSim.Infrastructure.Serialization.csproj">
+    <ProjectReference Include="..\ScenarioSim.Infrastructure.Serialization\ScenarioSim.Infrastructure.XmlSerialization.csproj">
       <Project>{f9861434-2e50-4347-b75e-bb39ef437a0a}</Project>
-      <Name>ScenarioSim.Infrastructure.Serialization</Name>
+      <Name>ScenarioSim.Infrastructure.XmlSerialization</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

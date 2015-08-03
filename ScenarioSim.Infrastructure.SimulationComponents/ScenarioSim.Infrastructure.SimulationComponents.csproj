@@ -65,9 +65,9 @@
       <Project>{de8824b9-da8f-4d8e-b2c7-080ba045f0f0}</Project>
       <Name>ScenarioSim.Core.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ScenarioSim.Infrastructure.Serialization\ScenarioSim.Infrastructure.Serialization.csproj">
+    <ProjectReference Include="..\ScenarioSim.Infrastructure.Serialization\ScenarioSim.Infrastructure.XmlSerialization.csproj">
       <Project>{f9861434-2e50-4347-b75e-bb39ef437a0a}</Project>
-      <Name>ScenarioSim.Infrastructure.Serialization</Name>
+      <Name>ScenarioSim.Infrastructure.XmlSerialization</Name>
     </ProjectReference>
     <ProjectReference Include="..\ScenarioSim.Services.Simulator\ScenarioSim.Services.Simulator.csproj">
       <Project>{ea2178df-7c44-42b8-a82d-c1a7ef1571bd}</Project>

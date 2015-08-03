@@ -98,12 +98,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ScenarioSim.Core\ScenarioSim.Core.csproj">
-      <Project>{e93acfdf-c454-4bb8-b0f8-9838af372e39}</Project>
-      <Name>ScenarioSim.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

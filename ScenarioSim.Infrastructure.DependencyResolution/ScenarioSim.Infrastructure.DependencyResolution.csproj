@@ -59,9 +59,9 @@
       <Project>{73080f5a-c595-44ba-ba2f-6ff5dffd8116}</Project>
       <Name>ScenarioSim.Infrastructure.Playback</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ScenarioSim.Infrastructure.Serialization\ScenarioSim.Infrastructure.Serialization.csproj">
+    <ProjectReference Include="..\ScenarioSim.Infrastructure.Serialization\ScenarioSim.Infrastructure.XmlSerialization.csproj">
       <Project>{f9861434-2e50-4347-b75e-bb39ef437a0a}</Project>
-      <Name>ScenarioSim.Infrastructure.Serialization</Name>
+      <Name>ScenarioSim.Infrastructure.XmlSerialization</Name>
     </ProjectReference>
     <ProjectReference Include="..\ScenarioSim.Infrastructure.Simulator\ScenarioSim.Infrastructure.Simulator.csproj">
       <Project>{0d3dc69f-512d-4928-b523-b291da053a17}</Project>

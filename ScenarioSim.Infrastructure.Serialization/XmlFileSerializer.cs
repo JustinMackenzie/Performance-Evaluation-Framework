@@ -3,7 +3,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using ScenarioSim.Core.Interfaces;
 
-namespace ScenarioSim.Infrastructure.Serialization
+namespace ScenarioSim.Infrastructure.XmlSerialization
 {
     /// <summary>
     /// An implementation of IFileSerializer that serializes to and deserializes from

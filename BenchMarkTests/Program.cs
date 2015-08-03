@@ -15,13 +15,13 @@ namespace BenchMarkTests
 
             TestRunner testRunner = new TestRunner(kernel);
 
-            testRunner.RunScenarioSimulatorTests(1000);
-            testRunner.RunParameterTrackingTests(1000);
-            testRunner.RunCsvLoggingComponentTests(1000);
-            testRunner.RunTextLoggingTests(1000);
-            testRunner.RunTimeKeepingTests(1000);
-            testRunner.RunEventCollectionTests(1000);
-            testRunner.RunStateChartTest(1000);
+            //testRunner.RunScenarioSimulatorTests(100000);
+            //testRunner.RunParameterTrackingTests(100000);
+            //testRunner.RunCsvLoggingComponentTests(100000);
+            //testRunner.RunTextLoggingTests(100000);
+            //testRunner.RunTimeKeepingTests(100000);
+            //testRunner.RunEventCollectionTests(100000);
+            testRunner.RunStateChartTest(100000);
 
             Console.ReadLine();
         }

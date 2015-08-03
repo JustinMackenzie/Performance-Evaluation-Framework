@@ -1,11 +1,15 @@
-﻿namespace LongestAxisAnalysis
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+
+namespace LongestAxisAnalysis
 {
     partial class Form1
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -318,22 +322,22 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.Button previousEventButton;
-        private System.Windows.Forms.Button nextEventButton;
-        private System.Windows.Forms.Button playButton;
-        private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.SplitContainer splitContainer4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListView listView2;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem openToolStripMenuItem;
+        private ToolStrip toolStrip1;
+        private SplitContainer splitContainer1;
+        private SplitContainer splitContainer2;
+        private Button previousEventButton;
+        private Button nextEventButton;
+        private Button playButton;
+        private SplitContainer splitContainer3;
+        private Chart chart1;
+        private Label label1;
+        private ListView listView1;
+        private SplitContainer splitContainer4;
+        private Label label2;
+        private ListView listView2;
     }
 }
 

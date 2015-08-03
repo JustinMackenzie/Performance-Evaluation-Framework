@@ -9,16 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmlStateChart", "StateChart
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Core.Tests", "ScenarioSim.Core.Tests\ScenarioSim.Core.Tests.csproj", "{9A54A7AC-4E61-49AE-8B5A-7E8004898B3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Simulator", "ScenarioSim.Simulator\ScenarioSim.Simulator.csproj", "{076F2875-224E-4D46-8EC9-4C1DE33FA3FC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Creator", "ScenarioSim.Creator\ScenarioSim.Creator.csproj", "{385011CD-F1EC-4A94-9CCC-58DE5F0A373B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Playback", "ScenarioSim.Playback\ScenarioSim.Playback.csproj", "{27886252-69D0-4DA2-8231-249DD6A7F8E5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnactorDemo", "EnactorDemo\EnactorDemo.csproj", "{3335C609-9E9A-45A9-B323-C50DF3F122F8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestAxisAnalysis", "LongestAxisAnalysis\LongestAxisAnalysis.csproj", "{64BDD255-A6C0-4991-93ED-09CFD07F5237}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F436EDAF-725C-434A-8F4A-491D30F3AF52}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Core.Entities", "ScenarioSim.Core.Entities\ScenarioSim.Core.Entities.csproj", "{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}"
@@ -41,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.SimulationComponents", "ScenarioSim.Infrastructure.SimulationComponents\ScenarioSim.Infrastructure.SimulationComponents.csproj", "{440504CE-EC03-4A7F-B397-F33621B33119}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.Serialization", "ScenarioSim.Infrastructure.Serialization\ScenarioSim.Infrastructure.Serialization.csproj", "{F9861434-2E50-4347-B75E-BB39EF437A0A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.XmlSerialization", "ScenarioSim.Infrastructure.Serialization\ScenarioSim.Infrastructure.XmlSerialization.csproj", "{F9861434-2E50-4347-B75E-BB39EF437A0A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.UmlStateChart", "ScenarioSim.Infrastructure.UmlStateChart\ScenarioSim.Infrastructure.UmlStateChart.csproj", "{00894BDE-6E24-4CEA-9616-2E866E510D02}"
 EndProject
@@ -49,13 +39,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.Playback.Tests", "ScenarioSim.Infrastructure.Playback.Tests\ScenarioSim.Infrastructure.Playback.Tests.csproj", "{570AEFA7-9F8F-4D82-A712-A4E76C7C5FC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Core", "ScenarioSim.Core\ScenarioSim.Core.csproj", "{E93ACFDF-C454-4BB8-B0F8-9838AF372E39}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.SimulationComponents.Tests", "ScenarioSim.Infrastructure.SimulationComponents.Tests\ScenarioSim.Infrastructure.SimulationComponents.Tests.csproj", "{F6BBDD90-6927-405F-B176-97E92C37F10E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchMarkTests", "BenchMarkTests\BenchMarkTests.csproj", "{5E0036BF-FB05-44D8-B46D-5588D106A747}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.DependencyResolution", "ScenarioSim.Infrastructure.DependencyResolution\ScenarioSim.Infrastructure.DependencyResolution.csproj", "{9C0093EF-7E24-463F-AC3E-532396D778C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Services.Evaluation", "ScenarioSim.Services.Evaluation\ScenarioSim.Services.Evaluation.csproj", "{6F66A588-5868-4CA5-97DB-C5DAA7A2FD17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.FittsEvaluator", "ScenarioSim.Infrastructure.FittsEvaluator\ScenarioSim.Infrastructure.FittsEvaluator.csproj", "{3D6C79A6-3BEB-450D-91FA-1C6A9F63F207}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Applications", "{C840EBBA-57C7-4D4A-B781-D4B4333CFAE9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Third Party", "Third Party", "{2189208D-B845-4674-B679-5384A558148A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UML Models", "UML Models", "{A3EB94DD-9B08-49FB-A5DD-ECFFBA32AED5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,26 +73,6 @@ Global
 		{9A54A7AC-4E61-49AE-8B5A-7E8004898B3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A54A7AC-4E61-49AE-8B5A-7E8004898B3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A54A7AC-4E61-49AE-8B5A-7E8004898B3D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{076F2875-224E-4D46-8EC9-4C1DE33FA3FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{076F2875-224E-4D46-8EC9-4C1DE33FA3FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{076F2875-224E-4D46-8EC9-4C1DE33FA3FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{076F2875-224E-4D46-8EC9-4C1DE33FA3FC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{385011CD-F1EC-4A94-9CCC-58DE5F0A373B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{385011CD-F1EC-4A94-9CCC-58DE5F0A373B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{385011CD-F1EC-4A94-9CCC-58DE5F0A373B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{385011CD-F1EC-4A94-9CCC-58DE5F0A373B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{27886252-69D0-4DA2-8231-249DD6A7F8E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{27886252-69D0-4DA2-8231-249DD6A7F8E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{27886252-69D0-4DA2-8231-249DD6A7F8E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{27886252-69D0-4DA2-8231-249DD6A7F8E5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3335C609-9E9A-45A9-B323-C50DF3F122F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3335C609-9E9A-45A9-B323-C50DF3F122F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3335C609-9E9A-45A9-B323-C50DF3F122F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3335C609-9E9A-45A9-B323-C50DF3F122F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{64BDD255-A6C0-4991-93ED-09CFD07F5237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{64BDD255-A6C0-4991-93ED-09CFD07F5237}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{64BDD255-A6C0-4991-93ED-09CFD07F5237}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{64BDD255-A6C0-4991-93ED-09CFD07F5237}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -139,10 +117,6 @@ Global
 		{570AEFA7-9F8F-4D82-A712-A4E76C7C5FC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{570AEFA7-9F8F-4D82-A712-A4E76C7C5FC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{570AEFA7-9F8F-4D82-A712-A4E76C7C5FC6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E93ACFDF-C454-4BB8-B0F8-9838AF372E39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E93ACFDF-C454-4BB8-B0F8-9838AF372E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E93ACFDF-C454-4BB8-B0F8-9838AF372E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E93ACFDF-C454-4BB8-B0F8-9838AF372E39}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F6BBDD90-6927-405F-B176-97E92C37F10E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F6BBDD90-6927-405F-B176-97E92C37F10E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6BBDD90-6927-405F-B176-97E92C37F10E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -155,11 +129,21 @@ Global
 		{9C0093EF-7E24-463F-AC3E-532396D778C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C0093EF-7E24-463F-AC3E-532396D778C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C0093EF-7E24-463F-AC3E-532396D778C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F66A588-5868-4CA5-97DB-C5DAA7A2FD17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F66A588-5868-4CA5-97DB-C5DAA7A2FD17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F66A588-5868-4CA5-97DB-C5DAA7A2FD17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F66A588-5868-4CA5-97DB-C5DAA7A2FD17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D6C79A6-3BEB-450D-91FA-1C6A9F63F207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D6C79A6-3BEB-450D-91FA-1C6A9F63F207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D6C79A6-3BEB-450D-91FA-1C6A9F63F207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D6C79A6-3BEB-450D-91FA-1C6A9F63F207}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{295A2F27-510E-4001-B8A3-88D72FA96928} = {A3EB94DD-9B08-49FB-A5DD-ECFFBA32AED5}
+		{32304491-F871-4D59-A317-7AE533850B0B} = {2189208D-B845-4674-B679-5384A558148A}
 		{9A54A7AC-4E61-49AE-8B5A-7E8004898B3D} = {E789DBEC-4FF2-4B15-9A7F-55E1B852E19D}
 		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC} = {F436EDAF-725C-434A-8F4A-491D30F3AF52}
 		{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0} = {F436EDAF-725C-434A-8F4A-491D30F3AF52}
@@ -173,6 +157,9 @@ Global
 		{ACB5AD18-C3D8-494E-ACD5-3429DFBDAA7D} = {E789DBEC-4FF2-4B15-9A7F-55E1B852E19D}
 		{570AEFA7-9F8F-4D82-A712-A4E76C7C5FC6} = {E789DBEC-4FF2-4B15-9A7F-55E1B852E19D}
 		{F6BBDD90-6927-405F-B176-97E92C37F10E} = {E789DBEC-4FF2-4B15-9A7F-55E1B852E19D}
+		{5E0036BF-FB05-44D8-B46D-5588D106A747} = {C840EBBA-57C7-4D4A-B781-D4B4333CFAE9}
 		{9C0093EF-7E24-463F-AC3E-532396D778C6} = {85A18757-A2BE-4FDF-943C-6C29B4408BE1}
+		{6F66A588-5868-4CA5-97DB-C5DAA7A2FD17} = {ECF2B6A2-AA2D-4487-9F37-05E8D9CCE616}
+		{3D6C79A6-3BEB-450D-91FA-1C6A9F63F207} = {85A18757-A2BE-4FDF-943C-6C29B4408BE1}
 	EndGlobalSection
 EndGlobal

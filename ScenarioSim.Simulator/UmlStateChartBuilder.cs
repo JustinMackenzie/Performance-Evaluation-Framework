@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using ScenarioSim.Core;
-using ScenarioSim.UmlStateChart;
-using UmlStateChart;
 using ScenarioSim.Simulator;
+using UmlStateChart;
 
 namespace ScenarioSim.UmlStateChart
 {

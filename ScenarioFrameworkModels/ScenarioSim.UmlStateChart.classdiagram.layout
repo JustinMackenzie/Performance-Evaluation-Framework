@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ScenarioSim.UmlStateChart">
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14, 8.5" name="ScenarioSim.UmlStateChart">
   <logicalClassDesignerModelMoniker Id="1332acc6-de91-4f9d-aa56-6ce4dc42af52" />
   <nestedChildShapes>
     <classShape Id="67700d8b-ea7b-4255-b4fe-8583ea50c9ec" absoluteBounds="0.5, 1.5, 1.5, 2.148773089647293" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
@@ -37,7 +37,7 @@
         <OperationElementListCompartment Id="833bdc27-fee8-4907-b4f8-433ac78a776e" absoluteBounds="2.515, 5.4141753265261654, 1.4700000000000002, 0.84179684768120444" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </interfaceShape>
-    <realizationConnector edgePoints="[(1.25 : 3.64877308964729); (1.25 : 3.965); (2.16 : 3.965); (2.16 : 4.385); (2.28866666666667 : 4.385 : JumpStart); (2.45533333333333 : 4.385 : JumpEnd); (3.25 : 4.385); (3.25 : 4.625)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" showAsLollipop="false">
+    <realizationConnector edgePoints="[(1.25 : 3.64877308964729); (1.25 : 3.965); (2.16 : 3.965); (2.16 : 4.385); (3.25 : 4.385); (3.25 : 4.625)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" showAsLollipop="false">
       <interfaceRealizationMoniker Id="a604b803-794d-4c13-813e-c3aa9c607390" />
       <relativeChildShapes />
       <nodes>
@@ -60,5 +60,42 @@
         <interfaceShapeMoniker Id="e20ac291-d2b6-4013-9cde-03715e02ff05" />
       </nodes>
     </realizationConnector>
+    <classShape Id="1a93716a-6b39-45c7-b5aa-1d60ba808820" absoluteBounds="5.125, 0.75, 3.5, 2.9495543148120249" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
+      <classMoniker Id="69b01468-2009-472d-bd07-bc718b25c054" LastKnownName="UmlStateChartEngine" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="a724807d-9127-498c-9347-d30806091cbd" absoluteBounds="5.14, 1.2653356393178306, 3.4699999999999998, 0.68164060264825832" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="d1185f48-a37c-4a88-8c29-692922993843" absoluteBounds="5.14, 1.9569762419660888, 3.4699999999999998, 1.642578072845936" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7bf7d4d3-b58b-44bf-93cc-446ba315afdf" absoluteBounds="5.125, 4.875, 3.5, 2.4690855797131857" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
+      <classMoniker Id="0407d830-0df3-4a25-aca5-e7d4e5f62272" LastKnownName="UmlStateChartBuilder" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="2aa726c9-9735-4610-92c9-56aa65151499" absoluteBounds="5.1400000000000006, 5.390335639317831, 3.4699999999999998, 0.68164060264825832" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="6a7236df-c115-420e-90d6-5aba77fc6b3a" absoluteBounds="5.1400000000000006, 6.081976241966089, 3.4699999999999998, 1.1621093377470972" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <dependencyConnector edgePoints="[(6.875 : 4.875); (6.875 : 3.69955431481202)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <dependencyMoniker Id="d1afc038-6da4-4e40-b4c7-f2d17d93d782" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="7bf7d4d3-b58b-44bf-93cc-446ba315afdf" />
+        <classShapeMoniker Id="1a93716a-6b39-45c7-b5aa-1d60ba808820" />
+      </nodes>
+    </dependencyConnector>
+    <classShape Id="2ff525af-102f-4dc5-a733-46761e8f8820" absoluteBounds="10.125, 1.375, 3.625, 1.6683043545484537" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
+      <classMoniker Id="8e244e0c-46ac-47d7-be88-0daed286ba19" LastKnownName="UmlStateChartEvent" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="de99ecc9-9693-4814-9e0f-bed9cce546e2" absoluteBounds="10.14, 1.8903356393178306, 3.5949999999999998, 0.68164060264825832" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="18430fb8-f97b-4299-8db3-342e7b6f3ee6" absoluteBounds="10.14, 2.581976241966089, 3.5949999999999998, 0.36132811258236575" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <dependencyConnector edgePoints="[(8.625 : 2.20915217727423); (10.125 : 2.20915217727423)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <dependencyMoniker Id="13af389d-5cc9-4ae2-aaaa-172dd9e7553b" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="1a93716a-6b39-45c7-b5aa-1d60ba808820" />
+        <classShapeMoniker Id="2ff525af-102f-4dc5-a733-46761e8f8820" />
+      </nodes>
+    </dependencyConnector>
   </nestedChildShapes>
 </logicalClassDesignerDiagram>

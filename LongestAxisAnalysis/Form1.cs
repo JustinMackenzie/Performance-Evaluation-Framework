@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using ScenarioSim.Simulator;
-using ScenarioSim.Core;
-using System.IO;
 using System.Windows.Forms.DataVisualization.Charting;
+using ScenarioSim.Core;
 using ScenarioSim.Playback;
-using System.Diagnostics;
+using ScenarioSim.Simulator;
 
 namespace LongestAxisAnalysis
 {
@@ -40,7 +36,7 @@ namespace LongestAxisAnalysis
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
 
-            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (dialog.ShowDialog() == DialogResult.OK)
             {
                 IFileSerializer<SimulationResult> serializer = new XmlFileSerializer<SimulationResult>();
                 IFileSerializer<Scenario> s = new XmlFileSerializer<Scenario>();

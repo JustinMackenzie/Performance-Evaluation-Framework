@@ -1,0 +1,1935 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="aa692a7e-0f3e-4cbc-8fa5-6aa8c4de2714"
+  name="EnactorDemo"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="e5b8c214-3f1e-471b-9507-d561c1e17fdc"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DEnactorDemo"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="d058e89f-8cae-43d8-b8c2-d9057eb290ed"
+        name="NewDayEvent"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="dbe06dd8-b14b-42ed-9759-21983f35de9b"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="dc039b4e-66ff-465a-b4c8-11733f66ad56"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7085ac22-811d-4f3f-8e23-6997e14ae3fc">
+                <propertyInstance
+                  Id="c47222d7-2215-447f-9807-9f3986f0ab0a"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c7999fc2-a530-426c-8ec9-b31974419b06">
+                <propertyInstance
+                  Id="b53102fc-8599-4a6f-86aa-28808d79c271"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9cd7e938-db5d-49bf-a905-69a074e2c758">
+                <propertyInstance
+                  Id="514c3fc6-ee04-4bf0-b829-9aa6a75d8337"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2e862444-2267-4370-9b57-a09933090072">
+                <propertyInstance
+                  Id="f032c91b-503d-4395-8a64-8c3143d1700c"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="22f95c27-e14f-40f1-9f52-b09a932998b0">
+                <propertyInstance
+                  Id="7e3e6803-d85a-414d-b843-f0a2b299336e"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="465e8d63-f0bb-4e90-b624-770ff61fffa0"
+            isDerived="false"
+            sourceEndRoleName="NewDayEvent"
+            targetEndRoleName="Day"
+            isLeaf="false"
+            isAbstract="false">
+            <enumerationMoniker
+              Id="a6de94d9-310f-49c9-9314-2644ad2daf85"
+              LastKnownName="DayOfWeek"
+              LastKnownLocation="Package2_0025.uml" />
+            <description>Property Day references type DayOfWeek.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6d97632d-743c-46e7-86f0-592c46687fa4"
+                  name="NewDayEvent"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="144a3472-d72b-4469-a5f0-a17c2aff8704"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="a06490fe-f085-423f-a583-c2ab95d91014"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6748b635-b156-4517-996b-d3bdcda9d685"
+                  name="Day"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="7cc7588f-c879-441d-93b0-f0ec3853ac19"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="0d860439-3cdf-4c50-967e-f3d464183b3c"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="dcbf0ed4-f66f-4d5b-a35f-484b29c7d8c1"
+            name="Day"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="3af6f2fd-f90e-4053-b83b-50a97da3d660"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent Member%3DDay"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b305a5e3-26e9-44ce-a956-850d73bfd7bc"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="91d29499-abc9-46fb-8cf1-2137128f5475">
+                    <propertyInstance
+                      Id="bb417427-987c-4eda-8135-032682254cdd"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="18f7addc-2a98-40ad-856a-2ebb33a8dd81">
+                    <propertyInstance
+                      Id="e8ccfef7-3255-4521-b71b-5f2dde4d8e76"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6fe6da93-381e-431f-9e02-8a3b72e7b216">
+                    <propertyInstance
+                      Id="9df221b6-9a0e-4f68-aba9-3c3b758496fe"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8b76bfc4-9048-4212-8117-708efb8cdae8">
+                    <propertyInstance
+                      Id="094c1f2b-9eb5-4b6a-a01a-a10e2dbe4eb3"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9648df6d-25a2-4bd1-89cf-6b54282795a3">
+                    <propertyInstance
+                      Id="e1557efa-6759-4c1d-8ab1-a0cb439581e6"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c9cd5583-8f70-41f3-85d9-7b29c120c400">
+                    <propertyInstance
+                      Id="7b488f49-6ff4-4c0b-88f1-d3e77e0812c8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fc01c2bd-9175-4dde-b5e1-84409774d1aa">
+                    <propertyInstance
+                      Id="8d80c112-729f-4f4b-80d5-c8dfe1df16ce"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <enumerationMoniker
+                Id="a6de94d9-310f-49c9-9314-2644ad2daf85"
+                LastKnownName="DayOfWeek"
+                LastKnownLocation="Package2_0025.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="4fa3ae6c-5d76-4970-8e4d-307177647cf2"
+            name="NewDayEvent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="798c1f14-7e03-468c-a83d-f3bb8db6a1a4"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="44314583-5c67-4195-a736-57537c2ee082"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="22b76341-c5ca-4d71-bd14-cbb0ec91b82b">
+                    <propertyInstance
+                      Id="8cf36c72-5a6d-4ebb-bf0f-1cd5bb6b40ba"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="495d0157-c944-45d1-bf94-9b0ecf9a1ac4">
+                    <propertyInstance
+                      Id="46ce99af-cdf7-4198-9725-298c9370b896"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="823a3e5f-f24b-4379-afd8-8d8a54c5af81">
+                    <propertyInstance
+                      Id="82703c08-8f92-4794-b722-0aa9f548c9e2"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a4fd6f5a-718b-4658-b394-486ab4fdddab">
+                    <propertyInstance
+                      Id="7d57a1cb-f3c3-412e-9e63-676c6ffed4b5"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1f0281ae-ec0d-4365-94b8-ea0ae0c1f78b">
+                    <propertyInstance
+                      Id="1631f9aa-e279-4858-99d2-2ca72d4d5b3c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b464589f-b939-4acb-853e-dacb0f59a90f">
+                    <propertyInstance
+                      Id="c8fbc46e-699f-4a2f-9818-4aa83369e171"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4ee7de66-e9c7-4c1e-b177-c7299ef04f71"
+        name="NewDayInvoker"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="0cc3cd26-e41c-4cb6-97ec-35e5e064eb40"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayInvoker"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="1da2afa0-8e5c-4af1-ade2-3b6f25e23b18"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ea16eccd-5b46-486a-9a56-f4b2a2419524">
+                <propertyInstance
+                  Id="dc54d4a3-ea18-4f41-a46a-f8d4ee6f0922"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5247bd7b-0df6-4fc1-9a4a-3d29d4bae046">
+                <propertyInstance
+                  Id="49bf316f-705b-4c28-935d-34154f86d8ec"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b2c1ca5e-0c5e-4af5-803f-da33c10322ce">
+                <propertyInstance
+                  Id="7e3a3ef6-938f-4a1f-b535-08b02ae126bd"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="47fd949f-93af-4069-8173-65edd9597c61">
+                <propertyInstance
+                  Id="b68367aa-8132-4572-bea4-d8309593b8a4"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0ef15580-1d22-410b-b979-72298132933d">
+                <propertyInstance
+                  Id="bf476c19-0038-46aa-a55c-10b483f5a15c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <dependency
+            Id="a02fa98f-46b1-4216-9b96-e17800a3706c">
+            <classMoniker
+              Id="d058e89f-8cae-43d8-b8c2-d9057eb290ed"
+              LastKnownName="NewDayEvent"
+              LastKnownLocation="Package_2334.uml" />
+          </dependency>
+          <dependency
+            Id="011c206e-dce6-4206-b67e-52f2fc3b6006">
+            <interfaceMoniker
+              Id="f93834bc-2aea-4b33-b326-8a20d764c38c"
+              LastKnownName="INewDayEnactor"
+              LastKnownLocation="Package_2334.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="a7e678a2-3974-4394-876e-48b95c8b80b9"
+            name="enactors"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="c9f19729-1f50-4ca9-82e4-5c4e5e7ceed3"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayInvoker Member%3Denactors"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4b13306d-a4e3-49e7-b48c-dd69d1b38ea9"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f19e42ce-1591-4094-8d23-2c36287dd1d5">
+                    <propertyInstance
+                      Id="01894494-fdc8-40f2-b36f-9039cec76068"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ed2ec280-0a8f-4914-8409-a387cc072083">
+                    <propertyInstance
+                      Id="be26e6cd-7868-4288-9db7-96f2e2cef9c7"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ccd395dd-03fb-40fc-b05e-6e03234d95a2">
+                    <propertyInstance
+                      Id="05f363ea-0274-42d7-8538-af1011b8c6a9"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0683652c-2585-4aba-93f9-ace967e5c03e">
+                    <propertyInstance
+                      Id="e8f19fef-028c-454a-a95d-da07ff7d28ad"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2eb01cf6-54db-404f-bd9b-4b1f649a9aab">
+                    <propertyInstance
+                      Id="3474bdfe-60d0-43e0-b2e5-acf6b30459e6"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="ce51270d-694c-4005-8eae-0424d15134f4"
+                LastKnownName="Dictionary&lt;DayOfWeek‎, INewDayEnactor‎&gt;"
+                LastKnownLocation="Package4_0025.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="f363366e-2501-4b12-be5e-8996cc2cb76a"
+            name="NewDayInvoker"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="6059cdbd-213c-4b9b-b2c0-4eea0e70cf50"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayInvoker Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f52b8afe-79ff-47d2-b994-93078c82a750"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f4fbc771-54f9-429f-96fd-c41b48cfefdf">
+                    <propertyInstance
+                      Id="07e9738f-82f6-4950-a809-05f82c24cbe6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fec1d031-c573-4df9-bf2e-f7fad94769f5">
+                    <propertyInstance
+                      Id="5b679d12-56ff-483b-94cd-1a530e3ed4a9"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="246a5f0c-1198-4b88-accd-22776430dfae">
+                    <propertyInstance
+                      Id="023c11b7-d10f-4caa-90b4-6dec84a9dfc8"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9c74ef55-f659-4a47-bfc7-c7cb8fd4d284">
+                    <propertyInstance
+                      Id="28e1c517-8094-4081-a242-afd684119b15"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="82540cab-3865-4243-ad1c-272b09418a99">
+                    <propertyInstance
+                      Id="e8cae73d-6892-4b43-a5ac-9bcacb36f1d2"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ed51c8a8-be69-4a2c-80b1-3cab01e41e64">
+                    <propertyInstance
+                      Id="3b358423-8638-49d1-a935-70219cef75aa"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="d28c59a4-fd42-4fa0-92db-b8662e8c9a53"
+            name="NewDay"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="65000c72-f993-4e1b-8fbb-e8f4f5a20311"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayInvoker Member%3D(Name%3DNewDay OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="997ddd5a-7886-4426-a88b-dd4e61d04c68"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c6732412-1473-47e1-b7df-670975377baa">
+                    <propertyInstance
+                      Id="4386cec0-24c3-43f2-9c54-1a35fc95d41f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="74f5f9c4-0295-4357-b4d0-3479cfe45940">
+                    <propertyInstance
+                      Id="0e451095-a805-4593-af9c-1207724576dd"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c21cbb06-7da3-4ae1-8987-b8d15936d84a">
+                    <propertyInstance
+                      Id="39aa1c4d-07ef-4f55-9989-7759741206d1"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2719ed7f-7626-424c-ac1b-467876c8da25">
+                    <propertyInstance
+                      Id="5c67dfa0-5b40-4f76-af26-21abee260949"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4f196c9f-3654-4a99-a195-ec26452ee9a0">
+                    <propertyInstance
+                      Id="b368255c-b295-46d8-b1dc-16567a2b9ef7"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="57ba7230-f369-415e-9504-2e79d458d015">
+                    <propertyInstance
+                      Id="ba39994a-48b7-4de6-a3f8-16a21236eddc"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a9d86956-6424-40c9-a7b4-2fba973296fc"
+                  name="e"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="7d2b9d32-b41b-434b-85e0-87c995e5e3d1"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayInvoker Member%3D(Name%3DNewDay OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent)]) ParameterIdentifier%3De"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="d058e89f-8cae-43d8-b8c2-d9057eb290ed"
+                      LastKnownName="NewDayEvent"
+                      LastKnownLocation="Package_2334.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a64d4767-5564-4cad-bb04-1ee7c56bbbeb"
+            name="RegisterEnactor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="3f494715-21c0-4d4b-be6f-bb99c90e7d9e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayInvoker Member%3D(Name%3DRegisterEnactor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DINewDayEnactor)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a174a132-6014-42cc-81d9-e8a9815f652b"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d500d8e7-99cd-436f-8a53-7178fedebb59">
+                    <propertyInstance
+                      Id="f172f556-4e88-4dd8-89b3-2a8fc4a3ecf7"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ed92b9fa-0301-4d45-96a1-8329f8e92495">
+                    <propertyInstance
+                      Id="e71443a8-3257-4bd2-b2f0-f9a00dfa8604"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="070a5768-eac0-402e-aa67-45cf77b6d695">
+                    <propertyInstance
+                      Id="e6ce75a1-904f-4015-b35f-12a884f17206"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fdc97192-c439-4e21-95c4-6a3080bc53ac">
+                    <propertyInstance
+                      Id="75fc1d5b-f001-4fc3-8b13-342cba8ccab7"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d6bdaf6b-5e3f-49cf-9545-ca103fb24b84">
+                    <propertyInstance
+                      Id="8064fd32-5d6c-4639-9a3b-80b6c250ad34"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="49938762-038b-4d0e-be2c-f78219f39292">
+                    <propertyInstance
+                      Id="e56c3c05-7b91-4a8b-ac9f-5cf62cd5ef8f"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a25235b3-7923-4004-ab1d-793e8c7386cb"
+                  name="enactor"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="4a6d01bd-b6b3-44b6-bcf4-1e520564fcbb"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayInvoker Member%3D(Name%3DRegisterEnactor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DINewDayEnactor)]) ParameterIdentifier%3Denactor"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="f93834bc-2aea-4b33-b326-8a20d764c38c"
+                      LastKnownName="INewDayEnactor"
+                      LastKnownLocation="Package_2334.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="f93834bc-2aea-4b33-b326-8a20d764c38c"
+        name="INewDayEnactor"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="6266803d-21ac-43ad-9f86-838fb5906036"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DINewDayEnactor"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="e653d73d-c65b-4166-b641-a1f892c72437"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="04926003-423b-4bb1-82bd-6c7885e472b7">
+                <propertyInstance
+                  Id="79b193ca-b1c8-4045-8a5e-4f00dd8f74a1"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="607334aa-c3a8-4210-a8a1-c031477aeb41">
+                <propertyInstance
+                  Id="869976fd-c315-4d41-a8a9-694515022439"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b833c660-46d2-4fca-b5de-155101992571">
+                <propertyInstance
+                  Id="ebed2165-2e0b-4a69-95c3-396dee54b1ca"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0b9d2b17-bb51-4a58-9fa5-e056da173f20">
+                <propertyInstance
+                  Id="56d3cc8b-3670-4aae-b82c-d503b51caa95"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <dependency
+            Id="8c6f3d70-f6ae-4cb2-a514-d93647719415">
+            <classMoniker
+              Id="d058e89f-8cae-43d8-b8c2-d9057eb290ed"
+              LastKnownName="NewDayEvent"
+              LastKnownLocation="Package_2334.uml" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="5c95252a-e207-4871-8f2b-07ad90f7e1a6"
+            isDerived="false"
+            sourceEndRoleName="INewDayEnactor"
+            targetEndRoleName="Day"
+            isLeaf="false"
+            isAbstract="false">
+            <enumerationMoniker
+              Id="a6de94d9-310f-49c9-9314-2644ad2daf85"
+              LastKnownName="DayOfWeek"
+              LastKnownLocation="Package2_0025.uml" />
+            <description>Property Day references type DayOfWeek.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2568faec-9402-4dc4-842b-05a993f50655"
+                  name="INewDayEnactor"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="87b569b3-206a-4558-87de-770ab85639d9"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="9247e62b-a453-4359-b72a-67de2a7d2023"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6211986f-047a-4d05-8fc4-b12dec09c6f5"
+                  name="Day"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="c002a07d-5271-40a6-a4c0-e24777717919"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="70419d1b-09ba-493d-9727-a5ba62ba0240"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributes>
+          <property
+            Id="fbc3e67f-e5d1-483b-8297-56beeefbe561"
+            name="Day"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="7440d3c1-e9d1-4d1c-993d-b3fec9d92d21"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DINewDayEnactor Member%3DDay"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1c498db0-e790-4ca9-9814-398bbc72b86d"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26aa29c1-5e3d-4517-a35f-4f1c7603b802">
+                    <propertyInstance
+                      Id="26e8d95f-aeca-4cc3-aade-778aed0f80f0"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a93100d8-b5e8-44c7-b80f-a04c1795c1cc">
+                    <propertyInstance
+                      Id="c484b409-736a-445b-a8fb-a135ae7121ed"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="918d1ed4-e485-49cb-82f4-6b2dace1773d">
+                    <propertyInstance
+                      Id="8f6ada79-03b5-4089-badf-9a635e426e47"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2d80123a-4889-4ace-96cf-af3836e74ac8">
+                    <propertyInstance
+                      Id="5dc83233-4d88-4000-9dca-5545a9f0cd9b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="87868545-f74c-4f34-8f30-4f32a7db687a">
+                    <propertyInstance
+                      Id="543935b8-0a2a-4ca8-a274-99f4832f1632"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2b78245d-6b1a-46f2-ad19-95595c50b3c6">
+                    <propertyInstance
+                      Id="ab1a328d-03a6-4ab2-9163-30046f9ed487"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7adeece1-a01c-4750-a23f-e1e9aa4275b2">
+                    <propertyInstance
+                      Id="024f5cfd-370f-47b5-b5c3-0bc3922d0d26"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <enumerationMoniker
+                Id="a6de94d9-310f-49c9-9314-2644ad2daf85"
+                LastKnownName="DayOfWeek"
+                LastKnownLocation="Package2_0025.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributes>
+        <ownedOperations>
+          <operation
+            Id="1a09aab9-add4-45b8-8efd-22355211be7d"
+            name="Enact"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b60180ce-f9a1-4eab-b131-3f344c340673"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DINewDayEnactor Member%3D(Name%3DEnact OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5bdefe3f-4139-4106-b0fd-de3ce5b30c97"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ee1223e7-65c1-406a-ad32-d890344d5a3d">
+                    <propertyInstance
+                      Id="8986c004-57a5-44c4-b927-031a445693c4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b9a92d73-fde1-4a83-993a-2a55343a2514">
+                    <propertyInstance
+                      Id="ce56882d-57ce-43dc-8d94-31bbb70da460"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="31e68cf8-7d7f-418a-80ed-e05e6bfcf141">
+                    <propertyInstance
+                      Id="9cdc1c52-64c6-48a4-a54e-8f31b57dd599"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5cef049f-761f-44f0-b919-4e69364ec2e9">
+                    <propertyInstance
+                      Id="c8959e7b-87cf-4d84-b8b7-cd4d36073c7d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d37d3440-f0ef-4dda-86ef-c33724f0d63d">
+                    <propertyInstance
+                      Id="dad26d38-6236-40d7-b505-d08334e27712"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="95ffbefe-5a8b-4955-add8-383c31b3ef2b">
+                    <propertyInstance
+                      Id="2052c31d-5006-4e9a-ab8c-2cf974631a09"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ab219510-9faa-405c-bd23-28f8ab28f45e"
+                  name="o"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="6da2e4c7-91c4-43a3-a080-04814c0c9cf3"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DINewDayEnactor Member%3D(Name%3DEnact OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent)]) ParameterIdentifier%3Do"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="d058e89f-8cae-43d8-b8c2-d9057eb290ed"
+                      LastKnownName="NewDayEvent"
+                      LastKnownLocation="Package_2334.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="65950478-2d53-4dfa-834a-3d54d8b4a87e"
+        name="CalendarClient"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="187ae32a-5578-444c-a4d3-f2591d5506a3"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DCalendarClient"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="c8fe334d-7309-4439-8503-85c65d814121"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d6fb6489-b347-45ea-8923-4ca03285bb60">
+                <propertyInstance
+                  Id="0c7c7686-ba06-426f-842f-2b0a6be2b0bf"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6cc4377b-f478-4e98-8410-b5a0fef11343">
+                <propertyInstance
+                  Id="5b592c59-9d82-431c-94a2-63a2ea9c43bd"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cfecf9fd-11a2-4190-b823-4a5035eb4f48">
+                <propertyInstance
+                  Id="88439b54-4786-4ac2-8323-5fa64f60d25c"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bc8ac12f-9988-4305-8acb-d7501f87504b">
+                <propertyInstance
+                  Id="ea1ac875-0de1-49a5-94c5-7667d104c138"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="66516405-8b22-4d28-857e-4eba2ed99405">
+                <propertyInstance
+                  Id="51d0af13-f3c3-482b-9e9e-88706bd95f71"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <dependency
+            Id="979155f9-f53a-44dd-963c-9334eb6097e9">
+            <classMoniker
+              Id="4ee7de66-e9c7-4c1e-b177-c7299ef04f71"
+              LastKnownName="NewDayInvoker"
+              LastKnownLocation="Package_2334.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="ec4fe391-4de8-406e-b771-742c74abf415"
+            name="CalendarClient"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="6c63b7d8-6bea-4b98-9d35-71f783b63d75"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DCalendarClient Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayInvoker)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d72332a0-e72d-428a-96d4-625883e11739"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="66a472e4-717d-4721-aadd-8b3ff72338b1">
+                    <propertyInstance
+                      Id="25fe66e9-fffe-4051-a6a8-177c41fe7457"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f9cd0a46-2117-4e90-a84c-3837187099e5">
+                    <propertyInstance
+                      Id="2b22abb2-9e69-407a-975b-44793615c75c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1c50f938-6d21-44aa-80c3-6d11f4cf8443">
+                    <propertyInstance
+                      Id="2372a94e-7375-485f-8d22-ec21f7e5cd99"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b5bd1e41-3763-4d69-8916-160d731ba2d2">
+                    <propertyInstance
+                      Id="e53f0947-fa2a-47be-acd0-2bc37d7c1d5b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9681b829-8444-4a4f-8239-85a130d2b0e6">
+                    <propertyInstance
+                      Id="80186a7b-f007-4193-841b-3afcc47dbb0c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f732e02f-3047-4d87-9edc-5fac37fc8626">
+                    <propertyInstance
+                      Id="2675128f-a063-4368-a7f1-aac6d8f8ec97"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5fffc970-5432-45e0-9c52-533e8169925b"
+                  name="invoker"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="80bdb9ae-57d9-42af-95aa-8d8f9f03916e"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DCalendarClient Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayInvoker)]) ParameterIdentifier%3Dinvoker"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4ee7de66-e9c7-4c1e-b177-c7299ef04f71"
+                      LastKnownName="NewDayInvoker"
+                      LastKnownLocation="Package_2334.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1b05477f-d9e8-4c4f-8734-d02eac4b0950"
+            name="Main"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a30b7497-1729-4e84-9376-77c45f0eeb62"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DCalendarClient Member%3DMain"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4eeb3b46-129d-46e7-b3cc-ad62296fb71f"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c589fc71-fa81-484b-973c-88ac0b5559bf">
+                    <propertyInstance
+                      Id="ce058fc2-3c79-407b-b4c0-34fe0c3d49bb"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8d3ac32d-480a-4935-bb5d-dd60b33eacb7">
+                    <propertyInstance
+                      Id="33fdd819-582d-4146-89cc-0fea5323f997"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6cfbbd63-a933-447c-84e1-5066452c8301">
+                    <propertyInstance
+                      Id="592e7eb7-d6b4-4eed-9fdd-d81069fe72e5"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a8f4405f-a76d-4b83-b414-6d117c33071c">
+                    <propertyInstance
+                      Id="a21e411b-63cd-4f7e-b21d-efb4979d895d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2ed8a34f-a3e5-4939-a14d-37008574a47d">
+                    <propertyInstance
+                      Id="26a98c23-d864-4573-9552-b51067b1d0a1"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="effb0600-02d4-4fa8-9cf0-bf283366af75">
+                    <propertyInstance
+                      Id="795dd8a4-7676-4221-92e9-838853113a31"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6f24b571-47aa-4ca7-ad83-b2df40edfeab"
+        name="FridayEnactor"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="cc7e5296-c9e4-4d66-bbe4-966e12aa35e2"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DFridayEnactor"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="7d9e1382-2c6a-485e-a5a1-3e88b8ad3a34"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="24713940-ad8b-429c-9f63-c0b437a0b3c7">
+                <propertyInstance
+                  Id="4f247988-f558-4c08-9850-f78529fe3913"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bd4b0c78-5f02-48f2-a9c2-4ded265facdd">
+                <propertyInstance
+                  Id="bb198546-abf7-4d66-8383-f6d4e153f81f"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="877af558-aaee-4c69-b1bf-904240fbd6cd">
+                <propertyInstance
+                  Id="15be8b0a-763f-4670-bbfc-df1d1d9e8db1"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="217fba78-3827-4954-aeb7-fcc45b9784e6">
+                <propertyInstance
+                  Id="78737d44-935b-4181-8b75-9a01baeda7fe"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cd1da0b5-aba2-499c-8b01-11cbea5fe2b1">
+                <propertyInstance
+                  Id="b8ac4000-299a-47a8-a5bb-41dca3b674dc"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="5b82b8aa-215b-46bf-827c-a4fd45101610">
+            <interfaceMoniker
+              Id="f93834bc-2aea-4b33-b326-8a20d764c38c"
+              LastKnownName="INewDayEnactor"
+              LastKnownLocation="Package_2334.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="d7a8e018-4c5c-459b-acce-e88956090a67"
+            isDerived="false"
+            sourceEndRoleName="FridayEnactor"
+            targetEndRoleName="Day"
+            isLeaf="false"
+            isAbstract="false">
+            <enumerationMoniker
+              Id="a6de94d9-310f-49c9-9314-2644ad2daf85"
+              LastKnownName="DayOfWeek"
+              LastKnownLocation="Package2_0025.uml" />
+            <description>Property Day references type DayOfWeek.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f00c5593-f0be-4f44-8a56-568b1374ce71"
+                  name="FridayEnactor"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="ad8e9efe-4691-4c89-b6cc-9d059be9e03a"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="05322ad3-ca02-4e50-8ff1-0dfd1dea8784"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2d60e567-e098-4b1b-ad07-001151c5f66b"
+                  name="Day"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="f4ff0e5b-d024-48d5-be6f-8219f03636c7"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="eb97be12-71fd-47bf-92ad-0c9f876d1665"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="f0dfa570-0543-4cfa-b0af-f5c1a2cba9a7"
+            name="Day"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="296d8fc8-8200-417c-b493-fe4ecab6d56c"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DFridayEnactor Member%3DDay"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="41afd439-85f0-489d-abe5-3bad11823b70"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dc2fce9e-3446-453b-b178-5eaa928f72c7">
+                    <propertyInstance
+                      Id="11c8be27-63cb-47ce-843c-58032dd9f6ee"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a37b9cd8-1b93-4a78-a6f1-8eb6099b26a5">
+                    <propertyInstance
+                      Id="7b717254-0ede-4043-8ccf-fd3462359636"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1575a332-4385-4ba1-830a-a401e0e0cf0b">
+                    <propertyInstance
+                      Id="c1592347-15a4-456c-8dfd-04ffcf40f79d"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cb2506bf-f5d4-46ba-b910-d699648b6ea8">
+                    <propertyInstance
+                      Id="c3e07f06-d0a5-4170-a707-388c82c929f0"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="291422cf-ccd3-40bf-b0f3-9d81faf6ddf2">
+                    <propertyInstance
+                      Id="0d3811c9-3e93-4184-a5bf-4d3efc6beb3a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0417a18a-d604-4784-92e1-8102877a05a0">
+                    <propertyInstance
+                      Id="b06dfbef-7e21-430e-8f78-f229d54831b6"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="959ee6c0-2eae-46e4-85fc-f0965e6370d9">
+                    <propertyInstance
+                      Id="5feb2185-c2ee-40cb-afb9-0aabb2962d52"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <enumerationMoniker
+                Id="a6de94d9-310f-49c9-9314-2644ad2daf85"
+                LastKnownName="DayOfWeek"
+                LastKnownLocation="Package2_0025.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="264d2fc5-e76f-40aa-8812-c89903782950"
+            name="FridayEnactor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="0249c0e5-835a-4e27-a82e-00a74aed6a80"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DFridayEnactor Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7cd007a7-1096-42b3-a4ca-afbb8acf42ba"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="44289d52-865e-4a27-8b00-b66c01f4874c">
+                    <propertyInstance
+                      Id="3dd9a8d8-635f-4af8-9094-fca11a48eaf6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0061b1c2-03c9-4460-ad27-8df35da4cf90">
+                    <propertyInstance
+                      Id="a9fc1b4e-4b37-408a-b32e-5307f90b3ea3"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b05482a3-5fe9-4ab1-b367-5a4ac92e03ce">
+                    <propertyInstance
+                      Id="bb9ade43-1212-487a-97ce-fbd50bba113c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ca413781-781d-4f86-b02b-e2d11b65920e">
+                    <propertyInstance
+                      Id="a707cba1-3ac4-466c-8d1b-64409f4b53ec"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="49dc16bf-5b6c-4647-a71d-6e7ecf827544">
+                    <propertyInstance
+                      Id="a289509a-34b5-4067-a5f7-721b00b78bd0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b186b2b8-2aea-43c8-9d46-3f1c9047052f">
+                    <propertyInstance
+                      Id="7340906c-b5ca-4e00-916f-3a007b3211a8"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="104e07a8-62eb-4710-aa85-9ae10aa81881"
+            name="Enact"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="00269f43-8906-4cba-8b7f-af2c29cabb4c"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DFridayEnactor Member%3D(Name%3DEnact OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8e6fc98f-74b7-4c81-80dd-1edde243f449"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f19cad65-7ae1-4377-9fc7-5ccb55e8ada3">
+                    <propertyInstance
+                      Id="b61f619b-22b8-4fee-874a-436218777a4f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="23e65e49-0153-48b8-8983-3fb6465c9a2d">
+                    <propertyInstance
+                      Id="7dad8432-09b9-4db3-b225-55d2ae7709a5"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="29ed7981-cc8f-4453-97d2-6ac826a1b9c4">
+                    <propertyInstance
+                      Id="84eca34a-6870-495e-8336-91cd27ccca25"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a51b68ec-05f6-4e60-bab0-08cda303e1df">
+                    <propertyInstance
+                      Id="c6124495-c39a-4d9b-8355-7aca4463ab63"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5820c9e5-c42a-4964-9e98-358134f1e7f9">
+                    <propertyInstance
+                      Id="2ea9f58e-9563-4fe7-bb01-a6b450262314"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="88934a4d-b9a1-4deb-9ea2-03b85f53c600">
+                    <propertyInstance
+                      Id="5b5c5e8c-3e87-4451-9bbd-52514ffbe96d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ec64c4dd-2301-45eb-b3fc-c9a1a37bd1f0"
+                  name="o"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="09b4b62e-5f6d-43f9-b817-00cade7d68ce"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DFridayEnactor Member%3D(Name%3DEnact OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent)]) ParameterIdentifier%3Do"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="d058e89f-8cae-43d8-b8c2-d9057eb290ed"
+                      LastKnownName="NewDayEvent"
+                      LastKnownLocation="Package_2334.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ae92dce6-ce81-41aa-9c9a-ad7962a45e5c"
+        name="MondayEnactor"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="6aad50c2-9adf-4409-9865-846bfc0e00ca"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DMondayEnactor"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="db218996-488b-4c2d-a039-b8154ddaadf0"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b4e6b368-8344-4d1e-8813-cf345adda916">
+                <propertyInstance
+                  Id="37c3458d-7e16-43ab-b65e-6e1aeeff70ae"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="17991c46-2e88-4a69-8d6a-0dc3cf10c43e">
+                <propertyInstance
+                  Id="197e7baa-e87b-4c4c-b7fe-2dc504bf91e7"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6f13a1e4-b02f-4740-a273-31a9769fbaa4">
+                <propertyInstance
+                  Id="618860c4-43fc-4c75-80b1-d560f8f94470"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="97fd1c43-d425-42d9-b08a-0cbc89898910">
+                <propertyInstance
+                  Id="22e4a290-01e6-40c3-bfbf-7d9f1a87f3c0"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="25294aae-186c-424c-902c-d4231d88344f">
+                <propertyInstance
+                  Id="1d4e078e-b139-4505-81e2-6e7a4f3c7784"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="c7b8330c-592d-4633-93b0-9421ce40fc50">
+            <interfaceMoniker
+              Id="f93834bc-2aea-4b33-b326-8a20d764c38c"
+              LastKnownName="INewDayEnactor"
+              LastKnownLocation="Package_2334.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="9e37f115-ab2a-48f0-8a8c-b418782ec3f0"
+            isDerived="false"
+            sourceEndRoleName="MondayEnactor"
+            targetEndRoleName="Day"
+            isLeaf="false"
+            isAbstract="false">
+            <enumerationMoniker
+              Id="a6de94d9-310f-49c9-9314-2644ad2daf85"
+              LastKnownName="DayOfWeek"
+              LastKnownLocation="Package2_0025.uml" />
+            <description>Property Day references type DayOfWeek.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9e5831da-7fbe-4d07-8aaa-8665498cf132"
+                  name="MondayEnactor"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="bb451bcb-2be0-4576-adc9-5615036bb663"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="49075881-0a7b-454d-b1c0-4f99a19d8bee"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6eea9cea-de6e-4b44-9189-cbfdc016a1bc"
+                  name="Day"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="7e4a7747-371e-4b66-99c5-acab36cc0257"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="c510a08f-93f8-4b80-a09f-9167518b80d7"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="5ceb2ecc-d3fd-460e-a8aa-13fced0585aa"
+            name="Day"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="454767d9-b081-425a-891d-18d12f74c212"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DMondayEnactor Member%3DDay"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5b3973f9-f3e8-4714-84c9-c028fda94f8a"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2289ed74-cacb-4042-bf22-969a57ac6fc5">
+                    <propertyInstance
+                      Id="e905fbf3-effb-4a84-bde0-2a8976262bb7"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d67f9e6a-d3cd-4dbd-9889-9adb476ea621">
+                    <propertyInstance
+                      Id="91b8f19b-e60c-4246-b0a3-7b5c9717b16e"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="35d067bf-6f73-42d4-a9fc-9348722a392e">
+                    <propertyInstance
+                      Id="1bfc38e0-433d-4799-abe8-23f069ec46a2"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f25345c3-9b37-443b-af87-a2b7871a4a67">
+                    <propertyInstance
+                      Id="5365c482-7151-4771-84f4-a54b565dcf9c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0d7ae582-f260-430a-9b61-f935bbc6e34a">
+                    <propertyInstance
+                      Id="1d0373ec-2a63-4262-8b81-e35e299e6ab3"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d8c642a7-207c-415b-a192-f5e8ba745b54">
+                    <propertyInstance
+                      Id="19bb1433-f2c2-4409-98dc-19275276abf3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f8e66f2c-16e8-4de6-98e2-257bb6c72105">
+                    <propertyInstance
+                      Id="592ee316-bbf5-429b-96e7-639b7c6b2a14"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <enumerationMoniker
+                Id="a6de94d9-310f-49c9-9314-2644ad2daf85"
+                LastKnownName="DayOfWeek"
+                LastKnownLocation="Package2_0025.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="24e1fbb0-c543-41e7-ac1c-3cc77c80b1b2"
+            name="MondayEnactor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="196d18b6-6c92-46ef-b273-ce1cc3dd7b7e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DMondayEnactor Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8d9a0758-1322-4c0d-b054-74122da0bd2f"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="41cfd070-85a4-4802-ac06-547d9ea5cfb9">
+                    <propertyInstance
+                      Id="9f03f0fc-9dca-4e97-9cf2-ea42b0ee55e6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="43994534-1500-404f-9b94-72ae40dd229e">
+                    <propertyInstance
+                      Id="c2363ee0-9a7e-468b-a862-9b99397403c1"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ff27de8b-f540-4848-b673-a5539f3eb396">
+                    <propertyInstance
+                      Id="58e597f1-596d-49c6-91de-e566391b74de"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2ded5983-8896-45b2-b96c-fe00a87beb72">
+                    <propertyInstance
+                      Id="d63ece56-cee8-455a-9b7c-f93500a9c129"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b573647f-2ba2-4ae0-aa97-d170926d1917">
+                    <propertyInstance
+                      Id="7798046b-3492-4096-ad4c-f1eefcb9d1d0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a0433553-2f2c-4154-8206-372af334bc26">
+                    <propertyInstance
+                      Id="7fc109b4-7d69-4e5e-8142-0059c4c3be1d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="9a0b232f-98aa-487b-b796-aef2348b6981"
+            name="Enact"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a40466fd-6b97-4a0e-be29-ee11bf7643d4"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DMondayEnactor Member%3D(Name%3DEnact OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="22d35a1b-dc46-4319-bb84-0deee59908cc"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="39b93b24-cb56-4514-9588-704952abd042">
+                    <propertyInstance
+                      Id="e93d2f67-0c41-48c9-8426-041ddad4a48d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="56096e66-1aaa-417d-820e-3cec53f4d3eb">
+                    <propertyInstance
+                      Id="7ef6cae5-84e0-4a7d-b76f-8260405670a1"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bb315ea7-58d6-4ba1-a2b0-be54fd6b4655">
+                    <propertyInstance
+                      Id="bd7293ff-8f73-4a20-8fe9-3d79f41ec6c2"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9f3808f7-01ea-43a0-aed6-b9a93480a7cf">
+                    <propertyInstance
+                      Id="9e6d1828-ac57-4b7a-b2ae-9a99a5860d05"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="89197a40-0571-47a4-bde1-6b927015ebb4">
+                    <propertyInstance
+                      Id="3c120c4a-1a40-4c48-90cb-3feea01d9cbc"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="43496b16-66df-4f1c-b35c-7858f716eac0">
+                    <propertyInstance
+                      Id="d7350f22-6c2f-4ef2-9882-928373d35e67"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="22ca6178-f7f6-4b70-86d7-49316e5aceb5"
+                  name="o"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="6f4fd456-7835-4ee0-89d9-b6c4dc1204ce"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DMondayEnactor Member%3D(Name%3DEnact OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent)]) ParameterIdentifier%3Do"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="d058e89f-8cae-43d8-b8c2-d9057eb290ed"
+                      LastKnownName="NewDayEvent"
+                      LastKnownLocation="Package_2334.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

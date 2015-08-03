@@ -29,7 +29,27 @@
       <SubType>Content</SubType>
       <DependentUpon>Component.componentdiagram</DependentUpon>
     </Content>
+    <Content Include="Core\ScenarioSim.Core.Entities.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\ScenarioSim.Core.Entities.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Core\ScenarioSim.Core.Entities.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="EnactorDemo.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="EnactorDemo.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>EnactorDemo.classdiagram</DependentUpon>
+    </Content>
     <Content Include="ModelDefinition\Package1_0832.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1113.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_2236.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package2_0025.uml">
@@ -38,7 +58,13 @@
     <Content Include="ModelDefinition\Package2_0832.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package2_2236.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package3_0025.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package3_2236.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package4_0025.uml">
@@ -50,8 +76,30 @@
     <Content Include="ModelDefinition\Package_0832.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package_1106.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1113.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1227.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2236.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package_2239.uml">
       <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2334.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ScenarioPlayback.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ScenarioPlayback.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ScenarioPlayback.sequencediagram</DependentUpon>
     </Content>
     <Content Include="ScenarioSim.Core.classdiagram">
       <SubType>Content</SubType>
@@ -60,12 +108,33 @@
       <SubType>Content</SubType>
       <DependentUpon>ScenarioSim.Core.classdiagram</DependentUpon>
     </Content>
+    <Content Include="ScenarioSim.Playback.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ScenarioSim.Playback.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ScenarioSim.Playback.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ScenarioSim.Simulator.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ScenarioSim.Simulator.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ScenarioSim.Simulator.classdiagram</DependentUpon>
+    </Content>
     <Content Include="ScenarioSim.UmlStateChart.classdiagram">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ScenarioSim.UmlStateChart.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>ScenarioSim.UmlStateChart.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="SimulatorModule.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="SimulatorModule.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>SimulatorModule.usecasediagram</DependentUpon>
     </Content>
     <Content Include="UmlStateChart.classdiagram">
       <SubType>Content</SubType>
@@ -78,5 +147,6 @@
     <Content Include="ModelDefinition\ScenarioFrameworkModels.uml">
       <SubType>Content</SubType>
     </Content>
+    <Folder Include="Core" />
   </ItemGroup>
 </Project>

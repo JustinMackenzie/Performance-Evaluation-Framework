@@ -26,13 +26,13 @@ namespace ScenarioSim.Playback
         {
             this.simulator = simulator;
             stateChart = simulator.GetComponent(typeof (StateChartComponent)) as StateChartComponent;
+            enactors = new Dictionary<int, IEventEnactor>();
         }
 
         private void Initialize()
         {
             ShiftEventTimes(collection);
             nextEventIndex = 0;
-            enactors = new Dictionary<int, IEventEnactor>();
             simulator.Start(result.Scenario);
             timer = new Timer(1000.0 / 60);
             timer.Elapsed += timer_Elapsed;

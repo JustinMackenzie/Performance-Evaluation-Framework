@@ -29,7 +29,7 @@ namespace BenchMarkTests
             foreach (ITest test in tests)
             {
                 test.Execute(e);
-                results.Add(test.Result);
+                results.Add(test.Result * 1000);
             }
 
             float mean = results.Sum() / results.Count;
@@ -41,20 +41,15 @@ namespace BenchMarkTests
             variance = variance / results.Count;
             float standardDev = (float)Math.Sqrt(variance);
 
+            float percent60FPS = 100 * ((mean / (1000000 * (1.0f / 60))));
+
             Console.WriteLine("Results for {0} {1} tests:", tests.Count(), type);
-            Console.WriteLine("The mean time per event: {0} milliseconds.", mean);
-            Console.WriteLine("The maximum time taken was: {0} milliseconds", results.Max());
-            Console.WriteLine("The minimum time taken was: {0} milliseconds", results.Min());
+            Console.WriteLine("The mean time per event: {0} microseconds.", mean);
+            Console.WriteLine("The maximum time taken was: {0} microseconds", results.Max());
+            Console.WriteLine("The minimum time taken was: {0} microseconds", results.Min());
             Console.WriteLine("The variance was: {0}", variance);
             Console.WriteLine("The standard deviation was: {0}", standardDev);
-
-            /*using (StreamWriter writer = new StreamWriter(string.Format("{0}.csv", type)))
-            {
-                foreach (float result in results)
-                {
-                    writer.WriteLine(result);
-                }
-            }*/
+            Console.WriteLine("The percent of 60 fps: {0}", percent60FPS);
         }
 
         public void RunScenarioSimulatorTests(int n)
@@ -147,7 +142,7 @@ namespace BenchMarkTests
             {
                 StateChartComponent stateChart = new StateChartComponent(kernel.Get<IStateChartBuilder>());
                 stateChart.Start(scenario);
-                tests.Add(new ComponentTest(new TimeKeeperComponent(stateChart), scenario));
+                tests.Add(new ComponentTest(new ActionTimeKeeperComponent(stateChart), scenario));
             }
 
             ScenarioEvent e = new ScenarioEvent()

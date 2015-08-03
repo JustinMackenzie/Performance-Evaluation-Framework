@@ -1,11 +1,14 @@
-﻿namespace ScenarioSim.Creator
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace ScenarioSim.Creator
 {
     partial class HierarchyForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -116,10 +119,10 @@
 
         #endregion
 
-        private System.Windows.Forms.SplitContainer splitContainer1;
+        private SplitContainer splitContainer1;
         private CreatorView creatorView;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButtonAddTask;
+        private ToolStrip toolStrip1;
+        private ToolStripButton toolStripButtonAddTask;
 
     }
 }

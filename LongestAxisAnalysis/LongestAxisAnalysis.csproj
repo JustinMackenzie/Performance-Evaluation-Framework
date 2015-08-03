@@ -91,20 +91,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\ScenarioFramework\ScenarioSim.Simulator\ScenarioSim.Simulator.csproj">
-      <Project>{076f2875-224e-4d46-8ec9-4c1de33fa3fc}</Project>
-      <Name>ScenarioSim.Simulator</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ScenarioSim.Core\ScenarioSim.Core.csproj">
-      <Project>{e93acfdf-c454-4bb8-b0f8-9838af372e39}</Project>
-      <Name>ScenarioSim.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ScenarioSim.Playback\ScenarioSim.Playback.csproj">
-      <Project>{27886252-69d0-4da2-8231-249dd6a7f8e5}</Project>
-      <Name>ScenarioSim.Playback</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,25 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="1332acc6-de91-4f9d-aa56-6ce4dc42af52" name="ScenarioSim.UmlStateChart" linkedPackageId="abecec33-9b42-4bf0-abe6-042f07e3cad3" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="71ef25df-beb1-40b5-8553-5792bbb4c3bd">
-      <profileInstance Id="799eaed9-29bb-43a5-b7b0-bf963247c538" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="f742103f-203f-4d5c-89e8-a8f31c54801b">
-      <profileInstance Id="671219df-3d97-4f2d-b5c4-72286a85609f" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="e6d9241d-16b9-42c5-9f01-a6dfb3404fdc">
-      <profileInstance Id="d86a62be-9614-4dc0-b41f-1bb9fb417525" name="CSharpProfile">
-        <elementDefinition Id="d8e878fb-9083-4c12-bc3d-52f7f1649b48" />
-      </profileInstance>
-      <elementDefinition Id="6389af42-4532-4a7a-b887-826a8139eabd" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="40f72c0c-30b5-415c-b06e-afcbf3d5ec31" name="StateChartFacade" visibility="Package" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -958,9 +938,9 @@
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <class Id="de241f6a-e612-4c57-9dba-a94a1d89e401" name="ActionFactory" visibility="Package" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="de241f6a-e612-4c57-9dba-a94a1d89e401" name="ActionFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
         <referencesInternal>
-          <reference Id="cdce34b2-3994-43a0-8356-8982af904f4f" handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2Fdocuments%2Fvisual studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.StateChart%2Fbin%2FDebug%2FScenarioSim.StateChart.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DActionFactory" tag="ViewCode">
+          <reference Id="cdce34b2-3994-43a0-8356-8982af904f4f" handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DActionFactory" tag="ViewCode">
             <elementDefinition Id="28f00820-dc5f-4b12-a2ae-14268a3ff0a0" />
           </reference>
         </referencesInternal>
@@ -1740,8 +1720,1615 @@
         </ownedOperations>
       </Interface>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="69b01468-2009-472d-bd07-bc718b25c054" name="UmlStateChartEngine" visibility="Package" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <referencesInternal>
+          <reference Id="0c61931e-7a2d-41af-85f4-47812138c488" handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartEngine" tag="ViewCode">
+            <elementDefinition Id="5ef59bf3-6886-40eb-8b08-f5562b44a491" />
+          </reference>
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance Id="cbd158e5-b9cb-40bd-aeeb-457100ccd775" name="class" profile="CSharpProfile">
+            <elementDefinition Id="8a39fa15-c3e9-4db7-9af1-e46003a35e46" />
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="b03f94b0-d69b-42a9-bcf9-59d670984ebe">
+                <propertyInstance Id="618ca339-ab9a-42b4-8fcb-4bc3da329985" name="ClrAttributes">
+                  <elementDefinition Id="13f6eabe-42ca-4afc-a2e1-c39b7550c90b" />
+                </propertyInstance>
+                <elementDefinition Id="1585f404-492c-46fc-b872-68b6c0a0f271" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="47372e27-f4da-4138-b403-8ed300f12850">
+                <propertyInstance Id="d85ee4e6-359a-43b0-9f2c-d1fb84efe055" name="IsPartial" value="false">
+                  <elementDefinition Id="355be9f6-ed43-47b9-9b55-57c377c513bf" />
+                </propertyInstance>
+                <elementDefinition Id="667ebe11-508d-4b90-921f-400e4e775a54" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="25b131e5-a996-41ce-9287-66134d1414b6">
+                <propertyInstance Id="57c99c11-ce7c-4be1-8808-5bbd7b14f184" name="IsStatic" value="False">
+                  <elementDefinition Id="a05a17e4-ab42-4c8d-a6f1-58f18111c29f" />
+                </propertyInstance>
+                <elementDefinition Id="fc1a4e9b-070c-4b24-a6ea-7e6985f582b0" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="4da7f669-45fc-450a-9932-b36d2d1d6300">
+                <propertyInstance Id="5211c350-0405-4bee-be0e-6f5a006395cc" name="IsUnsafe" value="false">
+                  <elementDefinition Id="ba74b3e9-1e3d-479d-b160-8ae2ff691767" />
+                </propertyInstance>
+                <elementDefinition Id="73c41b4a-bfac-47d2-b204-a16328956e13" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="b0fa6d43-d58c-4d84-aaaa-8b944fa362b9">
+                <propertyInstance Id="52d9a23f-3d83-42d0-8233-dee8cdbcf6aa" name="PackageVisibility" value="internal">
+                  <elementDefinition Id="41e495e7-477d-45a4-aa9d-d06a2d63a61e" />
+                </propertyInstance>
+                <elementDefinition Id="f2de5efb-4593-4f1c-869d-d47e3cd67866" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <elementDefinition Id="bda67207-b79f-4a2e-bcfe-cf02e91d9810" />
+        <suppliersInternal>
+          <dependency Id="13af389d-5cc9-4ae2-aaaa-172dd9e7553b">
+            <classMoniker Id="8e244e0c-46ac-47d7-be88-0daed286ba19" LastKnownName="UmlStateChartEvent" />
+            <elementDefinition Id="0735b1e0-497f-4b8b-af63-898a467cea08" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="ee71285a-886a-41bd-8eeb-9716503d1502" name="IsActive" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="e4bd37ad-dc56-43a0-a107-89150ea91823" handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartEngine Member%3DIsActive" tag="ViewCode">
+                <elementDefinition Id="b967efd5-17cb-4ff5-87b4-4c3ccf95422f" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="7b114b26-6989-40b5-b130-5fb29f2ee476" name="property" profile="CSharpProfile">
+                <elementDefinition Id="7c604b19-d730-4ea0-bf38-61dc76f033ec" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="12ee8937-d74c-4d26-a100-8b50eae21c4c">
+                    <propertyInstance Id="15673152-2f3c-43e9-81a5-62765fefee08" name="ClrAttributes">
+                      <elementDefinition Id="2bbfada2-a74f-454e-8b35-71a6a619f8e7" />
+                    </propertyInstance>
+                    <elementDefinition Id="1daad284-0c53-4ea1-8801-9b71be5e8f4f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="854b3032-7626-41bd-9acf-bc774b3b0f27">
+                    <propertyInstance Id="cec75014-4a7a-4107-bd76-2f9aa41e54d9" name="Get" value="public">
+                      <elementDefinition Id="e9f48c5b-7dea-47c7-8c55-38f04ff288c1" />
+                    </propertyInstance>
+                    <elementDefinition Id="b9164b5e-497b-4b74-a054-cfdaccc8f161" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="51b1c2cb-b8c8-4aa9-9208-d16fcf8b7cdc">
+                    <propertyInstance Id="e93ab50e-1e7e-4fc4-896c-26c5b950f449" name="HasBody" value="false">
+                      <elementDefinition Id="1d60fcdb-5707-4461-9bd5-ed96226f5252" />
+                    </propertyInstance>
+                    <elementDefinition Id="7fcd6a0a-fc14-48b4-9a02-b35aa9a60871" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e62242c4-ab65-4678-bf1c-3ec188e5f2f7">
+                    <propertyInstance Id="1ffa6485-deaf-4c08-a74a-8b6aa89087bc" name="IsUnsafe" value="false">
+                      <elementDefinition Id="3e81c584-861a-45d2-a191-71c393447556" />
+                    </propertyInstance>
+                    <elementDefinition Id="bdd83b7f-6bd1-4834-a403-9143ca0d258c" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="5884f455-aafe-48fc-aa8f-0c69bd0ff552">
+                    <propertyInstance Id="f385ab16-8ab8-43dd-bfbb-4fc1d5318cd2" name="Inheritance" value="none">
+                      <elementDefinition Id="b21d260e-70be-4b9f-9a48-d93b85b4db8b" />
+                    </propertyInstance>
+                    <elementDefinition Id="408be04e-13f6-4b31-b117-33971bd1eb46" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f04cf96e-a9cf-43ba-8859-7c3af1a5013c">
+                    <propertyInstance Id="eaf32d4a-3854-4d01-a1ec-303eb809dcad" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="4a3c3b83-2e1e-470b-bfef-cc61eb7f21c4" />
+                    </propertyInstance>
+                    <elementDefinition Id="028fba31-5fb5-4266-ab70-a5257a613146" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="55d92659-9220-4d48-8f38-d451686fd8e3">
+                    <propertyInstance Id="35f1c97d-3aa7-4d9c-af2c-54cbf63dbd9a" name="Set" value="none">
+                      <elementDefinition Id="2a7a5e17-3609-4879-99c9-e563f8e62095" />
+                    </propertyInstance>
+                    <elementDefinition Id="974ea2cb-97a5-413c-8d32-f5eecbe08608" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="c4ec0e21-b8e2-4e6f-81ae-5d2098b1b7cc" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="6d758931-4893-4564-92ca-0d5912f58d72" LastKnownName="Boolean" />
+            </type_NamedElement>
+          </property>
+          <property Id="f8fd24b8-1332-49dd-8315-331cf6125b1e" name="dataContainer" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="33ce7b67-cf65-4eac-94bb-1cbca7c9ca5a" handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartEngine Member%3DdataContainer" tag="ViewCode">
+                <elementDefinition Id="51466c2d-9b8e-49de-9fab-b43b31e796d5" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="6be01834-5b23-4738-b8ab-42acb4443202" name="field" profile="CSharpProfile">
+                <elementDefinition Id="ab6b6010-8b05-47de-b553-820daa9cb001" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f04f641e-3ed4-4fb3-ab76-2910ce9b0a8f">
+                    <propertyInstance Id="db13f705-7c68-4df8-943a-ebe8b81593f3" name="ClrAttributes">
+                      <elementDefinition Id="73f30a94-aecb-479c-8ef9-cf0ee027af15" />
+                    </propertyInstance>
+                    <elementDefinition Id="679bedfd-8ad6-4b22-9c50-b9c61723fdd9" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="0ac7a85c-e423-4ccc-ac42-ed6c7574d82f">
+                    <propertyInstance Id="3ee3dfaf-9460-4f1a-9cbf-69421263f36a" name="IsConst" value="false">
+                      <elementDefinition Id="06941a51-4197-4d45-b54b-1aa47709ec38" />
+                    </propertyInstance>
+                    <elementDefinition Id="6295bf9c-a0ce-491f-8a20-f0f1bc54de02" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6899530c-0c6d-4fd5-8b9b-b79158a4e90d">
+                    <propertyInstance Id="b5c5d4e3-90ae-4970-82d5-82ef869516c0" name="IsNullable" value="false">
+                      <elementDefinition Id="7d5c8ffa-e11a-49b4-a897-238b9c2327e3" />
+                    </propertyInstance>
+                    <elementDefinition Id="3522b1b1-5ce7-477e-8530-37cc28da022d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="dc6b5366-259d-4c10-985b-db792a5b035f">
+                    <propertyInstance Id="13d8c427-195c-417f-ab64-75fb60770914" name="IsVolatile" value="false">
+                      <elementDefinition Id="024d9312-2d42-4139-9559-b5dae69afe31" />
+                    </propertyInstance>
+                    <elementDefinition Id="e24626ab-b554-4d26-847a-bc47b3811e03" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="ba5701d2-16ee-43b7-ad2e-126fde09772d">
+                    <propertyInstance Id="ad2984a4-2825-4e2a-895c-0e56f30cf068" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="c107d066-a65b-4cef-b93a-54f4fbb05b44" />
+                    </propertyInstance>
+                    <elementDefinition Id="99bb6568-6b21-4e4e-a8ca-e667a54fe31b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="0874ab72-d8a6-4336-83a2-25db29a88318" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7cd935ec-a8a7-4b46-a41f-3fce2e442bef" LastKnownName="StateDataContainer" />
+            </type_NamedElement>
+          </property>
+          <property Id="542f805b-41f6-4223-9684-04b541c00854" name="stateChart" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="4982a83b-f6a5-47e6-800b-2681a6b6c3b0" handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartEngine Member%3DstateChart" tag="ViewCode">
+                <elementDefinition Id="af433fea-ec16-4b0f-8899-1f9d319c6762" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="80805c25-1999-416d-b966-95f0557e7032" name="field" profile="CSharpProfile">
+                <elementDefinition Id="702a308f-543f-42d2-8fb3-3842118f7e55" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="af0e1d84-e74d-4312-8a32-ff9e5d7b9913">
+                    <propertyInstance Id="22d577a7-1e9d-4421-9b18-0d540139c3e4" name="ClrAttributes">
+                      <elementDefinition Id="aa696b0f-9ef2-4144-83ac-660f5d2e7bb4" />
+                    </propertyInstance>
+                    <elementDefinition Id="2b0ca06f-18fa-4062-ac1b-b9678e6ff879" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="691c2008-19d6-4997-9804-dc51b7037db8">
+                    <propertyInstance Id="0774f308-ef54-4026-bc01-7f51a4497ecf" name="IsConst" value="false">
+                      <elementDefinition Id="e2560950-6790-46f9-905b-152b3f795a4c" />
+                    </propertyInstance>
+                    <elementDefinition Id="a0fa1079-6374-4817-a76e-166d8ccb0261" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="69b673fb-b0af-4da9-bf01-ffaf21ef1dea">
+                    <propertyInstance Id="70e9a283-660b-417e-bea4-783407d5041f" name="IsNullable" value="false">
+                      <elementDefinition Id="1d21cc64-5a31-4e9e-b92a-8fa38e19691f" />
+                    </propertyInstance>
+                    <elementDefinition Id="99cb5318-6dd5-481a-b710-fd663e260f43" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="92149497-c60e-4821-ad4d-43eb8f9769ee">
+                    <propertyInstance Id="da3c8b0d-a358-4766-b37e-ea2dc9812222" name="IsVolatile" value="false">
+                      <elementDefinition Id="6caa9902-3d9c-4967-93ad-73f1258eb57f" />
+                    </propertyInstance>
+                    <elementDefinition Id="0c8f9619-37a8-4d69-887c-f915adcb76a8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e2783a3e-b61e-4d51-bce4-d5262d164e44">
+                    <propertyInstance Id="c3277d9a-25cf-4e0a-901b-0bee1e7813a8" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="6616e6b6-9ed5-46a3-ae13-17f781e64065" />
+                    </propertyInstance>
+                    <elementDefinition Id="162fbe95-df52-4429-ad65-747e25c53ddb" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="27bb1e9d-29db-4e75-8efc-310d78cc7d43" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="edec07d0-192c-4cfc-b6bd-a989d02ec523" LastKnownName="StateChart" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="e60980b5-617f-49f4-a672-dcdb4c3fa054" name="UmlStateChartEngine" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="2186eada-39a3-4f34-a6dd-f31564c99ff5" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartEngine Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FUmlStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DStateChart)])" tag="ViewCode">
+                <elementDefinition Id="f10115fc-ba69-427d-9519-f240977b4ce1" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="69d34633-f415-4701-93d1-74d98196aa9b" name="method" profile="CSharpProfile">
+                <elementDefinition Id="b6698a9d-1d68-4a6f-9b5f-35f9dec4ee0d" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="eb3399dc-9f27-4ccb-9033-0ce6036089c9">
+                    <propertyInstance Id="6db34f52-b55b-4431-a9dc-6a2c1c4279d8" name="ClrAttributes">
+                      <elementDefinition Id="dcf120ab-1cf9-4ddf-b04a-78871511050f" />
+                    </propertyInstance>
+                    <elementDefinition Id="0a2b8c87-2fea-4721-81a5-ddd386719e4a" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f7cd9e0d-355d-4ee9-9289-67e34989f784">
+                    <propertyInstance Id="a5a08f53-f3ea-4b27-88d2-39fbdfe14079" name="IsPartial" value="false">
+                      <elementDefinition Id="4dbb0381-8dd0-444b-8e12-106d26bc39dc" />
+                    </propertyInstance>
+                    <elementDefinition Id="60b9c22a-db26-42b6-af66-2e7e656419e2" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6e99d017-42a7-4ce9-b073-743c2be88eec">
+                    <propertyInstance Id="513915b3-536b-4742-937e-14f89fe9ebb7" name="IsUnsafe" value="false">
+                      <elementDefinition Id="8f20b0c8-d31a-47b1-906f-a93972ad1225" />
+                    </propertyInstance>
+                    <elementDefinition Id="24aa1b69-ec64-48f0-939d-d4e10a7cda54" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="92c11153-f0ba-4b16-a84f-15878ace0830">
+                    <propertyInstance Id="8e3c6d6c-c99c-4a1d-8d43-88e7f43d613c" name="Inheritance" value="none">
+                      <elementDefinition Id="4b1b6fad-2fb0-4d74-8fee-fc3961ba52a6" />
+                    </propertyInstance>
+                    <elementDefinition Id="9eee461c-ab41-457a-beec-bc1ea815f191" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="ba63901c-025b-4294-a4e8-ed515e43c46e">
+                    <propertyInstance Id="3b6553cb-5e14-4fe9-9bf9-287cbfac1ea3" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="3b9732e3-b9e8-4cfb-85d5-a1990542f26c" />
+                    </propertyInstance>
+                    <elementDefinition Id="b5201769-d56d-4e35-a01f-c5a9d149ef0c" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e757b08e-9313-476d-9f39-3b5689e567e7">
+                    <propertyInstance Id="ce03b9e1-ac82-4d48-bf8b-685331c4ce88" name="params" value="false">
+                      <elementDefinition Id="18bd8c28-ecb4-4443-8716-7c3977309406" />
+                    </propertyInstance>
+                    <elementDefinition Id="8a4d20a2-408b-4384-aa6e-10d8f2993e1d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="855d2f24-df3a-4479-a2a1-bf941ba71e8d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f95913dc-5b64-491a-931f-996c21ff597b" name="stateChart" direction="In">
+                  <referencesInternal>
+                    <reference Id="97b6ead5-d37b-4801-9be8-29bd27fe9fa1" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartEngine Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FUmlStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DStateChart)]) ParameterIdentifier%3DstateChart" tag="ViewCode">
+                      <elementDefinition Id="eab0d950-31a3-431e-bab9-d0379c3ccffb" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="8bab152a-2bfc-4033-8f29-411d847968f4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="edec07d0-192c-4cfc-b6bd-a989d02ec523" LastKnownName="StateChart" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="6d4edd8f-95ca-4465-8923-bde19ae944d3" name="Dispatch" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="3d5c4f0f-82cc-431c-8996-df12116966cb" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartEngine Member%3D(Name%3DDispatch OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Simulator Type%3DIStateChartEvent)])" tag="ViewCode">
+                <elementDefinition Id="c3228fb6-929b-413e-b366-44703e7786ae" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="5e644507-b732-4996-b1a7-040ccbe36048" name="method" profile="CSharpProfile">
+                <elementDefinition Id="ac505515-457d-43a5-a762-4e1784fd80ab" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="c4655d1f-e334-4589-adc5-1d198b686b37">
+                    <propertyInstance Id="4259d814-b8a5-4e09-ba4a-a2df01dc3757" name="ClrAttributes">
+                      <elementDefinition Id="b5ef0be5-9b39-48e1-a06b-1e6c6242a265" />
+                    </propertyInstance>
+                    <elementDefinition Id="53dba432-7622-40b6-886d-41307f00e688" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="821fd083-69a5-4a49-af4e-3e9f39049e30">
+                    <propertyInstance Id="dbb8c932-c1a6-484d-ac3a-aaa2bad93875" name="IsPartial" value="false">
+                      <elementDefinition Id="a3a76cb1-67ba-46e6-b202-95fb245a9eaf" />
+                    </propertyInstance>
+                    <elementDefinition Id="54efa05c-12ea-4321-a779-d53d5c64c9a6" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d312c734-dac7-4b27-8332-290dbec0df83">
+                    <propertyInstance Id="cbe3a465-c8a0-4e9a-aa93-9b31919ea4d3" name="IsUnsafe" value="false">
+                      <elementDefinition Id="f6841e18-c782-483b-aebc-2d58739f64fb" />
+                    </propertyInstance>
+                    <elementDefinition Id="e31f71c0-f2c0-4c9e-8c02-f6cc34246d05" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a8b36d47-2402-4861-9456-b337368107da">
+                    <propertyInstance Id="b13fee4d-ac9d-4789-98e8-903319378d0d" name="Inheritance" value="none">
+                      <elementDefinition Id="041e84e1-e253-41ea-8b18-8989a99ede05" />
+                    </propertyInstance>
+                    <elementDefinition Id="dc98f2dc-8da3-4075-9689-3393149d1e83" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="4ca4360b-2573-4592-ac1b-003db9e62010">
+                    <propertyInstance Id="dc8c8026-5e88-4a60-8912-1753dd06d723" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="a3cb1eb6-01d4-4bfe-8fc2-a24de02f0d83" />
+                    </propertyInstance>
+                    <elementDefinition Id="841b2909-54a2-4316-b793-2c7e86efa190" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b01295be-760c-4393-8bf7-0b5aa5cacd9b">
+                    <propertyInstance Id="b8a6c1ee-ec80-40f4-a5fa-7eabfbb4e522" name="params" value="false">
+                      <elementDefinition Id="044a32b3-0e1a-4330-be91-2ac2e2a94a28" />
+                    </propertyInstance>
+                    <elementDefinition Id="d7e81f7a-f5fc-4c24-a2a5-7a0de361faa3" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="793ec2cc-6371-4005-86a2-7631e83fd2a2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="718a1f92-39ce-4b63-9080-00b6826dc9d0" name="e" direction="In">
+                  <referencesInternal>
+                    <reference Id="84ceb4bf-1bd6-4ae1-a6d6-de2d0c922390" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartEngine Member%3D(Name%3DDispatch OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Simulator Type%3DIStateChartEvent)]) ParameterIdentifier%3De" tag="ViewCode">
+                      <elementDefinition Id="51f45404-1b9f-43de-b2de-a0229eb5b818" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="97d6b918-abec-4b3b-ad96-3f07e14a7948" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="5e9df698-ac7a-4f1e-8afc-3bb55ee69ee9" LastKnownName="IStateChartEvent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="0ca6a8ea-a8d1-4dd1-9bcc-4e6813fb566b" name="IsStateActive" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="c0893f3e-1116-4afc-8bd2-7fa2542fd11e" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartEngine Member%3D(Name%3DIsStateActive OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)])" tag="ViewCode">
+                <elementDefinition Id="1fc3bf46-c1bc-4167-ba28-b23fbd2d92b9" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="c02167b8-8c12-43af-8274-652c686a60e4" name="method" profile="CSharpProfile">
+                <elementDefinition Id="b02cbc88-9d5c-413c-bfd1-b0e2031f0adc" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="0451ce9a-b347-4b38-834c-bdb1c2a20ce2">
+                    <propertyInstance Id="a4c825e8-2356-4abf-b70a-f2f9cd9c694a" name="ClrAttributes">
+                      <elementDefinition Id="9b5a7778-6fe3-4c9a-8bd6-66a897cb2c9d" />
+                    </propertyInstance>
+                    <elementDefinition Id="c62dd440-0082-400b-b188-e5b7b6c67481" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="33400935-6b8f-4736-8459-9e3dff9b9f30">
+                    <propertyInstance Id="97d9440c-4990-4464-9320-886aacb44d8e" name="IsPartial" value="false">
+                      <elementDefinition Id="055c60ee-588e-4a35-b606-7c918b9ca7c9" />
+                    </propertyInstance>
+                    <elementDefinition Id="2586d8c3-dcc1-45b7-bfb8-c4a1af7e8db9" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e68ed1f6-c403-4996-b5bc-1eb36e77836e">
+                    <propertyInstance Id="7abacb82-ff07-4e67-9e31-c253e30e52ac" name="IsUnsafe" value="false">
+                      <elementDefinition Id="5a9a47a8-d5db-45a6-8182-f2f532be0a74" />
+                    </propertyInstance>
+                    <elementDefinition Id="7d0149cb-2b8f-4327-9a29-378558509b2f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a79da9a6-cd9b-42d8-b8d5-a531130d43bb">
+                    <propertyInstance Id="412d700e-0362-4f0a-a9ef-370269402af6" name="Inheritance" value="none">
+                      <elementDefinition Id="077444e8-60d5-43a5-867e-eeec9156d9f1" />
+                    </propertyInstance>
+                    <elementDefinition Id="1d6e0b82-536c-4dac-9172-c48bbfb96e34" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="594512af-1e3b-4ca3-afbb-2575dc331557">
+                    <propertyInstance Id="728b185a-4692-4648-8e0e-36c197018dfe" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="2e4b2a85-c01b-41a9-a686-545cd0f254fe" />
+                    </propertyInstance>
+                    <elementDefinition Id="d0213591-980a-4147-ba68-d81e3d37b0ea" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="442ad318-cfa3-4830-8a6b-ebd20fa72326">
+                    <propertyInstance Id="e7812d7a-584b-477a-bf5f-91b5a49de98b" name="params" value="false">
+                      <elementDefinition Id="b60a45cb-c86d-4863-8c96-93c5452f3a17" />
+                    </propertyInstance>
+                    <elementDefinition Id="50b26683-0ef1-439f-ad45-f92d0066f577" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="fd207fe4-d7c8-483b-a335-3520ea63b406" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d9316e38-100e-40af-b600-4e1d5c65caf8" direction="Return">
+                  <elementDefinition Id="25de7263-4b2e-4893-98a1-fd8ad0e728cb" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6d758931-4893-4564-92ca-0d5912f58d72" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c5c1f976-3995-4e9a-ae4e-d317b46e8159" name="name" direction="In">
+                  <referencesInternal>
+                    <reference Id="a2c4e0d1-c084-4315-b3c0-81cc8b81f49f" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartEngine Member%3D(Name%3DIsStateActive OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dname" tag="ViewCode">
+                      <elementDefinition Id="80ca726f-615a-4628-b12a-3ce738075c73" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="874ece83-b5f0-4219-82b1-49b01873b3fe" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="253a9dfb-7c27-4344-8369-3a82df1235ff" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="1345096b-8bf8-413b-b77a-49fd46b8e635" name="TransformToStateChartEvent" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="508c83b8-fa2e-4b02-b106-c532fc1ad8a2" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartEngine Member%3D(Name%3DTransformToStateChartEvent OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Simulator Type%3DIStateChartEvent)])" tag="ViewCode">
+                <elementDefinition Id="e86a1762-374c-421b-b30c-cc2067ff0f78" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="0d336f06-1375-4752-9f4b-1f881ff66e7c" name="method" profile="CSharpProfile">
+                <elementDefinition Id="95813fc9-b4a7-4cf9-8683-bda790922fef" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="040848a8-367c-4ddf-b6c4-1c8927cd7bb1">
+                    <propertyInstance Id="7338950a-a065-4c7b-9137-9a8ed467075c" name="ClrAttributes">
+                      <elementDefinition Id="3e3e78ba-2d6a-4d63-9ac0-2b2fd8a7856b" />
+                    </propertyInstance>
+                    <elementDefinition Id="ae511c7c-33da-46ef-a80b-5c37eb31409e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="fa765ebe-d76e-4fc1-98fc-02358b8f0918">
+                    <propertyInstance Id="86ebff89-95b9-4b20-8bc7-69a87c286fb6" name="IsPartial" value="false">
+                      <elementDefinition Id="a2a4356a-97c0-4f99-ba84-d1f781113bd7" />
+                    </propertyInstance>
+                    <elementDefinition Id="c4444a83-f29f-47a9-a239-bbce61955312" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="0d6e0d16-46b5-408a-8f74-cacd62ff205a">
+                    <propertyInstance Id="a635b591-0b59-4e97-ba78-16b24688b0e9" name="IsUnsafe" value="false">
+                      <elementDefinition Id="0ba30a3e-63ef-4a26-9caf-2c316aa05e54" />
+                    </propertyInstance>
+                    <elementDefinition Id="105a6e79-61e0-4cee-aeba-e00c5110d471" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="01da95a0-fabd-4eae-a462-611a4775987d">
+                    <propertyInstance Id="71e52d9d-37ec-4abe-9a21-52fe02dd204b" name="Inheritance" value="none">
+                      <elementDefinition Id="71cadbc6-baed-4a10-b884-f1ec8f5f4222" />
+                    </propertyInstance>
+                    <elementDefinition Id="eef23068-d226-4dad-bc98-b16196eaf63d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="33278c76-5633-42ef-a40d-99b97f6eee8b">
+                    <propertyInstance Id="64a0dd77-b5b2-4e57-b154-b4f8cb4111f0" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="32ff483f-6ec3-4da0-83b4-7d401e3d9cda" />
+                    </propertyInstance>
+                    <elementDefinition Id="210d65ad-7946-4f89-a758-c7901c3a2214" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b2a7a3c9-3668-4a59-94d4-4a27afd12a6c">
+                    <propertyInstance Id="e6f5afd6-3e60-4633-a24f-0c10edadc0af" name="params" value="false">
+                      <elementDefinition Id="f59cbdb4-291e-4e33-9758-b1644e78d9d0" />
+                    </propertyInstance>
+                    <elementDefinition Id="0182c161-0ecf-4445-acb7-5b8c8d9a91a4" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="c91b29c8-088b-4e95-9e16-f2e1388087a9" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4d7421e5-16bd-45c6-857c-8a114c2bd447" direction="Return">
+                  <elementDefinition Id="f7b6fe1f-dd57-430f-88a9-4b97ab5fc931" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="daebe946-193a-42d8-b771-6ee0bbce0ac9" LastKnownName="StateChartEvent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9544f7db-8eec-47c3-91b6-fbec25892634" name="e" direction="In">
+                  <referencesInternal>
+                    <reference Id="4c1f13b9-5b68-452a-b217-5760392d45c9" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartEngine Member%3D(Name%3DTransformToStateChartEvent OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Simulator Type%3DIStateChartEvent)]) ParameterIdentifier%3De" tag="ViewCode">
+                      <elementDefinition Id="c7834c86-311a-4fd4-b51d-87247aa387c4" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="8f9034cd-4fc5-4038-bccc-f77dde8da35a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="5e9df698-ac7a-4f1e-8afc-3bb55ee69ee9" LastKnownName="IStateChartEvent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="7129aae0-69dc-4cac-957c-1f3428d80401" name="ActiveStates" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="bad18237-c855-4b2e-b1c7-b37ab43f104f" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartEngine Member%3DActiveStates" tag="ViewCode">
+                <elementDefinition Id="7799c6ff-219e-48e4-876a-4dad861212cb" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="1719a013-8514-4f3d-a681-0abab876d144" name="method" profile="CSharpProfile">
+                <elementDefinition Id="a3afcb96-9228-478a-8920-4a9f6beefe40" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="010fb868-41c1-4f0e-ae19-0a6ee373b412">
+                    <propertyInstance Id="ad945064-ea1b-4698-a74e-1214f94fedca" name="ClrAttributes">
+                      <elementDefinition Id="86dc6e2d-36c1-49e4-a4c4-c7ede71cd262" />
+                    </propertyInstance>
+                    <elementDefinition Id="5e3bfb02-972d-4b86-94dd-af47b3501777" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6b605632-f3ba-4a81-ba42-4c578a22aafc">
+                    <propertyInstance Id="2358c791-2578-4e22-b209-7e892a701fa3" name="IsPartial" value="false">
+                      <elementDefinition Id="0907af39-0d0a-4043-b3d9-c70ae7c7765c" />
+                    </propertyInstance>
+                    <elementDefinition Id="7420ecbe-8668-4dda-8fdc-7b49135218db" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a6119393-a1ae-4ca2-b56e-0a431c58fdd0">
+                    <propertyInstance Id="54af83d4-0102-405d-8f9d-83a7c8820358" name="IsUnsafe" value="false">
+                      <elementDefinition Id="256737ef-1100-488a-8ae5-016526e979da" />
+                    </propertyInstance>
+                    <elementDefinition Id="dc787948-977d-4f89-bdc8-8e77633426a9" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="68d6df9f-8af9-4f42-8871-4136a4137d54">
+                    <propertyInstance Id="2ff66585-0dac-423e-9586-977248517be7" name="Inheritance" value="none">
+                      <elementDefinition Id="75fefe5a-9a7e-424f-9c01-9e810a98dd10" />
+                    </propertyInstance>
+                    <elementDefinition Id="3d211f17-552b-4286-a305-2ec25df35035" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="934e4df7-2731-4911-b04a-06fbe6548357">
+                    <propertyInstance Id="abce0909-129e-4a3d-a62b-4385e178b74e" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="14ccbd30-5296-4e01-b6e7-e20000987745" />
+                    </propertyInstance>
+                    <elementDefinition Id="50b1b58e-3c2c-4a54-8a3b-7d50af4f876a" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="93023c8b-780d-4066-b9cc-b4e23c21b822">
+                    <propertyInstance Id="89f3d4c4-cfbb-4e04-9433-c6cf617afc80" name="params" value="false">
+                      <elementDefinition Id="0989a45c-5035-4ed3-b8ad-3de4381de9c6" />
+                    </propertyInstance>
+                    <elementDefinition Id="5f4a1680-4dc8-42af-a78f-4100f27637f8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="e35b5865-2156-4476-986c-8d3e7e0440e5" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="485dc0bc-304e-479a-9bc6-b99e970ea0fb" direction="Return">
+                  <elementDefinition Id="d628d272-1747-4ca7-978d-e2510031a046" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="cc6739ac-0e7d-443a-b8f3-8a1bc91c67b2" LastKnownName="List&lt;String‎&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="69cfdec8-8a7c-474e-ad68-c03b39cf40f8" name="Start" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="c1b8b443-257b-45a0-8950-d07be2c32613" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartEngine Member%3DStart" tag="ViewCode">
+                <elementDefinition Id="a9a5a196-c93e-449e-a6e0-f6483de62595" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="ec70866a-c3b0-41cc-b204-9c192bd040df" name="method" profile="CSharpProfile">
+                <elementDefinition Id="90155998-0c7a-4f52-ab10-23b659de15be" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="7dafc157-de13-4d02-b4b4-d76939114293">
+                    <propertyInstance Id="a9fb0d2c-1263-4126-8274-cf8f4726832f" name="ClrAttributes">
+                      <elementDefinition Id="c1da4117-3668-4bc9-9bb8-a3dfce9ee5fc" />
+                    </propertyInstance>
+                    <elementDefinition Id="be5a7fe1-1d1a-4a76-975e-c3c7584c853e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="5b055df8-f3aa-43fc-b0a1-cbc16619f744">
+                    <propertyInstance Id="21e0ca2e-7a42-4ca5-8bb4-9a7234b66599" name="IsPartial" value="false">
+                      <elementDefinition Id="b16903c5-a081-4e41-92b5-a6c0600cb5bf" />
+                    </propertyInstance>
+                    <elementDefinition Id="7a114e92-caea-403c-9ef3-0321f57e3b09" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="1977a412-0a3f-463b-bde9-5941c39416b4">
+                    <propertyInstance Id="8a9ee876-3ffa-4913-9576-8435b55c96ee" name="IsUnsafe" value="false">
+                      <elementDefinition Id="e44885c6-2c16-473b-8c91-4baa2e1d626a" />
+                    </propertyInstance>
+                    <elementDefinition Id="4a50ef51-0f0d-4ede-8bd5-2710a5d3857d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e02ef742-9c54-465a-b75d-218a3d289f39">
+                    <propertyInstance Id="e66179c3-f215-4c73-9100-0a67dde51faa" name="Inheritance" value="none">
+                      <elementDefinition Id="817f623a-7ba6-46ce-aee0-71692f262a54" />
+                    </propertyInstance>
+                    <elementDefinition Id="ba5b6856-90d6-42bc-ba1a-b02ff3af23b4" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a883e394-646f-4281-b214-a7f67f610a5c">
+                    <propertyInstance Id="f7d5e445-fe66-4776-b7f1-ee6b125578fd" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="063e8d3d-647f-4dc1-b672-54992c4e61eb" />
+                    </propertyInstance>
+                    <elementDefinition Id="e842ddbe-df1f-4435-b5bc-556b95458b3a" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="72b90531-cad6-4226-8714-3ac1ad2c9cc4">
+                    <propertyInstance Id="e2cd2a05-d1f5-43d8-a292-a40459fd202d" name="params" value="false">
+                      <elementDefinition Id="1b77e895-4e3d-4e4f-83db-d5178d7e01e3" />
+                    </propertyInstance>
+                    <elementDefinition Id="84483ee2-852f-4f53-b0f2-342d2a206a3c" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="ea6275f7-e53d-4410-8517-f31af6735819" />
+          </operation>
+          <operation Id="3239fab3-0103-47d4-8ddb-972aadd2cbb3" name="Dispatch" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="eac75760-c9bf-4b11-8679-4b5fcdf96744" />
+          </operation>
+          <operation Id="93fcdcc8-bfcd-4bf4-bea8-c833f1ab21fd" name="IsStateActive" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="be4f515e-1596-4902-809a-ba19d972adb6" />
+          </operation>
+          <operation Id="59848a19-dc7e-4b9b-9604-1f43b911800e" name="ActiveStates" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b8b7e062-a5b2-4d5b-ae85-fc7d22200da8" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="5e9df698-ac7a-4f1e-8afc-3bb55ee69ee9" name="IStateChartEvent" isAbstract="false" isLeaf="false" cachedFullName="ScenarioFrameworkModels::ScenarioSim::Simulator::IStateChartEvent">
+        <elementDefinition Id="8fed187f-f5e6-45be-a48d-b314cea09b1f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="cc6739ac-0e7d-443a-b8f3-8a1bc91c67b2" name="List&lt;String‎&gt;" isAbstract="false" isLeaf="false" cachedFullName="ScenarioFrameworkModels::System::Collections::Generic::List&lt;String‎&gt;">
+        <elementDefinition Id="945ba5f3-548e-4ff0-a9cb-0d5a8e695f9b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0407d830-0df3-4a25-aca5-e7d4e5f62272" name="UmlStateChartBuilder" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <referencesInternal>
+          <reference Id="29bebc98-87a3-41ba-ad8f-739610eb68a7" handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartBuilder" tag="ViewCode">
+            <elementDefinition Id="e6bb5f75-1621-4ed9-982d-7c9b7662814b" />
+          </reference>
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance Id="42f0919e-b29f-4540-b624-144ee6bedbe9" name="class" profile="CSharpProfile">
+            <elementDefinition Id="315de83f-5ad5-41d4-979e-bf72aeecf827" />
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="aaa63da4-448e-42fe-9c81-89f555852a84">
+                <propertyInstance Id="5b2f5e16-81d2-4828-8e53-4914d3b76574" name="ClrAttributes">
+                  <elementDefinition Id="20df37b6-7610-4932-acaf-06ebfbf3016c" />
+                </propertyInstance>
+                <elementDefinition Id="aba93bee-f9e1-4652-87f7-9cd651012efb" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="fbad0952-7959-42fe-887d-5895605ec280">
+                <propertyInstance Id="405be1d4-6631-477c-9536-f5f21b299560" name="IsPartial" value="false">
+                  <elementDefinition Id="5ff660b5-d7dd-469e-b1e1-e8ea8da77d21" />
+                </propertyInstance>
+                <elementDefinition Id="f5ff1f8f-ebdd-4f46-bb4b-2322b6159271" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="26e138cc-74e2-4ee9-a2ee-d30045a29f92">
+                <propertyInstance Id="1b88d0f3-b15b-4748-b159-bbe929a7a755" name="IsStatic" value="False">
+                  <elementDefinition Id="8246a05c-43fa-498f-9b12-4c541a7c0399" />
+                </propertyInstance>
+                <elementDefinition Id="3473d869-1c48-421f-ac5d-475e6753976b" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="9ccb7cb9-b800-4c1d-a464-c85f148a14fd">
+                <propertyInstance Id="87279b98-e91b-4d08-9843-9203814e4744" name="IsUnsafe" value="false">
+                  <elementDefinition Id="a4d980c6-5fce-45db-9210-1434ee20804f" />
+                </propertyInstance>
+                <elementDefinition Id="c9e0bbc9-de04-4979-9c49-223e939fc2f9" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="2b4a63d5-fa5a-4ca6-b1a2-3f974424adc5">
+                <propertyInstance Id="b396f8ce-2cfb-4dd2-b2e4-2c577f75a107" name="PackageVisibility" value="internal">
+                  <elementDefinition Id="f76e00e9-9d9b-4278-a61c-5c56e2a3b46c" />
+                </propertyInstance>
+                <elementDefinition Id="aa216084-bf64-40e5-b7d2-9cc43a6f7b9b" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <elementDefinition Id="815be5a5-2211-40bf-9e8b-6dd811df4657" />
+        <suppliersInternal>
+          <dependency Id="d1afc038-6da4-4e40-b4c7-f2d17d93d782">
+            <classMoniker Id="69b01468-2009-472d-bd07-bc718b25c054" LastKnownName="UmlStateChartEngine" />
+            <elementDefinition Id="d30d962a-4a9e-4489-8db2-c5ae7c82e8d8" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="00d11125-47d1-40df-b7fa-2cc61d38e4e6" name="states" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="d2bf46e9-ce6e-45ce-8bf9-9e7b542ddb4e" handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartBuilder Member%3Dstates" tag="ViewCode">
+                <elementDefinition Id="2e13fb33-f3f5-4700-bee6-d819f3c08f7f" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="37936e31-48f5-4558-8e67-5edd71bf3fc2" name="field" profile="CSharpProfile">
+                <elementDefinition Id="f19c76af-e30c-4e54-999f-fc9e7b736208" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f7b338ee-dbd7-4c39-bc12-11fbcfb99167">
+                    <propertyInstance Id="a2d75cab-db58-43ef-9a16-c9e41ad27f73" name="ClrAttributes">
+                      <elementDefinition Id="068e91b9-d110-41dc-b5d9-70dcf5a90d9a" />
+                    </propertyInstance>
+                    <elementDefinition Id="f7c36be9-bb7f-408c-b101-292e9b8f8ff9" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a6dd2400-541a-4087-a2fc-0a5ecd1857fb">
+                    <propertyInstance Id="4871d188-d416-479f-ab7e-0f106b000ffd" name="IsConst" value="false">
+                      <elementDefinition Id="933f670f-51e5-4f59-b1ce-9e9781c9c6e2" />
+                    </propertyInstance>
+                    <elementDefinition Id="afc2eff6-e49b-47fa-995d-a872bf968333" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="dcbe8613-f68f-4bae-a15c-b49aa1d64b5c">
+                    <propertyInstance Id="049f0e45-b781-4532-be76-2d35f6a569b9" name="IsNullable" value="false">
+                      <elementDefinition Id="624cf200-9950-47ce-82d8-55e880493b18" />
+                    </propertyInstance>
+                    <elementDefinition Id="42b07b05-d534-4e65-bc40-abb4577b2d70" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b3c75922-dc8f-4fa7-b143-fa6a881e41eb">
+                    <propertyInstance Id="ab3e03c4-3e86-4ee3-91ff-c8b234bbbade" name="IsVolatile" value="false">
+                      <elementDefinition Id="929b299b-a261-40f7-b434-ece3af6ed50a" />
+                    </propertyInstance>
+                    <elementDefinition Id="5f8eea7c-1871-4033-8711-565e96ec17d6" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="c79e8539-aee8-4c42-8cfa-440a9d91aa38">
+                    <propertyInstance Id="e33b48b7-f09b-4d92-ab97-8c436775b410" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="813523c8-2da7-4412-8d5e-24c1b2f90171" />
+                    </propertyInstance>
+                    <elementDefinition Id="97968e69-7ec6-4f98-9806-deff272eec9a" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="722c403f-7174-47d7-8dd6-f2cbfdcfb4be" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="23405369-a28c-4bcf-be80-330282df7bdb" LastKnownName="Dictionary&lt;String‎, State‎&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="64d602e2-0b70-4322-bdf6-af277ebfb80c" name="actionFactory" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="250b07f3-5b44-4f0f-b01a-bdce3eef155e" handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartBuilder Member%3DactionFactory" tag="ViewCode">
+                <elementDefinition Id="3b0a6cf1-d017-4a43-8731-6c30bb984428" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="2046c02f-8070-48db-9068-bfe21454caa4" name="field" profile="CSharpProfile">
+                <elementDefinition Id="f95d249a-2514-4559-8213-8d28c1d6cca2" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="98bcc162-a446-4fe7-94d9-b7ec09734a04">
+                    <propertyInstance Id="35d562a7-53bc-46af-95da-86a61b6017ba" name="ClrAttributes">
+                      <elementDefinition Id="1d05b7ab-d696-4629-aef6-22f2e0032bea" />
+                    </propertyInstance>
+                    <elementDefinition Id="bdbb6779-8ade-402e-8420-42b8119d3541" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="7d5cfcff-bb4e-4b93-8d7d-4d3716a8503c">
+                    <propertyInstance Id="bbe90884-2b66-4fa4-8715-9f4a8148613a" name="IsConst" value="false">
+                      <elementDefinition Id="8d6495e7-1109-4212-8b30-5e40448f1f3d" />
+                    </propertyInstance>
+                    <elementDefinition Id="3b8defcf-accc-4dc9-88a5-e8db8b63570d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="9e014402-1b2b-4fe9-bc60-e2bc4bd7d3b5">
+                    <propertyInstance Id="4be02777-16d2-49cd-ad60-f5b7722ad6d2" name="IsNullable" value="false">
+                      <elementDefinition Id="26088048-a190-4380-a748-0189f898f6d7" />
+                    </propertyInstance>
+                    <elementDefinition Id="1bf280b1-fead-463d-971e-51e37092b3c8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6c7b6e2b-6362-4d21-8926-036f291d30f8">
+                    <propertyInstance Id="f5339b8d-505f-43c3-9f16-3db5cadae2c9" name="IsVolatile" value="false">
+                      <elementDefinition Id="2cde0179-ee48-4731-949b-cfac6b3d3309" />
+                    </propertyInstance>
+                    <elementDefinition Id="7df99ab6-42cb-4466-844d-ac72b8adef9f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d6e03501-93ed-4144-b1be-4fd55be58de2">
+                    <propertyInstance Id="49ecced1-0c4b-4fb2-8b76-4128f4a3c8f9" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="62bb1e4e-a4ef-43d1-a7fd-dd65ead49d9d" />
+                    </propertyInstance>
+                    <elementDefinition Id="e0870bc0-4c06-4f5c-b2f5-4bcb6f8790a8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="5f189011-61ac-4a87-8635-b59f6a90603d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="087c2648-5808-425e-8155-0ccaceae380a" LastKnownName="ActionFactory" />
+            </type_NamedElement>
+          </property>
+          <property Id="2abf7c32-b36a-4763-8b90-538f51c0ed37" name="repo" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="c39073bd-9ea6-47ea-b5bc-8d0ffa1cabe6" handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartBuilder Member%3Drepo" tag="ViewCode">
+                <elementDefinition Id="2469490c-c378-420e-95bf-35e63b4b4b7a" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="4dcb6409-04c5-4bad-8ea5-fbe1cadccb4a" name="field" profile="CSharpProfile">
+                <elementDefinition Id="908149c8-9d68-4859-ab0e-c5a3228216a4" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="32fdf8f3-f9f3-4b00-984f-4c586a9945e0">
+                    <propertyInstance Id="f4ae3c35-21dc-4a24-9a7f-b22a93090d38" name="ClrAttributes">
+                      <elementDefinition Id="8c98cf66-8565-4430-b297-d9906f8990c0" />
+                    </propertyInstance>
+                    <elementDefinition Id="45597859-250f-422b-a4b4-c01cad240bbc" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="78686c6b-a345-4231-a564-0c9d4a0966dd">
+                    <propertyInstance Id="042051dd-fb79-449f-a527-6b9bbbcd58d1" name="IsConst" value="false">
+                      <elementDefinition Id="f3ff070d-fc7c-4bc9-9fb7-4bf196291b0a" />
+                    </propertyInstance>
+                    <elementDefinition Id="17109341-1131-422f-8330-d6144079837e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="59c65917-81b1-4c3b-90ab-fd43dd5e6ba5">
+                    <propertyInstance Id="afe8d0d8-9f6e-4852-9a43-21ac33fd17d7" name="IsNullable" value="false">
+                      <elementDefinition Id="f4d3b22b-7a27-4037-8fca-93c43727c3dd" />
+                    </propertyInstance>
+                    <elementDefinition Id="aaf3cf3e-cb71-46b1-9a62-91e023fcd9d1" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="08bd265d-6aea-4e90-93ee-db31b8314455">
+                    <propertyInstance Id="1091f8be-5fdb-4b8d-90fd-7b52b62f6eda" name="IsVolatile" value="false">
+                      <elementDefinition Id="66065adf-b69b-4b33-9041-97757dc21e2b" />
+                    </propertyInstance>
+                    <elementDefinition Id="15872681-9525-45d5-b5de-b50f6cb68588" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="84082fe5-0674-4815-8d6b-b46b89717414">
+                    <propertyInstance Id="22a3e108-8b74-4d6b-b797-575e1b39af79" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="bf935d33-9dd6-4db0-9de2-415e941cd057" />
+                    </propertyInstance>
+                    <elementDefinition Id="99816def-77f5-4aab-b8bb-d7604889d2b8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="beff34a7-4ce7-4ec5-98db-ba974526bb39" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="be88d90c-9bbb-4e37-bd50-da75197ff9a0" LastKnownName="IComplicationEnactorRepository" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="15aa3a24-3178-4676-889b-435f49631de2" name="UmlStateChartBuilder" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="c4454131-42ef-4480-a647-935f810f18ab" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartBuilder Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DActionFactory)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.Core Type%3DIComplicationEnactorRepository)])" tag="ViewCode">
+                <elementDefinition Id="61424485-1d43-4e95-b42b-30841c8cda0a" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="90b4435d-e3b8-45d0-8d25-fc6258f25c7a" name="method" profile="CSharpProfile">
+                <elementDefinition Id="2604bbe3-4d29-4e7d-a685-1d22db07be46" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="c21d9d09-822f-40f9-8e18-bff910b92ac6">
+                    <propertyInstance Id="993e3267-9170-4abc-a79d-7278e9f5cb4b" name="ClrAttributes">
+                      <elementDefinition Id="84b6dd54-e417-4bc5-9b71-d853ef2a1c04" />
+                    </propertyInstance>
+                    <elementDefinition Id="7417e61f-4cd6-46ed-8f7f-d5e5ab32222e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="53c78b8f-ea9a-4c5e-8885-7da6deb3cfca">
+                    <propertyInstance Id="4fd2ea26-da97-4518-b4c4-d8e804994cc8" name="IsPartial" value="false">
+                      <elementDefinition Id="da7e1232-587a-4b2c-9630-eb1a1a6db1a2" />
+                    </propertyInstance>
+                    <elementDefinition Id="a7342170-8a44-4c3d-bc9f-961d64efc4e3" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="449db163-3aa1-4c99-a41f-395146c9e9ea">
+                    <propertyInstance Id="5505202f-739d-4da8-ac0d-f3a00bf407e5" name="IsUnsafe" value="false">
+                      <elementDefinition Id="779c17ea-2b8e-4b16-916c-d1eabfac5e6d" />
+                    </propertyInstance>
+                    <elementDefinition Id="0f35b937-645a-46ab-ae37-0126d19332cf" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="1177e9b6-b6d5-4275-95f1-ec5393f79b1c">
+                    <propertyInstance Id="095f3641-a58e-4b80-b822-8d8e55d0fb3b" name="Inheritance" value="none">
+                      <elementDefinition Id="8d38e2be-f812-4417-9aee-f31bc3a5267b" />
+                    </propertyInstance>
+                    <elementDefinition Id="c0b88fd2-6daf-4d82-9482-5f0e449de59b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="277e03e5-b12b-4e87-9ce4-7bed0ebead14">
+                    <propertyInstance Id="6bf78d96-ca0b-4a92-8c34-074bf9df30f7" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="35d03245-6dde-45af-b17e-adf1bd327904" />
+                    </propertyInstance>
+                    <elementDefinition Id="1773ce1e-4e78-4ba0-985e-0c5b885429d9" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="cb68fddd-ae5f-4551-88aa-04d981e4f833">
+                    <propertyInstance Id="06e1e2d6-1e49-4f55-8ed2-f72eb3baca0c" name="params" value="false">
+                      <elementDefinition Id="33590a68-fc66-433e-adfc-c57924a54e1f" />
+                    </propertyInstance>
+                    <elementDefinition Id="4814b489-51ce-4113-bd5f-da9f503e9df0" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="54e00319-317e-4fd5-9968-ea0a08f02b10" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6b147d58-d84c-45b2-b645-e601a3c86049" name="actionFactory" direction="In">
+                  <referencesInternal>
+                    <reference Id="d2ba367f-76cc-4d56-98dc-5d4dc0770f0e" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartBuilder Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DActionFactory)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.Core Type%3DIComplicationEnactorRepository)]) ParameterIdentifier%3DactionFactory" tag="ViewCode">
+                      <elementDefinition Id="ca11a5b4-ccde-4966-a870-4b21eefac0d8" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="8b83155f-d933-4187-a88d-8efcd2d22fa4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="087c2648-5808-425e-8155-0ccaceae380a" LastKnownName="ActionFactory" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3cf441b8-8a9e-4aeb-9d2f-f934557ea65b" name="repo" direction="In">
+                  <referencesInternal>
+                    <reference Id="39794462-e7aa-47e8-bfb6-9a36eca28a1a" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartBuilder Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DActionFactory)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.Core Type%3DIComplicationEnactorRepository)]) ParameterIdentifier%3Drepo" tag="ViewCode">
+                      <elementDefinition Id="621a58da-b6f7-4b1a-bbd2-32727e81a3b6" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="daa91280-134a-4e28-a5f2-153451eab0fd" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="be88d90c-9bbb-4e37-bd50-da75197ff9a0" LastKnownName="IComplicationEnactorRepository" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="eb5b2c1a-90ef-4708-b26c-3f87d99c371f" name="Build" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="791bbfd6-c472-4d14-a711-07ad6f4d7424" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartBuilder Member%3D(Name%3DBuild OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Core Type%3DScenario)])" tag="ViewCode">
+                <elementDefinition Id="922e47b7-93ea-479f-8953-c6c1b8f10bd2" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="49815bd6-a991-4805-90d0-592b37b182fc" name="method" profile="CSharpProfile">
+                <elementDefinition Id="62c90493-877e-49d6-9a5f-9d69c0a1751b" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="77bf9b2f-6405-4807-83f4-a55370412700">
+                    <propertyInstance Id="0b3adfd8-e80f-4abb-87f8-b34069c7e78c" name="ClrAttributes">
+                      <elementDefinition Id="f4b3da10-4484-480a-940b-d7a98417c9b0" />
+                    </propertyInstance>
+                    <elementDefinition Id="fd467e33-556c-4f88-aa03-45bad255acb7" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="964a49e0-2c23-4862-9a8a-9d77d7a1797f">
+                    <propertyInstance Id="3361e160-aa52-4f78-8c75-4a951f5dd66b" name="IsPartial" value="false">
+                      <elementDefinition Id="aeab3333-27e3-43f3-941b-275806caed14" />
+                    </propertyInstance>
+                    <elementDefinition Id="e9cdf4e8-3dab-4a88-81b4-c92f63769596" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="11a8b936-a51a-40e7-87bd-1d02696b5bed">
+                    <propertyInstance Id="a835e480-6d0c-48c3-b141-b58213f62fa5" name="IsUnsafe" value="false">
+                      <elementDefinition Id="e09b2a87-0b7b-45dd-b18d-67ec2355266d" />
+                    </propertyInstance>
+                    <elementDefinition Id="5ed59684-2263-462c-9b56-abf8fb86ab16" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="7774c60a-6110-43e3-b533-85c9f9629caa">
+                    <propertyInstance Id="44418602-69c8-45be-a15d-4fd1242ef972" name="Inheritance" value="none">
+                      <elementDefinition Id="f5e43e3a-9524-44cc-8ad0-8745d289f722" />
+                    </propertyInstance>
+                    <elementDefinition Id="3349d675-840d-4b61-b0ff-f3595249841f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="2590cb65-2038-4d7f-9029-86b4eceb925b">
+                    <propertyInstance Id="b0f73234-f116-4f6a-bfc4-1ea49ff0976a" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="6e8d60b1-9903-4c0b-9af1-ddc09a567de0" />
+                    </propertyInstance>
+                    <elementDefinition Id="ac4530dd-e215-4cae-92b6-79656a6dbd8f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d0b97add-8bc0-4698-bd6f-1547eae5f2a0">
+                    <propertyInstance Id="e71fb3d3-742c-49be-a946-b04a820d4f74" name="params" value="false">
+                      <elementDefinition Id="b4e3f9a9-60d2-4685-ba55-bb26de071970" />
+                    </propertyInstance>
+                    <elementDefinition Id="0f3d801a-64cd-46d3-a2ef-515a8a2f8a40" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="25a58cb5-6046-41ed-a6b4-949e4d593a7e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="570634fd-eab4-4f09-aa1f-ec1dbb1edcab" direction="Return">
+                  <elementDefinition Id="33961d0f-038b-4cef-b7b9-f36a9261375b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c0631229-4d34-4244-b66d-b3d84c6f1f08" LastKnownName="IStateChartEngine" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3230e31c-a2ff-428e-8b50-418796e15f1d" name="scenario" direction="In">
+                  <referencesInternal>
+                    <reference Id="3b224274-a1a1-4a3f-b986-d40a07edd89b" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartBuilder Member%3D(Name%3DBuild OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Core Type%3DScenario)]) ParameterIdentifier%3Dscenario" tag="ViewCode">
+                      <elementDefinition Id="04253a7d-d64f-4cca-89e3-16703b8d4b0a" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="6e940195-487b-4079-bf64-6da5dcf67015" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="27c5fc01-41c1-43a4-8e1c-265953ee3ce9" LastKnownName="Scenario" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="f1eb4338-dcf8-4600-a2f4-cec75af23c56" name="AddActions" visibility="Protected" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="3e1efff7-efc8-473b-8a12-1f6b4a52a700" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartBuilder Member%3D(Name%3DAddActions OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FUmlStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DState)])" tag="ViewCode">
+                <elementDefinition Id="fc7cb8ad-2f13-4e30-a9e5-b64498522699" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="53861c02-1768-4d74-b0c5-d93487dad91d" name="method" profile="CSharpProfile">
+                <elementDefinition Id="443e83ff-6a37-4ff2-b46a-267a6d1c0b5e" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="129d6c96-ab7e-4fc4-8f23-2b6cd6806fe4">
+                    <propertyInstance Id="57ec50f5-14e6-4567-bb43-37f24295645d" name="ClrAttributes">
+                      <elementDefinition Id="e558e8d6-5186-4ee0-8eb3-06ab569e114b" />
+                    </propertyInstance>
+                    <elementDefinition Id="fbba6dce-c9c0-4709-9f0b-13bca08827cb" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="fd67367d-f611-46c4-8596-f6d9148a6af3">
+                    <propertyInstance Id="abaf1151-ac8b-4f57-9765-96681d271154" name="IsPartial" value="false">
+                      <elementDefinition Id="b1a4bbf7-3c35-4ea6-9b6b-a9b86eb7498b" />
+                    </propertyInstance>
+                    <elementDefinition Id="253cbfbf-4fb1-4c67-9006-74aad10eb823" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e3ec7068-7f28-4f7d-b486-50568f14d4c5">
+                    <propertyInstance Id="9469c034-dcbc-4c0f-9f10-308d74230aae" name="IsUnsafe" value="false">
+                      <elementDefinition Id="0b019de0-4323-4af2-b2b2-8c7cfbdd5603" />
+                    </propertyInstance>
+                    <elementDefinition Id="4e8c7c1e-d86c-49a4-8633-8a779bcc0491" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="604b5057-4dde-4c04-a4f4-c3dee21161c0">
+                    <propertyInstance Id="c8743787-eaa6-49cf-a615-74113e93d2c3" name="Inheritance" value="none">
+                      <elementDefinition Id="4e972a91-43fd-47df-98cd-8516b1b044e1" />
+                    </propertyInstance>
+                    <elementDefinition Id="c4988ca2-070f-41b5-9990-39e87bcb02d2" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="2f144a19-2c77-4c61-b124-7383fa069b19">
+                    <propertyInstance Id="64591e58-e3ff-42fb-bf7b-14b821093656" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="99138a87-8f21-4bc5-b85f-339818bc960e" />
+                    </propertyInstance>
+                    <elementDefinition Id="4d0ac20f-afbe-4c0c-b7a3-76c80dd4bd74" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="5c1e33c8-3467-412e-8f69-e13109f88b84">
+                    <propertyInstance Id="dc0c8cb3-261f-4914-91ba-7bc743bb2be2" name="params" value="false">
+                      <elementDefinition Id="fa8b7276-f0b5-4069-83b9-190c4513e35e" />
+                    </propertyInstance>
+                    <elementDefinition Id="cf154968-502c-4011-b0ad-327526197bc8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="4f0bc005-81a3-4765-828c-e2a4c384dc73" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0c37baba-a946-4763-83bf-9b4e47640d9f" name="state" direction="In">
+                  <referencesInternal>
+                    <reference Id="a9a8a4ad-8125-404b-b83e-5038684089d7" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartBuilder Member%3D(Name%3DAddActions OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FUmlStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DState)]) ParameterIdentifier%3Dstate" tag="ViewCode">
+                      <elementDefinition Id="852a8941-f281-4488-8bfb-7d545da6d999" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="bdbd6240-0acc-43eb-9f78-3e30a4c8ce05" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="bc802b56-fdc5-4d0b-9371-8b4b5ba985af" LastKnownName="State" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="5e493228-86d0-441b-bef4-190a9b624339" name="AddState" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="1297422f-8547-45e8-9c1c-c218a3137e97" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartBuilder Member%3D(Name%3DAddState OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Core Type%3D(Name%3DTreeNode GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Core Type%3DTask)]))%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FUmlStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DContext)])" tag="ViewCode">
+                <elementDefinition Id="6d9d557a-09d9-49ea-8169-eab20b86379d" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="fb72a76f-7d64-4e67-9241-5caa6d7733ce" name="method" profile="CSharpProfile">
+                <elementDefinition Id="f45604f4-3122-4ccc-bcb1-3ac7b7b32e3f" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="916541a8-d1c1-4840-b499-9c09124976db">
+                    <propertyInstance Id="5acb4686-10ab-4917-972c-351232b540b0" name="ClrAttributes">
+                      <elementDefinition Id="aa38e9b2-e138-46dd-9041-95c099668606" />
+                    </propertyInstance>
+                    <elementDefinition Id="0a6294ac-0ddd-4ce3-93b5-70aa5e7e0a6d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="09721e10-f357-41f7-825c-763b464b2ca0">
+                    <propertyInstance Id="51407d15-2177-4309-8750-489715a76dfe" name="IsPartial" value="false">
+                      <elementDefinition Id="17092ecb-8d6a-47dc-b299-cb9906150f60" />
+                    </propertyInstance>
+                    <elementDefinition Id="8a31ee30-c33d-45d4-b300-66e88dad88c2" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="c69ab914-59ed-43c0-a1dc-3d7b3cd27491">
+                    <propertyInstance Id="fb7f5be0-6205-4e53-a93f-3ab72d98eeb2" name="IsUnsafe" value="false">
+                      <elementDefinition Id="bb528045-9129-4706-bc07-ec05d0ac82af" />
+                    </propertyInstance>
+                    <elementDefinition Id="f2ee6f90-241e-493b-bb1f-66ad34df33d8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d8801912-d26b-40f0-9f87-fbdefe35c538">
+                    <propertyInstance Id="1fb2d489-7d84-4404-afac-d158ff134809" name="Inheritance" value="none">
+                      <elementDefinition Id="bac3c4d5-197e-4afd-b694-330a0a59b614" />
+                    </propertyInstance>
+                    <elementDefinition Id="fb44ef29-3471-49ab-859a-a7ac7f1ed2d3" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6664ca98-360d-46ef-b154-ca55cb4384de">
+                    <propertyInstance Id="68c1cc0f-be35-48c6-b7ad-d559655a6856" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="c6ff729d-e84c-47c2-b80a-6c68383e132b" />
+                    </propertyInstance>
+                    <elementDefinition Id="ceeb649a-16d7-40ac-ae72-c9352560d3ec" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="81d872ee-f8db-4995-aded-5adeea1434fb">
+                    <propertyInstance Id="3052305a-ae2f-4dd6-affb-e151e5c11f0f" name="params" value="false">
+                      <elementDefinition Id="e7ceef65-da24-4e1c-aeaf-c373ec0b713f" />
+                    </propertyInstance>
+                    <elementDefinition Id="12fbf500-549f-4fa8-915d-40b542ae128a" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="50f3eae6-0ade-4b0a-a660-0fce0d7c8a2d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="96d1dbdf-74b6-49fc-b908-a93a87b0a4ec" name="taskNode" direction="In">
+                  <referencesInternal>
+                    <reference Id="0a33778a-a430-4ac4-bb3d-3f7cdaed3e61" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartBuilder Member%3D(Name%3DAddState OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Core Type%3D(Name%3DTreeNode GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Core Type%3DTask)]))%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FUmlStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DContext)]) ParameterIdentifier%3DtaskNode" tag="ViewCode">
+                      <elementDefinition Id="b0af6451-dfa6-493f-8989-72510d9a7536" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="be2d8d42-5591-426f-b218-cb4b9d7db9e1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d8225989-ef42-4eaf-b2f0-1bd67532cc8d" LastKnownName="TreeNode&lt;Task‎&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6d185d12-b23c-4bee-a636-1e9777e62b80" name="parent" direction="In">
+                  <referencesInternal>
+                    <reference Id="190a5cdd-2b24-473b-8ffd-d5cce0f9e200" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartBuilder Member%3D(Name%3DAddState OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Core Type%3D(Name%3DTreeNode GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Core Type%3DTask)]))%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FUmlStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DContext)]) ParameterIdentifier%3Dparent" tag="ViewCode">
+                      <elementDefinition Id="a8266814-d96a-41e1-a228-54635a0d8917" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="f70c671c-fcb6-4f2b-9f00-8ee1fd599094" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="95fa05f0-05be-459c-a2d3-313ef2972a80" LastKnownName="Context" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="23b5df5e-03ff-4e1a-89dd-905f49ea650c" name="AddComplicationActions" visibility="Protected" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="9779154d-ea18-4233-b5ce-573b740631ea" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartBuilder Member%3D(Name%3DAddComplicationActions OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Core Type%3DComplication)])" tag="ViewCode">
+                <elementDefinition Id="500ad4f3-dbfe-4388-bab6-b15d632d66a2" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="d1454aae-dc2a-4083-a0c1-babf8a02e525" name="method" profile="CSharpProfile">
+                <elementDefinition Id="7e4cce51-46dd-4416-ad24-da267d8b28ec" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="fc0b2a2f-802d-4a54-8940-82c7b1fbec33">
+                    <propertyInstance Id="6c189bff-9f08-49c7-b998-14b7d8cfd665" name="ClrAttributes">
+                      <elementDefinition Id="e96d81e0-4496-4ff8-9729-e54845630144" />
+                    </propertyInstance>
+                    <elementDefinition Id="91f5d925-cddb-4892-be9d-1c15cedfd23d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="c60ad3cb-e778-4c11-8c3d-2a6ce12ee584">
+                    <propertyInstance Id="da1c6d6c-8ac8-452a-b66c-9df4c611c6c8" name="IsPartial" value="false">
+                      <elementDefinition Id="896c3336-8d10-4563-913b-966062396df0" />
+                    </propertyInstance>
+                    <elementDefinition Id="967da173-f707-44fc-be94-210aab465c87" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6d6d38cb-82c7-417c-b0df-8f980ab076c9">
+                    <propertyInstance Id="2d2a3747-b46e-4fb9-b98f-c5f7b26d5959" name="IsUnsafe" value="false">
+                      <elementDefinition Id="1f806e1c-1737-48bd-b0ec-8f26536c650d" />
+                    </propertyInstance>
+                    <elementDefinition Id="cd0b5d7e-14e3-45b8-aca4-f3d7df827b52" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="41647c61-63a4-4b0a-80ca-fb0134846533">
+                    <propertyInstance Id="8469f9c8-98e9-41a0-8b46-c9ee8154613c" name="Inheritance" value="none">
+                      <elementDefinition Id="66cd4a69-b8df-45ce-90ca-c5d3aff6838a" />
+                    </propertyInstance>
+                    <elementDefinition Id="12004eb5-f9bf-40e6-ba6e-4f00c655cbd4" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="790a473c-427b-4e51-bd65-4ec1de38296a">
+                    <propertyInstance Id="9f21fd55-5ae0-4448-b410-8c065adab94d" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="ac0122de-e63a-4fc4-92c7-63f7fec90a24" />
+                    </propertyInstance>
+                    <elementDefinition Id="56b763b1-21f3-418f-a4be-3179ffa7ded5" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="467d10eb-a713-4024-a7d6-38c1898a1b40">
+                    <propertyInstance Id="d213a5cf-5617-40d7-9849-d6bba10ae510" name="params" value="false">
+                      <elementDefinition Id="22dddff2-fe76-44c7-8b50-3519cf30224b" />
+                    </propertyInstance>
+                    <elementDefinition Id="280a375e-a2c4-4274-8a2a-97ee94a51d69" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="90012219-4df7-4114-a1c9-2c9e207214c9" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7033473a-3c48-4168-afb6-064222e80f45" name="complication" direction="In">
+                  <referencesInternal>
+                    <reference Id="2641e8fc-e5b1-4c1a-a3f3-a2a48cbe7ad9" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartBuilder Member%3D(Name%3DAddComplicationActions OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Core Type%3DComplication)]) ParameterIdentifier%3Dcomplication" tag="ViewCode">
+                      <elementDefinition Id="4f2ca2b0-7f4d-4a48-91a8-4f2a3518317d" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="0cae3529-9023-4f2b-8f7f-7e238c8ecd56" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b8e8f58d-a9e7-4bb2-aae3-18215f26df7e" LastKnownName="Complication" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="1bee8978-6a33-43ed-9d8d-9100dd4b1fe7" name="AddComplications" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="5a92931d-bf4e-48a2-a7d7-857272276dc9" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartBuilder Member%3D(Name%3DAddComplications OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem.Collections.Generic Type%3D(Name%3DIEnumerable GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Core Type%3DComplication)]))])" tag="ViewCode">
+                <elementDefinition Id="6698b8eb-bebd-40b2-9576-052793968113" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="0378b044-b4fb-434e-998f-7bf0c0e19974" name="method" profile="CSharpProfile">
+                <elementDefinition Id="a2e595c8-15e8-4f8c-9580-9e30a101f0f6" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="578a2f32-73e8-4785-a2fe-a7baf7e2ff2e">
+                    <propertyInstance Id="3a7527cd-2768-494e-8efb-4de1f921c7e7" name="ClrAttributes">
+                      <elementDefinition Id="e7ca9e01-9b67-4f54-8247-605f02b7c65a" />
+                    </propertyInstance>
+                    <elementDefinition Id="0cc3b44f-1187-4339-a0ee-2f240a2df56c" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d94a3bc0-7845-44da-a8bc-4c951414a5dd">
+                    <propertyInstance Id="e6663e9c-c689-4cc3-bdfb-05321839118f" name="IsPartial" value="false">
+                      <elementDefinition Id="57b814a9-739e-4e55-b8a1-59d3fca3331b" />
+                    </propertyInstance>
+                    <elementDefinition Id="af3d314f-644b-4fe4-a17c-678cd58083a8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="54433612-9355-449d-8467-c04c9c6c2f22">
+                    <propertyInstance Id="fa757104-1b37-4180-a4b4-58fdc1299de7" name="IsUnsafe" value="false">
+                      <elementDefinition Id="20ed6fc0-ad1a-4cae-9344-c6b657006cdc" />
+                    </propertyInstance>
+                    <elementDefinition Id="85c1d00f-d363-4a20-8a02-97b9e397fc4f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="bf6393f1-c41a-4d74-94ae-422f8f493665">
+                    <propertyInstance Id="ca14bffe-d86b-4fe5-af4d-373d212c52f3" name="Inheritance" value="none">
+                      <elementDefinition Id="fef3e8c9-cc4d-4be6-9e3e-baa330e900cf" />
+                    </propertyInstance>
+                    <elementDefinition Id="f3be989a-140e-448d-ac13-5f833dc11e21" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="7d057b5e-189e-4256-9045-c3555e6c6fe2">
+                    <propertyInstance Id="dde507ee-0878-4f4f-8ec3-fee1766d9f80" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="3ae76f3b-a952-4bb6-a297-bf1af644820a" />
+                    </propertyInstance>
+                    <elementDefinition Id="bd8026ee-75cd-48fd-9f69-cd21934393ec" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="37db65b2-4616-452d-84a7-27e6cac93dfb">
+                    <propertyInstance Id="4c4a5621-4637-4d4d-ab43-f5c2546a925b" name="params" value="false">
+                      <elementDefinition Id="bc084664-9342-446a-9ba1-e4fc6035c243" />
+                    </propertyInstance>
+                    <elementDefinition Id="b4923448-51b5-4355-ba7a-5c8dafcd0d3f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="1a651b11-14a4-492a-a27d-88edf7858f08" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="525b560a-4102-403f-82ed-6dd647bee5e9" name="collection" direction="In">
+                  <referencesInternal>
+                    <reference Id="32511012-87fc-4fee-aeb8-ce61bed4dfe1" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartBuilder Member%3D(Name%3DAddComplications OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem.Collections.Generic Type%3D(Name%3DIEnumerable GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Core Type%3DComplication)]))]) ParameterIdentifier%3Dcollection" tag="ViewCode">
+                      <elementDefinition Id="dc003a76-52fa-4fb2-836b-6d911afd49ff" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="d1a8787d-2273-4346-9124-f522ab5d32f6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="3f70f4e5-05eb-4f6f-b32a-938158eb54e1" LastKnownName="IEnumerable&lt;Complication‎&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="23405369-a28c-4bcf-be80-330282df7bdb" name="Dictionary&lt;String‎, State‎&gt;" isAbstract="false" isLeaf="false" cachedFullName="ScenarioFrameworkModels::System::Collections::Generic::Dictionary&lt;String‎, State‎&gt;">
+        <elementDefinition Id="f9891dd8-9f0f-4826-bd85-60a162994af1" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="be88d90c-9bbb-4e37-bd50-da75197ff9a0" name="IComplicationEnactorRepository" isAbstract="false" isLeaf="false" cachedFullName="ScenarioFrameworkModels::ScenarioSim::Core::IComplicationEnactorRepository">
+        <elementDefinition Id="7ecb6bc3-6bfd-4e76-abbd-b36062c23a7a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c0631229-4d34-4244-b66d-b3d84c6f1f08" name="IStateChartEngine" isAbstract="false" isLeaf="false" cachedFullName="ScenarioFrameworkModels::ScenarioSim::Simulator::IStateChartEngine">
+        <elementDefinition Id="0200fac8-9801-4355-9582-a98cfb90cebf" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="27c5fc01-41c1-43a4-8e1c-265953ee3ce9" name="Scenario" isAbstract="false" isLeaf="false" cachedFullName="ScenarioFrameworkModels::ScenarioSim::Core::Scenario">
+        <elementDefinition Id="a9c23170-1a61-4b01-997f-c0cbe49ef9e1" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="bc802b56-fdc5-4d0b-9371-8b4b5ba985af" name="State" isAbstract="false" isLeaf="false" cachedFullName="ScenarioFrameworkModels::UmlStateChart::State">
+        <elementDefinition Id="c555efaf-94ac-4427-979f-487a8ff04172" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d8225989-ef42-4eaf-b2f0-1bd67532cc8d" name="TreeNode&lt;Task‎&gt;" isAbstract="false" isLeaf="false" cachedFullName="ScenarioFrameworkModels::ScenarioSim::Core::TreeNode&lt;Task‎&gt;">
+        <elementDefinition Id="8fe6e0ff-b8a6-4a0f-b30d-d6c5b61ba322" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b8e8f58d-a9e7-4bb2-aae3-18215f26df7e" name="Complication" isAbstract="false" isLeaf="false" cachedFullName="ScenarioFrameworkModels::ScenarioSim::Core::Complication">
+        <elementDefinition Id="5ab5580e-4126-4f4c-9309-cd764756f436" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3f70f4e5-05eb-4f6f-b32a-938158eb54e1" name="IEnumerable&lt;Complication‎&gt;" isAbstract="false" isLeaf="false" cachedFullName="ScenarioFrameworkModels::System::Collections::Generic::IEnumerable&lt;Complication‎&gt;">
+        <elementDefinition Id="d11de942-bd4e-4c96-9dfb-1997771f0ecc" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8e244e0c-46ac-47d7-be88-0daed286ba19" name="UmlStateChartEvent" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <referencesInternal>
+          <reference Id="6033acf5-fecd-4e66-8644-a1f13b509486" handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartEvent" tag="ViewCode">
+            <elementDefinition Id="0a6348f6-5474-4861-86bc-f84dfed5a7a3" />
+          </reference>
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance Id="e7eda4bc-42de-4d36-b016-419b63a65b48" name="class" profile="CSharpProfile">
+            <elementDefinition Id="7196b552-6396-453d-a960-2bc57fad03d0" />
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="e00d5755-d441-4381-a72c-a580f9eb6cb7">
+                <propertyInstance Id="09b85d55-4d55-4104-854e-c4a6120072d2" name="ClrAttributes">
+                  <elementDefinition Id="2e048b67-62b1-441f-ad65-3c7a70a8ebbf" />
+                </propertyInstance>
+                <elementDefinition Id="93bca2ca-3c72-4211-a800-8fb850d85d4c" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="0b0d6431-c89e-4acb-9fa2-e71bf76c86ac">
+                <propertyInstance Id="01e1c700-3b28-40e1-a1d5-38ac144a4eaa" name="IsPartial" value="false">
+                  <elementDefinition Id="4aa36573-3b12-44d5-a8c7-7ea82f7260b0" />
+                </propertyInstance>
+                <elementDefinition Id="a3f783f1-145c-4dc2-813d-f0ebfd06ce46" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="baac09b0-dc40-4163-b5bc-86eeba0eb5e5">
+                <propertyInstance Id="af21a86d-5208-4c2d-b671-ecdfe44edf0a" name="IsStatic" value="False">
+                  <elementDefinition Id="3daea444-66a2-4e57-9e74-532d5e010735" />
+                </propertyInstance>
+                <elementDefinition Id="77fc7092-9a16-4c7d-867a-3aeda567447f" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="28aac818-b43f-43ad-9578-827c07fca757">
+                <propertyInstance Id="d779563c-e029-4dd2-ae8a-0ffb8d4d3d8c" name="IsUnsafe" value="false">
+                  <elementDefinition Id="24a511b5-c2b5-4542-a8d8-c19030ffd57f" />
+                </propertyInstance>
+                <elementDefinition Id="6b97bd3d-bdc8-4e09-ba52-0835a31b9123" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="5c52d613-a162-4b15-8af7-9b2803c21dc4">
+                <propertyInstance Id="849f00f8-0b13-46a0-a997-8c46b608bcdd" name="PackageVisibility" value="internal">
+                  <elementDefinition Id="ae08f014-ad1a-4a1b-a9c8-3c5285e37517" />
+                </propertyInstance>
+                <elementDefinition Id="21772420-132f-4306-ac2c-1d054653e632" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <elementDefinition Id="dd60eeea-7079-4cfa-b8a4-f4b7949ec23f" />
+        <ownedAttributesInternal>
+          <property Id="659cc06d-162f-4eec-b0d0-617190049ca5" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="fbb4b03c-8ab7-4fa1-9d87-6217c25a112a" handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartEvent Member%3DId" tag="ViewCode">
+                <elementDefinition Id="d5d961e7-d55b-48ab-b16f-317394ba93cb" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="0b5eaf8e-99a6-4f67-b5ed-ded0601c883a" name="property" profile="CSharpProfile">
+                <elementDefinition Id="26bc289b-caae-4e16-a8d9-eb0f9ac2883f" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f3e78df9-6b21-4802-a787-b7f194587624">
+                    <propertyInstance Id="96201525-015d-471e-9873-449a1d4d8705" name="ClrAttributes">
+                      <elementDefinition Id="c06bb88a-c079-4170-9cd8-e62f3e6fa7e1" />
+                    </propertyInstance>
+                    <elementDefinition Id="756ad53d-7394-4eb4-9f40-b06c15d02bb8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="46063f17-3b53-4327-9edb-7fcdaa5e782f">
+                    <propertyInstance Id="47fe5958-fe2d-4d65-a464-5f86f98de6de" name="Get" value="public">
+                      <elementDefinition Id="1fe87b62-4fe2-4fac-9675-a8a830ed9bee" />
+                    </propertyInstance>
+                    <elementDefinition Id="527b1bad-951c-4442-a724-9554c6b75556" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="31c0a1c2-8f8f-40c3-afd1-ecccf0bf1c30">
+                    <propertyInstance Id="80167902-6d8e-443d-a4f3-fa68a559c7f0" name="HasBody" value="false">
+                      <elementDefinition Id="ea4c3c24-b06f-4387-ac6f-62363c35665c" />
+                    </propertyInstance>
+                    <elementDefinition Id="bd8c4c28-cf25-4325-9356-7668b20da317" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="00a280c0-f71f-4a05-8dab-291dffd109c5">
+                    <propertyInstance Id="a6b606e1-ede5-4c6e-9eeb-e27fdf026d59" name="IsUnsafe" value="false">
+                      <elementDefinition Id="a461fff7-10fb-491c-b438-45db21fbe3e9" />
+                    </propertyInstance>
+                    <elementDefinition Id="b3627f32-f046-4003-9745-af3621d5ab7d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="aba4dc22-c6d0-447f-8bc7-6abc315d5ffb">
+                    <propertyInstance Id="f3b2236a-ca03-4a1e-bada-19a5e9607ff4" name="Inheritance" value="none">
+                      <elementDefinition Id="513c0f1c-fe89-4024-915a-3c2957a70bf8" />
+                    </propertyInstance>
+                    <elementDefinition Id="375c87fe-3bcc-4452-b2c4-25ffc22aec2e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6bea18ef-ef3c-4e5c-b37c-351d2a115c27">
+                    <propertyInstance Id="b7487c86-356b-4f92-b84f-d7adef199e2e" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="a5710bc1-a79c-40dc-966d-ace968f6dfc8" />
+                    </propertyInstance>
+                    <elementDefinition Id="b761f09c-8f7a-45f8-b5c8-436e97e3db9e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e59144c2-89af-4029-83fd-c6756b6c0962">
+                    <propertyInstance Id="65bf4d84-6c41-48fb-a4af-993c9ecbc98a" name="Set" value="public">
+                      <elementDefinition Id="c04c1342-aabc-4793-882b-e5e4b26966fb" />
+                    </propertyInstance>
+                    <elementDefinition Id="b9b24281-6f7c-4e19-ba41-5c5a87744ce8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="5b77a762-b155-4547-aba1-90be1d8b2863" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="94e6f155-e73e-49fb-a4cc-0fd281ab33c8" LastKnownName="Integer" />
+            </type_NamedElement>
+          </property>
+          <property Id="bb1edd53-b41c-4a04-9fdb-c0c9e48d292d" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="a4491e2c-36aa-40a2-ae28-5b1ceec3496a" handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartEvent Member%3DName" tag="ViewCode">
+                <elementDefinition Id="60837ea9-dab1-4ce3-8380-4aebc62b0ebe" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="e4618604-aacf-421a-b8a9-7ac8294b77ae" name="property" profile="CSharpProfile">
+                <elementDefinition Id="c47f90be-af05-44a2-90b5-b1e125b5b26c" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="34829b9e-3c0b-4565-8c4a-4a4c63d237ec">
+                    <propertyInstance Id="104cbc13-41e9-474e-8bae-d0221b7f874e" name="ClrAttributes">
+                      <elementDefinition Id="70a4bcaf-335c-4ef2-b513-08b0e1c42729" />
+                    </propertyInstance>
+                    <elementDefinition Id="ef0e0d52-1fda-419a-81d0-3ce77ed7db29" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="9f98d791-778c-4095-8b0b-05e53e9484cc">
+                    <propertyInstance Id="ae155493-6dfa-4ff9-a360-c7c84a653bd3" name="Get" value="public">
+                      <elementDefinition Id="8cb37726-a50c-45b5-8282-f1b914fe6f87" />
+                    </propertyInstance>
+                    <elementDefinition Id="82f41df5-832f-447e-ab5d-39f97f174bbb" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="cac1fbf4-8450-4b6b-88d2-8c386baee662">
+                    <propertyInstance Id="2311fcc3-b5fa-493b-b821-d01d95570272" name="HasBody" value="false">
+                      <elementDefinition Id="4007c47d-4389-4b47-a278-14041a54ea07" />
+                    </propertyInstance>
+                    <elementDefinition Id="6c0f1207-1b99-4ab5-bc27-77d299a124b7" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="841f96ad-c2b7-457a-b9c6-4bb0e6086a4f">
+                    <propertyInstance Id="e2a902f8-1766-4c85-aca4-1358d6a92f5f" name="IsUnsafe" value="false">
+                      <elementDefinition Id="e34b97ce-b1ba-43d0-8bc8-817a759d1abc" />
+                    </propertyInstance>
+                    <elementDefinition Id="798f22cf-289b-4df5-b645-94d29a4a76a9" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b2a6127c-96e4-410e-b970-e4b82dc1aceb">
+                    <propertyInstance Id="68f6347f-0fe5-4a02-a12c-5334ba41a0eb" name="Inheritance" value="none">
+                      <elementDefinition Id="ce44a0a7-a1a8-4ecc-9c21-89be46b58dbd" />
+                    </propertyInstance>
+                    <elementDefinition Id="ab6de8e8-9a61-4334-8895-c0bc6171af4e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="bbf418e2-05a6-4980-a74a-f9cd50f5c117">
+                    <propertyInstance Id="534d981c-6fea-43cd-80d6-24c3227787b9" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="99d5d0d6-4741-43a3-b383-8e1eceacc867" />
+                    </propertyInstance>
+                    <elementDefinition Id="f194b31e-137a-46c2-b55f-4b28ca7b609f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="32d506db-ca14-4988-84ed-991e69fdf1e3">
+                    <propertyInstance Id="bf81d8de-2853-4bb5-9e13-23314ec16cea" name="Set" value="public">
+                      <elementDefinition Id="e1bdad40-21ef-42b2-a60e-7a1018620934" />
+                    </propertyInstance>
+                    <elementDefinition Id="51242fc9-8c6b-4d1c-b5b0-5b63bc0bbfce" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="02b01a09-7e28-4b04-a665-a443299fa272" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="253a9dfb-7c27-4344-8369-3a82df1235ff" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="14c77c07-1268-4191-978d-eddb17cdf9e7" name="Timestamp" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="3a14abfb-5d43-42b1-b945-0097f04d2b2c" handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartEvent Member%3DTimestamp" tag="ViewCode">
+                <elementDefinition Id="02e52ab6-5d79-425e-ac52-5a04505c5dc6" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="3701e594-3e37-49c2-a42a-1efce01d05cf" name="property" profile="CSharpProfile">
+                <elementDefinition Id="4d906f39-2a1e-4e90-aeff-f03ba3ffb15d" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="356f8c24-5f32-4f05-9cc1-d624a132a21f">
+                    <propertyInstance Id="1855f834-9147-437d-a926-41c11cb0c48d" name="ClrAttributes">
+                      <elementDefinition Id="2584ddc5-b6ae-4f97-867a-89bf3463c33f" />
+                    </propertyInstance>
+                    <elementDefinition Id="74c3a594-6b58-4c9a-9639-c2cd6c5e35ba" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="793289cc-10e0-4447-912f-12e58b82e2f7">
+                    <propertyInstance Id="6715846f-d9fa-4a22-8f03-2d8a790fee67" name="Get" value="public">
+                      <elementDefinition Id="7298f707-88aa-4027-a321-eb3b6906641f" />
+                    </propertyInstance>
+                    <elementDefinition Id="fbaf869c-df47-4873-94b7-50254efcfafb" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f94b6aa7-7534-4bad-85db-31ac918bad23">
+                    <propertyInstance Id="4c5c6f94-1ee5-44ed-898f-31c26d4dfbea" name="HasBody" value="false">
+                      <elementDefinition Id="46268942-883a-4f73-9397-71dc6fb44d9d" />
+                    </propertyInstance>
+                    <elementDefinition Id="678dc9d3-7310-4460-8af3-d48a49069584" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="3c532c63-7bc1-49cc-a130-ae24491e41aa">
+                    <propertyInstance Id="e3a64400-6f13-44e4-9e9f-b85ad73c5f90" name="IsUnsafe" value="false">
+                      <elementDefinition Id="92b2bdb5-5e29-46f9-9504-daa8f415dc7c" />
+                    </propertyInstance>
+                    <elementDefinition Id="1f10b9ee-748a-46a4-9235-3399e4f0fc9e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6648b26a-ab95-410d-830d-3e02b37595ef">
+                    <propertyInstance Id="eb0c9d50-239d-4f4c-ae60-29942f9792bc" name="Inheritance" value="none">
+                      <elementDefinition Id="7996182b-dbbc-4029-9510-11ec201d31f1" />
+                    </propertyInstance>
+                    <elementDefinition Id="a1ed7eb4-567b-4ff7-96eb-d85870b46437" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="1b7c8f77-4057-4008-8b12-68e8d6e60c10">
+                    <propertyInstance Id="a708841e-f081-4b48-b649-ba4caafa6367" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="4336f8c5-d6ff-4193-b5f6-ce8f383cf4e5" />
+                    </propertyInstance>
+                    <elementDefinition Id="ae9a2518-625f-4a72-a737-3c5b5239f4d5" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="61bd10ba-60c9-4099-8a24-79c9ee230527">
+                    <propertyInstance Id="9bb6887d-4ec3-404a-b137-a277707cbc0c" name="Set" value="public">
+                      <elementDefinition Id="3478253c-8cd4-40fb-af9e-3fb453928960" />
+                    </propertyInstance>
+                    <elementDefinition Id="c0d54977-028f-460c-b025-6e00d9d4d184" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="9e765c2b-b5bf-43e6-808a-c9d268b6a8e6" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5c02a8d0-6ef2-4b9c-ad31-f7ee8492686f" LastKnownName="DateTime" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="d1f64f86-a9fa-4791-a171-d3cba96b55c1" name="UmlStateChartEvent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="0d3a5429-03ed-4388-bdd0-a18f4bfd5eba" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.UmlStateChart Type%3DUmlStateChartEvent Member%3D.ctor" tag="ViewCode">
+                <elementDefinition Id="62443e2f-3e7f-4bd1-b929-fc8e7e29aa2d" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="279cfc48-f674-4dc0-b97d-a918f88750ae" name="method" profile="CSharpProfile">
+                <elementDefinition Id="e1ea3cfd-26bc-4155-a997-56724921285c" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f9eeac2a-2744-4280-a822-23ed00a9326e">
+                    <propertyInstance Id="3d01d579-4660-4cd3-a96e-65f755d952bf" name="ClrAttributes">
+                      <elementDefinition Id="bb0c46b3-b6ae-4b85-9e8b-00e471931ed9" />
+                    </propertyInstance>
+                    <elementDefinition Id="088a141d-148a-4b06-85b4-1ef1c341c050" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="7411a2c2-b4bc-4db4-a750-200da7fe9477">
+                    <propertyInstance Id="8bf16ffa-770e-45b9-9b57-b1f5bdf11d42" name="IsPartial" value="false">
+                      <elementDefinition Id="9d0e93b8-9705-4b2b-ade9-c74f58de5a3c" />
+                    </propertyInstance>
+                    <elementDefinition Id="df89be10-2f95-4a8f-824f-ee00fae63223" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="275446d4-b615-46d9-835b-a4c30379a004">
+                    <propertyInstance Id="3180416b-b41e-483f-aad1-a13ec714b302" name="IsUnsafe" value="false">
+                      <elementDefinition Id="428fe1ea-7fd9-4db5-9468-c27ec64cc440" />
+                    </propertyInstance>
+                    <elementDefinition Id="de18db5a-0d2e-4b4e-a5ca-1cd3c00c7ec3" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b5c931ee-f1ed-4503-872d-aeb9449df52f">
+                    <propertyInstance Id="25862799-650e-4177-a55d-64b2a47b5c2d" name="Inheritance" value="none">
+                      <elementDefinition Id="b323500f-bcb3-4a4a-96f9-86c9c6ec60df" />
+                    </propertyInstance>
+                    <elementDefinition Id="209df991-1a02-4252-b831-3c40ccf5adad" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="077e2a14-19bb-41b2-bbd5-3c741ed92be1">
+                    <propertyInstance Id="8018cd4a-3c48-443f-bc5d-28030d84bec7" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="7e118890-f140-46a9-9131-0e1d4848c41e" />
+                    </propertyInstance>
+                    <elementDefinition Id="4e8fa9e5-b7c6-4f8e-9cac-6aed0ceb0a47" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="ea73f6b3-12e0-4396-896a-fb82d1368641">
+                    <propertyInstance Id="ea1402d8-93c4-4a55-b4b4-cf85e6fa0dec" name="params" value="false">
+                      <elementDefinition Id="7932d220-163d-424b-8ec0-c1c76b1a6636" />
+                    </propertyInstance>
+                    <elementDefinition Id="bc5940c6-fffb-4ffa-ab31-6317e021ccfc" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="34d055ee-5e55-483a-98d2-d44f78140251" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="94e6f155-e73e-49fb-a4cc-0fd281ab33c8" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5c02a8d0-6ef2-4b9c-ad31-f7ee8492686f" name="DateTime" isAbstract="false" isLeaf="false" cachedFullName="ScenarioFrameworkModels::System::DateTime">
+        <elementDefinition Id="c5c9dc2e-f4a5-4651-a15a-961ee698eb7f" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="abecec33-9b42-4bf0-abe6-042f07e3cad3" name="ScenarioFrameworkModels">
     <elementDefinition Id="60829b75-5a98-4137-8708-f9978d696180" />
+    <profileInstances>
+      <packageHasProfileInstances Id="71ef25df-beb1-40b5-8553-5792bbb4c3bd">
+        <profileInstance Id="799eaed9-29bb-43a5-b7b0-bf963247c538" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="f742103f-203f-4d5c-89e8-a8f31c54801b">
+        <profileInstance Id="671219df-3d97-4f2d-b5c4-72286a85609f" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="e6d9241d-16b9-42c5-9f01-a6dfb3404fdc">
+        <profileInstance Id="d86a62be-9614-4dc0-b41f-1bb9fb417525" name="CSharpProfile">
+          <elementDefinition Id="d8e878fb-9083-4c12-bc3d-52f7f1649b48" />
+        </profileInstance>
+        <elementDefinition Id="6389af42-4532-4a7a-b887-826a8139eabd" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

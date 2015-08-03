@@ -1,0 +1,3303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="573b1936-7730-4309-b706-cccb2b1329ef"
+  name="Playback"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="7b6063ba-49d8-4476-a902-a2390e7ac9cc"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DScenarioSim.Playback"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="5479e577-edab-4842-bfdc-5c2936bee508"
+        name="IScenarioPlayback"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="1ee7608c-dce5-4acc-9055-f9241bf8991d"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIScenarioPlayback"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="68790553-9042-41b9-ad64-4f1a4ef17f49"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="242e4cb6-1c3c-4923-a84b-a02d694e5094">
+                <propertyInstance
+                  Id="26425998-8eaa-4c30-a542-204e83a0514d"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9772549b-d039-42c8-864e-ed9f2ed36bc1">
+                <propertyInstance
+                  Id="5472e834-cc98-4954-a719-0a683ef54f5b"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cb87f517-7479-4f07-b863-e34932b526dd">
+                <propertyInstance
+                  Id="b5bf5a8c-06ae-4820-a21d-88e20ca98e84"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="46122b88-279b-4769-9d6e-5f85d0b596a8">
+                <propertyInstance
+                  Id="5319bcbf-5521-4cae-b5c2-2f23f684575f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="b1c81974-3594-4964-a92f-c92b2995df63"
+            isDerived="false"
+            sourceEndRoleName="IScenarioPlayback"
+            targetEndRoleName="ActiveResults"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="4ed3fdb2-52c0-4d90-8894-8faf3d99ef94"
+              LastKnownName="IEnumerable&lt;AccuracyMetricResult‎&gt;"
+              LastKnownLocation="Package4_0025.uml" />
+            <description>Property ActiveResults references type IEnumerable&lt;AccuracyMetricResult‎&gt;.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ea48ec33-85fc-4b78-9e3d-34870aa80f68"
+                  name="IScenarioPlayback"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="c5f23175-22bf-489e-bd69-f67e2a98b6d1"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="c76ca07b-2f1f-43e5-91b4-b52e7e4ddc26"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f3cc9a20-b00c-45f1-80c7-a77eb9b95e1e"
+                  name="ActiveResults"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="9fa2475f-67fb-4bbe-9c23-970fc829820e"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="fb405738-f391-47c0-9f08-ef9404a8b1a8"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="96e8072e-df16-40ba-afec-700d55a534eb"
+            isDerived="false"
+            sourceEndRoleName="IScenarioPlayback"
+            targetEndRoleName="ActiveTasks"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="8b994761-d75f-4c09-9276-837ca4b19f10"
+              LastKnownName="IEnumerable&lt;String‎&gt;"
+              LastKnownLocation="Package4_0025.uml" />
+            <description>Property ActiveTasks references type IEnumerable&lt;String‎&gt;.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="eed56f38-413f-4228-a4c9-2a3dcffacdd1"
+                  name="IScenarioPlayback"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="276de7c4-6c6e-423c-bc97-7e1c93669392"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="319e2b46-6d28-4bff-817f-6182a690f43f"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="88a0ad7f-0f81-425e-b4f1-19b1615de0d7"
+                  name="ActiveTasks"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="cadd3185-1903-41ad-8d10-2908281f5846"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="a912687f-f66f-48a2-b26d-8b997af87de7"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributes>
+          <property
+            Id="24532f97-5613-4036-80c9-9fa4b0d18fdd"
+            name="ActiveTasks"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="41dcf685-155d-47ea-a933-2e9b38d63ddb"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIScenarioPlayback Member%3DActiveTasks"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ab250c13-7bcd-4d4c-946b-6d1c8b6b9ee3"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="192c72bb-9624-4343-b2e3-5b38b31521e9">
+                    <propertyInstance
+                      Id="f8897a18-7c32-4cde-bf79-3a973d748ca6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8bcecdf5-6f82-4b6d-a438-d446a84cc20e">
+                    <propertyInstance
+                      Id="742e34a7-1d48-40ba-8c58-0079a566c1a0"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8eb69749-8103-433d-ae07-51d85468f7a7">
+                    <propertyInstance
+                      Id="9d45194f-b64d-4860-9a62-eeae3a5ee0ec"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c4ebac6f-e4af-4324-b211-ebb12b40255a">
+                    <propertyInstance
+                      Id="08a84e15-fc45-4ddb-a5b7-26510511ccec"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="28267406-e6f7-4497-b328-c578b8c5ee6c">
+                    <propertyInstance
+                      Id="ad82a85c-cad1-4e87-ad2e-df0ccb95fe62"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4a977a9c-4fda-420a-ae04-07e3266c50e2">
+                    <propertyInstance
+                      Id="3605d80b-278e-4042-ad58-391f456ec43e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="49083e92-7ac6-41fd-a4ed-a30acfe99bcf">
+                    <propertyInstance
+                      Id="56cb67d4-a481-424b-9176-dbb16eca115a"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="8b994761-d75f-4c09-9276-837ca4b19f10"
+                LastKnownName="IEnumerable&lt;String‎&gt;"
+                LastKnownLocation="Package4_0025.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3536948e-71cc-4f40-81cd-844b0a392890"
+            name="ActiveResults"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="a688ea78-a9cf-464f-b04e-6c6fc680691f"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIScenarioPlayback Member%3DActiveResults"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1fae0840-5de4-4d69-8206-963f55cfeeba"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0648146c-b85b-4c21-ac9c-801fff4a48c1">
+                    <propertyInstance
+                      Id="a795686b-65a7-46b0-9c12-fafaa8884f86"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6c5b56ca-09c5-4501-bf41-98720ac357f4">
+                    <propertyInstance
+                      Id="d94e66d5-16ee-476e-96ba-b9d0c5fbcbc6"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d9c86dc3-0017-4bcf-b2ce-3ad28f20e00f">
+                    <propertyInstance
+                      Id="362ba780-117a-434d-838c-0b4f7205c4da"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9e1e47ac-fea4-4df9-8aa0-4c001b4a372d">
+                    <propertyInstance
+                      Id="7b6f8e6e-b743-4ff5-b83d-02d991349b04"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f43331f4-7ade-4eb0-887d-ec6652373f7b">
+                    <propertyInstance
+                      Id="b39db397-368e-4cf5-85e5-dc3f8fd06a27"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6a01c709-3ccc-4aa3-a49b-4960ba7e9081">
+                    <propertyInstance
+                      Id="9bec6d97-e7a4-495f-b09f-52a5f16e11fc"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="be9e8bc7-009b-43a3-bdb9-40ff08c4efdc">
+                    <propertyInstance
+                      Id="1da02cd9-3529-4768-aa5a-43423e5486d7"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="4ed3fdb2-52c0-4d90-8894-8faf3d99ef94"
+                LastKnownName="IEnumerable&lt;AccuracyMetricResult‎&gt;"
+                LastKnownLocation="Package4_0025.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b5040c62-43cb-4ed1-8f92-5e289492ff08"
+            name="CurrentEventIndex"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="bc962587-256a-4af0-b40f-b181b304ebee"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIScenarioPlayback Member%3DCurrentEventIndex"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="be46d633-c896-46d6-8f87-8bf1f1891cc8"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="20545049-2c1b-4c18-a236-418d93d799fc">
+                    <propertyInstance
+                      Id="67319c8b-54a6-4bce-bbc9-91d576940e7e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="98597e6d-6baf-4c34-830a-3cbef6bb9d7f">
+                    <propertyInstance
+                      Id="b93afe37-24cd-4bd2-90fd-890963764457"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c2d62758-aff8-4290-a01b-08dfa2d52921">
+                    <propertyInstance
+                      Id="7e6eb31e-f998-42e9-9a54-80c0c54be290"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0faec36c-31d5-4d0c-ab9f-660bd7b5828f">
+                    <propertyInstance
+                      Id="c2f82c46-2004-4c8f-9064-80c361e99262"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3241f6b3-c49d-4e0c-9638-ea152e916f88">
+                    <propertyInstance
+                      Id="1dfcb133-1740-4155-bd00-db080cd1c2f4"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="570622a3-89ab-447a-96f6-4cea12b7e2be">
+                    <propertyInstance
+                      Id="ca134608-fc22-4e17-bfcb-652bbf06aed1"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="94b65ee4-d176-46cb-93bf-404cb3d6e52a">
+                    <propertyInstance
+                      Id="7120e138-390e-4db7-a58a-6b8f8c9b3f81"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="ScenarioFrameworkModels.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributes>
+        <ownedOperations>
+          <operation
+            Id="49a9df84-340c-4231-ad25-7e388c2ddddb"
+            name="Play"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="3b83b472-09da-47da-813f-07a240afb884"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIScenarioPlayback Member%3DPlay"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7bedb75e-7ce6-4b06-89cb-673298ee6dc0"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ccd419c5-43ee-4054-8589-f1685e903072">
+                    <propertyInstance
+                      Id="5f47ec1a-28f4-4f08-b8d6-2706f1f6fba7"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="668c2335-45c8-4c98-bf7b-378eb8990cca">
+                    <propertyInstance
+                      Id="f9bd4ff3-7170-4a30-a874-389d6dd4a327"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6cadcfa1-b723-428c-8bbe-888ea2e6274d">
+                    <propertyInstance
+                      Id="053208be-cdd9-4d0e-b560-acffbdc5e62d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a445ca6a-c9ea-4ad0-8ae8-e437a75cbb34">
+                    <propertyInstance
+                      Id="fa11a6ba-e06b-4d7d-b7d9-6111da768c31"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6028f98b-8bcc-4751-a2fb-28b4fcfbbca8">
+                    <propertyInstance
+                      Id="6575774b-4d6f-45b3-9106-e6bc7a6f1dbd"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4d2852e4-48d5-4137-bd11-f1392009876b">
+                    <propertyInstance
+                      Id="b6c5e242-6fdd-4b35-aef2-7a222776dbc8"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="668ebe7c-4989-4e61-a8fc-5b7a77c5a1de"
+            name="Pause"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="fa215178-bf9a-46b3-92e1-8c4c18e7b5df"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIScenarioPlayback Member%3DPause"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="edc6ca27-0576-4f7a-a741-674c06cbffd4"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6b989fea-f5cf-488b-85e9-4886a24b5c0f">
+                    <propertyInstance
+                      Id="2fb8b49e-ca97-4ef5-95ff-4d7c7a2deb17"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2d787b7b-38a2-49e7-9785-ca2626207d29">
+                    <propertyInstance
+                      Id="3b6bbb91-14f0-4bac-8132-6962ee830f4f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="98317082-4c91-4ca5-a025-576cd137d5d8">
+                    <propertyInstance
+                      Id="9e63aebc-61a5-4f9d-812f-046408d8ee9f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="af5ac602-328f-44a5-9a20-f54f91cd3420">
+                    <propertyInstance
+                      Id="3ebe794c-4eef-4405-949e-5ded70a44210"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="64af3657-7f61-46af-82d7-d0648ff0f2d0">
+                    <propertyInstance
+                      Id="2b5f6efd-8445-48db-b8a2-0b84cd278bca"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fef1b248-1a42-4fff-9258-2ecff6f2cfd1">
+                    <propertyInstance
+                      Id="95730366-6feb-4890-b031-57ab54c68ee3"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="5f4e4886-29db-4f61-833d-32bd7a151838"
+            name="Restart"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="21343280-a257-450a-b7b5-2caa1e4824d0"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIScenarioPlayback Member%3DRestart"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d4dec9e6-55b7-4c3b-a8b3-b8c842be8578"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6b82caf6-7061-4da7-9470-cd5bde0a0862">
+                    <propertyInstance
+                      Id="ae48d535-44c2-40e0-b75e-78d3f0080041"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7e617b6d-6795-4ca6-93a5-c1782b26b047">
+                    <propertyInstance
+                      Id="4d42b48e-83db-4234-8a17-1db6cb231fd0"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="231e6e35-97c2-4833-b35c-3187386938bf">
+                    <propertyInstance
+                      Id="3738fc59-6f6f-4512-9285-d1325f059d9e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1f36cb33-89e4-49f5-9c7c-7e356e0dc244">
+                    <propertyInstance
+                      Id="73e75009-3458-476a-877a-d8d2c8f48bde"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="19ebbc1b-613e-423b-b619-d25a78107202">
+                    <propertyInstance
+                      Id="2343b57d-a7f0-460c-a87d-bfdcefb94156"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f6bd85d4-95e4-4b6c-89f9-7644940fa6f1">
+                    <propertyInstance
+                      Id="96b6b721-e3b1-44fc-9074-668deae6a4f8"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="432ea6f4-dc22-4584-aa82-b47b1e20fdcf"
+            name="Stop"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="720463e7-170e-4305-82dc-f81a57b1e2de"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIScenarioPlayback Member%3DStop"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c28ed063-6183-44c6-a616-c64a678a7246"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6184f23e-48c7-4e48-90d0-10f6a959e691">
+                    <propertyInstance
+                      Id="1e03fb85-132f-4196-9d1d-f34c90ccc8e3"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fa3d5c16-e78c-493c-96f4-901dfe8fcea4">
+                    <propertyInstance
+                      Id="1aef9a91-4954-4bfe-90d8-735260c0cb3e"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="eee46827-984b-491a-90d4-14e07b99ec3d">
+                    <propertyInstance
+                      Id="668d79d8-99fd-42bb-b688-8a050d59683f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cfc19421-bf6c-4f11-9b33-819ef58fd54a">
+                    <propertyInstance
+                      Id="11def48d-893d-429f-bb00-a0fa92556886"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="82564220-49ba-4432-b416-49748da4c001">
+                    <propertyInstance
+                      Id="808dcc76-1f1d-4bfe-8bdc-e43faf896beb"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7f1cee32-46ee-4773-a658-4c71205c0e94">
+                    <propertyInstance
+                      Id="35f95fc0-aadf-4abb-8971-a574efed5f84"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="7f46714c-e640-4601-9785-edf955eeab37"
+            name="EnqueueEnactor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="0c79a19e-9875-4105-a277-8e8764584da6"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIScenarioPlayback Member%3D(Name%3DEnqueueEnactor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIEventEnactor)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6c0b2a07-9a9e-4cfc-a438-3bf511f61d2e"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e2267bea-9161-49e0-bdca-330b6dd82aa8">
+                    <propertyInstance
+                      Id="109576ab-c011-42ee-9291-a9235c1d2b7e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2361ac9c-d6cc-45c7-afc3-9acb0aa0df63">
+                    <propertyInstance
+                      Id="c2d0e205-6167-4ec0-be74-2c40df690b8f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0ce64121-569e-4c5d-8f7f-1eb10c813a03">
+                    <propertyInstance
+                      Id="36fe01a3-4464-4b23-a21a-6aea3d03efa4"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="20acf880-bb62-44b2-9aca-c6a5b3995e65">
+                    <propertyInstance
+                      Id="155cf3c1-fccb-4609-99f3-706e66f4c3ca"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9f00604b-5783-4eaf-8ed5-fa55c4aabfe5">
+                    <propertyInstance
+                      Id="7b0649ce-2f77-43c6-a292-fae0ab4644a3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1fc551b0-7233-4943-ad5e-58dae1ba95aa">
+                    <propertyInstance
+                      Id="8e39b46e-b922-4c1f-96a4-2ef2faa924a3"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cd4df1b2-89a9-4b72-9d4b-433404199353"
+                  name="enactor"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="6b472ac4-0b68-4649-b086-78dfaaace51d"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIScenarioPlayback Member%3D(Name%3DEnqueueEnactor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIEventEnactor)]) ParameterIdentifier%3Denactor"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="48ef90e6-47cd-4324-abde-3f197259a17c"
+                      LastKnownName="IEventEnactor"
+                      LastKnownLocation="Package_1106.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="17cc224d-0728-405c-abbc-6caaae8ea338"
+            name="Next"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e1b9bd10-cc25-4d2a-95d9-bae9f50b21bc"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIScenarioPlayback Member%3DNext"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6ea4501a-0586-4624-8cec-ae66a156e0ea"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="005c5686-1805-4a7e-9bd2-5e7bcf66d59f">
+                    <propertyInstance
+                      Id="7f5c3d89-c574-4195-9c01-e3e364295f65"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a7226773-4115-4885-8006-52d8e092ae1c">
+                    <propertyInstance
+                      Id="341aa9c6-0528-4e30-9e9c-2014728c307a"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dda92871-65ee-4990-9596-a3dcdb8f5206">
+                    <propertyInstance
+                      Id="6bd1b802-cfe8-4fa9-816a-ab1c8618a707"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6fc11f52-f5c7-4b24-8575-7af9f0c34b33">
+                    <propertyInstance
+                      Id="ed181ea6-7a69-4962-bd4c-1021d8adddd4"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b9c9dc98-504b-4779-9ae8-2ede5f353454">
+                    <propertyInstance
+                      Id="bbfb1fe2-0ea6-4a37-ba1f-59cf3aa736f7"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c7d61773-69ef-41e2-9938-add6092b44c4">
+                    <propertyInstance
+                      Id="e2fc434c-899c-47e9-bdfb-fe6b7e00ea4c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="2802c9ba-1eef-458b-84c6-ef0145508488"
+            name="Previous"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="67f3b2e0-5e91-4a0e-98c1-3dd31954d732"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIScenarioPlayback Member%3DPrevious"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="24691673-9316-4689-93aa-35c51125c7ec"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="85c68880-a207-44ce-b535-94fdad551967">
+                    <propertyInstance
+                      Id="7f1967cd-530d-4f24-8306-361feac67244"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e1481d7a-8ca9-4068-bb85-c92de11fb6b4">
+                    <propertyInstance
+                      Id="a3a58abc-7904-496d-a2ef-cae01456308e"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3619a481-4439-4dcf-8f4c-e3b507339f67">
+                    <propertyInstance
+                      Id="9694f7fb-160e-4337-b175-093dd7e24a07"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7639beb8-3bf6-44ce-9c87-9add4ec59ed9">
+                    <propertyInstance
+                      Id="a03105e9-cfe3-4f2d-9bd7-1cc3595c1b4b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b5d1cea3-6905-4e21-924a-67bc16b82391">
+                    <propertyInstance
+                      Id="9247a085-e02a-4cc0-9ee4-fb75937293af"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e5b3bb06-e403-462c-bf1d-577df8d8d942">
+                    <propertyInstance
+                      Id="3c839e88-9d01-40ee-93c7-b16c4e3d023a"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="48ef90e6-47cd-4324-abde-3f197259a17c"
+        name="IEventEnactor"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="ba909dff-a088-4a20-bcb9-c87c9b69944a"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIEventEnactor"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="d4da586f-b40b-4eb3-a7e2-765ba7b538e5"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="01fc876a-d295-421f-b773-3e7985eb98b8">
+                <propertyInstance
+                  Id="039b12af-8f08-4138-8827-78866dabeeac"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="531998f8-7d6f-40a6-86b6-220602d71812">
+                <propertyInstance
+                  Id="a299697d-e0d6-4166-909d-fa398aad90eb"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ccc10012-8191-4149-a5b8-879f7cab6cac">
+                <propertyInstance
+                  Id="4014b5bb-6d74-4996-b106-de1f93efb995"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6cd33ad6-8530-4227-9b2f-e9743420666b">
+                <propertyInstance
+                  Id="5c0747ef-6631-4b59-a45a-d753e6f3c847"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributes>
+          <property
+            Id="4ac33107-ee10-45ad-8876-a5ca719bcc3f"
+            name="EventId"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="12734bda-5559-4857-b850-f6ade8b9bd97"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIEventEnactor Member%3DEventId"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8c150b68-24eb-4d45-beb3-613ae8fb69f8"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="93c6714b-a545-4c8b-a2ed-b67e56dd4d4d">
+                    <propertyInstance
+                      Id="5906a4aa-990c-4b72-bc3e-32d955553b6c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2bc8ab83-9aac-433c-90b4-057d45206fc9">
+                    <propertyInstance
+                      Id="bc15be95-3692-44fd-aa41-e2e745cd8cd3"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e9d76144-5718-46d6-bdc9-4562b729caed">
+                    <propertyInstance
+                      Id="8b7db69d-85bd-455d-84de-818b3cf63b45"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aae59c83-77b8-4a18-90dd-a5f64a905e8b">
+                    <propertyInstance
+                      Id="86724188-1518-40cf-83d4-5af19186d3d6"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e3a0a4e1-7ad6-4823-92d8-65a365226c5e">
+                    <propertyInstance
+                      Id="ea9d1f35-01d2-479e-b594-3fce5db230ca"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="47c1b26e-a99f-4a0e-ae68-e324a89f68a8">
+                    <propertyInstance
+                      Id="e684505e-9d80-44b5-aad5-bdb7e39bf219"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="35490d30-ac29-4f9d-9c38-202033062f91">
+                    <propertyInstance
+                      Id="04f14dac-6bda-46f2-87dd-0d2777a6a40b"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="ScenarioFrameworkModels.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributes>
+        <ownedOperations>
+          <operation
+            Id="2a84f524-c810-4592-b734-2ee929a84033"
+            name="Enact"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="2c0e6d98-077c-4b82-83c2-71de7308e95c"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIEventEnactor Member%3D(Name%3DEnact OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Core Type%3DScenarioEvent)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="46a95f79-c20d-412c-b7f0-a81ea1c88dbf"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2e6964fd-f1d4-4d5c-984c-38638441825b">
+                    <propertyInstance
+                      Id="71a3752d-b4fb-41b0-94ff-d171d2a68c89"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8e49068d-3ac2-42fd-a278-f266a0c30639">
+                    <propertyInstance
+                      Id="7b8b1834-3e05-44f2-8a6f-3e47f6c55a1d"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="83c281cc-a9eb-4ebb-8d6d-cd0efc5df719">
+                    <propertyInstance
+                      Id="302a9a01-f83d-495d-a6f3-5a7df78a01ff"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1c14ac2c-4e71-4e8c-831d-5ee831a9e2c3">
+                    <propertyInstance
+                      Id="b24bd234-dafe-4e4d-9637-410554162e39"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="008860ae-e8e3-4e57-9be2-858298614571">
+                    <propertyInstance
+                      Id="9fc0cab1-5cd7-4f12-a4c3-4d0547e03599"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="83fd4b30-c446-4758-97b5-da81a5db180d">
+                    <propertyInstance
+                      Id="e118987f-7ac2-4278-9549-ceebf895a5a2"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8f755128-0daf-4338-959c-ccc0920738ad"
+                  name="e"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="1c748bdd-afb7-459e-840f-c7cca9d911d2"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIEventEnactor Member%3D(Name%3DEnact OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Core Type%3DScenarioEvent)]) ParameterIdentifier%3De"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="e80d66b9-8d28-45dc-97ac-6acd2a7747ae"
+                      LastKnownName="ScenarioEvent"
+                      LastKnownLocation="Package1_0832.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="36fc4895-4534-4da9-a0d9-6ea8ea370923"
+        name="ScenarioPlayback"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="2bd71259-34fe-45f2-8ddf-c6b7b78a6a7b"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="dcbfeec0-2797-44a1-bf2d-d869b9ab004f"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d83ffdac-8be0-4f0d-af15-3629305321de">
+                <propertyInstance
+                  Id="f9b5c209-4d8e-491c-86de-473b41ae6351"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="33269647-9b35-4977-a52d-bd8d141b3da9">
+                <propertyInstance
+                  Id="16e29675-6877-47c4-97d3-b42a3a1d0f55"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="10f3182e-6f92-427d-9b75-29607b0bea94">
+                <propertyInstance
+                  Id="2cec1659-ddac-4846-9562-13e60adcb635"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c03e60d1-d6ef-42a6-9bf4-ef2ad30d10ae">
+                <propertyInstance
+                  Id="c7ad4ad0-fc7e-41fa-a643-c68b1b0c7d98"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="aff54b80-120a-413f-b9ca-79d978f76f38">
+                <propertyInstance
+                  Id="03a5f5cc-aead-490c-b338-7f45acc53dfb"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="df4d9826-093b-4563-8eef-802cb53b8138">
+            <interfaceMoniker
+              Id="5479e577-edab-4842-bfdc-5c2936bee508"
+              LastKnownName="IScenarioPlayback"
+              LastKnownLocation="Package_1106.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="14432690-3b2c-44dd-b922-6a1db84b2046"
+            isDerived="false"
+            sourceEndRoleName="ScenarioPlayback"
+            targetEndRoleName="ActiveResults"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="4ed3fdb2-52c0-4d90-8894-8faf3d99ef94"
+              LastKnownName="IEnumerable&lt;AccuracyMetricResult‎&gt;"
+              LastKnownLocation="Package4_0025.uml" />
+            <description>Property ActiveResults references type IEnumerable&lt;AccuracyMetricResult‎&gt;.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b79381eb-42f4-41e7-920e-dd4ce8bfafb0"
+                  name="ScenarioPlayback"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="62cfbd68-7ca4-42a0-9502-53d11f839029"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="6b840d0e-6258-43b1-ac9d-0da26b507484"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0a3e3187-6b54-4cb5-830d-3bf077dac4ff"
+                  name="ActiveResults"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="2266ce16-ca53-429b-9c8f-37217bb1b90a"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="731fa8a1-36d8-4bb5-9fd3-c88437ffad16"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="afdd039c-44e1-4a7f-a212-536a2d1100b3"
+            isDerived="false"
+            sourceEndRoleName="ScenarioPlayback"
+            targetEndRoleName="ActiveTasks"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="8b994761-d75f-4c09-9276-837ca4b19f10"
+              LastKnownName="IEnumerable&lt;String‎&gt;"
+              LastKnownLocation="Package4_0025.uml" />
+            <description>Property ActiveTasks references type IEnumerable&lt;String‎&gt;.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="52a0dc6b-9101-4b0a-88e5-96cd8735fc10"
+                  name="ScenarioPlayback"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="efe95e9d-6af6-4fa9-b757-35a35942eb2e"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="223faf2d-ebe2-4942-9837-fbcc1cf62754"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b39388db-e00f-4672-a64a-2bd4957f2e3e"
+                  name="ActiveTasks"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="c832e92b-77f0-47c5-b633-c0fc3199c9b7"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="25bd0e80-10b0-44ed-a321-f983e452b681"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="85ae4c55-eafd-44fb-aebf-e502ec1afeb0"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="enactors"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="48ef90e6-47cd-4324-abde-3f197259a17c"
+              LastKnownName="IEventEnactor"
+              LastKnownLocation="Package_1106.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2437f8d7-363a-4a73-addb-e628c101e155"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="42c83fc9-f500-4ffe-92d4-047c05c7e91f"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="6002f182-9bab-4989-9533-0ef7c49441c3"
+                      name="Upper"
+                      value="0" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6c7454a9-1b99-4328-9553-f567b4486e6c"
+                  name="enactors"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="84d9bee0-4b72-4af0-9f73-e4257d06e014"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="673036c8-6534-4c59-89bd-0422efca5b5f"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="f3becf69-877e-4bc3-a4b9-f90de12ef74a"
+            name="ActiveResults"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="1bfa0a9e-cdc9-4491-9faf-8072ff11f62b"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3DActiveResults"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4df31f83-6bba-4a3f-b112-86dada529509"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="18e9f5cc-f137-44e1-91a4-8cbe200676f8">
+                    <propertyInstance
+                      Id="c914fa4e-f88d-4c61-9ef8-76b412d1c51b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3d950bce-f857-4609-97b7-a185a9b41f7d">
+                    <propertyInstance
+                      Id="0a46807f-9f0d-4b57-a295-88657d85d27d"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f7210103-01f7-4171-9e36-3fc89701578e">
+                    <propertyInstance
+                      Id="adfa8729-a89e-41c7-a374-dc5682bccd98"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="43762b48-0a75-4da4-b524-08ca0c61e4d5">
+                    <propertyInstance
+                      Id="d489887c-1fde-4df4-9c29-a74451c680ba"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d718e16d-b1bb-413b-bcc9-71b7d086d2b0">
+                    <propertyInstance
+                      Id="09aa2cf7-99e3-414a-baa6-cf186d048f30"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dbc2e3a9-4c52-4e08-9b89-a3a5595f96bc">
+                    <propertyInstance
+                      Id="68f07fb7-117d-47ae-812a-8431ef8dd0d6"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e5c524f9-4ef9-4de6-b05c-3407ed8ac551">
+                    <propertyInstance
+                      Id="f14b3021-5f92-4a31-a815-35ded28d7ba5"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="4ed3fdb2-52c0-4d90-8894-8faf3d99ef94"
+                LastKnownName="IEnumerable&lt;AccuracyMetricResult‎&gt;"
+                LastKnownLocation="Package4_0025.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="77860af7-8db7-49aa-8b37-f8c249bbb34f"
+            name="ActiveTasks"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="ffb9f0dd-ec7f-46ab-9469-5de2f9daee4c"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3DActiveTasks"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="20ee1ca4-c793-4429-89e1-e42a1c5bca8c"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b84f7301-7f8f-4d35-a4a8-5d81f5f91102">
+                    <propertyInstance
+                      Id="53e50fb3-b13d-4c74-acab-da9de02704f2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fd93e9fc-de77-4adf-aa39-278b4e2a5454">
+                    <propertyInstance
+                      Id="db15fb80-6898-48eb-89f5-8fd104749e17"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="06aecabb-4f07-4f23-ab8d-6ab5b17b0d0c">
+                    <propertyInstance
+                      Id="82707301-f866-4aa4-a63b-a127a1c08aeb"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="46a02b2a-a7b5-442d-98a0-32238c8f3113">
+                    <propertyInstance
+                      Id="fea49f67-ffb3-4b4a-9ded-3ec77ba59c1e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0bf94da0-48e4-4933-b745-a77b18a63a91">
+                    <propertyInstance
+                      Id="6e8a7113-2658-4507-a6af-6b9d6510fc96"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="41f58b0a-793f-4151-b39d-9c055b9a07d5">
+                    <propertyInstance
+                      Id="d113994d-ac0f-4abf-b1f4-7e7ecc19a4ed"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fe0b1a28-0f0f-44d2-93b9-34c248ef4450">
+                    <propertyInstance
+                      Id="133304d3-f391-4611-8345-a7c8a0225f96"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="8b994761-d75f-4c09-9276-837ca4b19f10"
+                LastKnownName="IEnumerable&lt;String‎&gt;"
+                LastKnownLocation="Package4_0025.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c71ab8b7-e0be-40a1-8f8c-6d438c92a2e7"
+            name="activeResults"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="a2f7c481-8533-43a1-b26a-a6c2e0322159"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3DactiveResults"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e9049046-9edd-4d5b-97a4-3c580250de06"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0eb650aa-0f8f-450d-93c0-c19830563f42">
+                    <propertyInstance
+                      Id="95c9d77d-de14-4a58-a2f5-ff12c9d300ff"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f6771019-2e0b-4a71-8664-e7b453179995">
+                    <propertyInstance
+                      Id="778edf6b-6e25-475d-8400-84deb279f6b7"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c125e7fc-3405-4c6e-b0aa-8f321018e0ad">
+                    <propertyInstance
+                      Id="ea41bc99-7033-413c-9ae0-240a1161ea50"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d5d503ba-df01-4d30-89d9-32ee144a25b5">
+                    <propertyInstance
+                      Id="94c7ac43-5734-4650-8f22-a7fd5247bebf"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="23b58b1b-b237-4b54-8b9d-5d64b9452993">
+                    <propertyInstance
+                      Id="19292751-b738-441a-a3a5-a520000e2128"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="e053161c-6d09-4a05-9968-b6290ae3f0da"
+                LastKnownName="List&lt;AccuracyMetricResult‎&gt;"
+                LastKnownLocation="Package4_0025.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="f9163ff5-4cb8-451a-add5-287102aa997e"
+            name="collection"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="55294474-950c-4997-b550-57b9b66abbaf"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3Dcollection"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="780739dd-5021-4559-a7eb-0487bd0f2239"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2a2a25ad-f6db-4bc5-93e8-5f5251c7eb5e">
+                    <propertyInstance
+                      Id="ade845de-6d3a-4805-a149-a4326815ec30"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8f5f4c4b-b163-4b37-a179-c1ed07ed6f2c">
+                    <propertyInstance
+                      Id="ab8e7d51-cd6a-4d44-8b74-4a150bfcc16c"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5533457c-477a-48c4-bed1-e9ee8273a4ba">
+                    <propertyInstance
+                      Id="9d407f69-70d2-4749-b9f9-d93a0d701b74"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d4e32a6a-290d-4dd0-8910-e6786b26aa0b">
+                    <propertyInstance
+                      Id="ad2c2b7e-189b-43b7-9773-43df46c92eaa"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b9b21311-68ab-4c7d-b1e1-55abf5bd79aa">
+                    <propertyInstance
+                      Id="0a8f26ab-a3bc-455f-970c-fcefe1296c0a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="6a9ade04-4e5e-4087-b192-cda6eca61d87"
+                LastKnownName="ScenarioEventCollection"
+                LastKnownLocation="Package1_0832.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="720cddf7-91a3-44c6-83f3-a5294da58da7"
+            name="enactors"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="d12f16f1-f588-4689-a912-92bd0d5e7d7a"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3Denactors"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="430167d0-fc0c-473f-bab4-70d882626985"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e1b92395-4be4-40be-826e-f7c0e6c0da1e">
+                    <propertyInstance
+                      Id="ad1b97a7-6540-40da-9ba4-a833d2ec1319"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aa735705-8b06-495f-a3a2-ef0a75a14d52">
+                    <propertyInstance
+                      Id="a6c7946a-a9ce-4bc8-a07d-4a26654bf7b8"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="df4ab6f7-be0a-4c71-84ef-4c6ebe5d9e8b">
+                    <propertyInstance
+                      Id="715b3675-b5e4-4408-b8ac-c245b14ce190"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="121e6bb8-7beb-4cc6-b790-60a8b188aec6">
+                    <propertyInstance
+                      Id="86b222c8-90ee-4074-80e9-b52d8d2b9d5d"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d267ae05-d267-4927-a7af-8bcabee765fe">
+                    <propertyInstance
+                      Id="00dcc4f5-0e6c-4e3f-9efc-75db3528215c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="470886ee-3c09-458b-8a88-58b6b456767a"
+                LastKnownName="Dictionary&lt;Int32‎, IEventEnactor‎&gt;"
+                LastKnownLocation="Package4_0025.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="85b8ce63-96b3-4b3a-97ff-75ebc692a0e7"
+            name="nextEventIndex"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="e70578fd-7389-4468-93ed-f0305258755e"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3DnextEventIndex"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c34bfad4-d759-4e9b-ba59-553fb5c71ae2"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="62398fc0-c9c9-4310-b961-7329ebe6096d">
+                    <propertyInstance
+                      Id="8b5e4323-7f2e-45e5-b119-99704988827e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="da4d0346-17c3-4daa-bd7a-bdca9a7fd54e">
+                    <propertyInstance
+                      Id="b2c621f3-725c-4f30-82df-0d7ca04d7209"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="660917f3-81d2-4516-976f-19097c264e2b">
+                    <propertyInstance
+                      Id="37688711-2a54-40b0-a5de-bdfe00a96a7d"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a3241cf-74ed-4693-bc03-cfa036cc9412">
+                    <propertyInstance
+                      Id="2196f91a-a77c-4efb-a492-ce8bc3fa9e57"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6aca8062-0069-4105-8238-4c0c5401a6ca">
+                    <propertyInstance
+                      Id="b672b7aa-c678-4d37-bc0a-5fd756e8a33a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="ScenarioFrameworkModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="dec11df8-4f1f-4bec-bbc2-222c547c6760"
+            name="result"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="78a17aa7-7309-41e1-8644-ce6408827c7c"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3Dresult"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8bff1247-576a-475c-94d6-8e12a6b84fe4"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fdf730b9-71d0-4e89-b89b-f7d7476bf79c">
+                    <propertyInstance
+                      Id="e4fcdc16-8ef5-43af-b545-61262aeecc17"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ad2696bb-e395-48ed-9bb3-b8069421663c">
+                    <propertyInstance
+                      Id="5e24075f-716c-4b11-95ee-455382f44974"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cf944aba-47fe-41df-92e9-447709a53f60">
+                    <propertyInstance
+                      Id="f563f312-f99c-42bf-9426-f049832bb048"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="de23b72d-9a11-4c21-868a-1d080c35c1bd">
+                    <propertyInstance
+                      Id="9a5b8391-7bb7-460c-af61-c4a3bec75608"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dca7d3d7-05e6-41ba-9853-ba36503ef0af">
+                    <propertyInstance
+                      Id="d063141f-7947-47f5-a183-708030984d68"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="d7776763-7deb-4cfc-9d1d-4ff84794cb94"
+                LastKnownName="SimulationResult"
+                LastKnownLocation="Package_1113.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a91dc2cf-c898-43af-8d89-7161a885d3eb"
+            name="simulator"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="1b8a582a-26ea-44f3-b7d9-434654d23fe1"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3Dsimulator"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="80381eb2-42e2-44b5-8332-b22dde6f9e92"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cd203db4-5ba0-4c07-b96b-cc276fc0ac5a">
+                    <propertyInstance
+                      Id="f3e19db1-3512-498f-b5af-8de4d797ecb7"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="af9a5701-9518-4b20-824f-5a6be9d70299">
+                    <propertyInstance
+                      Id="6fa764fb-e54f-4a86-b436-23ada8dae4c4"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c8639a66-89e9-433a-9909-c039d37f48c2">
+                    <propertyInstance
+                      Id="02b0cf55-89ec-49ec-bd27-576f16b3a70b"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="45409832-7c01-457d-879f-2bc9daec937e">
+                    <propertyInstance
+                      Id="9d41f188-7cb2-4c6c-b80b-8d9b0d43f9e1"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3f038a16-61fb-472e-9fb7-6e69dbad9d66">
+                    <propertyInstance
+                      Id="5cb872b6-f112-467f-a984-5b8bb0f7afcf"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="134bfe2f-79b8-4fe3-a038-9fe43421878b"
+                LastKnownName="IScenarioSimulator"
+                LastKnownLocation="Package_1113.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="df7f860d-6225-4d88-8e5e-aa972b53794e"
+            name="startTime"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="d26eebf3-70e0-46d2-b18a-212acfeeb9cb"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3DstartTime"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b02aa9fa-8640-4515-83c5-b4cbe434ce13"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="86b9870b-e582-4931-931f-6354044697d4">
+                    <propertyInstance
+                      Id="0b1db609-e18d-45dd-8842-c1cb042bc914"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="38631adb-2906-4796-a691-da674e252c9b">
+                    <propertyInstance
+                      Id="f0f36541-2931-466a-a2b8-efcfdca26e17"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1bc6e045-028b-4cf5-a9e2-93ca39057f70">
+                    <propertyInstance
+                      Id="bf396823-3eba-419a-9518-ebd3c877262f"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3b54591a-0317-4a11-a781-2d372e67c079">
+                    <propertyInstance
+                      Id="389d846e-e2ff-4b92-8ab0-06082f689014"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fd848dfc-7e1f-4be6-8b99-582b1b19870e">
+                    <propertyInstance
+                      Id="8e47416b-0926-4f40-8fa9-793217cae922"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="c5c9dc2e-f4a5-4651-a15a-961ee698eb7f"
+                LastKnownName="DateTime"
+                LastKnownLocation="Package2_0025.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="eb497be6-1998-46c0-a43a-1df70075f13c"
+            name="timer"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="04e38c73-be87-4241-aa44-bf104fd9fc67"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3Dtimer"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="fb27e39d-bccb-496e-a42f-05c80e0a673c"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ff6fe7ad-5807-4bbb-9b0c-11f354d82378">
+                    <propertyInstance
+                      Id="a193df2f-567c-4b80-9139-af25e313a6f6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="098eab5a-4b6a-4c9c-a2ed-5a6ca828dba8">
+                    <propertyInstance
+                      Id="b4e3236d-0125-41dd-b329-7a53f230aede"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fa979931-964d-4464-a276-607bcfefa857">
+                    <propertyInstance
+                      Id="f60138c3-07a7-460e-b925-d413cdb11ab7"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fe952109-5861-4d37-9285-1cd450a5020a">
+                    <propertyInstance
+                      Id="8be611e8-188a-4772-b113-044766d33a01"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="35706686-edab-4378-ae07-275e89f34448">
+                    <propertyInstance
+                      Id="369fac46-0992-4aaa-8b96-9407c953e60c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="739498ec-06c6-42f0-926f-f7d4260e59c5"
+                LastKnownName="Timer"
+                LastKnownLocation="Package1_1113.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="e5121c4d-9ac3-4cd3-8b6c-ff98f4235b41"
+            name="CurrentEventIndex"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="cfae6d4f-0be1-4809-9adc-67fea312bd94"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3DCurrentEventIndex"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e249749e-b5a7-42d4-b3b3-4eb72faef545"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="32aeec8e-a410-4a9d-bbdf-dedf2268bc97">
+                    <propertyInstance
+                      Id="2e12afcb-af1c-4a12-83e4-e28fb76d3a1d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8e369e6f-dc87-41d4-9144-0943bc37c17d">
+                    <propertyInstance
+                      Id="2b19ccaa-2b6c-4274-bf34-9b4dcf329e84"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="976e7e02-c68a-4f11-ac8b-85516a39c0b7">
+                    <propertyInstance
+                      Id="d50b4214-af92-441b-b9a4-c2f005128ee5"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a803ae2f-f17e-4341-8be0-79ed09fc95a8">
+                    <propertyInstance
+                      Id="08ed3c71-6a32-47f7-86f1-2d27ba172c2a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f959bf29-c1d7-4ec4-b357-422fd8cf3b69">
+                    <propertyInstance
+                      Id="ef7da401-0960-46bc-8f37-c88a746ecc41"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ecc66465-70bc-4c7c-98a8-6ed7d91dff0b">
+                    <propertyInstance
+                      Id="dcf81c86-e504-4880-84b6-9e237faec387"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f20e57fb-ddbe-49c6-88ec-7beac5709a25">
+                    <propertyInstance
+                      Id="c5a511ad-dc7e-4f9d-aea1-941e821310de"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="ScenarioFrameworkModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="10df0446-ce76-4da6-9ba0-c945aae5ad3d"
+            name="events"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="089a679f-a06c-4856-bcf0-0f79a8adc593"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3Devents"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="022ffa50-6117-4d3d-85eb-bf631950d47f"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="596ce10a-2e17-4d6d-8a82-6949277ad8a6">
+                    <propertyInstance
+                      Id="871fa7ab-a806-43b2-b4bb-2de6f88b965e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="477fb8f6-f3f0-4ed2-a782-fa587ff3d2ee">
+                    <propertyInstance
+                      Id="9361a351-3adc-486b-99be-b2cdcb505554"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="086ff602-149f-4bd5-8b18-3476093f70ac">
+                    <propertyInstance
+                      Id="df2bd41c-08ea-44ea-837c-6de9189b97c0"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ba5d7d7c-61d5-44b3-a670-636d0d645fb6">
+                    <propertyInstance
+                      Id="a73f31fa-5948-4444-9fa0-5d13012fc514"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4a7e69bc-91f3-4ae4-a3cc-356da0838c4c">
+                    <propertyInstance
+                      Id="c07cc835-919c-4706-a6ed-e02e1cba241a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="2dbd7408-fec1-42ef-8415-c320bd33a8d0"
+                LastKnownName="List&lt;KeyValuePair‎&lt;Int64‎, ScenarioEvent‎&gt;‎&gt;"
+                LastKnownLocation="Package4_0025.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="3c09c5c9-7bb6-474f-9598-0bb59557c008"
+            name="EnqueueEnactor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="60641b5d-8f05-4ea8-a63d-2926263b6ece"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3D(Name%3DEnqueueEnactor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIEventEnactor)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e35eafb9-1ebb-41fe-8876-dfdfaeecbc1e"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a4afc0ed-aaef-4b8d-b94a-b3563d199f4a">
+                    <propertyInstance
+                      Id="e883d81e-e43a-4fe4-8521-3d3c56ded097"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="22a1ea7f-4cef-4991-9f59-ed3b9d6c2326">
+                    <propertyInstance
+                      Id="e89f63e5-eefd-4b02-b1c0-ca2bde1d96b9"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b6b59757-96e5-40ed-acf6-96d3ee93229d">
+                    <propertyInstance
+                      Id="36eb19fb-8d35-415a-a390-1750459360fa"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bda4cefb-979e-4d6f-a76e-9522167f399f">
+                    <propertyInstance
+                      Id="c7c5f6c8-d796-40e1-9096-ded01c063763"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="48a1cd76-674c-4b43-8068-7c47cea294a8">
+                    <propertyInstance
+                      Id="bd8eef5f-35d9-4d46-93ac-a440fd5bd687"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="162351a1-0001-4eeb-a3d7-8f7146a20e9d">
+                    <propertyInstance
+                      Id="7c9a405a-9ddd-47f2-88dd-e549642bb7cd"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bdce5ea5-8839-4b24-b3c1-f37c5a08a20c"
+                  name="enactor"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="72ea6ca7-7814-4608-8b95-f44ac841ee0d"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3D(Name%3DEnqueueEnactor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DIEventEnactor)]) ParameterIdentifier%3Denactor"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="48ef90e6-47cd-4324-abde-3f197259a17c"
+                      LastKnownName="IEventEnactor"
+                      LastKnownLocation="Package_1106.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="311c8668-9f8b-4a43-bd09-cf2b1a0cd46c"
+            name="GenerateActiveResults"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="1797b05b-b3c3-40cf-9bd2-778099cebf97"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3D(Name%3DGenerateActiveResults OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Core Type%3DTaskResult)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4e0eb347-4c14-41f8-ae39-9b6dba00d39d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="24a1b3fd-48a8-4af4-bd1b-9a1ee88f6e04">
+                    <propertyInstance
+                      Id="9acadc1f-3137-4bda-b059-dd3d87dd2103"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e7ac18db-24d6-4c5a-a73b-9c92fa75344e">
+                    <propertyInstance
+                      Id="e609f2c0-d2a4-452d-a5a5-984bbf971007"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a2aabd8c-d3dd-4c49-af05-efbaea30f4f2">
+                    <propertyInstance
+                      Id="9cda4999-de5b-44cc-a690-74d1c46e194c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fad5992b-1202-4df1-9a1d-61067d723bc5">
+                    <propertyInstance
+                      Id="98f872c1-7c7c-48b6-9501-cd8cf8b0c973"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="374c731a-f8c8-48c9-8f7c-55123ee34c7a">
+                    <propertyInstance
+                      Id="424140cd-b3fc-4089-8ff1-3037db5d8b46"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8bfec43e-d24e-4297-9d76-683861d79228">
+                    <propertyInstance
+                      Id="6dccadf8-f240-4b89-9fe8-60221131e876"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="50a36ab9-0ef1-4d4b-b567-dc4fda095d4a"
+                  name="taskResult"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="4ce1d0a0-84c2-461f-ae97-568a88b5401e"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3D(Name%3DGenerateActiveResults OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Core Type%3DTaskResult)]) ParameterIdentifier%3DtaskResult"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="c0f531a9-c520-4115-946e-15e93ca006d9"
+                      LastKnownName="TaskResult"
+                      LastKnownLocation="Package1_0832.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b74186f0-3361-4474-83b9-9193346bc8c7"
+            name="ShiftEventTimes"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="2f7a2e8a-bbd6-4e89-be99-1c00d287e2eb"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3D(Name%3DShiftEventTimes OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Core Type%3DScenarioEventCollection)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3710232f-e582-4283-8c65-2e699a7198e6"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f5df8961-8f66-4b8e-b237-d9287e7f289d">
+                    <propertyInstance
+                      Id="fe426292-5a10-4ab7-9359-9fbdc678ac09"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7207c46e-7593-487f-85e8-9c3a7f06839c">
+                    <propertyInstance
+                      Id="d4a6c5c7-a349-492c-84f1-ba7898f53e92"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b9f2d813-841d-4ac1-8269-066fee4a48cb">
+                    <propertyInstance
+                      Id="f443ee70-e8de-4f17-ae73-b396061cef72"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="41fe08f2-49e0-454f-96b0-64f3ae66df62">
+                    <propertyInstance
+                      Id="44125a8b-c146-4012-9a8f-52ee3fb29c0c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5baa8e0a-ee74-484f-b66d-877ca8da0da3">
+                    <propertyInstance
+                      Id="30cc54ad-540d-44c2-975d-db35fd17dc67"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="830612a7-9089-4f0f-bfc8-c6323d0cc40b">
+                    <propertyInstance
+                      Id="2a0f5d70-811c-4562-8655-b49a43e87398"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="afc5260e-92ff-4b04-bdc5-ad4e3643e18f"
+                  name="collection"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="89122f42-7e97-4667-8b39-d6c8519c0a05"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3D(Name%3DShiftEventTimes OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Core%2Fbin%2FDebug%2FCore.dll&quot; Namespace%3DScenarioSim.Core Type%3DScenarioEventCollection)]) ParameterIdentifier%3Dcollection"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="6a9ade04-4e5e-4087-b192-cda6eca61d87"
+                      LastKnownName="ScenarioEventCollection"
+                      LastKnownLocation="Package1_0832.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="421aaed2-8a17-4189-a475-a558c66d1d62"
+            name="timer_Elapsed"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="24e2ff1a-1eb6-4c6c-a15a-ebde659b4bb1"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3D(Name%3Dtimer_Elapsed OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DObject)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2FSystem.dll Namespace%3DSystem.Timers Type%3DElapsedEventArgs)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d794d414-e3fb-4dd9-8eb6-1696eb7bc9c9"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ad92bd97-a6c1-48eb-b5db-7554e4612c48">
+                    <propertyInstance
+                      Id="a91f4095-0d75-4ad5-93ec-b1ef10598e29"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cf746a26-2134-4bd5-ad98-47d76172fac6">
+                    <propertyInstance
+                      Id="a7560d1c-5a16-4750-9b96-4a355936d1dc"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="153f50ad-73dc-494b-ac86-6ad4f3256334">
+                    <propertyInstance
+                      Id="ad2d3025-7556-4bef-8fc7-c8b9193442a2"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="407b4773-3e67-40ce-9ceb-ac3bd363f06c">
+                    <propertyInstance
+                      Id="152ad55f-7db0-4c78-a8c7-9fc5dba1d3a2"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2fd5a1fd-b96b-4a3f-bb9a-c3a499b992e8">
+                    <propertyInstance
+                      Id="34967c0c-a5aa-4901-96f7-c3d0115491aa"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cf75ba44-7000-42dc-b568-6d11d5b2a266">
+                    <propertyInstance
+                      Id="20e915a2-49f6-457f-a1d9-57ece4e21f76"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="82dc979f-1438-4527-901d-462b0ee7e38d"
+                  name="source"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="6bf50ae0-a7f8-46aa-ac64-151e71dcb408"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3D(Name%3Dtimer_Elapsed OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DObject)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2FSystem.dll Namespace%3DSystem.Timers Type%3DElapsedEventArgs)]) ParameterIdentifier%3Dsource"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="be244c12-4ea0-4642-b074-9ed61ea04051"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package2_0025.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="38285e59-ef01-4e8d-9a2b-581e1317a1bb"
+                  name="e"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="17f3d29a-7dd0-4d84-b9f7-75ad69f4dbf2"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3D(Name%3Dtimer_Elapsed OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DObject)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2FSystem.dll Namespace%3DSystem.Timers Type%3DElapsedEventArgs)]) ParameterIdentifier%3De"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="92e28c19-c5d2-46ae-9c76-b0429861326a"
+                      LastKnownName="ElapsedEventArgs"
+                      LastKnownLocation="Package1_1113.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="25ce9834-a6cf-480a-83fd-7e1d41063e9c"
+            name="Pause"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="7af511b7-f47a-4886-948f-eeb01daa7acc"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3DPause"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="00dcf01a-f275-4ef4-84af-c6474419040c"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d86ab0c9-0f63-4a97-85aa-897333559fde">
+                    <propertyInstance
+                      Id="d36d3716-3e66-4be9-ac9c-ecf7bf714bef"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="96ae58cf-30b4-4f97-a012-ce22f4bbed66">
+                    <propertyInstance
+                      Id="2d286d2b-bf9e-46d1-ae63-bac76416d414"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="952d8d91-3bc6-4f0c-b2ba-3afd87e7a638">
+                    <propertyInstance
+                      Id="6e0fb03f-85a3-40a0-a095-070d3400f2af"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a07dd82-1db8-4d9b-9613-86c767afcd24">
+                    <propertyInstance
+                      Id="e9a6cf8a-812a-4464-ba59-0d0862d6ece2"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="55056448-1196-430f-bba3-68acac06dfec">
+                    <propertyInstance
+                      Id="b9db3e27-5a2c-4784-a9b0-6b5437f2704f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d86374dc-b0cf-43b1-85ed-391de20c3108">
+                    <propertyInstance
+                      Id="d6666fae-c901-4609-ac5b-cf505e49a29b"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="903553d7-ee04-4d69-a3ad-47416bd30c17"
+            name="Play"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="f827c6ed-a662-4851-9ac0-55d783db8624"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3DPlay"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="249ebaad-f2ae-4b64-a6a0-2f7f8fa5509a"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="48c5f918-7118-43de-bd73-bb12a1fff787">
+                    <propertyInstance
+                      Id="8831d832-f339-4ea7-84e7-6cc0fd37b36a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f9d710fa-b6ed-41fe-982b-04295ddb471b">
+                    <propertyInstance
+                      Id="b893c643-85fa-47ee-82e1-65e2bbc6d014"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9424ebb2-57d8-4289-99d8-f8d1566804b3">
+                    <propertyInstance
+                      Id="5a070748-9575-4209-acae-300061ea47e4"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="17928116-9501-432f-8d1d-4faf56420bcb">
+                    <propertyInstance
+                      Id="ff57940e-1d5a-405b-8ecc-b373bdcab77a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="65a66963-a255-4d16-a674-e7382de97c30">
+                    <propertyInstance
+                      Id="5d5d2abf-2ef1-4762-b789-6870bfc178b2"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3a930c89-1280-4e73-b616-18dd46efe181">
+                    <propertyInstance
+                      Id="bbda2937-a3e8-4b55-8415-cc65605b897c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="2439309b-e0c0-4b0f-9331-ea43d777e0cc"
+            name="Restart"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="8bca3218-99b6-49c5-a5d8-f8852c7df9a5"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3DRestart"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f4be24ef-5ca0-4115-9aa4-1358b2ea146a"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c7faa174-ee1d-435c-a297-edd56f2720c8">
+                    <propertyInstance
+                      Id="4852c74e-6e4f-4b44-8d9e-856ca0df6cd4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7f7ac7e7-e7ac-4ebf-9635-58887ef65095">
+                    <propertyInstance
+                      Id="10af7cf2-1494-4dc6-b28e-b200ab2b719a"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c9720508-21b3-4385-a591-36ad4f05f564">
+                    <propertyInstance
+                      Id="4b2650eb-7b47-4876-90b4-96304e50f869"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4afe67ab-5ffa-40d3-b98a-88b0ac7349af">
+                    <propertyInstance
+                      Id="ca735aba-2a16-426d-9d06-dad96c960303"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f81962dd-8316-4be3-b422-b8f28d54ffb2">
+                    <propertyInstance
+                      Id="59f49217-b693-4bf2-854a-3a66d6a9fa40"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="748cb358-ffeb-4b65-93be-27ab729793b1">
+                    <propertyInstance
+                      Id="bfeabc9d-86a1-41d3-85ab-e639c37d9a8c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="9b495652-3a46-4082-8b91-abbb4919a97f"
+            name="Stop"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="c71bafe2-beb0-40c3-a29d-2f8833fa08d4"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3DStop"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="184004ed-db09-48c2-a29b-90774f1b5f72"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2466bd8a-5e95-422f-9a43-4783e4bdeb5a">
+                    <propertyInstance
+                      Id="2f42832e-221b-48e1-8d01-e5772721e724"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e48af846-7bef-4f8d-938f-d8adebad2f81">
+                    <propertyInstance
+                      Id="b24a5436-d907-4a2c-8eda-06348ac0a33c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="74ed252c-ff6b-468c-93fa-e857b9c9f918">
+                    <propertyInstance
+                      Id="7370b676-cbd1-4faa-9a70-86b8ab64e5ab"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a11f4a75-6c95-47f2-8696-058a8d13e993">
+                    <propertyInstance
+                      Id="0fb936c1-e020-437f-9e22-a38e30fe84de"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1b5b5742-70b0-499c-a666-bbcab5b3fe75">
+                    <propertyInstance
+                      Id="30fa00e8-b0ac-47ca-b85e-5ca87db73f24"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8873c536-e813-43a0-9657-b0a5e20f6a6f">
+                    <propertyInstance
+                      Id="5f7c0f0c-aacb-4d7f-81c4-bc0b5feff954"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="143f5a99-7e6b-423b-ba31-71f8f4099eb2"
+            name="ScenarioPlayback"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="040e552b-032d-4166-aab9-727d50f6f8fc"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.Simulator Type%3DSimulationResult)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.Simulator Type%3DIEntityPlacer)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="660041b6-76e6-4d79-81df-a605e8588eee"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ede90566-26ab-4471-b7f9-ff1080e09fcb">
+                    <propertyInstance
+                      Id="19df9f34-d5c3-449d-ba8f-dbeeba0e110f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5d010d97-842d-4757-83ca-1ab235ae7578">
+                    <propertyInstance
+                      Id="1c831631-1a4d-4ffb-bd5b-7de335d4d54f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2f3c3ca0-9824-47ee-b4c9-e6cc0d8f609c">
+                    <propertyInstance
+                      Id="c44586d3-8cb1-453c-9b6b-e8ffc67f28d0"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b74f89d7-69a4-470d-b3cf-894a85475d85">
+                    <propertyInstance
+                      Id="fd1f8f0a-ea63-44e4-a3f4-3ddb43a18d6c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d44b5de2-2e31-4be9-a23f-db8f760ed429">
+                    <propertyInstance
+                      Id="74116fef-f769-43a3-9031-8690a9904f16"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7221d927-6d28-4cab-bb2c-ac423b51ee63">
+                    <propertyInstance
+                      Id="e7413e56-cc8b-4bc2-8f8a-7d029dfa5c76"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c1264abe-8212-47ce-8412-c678a19744a2"
+                  name="result"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="cf27940f-055f-474b-b96e-e6d85ab14b62"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.Simulator Type%3DSimulationResult)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.Simulator Type%3DIEntityPlacer)]) ParameterIdentifier%3Dresult"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="d7776763-7deb-4cfc-9d1d-4ff84794cb94"
+                      LastKnownName="SimulationResult"
+                      LastKnownLocation="Package_1113.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="185653f0-1b5b-4e5f-8ebe-877235725e4b"
+                  name="placer"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="5d8b094a-d361-44df-a15e-975194dc7587"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.Simulator Type%3DSimulationResult)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.Simulator Type%3DIEntityPlacer)]) ParameterIdentifier%3Dplacer"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="78360e90-8c4f-45f5-8462-411db17342d3"
+                      LastKnownName="IEntityPlacer"
+                      LastKnownLocation="Package_1113.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="27901884-b33c-42c0-9363-5c532e2c9f7d"
+            name="ScenarioPlayback"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="131eeb61-f286-4cad-a663-5da742dbc919"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.Simulator Type%3DIEntityPlacer)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="fc9e8115-16ee-4620-8cc6-64eccf357a33"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2de20f80-0c28-4232-8d1a-428d897051db">
+                    <propertyInstance
+                      Id="20c50b80-f872-454d-84ea-c2bb4fe4ee53"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="597ffc04-d054-4df5-bba9-1d5d178dbe86">
+                    <propertyInstance
+                      Id="f5bf5841-dc75-4ac5-a0f1-a5a9e9e778fb"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fd3c4b92-5d65-4d52-8da2-59075402dfdb">
+                    <propertyInstance
+                      Id="cb90a03b-6fb0-4a69-aeeb-022fb0a06bf3"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="97be2be2-a35c-40d5-a594-415f98a3be3b">
+                    <propertyInstance
+                      Id="15841fd2-96d9-4f5e-b011-f330b27073ca"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9677cae4-23d8-429f-95ba-7c659750176b">
+                    <propertyInstance
+                      Id="4d4072cc-2951-4596-a95b-bd8ec238e501"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2d22f96e-3919-4d72-8d65-7a2b66f7302c">
+                    <propertyInstance
+                      Id="d4312cd7-6ee7-4353-9362-5857bd3fbeb6"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2376f96c-cb3c-43df-84db-c301f18c0924"
+                  name="filename"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="cbf6f1d5-b619-44ef-90f8-c23e436ea0d6"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.Simulator Type%3DIEntityPlacer)]) ParameterIdentifier%3Dfilename"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ScenarioFrameworkModels.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dc1fa452-fc24-4ea6-840c-c782b61f20fb"
+                  name="placer"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="545fb4ed-46f9-4d62-9331-bb7e22cc3b1b"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.Simulator Type%3DIEntityPlacer)]) ParameterIdentifier%3Dplacer"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="78360e90-8c4f-45f5-8462-411db17342d3"
+                      LastKnownName="IEntityPlacer"
+                      LastKnownLocation="Package_1113.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5cf25df6-6459-469e-8b01-835cf3547e5c"
+            name="Initialize"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="9dac6e9f-84fa-48a4-8ded-023bd4844e0f"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3D(Name%3DInitialize OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.Simulator Type%3DIEntityPlacer)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7e099019-6c75-44fd-89f8-20662b7472cf"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="06859654-5273-47e5-9c50-378c9ecdd246">
+                    <propertyInstance
+                      Id="a673a09a-c162-46a7-b265-f464baca1896"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c3950c12-fed0-4e09-a284-c5623b86a513">
+                    <propertyInstance
+                      Id="5b0ae517-b43a-4200-a9c5-d92cc5bfc920"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="24380f5e-1ad4-4903-ab72-99247f28e982">
+                    <propertyInstance
+                      Id="006b1ea9-2cf0-4734-a6d3-503c946c37cf"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b2f82ec6-74c6-4e93-a5c3-b1ef62a89ccd">
+                    <propertyInstance
+                      Id="5d6b6464-7377-40ec-8a59-07aaa52688d6"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2c4e5981-7a7d-49cf-a503-1c81716b5308">
+                    <propertyInstance
+                      Id="920d699d-9171-4bdb-8282-fd41b38b591b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a45a30b2-082f-4564-96b5-1394894211c3">
+                    <propertyInstance
+                      Id="d893b522-6f71-49fc-b370-f358ca89d24e"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a86b39fd-4e09-47e1-8b20-1a166ed4cc2e"
+                  name="placer"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="16c1d04a-9ccc-4fc2-8675-cdec76d6b5d2"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3D(Name%3DInitialize OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Simulator%2Fbin%2FDebug%2FScenarioSim.Simulator.dll&quot; Namespace%3DScenarioSim.Simulator Type%3DIEntityPlacer)]) ParameterIdentifier%3Dplacer"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="78360e90-8c4f-45f5-8462-411db17342d3"
+                      LastKnownName="IEntityPlacer"
+                      LastKnownLocation="Package_1113.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="65613cbe-abb0-4201-bfce-8c57698291b1"
+            name="Next"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="f7df512c-6274-4ee0-b975-99bd845b1c6e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3DNext"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d49879b6-9482-4d70-bfe0-7ecc57c3b48b"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1f5fbcbd-b976-44e0-9520-feac79eb7c72">
+                    <propertyInstance
+                      Id="dab09dae-9070-4e11-b25d-1aeb9068a624"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cb252ee4-086f-4a11-9a63-b3ee48f4144f">
+                    <propertyInstance
+                      Id="e985506f-4737-4fdc-a602-b6e1645dbcb4"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="585efd64-1e05-4efd-8286-c836ab5e15ec">
+                    <propertyInstance
+                      Id="3e0d2054-acfa-4700-8c06-c31ac98ed33f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="54ce9627-bb6b-47e3-a72f-8607f09e532c">
+                    <propertyInstance
+                      Id="9df5fa62-f372-479b-9e82-6252ca9dc012"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c0da063c-77a5-4640-8ca6-35b546c0597f">
+                    <propertyInstance
+                      Id="015cbf4f-86df-4458-8d9a-b20cad1b66af"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4c1f7b36-83ab-4197-8e71-f6f0152a94ba">
+                    <propertyInstance
+                      Id="0e1cbca1-5644-4619-a7ee-df3b9f7cb542"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="474363ac-edc9-4c5f-aff5-672cbeba1381"
+            name="Previous"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="d8049033-1577-4576-8960-25eafe5d4337"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FScenarioSim.Playback%2Fbin%2FDebug%2FScenarioSim.Playback.dll&quot; Namespace%3DScenarioSim.Playback Type%3DScenarioPlayback Member%3DPrevious"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="74501d1a-4d32-44c8-bed6-e6812dc11ce6"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fbfb6ad5-f286-48a4-b348-91e2913e6617">
+                    <propertyInstance
+                      Id="bdc41a47-0235-400e-b1e9-f43fc7bb0b2b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5e0003b7-31e4-4cae-a674-a4c592f7aeb2">
+                    <propertyInstance
+                      Id="5f637720-4f7f-4d13-8d85-0d4019eb02a5"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4c572db3-657c-465b-94d1-17aa2d7ed7b5">
+                    <propertyInstance
+                      Id="bd4d9531-1772-4fd9-add7-88c9620f9fb5"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6edca6a2-7ad8-4673-9542-4a325eeb267b">
+                    <propertyInstance
+                      Id="2a230bce-d6ba-4efc-85b8-bbc55f77a847"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="672f3418-3df0-4517-90b3-df9be785a0d1">
+                    <propertyInstance
+                      Id="c4c95718-ab45-4624-99cc-95f25f7f7b97"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="14cefffd-4181-4109-b36a-b57328ecda19">
+                    <propertyInstance
+                      Id="c7591655-1025-4601-821c-6dd402eb7cc3"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

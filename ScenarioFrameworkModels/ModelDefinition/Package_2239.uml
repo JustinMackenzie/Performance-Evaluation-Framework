@@ -23,5 +23,23 @@
         LastKnownName="Core"
         LastKnownLocation="Package1_0832.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="573b1936-7730-4309-b706-cccb2b1329ef"
+        LastKnownName="Playback"
+        LastKnownLocation="Package_1106.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="1290f966-c98d-402c-abc4-d32d8022bd16"
+        LastKnownName="Simulator"
+        LastKnownLocation="Package_1113.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="56216704-439f-435a-80a6-c846d95ddfcf"
+        LastKnownName="Services"
+        LastKnownLocation="Package_2236.uml" />
+    </packageHasNamedElement>
   </packagedElements>
 </package>

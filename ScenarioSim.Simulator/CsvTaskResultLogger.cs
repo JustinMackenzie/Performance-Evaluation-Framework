@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Text;
 using ScenarioSim.Core;
-using System.IO;
 
 namespace ScenarioSim.Simulator
 {

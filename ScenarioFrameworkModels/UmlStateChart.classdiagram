@@ -1,25 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="4ae27a10-eb32-494f-b0ae-dec291a42242" name="UmlStateChart" linkedPackageId="2f4384c1-62c5-4745-be88-8d3bbfacfd0d" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="dd02dd31-2ef3-494b-ba87-ad9e913f76ac">
-      <profileInstance Id="cc8e7244-101d-4243-bf87-8a5a0fb93d3f" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="237d8241-f577-4e75-a76a-0201568935f0">
-      <profileInstance Id="362d3713-e6ad-4fc9-af5a-563c104f6ff9" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="4bfbba16-2c8f-431b-b343-00fe01486f07">
-      <profileInstance Id="202d2143-aa4e-4df6-a064-8dc67f324f73" name="CSharpProfile">
-        <elementDefinition Id="d8e878fb-9083-4c12-bc3d-52f7f1649b48" />
-      </profileInstance>
-      <elementDefinition Id="6389af42-4532-4a7a-b887-826a8139eabd" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="982a77d1-3c8b-4851-8214-40797b4c7c29" name="FinalState" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -772,7 +752,7 @@
     <logicalClassDesignerModelHasTypes>
       <Interface Id="194d7087-ec74-4c6f-9933-58d642bc2fb5" name="IAction" isAbstract="false" isLeaf="false">
         <referencesInternal>
-          <reference Id="fa6c3a01-8bb3-4db2-a321-c522ac8730c2" handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2Fdocuments%2Fvisual studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DIAction" tag="ViewCode">
+          <reference Id="fa6c3a01-8bb3-4db2-a321-c522ac8730c2" handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FUmlStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DIAction" tag="ViewCode">
             <elementDefinition Id="6832c658-7df8-4f55-9817-9ebac55fda8b" />
           </reference>
         </referencesInternal>
@@ -809,9 +789,9 @@
         </appliedStereotypesInternal>
         <elementDefinition Id="2451e0c2-7497-430c-974a-435176b3852a" />
         <ownedOperations>
-          <operation Id="b78b8dbe-a5df-452e-8f20-36bb6fa26e89" name="Execute" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+          <operation Id="b78b8dbe-a5df-452e-8f20-36bb6fa26e89" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <referencesInternal>
-              <reference Id="34a23159-aa7f-4829-900f-b9813eb6e28a" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2Fdocuments%2Fvisual studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DIAction Member%3D(Name%3DExecute OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2Fdocuments%2Fvisual studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DStateDataContainer)])" tag="ViewCode">
+              <reference Id="34a23159-aa7f-4829-900f-b9813eb6e28a" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FUmlStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DIAction Member%3D(Name%3DExecute OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FUmlStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DStateDataContainer)])" tag="ViewCode">
                 <elementDefinition Id="65631a5c-fe11-49aa-92ec-97660c6ab155" />
               </reference>
             </referencesInternal>
@@ -863,7 +843,7 @@
               <operationHasOwnedParameters>
                 <parameter Id="10fdf101-2fa0-4d5e-b5ea-fbe34837fc37" name="container" direction="In">
                   <referencesInternal>
-                    <reference Id="59c93e2c-510b-4ff2-b2a8-368efe5ab0c2" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2Fdocuments%2Fvisual studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DIAction Member%3D(Name%3DExecute OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2Fdocuments%2Fvisual studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DStateDataContainer)]) ParameterIdentifier%3Dcontainer" tag="ViewCode">
+                    <reference Id="59c93e2c-510b-4ff2-b2a8-368efe5ab0c2" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FUmlStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DIAction Member%3D(Name%3DExecute OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FUmlStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DStateDataContainer)]) ParameterIdentifier%3Dcontainer" tag="ViewCode">
                       <elementDefinition Id="1c44d981-937b-4f22-b9f9-d8d2743a11ad" />
                     </reference>
                   </referencesInternal>
@@ -2711,7 +2691,7 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="49d2e3c6-c934-49bd-bcc3-9b2cfb66b882" name="StateChart" isAbstract="false" isLeaf="false" isActiveClass="false">
         <referencesInternal>
-          <reference Id="8e7df3e5-cb3e-4e7f-8b1f-dc56d38d996c" handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2Fdocuments%2Fvisual studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DStateChart" tag="ViewCode">
+          <reference Id="8e7df3e5-cb3e-4e7f-8b1f-dc56d38d996c" handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FUmlStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DStateChart" tag="ViewCode">
             <elementDefinition Id="653bce53-148f-4376-bb66-a91dcdb15146" />
           </reference>
         </referencesInternal>
@@ -3269,7 +3249,7 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="e8a9ad8c-f9b0-4d1c-8859-ccd5e9faebc0" name="StateChartEvent" isAbstract="false" isLeaf="false" isActiveClass="false">
         <referencesInternal>
-          <reference Id="eb13c805-98f1-4557-b8ca-2ca3ea50b8a1" handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2Fdocuments%2Fvisual studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DStateChartEvent" tag="ViewCode">
+          <reference Id="eb13c805-98f1-4557-b8ca-2ca3ea50b8a1" handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FUmlStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DStateChartEvent" tag="ViewCode">
             <elementDefinition Id="dcdf05f3-6a3c-4352-905d-381ba3cb3833" />
           </reference>
         </referencesInternal>
@@ -4037,7 +4017,7 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="c799b090-36f7-40dd-b465-fa537ce924f7" name="StateDataContainer" isAbstract="false" isLeaf="false" isActiveClass="false">
         <referencesInternal>
-          <reference Id="69f787df-b89a-47c3-911f-fc8b5d40e7f6" handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2Fdocuments%2Fvisual studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DStateDataContainer" tag="ViewCode">
+          <reference Id="69f787df-b89a-47c3-911f-fc8b5d40e7f6" handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FStateChart%2Fbin%2FDebug%2FUmlStateChart.dll&quot; Namespace%3DUmlStateChart Type%3DStateDataContainer" tag="ViewCode">
             <elementDefinition Id="f2c1991b-9044-48fe-bb09-4987a1fe0fc8" />
           </reference>
         </referencesInternal>
@@ -7489,5 +7469,25 @@
   </packagedElements>
   <package Id="2f4384c1-62c5-4745-be88-8d3bbfacfd0d" name="ScenarioFrameworkModels">
     <elementDefinition Id="60829b75-5a98-4137-8708-f9978d696180" />
+    <profileInstances>
+      <packageHasProfileInstances Id="dd02dd31-2ef3-494b-ba87-ad9e913f76ac">
+        <profileInstance Id="cc8e7244-101d-4243-bf87-8a5a0fb93d3f" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="237d8241-f577-4e75-a76a-0201568935f0">
+        <profileInstance Id="362d3713-e6ad-4fc9-af5a-563c104f6ff9" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="4bfbba16-2c8f-431b-b343-00fe01486f07">
+        <profileInstance Id="202d2143-aa4e-4df6-a064-8dc67f324f73" name="CSharpProfile">
+          <elementDefinition Id="d8e878fb-9083-4c12-bc3d-52f7f1649b48" />
+        </profileInstance>
+        <elementDefinition Id="6389af42-4532-4a7a-b887-826a8139eabd" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

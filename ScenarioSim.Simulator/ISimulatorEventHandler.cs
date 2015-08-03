@@ -1,5 +1,4 @@
-﻿using System;
-namespace ScenarioSim.Core
+﻿namespace ScenarioSim.Core
 {
     interface ISimulatorEventHandler
     {

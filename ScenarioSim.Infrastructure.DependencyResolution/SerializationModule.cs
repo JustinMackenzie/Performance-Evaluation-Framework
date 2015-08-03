@@ -1,6 +1,6 @@
 ﻿using Ninject.Modules;
 using ScenarioSim.Core.Interfaces;
-using ScenarioSim.Infrastructure.Serialization;
+using ScenarioSim.Infrastructure.XmlSerialization;
 
 namespace ScenarioSim.Infrastructure.DependencyResolution
 {

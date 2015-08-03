@@ -42,6 +42,68 @@
         LastKnownName="UmlStateChart"
         LastKnownLocation="Package_0830.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="aa692a7e-0f3e-4cbc-8fa5-6aa8c4de2714"
+        LastKnownName="EnactorDemo"
+        LastKnownLocation="Package_2334.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="c88dc3ef-3e91-413d-a421-11d33b3236d7"
+        name="Client"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="b3a3f3d4-28f3-45eb-89e2-c640ba81a4b0"
+            isDerived="false"
+            sourceEndRoleName="Client"
+            targetEndRoleName="SubmitScenarioEvent"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="62c16647-c8da-467f-8dbd-95876fa1c358"
+              LastKnownName="SubmitScenarioEvent"
+              LastKnownLocation="ScenarioFrameworkModels.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b401320c-9d3a-4f9b-9250-b39449603be4"
+                  name="Client"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c0bc0ef8-73f2-4e53-b8e5-3c2542d22fa7"
+                  name="SubmitScenarioEvent"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="62c16647-c8da-467f-8dbd-95876fa1c358"
+        name="SubmitScenarioEvent"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

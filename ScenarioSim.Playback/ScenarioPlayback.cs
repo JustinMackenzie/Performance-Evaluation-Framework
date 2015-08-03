@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using ScenarioSim.Core;
 using System.Timers;
+using ScenarioSim.Core;
 using ScenarioSim.Simulator;
-using ScenarioSim.UmlStateChart;
 
 namespace ScenarioSim.Playback
 {

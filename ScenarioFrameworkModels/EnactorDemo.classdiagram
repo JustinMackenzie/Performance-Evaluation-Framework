@@ -1,0 +1,1324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="1a115421-b616-4bb7-a050-e8ff25e31518" name="EnactorDemo" linkedPackageId="aa0c04ab-7a60-4889-b3a7-bfad36ec4292" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="ad1de655-e4d5-4fc7-a593-6e0e3357a950">
+      <profileInstance Id="8732e10e-1cf1-4ae0-b8fb-69b3fad76c7a" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="75fd61ac-574c-4f62-8d7e-d129fa7ecc16">
+      <profileInstance Id="60f3005b-c8d7-4836-98a5-d655abef8a23" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="885b5a77-fd36-470e-bf24-8920e77c089f">
+      <profileInstance Id="3c304253-38d5-4820-a57c-c11b124dfdcd" name="CSharpProfile">
+        <elementDefinition Id="d8e878fb-9083-4c12-bc3d-52f7f1649b48" />
+      </profileInstance>
+      <elementDefinition Id="6389af42-4532-4a7a-b887-826a8139eabd" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="024c0181-e7d3-4e29-a750-79a6d98196ce" name="NewDayEvent" visibility="Package" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <referencesInternal>
+          <reference Id="284e09d3-cd7a-4b0d-a1e2-71067e8863fe" handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent" tag="ViewCode">
+            <elementDefinition Id="dbe06dd8-b14b-42ed-9759-21983f35de9b" />
+          </reference>
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance Id="453cbdc3-3780-4133-882c-2528c001cf53" name="class" profile="CSharpProfile">
+            <elementDefinition Id="dc039b4e-66ff-465a-b4c8-11733f66ad56" />
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="3dc1508a-c3c7-43e7-ab98-f0919b14746e">
+                <propertyInstance Id="f8ff827d-774e-4336-8398-e05966f3cb2d" name="ClrAttributes">
+                  <elementDefinition Id="c47222d7-2215-447f-9807-9f3986f0ab0a" />
+                </propertyInstance>
+                <elementDefinition Id="7085ac22-811d-4f3f-8e23-6997e14ae3fc" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="32bea820-542b-4e9a-b5d9-1694c5f12b00">
+                <propertyInstance Id="38ab1e81-d30d-44cd-985e-33010d41408b" name="IsPartial" value="false">
+                  <elementDefinition Id="b53102fc-8599-4a6f-86aa-28808d79c271" />
+                </propertyInstance>
+                <elementDefinition Id="c7999fc2-a530-426c-8ec9-b31974419b06" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="5d036770-3d8c-495e-a259-effcea6301db">
+                <propertyInstance Id="1761835d-1350-4341-8917-0ac69311dc77" name="IsStatic" value="False">
+                  <elementDefinition Id="514c3fc6-ee04-4bf0-b829-9aa6a75d8337" />
+                </propertyInstance>
+                <elementDefinition Id="9cd7e938-db5d-49bf-a905-69a074e2c758" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="8bee3e55-b926-4d4a-9928-653242df0e83">
+                <propertyInstance Id="459daa60-7a18-4ff5-ad88-8cf4ba8f7c25" name="IsUnsafe" value="false">
+                  <elementDefinition Id="f032c91b-503d-4395-8a64-8c3143d1700c" />
+                </propertyInstance>
+                <elementDefinition Id="2e862444-2267-4370-9b57-a09933090072" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="17037615-0443-40e3-a939-836df704d676">
+                <propertyInstance Id="e02a97ec-2d5e-4eba-928f-1bf09b01efee" name="PackageVisibility" value="internal">
+                  <elementDefinition Id="7e3e6803-d85a-414d-b843-f0a2b299336e" />
+                </propertyInstance>
+                <elementDefinition Id="22f95c27-e14f-40f1-9f52-b09a932998b0" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <elementDefinition Id="d058e89f-8cae-43d8-b8c2-d9057eb290ed" />
+        <ownedAttributesInternal>
+          <property Id="241ca971-8212-4120-b0fa-a92e8aa3b609" name="Day" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="b2633313-8fad-4f63-9803-5997be04d8ed" handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent Member%3DDay" tag="ViewCode">
+                <elementDefinition Id="3af6f2fd-f90e-4053-b83b-50a97da3d660" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="9d8259cf-aeb2-4c06-bdb5-63db7a548def" name="property" profile="CSharpProfile">
+                <elementDefinition Id="b305a5e3-26e9-44ce-a956-850d73bfd7bc" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="9eb0f91c-d6f9-4e43-8f0c-4844d00e8cc1">
+                    <propertyInstance Id="68516df8-d9c7-4a9a-b234-c3d010993fa1" name="ClrAttributes">
+                      <elementDefinition Id="bb417427-987c-4eda-8135-032682254cdd" />
+                    </propertyInstance>
+                    <elementDefinition Id="91d29499-abc9-46fb-8cf1-2137128f5475" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="1bd84d1d-35ef-4367-85e3-5cec67a07f5e">
+                    <propertyInstance Id="24a0f2f9-272e-4549-97b7-6bf3c346e54c" name="Get" value="public">
+                      <elementDefinition Id="e8ccfef7-3255-4521-b71b-5f2dde4d8e76" />
+                    </propertyInstance>
+                    <elementDefinition Id="18f7addc-2a98-40ad-856a-2ebb33a8dd81" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="070ca740-3246-469e-b15e-4856b320b437">
+                    <propertyInstance Id="f7008f5c-f5dc-4b35-9d0f-9e6e7222d0a8" name="HasBody" value="false">
+                      <elementDefinition Id="9df221b6-9a0e-4f68-aba9-3c3b758496fe" />
+                    </propertyInstance>
+                    <elementDefinition Id="6fe6da93-381e-431f-9e02-8a3b72e7b216" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b08ed6fc-d52e-4bd7-9526-37ea9912c966">
+                    <propertyInstance Id="0d15d63c-f708-4151-bbbc-dfbd159f03d6" name="IsUnsafe" value="false">
+                      <elementDefinition Id="094c1f2b-9eb5-4b6a-a01a-a10e2dbe4eb3" />
+                    </propertyInstance>
+                    <elementDefinition Id="8b76bfc4-9048-4212-8117-708efb8cdae8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="0230c961-3a56-4a8d-ab25-6ae5e9b75cdb">
+                    <propertyInstance Id="e3d9dc4c-3230-454d-9874-4224e03de2e3" name="Inheritance" value="none">
+                      <elementDefinition Id="e1557efa-6759-4c1d-8ab1-a0cb439581e6" />
+                    </propertyInstance>
+                    <elementDefinition Id="9648df6d-25a2-4bd1-89cf-6b54282795a3" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="41cd39ae-83a0-429c-b58e-1ec31319e81f">
+                    <propertyInstance Id="178133d7-81d8-46b4-81bf-e7dca9d82e48" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="7b488f49-6ff4-4c0b-88f1-d3e77e0812c8" />
+                    </propertyInstance>
+                    <elementDefinition Id="c9cd5583-8f70-41f3-85d9-7b29c120c400" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="c11bbc45-c7d3-4699-ba8d-5bd572713044">
+                    <propertyInstance Id="f5b9b63b-f430-4fc4-a1b3-7f3b756548f7" name="Set" value="public">
+                      <elementDefinition Id="8d80c112-729f-4f4b-80d5-c8dfe1df16ce" />
+                    </propertyInstance>
+                    <elementDefinition Id="fc01c2bd-9175-4dde-b5e1-84409774d1aa" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="dcbf0ed4-f66f-4d5b-a35f-484b29c7d8c1" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f47054f5-9c04-4fcf-bb2e-a939c5ab5cb2" LastKnownName="DayOfWeek" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="c3b18eff-d488-4d8b-941c-30301dcb541e" name="NewDayEvent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="d9a1ce62-e2c8-43a2-a08e-5fbfdb9b9c9b" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent Member%3D.ctor" tag="ViewCode">
+                <elementDefinition Id="798c1f14-7e03-468c-a83d-f3bb8db6a1a4" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="c5afdc51-3733-44c9-b11e-903a19cadf9c" name="method" profile="CSharpProfile">
+                <elementDefinition Id="44314583-5c67-4195-a736-57537c2ee082" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="55c571ec-8ee4-4c5d-8926-6ba3e431c542">
+                    <propertyInstance Id="68f342ba-f0c0-4f62-8cc8-c41c43442200" name="ClrAttributes">
+                      <elementDefinition Id="8cf36c72-5a6d-4ebb-bf0f-1cd5bb6b40ba" />
+                    </propertyInstance>
+                    <elementDefinition Id="22b76341-c5ca-4d71-bd14-cbb0ec91b82b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="4fff0d31-750b-4226-ad55-ea554d696c65">
+                    <propertyInstance Id="55cb71ed-b94e-44a1-be00-e40f99624c27" name="IsPartial" value="false">
+                      <elementDefinition Id="46ce99af-cdf7-4198-9725-298c9370b896" />
+                    </propertyInstance>
+                    <elementDefinition Id="495d0157-c944-45d1-bf94-9b0ecf9a1ac4" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="4d71fb93-7a64-415a-b0d9-37210d836d93">
+                    <propertyInstance Id="ed347cdd-347d-4d42-a6e8-0851ea0ea4fc" name="IsUnsafe" value="false">
+                      <elementDefinition Id="82703c08-8f92-4794-b722-0aa9f548c9e2" />
+                    </propertyInstance>
+                    <elementDefinition Id="823a3e5f-f24b-4379-afd8-8d8a54c5af81" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="53ba7621-65ba-4626-8544-81f98765e222">
+                    <propertyInstance Id="25c16557-afee-4cf5-9ea2-7848bd98fb43" name="Inheritance" value="none">
+                      <elementDefinition Id="7d57a1cb-f3c3-412e-9e63-676c6ffed4b5" />
+                    </propertyInstance>
+                    <elementDefinition Id="a4fd6f5a-718b-4658-b394-486ab4fdddab" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="73249044-e0a4-4837-a176-c50c90b5388a">
+                    <propertyInstance Id="e77f94aa-0278-452c-806f-e958a8f63ec3" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="1631f9aa-e279-4858-99d2-2ca72d4d5b3c" />
+                    </propertyInstance>
+                    <elementDefinition Id="1f0281ae-ec0d-4365-94b8-ea0ae0c1f78b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="4c91a1c2-f1c5-4936-b0b0-59bdab2de40d">
+                    <propertyInstance Id="1fb5e5ce-f803-4b75-a02c-fcf5602f8e54" name="params" value="false">
+                      <elementDefinition Id="c8fbc46e-699f-4a2f-9818-4aa83369e171" />
+                    </propertyInstance>
+                    <elementDefinition Id="b464589f-b939-4acb-853e-dacb0f59a90f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="4fa3ae6c-5d76-4970-8e4d-307177647cf2" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="f47054f5-9c04-4fcf-bb2e-a939c5ab5cb2" name="DayOfWeek" isAbstract="false" isLeaf="false" cachedFullName="ScenarioFrameworkModels::System::DayOfWeek">
+        <elementDefinition Id="a6de94d9-310f-49c9-9314-2644ad2daf85" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6ad9f5d4-1ce0-4a8b-8607-5832a2dae403" name="NewDayInvoker" visibility="Package" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <referencesInternal>
+          <reference Id="82d225a6-6239-4204-9fa2-4b14e476cc3e" handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayInvoker" tag="ViewCode">
+            <elementDefinition Id="0cc3cd26-e41c-4cb6-97ec-35e5e064eb40" />
+          </reference>
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance Id="eb489378-9589-46e0-926b-f9c17ed12785" name="class" profile="CSharpProfile">
+            <elementDefinition Id="1da2afa0-8e5c-4af1-ade2-3b6f25e23b18" />
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="51da5e49-c181-482b-9f2f-d37d9f0efab1">
+                <propertyInstance Id="59c04cb9-c36c-4d56-87af-5d9e4d5878e3" name="ClrAttributes">
+                  <elementDefinition Id="dc54d4a3-ea18-4f41-a46a-f8d4ee6f0922" />
+                </propertyInstance>
+                <elementDefinition Id="ea16eccd-5b46-486a-9a56-f4b2a2419524" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="f5dcf10c-3f2d-45dd-a17c-b6d4ba6bd0d1">
+                <propertyInstance Id="2c093d70-f990-4352-9b3a-4acfc9b979f6" name="IsPartial" value="false">
+                  <elementDefinition Id="49bf316f-705b-4c28-935d-34154f86d8ec" />
+                </propertyInstance>
+                <elementDefinition Id="5247bd7b-0df6-4fc1-9a4a-3d29d4bae046" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="ccfacda6-ac77-48ad-84ed-7afdddd0fc09">
+                <propertyInstance Id="c891770d-7882-4b32-a2eb-a9fbec3b9587" name="IsStatic" value="False">
+                  <elementDefinition Id="7e3a3ef6-938f-4a1f-b535-08b02ae126bd" />
+                </propertyInstance>
+                <elementDefinition Id="b2c1ca5e-0c5e-4af5-803f-da33c10322ce" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="c682f176-9b6d-423d-a0f7-0b4599464c3e">
+                <propertyInstance Id="4bb4545d-34a3-46c6-85c2-e6cf6f027f9e" name="IsUnsafe" value="false">
+                  <elementDefinition Id="b68367aa-8132-4572-bea4-d8309593b8a4" />
+                </propertyInstance>
+                <elementDefinition Id="47fd949f-93af-4069-8173-65edd9597c61" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="dd62aa4c-6940-4936-bb20-dc30eb0dee00">
+                <propertyInstance Id="87e13490-6497-4973-b980-f6645b9d8d66" name="PackageVisibility" value="internal">
+                  <elementDefinition Id="bf476c19-0038-46aa-a55c-10b483f5a15c" />
+                </propertyInstance>
+                <elementDefinition Id="0ef15580-1d22-410b-b979-72298132933d" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <elementDefinition Id="4ee7de66-e9c7-4c1e-b177-c7299ef04f71" />
+        <suppliersInternal>
+          <dependency Id="06436353-ecd2-4598-8582-2222f814a000">
+            <classMoniker Id="024c0181-e7d3-4e29-a750-79a6d98196ce" LastKnownName="NewDayEvent" />
+            <elementDefinition Id="a02fa98f-46b1-4216-9b96-e17800a3706c" />
+          </dependency>
+          <dependency Id="239ae7fa-7c22-4270-881c-f3087aad403b">
+            <interfaceMoniker Id="e2b7cf09-81ec-4a5f-8842-87c02c5ebbbd" LastKnownName="INewDayEnactor" />
+            <elementDefinition Id="011c206e-dce6-4206-b67e-52f2fc3b6006" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="93791721-75ed-45e4-96fe-7e69f3a5f910" name="enactors" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="e0a8ef50-8bb1-460f-8246-8d2e78bf3abd" handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayInvoker Member%3Denactors" tag="ViewCode">
+                <elementDefinition Id="c9f19729-1f50-4ca9-82e4-5c4e5e7ceed3" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="897ac5e1-aa1e-4989-a816-1d485eca5645" name="field" profile="CSharpProfile">
+                <elementDefinition Id="4b13306d-a4e3-49e7-b48c-dd69d1b38ea9" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a97833b8-d21a-4db0-9437-92cae4195fa4">
+                    <propertyInstance Id="5171a442-42b4-4655-aa1d-92d55aa3ffd6" name="ClrAttributes">
+                      <elementDefinition Id="01894494-fdc8-40f2-b36f-9039cec76068" />
+                    </propertyInstance>
+                    <elementDefinition Id="f19e42ce-1591-4094-8d23-2c36287dd1d5" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6f8f299e-6064-4feb-8c7c-5b90b7bde670">
+                    <propertyInstance Id="589f393d-20e9-4c00-8dc6-efc47e3b089e" name="IsConst" value="false">
+                      <elementDefinition Id="be26e6cd-7868-4288-9db7-96f2e2cef9c7" />
+                    </propertyInstance>
+                    <elementDefinition Id="ed2ec280-0a8f-4914-8409-a387cc072083" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="437e0731-4efc-4498-b484-bb6140182533">
+                    <propertyInstance Id="ce92ea33-e168-4f2b-9daa-22529ae2d0f7" name="IsNullable" value="false">
+                      <elementDefinition Id="05f363ea-0274-42d7-8538-af1011b8c6a9" />
+                    </propertyInstance>
+                    <elementDefinition Id="ccd395dd-03fb-40fc-b05e-6e03234d95a2" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="18837ad5-0675-4d8e-9a88-6e9ef6e296e0">
+                    <propertyInstance Id="6b966db7-66a3-451f-873e-08c58e2d69dd" name="IsVolatile" value="false">
+                      <elementDefinition Id="e8f19fef-028c-454a-a95d-da07ff7d28ad" />
+                    </propertyInstance>
+                    <elementDefinition Id="0683652c-2585-4aba-93f9-ace967e5c03e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="4e72f6c3-fb85-41c4-bd3c-a8b7fa54fd17">
+                    <propertyInstance Id="a8de5dfe-7f88-451c-92d4-9263f4058ab5" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="3474bdfe-60d0-43e0-b2e5-acf6b30459e6" />
+                    </propertyInstance>
+                    <elementDefinition Id="2eb01cf6-54db-404f-bd9b-4b1f649a9aab" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="a7e678a2-3974-4394-876e-48b95c8b80b9" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="cd9c3dd8-da2a-4a4a-aa10-b38955334e46" LastKnownName="Dictionary&lt;DayOfWeek‎, INewDayEnactor‎&gt;" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="18a408f7-da38-4edb-9bd9-5f884ffc5dd8" name="NewDayInvoker" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="c48df955-5c42-4d47-bdf0-419c990592a7" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayInvoker Member%3D.ctor" tag="ViewCode">
+                <elementDefinition Id="6059cdbd-213c-4b9b-b2c0-4eea0e70cf50" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="db73a9b2-365d-4075-acc4-b3ec5d532350" name="method" profile="CSharpProfile">
+                <elementDefinition Id="f52b8afe-79ff-47d2-b994-93078c82a750" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="8e31f674-cfe8-4634-b1dd-feae24fbd6cb">
+                    <propertyInstance Id="300e5fce-5cf3-4860-a451-3ff944dc2f17" name="ClrAttributes">
+                      <elementDefinition Id="07e9738f-82f6-4950-a809-05f82c24cbe6" />
+                    </propertyInstance>
+                    <elementDefinition Id="f4fbc771-54f9-429f-96fd-c41b48cfefdf" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="1a197859-93e5-4525-af5f-880bf9c13f2a">
+                    <propertyInstance Id="3cb09345-f62f-41aa-a533-29ad4afbe4b9" name="IsPartial" value="false">
+                      <elementDefinition Id="5b679d12-56ff-483b-94cd-1a530e3ed4a9" />
+                    </propertyInstance>
+                    <elementDefinition Id="fec1d031-c573-4df9-bf2e-f7fad94769f5" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="812b1a69-d617-4076-a8be-c6f1d1583d92">
+                    <propertyInstance Id="f9dabc0c-1145-4809-86d6-73eb54035275" name="IsUnsafe" value="false">
+                      <elementDefinition Id="023c11b7-d10f-4caa-90b4-6dec84a9dfc8" />
+                    </propertyInstance>
+                    <elementDefinition Id="246a5f0c-1198-4b88-accd-22776430dfae" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="97e337e5-cc1d-4580-97aa-65b48563bae8">
+                    <propertyInstance Id="ee49db67-d557-46ff-8d7c-4fc6227f0858" name="Inheritance" value="none">
+                      <elementDefinition Id="28e1c517-8094-4081-a242-afd684119b15" />
+                    </propertyInstance>
+                    <elementDefinition Id="9c74ef55-f659-4a47-bfc7-c7cb8fd4d284" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="17a9b2c0-0be3-4d58-9bd6-5807610ab0d7">
+                    <propertyInstance Id="7dfce995-eb65-4bd2-a735-479a155cc653" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="e8cae73d-6892-4b43-a5ac-9bcacb36f1d2" />
+                    </propertyInstance>
+                    <elementDefinition Id="82540cab-3865-4243-ad1c-272b09418a99" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="affd4bfe-3b0c-448f-bef4-436317a8acbc">
+                    <propertyInstance Id="ffeade22-48a5-4c28-8d51-f5dcc4d0962a" name="params" value="false">
+                      <elementDefinition Id="3b358423-8638-49d1-a935-70219cef75aa" />
+                    </propertyInstance>
+                    <elementDefinition Id="ed51c8a8-be69-4a2c-80b1-3cab01e41e64" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="f363366e-2501-4b12-be5e-8996cc2cb76a" />
+          </operation>
+          <operation Id="e849bb61-08fb-4213-8fe5-f2ca78bf4092" name="NewDay" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="a780f644-fcdc-42e2-b2fc-b82823e88f32" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayInvoker Member%3D(Name%3DNewDay OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent)])" tag="ViewCode">
+                <elementDefinition Id="65000c72-f993-4e1b-8fbb-e8f4f5a20311" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="b6072597-87d1-4fa2-aa10-c08f367a5511" name="method" profile="CSharpProfile">
+                <elementDefinition Id="997ddd5a-7886-4426-a88b-dd4e61d04c68" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="ead9cbf1-8289-429d-899d-ea5e3e5dee5d">
+                    <propertyInstance Id="9570a115-50e4-4ddd-85a5-806358af620a" name="ClrAttributes">
+                      <elementDefinition Id="4386cec0-24c3-43f2-9c54-1a35fc95d41f" />
+                    </propertyInstance>
+                    <elementDefinition Id="c6732412-1473-47e1-b7df-670975377baa" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="13a2d33f-aef0-46a4-aabe-65105a12b506">
+                    <propertyInstance Id="d08d0440-4a60-46d7-b215-60130fc2d8f0" name="IsPartial" value="false">
+                      <elementDefinition Id="0e451095-a805-4593-af9c-1207724576dd" />
+                    </propertyInstance>
+                    <elementDefinition Id="74f5f9c4-0295-4357-b4d0-3479cfe45940" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="87fda2db-0dd2-402d-aadd-3c834f57b90d">
+                    <propertyInstance Id="4e9f420c-194c-477e-bf6d-6867aa468fa4" name="IsUnsafe" value="false">
+                      <elementDefinition Id="39aa1c4d-07ef-4f55-9989-7759741206d1" />
+                    </propertyInstance>
+                    <elementDefinition Id="c21cbb06-7da3-4ae1-8987-b8d15936d84a" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="965a214f-16af-42a9-bf00-9e22b74121c7">
+                    <propertyInstance Id="ece2159f-ab62-4529-8f20-31c19517bcd7" name="Inheritance" value="none">
+                      <elementDefinition Id="5c67dfa0-5b40-4f76-af26-21abee260949" />
+                    </propertyInstance>
+                    <elementDefinition Id="2719ed7f-7626-424c-ac1b-467876c8da25" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="495e01d7-645d-4cf9-a474-9a5c42fffac5">
+                    <propertyInstance Id="97bcb78c-ac6a-4ed6-a98a-4f3c3ddb0454" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="b368255c-b295-46d8-b1dc-16567a2b9ef7" />
+                    </propertyInstance>
+                    <elementDefinition Id="4f196c9f-3654-4a99-a195-ec26452ee9a0" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="563c6347-81f7-4e07-b96a-25c0da08689a">
+                    <propertyInstance Id="dd07529e-63cb-4e86-93c9-9aa07861203f" name="params" value="false">
+                      <elementDefinition Id="ba39994a-48b7-4de6-a3f8-16a21236eddc" />
+                    </propertyInstance>
+                    <elementDefinition Id="57ba7230-f369-415e-9504-2e79d458d015" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="d28c59a4-fd42-4fa0-92db-b8662e8c9a53" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f80a1241-162e-4e14-8914-af3a33f88b5a" name="e" direction="In">
+                  <referencesInternal>
+                    <reference Id="703067c5-6b02-42c4-938f-68fe3fef72bd" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayInvoker Member%3D(Name%3DNewDay OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent)]) ParameterIdentifier%3De" tag="ViewCode">
+                      <elementDefinition Id="7d2b9d32-b41b-434b-85e0-87c995e5e3d1" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="a9d86956-6424-40c9-a7b4-2fba973296fc" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0e344a0d-8ba2-4706-956e-298d1e79af0b" LastKnownName="NewDayEvent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="43765fa1-400a-4f8a-a60c-8146e753f402" name="RegisterEnactor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="18073e21-cec7-4d97-9e7a-c02fb21c0b6d" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayInvoker Member%3D(Name%3DRegisterEnactor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DINewDayEnactor)])" tag="ViewCode">
+                <elementDefinition Id="3f494715-21c0-4d4b-be6f-bb99c90e7d9e" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="5420d180-cc81-4845-bb1a-de6166b94404" name="method" profile="CSharpProfile">
+                <elementDefinition Id="a174a132-6014-42cc-81d9-e8a9815f652b" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="92016be2-583f-4810-b876-f43b9d4ff840">
+                    <propertyInstance Id="755da2cd-b228-48a6-b0a0-5ca27fc9b428" name="ClrAttributes">
+                      <elementDefinition Id="f172f556-4e88-4dd8-89b3-2a8fc4a3ecf7" />
+                    </propertyInstance>
+                    <elementDefinition Id="d500d8e7-99cd-436f-8a53-7178fedebb59" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e0e12b90-37d1-47fe-a9ae-bee36ff1df7b">
+                    <propertyInstance Id="b216a244-11b8-4a59-87c3-70d86207a0f3" name="IsPartial" value="false">
+                      <elementDefinition Id="e71443a8-3257-4bd2-b2f0-f9a00dfa8604" />
+                    </propertyInstance>
+                    <elementDefinition Id="ed92b9fa-0301-4d45-96a1-8329f8e92495" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="3cd3ef16-6bf7-4df7-bc93-b3c5a7b1a15f">
+                    <propertyInstance Id="be4349ef-4bf2-457d-8955-ed9e028a517f" name="IsUnsafe" value="false">
+                      <elementDefinition Id="e6ce75a1-904f-4015-b35f-12a884f17206" />
+                    </propertyInstance>
+                    <elementDefinition Id="070a5768-eac0-402e-aa67-45cf77b6d695" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e69038b4-fafa-404d-83dd-2708efd5bfc0">
+                    <propertyInstance Id="d175a24f-d3a1-425b-b47b-fb3ec64e661a" name="Inheritance" value="none">
+                      <elementDefinition Id="75fc1d5b-f001-4fc3-8b13-342cba8ccab7" />
+                    </propertyInstance>
+                    <elementDefinition Id="fdc97192-c439-4e21-95c4-6a3080bc53ac" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d80d29f0-1f03-4c4c-bc97-89e6dcd4b27e">
+                    <propertyInstance Id="15ada66e-2426-4197-9add-398b3ed6550c" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="8064fd32-5d6c-4639-9a3b-80b6c250ad34" />
+                    </propertyInstance>
+                    <elementDefinition Id="d6bdaf6b-5e3f-49cf-9545-ca103fb24b84" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b4728d29-7dc5-43e6-8e32-71166d98e6f4">
+                    <propertyInstance Id="1428df79-db5e-4605-847b-6bb46251f874" name="params" value="false">
+                      <elementDefinition Id="e56c3c05-7b91-4a8b-ac9f-5cf62cd5ef8f" />
+                    </propertyInstance>
+                    <elementDefinition Id="49938762-038b-4d0e-be2c-f78219f39292" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="a64d4767-5564-4cad-bb04-1ee7c56bbbeb" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3c24b2c9-6df5-42d3-864f-aaea462995e3" name="enactor" direction="In">
+                  <referencesInternal>
+                    <reference Id="1ed803d3-de69-4830-a17e-b2450b171fee" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayInvoker Member%3D(Name%3DRegisterEnactor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DINewDayEnactor)]) ParameterIdentifier%3Denactor" tag="ViewCode">
+                      <elementDefinition Id="4a6d01bd-b6b3-44b6-bcf4-1e520564fcbb" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="a25235b3-7923-4004-ab1d-793e8c7386cb" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ddaa93d0-4c2d-4f5f-86a4-452e0503eb21" LastKnownName="INewDayEnactor" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="cd9c3dd8-da2a-4a4a-aa10-b38955334e46" name="Dictionary&lt;DayOfWeek‎, INewDayEnactor‎&gt;" isAbstract="false" isLeaf="false" cachedFullName="ScenarioFrameworkModels::System::Collections::Generic::Dictionary&lt;DayOfWeek‎, INewDayEnactor‎&gt;">
+        <elementDefinition Id="ce51270d-694c-4005-8eae-0424d15134f4" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="0e344a0d-8ba2-4706-956e-298d1e79af0b" name="NewDayEvent" isAbstract="false" isLeaf="false" cachedFullName="ScenarioFrameworkModels::EnactorDemo::NewDayEvent">
+        <elementDefinition Id="d058e89f-8cae-43d8-b8c2-d9057eb290ed" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ddaa93d0-4c2d-4f5f-86a4-452e0503eb21" name="INewDayEnactor" isAbstract="false" isLeaf="false" cachedFullName="ScenarioFrameworkModels::EnactorDemo::INewDayEnactor">
+        <elementDefinition Id="f93834bc-2aea-4b33-b326-8a20d764c38c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="96a0981c-cae2-4ba0-94c2-5d665f561cea" name="CalendarClient" visibility="Package" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <referencesInternal>
+          <reference Id="f2cdbfb0-c88f-4dec-8848-4bb32d7b2bf9" handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DCalendarClient" tag="ViewCode">
+            <elementDefinition Id="187ae32a-5578-444c-a4d3-f2591d5506a3" />
+          </reference>
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance Id="2d29430b-8df5-4f63-8cc1-887e89970d25" name="class" profile="CSharpProfile">
+            <elementDefinition Id="c8fe334d-7309-4439-8503-85c65d814121" />
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="9cd55d36-f8de-4205-ae08-fc44ee7c7e20">
+                <propertyInstance Id="e13d63f9-905f-4f63-bef4-4049201ad395" name="ClrAttributes">
+                  <elementDefinition Id="0c7c7686-ba06-426f-842f-2b0a6be2b0bf" />
+                </propertyInstance>
+                <elementDefinition Id="d6fb6489-b347-45ea-8923-4ca03285bb60" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="0f745b29-6baf-440d-9b76-2df1bfc30cb6">
+                <propertyInstance Id="abd1a336-5367-4412-bd6e-6c5a71b5b193" name="IsPartial" value="false">
+                  <elementDefinition Id="5b592c59-9d82-431c-94a2-63a2ea9c43bd" />
+                </propertyInstance>
+                <elementDefinition Id="6cc4377b-f478-4e98-8410-b5a0fef11343" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="4d4514c8-688d-449d-9ac5-c454c4540339">
+                <propertyInstance Id="8b8b4fa2-7251-407e-86b4-26c41681a45f" name="IsStatic" value="False">
+                  <elementDefinition Id="88439b54-4786-4ac2-8323-5fa64f60d25c" />
+                </propertyInstance>
+                <elementDefinition Id="cfecf9fd-11a2-4190-b823-4a5035eb4f48" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="d66b1e07-d088-4442-b3b2-b27dfb860cc7">
+                <propertyInstance Id="f41c42af-f717-4f73-8663-6ef4835901d6" name="IsUnsafe" value="false">
+                  <elementDefinition Id="ea1ac875-0de1-49a5-94c5-7667d104c138" />
+                </propertyInstance>
+                <elementDefinition Id="bc8ac12f-9988-4305-8acb-d7501f87504b" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="95935531-b83e-4eeb-95d3-d1455987bd45">
+                <propertyInstance Id="00510b75-6668-424f-a8fd-f1c51bb8bb81" name="PackageVisibility" value="internal">
+                  <elementDefinition Id="51d0af13-f3c3-482b-9e9e-88706bd95f71" />
+                </propertyInstance>
+                <elementDefinition Id="66516405-8b22-4d28-857e-4eba2ed99405" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <elementDefinition Id="65950478-2d53-4dfa-834a-3d54d8b4a87e" />
+        <suppliersInternal>
+          <dependency Id="83e491a3-5abf-4d19-8a17-b9d8989615e4">
+            <classMoniker Id="6ad9f5d4-1ce0-4a8b-8607-5832a2dae403" LastKnownName="NewDayInvoker" />
+            <elementDefinition Id="979155f9-f53a-44dd-963c-9334eb6097e9" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="daa2c439-a4fb-4d4e-abde-6051b40d1b02" name="CalendarClient" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="ae7bea1d-3382-49c7-ac7b-009415e331a9" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DCalendarClient Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayInvoker)])" tag="ViewCode">
+                <elementDefinition Id="6c63b7d8-6bea-4b98-9d35-71f783b63d75" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="51636c65-50f8-4180-8df2-fa0752aaf18a" name="method" profile="CSharpProfile">
+                <elementDefinition Id="d72332a0-e72d-428a-96d4-625883e11739" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="877cff5a-ee86-439b-976d-1933ca8703a7">
+                    <propertyInstance Id="a21dcae5-7449-4e38-8765-e2b4fda2b5e3" name="ClrAttributes">
+                      <elementDefinition Id="25fe66e9-fffe-4051-a6a8-177c41fe7457" />
+                    </propertyInstance>
+                    <elementDefinition Id="66a472e4-717d-4721-aadd-8b3ff72338b1" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="264ac625-d62b-4fda-ac4f-3707868b3c4e">
+                    <propertyInstance Id="8f87f06c-c352-4fec-8a1b-85e5ff0979e1" name="IsPartial" value="false">
+                      <elementDefinition Id="2b22abb2-9e69-407a-975b-44793615c75c" />
+                    </propertyInstance>
+                    <elementDefinition Id="f9cd0a46-2117-4e90-a84c-3837187099e5" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="0a1b97b3-f08a-4648-8ee3-7b6491f344c8">
+                    <propertyInstance Id="b494bc31-025c-4ffc-9b17-6712c962a602" name="IsUnsafe" value="false">
+                      <elementDefinition Id="2372a94e-7375-485f-8d22-ec21f7e5cd99" />
+                    </propertyInstance>
+                    <elementDefinition Id="1c50f938-6d21-44aa-80c3-6d11f4cf8443" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="fe89a716-3b73-47ea-af7c-310197407e01">
+                    <propertyInstance Id="964ffe03-51ed-4304-ad1c-c437b835c01f" name="Inheritance" value="none">
+                      <elementDefinition Id="e53f0947-fa2a-47be-acd0-2bc37d7c1d5b" />
+                    </propertyInstance>
+                    <elementDefinition Id="b5bd1e41-3763-4d69-8916-160d731ba2d2" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e855212b-6992-466b-b513-bd9206ac8865">
+                    <propertyInstance Id="0e983fa2-dcff-46a0-b5d8-5f7902ad49b0" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="80186a7b-f007-4193-841b-3afcc47dbb0c" />
+                    </propertyInstance>
+                    <elementDefinition Id="9681b829-8444-4a4f-8239-85a130d2b0e6" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="3dbb5e2f-f9a9-4d7d-9a2d-488c027402e2">
+                    <propertyInstance Id="d7516bc8-8674-4046-8504-5cce9f805ac8" name="params" value="false">
+                      <elementDefinition Id="2675128f-a063-4368-a7f1-aac6d8f8ec97" />
+                    </propertyInstance>
+                    <elementDefinition Id="f732e02f-3047-4d87-9edc-5fac37fc8626" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="ec4fe391-4de8-406e-b771-742c74abf415" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9d7a42dc-39cc-44f4-952d-23414cb63848" name="invoker" direction="In">
+                  <referencesInternal>
+                    <reference Id="fae24498-056f-4f70-b599-64f86881be06" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DCalendarClient Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayInvoker)]) ParameterIdentifier%3Dinvoker" tag="ViewCode">
+                      <elementDefinition Id="80bdb9ae-57d9-42af-95aa-8d8f9f03916e" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="5fffc970-5432-45e0-9c52-533e8169925b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="232f92e0-dbf7-4ef8-8532-c08b9cf3a9cb" LastKnownName="NewDayInvoker" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="4856f2f1-659e-4ddc-b63d-96fa8f0d6a64" name="Main" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="62aa2a68-1c5e-4ade-952a-52001d979a01" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DCalendarClient Member%3DMain" tag="ViewCode">
+                <elementDefinition Id="a30b7497-1729-4e84-9376-77c45f0eeb62" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="cf60855d-80d0-4a84-859e-e722d4994899" name="method" profile="CSharpProfile">
+                <elementDefinition Id="4eeb3b46-129d-46e7-b3cc-ad62296fb71f" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="cfeeccfd-edd5-4d16-99ad-39036a863135">
+                    <propertyInstance Id="63ae749d-9a26-47b4-954f-199bf95f392e" name="ClrAttributes">
+                      <elementDefinition Id="ce058fc2-3c79-407b-b4c0-34fe0c3d49bb" />
+                    </propertyInstance>
+                    <elementDefinition Id="c589fc71-fa81-484b-973c-88ac0b5559bf" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="fe30f828-6362-4922-b8bc-d02474c39ce7">
+                    <propertyInstance Id="f5454d08-5267-49f1-893c-1628d87d7dd3" name="IsPartial" value="false">
+                      <elementDefinition Id="33fdd819-582d-4146-89cc-0fea5323f997" />
+                    </propertyInstance>
+                    <elementDefinition Id="8d3ac32d-480a-4935-bb5d-dd60b33eacb7" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f338935b-34bd-4f78-8294-057e44017b27">
+                    <propertyInstance Id="8085b677-23e7-45a4-ae04-64dd219402a4" name="IsUnsafe" value="false">
+                      <elementDefinition Id="592e7eb7-d6b4-4eed-9fdd-d81069fe72e5" />
+                    </propertyInstance>
+                    <elementDefinition Id="6cfbbd63-a933-447c-84e1-5066452c8301" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="66656fb8-0075-4d51-b4e0-ae9ff05ed51a">
+                    <propertyInstance Id="1c9608bd-ca41-42b0-99dd-e870d1f394b4" name="Inheritance" value="none">
+                      <elementDefinition Id="a21e411b-63cd-4f7e-b21d-efb4979d895d" />
+                    </propertyInstance>
+                    <elementDefinition Id="a8f4405f-a76d-4b83-b414-6d117c33071c" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b8334197-ef93-4e0f-997b-713c18af1d93">
+                    <propertyInstance Id="61a79c30-e69d-490f-86bd-4d0f4e06659f" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="26a98c23-d864-4573-9552-b51067b1d0a1" />
+                    </propertyInstance>
+                    <elementDefinition Id="2ed8a34f-a3e5-4939-a14d-37008574a47d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="0abb7a88-10d6-4636-923d-88be416b73f0">
+                    <propertyInstance Id="36efecdd-7560-4f1d-bde8-f963cfdfb9a1" name="params" value="false">
+                      <elementDefinition Id="795dd8a4-7676-4221-92e9-838853113a31" />
+                    </propertyInstance>
+                    <elementDefinition Id="effb0600-02d4-4fa8-9cf0-bf283366af75" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="1b05477f-d9e8-4c4f-8734-d02eac4b0950" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="232f92e0-dbf7-4ef8-8532-c08b9cf3a9cb" name="NewDayInvoker" isAbstract="false" isLeaf="false" cachedFullName="ScenarioFrameworkModels::EnactorDemo::NewDayInvoker">
+        <elementDefinition Id="4ee7de66-e9c7-4c1e-b177-c7299ef04f71" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3a7dc625-b6ba-4ceb-bea0-b9ea3ee00cec" name="FridayEnactor" visibility="Package" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <referencesInternal>
+          <reference Id="8841bf97-dd3a-4416-9636-c2f8aded8f3e" handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DFridayEnactor" tag="ViewCode">
+            <elementDefinition Id="cc7e5296-c9e4-4d66-bbe4-966e12aa35e2" />
+          </reference>
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance Id="09821304-feca-4789-adb1-934f587067af" name="class" profile="CSharpProfile">
+            <elementDefinition Id="7d9e1382-2c6a-485e-a5a1-3e88b8ad3a34" />
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="827ce2b3-0d1e-491e-88ff-61c4298dc880">
+                <propertyInstance Id="18e2c4f8-2cca-4a87-a7dd-b5bee12cd547" name="ClrAttributes">
+                  <elementDefinition Id="4f247988-f558-4c08-9850-f78529fe3913" />
+                </propertyInstance>
+                <elementDefinition Id="24713940-ad8b-429c-9f63-c0b437a0b3c7" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="519e675c-4ccf-4cb2-bf6c-de46bd49976f">
+                <propertyInstance Id="cc224a6f-d5a0-4ddc-9da5-b46cc492a00e" name="IsPartial" value="false">
+                  <elementDefinition Id="bb198546-abf7-4d66-8383-f6d4e153f81f" />
+                </propertyInstance>
+                <elementDefinition Id="bd4b0c78-5f02-48f2-a9c2-4ded265facdd" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="809d3c86-d66f-4351-9df5-9cafa106a450">
+                <propertyInstance Id="dde7599c-3d12-4365-bc24-3872971b5a13" name="IsStatic" value="False">
+                  <elementDefinition Id="15be8b0a-763f-4670-bbfc-df1d1d9e8db1" />
+                </propertyInstance>
+                <elementDefinition Id="877af558-aaee-4c69-b1bf-904240fbd6cd" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="72db21e4-1e86-4849-afa9-ba1f633ec256">
+                <propertyInstance Id="3c960619-7290-4542-b8eb-59ce843e9123" name="IsUnsafe" value="false">
+                  <elementDefinition Id="78737d44-935b-4181-8b75-9a01baeda7fe" />
+                </propertyInstance>
+                <elementDefinition Id="217fba78-3827-4954-aeb7-fcc45b9784e6" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="938c93b1-028a-450e-ae93-88bc82887618">
+                <propertyInstance Id="8aec823d-bebd-49ae-9480-ae51036e993d" name="PackageVisibility" value="internal">
+                  <elementDefinition Id="b8ac4000-299a-47a8-a5bb-41dca3b674dc" />
+                </propertyInstance>
+                <elementDefinition Id="cd1da0b5-aba2-499c-8b01-11cbea5fe2b1" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <elementDefinition Id="6f24b571-47aa-4ca7-ad83-b2df40edfeab" />
+        <suppliersInternal>
+          <interfaceRealization Id="249f7c81-a0f1-4bb7-bbaf-2d1e71fe4715">
+            <interfaceMoniker Id="e2b7cf09-81ec-4a5f-8842-87c02c5ebbbd" LastKnownName="INewDayEnactor" />
+            <elementDefinition Id="5b82b8aa-215b-46bf-827c-a4fd45101610" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="3fedaabc-187b-4e1d-a773-fcbaafbb569b" name="Day" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="936e79d3-125a-4974-bfc9-12fc045ebaf2" handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DFridayEnactor Member%3DDay" tag="ViewCode">
+                <elementDefinition Id="296d8fc8-8200-417c-b493-fe4ecab6d56c" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="fa5f0596-6654-45cf-b772-6cfdaf83b4cd" name="property" profile="CSharpProfile">
+                <elementDefinition Id="41afd439-85f0-489d-abe5-3bad11823b70" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="471d2772-e2cc-4c98-b370-998e8078f114">
+                    <propertyInstance Id="91b9cf2e-138d-44ab-ac62-cca0fe2f8776" name="ClrAttributes">
+                      <elementDefinition Id="11c8be27-63cb-47ce-843c-58032dd9f6ee" />
+                    </propertyInstance>
+                    <elementDefinition Id="dc2fce9e-3446-453b-b178-5eaa928f72c7" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="97fb1e82-1057-40b8-9e10-9f71450ad9f8">
+                    <propertyInstance Id="46f951f9-4cc0-4eb7-8e52-f68e58017852" name="Get" value="public">
+                      <elementDefinition Id="7b717254-0ede-4043-8ccf-fd3462359636" />
+                    </propertyInstance>
+                    <elementDefinition Id="a37b9cd8-1b93-4a78-a6f1-8eb6099b26a5" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="240cae90-123c-43a7-9fc6-7e1659c13df1">
+                    <propertyInstance Id="0884bb1e-a528-4376-aac9-f9a67b60c467" name="HasBody" value="false">
+                      <elementDefinition Id="c1592347-15a4-456c-8dfd-04ffcf40f79d" />
+                    </propertyInstance>
+                    <elementDefinition Id="1575a332-4385-4ba1-830a-a401e0e0cf0b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="1b26b7d7-9dc6-4c88-9453-265f30ba561a">
+                    <propertyInstance Id="14115d18-9b97-4d9b-8006-d77ffb6d9177" name="IsUnsafe" value="false">
+                      <elementDefinition Id="c3e07f06-d0a5-4170-a707-388c82c929f0" />
+                    </propertyInstance>
+                    <elementDefinition Id="cb2506bf-f5d4-46ba-b910-d699648b6ea8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="dcd05b2e-5a19-458c-8125-3f2507999473">
+                    <propertyInstance Id="9e8da471-3733-4f49-b7ec-19c9aad0c64a" name="Inheritance" value="none">
+                      <elementDefinition Id="0d3811c9-3e93-4184-a5bf-4d3efc6beb3a" />
+                    </propertyInstance>
+                    <elementDefinition Id="291422cf-ccd3-40bf-b0f3-9d81faf6ddf2" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="21f25d4a-70c8-48ef-9496-1c0db2e0165a">
+                    <propertyInstance Id="38fbc12c-eca7-4261-8941-8d88c50db14a" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="b06dfbef-7e21-430e-8f78-f229d54831b6" />
+                    </propertyInstance>
+                    <elementDefinition Id="0417a18a-d604-4784-92e1-8102877a05a0" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="359a5325-5c56-4b12-b9f7-4e475e24d1d5">
+                    <propertyInstance Id="8d4c71ea-a36b-484c-a27c-7a1deaf3f7e8" name="Set" value="none">
+                      <elementDefinition Id="5feb2185-c2ee-40cb-afb9-0aabb2962d52" />
+                    </propertyInstance>
+                    <elementDefinition Id="959ee6c0-2eae-46e4-85fc-f0965e6370d9" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="f0dfa570-0543-4cfa-b0af-f5c1a2cba9a7" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f47054f5-9c04-4fcf-bb2e-a939c5ab5cb2" LastKnownName="DayOfWeek" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="d6010e9e-1a2f-432a-81e3-2782729726ae" name="FridayEnactor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="dad1e538-457e-46f0-ad3f-ad0e0741c366" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DFridayEnactor Member%3D.ctor" tag="ViewCode">
+                <elementDefinition Id="0249c0e5-835a-4e27-a82e-00a74aed6a80" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="2ed7e0e6-b7fc-4e11-9d19-e202dec653ae" name="method" profile="CSharpProfile">
+                <elementDefinition Id="7cd007a7-1096-42b3-a4ca-afbb8acf42ba" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a3738bc2-7058-4a55-991a-b763c3c6db8a">
+                    <propertyInstance Id="901fd871-0ccb-4275-b6c7-6d359bfb9ba0" name="ClrAttributes">
+                      <elementDefinition Id="3dd9a8d8-635f-4af8-9094-fca11a48eaf6" />
+                    </propertyInstance>
+                    <elementDefinition Id="44289d52-865e-4a27-8b00-b66c01f4874c" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b59146fd-80ec-4a7a-9d93-ab7e3123f588">
+                    <propertyInstance Id="55e1248d-eea6-46a6-840d-f2c23b660ed1" name="IsPartial" value="false">
+                      <elementDefinition Id="a9fc1b4e-4b37-408a-b32e-5307f90b3ea3" />
+                    </propertyInstance>
+                    <elementDefinition Id="0061b1c2-03c9-4460-ad27-8df35da4cf90" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="5d78a502-c333-4c8a-8f8d-79cf34237bbc">
+                    <propertyInstance Id="84c086f4-67da-405a-aecb-93697a182928" name="IsUnsafe" value="false">
+                      <elementDefinition Id="bb9ade43-1212-487a-97ce-fbd50bba113c" />
+                    </propertyInstance>
+                    <elementDefinition Id="b05482a3-5fe9-4ab1-b367-5a4ac92e03ce" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="ea798222-1f9d-452d-b5fb-570fc4e30d08">
+                    <propertyInstance Id="f48b9238-8845-4ac3-95e1-3062bbffe8d1" name="Inheritance" value="none">
+                      <elementDefinition Id="a707cba1-3ac4-466c-8d1b-64409f4b53ec" />
+                    </propertyInstance>
+                    <elementDefinition Id="ca413781-781d-4f86-b02b-e2d11b65920e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="68c6ff24-a82d-4ab7-8f80-63d425a27e54">
+                    <propertyInstance Id="ff7d53ae-18e3-4c9e-b25b-df70c709a141" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="a289509a-34b5-4067-a5f7-721b00b78bd0" />
+                    </propertyInstance>
+                    <elementDefinition Id="49dc16bf-5b6c-4647-a71d-6e7ecf827544" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="7bd26853-ac74-4ac2-9b8e-af651247ba89">
+                    <propertyInstance Id="3579ac89-6f73-4c43-8ea7-4ac13c3f0e70" name="params" value="false">
+                      <elementDefinition Id="7340906c-b5ca-4e00-916f-3a007b3211a8" />
+                    </propertyInstance>
+                    <elementDefinition Id="b186b2b8-2aea-43c8-9d46-3f1c9047052f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="264d2fc5-e76f-40aa-8812-c89903782950" />
+          </operation>
+          <operation Id="2fa9690b-d077-4366-96e9-c293993f1c6c" name="Enact" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="a2a38490-267f-496c-a5fb-07f237708f78" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DFridayEnactor Member%3D(Name%3DEnact OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent)])" tag="ViewCode">
+                <elementDefinition Id="00269f43-8906-4cba-8b7f-af2c29cabb4c" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="dc390fc3-408d-4f07-90de-2c4c84948078" name="method" profile="CSharpProfile">
+                <elementDefinition Id="8e6fc98f-74b7-4c81-80dd-1edde243f449" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="2726fbd1-bedf-405e-bec0-2addd3ff1ed4">
+                    <propertyInstance Id="13b6d28f-5cc5-485d-864f-ea2c460bd25e" name="ClrAttributes">
+                      <elementDefinition Id="b61f619b-22b8-4fee-874a-436218777a4f" />
+                    </propertyInstance>
+                    <elementDefinition Id="f19cad65-7ae1-4377-9fc7-5ccb55e8ada3" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f5a73746-489c-4762-ba65-e2f35a9c654a">
+                    <propertyInstance Id="fd7dee0d-58ee-44f5-98d3-456ccddb4089" name="IsPartial" value="false">
+                      <elementDefinition Id="7dad8432-09b9-4db3-b225-55d2ae7709a5" />
+                    </propertyInstance>
+                    <elementDefinition Id="23e65e49-0153-48b8-8983-3fb6465c9a2d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="fcf804b3-cb42-495e-aa2c-6e26f32498c9">
+                    <propertyInstance Id="f3b49288-1f19-494f-a0a0-cb46018f069b" name="IsUnsafe" value="false">
+                      <elementDefinition Id="84eca34a-6870-495e-8336-91cd27ccca25" />
+                    </propertyInstance>
+                    <elementDefinition Id="29ed7981-cc8f-4453-97d2-6ac826a1b9c4" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f1f9f86c-6987-41f8-9500-1f58f8ba678d">
+                    <propertyInstance Id="965cee2a-9247-4c91-a3dc-fd1faea4cc8f" name="Inheritance" value="none">
+                      <elementDefinition Id="c6124495-c39a-4d9b-8355-7aca4463ab63" />
+                    </propertyInstance>
+                    <elementDefinition Id="a51b68ec-05f6-4e60-bab0-08cda303e1df" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d1abbfcb-d7fe-46a3-ac0d-2c2a109c9262">
+                    <propertyInstance Id="72fb15a5-a09f-4873-a554-8b45ff68ecc9" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="2ea9f58e-9563-4fe7-bb01-a6b450262314" />
+                    </propertyInstance>
+                    <elementDefinition Id="5820c9e5-c42a-4964-9e98-358134f1e7f9" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="bce6bc73-5385-4d12-b692-40af4593c9e9">
+                    <propertyInstance Id="eca0349d-ded6-4764-8d7d-8570fbd403d0" name="params" value="false">
+                      <elementDefinition Id="5b5c5e8c-3e87-4451-9bbd-52514ffbe96d" />
+                    </propertyInstance>
+                    <elementDefinition Id="88934a4d-b9a1-4deb-9ea2-03b85f53c600" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="104e07a8-62eb-4710-aa85-9ae10aa81881" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6e506106-9fcb-4bdc-a8c0-c7c05ce4a200" name="o" direction="In">
+                  <referencesInternal>
+                    <reference Id="9acc4c8a-2db8-45b1-b63b-bbec793cd852" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DFridayEnactor Member%3D(Name%3DEnact OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent)]) ParameterIdentifier%3Do" tag="ViewCode">
+                      <elementDefinition Id="09b4b62e-5f6d-43f9-b817-00cade7d68ce" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="ec64c4dd-2301-45eb-b3fc-c9a1a37bd1f0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0e344a0d-8ba2-4706-956e-298d1e79af0b" LastKnownName="NewDayEvent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="e2b7cf09-81ec-4a5f-8842-87c02c5ebbbd" name="INewDayEnactor" visibility="Package" isAbstract="false" isLeaf="false">
+        <referencesInternal>
+          <reference Id="308afee8-cbd9-465b-812a-c02af6a5ab42" handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DINewDayEnactor" tag="ViewCode">
+            <elementDefinition Id="6266803d-21ac-43ad-9f86-838fb5906036" />
+          </reference>
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance Id="d9aae755-7d62-4631-80ff-c7bcf862607d" name="interface" profile="CSharpProfile">
+            <elementDefinition Id="e653d73d-c65b-4166-b641-a1f892c72437" />
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="3e10dbcc-74d5-4f65-9127-bcf028ad14d5">
+                <propertyInstance Id="44eb8bb9-92f0-4429-9009-0a51cff0e607" name="ClrAttributes">
+                  <elementDefinition Id="79b193ca-b1c8-4045-8a5e-4f00dd8f74a1" />
+                </propertyInstance>
+                <elementDefinition Id="04926003-423b-4bb1-82bd-6c7885e472b7" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="05453be1-3c3c-4748-b5b9-ad6a3998b17b">
+                <propertyInstance Id="edacd2d3-afb8-4394-b742-81161312cd6c" name="IsPartial" value="false">
+                  <elementDefinition Id="869976fd-c315-4d41-a8a9-694515022439" />
+                </propertyInstance>
+                <elementDefinition Id="607334aa-c3a8-4210-a8a1-c031477aeb41" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="7ed2aebf-9d30-472a-acc4-fe6dc9f1b8e8">
+                <propertyInstance Id="adb7c0aa-b234-47ff-b0d1-47348f003eaf" name="IsUnsafe" value="false">
+                  <elementDefinition Id="ebed2165-2e0b-4a69-95c3-396dee54b1ca" />
+                </propertyInstance>
+                <elementDefinition Id="b833c660-46d2-4fca-b5de-155101992571" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="4cf6fb44-e419-4f35-a208-16a3ffbd036a">
+                <propertyInstance Id="f7ffcab8-980c-4070-9b9b-f6ba6cd63ae0" name="PackageVisibility" value="internal">
+                  <elementDefinition Id="56d3cc8b-3670-4aae-b82c-d503b51caa95" />
+                </propertyInstance>
+                <elementDefinition Id="0b9d2b17-bb51-4a58-9fa5-e056da173f20" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <elementDefinition Id="f93834bc-2aea-4b33-b326-8a20d764c38c" />
+        <suppliersInternal>
+          <dependency Id="18d1892e-2a66-4142-a73a-69318bcd3ba7">
+            <classMoniker Id="024c0181-e7d3-4e29-a750-79a6d98196ce" LastKnownName="NewDayEvent" />
+            <elementDefinition Id="8c6f3d70-f6ae-4cb2-a514-d93647719415" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributes>
+          <property Id="69910a03-de06-4114-9485-5e668c6f0f31" name="Day" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="9aa7eb0b-77eb-46b7-8d02-6ccae238a9cb" handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DINewDayEnactor Member%3DDay" tag="ViewCode">
+                <elementDefinition Id="7440d3c1-e9d1-4d1c-993d-b3fec9d92d21" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="1521e092-64f3-4200-b84c-78642fc44565" name="property" profile="CSharpProfile">
+                <elementDefinition Id="1c498db0-e790-4ca9-9814-398bbc72b86d" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="05831e0a-75d4-41c7-a945-3aab3836876b">
+                    <propertyInstance Id="ac41e859-8203-4bf6-9e93-7eea81696e50" name="ClrAttributes">
+                      <elementDefinition Id="26e8d95f-aeca-4cc3-aade-778aed0f80f0" />
+                    </propertyInstance>
+                    <elementDefinition Id="26aa29c1-5e3d-4517-a35f-4f1c7603b802" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="8e3db787-7e2a-446b-b2f2-3455982ebc4a">
+                    <propertyInstance Id="6bd6d2ba-df17-4861-a14f-fa8b6db7813e" name="Get" value="public">
+                      <elementDefinition Id="c484b409-736a-445b-a8fb-a135ae7121ed" />
+                    </propertyInstance>
+                    <elementDefinition Id="a93100d8-b5e8-44c7-b80f-a04c1795c1cc" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="58a0ea07-c4c1-4746-a2fd-79e0ba184a1e">
+                    <propertyInstance Id="82ad5306-6199-4548-a584-23b4c6565347" name="HasBody" value="false">
+                      <elementDefinition Id="8f6ada79-03b5-4089-badf-9a635e426e47" />
+                    </propertyInstance>
+                    <elementDefinition Id="918d1ed4-e485-49cb-82f4-6b2dace1773d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="1a9c4527-bb18-4ccf-89d3-3475d6a00436">
+                    <propertyInstance Id="3c503c98-5cb9-44ab-925b-e308c61e28e6" name="IsUnsafe" value="false">
+                      <elementDefinition Id="5dc83233-4d88-4000-9dca-5545a9f0cd9b" />
+                    </propertyInstance>
+                    <elementDefinition Id="2d80123a-4889-4ace-96cf-af3836e74ac8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="448ac797-4212-4bb5-9f91-9ff74033d3b7">
+                    <propertyInstance Id="d7c56f36-9b24-4526-b632-31e41034e26e" name="Inheritance" value="none">
+                      <elementDefinition Id="543935b8-0a2a-4ca8-a274-99f4832f1632" />
+                    </propertyInstance>
+                    <elementDefinition Id="87868545-f74c-4f34-8f30-4f32a7db687a" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="87a03baf-d353-4980-97ad-5818abc4107e">
+                    <propertyInstance Id="cf1b4cb4-dcb6-4807-b1b6-771e324a2565" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="ab1a328d-03a6-4ab2-9163-30046f9ed487" />
+                    </propertyInstance>
+                    <elementDefinition Id="2b78245d-6b1a-46f2-ad19-95595c50b3c6" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="080baa57-ff98-4e5d-bced-2e9ad9ba13f8">
+                    <propertyInstance Id="1f556a16-6019-4d81-bd4b-640156ec98e5" name="Set" value="none">
+                      <elementDefinition Id="024f5cfd-370f-47b5-b5c3-0bc3922d0d26" />
+                    </propertyInstance>
+                    <elementDefinition Id="7adeece1-a01c-4750-a23f-e1e9aa4275b2" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="fbc3e67f-e5d1-483b-8297-56beeefbe561" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f47054f5-9c04-4fcf-bb2e-a939c5ab5cb2" LastKnownName="DayOfWeek" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributes>
+        <ownedOperations>
+          <operation Id="50678cc2-3084-4ab4-9fc9-1ae10e8f630a" name="Enact" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="18ef46e9-d3ef-4d3c-8462-300fa5913e2c" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DINewDayEnactor Member%3D(Name%3DEnact OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent)])" tag="ViewCode">
+                <elementDefinition Id="b60180ce-f9a1-4eab-b131-3f344c340673" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="4d15a614-a27b-4eeb-8cb0-f7999f0250ab" name="method" profile="CSharpProfile">
+                <elementDefinition Id="5bdefe3f-4139-4106-b0fd-de3ce5b30c97" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="531763ae-4efd-4864-bb81-f0b6cb1b236b">
+                    <propertyInstance Id="4af5964d-3d7f-4d0e-b893-eb6637a6f538" name="ClrAttributes">
+                      <elementDefinition Id="8986c004-57a5-44c4-b927-031a445693c4" />
+                    </propertyInstance>
+                    <elementDefinition Id="ee1223e7-65c1-406a-ad32-d890344d5a3d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="5c8c567e-4488-4b25-8b13-35845735d44c">
+                    <propertyInstance Id="c5ac50c1-00bc-427e-a61e-e3b66905295f" name="IsPartial" value="false">
+                      <elementDefinition Id="ce56882d-57ce-43dc-8d94-31bbb70da460" />
+                    </propertyInstance>
+                    <elementDefinition Id="b9a92d73-fde1-4a83-993a-2a55343a2514" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="0b0f3d33-ddbf-41e7-89e8-9bf2fc7303d6">
+                    <propertyInstance Id="000fafe8-aad4-4a06-a4d5-820a21cc1f5b" name="IsUnsafe" value="false">
+                      <elementDefinition Id="9cdc1c52-64c6-48a4-a54e-8f31b57dd599" />
+                    </propertyInstance>
+                    <elementDefinition Id="31e68cf8-7d7f-418a-80ed-e05e6bfcf141" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a9bf1f0e-5c1e-44a7-9dcd-04f58a86289a">
+                    <propertyInstance Id="1d59f1e0-491a-4dc0-9591-edc25917c699" name="Inheritance" value="none">
+                      <elementDefinition Id="c8959e7b-87cf-4d84-b8b7-cd4d36073c7d" />
+                    </propertyInstance>
+                    <elementDefinition Id="5cef049f-761f-44f0-b919-4e69364ec2e9" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="2992d8b8-0ae9-436a-9d0b-d978d7204af0">
+                    <propertyInstance Id="b0c9bbd5-f1b7-4bba-94ee-34af4e857a57" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="dad26d38-6236-40d7-b505-d08334e27712" />
+                    </propertyInstance>
+                    <elementDefinition Id="d37d3440-f0ef-4dda-86ef-c33724f0d63d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d471ac81-6749-4075-a1fd-f591f248b7ca">
+                    <propertyInstance Id="fc22ba34-4630-4f58-8d65-5d850cf87bf0" name="params" value="false">
+                      <elementDefinition Id="2052c31d-5006-4e9a-ab8c-2cf974631a09" />
+                    </propertyInstance>
+                    <elementDefinition Id="95ffbefe-5a8b-4955-add8-383c31b3ef2b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="1a09aab9-add4-45b8-8efd-22355211be7d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="27dd4844-804d-433a-b029-5cd0bcbb3e85" name="o" direction="In">
+                  <referencesInternal>
+                    <reference Id="5e99172d-e9f5-4af2-9c5a-9bd69d584d89" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DINewDayEnactor Member%3D(Name%3DEnact OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent)]) ParameterIdentifier%3Do" tag="ViewCode">
+                      <elementDefinition Id="6da2e4c7-91c4-43a3-a080-04814c0c9cf3" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="ab219510-9faa-405c-bd23-28f8ab28f45e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0e344a0d-8ba2-4706-956e-298d1e79af0b" LastKnownName="NewDayEvent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4e6f6f5f-544b-4dee-8c46-c18522a72324" name="MondayEnactor" visibility="Package" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <referencesInternal>
+          <reference Id="1d3ed26b-c4b3-476a-ad96-e8acd3f679a8" handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DMondayEnactor" tag="ViewCode">
+            <elementDefinition Id="6aad50c2-9adf-4409-9865-846bfc0e00ca" />
+          </reference>
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance Id="c4949ab7-8fdc-4921-a61a-17813bb1a297" name="class" profile="CSharpProfile">
+            <elementDefinition Id="db218996-488b-4c2d-a039-b8154ddaadf0" />
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="799b2ab4-6c31-414a-bc8c-05e93b41b8b1">
+                <propertyInstance Id="0ddf2077-b8d5-4d54-9abc-6a014d3d97e2" name="ClrAttributes">
+                  <elementDefinition Id="37c3458d-7e16-43ab-b65e-6e1aeeff70ae" />
+                </propertyInstance>
+                <elementDefinition Id="b4e6b368-8344-4d1e-8813-cf345adda916" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="566abda4-0715-42af-9c7c-c509b85483c5">
+                <propertyInstance Id="602d100b-2ab7-4692-b26d-35a161a94a1e" name="IsPartial" value="false">
+                  <elementDefinition Id="197e7baa-e87b-4c4c-b7fe-2dc504bf91e7" />
+                </propertyInstance>
+                <elementDefinition Id="17991c46-2e88-4a69-8d6a-0dc3cf10c43e" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="c86ec3e1-bc03-4a16-8153-c3fb06e8a1ba">
+                <propertyInstance Id="0254f197-fce3-4309-87f4-50f51f8ac808" name="IsStatic" value="False">
+                  <elementDefinition Id="618860c4-43fc-4c75-80b1-d560f8f94470" />
+                </propertyInstance>
+                <elementDefinition Id="6f13a1e4-b02f-4740-a273-31a9769fbaa4" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="f5a58076-9db6-4115-9c72-b4d57ecebbf6">
+                <propertyInstance Id="a1970eee-1ccd-4f9a-a93e-7cee4179d545" name="IsUnsafe" value="false">
+                  <elementDefinition Id="22e4a290-01e6-40c3-bfbf-7d9f1a87f3c0" />
+                </propertyInstance>
+                <elementDefinition Id="97fd1c43-d425-42d9-b08a-0cbc89898910" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="7d350212-9ca3-4f5b-abba-9f4f1d689b96">
+                <propertyInstance Id="d875d316-2cc0-4def-a555-07613068b39a" name="PackageVisibility" value="internal">
+                  <elementDefinition Id="1d4e078e-b139-4505-81e2-6e7a4f3c7784" />
+                </propertyInstance>
+                <elementDefinition Id="25294aae-186c-424c-902c-d4231d88344f" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <elementDefinition Id="ae92dce6-ce81-41aa-9c9a-ad7962a45e5c" />
+        <suppliersInternal>
+          <interfaceRealization Id="b11c3d64-babc-42a3-bd11-d29939f8a8b5">
+            <interfaceMoniker Id="e2b7cf09-81ec-4a5f-8842-87c02c5ebbbd" LastKnownName="INewDayEnactor" />
+            <elementDefinition Id="c7b8330c-592d-4633-93b0-9421ce40fc50" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="d51e59e8-3266-4834-ac4a-596e95387234" name="Day" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="47551108-2bd1-47ef-8989-d92072de051c" handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DMondayEnactor Member%3DDay" tag="ViewCode">
+                <elementDefinition Id="454767d9-b081-425a-891d-18d12f74c212" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="7aeea6eb-b524-4373-8ad7-5f7aafab58cc" name="property" profile="CSharpProfile">
+                <elementDefinition Id="5b3973f9-f3e8-4714-84c9-c028fda94f8a" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="7158296d-9e5d-41af-a48f-36126c08aafb">
+                    <propertyInstance Id="f717735c-9a09-430e-bf8a-cb1e79f72a35" name="ClrAttributes">
+                      <elementDefinition Id="e905fbf3-effb-4a84-bde0-2a8976262bb7" />
+                    </propertyInstance>
+                    <elementDefinition Id="2289ed74-cacb-4042-bf22-969a57ac6fc5" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="ecd4db65-88dc-4132-8aaa-43252722b69a">
+                    <propertyInstance Id="4e6c0801-3423-4889-a6b5-34f8dc279a19" name="Get" value="public">
+                      <elementDefinition Id="91b8f19b-e60c-4246-b0a3-7b5c9717b16e" />
+                    </propertyInstance>
+                    <elementDefinition Id="d67f9e6a-d3cd-4dbd-9889-9adb476ea621" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f813b17b-4f19-40e0-83ad-e96e8c6e2a1d">
+                    <propertyInstance Id="89b6929b-16d7-4dff-bb38-6e50ecdf0058" name="HasBody" value="false">
+                      <elementDefinition Id="1bfc38e0-433d-4799-abe8-23f069ec46a2" />
+                    </propertyInstance>
+                    <elementDefinition Id="35d067bf-6f73-42d4-a9fc-9348722a392e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="88cd2124-3aa7-406e-b638-346275f8a3e3">
+                    <propertyInstance Id="ce7bd15b-6bd1-445e-af20-d7bb4a6c414e" name="IsUnsafe" value="false">
+                      <elementDefinition Id="5365c482-7151-4771-84f4-a54b565dcf9c" />
+                    </propertyInstance>
+                    <elementDefinition Id="f25345c3-9b37-443b-af87-a2b7871a4a67" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b5a5797b-2d1b-41ce-a066-81ea8dd3ceaa">
+                    <propertyInstance Id="838c7188-372e-4a25-b8f3-d0ca84d31a39" name="Inheritance" value="none">
+                      <elementDefinition Id="1d0373ec-2a63-4262-8b81-e35e299e6ab3" />
+                    </propertyInstance>
+                    <elementDefinition Id="0d7ae582-f260-430a-9b61-f935bbc6e34a" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d51e81b9-5225-4e8f-bc9d-eb27d7f804fe">
+                    <propertyInstance Id="13598a34-b7e0-4e7a-929a-6285363566e0" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="19bb1433-f2c2-4409-98dc-19275276abf3" />
+                    </propertyInstance>
+                    <elementDefinition Id="d8c642a7-207c-415b-a192-f5e8ba745b54" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a6db15aa-61ae-49bb-850e-c9ad67da17be">
+                    <propertyInstance Id="3a5d72e5-8e22-4cbf-9850-8c31d9e07c96" name="Set" value="none">
+                      <elementDefinition Id="592ee316-bbf5-429b-96e7-639b7c6b2a14" />
+                    </propertyInstance>
+                    <elementDefinition Id="f8e66f2c-16e8-4de6-98e2-257bb6c72105" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="5ceb2ecc-d3fd-460e-a8aa-13fced0585aa" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f47054f5-9c04-4fcf-bb2e-a939c5ab5cb2" LastKnownName="DayOfWeek" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="ed3c1b37-f18c-4c90-b0e5-6936ba7b069b" name="MondayEnactor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="f7e08316-2f79-4f51-bd7d-368f39e25840" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DMondayEnactor Member%3D.ctor" tag="ViewCode">
+                <elementDefinition Id="196d18b6-6c92-46ef-b273-ce1cc3dd7b7e" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="77b3db44-28da-4cd9-83e7-4de9b20a02c4" name="method" profile="CSharpProfile">
+                <elementDefinition Id="8d9a0758-1322-4c0d-b054-74122da0bd2f" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="dfa3eef6-e65c-4384-b056-bf813fe4375b">
+                    <propertyInstance Id="99649646-307a-49f9-9e9b-99d5ebe63399" name="ClrAttributes">
+                      <elementDefinition Id="9f03f0fc-9dca-4e97-9cf2-ea42b0ee55e6" />
+                    </propertyInstance>
+                    <elementDefinition Id="41cfd070-85a4-4802-ac06-547d9ea5cfb9" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f9598be7-6c02-4c11-8bba-af85c5efe4cf">
+                    <propertyInstance Id="12dfefbd-b85c-4239-bad9-bfcaf29fad56" name="IsPartial" value="false">
+                      <elementDefinition Id="c2363ee0-9a7e-468b-a862-9b99397403c1" />
+                    </propertyInstance>
+                    <elementDefinition Id="43994534-1500-404f-9b94-72ae40dd229e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="1e266873-2f3a-4862-90d1-3da6f02a1516">
+                    <propertyInstance Id="f043c085-261e-4ceb-96dc-25b55c0fdee4" name="IsUnsafe" value="false">
+                      <elementDefinition Id="58e597f1-596d-49c6-91de-e566391b74de" />
+                    </propertyInstance>
+                    <elementDefinition Id="ff27de8b-f540-4848-b673-a5539f3eb396" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="5cade061-5a3c-4259-bd7d-d111d001954d">
+                    <propertyInstance Id="7e0de386-4177-42de-903f-00f899d511c4" name="Inheritance" value="none">
+                      <elementDefinition Id="d63ece56-cee8-455a-9b7c-f93500a9c129" />
+                    </propertyInstance>
+                    <elementDefinition Id="2ded5983-8896-45b2-b96c-fe00a87beb72" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e62009f5-5049-40f6-865d-64b39be18f0e">
+                    <propertyInstance Id="bd0849ee-8f96-40bc-8d40-ee708b67ccf3" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="7798046b-3492-4096-ad4c-f1eefcb9d1d0" />
+                    </propertyInstance>
+                    <elementDefinition Id="b573647f-2ba2-4ae0-aa97-d170926d1917" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f279a43d-3ad5-4ff4-bb1e-70c2e1adc9c1">
+                    <propertyInstance Id="4e0e3672-840c-46b3-8e61-a85ec2ddbb64" name="params" value="false">
+                      <elementDefinition Id="7fc109b4-7d69-4e5e-8142-0059c4c3be1d" />
+                    </propertyInstance>
+                    <elementDefinition Id="a0433553-2f2c-4154-8206-372af334bc26" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="24e1fbb0-c543-41e7-ac1c-3cc77c80b1b2" />
+          </operation>
+          <operation Id="a5dc3f33-9c6f-4626-a287-bb971d29f112" name="Enact" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="21c87290-b8a4-4acb-9558-2370a65fa8f1" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DMondayEnactor Member%3D(Name%3DEnact OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent)])" tag="ViewCode">
+                <elementDefinition Id="a40466fd-6b97-4a0e-be29-ee11bf7643d4" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="225201b2-ea1d-4a75-96ba-6d5bbc7277ba" name="method" profile="CSharpProfile">
+                <elementDefinition Id="22d35a1b-dc46-4319-bb84-0deee59908cc" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="42bd1933-f2a5-4d76-9aa2-acde181640cf">
+                    <propertyInstance Id="a6a4e59b-a25a-417f-9846-aa303cfa80a8" name="ClrAttributes">
+                      <elementDefinition Id="e93d2f67-0c41-48c9-8426-041ddad4a48d" />
+                    </propertyInstance>
+                    <elementDefinition Id="39b93b24-cb56-4514-9588-704952abd042" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b7b118a5-4b03-48ff-a3e8-e001b488b4ae">
+                    <propertyInstance Id="3827aa6b-dac6-4ac0-a33e-ba81edc4d9b7" name="IsPartial" value="false">
+                      <elementDefinition Id="7ef6cae5-84e0-4a7d-b76f-8260405670a1" />
+                    </propertyInstance>
+                    <elementDefinition Id="56096e66-1aaa-417d-820e-3cec53f4d3eb" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="9fd3c92d-d4da-44ad-98ae-a9362465a5b9">
+                    <propertyInstance Id="50e91c62-e884-404e-a19e-e288fd285bb0" name="IsUnsafe" value="false">
+                      <elementDefinition Id="bd7293ff-8f73-4a20-8fe9-3d79f41ec6c2" />
+                    </propertyInstance>
+                    <elementDefinition Id="bb315ea7-58d6-4ba1-a2b0-be54fd6b4655" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="080fe100-e64b-4373-b819-9ef440d766d5">
+                    <propertyInstance Id="501a55ad-dd9f-4554-b3a4-e53cb8597e7f" name="Inheritance" value="none">
+                      <elementDefinition Id="9e6d1828-ac57-4b7a-b2ae-9a99a5860d05" />
+                    </propertyInstance>
+                    <elementDefinition Id="9f3808f7-01ea-43a0-aed6-b9a93480a7cf" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="2dc85dfe-5319-4418-861b-526130c6ebc1">
+                    <propertyInstance Id="1a756aa5-a5dd-4651-8142-11d87e0c9753" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="3c120c4a-1a40-4c48-90cb-3feea01d9cbc" />
+                    </propertyInstance>
+                    <elementDefinition Id="89197a40-0571-47a4-bde1-6b927015ebb4" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="104e05d1-dbea-4165-ba19-af0ade0b41b0">
+                    <propertyInstance Id="9192076c-4f36-49d4-8726-dd44044f9c45" name="params" value="false">
+                      <elementDefinition Id="d7350f22-6c2f-4ef2-9882-928373d35e67" />
+                    </propertyInstance>
+                    <elementDefinition Id="43496b16-66df-4f1c-b35c-7858f716eac0" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="9a0b232f-98aa-487b-b796-aef2348b6981" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f346d5e9-a0b1-4394-a87c-f8f1797fcc59" name="o" direction="In">
+                  <referencesInternal>
+                    <reference Id="93eeb5b4-bb08-412e-9bf4-2b6619d32a83" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DMondayEnactor Member%3D(Name%3DEnact OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FJmac%2FDocuments%2FVisual Studio 2013%2FProjects%2FScenarioFramework%2FEnactorDemo%2Fbin%2FDebug%2FEnactorDemo.exe&quot; Namespace%3DEnactorDemo Type%3DNewDayEvent)]) ParameterIdentifier%3Do" tag="ViewCode">
+                      <elementDefinition Id="6f4fd456-7835-4ee0-89d9-b6c4dc1204ce" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="22ca6178-f7f6-4b70-86d7-49316e5aceb5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0e344a0d-8ba2-4706-956e-298d1e79af0b" LastKnownName="NewDayEvent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="aa0c04ab-7a60-4889-b3a7-bfad36ec4292" name="ScenarioFrameworkModels">
+    <elementDefinition Id="60829b75-5a98-4137-8708-f9978d696180" />
+  </package>
+</logicalClassDesignerModel>

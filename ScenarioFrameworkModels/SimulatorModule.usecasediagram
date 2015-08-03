@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="fedcf588-c424-479c-8a7e-10ba6887bd2a" name="SimulatorModule" linkedPackageId="dda3b71b-8084-46dd-9269-00df13ed4095" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="5c1d21a7-aaf7-4d60-81e3-306016afae06">
+      <profileInstance Id="39c5766a-c79c-4228-8b95-c9733b572a13" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="241aaef7-5f16-4121-a9ac-1fb30f529b0c">
+      <profileInstance Id="2301fb1f-189f-4067-b220-d9dd2899f97d" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="cbf35406-ccd8-4f70-8679-061334b0eaad">
+      <profileInstance Id="1b9ebe4b-3a0e-4c31-8d36-4f2f3518b864" name="CSharpProfile">
+        <elementDefinition Id="d8e878fb-9083-4c12-bc3d-52f7f1649b48" />
+      </profileInstance>
+      <elementDefinition Id="6389af42-4532-4a7a-b887-826a8139eabd" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="4bde570e-22d1-48fb-8640-b4e571fe29df" name="Client" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c88dc3ef-3e91-413d-a421-11d33b3236d7" />
+        <targetEnds>
+          <association Id="e9c3e195-c25f-46ff-90d0-1383605131ef" isDerived="false" sourceEndRoleName="Client" targetEndRoleName="SubmitScenarioEvent" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="cbb9dea1-c3c4-4b5e-8cbb-6566e5515a08" LastKnownName="SubmitScenarioEvent" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ea0e50ab-4148-4ed1-8f0b-bbdda546d0e5" name="Client" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b401320c-9d3a-4f9b-9250-b39449603be4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ee68da4b-fbae-4021-a013-a601643d8a7b" name="SubmitScenarioEvent" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c0bc0ef8-73f2-4e53-b8e5-3c2542d22fa7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b3a3f3d4-28f3-45eb-89e2-c640ba81a4b0" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="cbb9dea1-c3c4-4b5e-8cbb-6566e5515a08" name="SubmitScenarioEvent" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="62c16647-c8da-467f-8dbd-95876fa1c358" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="dda3b71b-8084-46dd-9269-00df13ed4095" name="ScenarioFrameworkModels">
+    <elementDefinition Id="60829b75-5a98-4137-8708-f9978d696180" />
+  </package>
+</useCaseModelRoot>

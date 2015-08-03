@@ -2,7 +2,7 @@
 using System.IO;
 using NUnit.Framework;
 using ScenarioSim.Core.Entities;
-using ScenarioSim.Infrastructure.Serialization;
+using ScenarioSim.Infrastructure.XmlSerialization;
 
 namespace ScenarioSim.Core.Tests
 {

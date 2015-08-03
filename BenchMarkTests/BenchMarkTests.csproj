@@ -69,9 +69,9 @@
       <Project>{9c0093ef-7e24-463f-ac3e-532396d778c6}</Project>
       <Name>ScenarioSim.Infrastructure.DependencyResolution</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ScenarioSim.Infrastructure.Serialization\ScenarioSim.Infrastructure.Serialization.csproj">
+    <ProjectReference Include="..\ScenarioSim.Infrastructure.Serialization\ScenarioSim.Infrastructure.XmlSerialization.csproj">
       <Project>{f9861434-2e50-4347-b75e-bb39ef437a0a}</Project>
-      <Name>ScenarioSim.Infrastructure.Serialization</Name>
+      <Name>ScenarioSim.Infrastructure.XmlSerialization</Name>
     </ProjectReference>
     <ProjectReference Include="..\ScenarioSim.Infrastructure.SimulationComponents\ScenarioSim.Infrastructure.SimulationComponents.csproj">
       <Project>{440504ce-ec03-4a7f-b397-f33621b33119}</Project>

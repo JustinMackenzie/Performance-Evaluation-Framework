@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Northwoods.Go;
 using System.Drawing;
+using Northwoods.Go;
 using ScenarioSim.Core;
 
 namespace ScenarioSim.Creator
@@ -27,7 +24,7 @@ namespace ScenarioSim.Creator
         {
             Task = task;
             this.Port.AddObserver(this);
-            this.LabelSpot = GoObject.Middle;
+            this.LabelSpot = Middle;
             this.Editable = true;
             this.Text = task.Value.Name;
             this.Label.Editable = true;

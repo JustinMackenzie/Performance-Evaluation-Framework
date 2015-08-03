@@ -1,5 +1,5 @@
-﻿using Northwoods.Go;
-using System.Collections;
+﻿using System.Collections;
+using Northwoods.Go;
 
 namespace ScenarioSim.Creator
 {
