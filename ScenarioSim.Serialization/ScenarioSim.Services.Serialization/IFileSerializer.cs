@@ -1,4 +1,4 @@
-﻿namespace ScenarioSim.Core.Interfaces
+﻿namespace ScenarioSim.Services.Serialization
 {
     /// <summary>
     /// Represents an abstract serializer that serializes data to a file and 

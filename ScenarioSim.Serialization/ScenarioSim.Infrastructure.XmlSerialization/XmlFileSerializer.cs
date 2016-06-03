@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
-using ScenarioSim.Core.Interfaces;
+using ScenarioSim.Services.Serialization;
 
 namespace ScenarioSim.Infrastructure.XmlSerialization
 {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using ScenarioSim.Core.Entities;
-using ScenarioSim.Core.Interfaces;
+using ScenarioSim.Services.Serialization;
 using ScenarioSim.Services.Simulator;
 
 namespace ScenarioSim.Infrastructure.SimulationComponents

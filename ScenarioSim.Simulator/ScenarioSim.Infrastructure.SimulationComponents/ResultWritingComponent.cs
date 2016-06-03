@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using ScenarioSim.Core.Entities;
-using ScenarioSim.Core.Interfaces;
+using ScenarioSim.Services.Serialization;
 using ScenarioSim.Infrastructure.XmlSerialization;
 using ScenarioSim.Services.Simulator;
 

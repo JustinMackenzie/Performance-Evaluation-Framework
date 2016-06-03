@@ -42,9 +42,9 @@
     <Compile Include="XmlFileSerializer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ScenarioSim.Core\ScenarioSim.Core.Interfaces\ScenarioSim.Core.Interfaces.csproj">
-      <Project>{de8824b9-da8f-4d8e-b2c7-080ba045f0f0}</Project>
-      <Name>ScenarioSim.Core.Interfaces</Name>
+    <ProjectReference Include="..\ScenarioSim.Services.Serialization\ScenarioSim.Services.Serialization.csproj">
+      <Project>{abce5169-3ecb-42cf-a1b9-d9b5f4c9ea3d}</Project>
+      <Name>ScenarioSim.Services.Serialization</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
