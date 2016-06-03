@@ -11,7 +11,7 @@ namespace ScenarioSim.Infrastructure.SimulationComponents.Tests
         [Test]
         public void TestActionTimeKeeperComponentStart()
         {
-            Scenario scenario = new XmlFileSerializer<Scenario>().Deserialize("Longest Axis 1.scenario");
+            Scenario scenario = new XmlFileSerializer().Deserialize<Scenario>("Longest Axis 1.scenario");
 
             StateChartComponent stateChartComponent = new StateChartComponent(new UmlStateChartBuilder());
 

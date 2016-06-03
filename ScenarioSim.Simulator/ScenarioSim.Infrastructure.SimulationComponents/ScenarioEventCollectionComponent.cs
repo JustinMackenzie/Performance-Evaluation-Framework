@@ -13,10 +13,10 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
 
         private List<ScenarioEvent> eventCollection;
         private readonly string filePath;
-        private readonly IFileSerializer<List<ScenarioEvent>> serializer;
+        private readonly IFileSerializer serializer;
 
         public ScenarioEventCollectionComponent(string filePath,
-            IFileSerializer<List<ScenarioEvent>> serializer)
+            IFileSerializer serializer)
         {
             this.filePath = filePath;
             this.serializer = serializer;

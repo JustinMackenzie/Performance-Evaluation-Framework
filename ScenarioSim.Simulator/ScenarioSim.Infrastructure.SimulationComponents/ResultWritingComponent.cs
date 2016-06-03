@@ -55,7 +55,7 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
             result.Events = eventCollectionComponent.Events.ToList();
             result.TaskResult = BuildTaskResultTree(scenario.Task);
             result.TrackedParameters = trackingComponent.TrackedParameters.ToList();
-            IFileSerializer<ScenarioResult> serializer = new XmlFileSerializer<ScenarioResult>();
+            IFileSerializer serializer = new XmlFileSerializer();
             serializer.Serialize(folderPath + "\\ScenarioResult.xml", result);
 
             List<ITaskResultLogger> taskResultLoggers = new List<ITaskResultLogger>();

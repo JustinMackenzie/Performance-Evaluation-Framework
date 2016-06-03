@@ -10,14 +10,14 @@ namespace ScenarioSim.Infrastructure.XmlSerialization
     /// Xml files.
     /// </summary>
     /// <typeparam name="T">The type of the objects to be serialized or deserialized.</typeparam>
-    public class XmlFileSerializer<T> : IFileSerializer<T>
+    public class XmlFileSerializer : IFileSerializer
     {
         /// <summary>
         /// Serializes a given object to a file with the given file path.(Including filename)
         /// </summary>
         /// <param name="filename">The path (including filename) of the serialized file to create.</param>
         /// <param name="value">The object to be serialized.</param>
-        public void Serialize(string filename, T value)
+        public void Serialize<T>(string filename, T value)
         {
             using (StreamWriter writer = new StreamWriter(filename))
             {
@@ -31,7 +31,7 @@ namespace ScenarioSim.Infrastructure.XmlSerialization
         /// </summary>
         /// <param name="filename">The path (including filename) of the serialized file.</param>
         /// <returns>A new object of type T with the data from the given serialized file.</returns>
-        public T Deserialize(string filename)
+        public T Deserialize<T>(string filename)
         {
             using (XmlTextReader reader = new XmlTextReader(filename))
             {
