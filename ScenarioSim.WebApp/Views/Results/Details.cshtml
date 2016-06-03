@@ -1,0 +1,25 @@
+﻿@using ScenarioSim.Core.Entities
+@model ScenarioResult
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <td>Time</td>
+        <td>Name</td>
+        <td>Description</td>
+    </tr>
+    </thead>
+    @foreach (ScenarioEvent e in Model.Events)
+    {
+        <tr>
+            <td>@e.Timestamp</td>
+            <td>@e.Name</td>
+            <td>@e.Description</td>
+        </tr>
+    }
+</table>
+

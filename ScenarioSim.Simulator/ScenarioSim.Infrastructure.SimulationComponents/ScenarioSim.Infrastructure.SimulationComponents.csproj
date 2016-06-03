@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{440504CE-EC03-4A7F-B397-F33621B33119}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ScenarioSim.Infrastructure.SimulationComponents</RootNamespace>
+    <AssemblyName>ScenarioSim.Infrastructure.SimulationComponents</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionEnactComplicationComponent.cs" />
+    <Compile Include="ActionTimeKeeperComponent.cs" />
+    <Compile Include="CsvLoggingComponent.cs" />
+    <Compile Include="CsvTaskResultLogger.cs" />
+    <Compile Include="EnactComplicationAction.cs" />
+    <Compile Include="ITaskResultLogger.cs" />
+    <Compile Include="LoggingComponent.cs" />
+    <Compile Include="ParameterTrackingComponent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultWritingComponent.cs" />
+    <Compile Include="ScenarioEventCollectionComponent.cs" />
+    <Compile Include="StartTimerAction.cs" />
+    <Compile Include="StateChartComponent.cs" />
+    <Compile Include="StopTimerAction.cs" />
+    <Compile Include="TextLoggingComponent.cs" />
+    <Compile Include="TimeKeeperAction.cs" />
+    <Compile Include="TimeKeeperComponent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ScenarioSim.Core\ScenarioSim.Core.Entities\ScenarioSim.Core.Entities.csproj">
+      <Project>{0ca14dc9-3d32-4ad5-bebb-9d6b639861ec}</Project>
+      <Name>ScenarioSim.Core.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Core\ScenarioSim.Core.Interfaces\ScenarioSim.Core.Interfaces.csproj">
+      <Project>{de8824b9-da8f-4d8e-b2c7-080ba045f0f0}</Project>
+      <Name>ScenarioSim.Core.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Utilities\ScenarioSim.Infrastructure.Serialization\ScenarioSim.Infrastructure.XmlSerialization.csproj">
+      <Project>{f9861434-2e50-4347-b75e-bb39ef437a0a}</Project>
+      <Name>ScenarioSim.Infrastructure.XmlSerialization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScenarioSim.Services.Simulator\ScenarioSim.Services.Simulator.csproj">
+      <Project>{ea2178df-7c44-42b8-a82d-c1a7ef1571bd}</Project>
+      <Name>ScenarioSim.Services.Simulator</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

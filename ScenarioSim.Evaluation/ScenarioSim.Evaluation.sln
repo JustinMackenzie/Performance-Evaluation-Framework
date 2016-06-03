@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Core.Entities", "..\ScenarioSim.Core\ScenarioSim.Core.Entities\ScenarioSim.Core.Entities.csproj", "{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Core.Interfaces", "..\ScenarioSim.Core\ScenarioSim.Core.Interfaces\ScenarioSim.Core.Interfaces.csproj", "{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Services.Evaluation", "ScenarioSim.Services.Evaluation\ScenarioSim.Services.Evaluation.csproj", "{6F66A588-5868-4CA5-97DB-C5DAA7A2FD17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.FittsEvaluator", "ScenarioSim.Infrastructure.FittsEvaluator\ScenarioSim.Infrastructure.FittsEvaluator.csproj", "{3D6C79A6-3BEB-450D-91FA-1C6A9F63F207}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Services.Simulator", "..\ScenarioSim.Simulator\ScenarioSim.Services.Simulator\ScenarioSim.Services.Simulator.csproj", "{EA2178DF-7C44-42B8-A82D-C1A7EF1571BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F66A588-5868-4CA5-97DB-C5DAA7A2FD17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F66A588-5868-4CA5-97DB-C5DAA7A2FD17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F66A588-5868-4CA5-97DB-C5DAA7A2FD17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F66A588-5868-4CA5-97DB-C5DAA7A2FD17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D6C79A6-3BEB-450D-91FA-1C6A9F63F207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D6C79A6-3BEB-450D-91FA-1C6A9F63F207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D6C79A6-3BEB-450D-91FA-1C6A9F63F207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D6C79A6-3BEB-450D-91FA-1C6A9F63F207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA2178DF-7C44-42B8-A82D-C1A7EF1571BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA2178DF-7C44-42B8-A82D-C1A7EF1571BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA2178DF-7C44-42B8-A82D-C1A7EF1571BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA2178DF-7C44-42B8-A82D-C1A7EF1571BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
