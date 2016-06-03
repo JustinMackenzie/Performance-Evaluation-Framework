@@ -8,19 +8,42 @@ namespace ScenarioSim.Infrastructure.Simulator
     {
         protected IComplicationEnactorRepository enactorRepository;
         readonly ISimulationComponentRepository componentRepository;
-        private IEntityPlacer placer;
+        private readonly IEntityPlacer placer;
         private bool started;
 
         public ScenarioSimulator(IEntityPlacer placer,
             IComplicationEnactorRepository enactorRepository, ISimulationComponentRepository componentRepository)
+            : this(placer, enactorRepository, componentRepository, new ISimulationComponent[] { })
         {
+        }
+
+        public ScenarioSimulator(IEntityPlacer placer, IComplicationEnactorRepository enactorRepository,
+            ISimulationComponentRepository componentRepository, ISimulationComponent[] components)
+        {
+            if (placer == null)
+                throw new ArgumentNullException(nameof(placer));
+            if (enactorRepository == null)
+                throw new ArgumentNullException(nameof(enactorRepository));
+            if (componentRepository == null)
+                throw new ArgumentNullException(nameof(componentRepository));
+            if (components == null)
+                throw new ArgumentNullException(nameof(components));
+
             this.enactorRepository = enactorRepository;
             this.componentRepository = componentRepository;
             this.placer = placer;
+
+            foreach (ISimulationComponent component in components)
+            {
+                componentRepository.AddComponent(component);
+            }
         }
 
         public void Start(Scenario scenario)
         {
+            if (scenario == null)
+                throw new ArgumentNullException(nameof(scenario));
+
             foreach (Entity entity in scenario.Entities)
                 placer.Place(entity);
 
@@ -46,6 +69,9 @@ namespace ScenarioSim.Infrastructure.Simulator
 
         public void AddEnactor(IComplicationEnactor enactor)
         {
+            if (enactor == null)
+                throw new ArgumentNullException(nameof(enactor));
+
             enactorRepository.AddEnactor(enactor);
         }
 
@@ -59,11 +85,17 @@ namespace ScenarioSim.Infrastructure.Simulator
 
         public void AddComponent(ISimulationComponent component)
         {
+            if (component == null)
+                throw new ArgumentNullException(nameof(component));
+
             componentRepository.AddComponent(component);
         }
 
         public ISimulationComponent GetComponent(Type type)
         {
+            if (type == null)
+                throw new ArgumentNullException(nameof(type));
+
             return componentRepository.GetComponent(type);
         }
     }
