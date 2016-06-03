@@ -52,6 +52,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ScenarioSim.Common\ScenarioSim.Infrastructure.XmlSerialization\ScenarioSim.Infrastructure.XmlSerialization.csproj">
+      <Project>{f9861434-2e50-4347-b75e-bb39ef437a0a}</Project>
+      <Name>ScenarioSim.Infrastructure.XmlSerialization</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ScenarioSim.Core\ScenarioSim.Core.Entities\ScenarioSim.Core.Entities.csproj">
       <Project>{0ca14dc9-3d32-4ad5-bebb-9d6b639861ec}</Project>
       <Name>ScenarioSim.Core.Entities</Name>
@@ -59,10 +63,6 @@
     <ProjectReference Include="..\..\ScenarioSim.Core\ScenarioSim.Core.Interfaces\ScenarioSim.Core.Interfaces.csproj">
       <Project>{de8824b9-da8f-4d8e-b2c7-080ba045f0f0}</Project>
       <Name>ScenarioSim.Core.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Utilities\ScenarioSim.Infrastructure.Serialization\ScenarioSim.Infrastructure.XmlSerialization.csproj">
-      <Project>{f9861434-2e50-4347-b75e-bb39ef437a0a}</Project>
-      <Name>ScenarioSim.Infrastructure.XmlSerialization</Name>
     </ProjectReference>
     <ProjectReference Include="..\ScenarioSim.Infrastructure.SimulationComponents\ScenarioSim.Infrastructure.SimulationComponents.csproj">
       <Project>{440504ce-ec03-4a7f-b397-f33621b33119}</Project>
