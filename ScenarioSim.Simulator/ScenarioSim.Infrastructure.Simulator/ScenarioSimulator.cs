@@ -61,7 +61,7 @@ namespace ScenarioSim.Infrastructure.Simulator
         public void SubmitSimulatorEvent(ScenarioEvent e)
         {
             if (!started)
-                throw new Exception("Simulator has not been started. Please call Start() before submitting events.");
+                throw new InvalidOperationException("Simulator has not been started. Please call Start() before submitting events.");
 
             foreach (ISimulationComponent c in componentRepository.GetAllComponents())
                 c.SubmitEvent(e);
