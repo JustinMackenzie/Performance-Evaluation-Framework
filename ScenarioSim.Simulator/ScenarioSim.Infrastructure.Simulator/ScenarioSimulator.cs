@@ -34,9 +34,7 @@ namespace ScenarioSim.Infrastructure.Simulator
             this.placer = placer;
 
             foreach (ISimulationComponent component in components)
-            {
                 componentRepository.AddComponent(component);
-            }
         }
 
         public void Start(Scenario scenario)
@@ -60,6 +58,9 @@ namespace ScenarioSim.Infrastructure.Simulator
 
         public void SubmitSimulatorEvent(ScenarioEvent e)
         {
+            if(e == null)
+                throw new ArgumentNullException(nameof(e));
+
             if (!started)
                 throw new InvalidOperationException("Simulator has not been started. Please call Start() before submitting events.");
 
