@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using ScenarioSim.Services.Simulator;
 
-namespace ScenarioSim.Infrastructure.Simulator
+namespace ScenarioSim.Infrastructure.Repositories
 {
-    public class ComplicationEnactorRepository : IComplicationEnactorRepository
+    public class InMemoryComplicationEnactorRepository : IComplicationEnactorRepository
     {
-        Dictionary<int, IComplicationEnactor> enactors;
+        private readonly Dictionary<int, IComplicationEnactor> enactors;
 
-        public ComplicationEnactorRepository()
+        public InMemoryComplicationEnactorRepository()
         {
             enactors = new Dictionary<int, IComplicationEnactor>();
         }

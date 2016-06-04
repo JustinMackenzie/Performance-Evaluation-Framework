@@ -38,10 +38,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ComplicationEnactorRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScenarioSimulator.cs" />
-    <Compile Include="SimulationComponentRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ScenarioSim.Core\ScenarioSim.Core.Entities\ScenarioSim.Core.Entities.csproj">

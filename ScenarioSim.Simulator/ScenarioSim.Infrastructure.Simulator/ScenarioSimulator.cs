@@ -6,8 +6,8 @@ namespace ScenarioSim.Infrastructure.Simulator
 {
     public class ScenarioSimulator : IScenarioSimulator
     {
-        protected IComplicationEnactorRepository enactorRepository;
-        readonly ISimulationComponentRepository componentRepository;
+        private readonly IComplicationEnactorRepository enactorRepository;
+        private readonly ISimulationComponentRepository componentRepository;
         private readonly IEntityPlacer placer;
         private bool started;
 

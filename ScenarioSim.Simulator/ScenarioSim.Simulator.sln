@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Services.Serial
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.XmlSerialization", "..\ScenarioSim.Serialization\ScenarioSim.Infrastructure.XmlSerialization\ScenarioSim.Infrastructure.XmlSerialization.csproj", "{F9861434-2E50-4347-B75E-BB39EF437A0A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.Repositories", "..\ScenarioSim.Repository\ScenarioSim.Infrastructure.Repositories\ScenarioSim.Infrastructure.Repositories.csproj", "{F98505E0-4056-4606-B59C-F31CC805E7AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{F9861434-2E50-4347-B75E-BB39EF437A0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9861434-2E50-4347-B75E-BB39EF437A0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9861434-2E50-4347-B75E-BB39EF437A0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F98505E0-4056-4606-B59C-F31CC805E7AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F98505E0-4056-4606-B59C-F31CC805E7AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F98505E0-4056-4606-B59C-F31CC805E7AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F98505E0-4056-4606-B59C-F31CC805E7AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

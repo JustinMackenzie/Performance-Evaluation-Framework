@@ -38,7 +38,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InMemoryComplicationEnactorRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="InMemorySimulationComponentRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ScenarioSim.Simulator\ScenarioSim.Services.Simulator\ScenarioSim.Services.Simulator.csproj">
+      <Project>{ea2178df-7c44-42b8-a82d-c1a7ef1571bd}</Project>
+      <Name>ScenarioSim.Services.Simulator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

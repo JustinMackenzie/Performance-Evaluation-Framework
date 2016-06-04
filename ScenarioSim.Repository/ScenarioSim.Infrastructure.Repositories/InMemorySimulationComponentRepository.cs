@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using ScenarioSim.Services.Simulator;
 
-namespace ScenarioSim.Infrastructure.Simulator
+namespace ScenarioSim.Infrastructure.Repositories
 {
-    public class SimulationComponentRepository : ISimulationComponentRepository
+    public class InMemorySimulationComponentRepository : ISimulationComponentRepository
     {
-        Dictionary<Type, ISimulationComponent> components;
+        private readonly Dictionary<Type, ISimulationComponent> components;
 
-        public SimulationComponentRepository()
+        public InMemorySimulationComponentRepository()
         {
             components = new Dictionary<Type, ISimulationComponent>();
         }
