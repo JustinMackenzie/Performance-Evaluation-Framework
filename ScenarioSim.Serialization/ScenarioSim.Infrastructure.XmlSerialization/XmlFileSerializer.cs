@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Xml;
-using System.Xml.Serialization;
 using ScenarioSim.Services.Serialization;
+using SystemSerializer = System.Xml.Serialization.XmlSerializer;
 
 namespace ScenarioSim.Infrastructure.XmlSerialization
 {
@@ -9,7 +9,6 @@ namespace ScenarioSim.Infrastructure.XmlSerialization
     /// An implementation of IFileSerializer that serializes to and deserializes from
     /// Xml files.
     /// </summary>
-    /// <typeparam name="T">The type of the objects to be serialized or deserialized.</typeparam>
     public class XmlFileSerializer : IFileSerializer
     {
         /// <summary>
@@ -21,7 +20,7 @@ namespace ScenarioSim.Infrastructure.XmlSerialization
         {
             using (StreamWriter writer = new StreamWriter(filename))
             {
-                XmlSerializer serializer = new XmlSerializer(value.GetType());
+                SystemSerializer serializer = new SystemSerializer(value.GetType());
                 serializer.Serialize(writer, value);
             }
         }
@@ -35,7 +34,7 @@ namespace ScenarioSim.Infrastructure.XmlSerialization
         {
             using (XmlTextReader reader = new XmlTextReader(filename))
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(T));
+                SystemSerializer serializer = new SystemSerializer(typeof(T));
                 return (T)serializer.Deserialize(reader);
             }
         }
