@@ -50,6 +50,7 @@
     <Compile Include="Entity.cs" />
     <Compile Include="EventParameter.cs" />
     <Compile Include="EventParameterCollection.cs" />
+    <Compile Include="FittsTask.cs" />
     <Compile Include="PositionAccuracyMetric.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenario.cs" />
