@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="IScenarioEventRepository.cs" />
     <Compile Include="IScenarioResultRepository.cs" />
+    <Compile Include="IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
