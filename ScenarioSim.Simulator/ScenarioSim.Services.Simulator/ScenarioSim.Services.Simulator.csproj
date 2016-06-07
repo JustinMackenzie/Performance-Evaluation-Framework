@@ -49,12 +49,14 @@
     <Compile Include="IScenarioSimulator.cs" />
     <Compile Include="ISimulationComponent.cs" />
     <Compile Include="ISimulationComponentRepository.cs" />
+    <Compile Include="ISimulatorCommand.cs" />
     <Compile Include="ISimulatorPlatform.cs" />
     <Compile Include="IStateChartAction.cs" />
     <Compile Include="IStateChartBuilder.cs" />
     <Compile Include="IStateChartEngine.cs" />
     <Compile Include="IStateChartEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimulatorEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ScenarioSim.Core\ScenarioSim.Core.Entities\ScenarioSim.Core.Entities.csproj">

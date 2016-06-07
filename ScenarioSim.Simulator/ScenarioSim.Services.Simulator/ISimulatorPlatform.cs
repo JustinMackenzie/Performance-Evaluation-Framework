@@ -1,5 +1,4 @@
 ﻿using System;
-using ScenarioSim.Core.Entities;
 
 namespace ScenarioSim.Services.Simulator
 {
@@ -8,14 +7,5 @@ namespace ScenarioSim.Services.Simulator
         event EventHandler<SimulatorEventArgs> ProducedEvent;
 
         void SendCommand(ISimulatorCommand command);
-    }
-
-    public class SimulatorEventArgs : EventArgs
-    {
-        public ScenarioEvent ScenarioEvent { get; set; }
-    }
-
-    public interface ISimulatorCommand
-    {
     }
 }
