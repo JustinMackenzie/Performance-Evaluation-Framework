@@ -9,6 +9,7 @@ namespace ScenarioSim.Infrastructure.Simulator
         private readonly IComplicationEnactorRepository enactorRepository;
         private readonly ISimulationComponentRepository componentRepository;
         private readonly IEntityPlacer placer;
+        private ISimulatorPlatform simulator;
         private bool started;
 
         public ScenarioSimulator(IEntityPlacer placer,
@@ -37,10 +38,15 @@ namespace ScenarioSim.Infrastructure.Simulator
                 componentRepository.AddComponent(component);
         }
 
-        public void Start(Scenario scenario)
+        public void Start(Scenario scenario, ISimulatorPlatform simulator)
         {
             if (scenario == null)
                 throw new ArgumentNullException(nameof(scenario));
+            if (simulator == null)
+                throw new ArgumentNullException(nameof(simulator));
+
+            this.simulator = simulator;
+            simulator.ProducedEvent += OnSimulatorEventRecieved;
 
             foreach (Entity entity in scenario.Entities)
                 placer.Place(entity);
@@ -54,6 +60,20 @@ namespace ScenarioSim.Infrastructure.Simulator
         public void Stop()
         {
             Complete();
+            simulator.ProducedEvent -= OnSimulatorEventRecieved;
+            simulator = null;
+        }
+
+        private void OnSimulatorEventRecieved(object sender, SimulatorEventArgs e)
+        {
+            if (e == null)
+                return;
+
+            if (e.ScenarioEvent == null)
+                throw new InvalidOperationException("The simulator event cannot be null.");
+
+            foreach (ISimulationComponent c in componentRepository.GetAllComponents())
+                c.SubmitEvent(e.ScenarioEvent);
         }
 
         public void SubmitSimulatorEvent(ScenarioEvent e)

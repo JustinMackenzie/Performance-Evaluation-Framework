@@ -12,18 +12,13 @@ namespace ScenarioSim.Services.Simulator
         /// Starts the simulator with the given scenario.
         /// </summary>
         /// <param name="scenario">The scenario to be performed.</param>
-        void Start(Scenario scenario);
+        /// <param name="simulator">The simulator this scenario is to be performed on.</param>
+        void Start(Scenario scenario, ISimulatorPlatform simulator);
 
         /// <summary>
         /// Stops the simulator. This will conclude the scenario execution.
         /// </summary>
         void Stop();
-
-        /// <summary>
-        /// Submits the given event to the simulator to be processed.
-        /// </summary>
-        /// <param name="e">The event to be processed.</param>
-        void SubmitSimulatorEvent(ScenarioEvent e);
 
         /// <summary>
         /// Adds the given complication enactor to the simulator. The enactor will

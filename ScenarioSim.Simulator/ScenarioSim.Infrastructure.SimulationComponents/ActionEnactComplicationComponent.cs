@@ -5,8 +5,8 @@ namespace ScenarioSim.Infrastructure.SimulationComponents
 {
     public class ActionEnactComplicationComponent : ISimulationComponent
     {
-        private StateChartComponent component;
-        private IComplicationEnactorRepository repository;
+        private readonly StateChartComponent component;
+        private readonly IComplicationEnactorRepository repository;
 
         public ActionEnactComplicationComponent(StateChartComponent component, IComplicationEnactorRepository repository)
         {
