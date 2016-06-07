@@ -98,6 +98,15 @@
   <ItemGroup>
     <Content Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ScenarioSim.EvaluationWebApi\ScenarioSim.EvaluationWebApi.csproj">
+      <Project>{9AFBC813-85EA-4B11-BF2D-1D23E896EF4C}</Project>
+      <Name>ScenarioSim.EvaluationWebApi</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
