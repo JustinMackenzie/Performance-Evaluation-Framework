@@ -4,7 +4,7 @@ namespace ScenarioSim.Core.Entities
     /// <summary>
     /// Represents a complication that is triggered when a task is started or finished.
     /// </summary>
-    public class TaskDependantComplication : Complication
+    public class TaskDependantScenarioEvent : ScenarioEvent
     {
         /// <summary>
         /// The task that the complication depends on.

@@ -6,7 +6,7 @@ namespace ScenarioSim.Core.Entities
     /// Represents a parameter to be included with scenario events.
     /// </summary>
     [XmlInclude(typeof(Vector3f))]
-    public class EventParameter
+    public class ActionParameter
     {
         /// <summary>
         /// The name of the parameter.

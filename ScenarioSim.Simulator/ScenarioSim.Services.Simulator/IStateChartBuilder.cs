@@ -7,7 +7,7 @@ namespace ScenarioSim.Services.Simulator
         /// <summary>
         /// Builds the state chart from the given scenario.
         /// </summary>
-        /// <param name="scenario">The scenario to transform into a state chart.</param>
+        /// <param name="scenario">The scenario to Transform into a state chart.</param>
         /// <returns>A state chart engine with the state chart based off of the scenario.</returns>
         IStateChartEngine Build(Scenario scenario);
     }

@@ -15,6 +15,6 @@ namespace ScenarioSim.Core.Entities
         /// <summary>
         /// The parameter that is collected.
         /// </summary>
-        public EventParameter Parameter { get; set; }
+        public ActionParameter Parameter { get; set; }
     }
 }

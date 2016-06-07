@@ -1,5 +1,4 @@
-﻿
-namespace ScenarioSim.Core.Entities
+﻿namespace ScenarioSim.Core.Entities
 {
     /// <summary>
     /// Represents a phyiscal entity in the scenario.
@@ -7,9 +6,9 @@ namespace ScenarioSim.Core.Entities
     public class Entity
     {
         /// <summary>
-        /// The transform of the entity.
+        /// The Transform of the entity.
         /// </summary>
-        public Transform transform { get; set; }
+        public Transform Transform { get; set; }
 
         /// <summary>
         /// The identification number of the entity.

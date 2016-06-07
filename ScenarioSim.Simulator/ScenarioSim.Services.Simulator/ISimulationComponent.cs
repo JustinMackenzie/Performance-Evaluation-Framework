@@ -17,7 +17,7 @@ namespace ScenarioSim.Services.Simulator
         /// Performs the component's logic when an event is submitted.
         /// </summary>
         /// <param name="e">The scenario event.</param>
-        void SubmitEvent(ScenarioEvent e);
+        void SubmitEvent(UserAction e);
 
         /// <summary>
         /// Completes the component's execution.

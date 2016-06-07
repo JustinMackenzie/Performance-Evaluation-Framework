@@ -23,9 +23,9 @@ namespace ScenarioSim.Core.Entities
         public TreeNode<TaskResult> TaskResult { get; set; }
 
         /// <summary>
-        /// The collection of scenario events that were submitted.
+        /// The collection of user actions that were submitted.
         /// </summary>
-        public List<ScenarioEvent> Events { get; set; }
+        public List<UserAction> UserActions { get; set; }
 
         /// <summary>
         /// A collection of the tracked parameters from the performance.

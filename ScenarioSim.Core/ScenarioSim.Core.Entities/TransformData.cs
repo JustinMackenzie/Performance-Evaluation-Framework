@@ -8,17 +8,17 @@ namespace ScenarioSim.Core.Entities
     public struct Transform
     {
         /// <summary>
-        /// The position component of the transform.
+        /// The position component of the Transform.
         /// </summary>
         public Vector3f Position { get; set; }
 
         /// <summary>
-        /// The rotation component of the transform.
+        /// The rotation component of the Transform.
         /// </summary>
         public Vector3f Rotation { get; set; }
 
         /// <summary>
-        /// The scaling component of the transform.
+        /// The scaling component of the Transform.
         /// </summary>
         public Vector3f Scale { get; set; }
 
@@ -37,9 +37,9 @@ namespace ScenarioSim.Core.Entities
         }
 
         /// <summary>
-        /// Gives a string representation fo the transform.
+        /// Gives a string representation fo the Transform.
         /// </summary>
-        /// <returns>A string representation of the transform.</returns>
+        /// <returns>A string representation of the Transform.</returns>
         public override string ToString()
         {
             return string.Format("Position:{0}; Rotation:{1}; Scale:{2}", Position, Rotation, Scale);

@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IScenarioEventRepository.cs" />
+    <Compile Include="IUserActionRepository.cs" />
     <Compile Include="IScenarioResultRepository.cs" />
     <Compile Include="IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

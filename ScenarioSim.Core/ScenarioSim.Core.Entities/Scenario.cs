@@ -13,9 +13,12 @@ namespace ScenarioSim.Core.Entities
         public string Name { get; set; }
 
         /// <summary>
-        /// The actor performing this scenario.
+        /// Gets or sets the actors.
         /// </summary>
-        public Actor Actor { get; set; }
+        /// <value>
+        /// The actors performing in this scenario.
+        /// </value>
+        public List<Actor> Actors { get; set; }
 
         /// <summary>
         /// The task to be performed in this scenario.
@@ -30,7 +33,7 @@ namespace ScenarioSim.Core.Entities
         /// <summary>
         /// The collection of complications that will arise during the scenario.
         /// </summary>
-        public List<Complication> Complications { get; set; }
+        public List<ScenarioEvent> Complications { get; set; }
 
         /// <summary>
         /// The collection of entities that are located in the spatial domain of the scenario.
@@ -42,7 +45,7 @@ namespace ScenarioSim.Core.Entities
         /// </summary>
         public Scenario()
         {
-            Complications = new List<Complication>();
+            Complications = new List<ScenarioEvent>();
             TaskTransitions = new List<TaskTransition>();
             Entities = new List<Entity>();
         }

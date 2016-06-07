@@ -12,6 +12,15 @@ namespace ScenarioSim.Core.Entities
         /// The name of the task.
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the actor.
+        /// </summary>
+        /// <value>
+        /// The actor responsible for completing this task.
+        /// </value>
+        public Actor Actor { get; set; }
+
         /// <summary>
         /// Determines whether this is the final task of the scenario.
         /// </summary>
