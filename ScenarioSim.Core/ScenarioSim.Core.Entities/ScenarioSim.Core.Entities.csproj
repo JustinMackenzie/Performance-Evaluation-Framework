@@ -47,6 +47,7 @@
     <Compile Include="AccuracyMetricResult.cs" />
     <Compile Include="Actor.cs" />
     <Compile Include="ActualValueLocation.cs" />
+    <Compile Include="FittsTaskResult.cs" />
     <Compile Include="ScenarioEvent.cs" />
     <Compile Include="DirectionAccuracyMetric.cs" />
     <Compile Include="Entity.cs" />

@@ -11,7 +11,7 @@ namespace ScenarioSim.Core.Interfaces
         
         IEnumerable<ScenarioResult> GetAllResultsByScenario(Scenario scenario);
 
-        IEnumerable<ScenarioResult> GetAllResultsByUser(User user);
+        IEnumerable<ScenarioResult> GetAllResultsByUser(User user, Scenario scenario);
 
         ScenarioResult GetResult(int id);
 
