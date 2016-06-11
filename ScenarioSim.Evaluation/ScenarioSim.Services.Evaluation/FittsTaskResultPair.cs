@@ -1,11 +1,11 @@
 ﻿using ScenarioSim.Core.Entities;
 
-namespace ScenarioSim.Infrastructure.FittsEvaluator
+namespace ScenarioSim.Services.Evaluation
 {
     /// <summary>
     /// Represents a pair of the fitts task and the performance result of that task.
     /// </summary>
-    internal struct FittsTaskResultPair
+    public struct FittsTaskResultPair
     {
         /// <summary>
         /// Gets or sets the task.

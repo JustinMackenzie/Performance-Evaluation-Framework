@@ -206,6 +206,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FittsEvaluationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -284,6 +285,24 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ScenarioSim.Core\ScenarioSim.Core.Entities\ScenarioSim.Core.Entities.csproj">
+      <Project>{0ca14dc9-3d32-4ad5-bebb-9d6b639861ec}</Project>
+      <Name>ScenarioSim.Core.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Core\ScenarioSim.Core.Interfaces\ScenarioSim.Core.Interfaces.csproj">
+      <Project>{de8824b9-da8f-4d8e-b2c7-080ba045f0f0}</Project>
+      <Name>ScenarioSim.Core.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Evaluation\ScenarioSim.Infrastructure.FittsEvaluator\ScenarioSim.Infrastructure.FittsEvaluator.csproj">
+      <Project>{3d6c79a6-3beb-450d-91fa-1c6a9f63f207}</Project>
+      <Name>ScenarioSim.Infrastructure.FittsEvaluator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Evaluation\ScenarioSim.Services.Evaluation\ScenarioSim.Services.Evaluation.csproj">
+      <Project>{6f66a588-5868-4ca5-97db-c5daa7a2fd17}</Project>
+      <Name>ScenarioSim.Services.Evaluation</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

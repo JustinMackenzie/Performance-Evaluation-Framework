@@ -42,6 +42,7 @@
     <Compile Include="FittsEvaluationResult.cs" />
     <Compile Include="FittsTaskEvaluation.cs" />
     <Compile Include="FittsTaskResultEvaluation.cs" />
+    <Compile Include="FittsTaskResultPair.cs" />
     <Compile Include="IFittsEvaluator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

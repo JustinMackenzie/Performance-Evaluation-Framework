@@ -63,8 +63,7 @@ namespace ScenarioSim.Infrastructure.FittsEvaluator
                 BuildFittsTaskEvaluations(child);
         }
 
-
-        private FittsTaskResultEvaluation DetermineParameters(List<FittsTaskResultPair> fittsTaskResultPairs)
+        public FittsTaskResultEvaluation EvaluateResults(List<FittsTaskResultPair> fittsTaskResultPairs)
         {
             if (!fittsTaskResultPairs.Any())
                 return null;
@@ -103,7 +102,7 @@ namespace ScenarioSim.Infrastructure.FittsEvaluator
 
             foreach (KeyValuePair<string, List<FittsTaskResultPair>> pairs in
                 taskDifficultySpeedCollection)
-                fittsTaskEvaluations.Add(pairs.Key, DetermineParameters(pairs.Value));
+                fittsTaskEvaluations.Add(pairs.Key, EvaluateResults(pairs.Value));
 
             TreeNode<FittsTaskEvaluation> fittsTaskResultEvaluation = BuildFittsTaskEvaluationTree(scenario.Task);
 
