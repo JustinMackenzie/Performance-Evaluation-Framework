@@ -1,10 +1,16 @@
-﻿namespace ScenarioSim.Core.Entities
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ScenarioSim.Core.Entities
 {
     /// <summary>
-    /// Represents the performance result of a fitts task.
+    /// 
     /// </summary>
     /// <seealso cref="ScenarioSim.Core.Entities.TaskResult" />
-    public class FittsTaskResult : TaskResult
+    public class SteeringTaskResult : TaskResult
     {
         /// <summary>
         /// Gets the time.

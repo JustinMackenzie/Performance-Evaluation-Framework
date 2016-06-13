@@ -20,7 +20,7 @@ namespace ScenarioSim.Core.Entities
         /// <summary>
         /// The performance results of the tasks.
         /// </summary>
-        public TreeNode<TaskResult> TaskResult { get; set; }
+        public TaskResult TaskResult { get; set; }
 
         /// <summary>
         /// The collection of user actions that were submitted.

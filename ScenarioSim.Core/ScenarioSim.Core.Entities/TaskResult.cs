@@ -21,14 +21,17 @@ namespace ScenarioSim.Core.Entities
         public List<AccuracyMetricResult> Results { get; set; }
 
         /// <summary>
-        /// The speed of the task.
+        /// Gets or sets the speed.
         /// </summary>
+        /// <value>
+        /// The speed of completing the task in milliseconds.
+        /// </value>
         public long Speed { get; set; }
 
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public TaskResult()
+        protected TaskResult()
         {
             Results = new List<AccuracyMetricResult>();
         }

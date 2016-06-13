@@ -23,7 +23,7 @@ namespace ScenarioSim.Core.Entities
         /// <summary>
         /// The task to be performed in this scenario.
         /// </summary>
-        public TreeNode<Task> Task{ get; set; }
+        public Task Task { get; set; }
 
         /// <summary>
         /// The collection of task transitions.

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ScenarioSim.Core.Entities
 {
@@ -9,8 +10,19 @@ namespace ScenarioSim.Core.Entities
     public class Task
     {
         /// <summary>
-        /// The name of the task.
+        /// Gets or sets the identifier.
         /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
+        public Guid Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name of the task.
+        /// </value>
         public string Name { get; set; }
 
         /// <summary>
