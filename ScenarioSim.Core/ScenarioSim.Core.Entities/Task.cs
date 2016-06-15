@@ -55,5 +55,23 @@ namespace ScenarioSim.Core.Entities
         {
             AccuracyMetrics = new List<AccuracyMetric>();
         }
+
+        /// <summary>
+        /// Gets the task tree node.
+        /// </summary>
+        /// <returns>A task tree node based on this task.</returns>
+        public virtual TreeNode<Task> GetTaskTreeNode()
+        {
+            return new TreeNode<Task>(this);
+        }
+
+        /// <summary>
+        /// Sets the specific values.
+        /// </summary>
+        /// <param name="specificTask">The specific task.</param>
+        public virtual void SetSpecificValues(Task specificTask)
+        {
+            Name = specificTask.Name;
+        }
     }
 }

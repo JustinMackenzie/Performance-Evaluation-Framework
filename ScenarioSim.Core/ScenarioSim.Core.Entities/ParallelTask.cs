@@ -3,17 +3,17 @@
 namespace ScenarioSim.Core.Entities
 {
     /// <summary>
-    /// Represents a task that is composed of child tasks.
+    /// Represents a task that composed of subtasks that are executed at the same time.
     /// </summary>
-    public class CompositeTask : Task
+    public class ParallelTask : Task
     {
         /// <summary>
-        /// Gets or sets the sub tasks.
+        /// Gets or sets the tasks.
         /// </summary>
         /// <value>
-        /// The sub tasks.
+        /// The tasks.
         /// </value>
-        public IEnumerable<Task> SubTasks { get; set; }
+        public List<Task> Tasks { get; set; }
 
         /// <summary>
         /// Gets the task tree node.
@@ -25,7 +25,7 @@ namespace ScenarioSim.Core.Entities
         {
             TreeNode<Task> node = new TreeNode<Task>(this);
 
-            foreach (Task subTask in SubTasks)
+            foreach (Task subTask in Tasks)
                 node.AppendChild(subTask.GetTaskTreeNode());
 
             return node;

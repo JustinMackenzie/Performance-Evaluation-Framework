@@ -10,7 +10,7 @@ namespace ScenarioSim.Infrastructure.FittsEvaluator
 {
     public class FittsEvaluator : IFittsEvaluator
     {
-        private IScenarioResultRepository resultRepository;
+        private readonly IScenarioResultRepository resultRepository;
         private Dictionary<string, List<FittsTaskResultPair>> taskDifficultySpeedCollection;
         private Dictionary<string, FittsTaskResultEvaluation> fittsTaskEvaluations;
         private TreeNode<List<FittsTaskResultPair>> taskSpeedTimes;
@@ -75,7 +75,7 @@ namespace ScenarioSim.Infrastructure.FittsEvaluator
             {
                 xValues[i][0] = 1;
                 xValues[i][1] = fittsTaskResultPairs[i].Task.IndexOfDifficulty;
-                yValues[i] = fittsTaskResultPairs[i].Result.Speed;
+                yValues[i] = fittsTaskResultPairs[i].Result.ElapsedTime;
             }
 
             var x = DenseMatrix.OfColumnArrays(xValues);
@@ -96,7 +96,7 @@ namespace ScenarioSim.Infrastructure.FittsEvaluator
 
             // Go through each scenario building the fitts task evaluations
             foreach (ScenarioResult simulationResult in results)
-                BuildFittsTaskEvaluations(simulationResult.TaskResult);
+                BuildFittsTaskEvaluations(simulationResult.TaskResultTree);
 
             fittsTaskEvaluations = new Dictionary<string, FittsTaskResultEvaluation>();
 
@@ -104,7 +104,7 @@ namespace ScenarioSim.Infrastructure.FittsEvaluator
                 taskDifficultySpeedCollection)
                 fittsTaskEvaluations.Add(pairs.Key, EvaluateResults(pairs.Value));
 
-            TreeNode<FittsTaskEvaluation> fittsTaskResultEvaluation = BuildFittsTaskEvaluationTree(scenario.Task);
+            TreeNode<FittsTaskEvaluation> fittsTaskResultEvaluation = BuildFittsTaskEvaluationTree(scenario.TaskTree);
 
             return new FittsEvaluationResult { FittsTaskResultEvaluation = fittsTaskResultEvaluation };
         }
@@ -120,9 +120,7 @@ namespace ScenarioSim.Infrastructure.FittsEvaluator
             TreeNode<FittsTaskEvaluation> fittsTaskResultEvaluationNode = new TreeNode<FittsTaskEvaluation>(fittsTaskResultEvaluation);
 
             foreach (TreeNode<Task> child in task.Children)
-            {
                 fittsTaskResultEvaluationNode.AppendChild(BuildFittsTaskEvaluationTree(child));
-            }
 
             return fittsTaskResultEvaluationNode;
         }

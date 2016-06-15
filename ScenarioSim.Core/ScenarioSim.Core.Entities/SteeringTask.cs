@@ -27,5 +27,20 @@ namespace ScenarioSim.Core.Entities
         /// The width of the tunnel.
         /// </value>
         public float W { get; set; }
+
+        /// <summary>
+        /// Sets the specific values.
+        /// </summary>
+        /// <param name="specificTask">The specific task.</param>
+        public override void SetSpecificValues(Task specificTask)
+        {
+            SteeringTask steeringTask = specificTask as SteeringTask;
+
+            if (steeringTask == null)
+                return;
+
+            A = steeringTask.A;
+            W = steeringTask.W;
+        }
     }
 }

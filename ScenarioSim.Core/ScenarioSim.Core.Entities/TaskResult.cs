@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ScenarioSim.Core.Entities
 {
@@ -16,17 +17,33 @@ namespace ScenarioSim.Core.Entities
         public Task Task { get; set; }
 
         /// <summary>
+        /// Gets or sets the timestamp.
+        /// </summary>
+        /// <value>
+        /// The timestamp.
+        /// </value>
+        public DateTime Timestamp { get; set; }
+
+        /// <summary>
         /// The accuracy metric results for the task.
         /// </summary>
         public List<AccuracyMetricResult> Results { get; set; }
 
         /// <summary>
-        /// Gets or sets the speed.
+        /// Gets or sets the user.
         /// </summary>
         /// <value>
-        /// The speed of completing the task in milliseconds.
+        /// The user that performed this task.
         /// </value>
-        public long Speed { get; set; }
+        public User User { get; set; }
+
+        /// <summary>
+        /// Gets or sets the elapsed time.
+        /// </summary>
+        /// <value>
+        /// The elapsed time to complete the task.
+        /// </value>
+        public long ElapsedTime { get; set; }
 
         /// <summary>
         /// The default constructor.
@@ -34,6 +51,15 @@ namespace ScenarioSim.Core.Entities
         protected TaskResult()
         {
             Results = new List<AccuracyMetricResult>();
+        }
+
+        /// <summary>
+        /// Gets the tree node.
+        /// </summary>
+        /// <returns></returns>
+        public virtual TreeNode<TaskResult> GetTreeNode()
+        {
+            return new TreeNode<TaskResult>(this);
         }
     }
 }

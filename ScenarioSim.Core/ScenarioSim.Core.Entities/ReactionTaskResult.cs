@@ -18,6 +18,6 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The time to complete the task in seconds.
         /// </value>
-        public float Time => 1.0f * Speed / 1000;
+        public float Time => 1.0f * ElapsedTime / 1000;
     }
 }

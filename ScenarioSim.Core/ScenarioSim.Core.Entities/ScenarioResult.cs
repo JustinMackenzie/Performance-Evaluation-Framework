@@ -23,6 +23,14 @@ namespace ScenarioSim.Core.Entities
         public TaskResult TaskResult { get; set; }
 
         /// <summary>
+        /// Gets the task result tree.
+        /// </summary>
+        /// <value>
+        /// The task result tree.
+        /// </value>
+        public TreeNode<TaskResult> TaskResultTree => TaskResult.GetTreeNode(); 
+
+        /// <summary>
         /// The collection of user actions that were submitted.
         /// </summary>
         public List<UserAction> UserActions { get; set; }

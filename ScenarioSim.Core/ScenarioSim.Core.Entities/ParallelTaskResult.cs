@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace ScenarioSim.Core.Entities
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <seealso cref="ScenarioSim.Core.Entities.TaskResult" />
-    public class CompositeTaskResult : TaskResult
+    public class ParallelTaskResult : TaskResult
     {
         /// <summary>
         /// Gets or sets the task results.
@@ -19,14 +15,6 @@ namespace ScenarioSim.Core.Entities
         /// The task results.
         /// </value>
         public IEnumerable<TaskResult> TaskResults { get; set; }
-
-        /// <summary>
-        /// Gets the time.
-        /// </summary>
-        /// <value>
-        /// The time.
-        /// </value>
-        public float Time => 1.0f * TaskResults.Sum(r => r.ElapsedTime) / 1000;
 
         /// <summary>
         /// Gets the tree node.

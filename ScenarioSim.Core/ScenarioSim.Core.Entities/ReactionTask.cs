@@ -13,5 +13,19 @@
         /// The delay of the task.
         /// </value>
         public float Delay { get; set; }
+
+        /// <summary>
+        /// Sets the specific values.
+        /// </summary>
+        /// <param name="specificTask">The specific task.</param>
+        public override void SetSpecificValues(Task specificTask)
+        {
+            ReactionTask reactionTask = specificTask as ReactionTask;
+
+            if (reactionTask == null)
+                return;
+
+            Delay = reactionTask.Delay;
+        }
     }
 }

@@ -51,6 +51,8 @@
     <Compile Include="CompositeTaskResult.cs" />
     <Compile Include="FittsSteeringLawTask.cs" />
     <Compile Include="FittsTaskResult.cs" />
+    <Compile Include="ParallelTask.cs" />
+    <Compile Include="ParallelTaskResult.cs" />
     <Compile Include="ReactionTask.cs" />
     <Compile Include="ReactionTaskResult.cs" />
     <Compile Include="ScenarioEvent.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="PositionAccuracyMetric.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenario.cs" />
+    <Compile Include="Schema.cs" />
     <Compile Include="SteeringTask.cs" />
     <Compile Include="SteeringTaskResult.cs" />
     <Compile Include="UserAction.cs" />

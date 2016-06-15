@@ -31,5 +31,20 @@ namespace ScenarioSim.Core.Entities
         /// The index of difficulty.
         /// </value>
         public float IndexOfDifficulty => (float)Math.Log(2.0 * D / W, 2);
+
+        /// <summary>
+        /// Sets the specific values.
+        /// </summary>
+        /// <param name="specificTask">The specific task.</param>
+        public override void SetSpecificValues(Task specificTask)
+        {
+            FittsTask fittsTask = specificTask as FittsTask;
+
+            if (fittsTask == null)
+                return;
+
+            D = fittsTask.D;
+            W = fittsTask.W;
+        }
     }
 }
