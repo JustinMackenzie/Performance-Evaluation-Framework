@@ -34,6 +34,8 @@ namespace ScenarioSim.Core.Entities
         /// <param name="specificTask">The specific task.</param>
         public override void SetSpecificValues(Task specificTask)
         {
+            base.SetSpecificValues(specificTask);
+
             SteeringTask steeringTask = specificTask as SteeringTask;
 
             if (steeringTask == null)

@@ -20,6 +20,8 @@
         /// <param name="specificTask">The specific task.</param>
         public override void SetSpecificValues(Task specificTask)
         {
+            base.SetSpecificValues(specificTask);
+
             ReactionTask reactionTask = specificTask as ReactionTask;
 
             if (reactionTask == null)
