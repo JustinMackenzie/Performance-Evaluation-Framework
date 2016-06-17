@@ -14,7 +14,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The identifier.
         /// </value>
-        Guid Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or sets the scenarios.

@@ -89,6 +89,7 @@ namespace ScenarioSim.ScenarioCreatorCLI
 
             Program program = new Program
             {
+                Id = Guid.NewGuid(),
                 Scenarios = new List<Scenario>
                 {
                     scenario1,
