@@ -54,6 +54,7 @@
     <Compile Include="FittsTaskValues.cs" />
     <Compile Include="ParallelTask.cs" />
     <Compile Include="ParallelTaskResult.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="ReactionTaskResult.cs" />
     <Compile Include="ReactionTaskValues.cs" />
     <Compile Include="ScenarioEvent.cs" />
