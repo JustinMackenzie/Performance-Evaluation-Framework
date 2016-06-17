@@ -8,19 +8,14 @@ namespace ScenarioSim.Infrastructure.JsonNetSerializer
     {
         public T Deserialize<T>(string filename)
         {
-            JsonSerializer serializer = new JsonSerializer();
-
-            using (StreamReader reader = new StreamReader(filename))
-            using (JsonReader r = new JsonTextReader(reader))
-                return (T)serializer.Deserialize(r);
+            string content = File.ReadAllText(filename);
+            return JsonConvert.DeserializeObject<T>(content, JsonNetSerializerSettings.JsonSerializerSettings);
         }
 
         public void Serialize<T>(string filename, T value)
         {
-            JsonSerializer serializer = new JsonSerializer();
-
-            using (StreamWriter streamWriter = new StreamWriter(filename))
-                serializer.Serialize(streamWriter, value);
+            string json = JsonConvert.SerializeObject(value, JsonNetSerializerSettings.JsonSerializerSettings);
+            File.WriteAllText(filename, json);
         }
     }
 }

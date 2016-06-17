@@ -66,12 +66,11 @@ namespace ScenarioSim.Core.Entities
         }
 
         /// <summary>
-        /// Sets the specific values.
+        /// Gets or sets the task values.
         /// </summary>
-        /// <param name="specificTask">The specific task.</param>
-        public virtual void SetSpecificValues(Task specificTask)
-        {
-            Name = specificTask.Name;
-        }
+        /// <value>
+        /// The task values.
+        /// </value>
+        public TaskValues TaskValues { get; set; }
     }
 }

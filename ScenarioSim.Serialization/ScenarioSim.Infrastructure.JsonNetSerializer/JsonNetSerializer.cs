@@ -7,12 +7,12 @@ namespace ScenarioSim.Infrastructure.JsonNetSerializer
     {
         public string Serialize<T>(T value)
         {
-            return JsonConvert.SerializeObject(value);
+            return JsonConvert.SerializeObject(value, JsonNetSerializerSettings.JsonSerializerSettings);
         }
 
         public T Deserialize<T>(string value)
         {
-            return JsonConvert.DeserializeObject<T>(value);
+            return JsonConvert.DeserializeObject<T>(value, JsonNetSerializerSettings.JsonSerializerSettings);
         }
     }
 }

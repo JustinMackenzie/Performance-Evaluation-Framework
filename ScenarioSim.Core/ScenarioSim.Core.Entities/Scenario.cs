@@ -35,7 +35,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The actors performing in this scenario.
         /// </value>
-        public List<Actor> Actors { get; set; }
+        public List<Actor> Actors => Schema.Actors;
 
         /// <summary>
         /// The task to be performed in this scenario.
@@ -79,7 +79,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The scenario specific tasks.
         /// </value>
-        public Dictionary<Guid, Task> ScenarioSpecificTasks { get; set; } 
+        public Dictionary<Guid, TaskValues> ScenarioSpecificTasks { get; set; } 
 
         /// <summary>
         /// Initializes a new scenario object.
@@ -89,15 +89,15 @@ namespace ScenarioSim.Core.Entities
             Complications = new List<ScenarioEvent>();
             TaskTransitions = new List<TaskTransition>();
             Entities = new List<Entity>();
-            ScenarioSpecificTasks = new Dictionary<Guid, Task>();
+            ScenarioSpecificTasks = new Dictionary<Guid, TaskValues>();
         }
 
         private void CopyScenarioSpecificTask(Task task)
         {
-            Task specificTask;
+            TaskValues taskValues;
 
-            if (ScenarioSpecificTasks.TryGetValue(task.Id, out specificTask))
-                task.SetSpecificValues(specificTask);
+            if (ScenarioSpecificTasks.TryGetValue(task.Id, out taskValues))
+                task.TaskValues = taskValues;
         }
     }
 }

@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 
 namespace ScenarioSim.Core.Entities
 {
     /// <summary>
-    /// Represents a task in the Fitts' Law paradigm
+    /// 
     /// </summary>
-    /// <seealso cref="ScenarioSim.Core.Entities.Task" />
-    public class FittsTask : Task
+    /// <seealso cref="ScenarioSim.Core.Entities.TaskValues" />
+    public class FittsTaskValues : TaskValues
     {
         /// <summary>
         /// Gets or sets the D parameter.
@@ -31,22 +31,5 @@ namespace ScenarioSim.Core.Entities
         /// The index of difficulty.
         /// </value>
         public float IndexOfDifficulty => (float)Math.Log(2.0 * D / W, 2);
-
-        /// <summary>
-        /// Sets the specific values.
-        /// </summary>
-        /// <param name="specificTask">The specific task.</param>
-        public override void SetSpecificValues(Task specificTask)
-        {
-            base.SetSpecificValues(specificTask);
-
-            FittsTask fittsTask = specificTask as FittsTask;
-
-            if (fittsTask == null)
-                return;
-
-            D = fittsTask.D;
-            W = fittsTask.W;
-        }
     }
 }
