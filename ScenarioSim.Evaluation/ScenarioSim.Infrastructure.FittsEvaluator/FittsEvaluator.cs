@@ -11,9 +11,9 @@ namespace ScenarioSim.Infrastructure.FittsEvaluator
     public class FittsEvaluator : IFittsEvaluator
     {
         private readonly IScenarioResultRepository resultRepository;
-        private Dictionary<string, List<FittsTaskResultPair>> taskDifficultySpeedCollection;
-        private Dictionary<string, FittsTaskResultEvaluation> fittsTaskEvaluations;
-        private TreeNode<List<FittsTaskResultPair>> taskSpeedTimes;
+        private Dictionary<Guid, List<TaskResult>> taskDifficultySpeedCollection;
+        private Dictionary<Guid, FittsTaskResultEvaluation> fittsTaskEvaluations;
+        private TreeNode<List<TaskResult>> taskSpeedTimes;
         private TreeNode<FittsTaskResultEvaluation> fittsTaskEvaluationTree;
 
         public FittsEvaluator(IScenarioResultRepository resultRepository)
@@ -42,28 +42,19 @@ namespace ScenarioSim.Infrastructure.FittsEvaluator
 
         private void BuildFittsTaskEvaluations(TreeNode<TaskResult> resultsNode)
         {
-            if (resultsNode.Value is FittsTaskResult)
-            {
-                string taskName = resultsNode.Value.Task.Name;
+            Guid id = resultsNode.Value.Task.Id;
 
-                FittsTaskResultPair pair = new FittsTaskResultPair
-                {
-                    Result = resultsNode.Value as FittsTaskResult,
-                    Task = resultsNode.Value.Task as FittsTask
-                };
-
-                if (taskDifficultySpeedCollection.ContainsKey(taskName))
-                    taskDifficultySpeedCollection[taskName].Add(pair);
-                else
-                    taskDifficultySpeedCollection.Add(taskName,
-                        new List<FittsTaskResultPair> { pair });
-            }
+            if (taskDifficultySpeedCollection.ContainsKey(id))
+                taskDifficultySpeedCollection[id].Add(resultsNode.Value);
+            else
+                taskDifficultySpeedCollection.Add(id,
+                    new List<TaskResult> { resultsNode.Value });
 
             foreach (TreeNode<TaskResult> child in resultsNode.Children)
                 BuildFittsTaskEvaluations(child);
         }
 
-        public FittsTaskResultEvaluation EvaluateResults(List<FittsTaskResultPair> fittsTaskResultPairs)
+        public FittsTaskResultEvaluation EvaluateResults(List<TaskResult> fittsTaskResultPairs)
         {
             if (!fittsTaskResultPairs.Any())
                 return null;
@@ -73,9 +64,14 @@ namespace ScenarioSim.Infrastructure.FittsEvaluator
 
             for (int i = 0; i < fittsTaskResultPairs.Count; i++)
             {
+                FittsTaskValues values = fittsTaskResultPairs[i].Task.TaskValues as FittsTaskValues;
+
+                if (values == null)
+                    throw new InvalidOperationException("All tasks must be Fitts tasks.");
+
                 xValues[i][0] = 1;
-                xValues[i][1] = fittsTaskResultPairs[i].Task.IndexOfDifficulty;
-                yValues[i] = fittsTaskResultPairs[i].Result.ElapsedTime;
+                xValues[i][1] = values.IndexOfDifficulty;
+                yValues[i] = fittsTaskResultPairs[i].TaskResultValues.ElapsedTime;
             }
 
             var x = DenseMatrix.OfColumnArrays(xValues);
@@ -92,15 +88,15 @@ namespace ScenarioSim.Infrastructure.FittsEvaluator
 
         private FittsEvaluationResult Evaluate(Scenario scenario, IEnumerable<ScenarioResult> results)
         {
-            taskDifficultySpeedCollection = new Dictionary<string, List<FittsTaskResultPair>>();
+            taskDifficultySpeedCollection = new Dictionary<Guid, List<TaskResult>>();
 
             // Go through each scenario building the fitts task evaluations
             foreach (ScenarioResult simulationResult in results)
                 BuildFittsTaskEvaluations(simulationResult.TaskResultTree);
 
-            fittsTaskEvaluations = new Dictionary<string, FittsTaskResultEvaluation>();
+            fittsTaskEvaluations = new Dictionary<Guid, FittsTaskResultEvaluation>();
 
-            foreach (KeyValuePair<string, List<FittsTaskResultPair>> pairs in
+            foreach (KeyValuePair<Guid, List<TaskResult>> pairs in
                 taskDifficultySpeedCollection)
                 fittsTaskEvaluations.Add(pairs.Key, EvaluateResults(pairs.Value));
 
@@ -111,11 +107,11 @@ namespace ScenarioSim.Infrastructure.FittsEvaluator
 
         private TreeNode<FittsTaskEvaluation> BuildFittsTaskEvaluationTree(TreeNode<Task> task)
         {
-            string taskName = task.Value.Name;
+            Guid id = task.Value.Id;
             FittsTaskEvaluation fittsTaskResultEvaluation = new FittsTaskEvaluation
             {
-                Task = task.Value as FittsTask,
-                Evaluation = fittsTaskEvaluations[taskName]
+                Task = task.Value,
+                Evaluation = fittsTaskEvaluations[id]
             };
             TreeNode<FittsTaskEvaluation> fittsTaskResultEvaluationNode = new TreeNode<FittsTaskEvaluation>(fittsTaskResultEvaluation);
 

@@ -38,12 +38,12 @@ namespace ScenarioSim.Core.Entities
         public User User { get; set; }
 
         /// <summary>
-        /// Gets or sets the elapsed time.
+        /// Gets or sets the task result values.
         /// </summary>
         /// <value>
-        /// The elapsed time to complete the task.
+        /// The task result values.
         /// </value>
-        public long ElapsedTime { get; set; }
+        public TaskResultValues TaskResultValues { get; set; }
 
         /// <summary>
         /// The default constructor.

@@ -19,6 +19,6 @@ namespace ScenarioSim.Services.Evaluation
         /// </summary>
         /// <param name="fittsTaskResultPairs">The fitts task result pairs.</param>
         /// <returns>The evaluation of the results.</returns>
-        FittsTaskResultEvaluation EvaluateResults(List<FittsTaskResultPair> fittsTaskResultPairs);
+        FittsTaskResultEvaluation EvaluateResults(List<TaskResult> fittsTaskResultPairs);
     }
 }

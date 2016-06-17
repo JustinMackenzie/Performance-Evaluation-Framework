@@ -26,7 +26,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The time.
         /// </value>
-        public float Time => 1.0f * TaskResults.Sum(r => r.ElapsedTime) / 1000;
+        public float Time => 1.0f * TaskResults.Sum(r => r.TaskResultValues.ElapsedTime) / 1000;
 
         /// <summary>
         /// Gets the tree node.

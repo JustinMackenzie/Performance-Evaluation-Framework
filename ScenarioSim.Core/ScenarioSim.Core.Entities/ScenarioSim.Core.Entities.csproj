@@ -49,13 +49,10 @@
     <Compile Include="ActualValueLocation.cs" />
     <Compile Include="CompositeTask.cs" />
     <Compile Include="CompositeTaskResult.cs" />
-    <Compile Include="FittsSteeringLawTask.cs" />
-    <Compile Include="FittsTaskResult.cs" />
     <Compile Include="FittsTaskValues.cs" />
     <Compile Include="ParallelTask.cs" />
     <Compile Include="ParallelTaskResult.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="ReactionTaskResult.cs" />
     <Compile Include="ReactionTaskValues.cs" />
     <Compile Include="ScenarioEvent.cs" />
     <Compile Include="DirectionAccuracyMetric.cs" />
@@ -65,8 +62,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenario.cs" />
     <Compile Include="Schema.cs" />
-    <Compile Include="SteeringTaskResult.cs" />
     <Compile Include="SteeringTaskValues.cs" />
+    <Compile Include="TaskResultValues.cs" />
     <Compile Include="TaskValues.cs" />
     <Compile Include="UserAction.cs" />
     <Compile Include="ScenarioResult.cs" />
