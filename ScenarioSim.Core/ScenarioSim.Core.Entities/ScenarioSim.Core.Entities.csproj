@@ -48,10 +48,8 @@
     <Compile Include="Actor.cs" />
     <Compile Include="ActualValueLocation.cs" />
     <Compile Include="CompositeTask.cs" />
-    <Compile Include="CompositeTaskPerformance.cs" />
     <Compile Include="FittsTaskValues.cs" />
     <Compile Include="ParallelTask.cs" />
-    <Compile Include="ParallelTaskPerformance.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ReactionTaskValues.cs" />
     <Compile Include="ScenarioEvent.cs" />

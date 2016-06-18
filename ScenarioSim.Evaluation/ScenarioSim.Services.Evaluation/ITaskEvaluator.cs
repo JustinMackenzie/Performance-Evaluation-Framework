@@ -22,10 +22,11 @@ namespace ScenarioSim.Services.Evaluation
         TaskPerformanceEvaluation EvaluateTaskResults(IEnumerable<TaskPerformance> taskResults);
 
         /// <summary>
-        /// Evaluates the scenario results.
+        /// Evaluates the scenario performances.
         /// </summary>
-        /// <param name="scenarioResults">The scenario results.</param>
+        /// <param name="schema">The schema.</param>
+        /// <param name="scenarioPerformances">The scenario performances.</param>
         /// <returns></returns>
-        ScenarioPerformanceEvaluation EvaluateScenarioResults(IEnumerable<ScenarioPerformance> scenarioResults);
+        ScenarioPerformanceEvaluation EvaluateScenarioPerformances(Schema schema, IEnumerable<ScenarioPerformance> scenarioPerformances);
     }
 }

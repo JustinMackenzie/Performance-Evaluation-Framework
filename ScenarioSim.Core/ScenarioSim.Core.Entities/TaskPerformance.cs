@@ -52,14 +52,5 @@ namespace ScenarioSim.Core.Entities
         {
             Results = new List<AccuracyMetricResult>();
         }
-
-        /// <summary>
-        /// Gets the tree node.
-        /// </summary>
-        /// <returns></returns>
-        public virtual TreeNode<TaskPerformance> GetTreeNode()
-        {
-            return new TreeNode<TaskPerformance>(this);
-        }
     }
 }

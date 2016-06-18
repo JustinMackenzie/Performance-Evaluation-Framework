@@ -68,51 +68,33 @@ namespace ScenarioSim.Infrastructure.Evaluator
         /// <summary>
         /// Evaluates the scenario results.
         /// </summary>
-        /// <param name="scenarioResults">The scenario results.</param>
+        /// <param name="schema">The schema.</param>
+        /// <param name="scenarioPerformances">The scenario performances.</param>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
-        /// <exception cref="ArgumentException">All given scenario results must be from the same schema.</exception>
-        public ScenarioPerformanceEvaluation EvaluateScenarioResults(IEnumerable<ScenarioPerformance> scenarioResults)
+        /// <exception cref="ArgumentException">All given scenario results must be from the given schema.</exception>
+        public ScenarioPerformanceEvaluation EvaluateScenarioPerformances(Schema schema, IEnumerable<ScenarioPerformance> scenarioPerformances)
         {
-            if (scenarioResults == null)
-                throw new ArgumentNullException(nameof(scenarioResults));
+            if (scenarioPerformances == null)
+                throw new ArgumentNullException(nameof(scenarioPerformances));
 
-            if (scenarioResults.Select(r => r.Scenario.Schema.Id).Distinct().Count() > 1)
-                throw new ArgumentException("All given scenario results must be from the same schema.", nameof(scenarioResults));
+            if (scenarioPerformances.Count(r => r.Scenario.Schema != schema) > 1)
+                throw new ArgumentException("All given scenario results must be from the given schema.", nameof(scenarioPerformances));
 
             ScenarioPerformanceEvaluation scenarioPerformanceEvaluation = new ScenarioPerformanceEvaluation
             {
-                ScenarioResults = scenarioResults
+                ScenarioResults = scenarioPerformances,
+                Schema = schema
             };
 
             Dictionary<Guid, List<TaskPerformance>> resultsByTask = new Dictionary<Guid, List<TaskPerformance>>();
 
-            foreach (ScenarioPerformance result in scenarioResults)
+            foreach (ScenarioPerformance result in scenarioPerformances)
                 BuildResultDictionary(result.TaskPerformanceTree, resultsByTask);
 
-            Dictionary<Guid, TaskPerformanceEvaluation> evauationsByTask = resultsByTask.ToDictionary(pair => pair.Key, pair => EvaluateTaskResults(pair.Value));
-
-            scenarioPerformanceEvaluation.TaskPerformanceEvaluation = BuildTaskResultEvaluation(scenarioResults.First().TaskPerformanceTree, evauationsByTask);
+            scenarioPerformanceEvaluation.TaskPerformanceEvaluations = resultsByTask.ToDictionary(pair => pair.Key, pair => EvaluateTaskResults(pair.Value));
 
             return scenarioPerformanceEvaluation;
-        }
-
-        /// <summary>
-        /// Builds the task performance evaluation.
-        /// </summary>
-        /// <param name="taskResultTreeNode">The task performance tree node.</param>
-        /// <param name="evaluations">The evauations by task.</param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        private TaskPerformanceEvaluation BuildTaskResultEvaluation(TreeNode<TaskPerformance> taskResultTreeNode, Dictionary<Guid, TaskPerformanceEvaluation> evaluations)
-        {
-            TaskPerformanceEvaluation taskPerformanceEvaluation = evaluations[taskResultTreeNode.Value.Task.Id];
-
-            if (taskResultTreeNode.Children.Any())
-                ((CompositeTaskPerformanceEvaluation) taskPerformanceEvaluation).TaskResultEvaluations =
-                    taskResultTreeNode.Children.Select(n => BuildTaskResultEvaluation(n, evaluations));
-            
-            return taskPerformanceEvaluation;
         }
 
         /// <summary>
