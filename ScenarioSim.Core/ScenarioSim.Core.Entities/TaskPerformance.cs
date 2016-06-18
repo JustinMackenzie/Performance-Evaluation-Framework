@@ -6,7 +6,7 @@ namespace ScenarioSim.Core.Entities
     /// <summary>
     /// This class represents the results from a performance of a given task.
     /// </summary>
-    public class TaskPerformance
+    public class TaskPerformance : Entity
     {
         /// <summary>
         /// Gets or sets the task.

@@ -3,11 +3,8 @@ using ScenarioSim.Core.Entities;
 
 namespace ScenarioSim.Core.Interfaces
 {
-    public interface IUserRepository
+    public interface IUserRepository : IEntityRepository<User>
     {
-        IEnumerable<User> GetAll();
-        User Get(int id);
-        void Save(User user);
-        void Remove(int id);
+
     }
 }

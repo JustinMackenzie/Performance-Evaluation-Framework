@@ -7,16 +7,8 @@ namespace ScenarioSim.Core.Entities
     /// The task class represents a task that is to be performed by an actor in 
     /// a scenario.
     /// </summary>
-    public class Task
+    public class Task : Entity
     {
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>
-        /// The identifier.
-        /// </value>
-        public Guid Id { get; set; }
-
         /// <summary>
         /// Gets or sets the name.
         /// </summary>
@@ -75,38 +67,5 @@ namespace ScenarioSim.Core.Entities
         /// The task values.
         /// </value>
         public TaskValues TaskValues { get; set; }
-
-        /// <summary>
-        /// Determines whether the specified <see cref="System.Object" />, is equal to this instance.
-        /// </summary>
-        /// <param name="obj">The <see cref="System.Object" /> to compare with this instance.</param>
-        /// <returns>
-        ///   <c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.
-        /// </returns>
-        public override bool Equals(object obj)
-        {
-            return obj.GetType() == GetType() && Equals((Task) obj);
-        }
-
-        /// <summary>
-        /// Equalses the specified other.
-        /// </summary>
-        /// <param name="other">The other.</param>
-        /// <returns></returns>
-        protected bool Equals(Task other)
-        {
-            return Id.Equals(other.Id);
-        }
-
-        /// <summary>
-        /// Returns a hash code for this instance.
-        /// </summary>
-        /// <returns>
-        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
-        /// </returns>
-        public override int GetHashCode()
-        {
-            return Id.GetHashCode();
-        }
     }
 }

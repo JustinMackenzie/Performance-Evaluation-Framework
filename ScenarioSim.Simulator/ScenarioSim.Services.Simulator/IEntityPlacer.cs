@@ -8,9 +8,9 @@ namespace ScenarioSim.Services.Simulator
     public interface IEntityPlacer
     {
         /// <summary>
-        /// Places the given entity in the virtual world.
+        /// Places the given ScenarioObject in the virtual world.
         /// </summary>
-        /// <param name="entity">The entity to be placed.</param>
-        void Place(Entity entity);
+        /// <param name="scenarioObject">The ScenarioObject to be placed.</param>
+        void Place(ScenarioObject scenarioObject);
     }
 }

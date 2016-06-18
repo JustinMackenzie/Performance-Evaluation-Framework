@@ -1,23 +1,51 @@
-﻿namespace ScenarioSim.Core.Entities
+﻿using System;
+
+namespace ScenarioSim.Core.Entities
 {
     /// <summary>
-    /// Represents a phyiscal entity in the scenario.
+    /// Represents an entity that has an identifier.
     /// </summary>
-    public class Entity
+    public abstract class Entity
     {
         /// <summary>
-        /// The Transform of the entity.
+        /// Gets or sets the identifier.
         /// </summary>
-        public Transform Transform { get; set; }
+        /// <value>
+        /// The identifier.
+        /// </value>
+        public Guid Id { get; set; }
 
         /// <summary>
-        /// The identification number of the entity.
+        /// Determines whether the specified <see cref="System.Object" />, is equal to this instance.
         /// </summary>
-        public int Id { get; set; }
+        /// <param name="obj">The <see cref="System.Object" /> to compare with this instance.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.
+        /// </returns>
+        public override bool Equals(object obj)
+        {
+            return obj.GetType() == GetType() && Equals((Entity) obj);
+        }
 
         /// <summary>
-        /// The name of the entity. 
+        /// Equalses the specified other.
         /// </summary>
-        public string Name { get; set; }
+        /// <param name="other">The other.</param>
+        /// <returns></returns>
+        protected bool Equals(Entity other)
+        {
+            return Id.Equals(other.Id);
+        }
+
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>
+        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+        /// </returns>
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
+        }
     }
 }

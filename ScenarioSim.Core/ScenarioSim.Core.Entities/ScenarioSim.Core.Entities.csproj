@@ -48,13 +48,14 @@
     <Compile Include="Actor.cs" />
     <Compile Include="ActualValueLocation.cs" />
     <Compile Include="CompositeTask.cs" />
+    <Compile Include="Entity.cs" />
     <Compile Include="FittsTaskValues.cs" />
     <Compile Include="ParallelTask.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ReactionTaskValues.cs" />
     <Compile Include="ScenarioEvent.cs" />
     <Compile Include="DirectionAccuracyMetric.cs" />
-    <Compile Include="Entity.cs" />
+    <Compile Include="ScenarioObject.cs" />
     <Compile Include="ActionParameter.cs" />
     <Compile Include="PositionAccuracyMetric.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

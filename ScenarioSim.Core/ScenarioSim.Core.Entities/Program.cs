@@ -6,7 +6,7 @@ namespace ScenarioSim.Core.Entities
     /// <summary>
     /// Represents a set of scenarios to be performed by a user.
     /// </summary>
-    public class Program
+    public class Program : Entity
     {
         /// <summary>
         /// Gets or sets the identifier.

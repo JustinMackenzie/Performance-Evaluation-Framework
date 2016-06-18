@@ -7,8 +7,8 @@ using ScenarioSim.Core.Entities;
 
 namespace ScenarioSim.Core.Interfaces
 {
-    public interface IScenarioRepository
+    public interface IScenarioRepository : IEntityRepository<Scenario>
     {
-        Scenario Get(int id);
+
     }
 }

@@ -6,16 +6,8 @@ namespace ScenarioSim.Core.Entities
     /// <summary>
     /// Represents a scenario that contains a task hierarchy, complications and entities.
     /// </summary>
-    public class Scenario
+    public class Scenario : Entity
     {
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>
-        /// The identifier.
-        /// </value>
-        public Guid Id { get; set; }
-
         /// <summary>
         /// The name of the scenario.
         /// </summary>
@@ -71,7 +63,7 @@ namespace ScenarioSim.Core.Entities
         /// <summary>
         /// The collection of entities that are located in the spatial domain of the scenario.
         /// </summary>
-        public List<Entity> Entities { get; set; }
+        public List<ScenarioObject> Entities { get; set; }
 
         /// <summary>
         /// Gets or sets the scenario specific tasks.
@@ -88,7 +80,7 @@ namespace ScenarioSim.Core.Entities
         {
             Complications = new List<ScenarioEvent>();
             TaskTransitions = new List<TaskTransition>();
-            Entities = new List<Entity>();
+            Entities = new List<ScenarioObject>();
             ScenarioSpecificTasks = new Dictionary<Guid, TaskValues>();
         }
 

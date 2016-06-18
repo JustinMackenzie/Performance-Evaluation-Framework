@@ -6,7 +6,7 @@ namespace ScenarioSim.Core.Entities
     /// <summary>
     /// The performance of a scenario performance.
     /// </summary>
-    public class ScenarioPerformance
+    public class ScenarioPerformance : Entity
     {
         /// <summary>
         /// The scenario that was performed.
