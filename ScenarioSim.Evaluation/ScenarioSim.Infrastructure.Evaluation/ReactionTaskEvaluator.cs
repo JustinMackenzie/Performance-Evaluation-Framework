@@ -17,7 +17,7 @@ namespace ScenarioSim.Infrastructure.Evaluator
         /// <param name="taskResults">The task results.</param>
         /// <returns></returns>
         /// <exception cref="System.NotImplementedException"></exception>
-        public TaskResultEvaluation Evaluate(IEnumerable<TaskResult> taskResults)
+        public TaskPerformanceEvaluation Evaluate(IEnumerable<TaskPerformance> taskResults)
         {
             throw new NotImplementedException();
         }

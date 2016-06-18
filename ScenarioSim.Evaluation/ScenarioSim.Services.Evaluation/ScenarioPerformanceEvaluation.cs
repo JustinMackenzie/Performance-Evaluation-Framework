@@ -4,9 +4,9 @@ using ScenarioSim.Core.Entities;
 namespace ScenarioSim.Services.Evaluation
 {
     /// <summary>
-    /// Represents the evaluation of a collection scenario results.
+    /// Represents the evaluation of a collection scenario performances.
     /// </summary>
-    public class ScenarioResultEvaluation
+    public class ScenarioPerformanceEvaluation
     {
         /// <summary>
         /// Gets or sets the scenario results.
@@ -14,7 +14,7 @@ namespace ScenarioSim.Services.Evaluation
         /// <value>
         /// The scenario results.
         /// </value>
-        public IEnumerable<ScenarioResult> ScenarioResults { get; set; }
+        public IEnumerable<ScenarioPerformance> ScenarioResults { get; set; }
 
         /// <summary>
         /// Gets or sets the task result evaluation.
@@ -22,14 +22,14 @@ namespace ScenarioSim.Services.Evaluation
         /// <value>
         /// The task result evaluation.
         /// </value>
-        public TaskResultEvaluation TaskResultEvaluation { get; set; }
+        public TaskPerformanceEvaluation TaskPerformanceEvaluation { get; set; }
 
         /// <summary>
-        /// Gets the task result evaluation tree.
+        /// Gets the task performance evaluation tree.
         /// </summary>
         /// <value>
-        /// The task result evaluation tree.
+        /// The task performance evaluation tree.
         /// </value>
-        public TreeNode<TaskResultEvaluation> TaskResultEvaluationTree => TaskResultEvaluation.GetTreeNode();
+        public TreeNode<TaskPerformanceEvaluation> TaskPerformanceEvaluationTree => TaskPerformanceEvaluation.GetTreeNode();
     }
 }

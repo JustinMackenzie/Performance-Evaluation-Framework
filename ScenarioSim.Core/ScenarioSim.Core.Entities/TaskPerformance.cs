@@ -6,7 +6,7 @@ namespace ScenarioSim.Core.Entities
     /// <summary>
     /// This class represents the results from a performance of a given task.
     /// </summary>
-    public class TaskResult
+    public class TaskPerformance
     {
         /// <summary>
         /// Gets or sets the task.
@@ -38,17 +38,17 @@ namespace ScenarioSim.Core.Entities
         public User User { get; set; }
 
         /// <summary>
-        /// Gets or sets the task result values.
+        /// Gets or sets the task performance values.
         /// </summary>
         /// <value>
-        /// The task result values.
+        /// The task performance values.
         /// </value>
-        public TaskResultValues TaskResultValues { get; set; }
+        public TaskPerformanceValues TaskPerformanceValues { get; set; }
 
         /// <summary>
         /// The default constructor.
         /// </summary>
-        protected TaskResult()
+        protected TaskPerformance()
         {
             Results = new List<AccuracyMetricResult>();
         }
@@ -57,9 +57,9 @@ namespace ScenarioSim.Core.Entities
         /// Gets the tree node.
         /// </summary>
         /// <returns></returns>
-        public virtual TreeNode<TaskResult> GetTreeNode()
+        public virtual TreeNode<TaskPerformance> GetTreeNode()
         {
-            return new TreeNode<TaskResult>(this);
+            return new TreeNode<TaskPerformance>(this);
         }
     }
 }

@@ -3,9 +3,9 @@
 namespace ScenarioSim.Core.Entities
 {
     /// <summary>
-    /// The result of a scenario performance.
+    /// The performance of a scenario performance.
     /// </summary>
-    public class ScenarioResult
+    public class ScenarioPerformance
     {
         /// <summary>
         /// The user that performed the scenario.
@@ -20,15 +20,15 @@ namespace ScenarioSim.Core.Entities
         /// <summary>
         /// The performance results of the tasks.
         /// </summary>
-        public TaskResult TaskResult { get; set; }
+        public TaskPerformance TaskPerformance { get; set; }
 
         /// <summary>
-        /// Gets the task result tree.
+        /// Gets the task performance tree.
         /// </summary>
         /// <value>
-        /// The task result tree.
+        /// The task performance tree.
         /// </value>
-        public TreeNode<TaskResult> TaskResultTree => TaskResult.GetTreeNode(); 
+        public TreeNode<TaskPerformance> TaskPerformanceTree => TaskPerformance.GetTreeNode(); 
 
         /// <summary>
         /// The collection of user actions that were submitted.

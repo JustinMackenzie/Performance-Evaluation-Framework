@@ -6,8 +6,8 @@ namespace ScenarioSim.Services.Evaluation
     /// <summary>
     /// Represents the evaluation of the composite task results.
     /// </summary>
-    /// <seealso cref="ScenarioSim.Services.Evaluation.TaskResultEvaluation" />
-    public class CompositeTaskResultEvaluation : TaskResultEvaluation
+    /// <seealso cref="TaskPerformanceEvaluation" />
+    public class CompositeTaskPerformanceEvaluation : TaskPerformanceEvaluation
     {
 
         /// <summary>
@@ -16,17 +16,17 @@ namespace ScenarioSim.Services.Evaluation
         /// <value>
         /// The task result evaluations.
         /// </value>
-        public IEnumerable<TaskResultEvaluation> TaskResultEvaluations { get; set; }
+        public IEnumerable<TaskPerformanceEvaluation> TaskResultEvaluations { get; set; }
 
         /// <summary>
         /// Gets the tree node.
         /// </summary>
         /// <returns></returns>
-        public override TreeNode<TaskResultEvaluation> GetTreeNode()
+        public override TreeNode<TaskPerformanceEvaluation> GetTreeNode()
         {
-            TreeNode<TaskResultEvaluation> treeNode = base.GetTreeNode();
+            TreeNode<TaskPerformanceEvaluation> treeNode = base.GetTreeNode();
 
-            foreach (TaskResultEvaluation evaluation in TaskResultEvaluations)
+            foreach (TaskPerformanceEvaluation evaluation in TaskResultEvaluations)
                 treeNode.AppendChild(evaluation.GetTreeNode());
 
             return treeNode;

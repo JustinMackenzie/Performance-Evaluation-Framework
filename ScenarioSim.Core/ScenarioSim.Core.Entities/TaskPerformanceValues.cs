@@ -1,9 +1,9 @@
 ﻿namespace ScenarioSim.Core.Entities
 {
     /// <summary>
-    /// Represents the values of a task result.
+    /// Represents the values of a task performance.
     /// </summary>
-    public class TaskResultValues
+    public class TaskPerformanceValues
     {
         /// <summary>
         /// Gets or sets the elapsed time.

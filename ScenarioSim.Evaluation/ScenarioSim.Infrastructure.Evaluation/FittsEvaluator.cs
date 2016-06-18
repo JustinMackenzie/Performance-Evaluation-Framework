@@ -18,23 +18,23 @@ namespace ScenarioSim.Infrastructure.Evaluator
         /// </summary>
         /// <param name="taskResults">The task results.</param>
         /// <returns></returns>
-        public TaskResultEvaluation Evaluate(IEnumerable<TaskResult> taskResults)
+        public TaskPerformanceEvaluation Evaluate(IEnumerable<TaskPerformance> taskResults)
         {
             double[] xValues =
                 taskResults.Select(r => (double)(r.Task.TaskValues as FittsTaskValues).IndexOfDifficulty).ToArray();
             double[] yValues =
-                taskResults.Select(r => 1.0 * r.TaskResultValues.ElapsedTime / 1000).ToArray();
+                taskResults.Select(r => 1.0 * r.TaskPerformanceValues.ElapsedTime / 1000).ToArray();
 
             Tuple<double, double> results = SimpleRegression.Fit(xValues, yValues);
 
-            return new TaskResultEvaluation
+            return new TaskPerformanceEvaluation
             {
                 TaskEvaluationValues = new FittsTaskEvaluationValues
                 {
                     A = Convert.ToSingle(results.Item1),
                     B = Convert.ToSingle(results.Item2)
                 },
-                TaskResults = taskResults
+                TaskPerformances = taskResults
             };
         }
     }

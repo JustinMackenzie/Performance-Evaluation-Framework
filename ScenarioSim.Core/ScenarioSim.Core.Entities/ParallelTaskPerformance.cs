@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ScenarioSim.Core.Entities
 {
-    public class ParallelTaskResult : TaskResult
+    public class ParallelTaskPerformance : TaskPerformance
     {
         /// <summary>
         /// Gets or sets the task results.
@@ -14,17 +14,17 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The task results.
         /// </value>
-        public IEnumerable<TaskResult> TaskResults { get; set; }
+        public IEnumerable<TaskPerformance> TaskResults { get; set; }
 
         /// <summary>
         /// Gets the tree node.
         /// </summary>
         /// <returns></returns>
-        public override TreeNode<TaskResult> GetTreeNode()
+        public override TreeNode<TaskPerformance> GetTreeNode()
         {
-            TreeNode<TaskResult> node = new TreeNode<TaskResult>(this);
+            TreeNode<TaskPerformance> node = new TreeNode<TaskPerformance>(this);
 
-            foreach (TaskResult taskResult in TaskResults)
+            foreach (TaskPerformance taskResult in TaskResults)
                 node.AppendChild(taskResult);
 
             return node;

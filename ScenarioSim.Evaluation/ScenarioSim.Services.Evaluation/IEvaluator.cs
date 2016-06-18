@@ -13,6 +13,6 @@ namespace ScenarioSim.Services.Evaluation
         /// </summary>
         /// <param name="taskResults">The task results.</param>
         /// <returns></returns>
-        TaskResultEvaluation Evaluate(IEnumerable<TaskResult> taskResults);
+        TaskPerformanceEvaluation Evaluate(IEnumerable<TaskPerformance> taskResults);
     }
 }

@@ -5,18 +5,18 @@ namespace ScenarioSim.Core.Interfaces
 {
     public interface IScenarioResultRepository
     {
-        void Save(ScenarioResult result);
+        void Save(ScenarioPerformance performance);
 
-        IEnumerable<ScenarioResult> GetAllResults();
+        IEnumerable<ScenarioPerformance> GetAllResults();
         
-        IEnumerable<ScenarioResult> GetAllResultsByScenario(Scenario scenario);
+        IEnumerable<ScenarioPerformance> GetAllResultsByScenario(Scenario scenario);
 
-        IEnumerable<ScenarioResult> GetAllResultsByUser(User user, Scenario scenario);
+        IEnumerable<ScenarioPerformance> GetAllResultsByUser(User user, Scenario scenario);
 
-        ScenarioResult GetResult(int id);
+        ScenarioPerformance GetResult(int id);
 
         void RemoveResult(int id);
 
-        void UpdateResult(int id, ScenarioResult result);
+        void UpdateResult(int id, ScenarioPerformance performance);
     }
 }

@@ -3,15 +3,15 @@
 namespace ScenarioSim.Services.Evaluation
 {
     /// <summary>
-    /// A factory used to create new task result evaluation objects.
+    /// A factory used to create new task performance evaluation objects.
     /// </summary>
     public interface ITaskResultEvaluationFactory
     {
         /// <summary>
-        /// Makes the task result evaluation.
+        /// Makes the task performance evaluation.
         /// </summary>
-        /// <param name="result">The result.</param>
+        /// <param name="performance">The performance.</param>
         /// <returns></returns>
-        TaskResultEvaluation MakeTaskResultEvaluation(TaskResult result);
+        TaskPerformanceEvaluation MakeTaskResultEvaluation(TaskPerformance performance);
     }
 }

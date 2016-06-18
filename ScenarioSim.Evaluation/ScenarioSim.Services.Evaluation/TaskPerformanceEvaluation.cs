@@ -6,15 +6,15 @@ namespace ScenarioSim.Services.Evaluation
     /// <summary>
     /// Represents the evaluation of the task results.
     /// </summary>
-    public class TaskResultEvaluation
+    public class TaskPerformanceEvaluation
     {
         /// <summary>
-        /// Gets or sets the task results.
+        /// Gets or sets the task performances.
         /// </summary>
         /// <value>
-        /// The task results.
+        /// The task performances.
         /// </value>
-        public IEnumerable<TaskResult> TaskResults { get; set; }
+        public IEnumerable<TaskPerformance> TaskPerformances { get; set; }
 
         /// <summary>
         /// Gets or sets the task evaluation values.
@@ -28,9 +28,9 @@ namespace ScenarioSim.Services.Evaluation
         /// Gets the tree node.
         /// </summary>
         /// <returns></returns>
-        public virtual TreeNode<TaskResultEvaluation> GetTreeNode()
+        public virtual TreeNode<TaskPerformanceEvaluation> GetTreeNode()
         {
-            return new TreeNode<TaskResultEvaluation>(this);
+            return new TreeNode<TaskPerformanceEvaluation>(this);
         }
     }
 }

@@ -11,16 +11,16 @@ namespace ScenarioSim.Infrastructure.Evaluator
     public class EvaluatorFactory : IEvaluatorFactory
     {
         /// <summary>
-        /// Makes the proper evaluator for the task result type.
+        /// Makes the proper evaluator for the task performance type.
         /// </summary>
-        /// <param name="result">The task result.</param>
+        /// <param name="performance">The task performance.</param>
         /// <returns>
-        /// An evaluator to evaluate the result.
+        /// An evaluator to evaluate the performance.
         /// </returns>
         /// <exception cref="System.InvalidOperationException">The given task does not have an associated evaluator.</exception>
-        public IEvaluator MakeEvaluator(TaskResult result)
+        public IEvaluator MakeEvaluator(TaskPerformance performance)
         {
-            if (result.Task.TaskValues is FittsTaskValues)
+            if (performance.Task.TaskValues is FittsTaskValues)
             {
                 return new FittsEvaluator();
             }
