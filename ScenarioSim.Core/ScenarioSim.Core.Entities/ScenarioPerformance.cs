@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ScenarioSim.Core.Entities
 {
@@ -8,19 +9,22 @@ namespace ScenarioSim.Core.Entities
     public class ScenarioPerformance
     {
         /// <summary>
+        /// The scenario that was performed.
+        /// </summary>
+        public Scenario Scenario { get; set; }
+
+        /// <summary>
         /// The user that performed the scenario.
         /// </summary>
         public User User { get; set; }
 
         /// <summary>
-        /// The path to the scenario file.
+        /// Gets or sets the task performances.
         /// </summary>
-        public string ScenarioFile { get; set; }
-
-        /// <summary>
-        /// The performance results of the tasks.
-        /// </summary>
-        public TaskPerformance TaskPerformance { get; set; }
+        /// <value>
+        /// The task performances.
+        /// </value>
+        public Dictionary<Guid, TaskPerformance> TaskPerformances { get; set; }
 
         /// <summary>
         /// Gets the task performance tree.
@@ -28,7 +32,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The task performance tree.
         /// </value>
-        public TreeNode<TaskPerformance> TaskPerformanceTree => TaskPerformance.GetTreeNode(); 
+        public TreeNode<TaskPerformance> TaskPerformanceTree => BuildTaskPerfomanceTree(Scenario.TaskTree);
 
         /// <summary>
         /// The collection of user actions that were submitted.
@@ -41,8 +45,18 @@ namespace ScenarioSim.Core.Entities
         public List<TrackedEventParameter> TrackedParameters { get; set; }
 
         /// <summary>
-        /// The scenario that was performed.
+        /// Builds the task perfomance tree.
         /// </summary>
-        public Scenario Scenario { get; set; }
+        /// <param name="taskTree">The task tree.</param>
+        /// <returns></returns>
+        private TreeNode<TaskPerformance> BuildTaskPerfomanceTree(TreeNode<Task> taskTree)
+        {
+            TreeNode<TaskPerformance> treeNode = new TreeNode<TaskPerformance>(TaskPerformances[taskTree.Value.Id]);
+
+            foreach (TreeNode<Task> child in taskTree.Children)
+                treeNode.AppendChild(TaskPerformances[child.Value.Id]);
+
+            return treeNode;
+        }
     }
 }
