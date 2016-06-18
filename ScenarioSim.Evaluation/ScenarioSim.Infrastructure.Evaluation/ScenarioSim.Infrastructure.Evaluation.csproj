@@ -58,10 +58,6 @@
       <Project>{de8824b9-da8f-4d8e-b2c7-080ba045f0f0}</Project>
       <Name>ScenarioSim.Core.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\ScenarioSim.Simulator\ScenarioSim.Services.Simulator\ScenarioSim.Services.Simulator.csproj">
-      <Project>{ea2178df-7c44-42b8-a82d-c1a7ef1571bd}</Project>
-      <Name>ScenarioSim.Services.Simulator</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ScenarioSim.Services.Evaluation\ScenarioSim.Services.Evaluation.csproj">
       <Project>{6f66a588-5868-4ca5-97db-c5daa7a2fd17}</Project>
       <Name>ScenarioSim.Services.Evaluation</Name>

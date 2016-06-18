@@ -54,10 +54,6 @@
       <Project>{0ca14dc9-3d32-4ad5-bebb-9d6b639861ec}</Project>
       <Name>ScenarioSim.Core.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\ScenarioSim.Simulator\ScenarioSim.Services.Simulator\ScenarioSim.Services.Simulator.csproj">
-      <Project>{ea2178df-7c44-42b8-a82d-c1a7ef1571bd}</Project>
-      <Name>ScenarioSim.Services.Simulator</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
