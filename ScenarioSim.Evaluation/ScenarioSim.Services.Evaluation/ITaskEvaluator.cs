@@ -3,7 +3,7 @@ using ScenarioSim.Core.Entities;
 
 namespace ScenarioSim.Services.Evaluation
 {
-    public interface IFittsEvaluator
+    public interface ITaskEvaluator
     {
         /// <summary>
         /// Evaluates the user history.
@@ -12,13 +12,13 @@ namespace ScenarioSim.Services.Evaluation
         /// <param name="scenario">The scenario.</param>
         /// <param name="windowSize">Size of the window.</param>
         /// <returns></returns>
-        IEnumerable<FittsEvaluationResult> EvaluateUserHistory(User user, Scenario scenario, int windowSize);
+        IEnumerable<TaskResultEvaluation> EvaluateUserHistory(User user, Scenario scenario, int windowSize);
 
         /// <summary>
         /// Evaluates the results.
         /// </summary>
-        /// <param name="fittsTaskResultPairs">The fitts task result pairs.</param>
+        /// <param name="taskResults">The fitts task result pairs.</param>
         /// <returns>The evaluation of the results.</returns>
-        FittsTaskResultEvaluation EvaluateResults(List<TaskResult> fittsTaskResultPairs);
+        TaskResultEvaluation EvaluateResults(List<TaskResult> taskResults);
     }
 }

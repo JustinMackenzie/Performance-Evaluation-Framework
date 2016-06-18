@@ -39,13 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FittsEvaluationResult.cs" />
-    <Compile Include="FittsTaskEvaluation.cs" />
-    <Compile Include="FittsTaskResultEvaluation.cs" />
+    <Compile Include="FittsTaskEvaluationValues.cs" />
     <Compile Include="IEvaluator.cs" />
     <Compile Include="IEvaluatorFactory.cs" />
-    <Compile Include="IFittsEvaluator.cs" />
+    <Compile Include="ITaskEvaluator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskEvaluationValues.cs" />
     <Compile Include="TaskResultEvaluation.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents the evaluation of a fitts task result.
     /// </summary>
-    public class FittsTaskResultEvaluation
+    public class FittsTaskEvaluationValues : TaskEvaluationValues
     {
         /// <summary>
         /// Gets or sets A.
