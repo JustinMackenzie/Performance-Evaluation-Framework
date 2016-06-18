@@ -7,8 +7,8 @@
     <ProjectGuid>{3D6C79A6-3BEB-450D-91FA-1C6A9F63F207}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScenarioSim.Infrastructure.FittsEvaluator</RootNamespace>
-    <AssemblyName>ScenarioSim.Infrastructure.FittsEvaluator</AssemblyName>
+    <RootNamespace>ScenarioSim.Infrastructure.Evaluator</RootNamespace>
+    <AssemblyName>ScenarioSim.Infrastructure.Evaluator</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EvaluatorFactory.cs" />
+    <Compile Include="FittsEvaluator.cs" />
+    <Compile Include="ReactionTaskEvaluator.cs" />
     <Compile Include="TaskEvaluator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -17,8 +17,15 @@ namespace ScenarioSim.Services.Evaluation
         /// <summary>
         /// Evaluates the results.
         /// </summary>
-        /// <param name="taskResults">The fitts task result pairs.</param>
+        /// <param name="taskResults">The task results.</param>
         /// <returns>The evaluation of the results.</returns>
-        TaskResultEvaluation EvaluateResults(List<TaskResult> taskResults);
+        TaskResultEvaluation EvaluateTaskResults(IEnumerable<TaskResult> taskResults);
+
+        /// <summary>
+        /// Evaluates the scenario results.
+        /// </summary>
+        /// <param name="scenarioResults">The scenario results.</param>
+        /// <returns></returns>
+        ScenarioResultEvaluation EvaluateScenarioResults(IEnumerable<ScenarioResult> scenarioResults);
     }
 }

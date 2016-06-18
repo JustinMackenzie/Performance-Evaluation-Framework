@@ -4,7 +4,7 @@ using ScenarioSim.Core.Entities;
 namespace ScenarioSim.Services.Evaluation
 {
     /// <summary>
-    /// Represents the evaluation of 
+    /// Represents the evaluation of the task results.
     /// </summary>
     public class TaskResultEvaluation
     {
@@ -23,5 +23,14 @@ namespace ScenarioSim.Services.Evaluation
         /// The task evaluation values.
         /// </value>
         public TaskEvaluationValues TaskEvaluationValues { get; set; }
+
+        /// <summary>
+        /// Gets the tree node.
+        /// </summary>
+        /// <returns></returns>
+        public virtual TreeNode<TaskResultEvaluation> GetTreeNode()
+        {
+            return new TreeNode<TaskResultEvaluation>(this);
+        }
     }
 }
