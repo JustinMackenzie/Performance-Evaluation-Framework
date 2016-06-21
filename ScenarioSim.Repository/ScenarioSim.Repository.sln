@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Core.Entities", "..\ScenarioSim.Core\ScenarioSim.Core.Entities\ScenarioSim.Core.Entities.csproj", "{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.Repositories", "ScenarioSim.Infrastructure.Repositories\ScenarioSim.Infrastructure.Repositories.csproj", "{F98505E0-4056-4606-B59C-F31CC805E7AE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.MongoDbRepositories", "ScenarioSim.Infrastructure.MongoDbRepositories\ScenarioSim.Infrastructure.MongoDbRepositories.csproj", "{41D9469C-8B9A-49DF-AB92-CAE673C9291C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.EfRepositories", "ScenarioSim.Infrastructure.EfRepositories\ScenarioSim.Infrastructure.EfRepositories.csproj", "{BA845FEB-1180-45F1-8AA9-15267D8A64AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{41D9469C-8B9A-49DF-AB92-CAE673C9291C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41D9469C-8B9A-49DF-AB92-CAE673C9291C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41D9469C-8B9A-49DF-AB92-CAE673C9291C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA845FEB-1180-45F1-8AA9-15267D8A64AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA845FEB-1180-45F1-8AA9-15267D8A64AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA845FEB-1180-45F1-8AA9-15267D8A64AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA845FEB-1180-45F1-8AA9-15267D8A64AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
