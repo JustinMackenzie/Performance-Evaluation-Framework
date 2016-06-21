@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.ScenarioCreatorAPI", "ScenarioSim.ScenarioCreatorAPI\ScenarioSim.ScenarioCreatorAPI.csproj", "{692E9481-0D73-4114-B9C2-094687F8E7E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.ScenarioCreatorWeb", "ScenarioSim.ScenarioCreatorWeb\ScenarioSim.ScenarioCreatorWeb.csproj", "{89F9C3C7-7888-488A-A3F1-DA42717DBF49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Core.Entities", "..\ScenarioSim.Core\ScenarioSim.Core.Entities\ScenarioSim.Core.Entities.csproj", "{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Core.Interfaces", "..\ScenarioSim.Core\ScenarioSim.Core.Interfaces\ScenarioSim.Core.Interfaces.csproj", "{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Services.ScenarioCreator", "..\ScenarioSim.ScenarioCreator\ScenarioSim.Services.ScenarioCreator\ScenarioSim.Services.ScenarioCreator.csproj", "{2151BC08-6A38-4456-A55E-227DA06EEF75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.ScenarioCreator", "..\ScenarioSim.ScenarioCreator\ScenarioSim.Infrastructure.ScenarioCreator\ScenarioSim.Infrastructure.ScenarioCreator.csproj", "{097071BB-F82F-46F3-8248-B6F49D69104C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.EfRepositories", "..\ScenarioSim.Repository\ScenarioSim.Infrastructure.EfRepositories\ScenarioSim.Infrastructure.EfRepositories.csproj", "{BA845FEB-1180-45F1-8AA9-15267D8A64AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{692E9481-0D73-4114-B9C2-094687F8E7E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{692E9481-0D73-4114-B9C2-094687F8E7E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{692E9481-0D73-4114-B9C2-094687F8E7E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{692E9481-0D73-4114-B9C2-094687F8E7E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89F9C3C7-7888-488A-A3F1-DA42717DBF49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89F9C3C7-7888-488A-A3F1-DA42717DBF49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89F9C3C7-7888-488A-A3F1-DA42717DBF49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89F9C3C7-7888-488A-A3F1-DA42717DBF49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2151BC08-6A38-4456-A55E-227DA06EEF75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2151BC08-6A38-4456-A55E-227DA06EEF75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2151BC08-6A38-4456-A55E-227DA06EEF75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2151BC08-6A38-4456-A55E-227DA06EEF75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{097071BB-F82F-46F3-8248-B6F49D69104C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{097071BB-F82F-46F3-8248-B6F49D69104C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{097071BB-F82F-46F3-8248-B6F49D69104C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{097071BB-F82F-46F3-8248-B6F49D69104C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA845FEB-1180-45F1-8AA9-15267D8A64AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA845FEB-1180-45F1-8AA9-15267D8A64AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA845FEB-1180-45F1-8AA9-15267D8A64AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA845FEB-1180-45F1-8AA9-15267D8A64AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

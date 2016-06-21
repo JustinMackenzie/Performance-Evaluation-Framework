@@ -51,12 +51,6 @@
     <Compile Include="WriteablePropertiesOnlyResolver.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ScenarioSim.Services.Serialization\ScenarioSim.Services.Serialization.csproj">
-      <Project>{abce5169-3ecb-42cf-a1b9-d9b5f4c9ea3d}</Project>
-      <Name>ScenarioSim.Services.Serialization</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

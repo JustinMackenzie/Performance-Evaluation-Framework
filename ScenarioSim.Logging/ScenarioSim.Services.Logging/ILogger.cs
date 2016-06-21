@@ -9,5 +9,6 @@ namespace ScenarioSim.Services.Logging
     public interface ILogger
     {
         void Write(string message, LoggingLevel level);
+        void LogException(Exception ex);
     }
 }
