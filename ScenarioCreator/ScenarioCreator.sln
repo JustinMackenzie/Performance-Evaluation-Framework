@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.ScenarioCreator
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.ScenarioCreatorWeb", "ScenarioSim.ScenarioCreatorWeb\ScenarioSim.ScenarioCreatorWeb.csproj", "{89F9C3C7-7888-488A-A3F1-DA42717DBF49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Services.ScenarioCreator", "ScenarioSim.Services.ScenarioCreator\ScenarioSim.Services.ScenarioCreator.csproj", "{2151BC08-6A38-4456-A55E-227DA06EEF75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.ScenarioCreator", "ScenarioSim.Infrastructure.ScenarioCreator\ScenarioSim.Infrastructure.ScenarioCreator.csproj", "{097071BB-F82F-46F3-8248-B6F49D69104C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{89F9C3C7-7888-488A-A3F1-DA42717DBF49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89F9C3C7-7888-488A-A3F1-DA42717DBF49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89F9C3C7-7888-488A-A3F1-DA42717DBF49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2151BC08-6A38-4456-A55E-227DA06EEF75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2151BC08-6A38-4456-A55E-227DA06EEF75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2151BC08-6A38-4456-A55E-227DA06EEF75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2151BC08-6A38-4456-A55E-227DA06EEF75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{097071BB-F82F-46F3-8248-B6F49D69104C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{097071BB-F82F-46F3-8248-B6F49D69104C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{097071BB-F82F-46F3-8248-B6F49D69104C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{097071BB-F82F-46F3-8248-B6F49D69104C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
