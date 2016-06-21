@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace ScenarioSim.ScenarioCreatorAPI.Areas.HelpPage
+namespace ScenarioSim.ScenarioCreatorApi.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ScenarioSim.ScenarioCreatorAPI.Controllers
+namespace ScenarioSim.ScenarioCreatorApi.Controllers
 {
     public class HomeController : Controller
     {

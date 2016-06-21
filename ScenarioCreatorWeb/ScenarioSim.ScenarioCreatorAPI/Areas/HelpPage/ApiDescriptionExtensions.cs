@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace ScenarioSim.ScenarioCreatorAPI.Areas.HelpPage
+namespace ScenarioSim.ScenarioCreatorApi.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

@@ -4,9 +4,9 @@ using System.Linq;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(ScenarioSim.ScenarioCreatorAPI.Startup))]
+[assembly: OwinStartup(typeof(ScenarioSim.ScenarioCreatorApi.Startup))]
 
-namespace ScenarioSim.ScenarioCreatorAPI
+namespace ScenarioSim.ScenarioCreatorApi
 {
     public partial class Startup
     {

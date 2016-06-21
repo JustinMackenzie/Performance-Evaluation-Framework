@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using ScenarioSim.ScenarioCreatorAPI.Areas.HelpPage.ModelDescriptions;
+using ScenarioSim.ScenarioCreatorApi.Areas.HelpPage.ModelDescriptions;
 
-namespace ScenarioSim.ScenarioCreatorAPI.Areas.HelpPage.Models
+namespace ScenarioSim.ScenarioCreatorApi.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

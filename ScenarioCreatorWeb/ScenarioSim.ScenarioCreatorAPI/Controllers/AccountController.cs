@@ -13,11 +13,11 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using ScenarioSim.ScenarioCreatorAPI.Models;
-using ScenarioSim.ScenarioCreatorAPI.Providers;
-using ScenarioSim.ScenarioCreatorAPI.Results;
+using ScenarioSim.ScenarioCreatorApi.Models;
+using ScenarioSim.ScenarioCreatorApi.Providers;
+using ScenarioSim.ScenarioCreatorApi.Results;
 
-namespace ScenarioSim.ScenarioCreatorAPI.Controllers
+namespace ScenarioSim.ScenarioCreatorApi.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace ScenarioSim.ScenarioCreatorAPI
+namespace ScenarioSim.ScenarioCreatorApi
 {
     public class FilterConfig
     {

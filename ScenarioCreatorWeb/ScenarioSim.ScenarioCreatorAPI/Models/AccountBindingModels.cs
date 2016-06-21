@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace ScenarioSim.ScenarioCreatorAPI.Models
+namespace ScenarioSim.ScenarioCreatorApi.Models
 {
     // Models used as parameters to AccountController actions.
 

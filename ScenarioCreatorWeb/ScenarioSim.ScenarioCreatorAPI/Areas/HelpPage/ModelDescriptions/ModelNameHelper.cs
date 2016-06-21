@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace ScenarioSim.ScenarioCreatorAPI.Areas.HelpPage.ModelDescriptions
+namespace ScenarioSim.ScenarioCreatorApi.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

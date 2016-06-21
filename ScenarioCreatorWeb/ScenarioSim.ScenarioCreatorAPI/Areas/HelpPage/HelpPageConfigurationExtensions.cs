@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using ScenarioSim.ScenarioCreatorAPI.Areas.HelpPage.ModelDescriptions;
-using ScenarioSim.ScenarioCreatorAPI.Areas.HelpPage.Models;
+using ScenarioSim.ScenarioCreatorApi.Areas.HelpPage.ModelDescriptions;
+using ScenarioSim.ScenarioCreatorApi.Areas.HelpPage.Models;
 
-namespace ScenarioSim.ScenarioCreatorAPI.Areas.HelpPage
+namespace ScenarioSim.ScenarioCreatorApi.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

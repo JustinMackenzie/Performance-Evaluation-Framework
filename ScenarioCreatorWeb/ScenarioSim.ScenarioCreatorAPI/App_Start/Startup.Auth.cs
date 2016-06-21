@@ -8,10 +8,10 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using ScenarioSim.ScenarioCreatorAPI.Providers;
-using ScenarioSim.ScenarioCreatorAPI.Models;
+using ScenarioSim.ScenarioCreatorApi.Providers;
+using ScenarioSim.ScenarioCreatorApi.Models;
 
-namespace ScenarioSim.ScenarioCreatorAPI
+namespace ScenarioSim.ScenarioCreatorApi
 {
     public partial class Startup
     {

@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using ScenarioSim.ScenarioCreatorAPI.Areas.HelpPage.ModelDescriptions;
-using ScenarioSim.ScenarioCreatorAPI.Areas.HelpPage.Models;
+using ScenarioSim.ScenarioCreatorApi.Areas.HelpPage.ModelDescriptions;
+using ScenarioSim.ScenarioCreatorApi.Areas.HelpPage.Models;
 
-namespace ScenarioSim.ScenarioCreatorAPI.Areas.HelpPage.Controllers
+namespace ScenarioSim.ScenarioCreatorApi.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

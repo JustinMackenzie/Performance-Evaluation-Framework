@@ -1,4 +1,4 @@
-namespace ScenarioSim.ScenarioCreatorAPI.Areas.HelpPage.ModelDescriptions
+namespace ScenarioSim.ScenarioCreatorApi.Areas.HelpPage.ModelDescriptions
 {
     public class CollectionModelDescription : ModelDescription
     {

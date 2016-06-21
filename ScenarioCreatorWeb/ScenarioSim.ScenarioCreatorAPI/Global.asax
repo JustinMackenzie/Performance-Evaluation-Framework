@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="ScenarioSim.ScenarioCreatorAPI.WebApiApplication" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="ScenarioSim.ScenarioCreatorApi.WebApiApplication" Language="C#" %>

@@ -1,4 +1,4 @@
-namespace ScenarioSim.ScenarioCreatorAPI.Areas.HelpPage
+namespace ScenarioSim.ScenarioCreatorApi.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

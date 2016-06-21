@@ -9,9 +9,9 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using ScenarioSim.ScenarioCreatorAPI.Models;
+using ScenarioSim.ScenarioCreatorApi.Models;
 
-namespace ScenarioSim.ScenarioCreatorAPI.Providers
+namespace ScenarioSim.ScenarioCreatorApi.Providers
 {
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {

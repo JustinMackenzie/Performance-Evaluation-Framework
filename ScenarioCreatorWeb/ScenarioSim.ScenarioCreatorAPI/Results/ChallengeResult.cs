@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace ScenarioSim.ScenarioCreatorAPI.Results
+namespace ScenarioSim.ScenarioCreatorApi.Results
 {
     public class ChallengeResult : IHttpActionResult
     {

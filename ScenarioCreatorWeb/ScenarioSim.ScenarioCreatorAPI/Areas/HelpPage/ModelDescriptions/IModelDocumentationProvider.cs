@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace ScenarioSim.ScenarioCreatorAPI.Areas.HelpPage.ModelDescriptions
+namespace ScenarioSim.ScenarioCreatorApi.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {
