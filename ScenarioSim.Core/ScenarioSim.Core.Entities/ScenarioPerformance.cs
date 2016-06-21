@@ -24,7 +24,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The task performances.
         /// </value>
-        public Dictionary<Guid, TaskPerformance> TaskPerformances { get; set; }
+        public Dictionary<int, TaskPerformance> TaskPerformances { get; set; }
 
         /// <summary>
         /// Gets the task performance tree.

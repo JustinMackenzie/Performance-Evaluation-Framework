@@ -233,6 +233,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SchemaController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -319,6 +320,10 @@
     <ProjectReference Include="..\..\ScenarioSim.Core\ScenarioSim.Core.Interfaces\ScenarioSim.Core.Interfaces.csproj">
       <Project>{de8824b9-da8f-4d8e-b2c7-080ba045f0f0}</Project>
       <Name>ScenarioSim.Core.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Logging\ScenarioSim.Services.Logging\ScenarioSim.Services.Logging.csproj">
+      <Project>{e650d0c0-100c-4d8f-a894-85963c50280f}</Project>
+      <Name>ScenarioSim.Services.Logging</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ScenarioSim.Repository\ScenarioSim.Infrastructure.EfRepositories\ScenarioSim.Infrastructure.EfRepositories.csproj">
       <Project>{ba845feb-1180-45f1-8aa9-15267d8a64aa}</Project>

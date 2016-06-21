@@ -71,7 +71,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The scenario specific tasks.
         /// </value>
-        public Dictionary<Guid, TaskValues> ScenarioSpecificTasks { get; set; } 
+        public Dictionary<int, TaskValues> ScenarioSpecificTasks { get; set; } 
 
         /// <summary>
         /// Initializes a new scenario object.
@@ -81,7 +81,7 @@ namespace ScenarioSim.Core.Entities
             Complications = new List<ScenarioEvent>();
             TaskTransitions = new List<TaskTransition>();
             Entities = new List<ScenarioObject>();
-            ScenarioSpecificTasks = new Dictionary<Guid, TaskValues>();
+            ScenarioSpecificTasks = new Dictionary<int, TaskValues>();
         }
 
         private void CopyScenarioSpecificTask(Task task)

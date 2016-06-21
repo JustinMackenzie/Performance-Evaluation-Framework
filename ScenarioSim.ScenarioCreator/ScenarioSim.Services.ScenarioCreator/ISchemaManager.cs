@@ -13,7 +13,7 @@ namespace ScenarioSim.Services.ScenarioCreator
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        Schema GetSchema(Guid id);
+        Schema GetSchema(int id);
 
         /// <summary>
         /// Creates the schema.

@@ -23,7 +23,7 @@ namespace ScenarioSim.Infrastructure.EfRepositories
             return DbSet;
         }
 
-        public T Get(Guid id)
+        public T Get(int id)
         {
             return DbSet.Find(id);
         }

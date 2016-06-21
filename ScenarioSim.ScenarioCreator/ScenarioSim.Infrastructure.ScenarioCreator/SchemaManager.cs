@@ -46,12 +46,8 @@ namespace ScenarioSim.Infrastructure.ScenarioCreator
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        /// <exception cref="ArgumentNullException"></exception>
-        public Schema GetSchema(Guid id)
+        public Schema GetSchema(int id)
         {
-            if (id == null)
-                throw new ArgumentNullException(nameof(id));
-
             try
             {
                 return unitOfWork.SchemaRepository.Get(id);
@@ -75,7 +71,6 @@ namespace ScenarioSim.Infrastructure.ScenarioCreator
 
             try
             {
-                schema.Id = Guid.NewGuid();
                 unitOfWork.SchemaRepository.Save(schema);
                 unitOfWork.Commit();
             }
