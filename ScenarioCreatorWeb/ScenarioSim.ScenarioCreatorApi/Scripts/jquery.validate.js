@@ -302,13 +302,13 @@ $.extend($.validator, {
 		number: "Please enter a valid number.",
 		digits: "Please enter only digits.",
 		creditcard: "Please enter a valid credit card number.",
-		equalTo: "Please enter the same value again.",
+		equalTo: "Please enter the same schema again.",
 		maxlength: $.validator.format("Please enter no more than {0} characters."),
 		minlength: $.validator.format("Please enter at least {0} characters."),
-		rangelength: $.validator.format("Please enter a value between {0} and {1} characters long."),
-		range: $.validator.format("Please enter a value between {0} and {1}."),
-		max: $.validator.format("Please enter a value less than or equal to {0}."),
-		min: $.validator.format("Please enter a value greater than or equal to {0}.")
+		rangelength: $.validator.format("Please enter a schema between {0} and {1} characters long."),
+		range: $.validator.format("Please enter a schema between {0} and {1}."),
+		max: $.validator.format("Please enter a schema less than or equal to {0}."),
+		min: $.validator.format("Please enter a schema greater than or equal to {0}.")
 	},
 
 	autoCreateRanges: false,
@@ -873,7 +873,7 @@ $.extend($.validator, {
 				value = $element.attr(method);
 			}
 
-			// convert the value to a number for number inputs, and for text for backwards compability
+			// convert the schema to a number for number inputs, and for text for backwards compability
 			// allows type="date" and others to be compared as strings
 			if ( /min|max/.test( method ) && ( type === null || /number|range|text/.test( type ) ) ) {
 				value = Number(value);

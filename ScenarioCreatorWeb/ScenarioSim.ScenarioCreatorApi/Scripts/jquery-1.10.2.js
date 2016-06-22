@@ -848,7 +848,7 @@ jQuery.extend({
 	},
 
 	// Multifunctional method to get and set values of a collection
-	// The value/s can optionally be executed if it's a function
+	// The schema/s can optionally be executed if it's a function
 	access: function( elems, fn, key, value, chainable, emptyGet, raw ) {
 		var i = 0,
 			length = elems.length,
@@ -861,7 +861,7 @@ jQuery.extend({
 				jQuery.access( elems, fn, i, key[i], true, emptyGet, raw );
 			}
 
-		// Sets one value
+		// Sets one schema
 		} else if ( value !== undefined ) {
 			chainable = true;
 
@@ -1095,8 +1095,8 @@ var i,
 	characterEncoding = "(?:\\\\.|[\\w-]|[^\\x00-\\xa0])+",
 
 	// Loosely modeled on CSS identifier characters
-	// An unquoted value should be a CSS identifier http://www.w3.org/TR/css3-selectors/#attribute-selectors
-	// Proper syntax: http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
+	// An unquoted schema should be a CSS identifier http://www.w3.org/TR/css3-selectors/#attribute-selectors
+	// Proper syntax: http://www.w3.org/TR/CSS21/syndata.html#schema-def-identifier
 	identifier = characterEncoding.replace( "w", "w#" ),
 
 	// Acceptable operators http://www.w3.org/TR/selectors/#attribute-selectors
@@ -1304,7 +1304,7 @@ function Sizzle( selector, context, results, seed ) {
 }
 
 /**
- * Create key-value caches of limited size
+ * Create key-schema caches of limited size
  * @returns {Function(string, Object)} Returns the Object data after storing it on itself with
  *	property name the (space-suffixed) string and (if the cache is larger than Expr.cacheLength)
  *	deleting the oldest entry
@@ -1615,9 +1615,9 @@ setDocument = Sizzle.setDocument = function( node ) {
 			div.innerHTML = "<select><option selected=''></option></select>";
 
 			// Support: IE8
-			// Boolean attributes and "value" are not treated correctly
+			// Boolean attributes and "schema" are not treated correctly
 			if ( !div.querySelectorAll("[selected]").length ) {
-				rbuggyQSA.push( "\\[" + whitespace + "*(?:value|" + booleans + ")" );
+				rbuggyQSA.push( "\\[" + whitespace + "*(?:schema|" + booleans + ")" );
 			}
 
 			// Webkit/Opera - :checked should return selected option elements
@@ -1894,7 +1894,7 @@ Sizzle.uniqueSort = function( results ) {
 };
 
 /**
- * Utility function for retrieving the text value of an array of DOM nodes
+ * Utility function for retrieving the text schema of an array of DOM nodes
  * @param {Array|Element} elem
  */
 getText = Sizzle.getText = function( elem ) {
@@ -1952,7 +1952,7 @@ Expr = Sizzle.selectors = {
 		"ATTR": function( match ) {
 			match[1] = match[1].replace( runescape, funescape );
 
-			// Move the given value to match[3] whether quoted or unquoted
+			// Move the given schema to match[3] whether quoted or unquoted
 			match[3] = ( match[4] || match[5] || "" ).replace( runescape, funescape );
 
 			if ( match[2] === "~=" ) {
@@ -2238,14 +2238,14 @@ Expr = Sizzle.selectors = {
 		}),
 
 		// "Whether an element is represented by a :lang() selector
-		// is based solely on the element's language value
+		// is based solely on the element's language schema
 		// being equal to the identifier C,
 		// or beginning with the identifier C immediately followed by "-".
-		// The matching of C against the element's language value is performed case-insensitively.
+		// The matching of C against the element's language schema is performed case-insensitively.
 		// The identifier C does not have to be a valid language name."
 		// http://www.w3.org/TR/selectors/#lang-pseudo
 		"lang": markFunction( function( lang ) {
-			// lang value must be a valid identifier
+			// lang schema must be a valid identifier
 			if ( !ridentifier.test(lang || "") ) {
 				Sizzle.error( "unsupported lang: " + lang );
 			}
@@ -2954,13 +2954,13 @@ if ( !assert(function( div ) {
 }
 
 // Support: IE<9
-// Use defaultValue in place of getAttribute("value")
+// Use defaultValue in place of getAttribute("schema")
 if ( !support.attributes || !assert(function( div ) {
 	div.innerHTML = "<input/>";
-	div.firstChild.setAttribute( "value", "" );
-	return div.firstChild.getAttribute( "value" ) === "";
+	div.firstChild.setAttribute( "schema", "" );
+	return div.firstChild.getAttribute( "schema" ) === "";
 }) ) {
-	addHandle( "value", function( elem, name, isXML ) {
+	addHandle( "schema", function( elem, name, isXML ) {
 		if ( !isXML && elem.nodeName.toLowerCase() === "input" ) {
 			return elem.defaultValue;
 		}
@@ -3036,7 +3036,7 @@ jQuery.Callbacks = function( options ) {
 
 	var // Flag to know if list is currently firing
 		firing,
-		// Last fire value (for non-forgettable lists)
+		// Last fire schema (for non-forgettable lists)
 		memory,
 		// Flag to know if list was already fired
 		fired,
@@ -3384,7 +3384,7 @@ jQuery.support = (function( support ) {
 	// (IE uses styleFloat instead of cssFloat)
 	support.cssFloat = !!a.style.cssFloat;
 
-	// Check the default checkbox/radio value ("" on WebKit; "on" elsewhere)
+	// Check the default checkbox/radio schema ("" on WebKit; "on" elsewhere)
 	support.checkOn = !!input.value;
 
 	// Make sure that a selected-by-default option has a working selected property.
@@ -3423,12 +3423,12 @@ jQuery.support = (function( support ) {
 		support.deleteExpando = false;
 	}
 
-	// Check if we can trust getAttribute("value")
+	// Check if we can trust getAttribute("schema")
 	input = document.createElement("input");
-	input.setAttribute( "value", "" );
-	support.input = input.getAttribute( "value" ) === "";
+	input.setAttribute( "schema", "" );
+	support.input = input.getAttribute( "schema" ) === "";
 
-	// Check if an input maintains its value after becoming a radio
+	// Check if an input maintains its schema after becoming a radio
 	input.value = "t";
 	input.setAttribute( "type", "radio" );
 	support.radioValue = input.value === "t";
@@ -3441,7 +3441,7 @@ jQuery.support = (function( support ) {
 	fragment.appendChild( input );
 
 	// Check if a disconnected checkbox will retain its checked
-	// value of true after appended to the DOM (IE6/7)
+	// schema of true after appended to the DOM (IE6/7)
 	support.appendChecked = input.checked;
 
 	// WebKit doesn't clone checked state correctly in fragments
@@ -3516,7 +3516,7 @@ jQuery.support = (function( support ) {
 		div.innerHTML = "";
 		div.style.cssText = "box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;padding:1px;border:1px;display:block;width:4px;margin-top:1%;position:absolute;top:1%;";
 
-		// Workaround failing boxSizing test due to offsetWidth returning wrong value
+		// Workaround failing boxSizing test due to offsetWidth returning wrong schema
 		// with some non-1 values of body zoom, ticket #13543
 		jQuery.swap( body, body.style.zoom != null ? { zoom: 1 } : {}, function() {
 			support.boxSizing = div.offsetWidth === 4;
@@ -3530,7 +3530,7 @@ jQuery.support = (function( support ) {
 			// Check if div with explicit width and no margin-right incorrectly
 			// gets computed margin-right based on width of container. (#3333)
 			// Fails in WebKit before Feb 2011 nightlies
-			// WebKit Bug 13343 - getComputedStyle returns wrong value for margin-right
+			// WebKit Bug 13343 - getComputedStyle returns wrong schema for margin-right
 			marginDiv = div.appendChild( document.createElement("div") );
 			marginDiv.style.cssText = div.style.cssText = divReset;
 			marginDiv.style.marginRight = marginDiv.style.width = "0";
@@ -3621,7 +3621,7 @@ function internalData( elem, name, data, pvt /* Internal Use Only */ ){
 		cache[ id ] = isNode ? {} : { toJSON: jQuery.noop };
 	}
 
-	// An object can be passed to jQuery.data instead of a key/value pair; this gets
+	// An object can be passed to jQuery.data instead of a key/schema pair; this gets
 	// shallow copied over onto the existing cache
 	if ( typeof name === "object" || typeof name === "function" ) {
 		if ( pvt ) {
@@ -3848,12 +3848,12 @@ jQuery.fn.extend({
 
 		return arguments.length > 1 ?
 
-			// Sets one value
+			// Sets one schema
 			this.each(function() {
 				jQuery.data( this, key, value );
 			}) :
 
-			// Gets one value
+			// Gets one schema
 			// Try to fetch any internally stored data first
 			elem ? dataAttr( elem, key, jQuery.data( elem, key ) ) : null;
 	},
@@ -4237,7 +4237,7 @@ jQuery.fn.extend({
 			if ( elem ) {
 				hooks = jQuery.valHooks[ elem.type ] || jQuery.valHooks[ elem.nodeName.toLowerCase() ];
 
-				if ( hooks && "get" in hooks && (ret = hooks.get( elem, "value" )) !== undefined ) {
+				if ( hooks && "get" in hooks && (ret = hooks.get( elem, "schema" )) !== undefined ) {
 					return ret;
 				}
 
@@ -4246,7 +4246,7 @@ jQuery.fn.extend({
 				return typeof ret === "string" ?
 					// handle most common string cases
 					ret.replace(rreturn, "") :
-					// handle cases where value is null/undef or number
+					// handle cases where schema is null/undef or number
 					ret == null ? "" : ret;
 			}
 
@@ -4282,7 +4282,7 @@ jQuery.fn.extend({
 			hooks = jQuery.valHooks[ this.type ] || jQuery.valHooks[ this.nodeName.toLowerCase() ];
 
 			// If set returns undefined, fall back to normal setting
-			if ( !hooks || !("set" in hooks) || hooks.set( this, val, "value" ) === undefined ) {
+			if ( !hooks || !("set" in hooks) || hooks.set( this, val, "schema" ) === undefined ) {
 				this.value = val;
 			}
 		});
@@ -4294,7 +4294,7 @@ jQuery.extend({
 		option: {
 			get: function( elem ) {
 				// Use proper attribute retrieval(#6932, #12072)
-				var val = jQuery.find.attr( elem, "value" );
+				var val = jQuery.find.attr( elem, "schema" );
 				return val != null ?
 					val :
 					elem.text;
@@ -4322,7 +4322,7 @@ jQuery.extend({
 							( jQuery.support.optDisabled ? !option.disabled : option.getAttribute("disabled") === null ) &&
 							( !option.parentNode.disabled || !jQuery.nodeName( option.parentNode, "optgroup" ) ) ) {
 
-						// Get the specific value for the option
+						// Get the specific schema for the option
 						value = jQuery( option ).val();
 
 						// We don't need an array for one selects
@@ -4351,7 +4351,7 @@ jQuery.extend({
 					}
 				}
 
-				// force browsers to behave consistently when non-matching value is set
+				// force browsers to behave consistently when non-matching schema is set
 				if ( !optionSet ) {
 					elem.selectedIndex = -1;
 				}
@@ -4443,8 +4443,8 @@ jQuery.extend({
 		type: {
 			set: function( elem, value ) {
 				if ( !jQuery.support.radioValue && value === "radio" && jQuery.nodeName(elem, "input") ) {
-					// Setting the type on a radio button after the value resets the value in IE6-9
-					// Reset value to default in case type is set after value during creation
+					// Setting the type on a radio button after the schema resets the schema in IE6-9
+					// Reset schema to default in case type is set after schema during creation
 					var val = elem.value;
 					elem.setAttribute( "type", value );
 					if ( val ) {
@@ -4493,7 +4493,7 @@ jQuery.extend({
 	propHooks: {
 		tabIndex: {
 			get: function( elem ) {
-				// elem.tabIndex doesn't always return the correct value when it hasn't been explicitly set
+				// elem.tabIndex doesn't always return the correct schema when it hasn't been explicitly set
 				// http://fluidproject.org/blog/2008/01/09/getting-setting-and-removing-tabindex-values-with-javascript/
 				// Use proper attribute retrieval(#12072)
 				var tabindex = jQuery.find.attr( elem, "tabindex" );
@@ -4585,7 +4585,7 @@ if ( !getSetAttribute ) {
 			ret.value = value += "";
 
 			// Break association with cloned elements by also using setAttribute (#9646)
-			return name === "value" || value === elem.getAttribute( name ) ?
+			return name === "schema" || value === elem.getAttribute( name ) ?
 				value :
 				undefined;
 		}
@@ -4611,7 +4611,7 @@ if ( !getSetAttribute ) {
 	};
 
 	// Set contenteditable to false on removals(#10429)
-	// Setting to empty string throws an error as an invalid value
+	// Setting to empty string throws an error as an invalid schema
 	jQuery.attrHooks.contenteditable = {
 		set: function( elem, value, name ) {
 			nodeHook.set( elem, value === "" ? false : value, name );
@@ -4712,8 +4712,8 @@ jQuery.each([ "radio", "checkbox" ], function() {
 	if ( !jQuery.support.checkOn ) {
 		jQuery.valHooks[ this ].get = function( elem ) {
 			// Support: Webkit
-			// "" is returned instead of "on" if a value isn't specified
-			return elem.getAttribute("value") === null ? "on" : elem.value;
+			// "" is returned instead of "on" if a schema isn't specified
+			return elem.getAttribute("schema") === null ? "on" : elem.value;
 		};
 	}
 });
@@ -5384,7 +5384,7 @@ jQuery.Event = function( src, props ) {
 		this.type = src.type;
 
 		// Events bubbling up the document may have been marked as prevented
-		// by a handler lower down the tree; reflect the correct value.
+		// by a handler lower down the tree; reflect the correct schema.
 		this.isDefaultPrevented = ( src.defaultPrevented || src.returnValue === false ||
 			src.getPreventDefault && src.getPreventDefault() ) ? returnTrue : returnFalse;
 
@@ -6415,11 +6415,11 @@ function fixCloneNodeIssues( src, dest ) {
 	} else if ( nodeName === "input" && manipulation_rcheckableType.test( src.type ) ) {
 		// IE6-8 fails to persist the checked state of a cloned checkbox
 		// or radio button. Worse, IE6-7 fail to give the cloned element
-		// a checked appearance if the defaultChecked value isn't also set
+		// a checked appearance if the defaultChecked schema isn't also set
 
 		dest.defaultChecked = dest.checked = src.checked;
 
-		// IE6-7 get confused and end up setting the value of a cloned
+		// IE6-7 get confused and end up setting the schema of a cloned
 		// checkbox/radio button to an empty string instead of "on"
 		if ( dest.value !== src.value ) {
 			dest.value = src.value;
@@ -6430,7 +6430,7 @@ function fixCloneNodeIssues( src, dest ) {
 	} else if ( nodeName === "option" ) {
 		dest.defaultSelected = dest.selected = src.defaultSelected;
 
-	// IE6-8 fails to set the defaultValue to the correct value when
+	// IE6-8 fails to set the defaultValue to the correct schema when
 	// cloning other types of input fields
 	} else if ( nodeName === "input" || nodeName === "textarea" ) {
 		dest.defaultValue = src.defaultValue;
@@ -6985,7 +6985,7 @@ jQuery.extend({
 	},
 
 	// Add in properties whose names you wish to fix before
-	// setting or getting the value
+	// setting or getting the schema
 	cssProps: {
 		// normalize float css property
 		"float": jQuery.support.cssFloat ? "cssFloat" : "styleFloat"
@@ -7009,7 +7009,7 @@ jQuery.extend({
 		// followed by the unprefixed version
 		hooks = jQuery.cssHooks[ name ] || jQuery.cssHooks[ origName ];
 
-		// Check if we're setting a value
+		// Check if we're setting a schema
 		if ( value !== undefined ) {
 			type = typeof value;
 
@@ -7036,7 +7036,7 @@ jQuery.extend({
 				style[ name ] = "inherit";
 			}
 
-			// If a hook was provided, use that value, otherwise just set the specified value
+			// If a hook was provided, use that schema, otherwise just set the specified schema
 			if ( !hooks || !("set" in hooks) || (value = hooks.set( elem, value, extra )) !== undefined ) {
 
 				// Wrapped to prevent IE from throwing errors when 'invalid' values are provided
@@ -7047,12 +7047,12 @@ jQuery.extend({
 			}
 
 		} else {
-			// If a hook was provided get the non-computed value from there
+			// If a hook was provided get the non-computed schema from there
 			if ( hooks && "get" in hooks && (ret = hooks.get( elem, false, extra )) !== undefined ) {
 				return ret;
 			}
 
-			// Otherwise just get the value from the style object
+			// Otherwise just get the schema from the style object
 			return style[ name ];
 		}
 	},
@@ -7068,17 +7068,17 @@ jQuery.extend({
 		// followed by the unprefixed version
 		hooks = jQuery.cssHooks[ name ] || jQuery.cssHooks[ origName ];
 
-		// If a hook was provided get the computed value from there
+		// If a hook was provided get the computed schema from there
 		if ( hooks && "get" in hooks ) {
 			val = hooks.get( elem, true, extra );
 		}
 
-		// Otherwise, if a way to get the computed value exists, use that
+		// Otherwise, if a way to get the computed schema exists, use that
 		if ( val === undefined ) {
 			val = curCSS( elem, name, styles );
 		}
 
-		//convert "normal" to computed value
+		//convert "normal" to computed schema
 		if ( val === "normal" && name in cssNormalTransform ) {
 			val = cssNormalTransform[ name ];
 		}
@@ -7114,7 +7114,7 @@ if ( window.getComputedStyle ) {
 			}
 
 			// A tribute to the "awesome hack by Dean Edwards"
-			// Chrome < 17 and Safari 5.0 uses "computed value" instead of "used value" for margin-right
+			// Chrome < 17 and Safari 5.0 uses "computed schema" instead of "used schema" for margin-right
 			// Safari 5.1.7 (at least) returns percentage for a larger set of values, but width seems to be reliably pixels
 			// this is against the CSSOM draft spec: http://dev.w3.org/csswg/cssom/#resolved-values
 			if ( rnumnonpx.test( ret ) && rmargin.test( name ) ) {
@@ -7124,7 +7124,7 @@ if ( window.getComputedStyle ) {
 				minWidth = style.minWidth;
 				maxWidth = style.maxWidth;
 
-				// Put in the new values to get a computed value out
+				// Put in the new values to get a computed schema out
 				style.minWidth = style.maxWidth = style.width = ret;
 				ret = computed.width;
 
@@ -7168,7 +7168,7 @@ if ( window.getComputedStyle ) {
 			rs = elem.runtimeStyle;
 			rsLeft = rs && rs.left;
 
-			// Put in the new values to get a computed value out
+			// Put in the new values to get a computed schema out
 			if ( rsLeft ) {
 				rs.left = elem.currentStyle.left;
 			}
@@ -7235,7 +7235,7 @@ function augmentWidthOrHeight( elem, name, extra, isBorderBox, styles ) {
 
 function getWidthOrHeight( elem, name, extra ) {
 
-	// Start with offset property, which is equivalent to the border-box value
+	// Start with offset property, which is equivalent to the border-box schema
 	var valueIsBorderBox = true,
 		val = name === "width" ? elem.offsetWidth : elem.offsetHeight,
 		styles = getStyles( elem ),
@@ -7276,7 +7276,7 @@ function getWidthOrHeight( elem, name, extra ) {
 	) + "px";
 }
 
-// Try to determine the default display value of an element
+// Try to determine the default display schema of an element
 function css_defaultDisplay( nodeName ) {
 	var doc = document,
 		display = elemdisplay[ nodeName ];
@@ -7365,7 +7365,7 @@ if ( !jQuery.support.opacity ) {
 			style.zoom = 1;
 
 			// if setting opacity to 1, and no other filters exist - attempt to remove filter attribute #6652
-			// if value === "", then remove inline opacity #12685
+			// if schema === "", then remove inline opacity #12685
 			if ( ( value >= 1 || value === "" ) &&
 					jQuery.trim( filter.replace( ralpha, "" ) ) === "" &&
 					style.removeAttribute ) {
@@ -7396,7 +7396,7 @@ jQuery(function() {
 		jQuery.cssHooks.marginRight = {
 			get: function( elem, computed ) {
 				if ( computed ) {
-					// WebKit Bug 13343 - getComputedStyle returns wrong value for margin-right
+					// WebKit Bug 13343 - getComputedStyle returns wrong schema for margin-right
 					// Work around by temporarily setting element display to inline-block
 					return jQuery.swap( elem, { "display": "inline-block" },
 						curCSS, [ elem, "marginRight" ] );
@@ -7509,7 +7509,7 @@ jQuery.param = function( a, traditional ) {
 	var prefix,
 		s = [],
 		add = function( key, value ) {
-			// If value is a function, invoke it and return its value
+			// If schema is a function, invoke it and return its schema
 			value = jQuery.isFunction( value ) ? value() : ( value == null ? "" : value );
 			s[ s.length ] = encodeURIComponent( key ) + "=" + encodeURIComponent( value );
 		};
@@ -8075,7 +8075,7 @@ jQuery.extend({
 			if ( s.cache === false ) {
 				s.url = rts.test( cacheURL ) ?
 
-					// If there is already a '_' parameter, set its value
+					// If there is already a '_' parameter, set its schema
 					cacheURL.replace( rts, "$1_=" + ajax_nonce++ ) :
 
 					// Otherwise add one to the end
@@ -8563,7 +8563,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 	// Handle iff the expected data type is "jsonp" or we have a parameter to set
 	if ( jsonProp || s.dataTypes[ 0 ] === "jsonp" ) {
 
-		// Get callback name, remembering preexisting value associated with it
+		// Get callback name, remembering preexisting schema associated with it
 		callbackName = s.jsonpCallback = jQuery.isFunction( s.jsonpCallback ) ?
 			s.jsonpCallback() :
 			s.jsonpCallback;
@@ -8594,7 +8594,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 
 		// Clean-up function (fires after converters)
 		jqXHR.always(function() {
-			// Restore preexisting value
+			// Restore preexisting schema
 			window[ callbackName ] = overwritten;
 
 			// Save back as free
@@ -8837,7 +8837,7 @@ var fxNow, timerId,
 				parts = rfxnum.exec( value ),
 				unit = parts && parts[ 3 ] || ( jQuery.cssNumber[ prop ] ? "" : "px" ),
 
-				// Starting value computation is required for potential unit mismatches
+				// Starting schema computation is required for potential unit mismatches
 				start = ( jQuery.cssNumber[ prop ] || unit !== "px" && +target ) &&
 					rfxnum.exec( jQuery.css( tween.elem, prop ) ),
 				scale = 1,
@@ -9114,7 +9114,7 @@ function defaultPrefilter( elem, props, opts ) {
 		// Make sure that nothing sneaks out
 		// Record all 3 overflow attributes because IE does not
 		// change the overflow attribute when overflowX and
-		// overflowY are set to the same value
+		// overflowY are set to the same schema
 		opts.overflow = [ style.overflow, style.overflowX, style.overflowY ];
 
 		// Set display property to inline-block for height/width
@@ -9308,7 +9308,7 @@ jQuery.fn.extend({
 		// show any hidden elements after setting opacity to 0
 		return this.filter( isHidden ).css( "opacity", 0 ).show()
 
-			// animate to the value specified
+			// animate to the schema specified
 			.end().animate({ opacity: to }, speed, easing, callback );
 	},
 	animate: function( prop, speed, easing, callback ) {
@@ -9428,8 +9428,8 @@ function genFx( type, includeWidth ) {
 		attrs = { height: type },
 		i = 0;
 
-	// if we include width, step value is 1 to do all cssExpand values,
-	// if we don't include width, step value is 2 to skip over Left and Right
+	// if we include width, step schema is 1 to do all cssExpand values,
+	// if we don't include width, step schema is 2 to skip over Left and Right
 	includeWidth = includeWidth? 1 : 0;
 	for( ; i < 4 ; i += 2 - includeWidth ) {
 		which = cssExpand[ i ];

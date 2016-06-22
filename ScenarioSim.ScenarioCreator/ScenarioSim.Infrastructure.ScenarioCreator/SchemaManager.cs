@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Core.Interfaces;
 using ScenarioSim.Services.Logging;
@@ -42,6 +43,23 @@ namespace ScenarioSim.Infrastructure.ScenarioCreator
         }
 
         /// <summary>
+        /// Gets all the schemas.
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Schema> GetAllSchemas()
+        {
+            try
+            {
+                return unitOfWork.SchemaRepository.GetAll();
+            }
+            catch (Exception ex)
+            {
+                logger.LogException(ex);
+                throw;
+            }
+        }
+
+        /// <summary>
         /// Gets the schema.
         /// </summary>
         /// <param name="id">The identifier.</param>
@@ -72,6 +90,51 @@ namespace ScenarioSim.Infrastructure.ScenarioCreator
             try
             {
                 unitOfWork.SchemaRepository.Save(schema);
+                unitOfWork.Commit();
+            }
+            catch (Exception ex)
+            {
+                logger.LogException(ex);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Updates the schema.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="schema">The schema.</param>
+        public void UpdateSchema(int id, Schema schema)
+        {
+            try
+            {
+                Schema s = GetSchema(id);
+
+                s.Name = schema.Name;
+                s.Actors = schema.Actors;
+                s.Task = schema.Task;
+                s.Id = id;
+                
+                unitOfWork.SchemaRepository.Save(s);
+                unitOfWork.Commit();
+            }
+            catch (Exception ex)
+            {
+                logger.LogException(ex);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Deletes the schema.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        public void DeleteSchema(int id)
+        {
+            try
+            {
+                Schema schema = GetSchema(id);
+                unitOfWork.SchemaRepository.Remove(schema);
                 unitOfWork.Commit();
             }
             catch (Exception ex)

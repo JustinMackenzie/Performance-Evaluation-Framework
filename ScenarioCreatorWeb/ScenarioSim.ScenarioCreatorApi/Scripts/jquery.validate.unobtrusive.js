@@ -227,7 +227,7 @@
         parse: function (selector) {
             /// <summary>
             /// Parses all the HTML elements in the specified selector. It looks for input elements decorated
-            /// with the [data-val=true] attribute value and enables validation according to the data-val-*
+            /// with the [data-val=true] attribute schema and enables validation according to the data-val-*
             /// attribute values.
             /// </summary>
             /// <param name="selector" type="String">Any valid jQuery selector.</param>
@@ -279,7 +279,7 @@
         /// the jQuery Validate validation rule has no parameter values.</summary>
         /// <param name="adapterName" type="String">The name of the adapter to be added. This matches the name used
         /// in the data-val-nnnn HTML attribute (where nnnn is the adapter name).</param>
-        /// <param name="ruleName" type="String" optional="true">[Optional] The name of the jQuery Validate rule. If not provided, the value
+        /// <param name="ruleName" type="String" optional="true">[Optional] The name of the jQuery Validate rule. If not provided, the schema
         /// of adapterName will be used instead.</param>
         /// <returns type="jQuery.validator.unobtrusive.adapters" />
         return this.add(adapterName, function (options) {
@@ -294,15 +294,15 @@
         /// <param name="adapterName" type="String">The name of the adapter to be added. This matches the name used
         /// in the data-val-nnnn HTML attribute (where nnnn is the adapter name).</param>
         /// <param name="minRuleName" type="String">The name of the jQuery Validate rule to be used when you only
-        /// have a minimum value.</param>
+        /// have a minimum schema.</param>
         /// <param name="maxRuleName" type="String">The name of the jQuery Validate rule to be used when you only
-        /// have a maximum value.</param>
+        /// have a maximum schema.</param>
         /// <param name="minMaxRuleName" type="String">The name of the jQuery Validate rule to be used when you
-        /// have both a minimum and maximum value.</param>
+        /// have both a minimum and maximum schema.</param>
         /// <param name="minAttribute" type="String" optional="true">[Optional] The name of the HTML attribute that
-        /// contains the minimum value. The default is "min".</param>
+        /// contains the minimum schema. The default is "min".</param>
         /// <param name="maxAttribute" type="String" optional="true">[Optional] The name of the HTML attribute that
-        /// contains the maximum value. The default is "max".</param>
+        /// contains the maximum schema. The default is "max".</param>
         /// <returns type="jQuery.validator.unobtrusive.adapters" />
         return this.add(adapterName, [minAttribute || "min", maxAttribute || "max"], function (options) {
             var min = options.params.min,
@@ -322,12 +322,12 @@
 
     adapters.addSingleVal = function (adapterName, attribute, ruleName) {
         /// <summary>Adds a new adapter to convert unobtrusive HTML into a jQuery Validate validation, where
-        /// the jQuery Validate validation rule has a single value.</summary>
+        /// the jQuery Validate validation rule has a single schema.</summary>
         /// <param name="adapterName" type="String">The name of the adapter to be added. This matches the name used
         /// in the data-val-nnnn HTML attribute(where nnnn is the adapter name).</param>
-        /// <param name="attribute" type="String">[Optional] The name of the HTML attribute that contains the value.
+        /// <param name="attribute" type="String">[Optional] The name of the HTML attribute that contains the schema.
         /// The default is "val".</param>
-        /// <param name="ruleName" type="String" optional="true">[Optional] The name of the jQuery Validate rule. If not provided, the value
+        /// <param name="ruleName" type="String" optional="true">[Optional] The name of the jQuery Validate rule. If not provided, the schema
         /// of adapterName will be used instead.</param>
         /// <returns type="jQuery.validator.unobtrusive.adapters" />
         return this.add(adapterName, [attribute || "val"], function (options) {

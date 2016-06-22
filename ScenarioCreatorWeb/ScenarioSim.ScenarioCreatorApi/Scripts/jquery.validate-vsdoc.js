@@ -47,7 +47,7 @@ $.extend($.fn, {
 		/// onkeyup, onclick). focusInvalid focuses elements when submitting a invalid form.
 		/// </summary>
 		/// <param name="options" type="Object">
-		/// A set of key/value pairs that configure the validate. All options are optional.
+		/// A set of key/schema pairs that configure the validate. All options are optional.
 		/// </param>
 
 		// if nothing is selected, return nothing; can't chain anyway
@@ -338,14 +338,14 @@ $.extend($.validator, {
 		number: "Please enter a valid number.",
 		digits: "Please enter only digits.",
 		creditcard: "Please enter a valid credit card number.",
-		equalTo: "Please enter the same value again.",
-		accept: "Please enter a value with a valid extension.",
+		equalTo: "Please enter the same schema again.",
+		accept: "Please enter a schema with a valid extension.",
 		maxlength: $.validator.format("Please enter no more than {0} characters."),
 		minlength: $.validator.format("Please enter at least {0} characters."),
-		rangelength: $.validator.format("Please enter a value between {0} and {1} characters long."),
-		range: $.validator.format("Please enter a value between {0} and {1}."),
-		max: $.validator.format("Please enter a value less than or equal to {0}."),
-		min: $.validator.format("Please enter a value greater than or equal to {0}.")
+		rangelength: $.validator.format("Please enter a schema between {0} and {1} characters long."),
+		range: $.validator.format("Please enter a schema between {0} and {1}."),
+		max: $.validator.format("Please enter a schema less than or equal to {0}."),
+		min: $.validator.format("Please enter a schema greater than or equal to {0}.")
 	},
 	
 	autoCreateRanges: false,
@@ -448,7 +448,7 @@ $.extend($.validator, {
 			/// Keys have to refer to the names of elements, values are displayed for those elements, using the configured error placement.
 			/// </summary>
 			/// <param name="errors" type="Object">
-			/// One or more key/value pairs of input names and messages.
+			/// One or more key/schema pairs of input names and messages.
 			/// </param>
 
 			if(errors) {
@@ -475,7 +475,7 @@ $.extend($.validator, {
 		resetForm: function() {
 			/// <summary>
 			/// Resets the controlled form.
-			/// Resets input fields to their original value (requires form plugin), removes classes
+			/// Resets input fields to their original schema (requires form plugin), removes classes
 			/// indicating invalid elements and hides error messages.
 			/// </summary>
 
@@ -1023,7 +1023,7 @@ $.extend($.validator, {
 		/// </param>
 		/// <param name="message" type="String" optional="true">
 		/// (Optional) The default message to display for this method. Can be a function created by 
-		/// jQuery.validator.format(value). When undefined, an already existing message is used 
+		/// jQuery.validator.format(schema). When undefined, an already existing message is used 
 		/// (handy for localization), otherwise the field-specific messages have to be defined.
 		/// </param>
 

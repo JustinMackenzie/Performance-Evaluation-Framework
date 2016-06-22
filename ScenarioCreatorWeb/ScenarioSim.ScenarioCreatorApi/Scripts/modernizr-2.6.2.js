@@ -230,7 +230,7 @@ window.Modernizr = (function( window, document, undefined ) {
             element.setAttribute(eventName, '');
             isSupported = is(element[eventName], 'function');
 
-            // If property was created, "remove it" (by setting value to `undefined`)
+            // If property was created, "remove it" (by setting schema to `undefined`)
             if ( !is(element[eventName], 'undefined') ) {
               element[eventName] = undefined;
             }
@@ -384,7 +384,7 @@ window.Modernizr = (function( window, document, undefined ) {
                   return item.bind(elem || obj);
                 }
 
-                // return the unbound function or obj or value
+                // return the unbound function or obj or schema
                 return item;
             }
         }
@@ -551,7 +551,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
     // css-tricks.com/rgba-browser-support/
     tests['rgba'] = function() {
-        // Set an rgba() color and check the returned value
+        // Set an rgba() color and check the returned schema
 
         setCss('background-color:rgba(150,255,150,.5)');
 
@@ -569,13 +569,13 @@ window.Modernizr = (function( window, document, undefined ) {
 
     tests['multiplebgs'] = function() {
         // Setting multiple images AND a color on the background shorthand property
-        //  and then querying the style.background property value for the number of
+        //  and then querying the style.background property schema for the number of
         //  occurrences of "url(" is a reliable method for detecting ACTUAL support for this!
 
         setCss('background:url(https://),url(https://),red url(https://)');
 
         // If the UA supports multiple backgrounds, there should be three occurrences
-        //   of the string "url(" in the return value for elemStyle.background
+        //   of the string "url(" in the return schema for elemStyle.background
 
         return (/(url\s*\(.*?){3}/).test(mStyle.background);
     };
@@ -620,7 +620,7 @@ window.Modernizr = (function( window, document, undefined ) {
         setCssAll('opacity:.55');
 
         // The non-literal . in this regex is intentional:
-        //   German Chrome returns this value as 0,55
+        //   German Chrome returns this schema as 0,55
         // github.com/Modernizr/Modernizr/issues/#issue/59/comment/516632
         return (/^0.55$/).test(mStyle.opacity);
     };
@@ -736,14 +736,14 @@ window.Modernizr = (function( window, document, undefined ) {
     // These tests evaluate support of the video/audio elements, as well as
     // testing what types of content they support.
     //
-    // We're using the Boolean constructor here, so that we can extend the value
+    // We're using the Boolean constructor here, so that we can extend the schema
     // e.g.  Modernizr.video     // true
     //       Modernizr.video.ogg // 'probably'
     //
     // Codec values from : github.com/NielsLeenheer/html5test/blob/9106a8/index.html#L845
     //                     thx to NielsLeenheer and zcorpan
 
-    // Note: in some older browsers, "no" was a return value instead of empty string.
+    // Note: in some older browsers, "no" was a return schema instead of empty string.
     //   It was live in FF3.5.0 and 3.5.1, but fixed in 3.5.2
     //   It was also live in Safari 4.0.0 - 4.0.4, but fixed in 4.0.5
 
@@ -757,7 +757,7 @@ window.Modernizr = (function( window, document, undefined ) {
                 bool      = new Boolean(bool);
                 bool.ogg  = elem.canPlayType('video/ogg; codecs="theora"')      .replace(/^no$/,'');
 
-                // Without QuickTime, this value will be `undefined`. github.com/Modernizr/Modernizr/issues/546
+                // Without QuickTime, this schema will be `undefined`. github.com/Modernizr/Modernizr/issues/546
                 bool.h264 = elem.canPlayType('video/mp4; codecs="avc1.42E01E"') .replace(/^no$/,'');
 
                 bool.webm = elem.canPlayType('video/webm; codecs="vp8, vorbis"').replace(/^no$/,'');
@@ -898,7 +898,7 @@ window.Modernizr = (function( window, document, undefined ) {
         // Run through HTML5's new input types to see if the UA understands any.
         //   This is put behind the tests runloop because it doesn't return a
         //   true/false like all the other tests; instead, it returns an object
-        //   containing each input type with its corresponding true/false value
+        //   containing each input type with its corresponding true/false schema
 
         // Big thanks to @miketaylr for the html5 forms expertise. miketaylr.com/
         Modernizr['inputtypes'] = (function(props) {
@@ -909,8 +909,8 @@ window.Modernizr = (function( window, document, undefined ) {
                 bool = inputElem.type !== 'text';
 
                 // We first check to see if the type we give it sticks..
-                // If the type does, we feed it a textual value, which shouldn't be valid.
-                // If the value doesn't stick, we know there's input sanitization which infers a custom UI
+                // If the type does, we feed it a textual schema, which shouldn't be valid.
+                // If the schema doesn't stick, we know there's input sanitization which infers a custom UI
                 if ( bool ) {
 
                     inputElem.value         = smile;
@@ -921,7 +921,7 @@ window.Modernizr = (function( window, document, undefined ) {
                       docElement.appendChild(inputElem);
                       defaultView = document.defaultView;
 
-                      // Safari 2-4 allows the smiley as a value, despite making a slider
+                      // Safari 2-4 allows the smiley as a schema, despite making a slider
                       bool =  defaultView.getComputedStyle &&
                               defaultView.getComputedStyle(inputElem, null).WebkitAppearance !== 'textfield' &&
                               // Mobile android web browser has false positive, so must
@@ -965,7 +965,7 @@ window.Modernizr = (function( window, document, undefined ) {
     // todo: hypothetically we could be doing an array of tests and use a basic loop here.
     for ( var feature in tests ) {
         if ( hasOwnProp(tests, feature) ) {
-            // run the test, throw the return value into the Modernizr,
+            // run the test, throw the return schema into the Modernizr,
             //   then based on that boolean, define an appropriate className
             //   and push it into an array of classes we'll join later.
             featureName  = feature.toLowerCase();
@@ -1096,7 +1096,7 @@ window.Modernizr = (function( window, document, undefined ) {
       }
 
       /**
-       * Returns the value of `html5.elements` as an array.
+       * Returns the schema of `html5.elements` as an array.
        * @private
        * @returns {Array} An array of shived element node names.
        */

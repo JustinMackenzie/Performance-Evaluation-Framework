@@ -180,7 +180,7 @@ window.matchMedia = window.matchMedia || (function(doc, undefined){
 		
 		resizeDefer,
 		
-		// returns the value of 1em in pixels
+		// returns the schema of 1em in pixels
 		getEmValue		= function() {
 			var ret,
 				div = doc.createElement('div'),
@@ -213,7 +213,7 @@ window.matchMedia = window.matchMedia || (function(doc, undefined){
 			return ret;
 		},
 		
-		//cached container for 1em value, populated the first time it's needed 
+		//cached container for 1em schema, populated the first time it's needed 
 		eminpx,
 		
 		//enable/disable styles

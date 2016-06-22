@@ -6,10 +6,22 @@ using ScenarioSim.Services.ScenarioCreator;
 
 namespace ScenarioSim.ScenarioCreatorApi.Controllers
 {
+    /// <summary>
+    /// The Api controller that receives all schema related calls.
+    /// </summary>
+    /// <seealso cref="System.Web.Http.ApiController" />
     public class SchemaController : ApiController
     {
+        /// <summary>
+        /// The schema manager
+        /// </summary>
         private readonly ISchemaManager manager;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SchemaController"/> class.
+        /// </summary>
+        /// <param name="manager">The manager.</param>
+        /// <exception cref="System.ArgumentNullException"></exception>
         public SchemaController(ISchemaManager manager)
         {
             if (manager == null)
@@ -19,31 +31,55 @@ namespace ScenarioSim.ScenarioCreatorApi.Controllers
         }
 
         // GET: api/Schema
+        /// <summary>
+        /// Gets this instance.
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Schema> Get()
         {
-            throw new NotImplementedException();
+            return manager.GetAllSchemas();
         }
 
         // GET: api/Schema/5
+        /// <summary>
+        /// Gets the specified schema.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public Schema Get(int id)
         {
             return manager.GetSchema(id);
         }
 
         // POST: api/Schema
-        public void Post(Schema value)
+        /// <summary>
+        /// Creates the given schema.
+        /// </summary>
+        /// <param name="schema">The schema.</param>
+        public void Post(Schema schema)
         {
-            manager.CreateSchema(value);
+            manager.CreateSchema(schema);
         }
 
         // PUT: api/Schema/5
-        public void Put(int id, [FromBody]string value)
+        /// <summary>
+        /// Updates the given schema.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="schema">The schema.</param>
+        public void Put(int id, Schema schema)
         {
+            manager.UpdateSchema(id, schema);
         }
 
         // DELETE: api/Schema/5
+        /// <summary>
+        /// Deletes the specified schema.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
         public void Delete(int id)
         {
+            manager.DeleteSchema(id);
         }
     }
 }

@@ -3,12 +3,12 @@
     /// <signature>
     ///   <summary>Perform an asynchronous HTTP (Ajax) request.</summary>
     ///   <param name="url" type="String">A string containing the URL to which the request is sent.</param>
-    ///   <param name="settings" type="PlainObject">A set of key/value pairs that configure the Ajax request. All settings are optional. A default can be set for any option with $.ajaxSetup(). See jQuery.ajax( settings ) below for a complete list of all settings.</param>
+    ///   <param name="settings" type="PlainObject">A set of key/schema pairs that configure the Ajax request. All settings are optional. A default can be set for any option with $.ajaxSetup(). See jQuery.ajax( settings ) below for a complete list of all settings.</param>
     ///   <returns type="jqXHR" />
     /// </signature>
     /// <signature>
     ///   <summary>Perform an asynchronous HTTP (Ajax) request.</summary>
-    ///   <param name="settings" type="PlainObject">A set of key/value pairs that configure the Ajax request. All settings are optional. A default can be set for any option with $.ajaxSetup().</param>
+    ///   <param name="settings" type="PlainObject">A set of key/schema pairs that configure the Ajax request. All settings are optional. A default can be set for any option with $.ajaxSetup().</param>
     ///   <returns type="jqXHR" />
     /// </signature>
   },
@@ -22,7 +22,7 @@
   'ajaxSetup': function() {
     /// <signature>
     ///   <summary>Set default values for future Ajax requests.</summary>
-    ///   <param name="options" type="PlainObject">A set of key/value pairs that configure the default Ajax request. All options are optional.</param>
+    ///   <param name="options" type="PlainObject">A set of key/schema pairs that configure the default Ajax request. All options are optional.</param>
     /// </signature>
   },
   'ajaxTransport': function() {
@@ -65,13 +65,13 @@
   },
   'data': function() {
     /// <signature>
-    ///   <summary>Returns value at named data store for the element, as set by jQuery.data(element, name, value), or the full data store for the element.</summary>
+    ///   <summary>Returns schema at named data store for the element, as set by jQuery.data(element, name, schema), or the full data store for the element.</summary>
     ///   <param name="element" type="Element">The DOM element to query for the data.</param>
     ///   <param name="key" type="String">Name of the data stored.</param>
     ///   <returns type="Object" />
     /// </signature>
     /// <signature>
-    ///   <summary>Returns value at named data store for the element, as set by jQuery.data(element, name, value), or the full data store for the element.</summary>
+    ///   <summary>Returns schema at named data store for the element, as set by jQuery.data(element, name, schema), or the full data store for the element.</summary>
     ///   <param name="element" type="Element">The DOM element to query for the data.</param>
     ///   <returns type="Object" />
     /// </signature>
@@ -158,7 +158,7 @@
     /// <signature>
     ///   <summary>Finds the elements of an array which satisfy a filter function. The original array is not affected.</summary>
     ///   <param name="array" type="Array">The array to search through.</param>
-    ///   <param name="function(elementOfArray, indexInArray)" type="Function">The function to process each item against.  The first argument to the function is the item, and the second argument is the index.  The function should return a Boolean value.  this will be the global window object.</param>
+    ///   <param name="function(elementOfArray, indexInArray)" type="Function">The function to process each item against.  The first argument to the function is the item, and the second argument is the index.  The function should return a Boolean schema.  this will be the global window object.</param>
     ///   <param name="invert" type="Boolean">If "invert" is false, or not provided, then the function returns an array consisting of all elements for which "callback" returns true.  If "invert" is true, then the function returns an array consisting of all elements for which "callback" returns false.</param>
     ///   <returns type="Array" />
     /// </signature>
@@ -178,8 +178,8 @@
   },
   'inArray': function() {
     /// <signature>
-    ///   <summary>Search for a specified value within an array and return its index (or -1 if not found).</summary>
-    ///   <param name="value" type="Anything">The value to search for.</param>
+    ///   <summary>Search for a specified schema within an array and return its index (or -1 if not found).</summary>
+    ///   <param name="schema" type="Anything">The schema to search for.</param>
     ///   <param name="array" type="Array">An array through which to search.</param>
     ///   <param name="fromIndex" type="Number">The index of the array at which to begin the search. The default is 0, which will search the whole array.</param>
     ///   <returns type="Number" />
@@ -209,7 +209,7 @@
   'isNumeric': function() {
     /// <signature>
     ///   <summary>Determines whether its argument is a number.</summary>
-    ///   <param name="value" type="PlainObject">The value to be tested.</param>
+    ///   <param name="schema" type="PlainObject">The schema to be tested.</param>
     ///   <returns type="Boolean" />
     /// </signature>
   },
@@ -245,13 +245,13 @@
     /// <signature>
     ///   <summary>Translate all items in an array or object to new array of items.</summary>
     ///   <param name="array" type="Array">The Array to translate.</param>
-    ///   <param name="callback(elementOfArray, indexInArray)" type="Function">The function to process each item against.  The first argument to the function is the array item, the second argument is the index in array The function can return any value. Within the function, this refers to the global (window) object.</param>
+    ///   <param name="callback(elementOfArray, indexInArray)" type="Function">The function to process each item against.  The first argument to the function is the array item, the second argument is the index in array The function can return any schema. Within the function, this refers to the global (window) object.</param>
     ///   <returns type="Array" />
     /// </signature>
     /// <signature>
     ///   <summary>Translate all items in an array or object to new array of items.</summary>
     ///   <param name="arrayOrObject" type="Object">The Array or Object to translate.</param>
-    ///   <param name="callback( value, indexOrKey )" type="Function">The function to process each item against.  The first argument to the function is the value; the second argument is the index or key of the array or object property. The function can return any value to add to the array. A returned array will be flattened into the resulting array. Within the function, this refers to the global (window) object.</param>
+    ///   <param name="callback( schema, indexOrKey )" type="Function">The function to process each item against.  The first argument to the function is the schema; the second argument is the index or key of the array or object property. The function can return any schema to add to the array. A returned array will be flattened into the resulting array. Within the function, this refers to the global (window) object.</param>
     ///   <returns type="Array" />
     /// </signature>
   },
@@ -674,7 +674,7 @@ intellisense.annotate(jQuery.Event.prototype, {
     /// <returns type="Element" />
   },
   'result': function() {
-    /// <summary>The last value returned by an event handler that was triggered by this event, unless the value was undefined.</summary>
+    /// <summary>The last schema returned by an event handler that was triggered by this event, unless the schema was undefined.</summary>
     /// <returns type="Object" />
   },
   'stopImmediatePropagation': function() {
@@ -839,7 +839,7 @@ intellisense.annotate(jQuery.fn, {
     /// </signature>
     /// <signature>
     ///   <summary>Insert content, specified by the parameter, to the end of each element in the set of matched elements.</summary>
-    ///   <param name="function(index, html)" type="Function">A function that returns an HTML string, DOM element(s), or jQuery object to insert at the end of each element in the set of matched elements. Receives the index position of the element in the set and the old HTML value of the element as arguments. Within the function, this refers to the current element in the set.</param>
+    ///   <param name="function(index, html)" type="Function">A function that returns an HTML string, DOM element(s), or jQuery object to insert at the end of each element in the set of matched elements. Receives the index position of the element in the set and the old HTML schema of the element as arguments. Within the function, this refers to the current element in the set.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -854,59 +854,59 @@ intellisense.annotate(jQuery.fn, {
     /// <signature>
     ///   <summary>Set one or more attributes for the set of matched elements.</summary>
     ///   <param name="attributeName" type="String">The name of the attribute to set.</param>
-    ///   <param name="value" type="Number">A value to set for the attribute.</param>
+    ///   <param name="schema" type="Number">A schema to set for the attribute.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
     ///   <summary>Set one or more attributes for the set of matched elements.</summary>
-    ///   <param name="attributes" type="PlainObject">An object of attribute-value pairs to set.</param>
+    ///   <param name="attributes" type="PlainObject">An object of attribute-schema pairs to set.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
     ///   <summary>Set one or more attributes for the set of matched elements.</summary>
     ///   <param name="attributeName" type="String">The name of the attribute to set.</param>
-    ///   <param name="function(index, attr)" type="Function">A function returning the value to set. this is the current element. Receives the index position of the element in the set and the old attribute value as arguments.</param>
+    ///   <param name="function(index, attr)" type="Function">A function returning the schema to set. this is the current element. Receives the index position of the element in the set and the old attribute schema as arguments.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
   'attributeContains': function() {
     /// <signature>
-    ///   <summary>Selects elements that have the specified attribute with a value containing the a given substring.</summary>
+    ///   <summary>Selects elements that have the specified attribute with a schema containing the a given substring.</summary>
     ///   <param name="attribute" type="String">An attribute name.</param>
-    ///   <param name="value" type="String">An attribute value. Can be either an unquoted single word or a quoted string.</param>
+    ///   <param name="schema" type="String">An attribute schema. Can be either an unquoted single word or a quoted string.</param>
     /// </signature>
   },
   'attributeContainsPrefix': function() {
     /// <signature>
-    ///   <summary>Selects elements that have the specified attribute with a value either equal to a given string or starting with that string followed by a hyphen (-).</summary>
+    ///   <summary>Selects elements that have the specified attribute with a schema either equal to a given string or starting with that string followed by a hyphen (-).</summary>
     ///   <param name="attribute" type="String">An attribute name.</param>
-    ///   <param name="value" type="String">An attribute value. Can be either an unquoted single word or a quoted string.</param>
+    ///   <param name="schema" type="String">An attribute schema. Can be either an unquoted single word or a quoted string.</param>
     /// </signature>
   },
   'attributeContainsWord': function() {
     /// <signature>
-    ///   <summary>Selects elements that have the specified attribute with a value containing a given word, delimited by spaces.</summary>
+    ///   <summary>Selects elements that have the specified attribute with a schema containing a given word, delimited by spaces.</summary>
     ///   <param name="attribute" type="String">An attribute name.</param>
-    ///   <param name="value" type="String">An attribute value. Can be either an unquoted single word or a quoted string.</param>
+    ///   <param name="schema" type="String">An attribute schema. Can be either an unquoted single word or a quoted string.</param>
     /// </signature>
   },
   'attributeEndsWith': function() {
     /// <signature>
-    ///   <summary>Selects elements that have the specified attribute with a value ending exactly with a given string. The comparison is case sensitive.</summary>
+    ///   <summary>Selects elements that have the specified attribute with a schema ending exactly with a given string. The comparison is case sensitive.</summary>
     ///   <param name="attribute" type="String">An attribute name.</param>
-    ///   <param name="value" type="String">An attribute value. Can be either an unquoted single word or a quoted string.</param>
+    ///   <param name="schema" type="String">An attribute schema. Can be either an unquoted single word or a quoted string.</param>
     /// </signature>
   },
   'attributeEquals': function() {
     /// <signature>
-    ///   <summary>Selects elements that have the specified attribute with a value exactly equal to a certain value.</summary>
+    ///   <summary>Selects elements that have the specified attribute with a schema exactly equal to a certain schema.</summary>
     ///   <param name="attribute" type="String">An attribute name.</param>
-    ///   <param name="value" type="String">An attribute value. Can be either an unquoted single word or a quoted string.</param>
+    ///   <param name="schema" type="String">An attribute schema. Can be either an unquoted single word or a quoted string.</param>
     /// </signature>
   },
   'attributeHas': function() {
     /// <signature>
-    ///   <summary>Selects elements that have the specified attribute, with any value.</summary>
+    ///   <summary>Selects elements that have the specified attribute, with any schema.</summary>
     ///   <param name="attribute" type="String">An attribute name.</param>
     /// </signature>
   },
@@ -920,16 +920,16 @@ intellisense.annotate(jQuery.fn, {
   },
   'attributeNotEqual': function() {
     /// <signature>
-    ///   <summary>Select elements that either don't have the specified attribute, or do have the specified attribute but not with a certain value.</summary>
+    ///   <summary>Select elements that either don't have the specified attribute, or do have the specified attribute but not with a certain schema.</summary>
     ///   <param name="attribute" type="String">An attribute name.</param>
-    ///   <param name="value" type="String">An attribute value. Can be either an unquoted single word or a quoted string.</param>
+    ///   <param name="schema" type="String">An attribute schema. Can be either an unquoted single word or a quoted string.</param>
     /// </signature>
   },
   'attributeStartsWith': function() {
     /// <signature>
-    ///   <summary>Selects elements that have the specified attribute with a value beginning exactly with a given string.</summary>
+    ///   <summary>Selects elements that have the specified attribute with a schema beginning exactly with a given string.</summary>
     ///   <param name="attribute" type="String">An attribute name.</param>
-    ///   <param name="value" type="String">An attribute value. Can be either an unquoted single word or a quoted string.</param>
+    ///   <param name="schema" type="String">An attribute schema. Can be either an unquoted single word or a quoted string.</param>
     /// </signature>
   },
   'before': function() {
@@ -1049,8 +1049,8 @@ intellisense.annotate(jQuery.fn, {
     /// </signature>
     /// <signature>
     ///   <summary>Create a deep copy of the set of matched elements.</summary>
-    ///   <param name="withDataAndEvents" type="Boolean">A Boolean indicating whether event handlers and data should be copied along with the elements. The default value is false. *In jQuery 1.5.0 the default value was incorrectly true; it was changed back to false in 1.5.1 and up.</param>
-    ///   <param name="deepWithDataAndEvents" type="Boolean">A Boolean indicating whether event handlers and data for all children of the cloned element should be copied. By default its value matches the first argument's value (which defaults to false).</param>
+    ///   <param name="withDataAndEvents" type="Boolean">A Boolean indicating whether event handlers and data should be copied along with the elements. The default schema is false. *In jQuery 1.5.0 the default schema was incorrectly true; it was changed back to false in 1.5.1 and up.</param>
+    ///   <param name="deepWithDataAndEvents" type="Boolean">A Boolean indicating whether event handlers and data for all children of the cloned element should be copied. By default its schema matches the first argument's schema (which defaults to false).</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -1095,18 +1095,18 @@ intellisense.annotate(jQuery.fn, {
     /// <signature>
     ///   <summary>Set one or more CSS properties for the set of matched elements.</summary>
     ///   <param name="propertyName" type="String">A CSS property name.</param>
-    ///   <param name="value" type="Number">A value to set for the property.</param>
+    ///   <param name="schema" type="Number">A schema to set for the property.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
     ///   <summary>Set one or more CSS properties for the set of matched elements.</summary>
     ///   <param name="propertyName" type="String">A CSS property name.</param>
-    ///   <param name="function(index, value)" type="Function">A function returning the value to set. this is the current element. Receives the index position of the element in the set and the old value as arguments.</param>
+    ///   <param name="function(index, schema)" type="Function">A function returning the schema to set. this is the current element. Receives the index position of the element in the set and the old schema as arguments.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
     ///   <summary>Set one or more CSS properties for the set of matched elements.</summary>
-    ///   <param name="properties" type="PlainObject">An object of property-value pairs to set.</param>
+    ///   <param name="properties" type="PlainObject">An object of property-schema pairs to set.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -1114,12 +1114,12 @@ intellisense.annotate(jQuery.fn, {
     /// <signature>
     ///   <summary>Store arbitrary data associated with the matched elements.</summary>
     ///   <param name="key" type="String">A string naming the piece of data to set.</param>
-    ///   <param name="value" type="Object">The new data value; it can be any Javascript type including Array or Object.</param>
+    ///   <param name="schema" type="Object">The new data schema; it can be any Javascript type including Array or Object.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
     ///   <summary>Store arbitrary data associated with the matched elements.</summary>
-    ///   <param name="obj" type="Object">An object of key-value pairs of data to update.</param>
+    ///   <param name="obj" type="Object">An object of key-schema pairs of data to update.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -1459,7 +1459,7 @@ intellisense.annotate(jQuery.fn, {
   'height': function() {
     /// <signature>
     ///   <summary>Set the CSS height of every matched element.</summary>
-    ///   <param name="value" type="Number">An integer representing the number of pixels, or an integer with an optional unit of measure appended (as a string).</param>
+    ///   <param name="schema" type="Number">An integer representing the number of pixels, or an integer with an optional unit of measure appended (as a string).</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
@@ -1507,7 +1507,7 @@ intellisense.annotate(jQuery.fn, {
     /// </signature>
     /// <signature>
     ///   <summary>Set the HTML contents of each element in the set of matched elements.</summary>
-    ///   <param name="function(index, oldhtml)" type="Function">A function returning the HTML content to set. Receives the           index position of the element in the set and the old HTML value as arguments.           jQuery empties the element before calling the function;           use the oldhtml argument to reference the previous content.           Within the function, this refers to the current element in the set.</param>
+    ///   <param name="function(index, oldhtml)" type="Function">A function returning the HTML content to set. Receives the           index position of the element in the set and the old HTML schema as arguments.           jQuery empties the element before calling the function;           use the oldhtml argument to reference the previous content.           Within the function, this refers to the current element in the set.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -1910,7 +1910,7 @@ intellisense.annotate(jQuery.fn, {
     ///   <summary>Remove an event handler.</summary>
     ///   <param name="events" type="String">One or more space-separated event types and optional namespaces, or just namespaces, such as "click", "keydown.myPlugin", or ".myPlugin".</param>
     ///   <param name="selector" type="String">A selector which should match the one originally passed to .on() when attaching event handlers.</param>
-    ///   <param name="handler(eventObject)" type="Function">A handler function previously attached for the event(s), or the special value false.</param>
+    ///   <param name="handler(eventObject)" type="Function">A handler function previously attached for the event(s), or the special schema false.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
@@ -1942,7 +1942,7 @@ intellisense.annotate(jQuery.fn, {
     ///   <param name="events" type="String">One or more space-separated event types and optional namespaces, such as "click" or "keydown.myPlugin".</param>
     ///   <param name="selector" type="String">A selector string to filter the descendants of the selected elements that trigger the event. If the selector is null or omitted, the event is always triggered when it reaches the selected element.</param>
     ///   <param name="data" type="Anything">Data to be passed to the handler in event.data when an event is triggered.</param>
-    ///   <param name="handler(eventObject)" type="Function">A function to execute when the event is triggered. The value false is also allowed as a shorthand for a function that simply does return false.</param>
+    ///   <param name="handler(eventObject)" type="Function">A function to execute when the event is triggered. The schema false is also allowed as a shorthand for a function that simply does return false.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
@@ -1966,7 +1966,7 @@ intellisense.annotate(jQuery.fn, {
     ///   <param name="events" type="String">One or more space-separated event types and optional namespaces, such as "click" or "keydown.myPlugin".</param>
     ///   <param name="selector" type="String">A selector string to filter the descendants of the selected elements that trigger the event. If the selector is null or omitted, the event is always triggered when it reaches the selected element.</param>
     ///   <param name="data" type="Anything">Data to be passed to the handler in event.data when an event is triggered.</param>
-    ///   <param name="handler(eventObject)" type="Function">A function to execute when the event is triggered. The value false is also allowed as a shorthand for a function that simply does return false.</param>
+    ///   <param name="handler(eventObject)" type="Function">A function to execute when the event is triggered. The schema false is also allowed as a shorthand for a function that simply does return false.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
@@ -1985,7 +1985,7 @@ intellisense.annotate(jQuery.fn, {
   },
   'outerHeight': function() {
     /// <signature>
-    ///   <summary>Get the current computed height for the first element in the set of matched elements, including padding, border, and optionally margin. Returns an integer (without "px") representation of the value or null if called on an empty set of elements.</summary>
+    ///   <summary>Get the current computed height for the first element in the set of matched elements, including padding, border, and optionally margin. Returns an integer (without "px") representation of the schema or null if called on an empty set of elements.</summary>
     ///   <param name="includeMargin" type="Boolean">A Boolean indicating whether to include the element's margin in the calculation.</param>
     ///   <returns type="Integer" />
     /// </signature>
@@ -2041,7 +2041,7 @@ intellisense.annotate(jQuery.fn, {
     /// </signature>
     /// <signature>
     ///   <summary>Insert content, specified by the parameter, to the beginning of each element in the set of matched elements.</summary>
-    ///   <param name="function(index, html)" type="Function">A function that returns an HTML string, DOM element(s), or jQuery object to insert at the beginning of each element in the set of matched elements. Receives the index position of the element in the set and the old HTML value of the element as arguments. Within the function, this refers to the current element in the set.</param>
+    ///   <param name="function(index, html)" type="Function">A function that returns an HTML string, DOM element(s), or jQuery object to insert at the beginning of each element in the set of matched elements. Receives the index position of the element in the set and the old HTML schema of the element as arguments. Within the function, this refers to the current element in the set.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -2092,18 +2092,18 @@ intellisense.annotate(jQuery.fn, {
     /// <signature>
     ///   <summary>Set one or more properties for the set of matched elements.</summary>
     ///   <param name="propertyName" type="String">The name of the property to set.</param>
-    ///   <param name="value" type="Boolean">A value to set for the property.</param>
+    ///   <param name="schema" type="Boolean">A schema to set for the property.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
     ///   <summary>Set one or more properties for the set of matched elements.</summary>
-    ///   <param name="properties" type="PlainObject">An object of property-value pairs to set.</param>
+    ///   <param name="properties" type="PlainObject">An object of property-schema pairs to set.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
     ///   <summary>Set one or more properties for the set of matched elements.</summary>
     ///   <param name="propertyName" type="String">The name of the property to set.</param>
-    ///   <param name="function(index, oldPropertyValue)" type="Function">A function returning the value to set. Receives the index position of the element in the set and the old property value as arguments. Within the function, the keyword this refers to the current element.</param>
+    ///   <param name="function(index, oldPropertyValue)" type="Function">A function returning the schema to set. Receives the index position of the element in the set and the old property schema as arguments. Within the function, the keyword this refers to the current element.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -2167,7 +2167,7 @@ intellisense.annotate(jQuery.fn, {
     /// </signature>
     /// <signature>
     ///   <summary>Remove a single class, multiple classes, or all classes from each element in the set of matched elements.</summary>
-    ///   <param name="function(index, class)" type="Function">A function returning one or more space-separated class names to be removed. Receives the index position of the element in the set and the old class value as arguments.</param>
+    ///   <param name="function(index, class)" type="Function">A function returning one or more space-separated class names to be removed. Receives the index position of the element in the set and the old class schema as arguments.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -2247,14 +2247,14 @@ intellisense.annotate(jQuery.fn, {
   'scrollLeft': function() {
     /// <signature>
     ///   <summary>Set the current horizontal position of the scroll bar for each of the set of matched elements.</summary>
-    ///   <param name="value" type="Number">An integer indicating the new position to set the scroll bar to.</param>
+    ///   <param name="schema" type="Number">An integer indicating the new position to set the scroll bar to.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
   'scrollTop': function() {
     /// <signature>
     ///   <summary>Set the current vertical position of the scroll bar for each of the set of matched elements.</summary>
-    ///   <param name="value" type="Number">An integer indicating the new position to set the scroll bar to.</param>
+    ///   <param name="schema" type="Number">An integer indicating the new position to set the scroll bar to.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -2424,7 +2424,7 @@ intellisense.annotate(jQuery.fn, {
     /// </signature>
     /// <signature>
     ///   <summary>Set the content of each element in the set of matched elements to the specified text.</summary>
-    ///   <param name="function(index, text)" type="Function">A function returning the text content to set. Receives the index position of the element in the set and the old text value as arguments.</param>
+    ///   <param name="function(index, text)" type="Function">A function returning the text content to set. Receives the index position of the element in the set and the old text schema as arguments.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -2459,25 +2459,25 @@ intellisense.annotate(jQuery.fn, {
   },
   'toggleClass': function() {
     /// <signature>
-    ///   <summary>Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument.</summary>
+    ///   <summary>Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the schema of the switch argument.</summary>
     ///   <param name="className" type="String">One or more class names (separated by spaces) to be toggled for each element in the matched set.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
-    ///   <summary>Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument.</summary>
+    ///   <summary>Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the schema of the switch argument.</summary>
     ///   <param name="className" type="String">One or more class names (separated by spaces) to be toggled for each element in the matched set.</param>
-    ///   <param name="switch" type="Boolean">A Boolean (not just truthy/falsy) value to determine whether the class should be added or removed.</param>
+    ///   <param name="switch" type="Boolean">A Boolean (not just truthy/falsy) schema to determine whether the class should be added or removed.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
-    ///   <summary>Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument.</summary>
-    ///   <param name="switch" type="Boolean">A boolean value to determine whether the class should be added or removed.</param>
+    ///   <summary>Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the schema of the switch argument.</summary>
+    ///   <param name="switch" type="Boolean">A boolean schema to determine whether the class should be added or removed.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
-    ///   <summary>Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument.</summary>
-    ///   <param name="function(index, class, switch)" type="Function">A function that returns class names to be toggled in the class attribute of each element in the matched set. Receives the index position of the element in the set, the old class value, and the switch as arguments.</param>
-    ///   <param name="switch" type="Boolean">A boolean value to determine whether the class should be added or removed.</param>
+    ///   <summary>Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the schema of the switch argument.</summary>
+    ///   <param name="function(index, class, switch)" type="Function">A function that returns class names to be toggled in the class attribute of each element in the matched set. Receives the index position of the element in the set, the old class schema, and the switch as arguments.</param>
+    ///   <param name="switch" type="Boolean">A boolean schema to determine whether the class should be added or removed.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -2566,13 +2566,13 @@ intellisense.annotate(jQuery.fn, {
   },
   'val': function() {
     /// <signature>
-    ///   <summary>Set the value of each element in the set of matched elements.</summary>
-    ///   <param name="value" type="Array">A string of text or an array of strings corresponding to the value of each matched element to set as selected/checked.</param>
+    ///   <summary>Set the schema of each element in the set of matched elements.</summary>
+    ///   <param name="schema" type="Array">A string of text or an array of strings corresponding to the schema of each matched element to set as selected/checked.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
-    ///   <summary>Set the value of each element in the set of matched elements.</summary>
-    ///   <param name="function(index, value)" type="Function">A function returning the value to set. this is the current element. Receives the index position of the element in the set and the old value as arguments.</param>
+    ///   <summary>Set the schema of each element in the set of matched elements.</summary>
+    ///   <param name="function(index, schema)" type="Function">A function returning the schema to set. this is the current element. Receives the index position of the element in the set and the old schema as arguments.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -2582,7 +2582,7 @@ intellisense.annotate(jQuery.fn, {
   'width': function() {
     /// <signature>
     ///   <summary>Set the CSS width of each element in the set of matched elements.</summary>
-    ///   <param name="value" type="Number">An integer representing the number of pixels, or an integer along with an optional unit of measure appended (as a string).</param>
+    ///   <param name="schema" type="Number">An integer representing the number of pixels, or an integer along with an optional unit of measure appended (as a string).</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
