@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 using ScenarioSim.Core.Entities;
+using ScenarioSim.ScenarioCreatorApi.Models;
 using ScenarioSim.Services.ScenarioCreator;
 
 namespace ScenarioSim.ScenarioCreatorApi.Controllers
@@ -35,9 +37,9 @@ namespace ScenarioSim.ScenarioCreatorApi.Controllers
         /// Gets this instance.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Schema> Get()
+        public IEnumerable<SchemaViewModel> Get()
         {
-            return manager.GetAllSchemas();
+            return manager.GetAllSchemas().Select(s => new SchemaViewModel { Id = s.Id, Name = s.Name });
         }
 
         // GET: api/Schema/5
@@ -46,18 +48,29 @@ namespace ScenarioSim.ScenarioCreatorApi.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public Schema Get(int id)
+        public SchemaViewModel Get(Guid id)
         {
-            return manager.GetSchema(id);
+            Schema schema = manager.GetSchema(id);
+
+            return new SchemaViewModel
+            {
+                Id = schema.Id,
+                Name = schema.Name
+            };
         }
 
         // POST: api/Schema
         /// <summary>
         /// Creates the given schema.
         /// </summary>
-        /// <param name="schema">The schema.</param>
-        public void Post(Schema schema)
+        /// <param name="model">The create schema view model.</param>
+        public void Post(CreateSchemaViewModel model)
         {
+            Schema schema = new Schema
+            {
+                Name = model.Name
+            };
+
             manager.CreateSchema(schema);
         }
 
@@ -66,9 +79,15 @@ namespace ScenarioSim.ScenarioCreatorApi.Controllers
         /// Updates the given schema.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        /// <param name="schema">The schema.</param>
-        public void Put(int id, Schema schema)
+        /// <param name="model">The schema.</param>
+        public void Put(Guid id, EditSchemaViewModel model)
         {
+            Schema schema = new Schema
+            {
+                Id = model.Id,
+                Name = model.Name
+            };
+
             manager.UpdateSchema(id, schema);
         }
 
@@ -77,7 +96,7 @@ namespace ScenarioSim.ScenarioCreatorApi.Controllers
         /// Deletes the specified schema.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             manager.DeleteSchema(id);
         }

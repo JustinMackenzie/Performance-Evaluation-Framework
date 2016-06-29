@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ScenarioSim.Core.Entities
 {
@@ -9,19 +8,19 @@ namespace ScenarioSim.Core.Entities
     public class Program : Entity
     {
         /// <summary>
-        /// Gets or sets the identifier.
+        /// Gets or sets the name.
         /// </summary>
         /// <value>
-        /// The identifier.
+        /// The name.
         /// </value>
-        public Guid Id { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the scenarios.
         /// </summary>
         /// <value>
-        /// The scenarios to be performed.
+        /// The scenarios.
         /// </value>
-        public List<Scenario> Scenarios { get; set; } 
+        public List<int> ScenarioIds { get; set; } 
     }
 }

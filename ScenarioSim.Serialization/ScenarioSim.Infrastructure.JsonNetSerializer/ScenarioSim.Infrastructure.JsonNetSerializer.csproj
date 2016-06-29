@@ -53,6 +53,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ScenarioSim.Services.Serialization\ScenarioSim.Services.Serialization.csproj">
+      <Project>{abce5169-3ecb-42cf-a1b9-d9b5f4c9ea3d}</Project>
+      <Name>ScenarioSim.Services.Serialization</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

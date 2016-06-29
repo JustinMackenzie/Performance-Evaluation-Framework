@@ -1,10 +1,10 @@
-﻿namespace ScenarioSim.Core.Entities
+namespace ScenarioSim.Core.Entities
 {
     /// <summary>
-    /// Represents an event that arises during a scenario that causes complications and increases
-    /// difficulty of the task.
+    /// Represents an item that can be placed into scenarios.
     /// </summary>
-    public abstract class ScenarioEvent : Entity
+    /// <seealso cref="ScenarioSim.Core.Entities.Entity" />
+    public class Asset : Entity
     {
         /// <summary>
         /// Gets or sets the name.

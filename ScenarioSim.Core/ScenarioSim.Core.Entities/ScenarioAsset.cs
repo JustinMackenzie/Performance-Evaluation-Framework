@@ -1,9 +1,11 @@
-﻿namespace ScenarioSim.Core.Entities
+﻿using System;
+
+namespace ScenarioSim.Core.Entities
 {
     /// <summary>
     /// Represents a phyiscal entity in the scenario.
     /// </summary>
-    public class ScenarioObject
+    public class ScenarioAsset : Entity
     {
         /// <summary>
         /// The Transform of the entity.
@@ -11,13 +13,11 @@
         public Transform Transform { get; set; }
 
         /// <summary>
-        /// The identification number of the entity.
+        /// Gets or sets the asset identifier.
         /// </summary>
-        public int Id { get; set; }
-
-        /// <summary>
-        /// The name of the entity. 
-        /// </summary>
-        public string Name { get; set; }
+        /// <value>
+        /// The asset identifier.
+        /// </value>
+        public Guid AssetId { get; set; }
     }
 }

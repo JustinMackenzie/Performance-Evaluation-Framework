@@ -1,18 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace ScenarioSim.Core.Entities
 {
     /// <summary>
     /// This class represents the results from a performance of a given task.
     /// </summary>
-    public class TaskPerformance : Entity
+    public class TaskPerformance
     {
+
+        /// <summary>
+        /// Gets or sets the task identifier.
+        /// </summary>
+        /// <value>
+        /// The task identifier.
+        /// </value>
+        public Guid TaskId { get; set; }
+
         /// <summary>
         /// Gets or sets the task.
         /// </summary>
         /// <value>
-        /// The task that was performed.
+        /// The task.
         /// </value>
         public Task Task { get; set; }
 
@@ -25,17 +33,12 @@ namespace ScenarioSim.Core.Entities
         public DateTime Timestamp { get; set; }
 
         /// <summary>
-        /// The accuracy metric results for the task.
-        /// </summary>
-        public List<AccuracyMetricResult> Results { get; set; }
-
-        /// <summary>
         /// Gets or sets the user.
         /// </summary>
         /// <value>
         /// The user that performed this task.
         /// </value>
-        public User User { get; set; }
+        public Performer Performer { get; set; }
 
         /// <summary>
         /// Gets or sets the task performance values.
@@ -44,13 +47,5 @@ namespace ScenarioSim.Core.Entities
         /// The task performance values.
         /// </value>
         public TaskPerformanceValues TaskPerformanceValues { get; set; }
-
-        /// <summary>
-        /// The default constructor.
-        /// </summary>
-        protected TaskPerformance()
-        {
-            Results = new List<AccuracyMetricResult>();
-        }
     }
 }

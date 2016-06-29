@@ -9,14 +9,33 @@ namespace ScenarioSim.Core.Entities
     public class ScenarioPerformance : Entity
     {
         /// <summary>
-        /// The scenario that was performed.
+        /// Gets or sets the scenario identifier.
         /// </summary>
-        public Scenario Scenario { get; set; }
+        /// <value>
+        /// The scenario identifier.
+        /// </value>
+        public Guid ScenarioId { get; set; }
 
         /// <summary>
-        /// The user that performed the scenario.
+        /// The scenario that was performed.
         /// </summary>
-        public User User { get; set; }
+        public virtual Scenario Scenario { get; set; }
+
+        /// <summary>
+        /// Gets or sets the performer identifier.
+        /// </summary>
+        /// <value>
+        /// The performer identifier.
+        /// </value>
+        public Guid PerformerId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the performer.
+        /// </summary>
+        /// <value>
+        /// The performer.
+        /// </value>
+        public virtual Performer Performer { get; set; }
 
         /// <summary>
         /// Gets or sets the task performances.
@@ -24,7 +43,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The task performances.
         /// </value>
-        public Dictionary<int, TaskPerformance> TaskPerformances { get; set; }
+        public Dictionary<Guid, TaskPerformance> TaskPerformances { get; set; }
 
         /// <summary>
         /// Gets the task performance tree.
@@ -35,14 +54,12 @@ namespace ScenarioSim.Core.Entities
         public TreeNode<TaskPerformance> TaskPerformanceTree => BuildTaskPerfomanceTree(Scenario.TaskTree);
 
         /// <summary>
-        /// The collection of user actions that were submitted.
+        /// Gets or sets the user actions.
         /// </summary>
-        public List<UserAction> UserActions { get; set; }
-
-        /// <summary>
-        /// A collection of the tracked parameters from the performance.
-        /// </summary>
-        public List<TrackedEventParameter> TrackedParameters { get; set; }
+        /// <value>
+        /// The user actions.
+        /// </value>
+        public List<PerformerAction> UserActions { get; set; }
 
         /// <summary>
         /// Builds the task perfomance tree.

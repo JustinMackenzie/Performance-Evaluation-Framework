@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Core.Interfaces;
 
@@ -9,7 +10,5 @@ namespace ScenarioSim.Infrastructure.EfRepositories
         public EfSchemaRepository(ScenarioContext context) : base(context)
         {
         }
-
-        protected override DbSet<Schema> DbSet => Context.Schemas;
     }
 }

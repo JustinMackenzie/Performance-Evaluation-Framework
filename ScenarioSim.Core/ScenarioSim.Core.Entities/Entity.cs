@@ -13,7 +13,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The identifier.
         /// </value>
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Determines whether the specified <see cref="System.Object" />, is equal to this instance.

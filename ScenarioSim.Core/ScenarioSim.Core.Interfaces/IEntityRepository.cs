@@ -24,7 +24,7 @@ namespace ScenarioSim.Core.Interfaces
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        T Get(int id);
+        T Get(Guid id);
 
         /// <summary>
         /// Saves the specified entity.

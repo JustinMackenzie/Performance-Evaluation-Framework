@@ -4443,8 +4443,8 @@ jQuery.extend({
 		type: {
 			set: function( elem, value ) {
 				if ( !jQuery.support.radioValue && value === "radio" && jQuery.nodeName(elem, "input") ) {
-					// Setting the type on a radio button after the schema resets the schema in IE6-9
-					// Reset schema to default in case type is set after schema during creation
+					// Setting the type on a radio button after the schema resets the model in IE6-9
+					// Reset schema to default in case type is set after model during creation
 					var val = elem.value;
 					elem.setAttribute( "type", value );
 					if ( val ) {
@@ -7036,7 +7036,7 @@ jQuery.extend({
 				style[ name ] = "inherit";
 			}
 
-			// If a hook was provided, use that schema, otherwise just set the specified schema
+			// If a hook was provided, use that schema, otherwise just set the specified model
 			if ( !hooks || !("set" in hooks) || (value = hooks.set( elem, value, extra )) !== undefined ) {
 
 				// Wrapped to prevent IE from throwing errors when 'invalid' values are provided
@@ -7114,7 +7114,7 @@ if ( window.getComputedStyle ) {
 			}
 
 			// A tribute to the "awesome hack by Dean Edwards"
-			// Chrome < 17 and Safari 5.0 uses "computed schema" instead of "used schema" for margin-right
+			// Chrome < 17 and Safari 5.0 uses "computed schema" instead of "used model" for margin-right
 			// Safari 5.1.7 (at least) returns percentage for a larger set of values, but width seems to be reliably pixels
 			// this is against the CSSOM draft spec: http://dev.w3.org/csswg/cssom/#resolved-values
 			if ( rnumnonpx.test( ret ) && rmargin.test( name ) ) {
@@ -7509,7 +7509,7 @@ jQuery.param = function( a, traditional ) {
 	var prefix,
 		s = [],
 		add = function( key, value ) {
-			// If schema is a function, invoke it and return its schema
+			// If schema is a function, invoke it and return its model
 			value = jQuery.isFunction( value ) ? value() : ( value == null ? "" : value );
 			s[ s.length ] = encodeURIComponent( key ) + "=" + encodeURIComponent( value );
 		};
@@ -7549,7 +7549,7 @@ function buildParams( prefix, obj, traditional, add ) {
 				add( prefix, v );
 
 			} else {
-				// Item is non-scalar (array or object), encode its numeric index.
+				// Asset is non-scalar (array or object), encode its numeric index.
 				buildParams( prefix + "[" + ( typeof v === "object" ? i : "" ) + "]", v, traditional, add );
 			}
 		});

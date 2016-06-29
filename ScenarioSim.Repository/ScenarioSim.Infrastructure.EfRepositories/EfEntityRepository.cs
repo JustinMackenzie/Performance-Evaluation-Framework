@@ -11,8 +11,6 @@ namespace ScenarioSim.Infrastructure.EfRepositories
     {
         protected ScenarioContext Context { get; set; }
 
-        protected abstract DbSet<T> DbSet { get; }
-
         protected EfEntityRepository(ScenarioContext context)
         {
             Context = context;
@@ -20,27 +18,27 @@ namespace ScenarioSim.Infrastructure.EfRepositories
 
         public IEnumerable<T> GetAll()
         {
-            return DbSet;
+            return Context.Set<T>();
         }
 
-        public T Get(int id)
+        public T Get(Guid id)
         {
-            return DbSet.Find(id);
+            return Context.Set<T>().Find(id);
         }
 
         public void Save(T entity)
         {
-            DbEntityEntry entry = Context.Entry(entity);
+            DbEntityEntry<T> entry = Context.Entry(entity);
 
             if (entry == null)
-                DbSet.Add(entity);
+                Context.Set<T>().Add(entity);
             else
                 entry.State = EntityState.Modified;
         }
 
         public void Remove(T entity)
         {
-            DbSet.Remove(entity);
+            Context.Set<T>().Remove(entity);
         }
     }
 }

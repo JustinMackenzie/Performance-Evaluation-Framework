@@ -11,12 +11,12 @@ namespace ScenarioSim.Core.Interfaces
         /// <summary>
         /// Returns all of the user events in the repository.
         /// </summary>
-        IEnumerable<UserAction> GetAll();
+        IEnumerable<PerformerAction> GetAll();
 
         /// <summary>
         /// Stores the given user action in the repository.
         /// </summary>
         /// <param name="e"></param>
-        void Save(UserAction e);
+        void Save(PerformerAction e);
     }
 }

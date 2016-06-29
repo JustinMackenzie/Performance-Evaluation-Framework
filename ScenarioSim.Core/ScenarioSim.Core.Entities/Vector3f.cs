@@ -6,7 +6,7 @@ namespace ScenarioSim.Core.Entities
     /// This structure represents a three dimensional vector that holds
     /// floating point precision values.
     /// </summary>
-    public struct Vector3f
+    public class Vector3f
     {
         /// <summary>
         /// The X component of the vector.
@@ -30,7 +30,6 @@ namespace ScenarioSim.Core.Entities
         /// <param name="y">The value to be assigned to the Y component of the vector.</param>
         /// <param name="z">The value to be assigned to the Z component of the vector.</param>
         public Vector3f(float x, float y, float z)
-            : this()
         {
             X = x;
             Y = y;
@@ -40,13 +39,7 @@ namespace ScenarioSim.Core.Entities
         /// <summary>
         /// Returns the magnitude of the vector.
         /// </summary>
-        public float Magnitude
-        {
-            get
-            {
-                return (float)Math.Sqrt(X * X + Y * Y + Z * Z);
-            }
-        }
+        public float Magnitude => (float)Math.Sqrt(X * X + Y * Y + Z * Z);
 
         /// <summary>
         /// Determines the dot product of two given vectors.
@@ -112,7 +105,7 @@ namespace ScenarioSim.Core.Entities
         /// <returns>A string representation of the vector.</returns>
         public override string ToString()
         {
-            return string.Format("[{0} {1} {2}]", X, Y, Z);
+            return $"[{X} {Y} {Z}]";
         }
     }
 }

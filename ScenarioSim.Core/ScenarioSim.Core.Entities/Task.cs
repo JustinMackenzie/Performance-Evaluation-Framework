@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace ScenarioSim.Core.Entities
 {
@@ -18,6 +17,14 @@ namespace ScenarioSim.Core.Entities
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the actor identifier.
+        /// </summary>
+        /// <value>
+        /// The actor identifier.
+        /// </value>
+        public Guid ActorId { get; set; }
+
+        /// <summary>
         /// Gets or sets the actor.
         /// </summary>
         /// <value>
@@ -26,30 +33,12 @@ namespace ScenarioSim.Core.Entities
         public Actor Actor { get; set; }
 
         /// <summary>
-        /// Determines whether this is the final task of the scenario.
-        /// </summary>
-        public bool Final { get; set; }
-
-        /// <summary>
-        /// Determines whether this task will be evaluated for accuracy.
-        /// </summary>
-        public bool EvaluateValue { get; set; }
-
-        /// <summary>
-        /// Gets or sets the accuracy metrics.
+        /// Gets or sets the task values.
         /// </summary>
         /// <value>
-        /// The accuracy metrics.
+        /// The task values.
         /// </value>
-        public List<AccuracyMetric> AccuracyMetrics { get; set; }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Task"/> class.
-        /// </summary>
-        public Task()
-        {
-            AccuracyMetrics = new List<AccuracyMetric>();
-        }
+        public TaskValues TaskValues { get; set; }
 
         /// <summary>
         /// Gets the task tree node.
@@ -59,13 +48,5 @@ namespace ScenarioSim.Core.Entities
         {
             return new TreeNode<Task>(this);
         }
-
-        /// <summary>
-        /// Gets or sets the task values.
-        /// </summary>
-        /// <value>
-        /// The task values.
-        /// </value>
-        public TaskValues TaskValues { get; set; }
     }
 }

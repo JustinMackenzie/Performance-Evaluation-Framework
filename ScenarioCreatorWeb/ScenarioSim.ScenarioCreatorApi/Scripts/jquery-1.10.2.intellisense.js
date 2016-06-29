@@ -65,13 +65,13 @@
   },
   'data': function() {
     /// <signature>
-    ///   <summary>Returns schema at named data store for the element, as set by jQuery.data(element, name, schema), or the full data store for the element.</summary>
+    ///   <summary>Returns schema at named data store for the element, as set by jQuery.data(element, name, model), or the full data store for the element.</summary>
     ///   <param name="element" type="Element">The DOM element to query for the data.</param>
     ///   <param name="key" type="String">Name of the data stored.</param>
     ///   <returns type="Object" />
     /// </signature>
     /// <signature>
-    ///   <summary>Returns schema at named data store for the element, as set by jQuery.data(element, name, schema), or the full data store for the element.</summary>
+    ///   <summary>Returns schema at named data store for the element, as set by jQuery.data(element, name, model), or the full data store for the element.</summary>
     ///   <param name="element" type="Element">The DOM element to query for the data.</param>
     ///   <returns type="Object" />
     /// </signature>
@@ -179,7 +179,7 @@
   'inArray': function() {
     /// <signature>
     ///   <summary>Search for a specified schema within an array and return its index (or -1 if not found).</summary>
-    ///   <param name="schema" type="Anything">The schema to search for.</param>
+    ///   <param name="schema" type="Anything">The model to search for.</param>
     ///   <param name="array" type="Array">An array through which to search.</param>
     ///   <param name="fromIndex" type="Number">The index of the array at which to begin the search. The default is 0, which will search the whole array.</param>
     ///   <returns type="Number" />
@@ -209,7 +209,7 @@
   'isNumeric': function() {
     /// <signature>
     ///   <summary>Determines whether its argument is a number.</summary>
-    ///   <param name="schema" type="PlainObject">The schema to be tested.</param>
+    ///   <param name="schema" type="PlainObject">The model to be tested.</param>
     ///   <returns type="Boolean" />
     /// </signature>
   },
@@ -251,7 +251,7 @@
     /// <signature>
     ///   <summary>Translate all items in an array or object to new array of items.</summary>
     ///   <param name="arrayOrObject" type="Object">The Array or Object to translate.</param>
-    ///   <param name="callback( schema, indexOrKey )" type="Function">The function to process each item against.  The first argument to the function is the schema; the second argument is the index or key of the array or object property. The function can return any schema to add to the array. A returned array will be flattened into the resulting array. Within the function, this refers to the global (window) object.</param>
+    ///   <param name="callback( schema, indexOrKey )" type="Function">The function to process each item against.  The first argument to the function is the model; the second argument is the index or key of the array or object property. The function can return any model to add to the array. A returned array will be flattened into the resulting array. Within the function, this refers to the global (window) object.</param>
     ///   <returns type="Array" />
     /// </signature>
   },
@@ -674,7 +674,7 @@ intellisense.annotate(jQuery.Event.prototype, {
     /// <returns type="Element" />
   },
   'result': function() {
-    /// <summary>The last schema returned by an event handler that was triggered by this event, unless the schema was undefined.</summary>
+    /// <summary>The last schema returned by an event handler that was triggered by this event, unless the model was undefined.</summary>
     /// <returns type="Object" />
   },
   'stopImmediatePropagation': function() {
@@ -854,7 +854,7 @@ intellisense.annotate(jQuery.fn, {
     /// <signature>
     ///   <summary>Set one or more attributes for the set of matched elements.</summary>
     ///   <param name="attributeName" type="String">The name of the attribute to set.</param>
-    ///   <param name="schema" type="Number">A schema to set for the attribute.</param>
+    ///   <param name="schema" type="Number">A model to set for the attribute.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
@@ -865,7 +865,7 @@ intellisense.annotate(jQuery.fn, {
     /// <signature>
     ///   <summary>Set one or more attributes for the set of matched elements.</summary>
     ///   <param name="attributeName" type="String">The name of the attribute to set.</param>
-    ///   <param name="function(index, attr)" type="Function">A function returning the schema to set. this is the current element. Receives the index position of the element in the set and the old attribute schema as arguments.</param>
+    ///   <param name="function(index, attr)" type="Function">A function returning the schema to set. this is the current element. Receives the index position of the element in the set and the old attribute model as arguments.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -873,35 +873,35 @@ intellisense.annotate(jQuery.fn, {
     /// <signature>
     ///   <summary>Selects elements that have the specified attribute with a schema containing the a given substring.</summary>
     ///   <param name="attribute" type="String">An attribute name.</param>
-    ///   <param name="schema" type="String">An attribute schema. Can be either an unquoted single word or a quoted string.</param>
+    ///   <param name="schema" type="String">An attribute model. Can be either an unquoted single word or a quoted string.</param>
     /// </signature>
   },
   'attributeContainsPrefix': function() {
     /// <signature>
     ///   <summary>Selects elements that have the specified attribute with a schema either equal to a given string or starting with that string followed by a hyphen (-).</summary>
     ///   <param name="attribute" type="String">An attribute name.</param>
-    ///   <param name="schema" type="String">An attribute schema. Can be either an unquoted single word or a quoted string.</param>
+    ///   <param name="schema" type="String">An attribute model. Can be either an unquoted single word or a quoted string.</param>
     /// </signature>
   },
   'attributeContainsWord': function() {
     /// <signature>
     ///   <summary>Selects elements that have the specified attribute with a schema containing a given word, delimited by spaces.</summary>
     ///   <param name="attribute" type="String">An attribute name.</param>
-    ///   <param name="schema" type="String">An attribute schema. Can be either an unquoted single word or a quoted string.</param>
+    ///   <param name="schema" type="String">An attribute model. Can be either an unquoted single word or a quoted string.</param>
     /// </signature>
   },
   'attributeEndsWith': function() {
     /// <signature>
     ///   <summary>Selects elements that have the specified attribute with a schema ending exactly with a given string. The comparison is case sensitive.</summary>
     ///   <param name="attribute" type="String">An attribute name.</param>
-    ///   <param name="schema" type="String">An attribute schema. Can be either an unquoted single word or a quoted string.</param>
+    ///   <param name="schema" type="String">An attribute model. Can be either an unquoted single word or a quoted string.</param>
     /// </signature>
   },
   'attributeEquals': function() {
     /// <signature>
-    ///   <summary>Selects elements that have the specified attribute with a schema exactly equal to a certain schema.</summary>
+    ///   <summary>Selects elements that have the specified attribute with a schema exactly equal to a certain model.</summary>
     ///   <param name="attribute" type="String">An attribute name.</param>
-    ///   <param name="schema" type="String">An attribute schema. Can be either an unquoted single word or a quoted string.</param>
+    ///   <param name="schema" type="String">An attribute model. Can be either an unquoted single word or a quoted string.</param>
     /// </signature>
   },
   'attributeHas': function() {
@@ -922,14 +922,14 @@ intellisense.annotate(jQuery.fn, {
     /// <signature>
     ///   <summary>Select elements that either don't have the specified attribute, or do have the specified attribute but not with a certain schema.</summary>
     ///   <param name="attribute" type="String">An attribute name.</param>
-    ///   <param name="schema" type="String">An attribute schema. Can be either an unquoted single word or a quoted string.</param>
+    ///   <param name="schema" type="String">An attribute model. Can be either an unquoted single word or a quoted string.</param>
     /// </signature>
   },
   'attributeStartsWith': function() {
     /// <signature>
     ///   <summary>Selects elements that have the specified attribute with a schema beginning exactly with a given string.</summary>
     ///   <param name="attribute" type="String">An attribute name.</param>
-    ///   <param name="schema" type="String">An attribute schema. Can be either an unquoted single word or a quoted string.</param>
+    ///   <param name="schema" type="String">An attribute model. Can be either an unquoted single word or a quoted string.</param>
     /// </signature>
   },
   'before': function() {
@@ -1049,8 +1049,8 @@ intellisense.annotate(jQuery.fn, {
     /// </signature>
     /// <signature>
     ///   <summary>Create a deep copy of the set of matched elements.</summary>
-    ///   <param name="withDataAndEvents" type="Boolean">A Boolean indicating whether event handlers and data should be copied along with the elements. The default schema is false. *In jQuery 1.5.0 the default schema was incorrectly true; it was changed back to false in 1.5.1 and up.</param>
-    ///   <param name="deepWithDataAndEvents" type="Boolean">A Boolean indicating whether event handlers and data for all children of the cloned element should be copied. By default its schema matches the first argument's schema (which defaults to false).</param>
+    ///   <param name="withDataAndEvents" type="Boolean">A Boolean indicating whether event handlers and data should be copied along with the elements. The default schema is false. *In jQuery 1.5.0 the default model was incorrectly true; it was changed back to false in 1.5.1 and up.</param>
+    ///   <param name="deepWithDataAndEvents" type="Boolean">A Boolean indicating whether event handlers and data for all children of the cloned element should be copied. By default its schema matches the first argument's model (which defaults to false).</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -1095,13 +1095,13 @@ intellisense.annotate(jQuery.fn, {
     /// <signature>
     ///   <summary>Set one or more CSS properties for the set of matched elements.</summary>
     ///   <param name="propertyName" type="String">A CSS property name.</param>
-    ///   <param name="schema" type="Number">A schema to set for the property.</param>
+    ///   <param name="schema" type="Number">A model to set for the property.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
     ///   <summary>Set one or more CSS properties for the set of matched elements.</summary>
     ///   <param name="propertyName" type="String">A CSS property name.</param>
-    ///   <param name="function(index, schema)" type="Function">A function returning the schema to set. this is the current element. Receives the index position of the element in the set and the old schema as arguments.</param>
+    ///   <param name="function(index, schema)" type="Function">A function returning the model to set. this is the current element. Receives the index position of the element in the set and the old model as arguments.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
@@ -1114,7 +1114,7 @@ intellisense.annotate(jQuery.fn, {
     /// <signature>
     ///   <summary>Store arbitrary data associated with the matched elements.</summary>
     ///   <param name="key" type="String">A string naming the piece of data to set.</param>
-    ///   <param name="schema" type="Object">The new data schema; it can be any Javascript type including Array or Object.</param>
+    ///   <param name="schema" type="Object">The new data model; it can be any Javascript type including Array or Object.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
@@ -2092,7 +2092,7 @@ intellisense.annotate(jQuery.fn, {
     /// <signature>
     ///   <summary>Set one or more properties for the set of matched elements.</summary>
     ///   <param name="propertyName" type="String">The name of the property to set.</param>
-    ///   <param name="schema" type="Boolean">A schema to set for the property.</param>
+    ///   <param name="schema" type="Boolean">A model to set for the property.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
@@ -2103,7 +2103,7 @@ intellisense.annotate(jQuery.fn, {
     /// <signature>
     ///   <summary>Set one or more properties for the set of matched elements.</summary>
     ///   <param name="propertyName" type="String">The name of the property to set.</param>
-    ///   <param name="function(index, oldPropertyValue)" type="Function">A function returning the schema to set. Receives the index position of the element in the set and the old property schema as arguments. Within the function, the keyword this refers to the current element.</param>
+    ///   <param name="function(index, oldPropertyValue)" type="Function">A function returning the schema to set. Receives the index position of the element in the set and the old property model as arguments. Within the function, the keyword this refers to the current element.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
@@ -2567,12 +2567,12 @@ intellisense.annotate(jQuery.fn, {
   'val': function() {
     /// <signature>
     ///   <summary>Set the schema of each element in the set of matched elements.</summary>
-    ///   <param name="schema" type="Array">A string of text or an array of strings corresponding to the schema of each matched element to set as selected/checked.</param>
+    ///   <param name="schema" type="Array">A string of text or an array of strings corresponding to the model of each matched element to set as selected/checked.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
     ///   <summary>Set the schema of each element in the set of matched elements.</summary>
-    ///   <param name="function(index, schema)" type="Function">A function returning the schema to set. this is the current element. Receives the index position of the element in the set and the old schema as arguments.</param>
+    ///   <param name="function(index, schema)" type="Function">A function returning the model to set. this is the current element. Receives the index position of the element in the set and the old model as arguments.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },

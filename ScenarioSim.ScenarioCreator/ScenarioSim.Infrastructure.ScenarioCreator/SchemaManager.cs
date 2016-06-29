@@ -19,27 +19,27 @@ namespace ScenarioSim.Infrastructure.ScenarioCreator
         private readonly ILogger logger;
 
         /// <summary>
-        /// The unit of work
+        /// The repository
         /// </summary>
-        private readonly IUnitOfWork unitOfWork;
+        private readonly ISchemaRepository repository;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SchemaManager"/> class.
         /// </summary>
         /// <param name="logger">The logger.</param>
-        /// <param name="unitOfWork">The unit of work.</param>
+        /// <param name="repository">The unit of work.</param>
         /// <exception cref="ArgumentNullException">
         /// </exception>
-        public SchemaManager(ILogger logger, IUnitOfWork unitOfWork)
+        public SchemaManager(ILogger logger, ISchemaRepository repository)
         {
             if (logger == null)
                 throw new ArgumentNullException(nameof(logger));
 
-            if (unitOfWork == null)
-                throw new ArgumentNullException(nameof(unitOfWork));
+            if (repository == null)
+                throw new ArgumentNullException(nameof(repository));
 
             this.logger = logger;
-            this.unitOfWork = unitOfWork;
+            this.repository = repository;
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace ScenarioSim.Infrastructure.ScenarioCreator
         {
             try
             {
-                return unitOfWork.SchemaRepository.GetAll();
+                return repository.GetAll();
             }
             catch (Exception ex)
             {
@@ -64,11 +64,11 @@ namespace ScenarioSim.Infrastructure.ScenarioCreator
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public Schema GetSchema(int id)
+        public Schema GetSchema(Guid id)
         {
             try
             {
-                return unitOfWork.SchemaRepository.Get(id);
+                return repository.Get(id);
             }
             catch (Exception ex)
             {
@@ -89,8 +89,7 @@ namespace ScenarioSim.Infrastructure.ScenarioCreator
 
             try
             {
-                unitOfWork.SchemaRepository.Save(schema);
-                unitOfWork.Commit();
+                repository.Save(schema);
             }
             catch (Exception ex)
             {
@@ -104,19 +103,16 @@ namespace ScenarioSim.Infrastructure.ScenarioCreator
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="schema">The schema.</param>
-        public void UpdateSchema(int id, Schema schema)
+        public void UpdateSchema(Guid id, Schema schema)
         {
             try
             {
                 Schema s = GetSchema(id);
 
                 s.Name = schema.Name;
-                s.Actors = schema.Actors;
                 s.Task = schema.Task;
-                s.Id = id;
                 
-                unitOfWork.SchemaRepository.Save(s);
-                unitOfWork.Commit();
+                repository.Save(s);
             }
             catch (Exception ex)
             {
@@ -129,13 +125,12 @@ namespace ScenarioSim.Infrastructure.ScenarioCreator
         /// Deletes the schema.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        public void DeleteSchema(int id)
+        public void DeleteSchema(Guid id)
         {
             try
             {
                 Schema schema = GetSchema(id);
-                unitOfWork.SchemaRepository.Remove(schema);
-                unitOfWork.Commit();
+                repository.Remove(schema);
             }
             catch (Exception ex)
             {

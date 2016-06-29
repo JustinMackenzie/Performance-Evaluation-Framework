@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ScenarioSim.Core.Entities
 {
@@ -9,9 +10,20 @@ namespace ScenarioSim.Core.Entities
     public class Scenario : Entity
     {
         /// <summary>
-        /// The name of the scenario.
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the schema identifier.
+        /// </summary>
+        /// <value>
+        /// The schema identifier.
+        /// </value>
+        public Guid SchemaId { get; set; }
 
         /// <summary>
         /// Gets or sets the schema.
@@ -19,20 +31,23 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The schema.
         /// </value>
-        public Schema Schema { get; set; }
+        public Schema Schema { get; set; } 
 
         /// <summary>
-        /// Gets or sets the actors.
+        /// Gets the task.
         /// </summary>
         /// <value>
-        /// The actors performing in this scenario.
+        /// The task.
         /// </value>
-        public List<Actor> Actors => Schema.Actors;
+        public Task Task => TaskTree.Value;
 
         /// <summary>
-        /// The task to be performed in this scenario.
+        /// Gets the task transitions.
         /// </summary>
-        public Task Task => TaskTree.Value;
+        /// <value>
+        /// The task transitions.
+        /// </value>
+        public IEnumerable<TaskTransition> TaskTransitions => Schema.TaskTransitions; 
 
         /// <summary>
         /// Gets the task tree.
@@ -45,46 +60,48 @@ namespace ScenarioSim.Core.Entities
             get
             {
                 TreeNode<Task> node = Schema.TaskTree;        
-                node.Traverse(CopyScenarioSpecificTask);
+                node.Traverse(CopyScenarioSpecificTaskValues);
                 return node;
             }
         }
 
         /// <summary>
-        /// The collection of task transitions.
+        /// Gets the scenario events.
         /// </summary>
-        public List<TaskTransition> TaskTransitions { get; set; }
-        
-        /// <summary>
-        /// The collection of complications that will arise during the scenario.
-        /// </summary>
-        public List<ScenarioEvent> Complications { get; set; }
+        /// <value>
+        /// The scenario events.
+        /// </value>
+        public List<ScenarioEvent> ScenarioEvents { get; set; }
 
         /// <summary>
-        /// The collection of entities that are located in the spatial domain of the scenario.
+        /// Gets the scenario assets.
         /// </summary>
-        public List<ScenarioObject> Entities { get; set; }
+        /// <value>
+        /// The scenario assets.
+        /// </value>
+        public List<ScenarioAsset> ScenarioAssets { get; set; }
 
         /// <summary>
-        /// Gets or sets the scenario specific tasks.
+        /// Gets or sets the scenario task definitions.
+        /// </summary>
+        /// <value>
+        /// The scenario task definitions.
+        /// </value>
+        public List<ScenarioTaskDefinition> ScenarioTaskDefinitions { get; set; }
+
+        /// <summary>
+        /// Gets the scenario specific tasks.
         /// </summary>
         /// <value>
         /// The scenario specific tasks.
         /// </value>
-        public Dictionary<int, TaskValues> ScenarioSpecificTasks { get; set; } 
+        public Dictionary<Guid, TaskValues> ScenarioSpecificTasks => ScenarioTaskDefinitions.ToDictionary(t => t.TaskId, t => t.TaskValues);
 
         /// <summary>
-        /// Initializes a new scenario object.
+        /// Copies the scenario specific task values.
         /// </summary>
-        public Scenario()
-        {
-            Complications = new List<ScenarioEvent>();
-            TaskTransitions = new List<TaskTransition>();
-            Entities = new List<ScenarioObject>();
-            ScenarioSpecificTasks = new Dictionary<int, TaskValues>();
-        }
-
-        private void CopyScenarioSpecificTask(Task task)
+        /// <param name="task">The task.</param>
+        private void CopyScenarioSpecificTaskValues(Task task)
         {
             TaskValues taskValues;
 

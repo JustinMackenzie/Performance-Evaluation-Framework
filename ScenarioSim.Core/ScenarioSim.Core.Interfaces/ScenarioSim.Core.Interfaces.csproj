@@ -46,6 +46,7 @@
     <Compile Include="IEntityRepository.cs" />
     <Compile Include="IProgramRepository.cs" />
     <Compile Include="IScenarioRepository.cs" />
+    <Compile Include="ISchemaFactory.cs" />
     <Compile Include="ISchemaRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="IUserActionRepository.cs" />

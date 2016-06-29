@@ -6,11 +6,20 @@ namespace ScenarioSim.Core.Entities
     public class ReactionTaskValues : TaskValues
     {
         /// <summary>
-        /// Gets or sets the delay.
+        /// Gets the delay.
         /// </summary>
         /// <value>
-        /// The delay of the task.
+        /// The delay.
         /// </value>
-        public float Delay { get; set; }
+        public float Delay { get; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReactionTaskValues"/> class.
+        /// </summary>
+        /// <param name="delay">The delay.</param>
+        public ReactionTaskValues(float delay)
+        {
+            Delay = delay;
+        }
     }
 }

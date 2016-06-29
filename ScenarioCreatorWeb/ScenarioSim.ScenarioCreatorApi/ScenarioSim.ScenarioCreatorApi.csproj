@@ -131,6 +131,10 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.WebApi, Version=5.2.3.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.WebAPI.5.2.3\lib\net45\Unity.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
       <Private>True</Private>
@@ -201,7 +205,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
-    <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
@@ -241,12 +244,17 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\SchemaModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ScenarioSim.mdf" />
+    <Content Include="App_Data\ScenarioSim_log.ldf">
+      <DependentUpon>ScenarioSim.mdf</DependentUpon>
+    </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -301,9 +309,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -321,13 +327,17 @@
       <Project>{de8824b9-da8f-4d8e-b2c7-080ba045f0f0}</Project>
       <Name>ScenarioSim.Core.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Logging\ScenarioSim.Infrastructure.Logging.NLog\ScenarioSim.Infrastructure.Logging.NLog.csproj">
+      <Project>{e3442416-2053-49bb-a8c2-65a5cf49c385}</Project>
+      <Name>ScenarioSim.Infrastructure.Logging.NLog</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ScenarioSim.Logging\ScenarioSim.Services.Logging\ScenarioSim.Services.Logging.csproj">
       <Project>{e650d0c0-100c-4d8f-a894-85963c50280f}</Project>
       <Name>ScenarioSim.Services.Logging</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\ScenarioSim.Repository\ScenarioSim.Infrastructure.EfRepositories\ScenarioSim.Infrastructure.EfRepositories.csproj">
-      <Project>{ba845feb-1180-45f1-8aa9-15267d8a64aa}</Project>
-      <Name>ScenarioSim.Infrastructure.EfRepositories</Name>
+    <ProjectReference Include="..\..\ScenarioSim.Repository\ScenarioSim.Infrastructure.MongoDbRepositories\ScenarioSim.Infrastructure.MongoDbRepositories.csproj">
+      <Project>{41d9469c-8b9a-49df-ab92-cae673c9291c}</Project>
+      <Name>ScenarioSim.Infrastructure.MongoDbRepositories</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ScenarioSim.ScenarioCreator\ScenarioSim.Infrastructure.ScenarioCreator\ScenarioSim.Infrastructure.ScenarioCreator.csproj">
       <Project>{097071bb-f82f-46f3-8248-b6f49d69104c}</Project>

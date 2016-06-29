@@ -52,6 +52,7 @@
     <Compile Include="EfEntityRepository.cs" />
     <Compile Include="EfSchemaRepository.cs" />
     <Compile Include="EfUnitOfWork.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScenarioContext.cs" />
   </ItemGroup>
@@ -64,9 +65,19 @@
       <Project>{de8824b9-da8f-4d8e-b2c7-080ba045f0f0}</Project>
       <Name>ScenarioSim.Core.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Serialization\ScenarioSim.Infrastructure.JsonNetSerializer\ScenarioSim.Infrastructure.JsonNetSerializer.csproj">
+      <Project>{b47c0e8c-f010-4d7f-9085-f9f076c55269}</Project>
+      <Name>ScenarioSim.Infrastructure.JsonNetSerializer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Serialization\ScenarioSim.Services.Serialization\ScenarioSim.Services.Serialization.csproj">
+      <Project>{abce5169-3ecb-42cf-a1b9-d9b5f4c9ea3d}</Project>
+      <Name>ScenarioSim.Services.Serialization</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

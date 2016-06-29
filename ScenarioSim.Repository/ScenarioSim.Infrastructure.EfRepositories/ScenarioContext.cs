@@ -16,13 +16,5 @@ namespace ScenarioSim.Infrastructure.EfRepositories
         {
             
         }
-
-        /// <summary>
-        /// Gets or sets the schemas.
-        /// </summary>
-        /// <value>
-        /// The schemas.
-        /// </value>
-        public DbSet<Schema> Schemas { get; set; }
     }
 }

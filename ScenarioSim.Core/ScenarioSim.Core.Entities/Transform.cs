@@ -1,11 +1,10 @@
-﻿
-namespace ScenarioSim.Core.Entities
+﻿namespace ScenarioSim.Core.Entities
 {
     /// <summary>
     /// A structure that represents the geometrical placement of an object. This
     /// includes its position, rotation and scaling.
     /// </summary>
-    public struct Transform
+    public class Transform
     {
         /// <summary>
         /// The position component of the Transform.
@@ -29,7 +28,6 @@ namespace ScenarioSim.Core.Entities
         /// <param name="rotation">The vector to assign to the rotation component.</param>
         /// <param name="scale">The vector to assign to the scale component.</param>
         public Transform(Vector3f position, Vector3f rotation, Vector3f scale)
-            : this()
         {
             Position = position;
             Rotation = rotation;
@@ -42,7 +40,7 @@ namespace ScenarioSim.Core.Entities
         /// <returns>A string representation of the Transform.</returns>
         public override string ToString()
         {
-            return string.Format("Position:{0}; Rotation:{1}; Scale:{2}", Position, Rotation, Scale);
+            return $"Position:{Position}; Rotation:{Rotation}; Scale:{Scale}";
         }
     }
 }

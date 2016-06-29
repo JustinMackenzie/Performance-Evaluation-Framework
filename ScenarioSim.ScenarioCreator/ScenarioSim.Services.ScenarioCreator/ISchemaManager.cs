@@ -20,7 +20,7 @@ namespace ScenarioSim.Services.ScenarioCreator
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        Schema GetSchema(int id);
+        Schema GetSchema(Guid id);
 
         /// <summary>
         /// Creates the schema.
@@ -33,12 +33,12 @@ namespace ScenarioSim.Services.ScenarioCreator
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="schema">The schema.</param>
-        void UpdateSchema(int id, Schema schema);
+        void UpdateSchema(Guid id, Schema schema);
 
         /// <summary>
         /// Deletes the schema.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        void DeleteSchema(int id);
+        void DeleteSchema(Guid id);
     }
 }

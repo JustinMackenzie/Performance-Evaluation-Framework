@@ -13,7 +13,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The sub tasks.
         /// </value>
-        public IEnumerable<Task> SubTasks { get; set; }
+        public List<Task> Tasks { get; set; }
 
         /// <summary>
         /// Gets the task tree node.
@@ -25,7 +25,7 @@ namespace ScenarioSim.Core.Entities
         {
             TreeNode<Task> node = new TreeNode<Task>(this);
 
-            foreach (Task subTask in SubTasks)
+            foreach (Task subTask in Tasks)
                 node.AppendChild(subTask.GetTaskTreeNode());
 
             return node;

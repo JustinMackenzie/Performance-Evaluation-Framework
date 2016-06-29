@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 namespace ScenarioSim.Core.Entities
 {
     /// <summary>
@@ -9,7 +10,7 @@ namespace ScenarioSim.Core.Entities
         /// <summary>
         /// The task that the complication depends on.
         /// </summary>
-        public string TaskName { get; set; }
+        public Guid TaskId { get; set; }
 
         /// <summary>
         /// Determines if the complication is triggered at the start of a task. 
