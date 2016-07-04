@@ -21,6 +21,14 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The scenarios.
         /// </value>
-        public List<int> ScenarioIds { get; set; } 
+        public List<int> ScenarioIds { get; set; }
+
+        /// <summary>
+        /// Gets or sets the description.
+        /// </summary>
+        /// <value>
+        /// The description.
+        /// </value>
+        public string Description { get; set; }
     }
 }

@@ -41,7 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActorManager.cs" />
+    <Compile Include="AssetManager.cs" />
+    <Compile Include="ProgramManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScenarioManager.cs" />
     <Compile Include="SchemaManager.cs" />
   </ItemGroup>
   <ItemGroup>

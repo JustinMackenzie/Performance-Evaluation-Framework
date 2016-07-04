@@ -98,6 +98,14 @@ namespace ScenarioSim.Core.Entities
         public Dictionary<Guid, TaskValues> ScenarioSpecificTasks => ScenarioTaskDefinitions.ToDictionary(t => t.TaskId, t => t.TaskValues);
 
         /// <summary>
+        /// Gets or sets the description.
+        /// </summary>
+        /// <value>
+        /// The description.
+        /// </value>
+        public string Description { get; set; }
+
+        /// <summary>
         /// Copies the scenario specific task values.
         /// </summary>
         /// <param name="task">The task.</param>
