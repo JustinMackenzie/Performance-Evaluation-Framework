@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ScenarioSim.Core.Entities;
+﻿using ScenarioSim.Core.Entities;
 
 namespace ScenarioSim.Core.Interfaces
 {
+    /// <summary>
+    /// An interface used to store and retrieve scenarios.
+    /// </summary>
+    /// <seealso cref="ScenarioSim.Core.Interfaces.IEntityRepository{ScenarioSim.Core.Entities.Scenario}" />
     public interface IScenarioRepository : IEntityRepository<Scenario>
     {
 
