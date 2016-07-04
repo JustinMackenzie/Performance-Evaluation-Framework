@@ -129,7 +129,7 @@ namespace ScenarioSim.Infrastructure.MongoDbRepositories
                 return;
             }
 
-            Collection.UpdateOne(e => e.Id == entity.Id, new ObjectUpdateDefinition<T>(entity));
+            Collection.ReplaceOne(e => e.Id == entity.Id, entity);
         }
     }
 }

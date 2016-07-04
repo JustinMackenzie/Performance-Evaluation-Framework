@@ -111,6 +111,7 @@ namespace ScenarioSim.Infrastructure.ScenarioCreator
 
                 s.Name = schema.Name;
                 s.Task = schema.Task;
+                s.Description = schema.Description;
                 
                 repository.Save(s);
             }

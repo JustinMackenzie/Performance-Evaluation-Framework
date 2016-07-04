@@ -1,20 +1,25 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js" ng-app="ScenarioCreator" ng-cloak>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Angular Material style sheet -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="content/angular-material.min.css">
+    <link rel="stylesheet" href="content/css/index.css">
 </head>
-<body ng-app="ScenarioCreator" ng-cloak>
+<body>
     <!--
     Your HTML content here
     -->
-    <div>
-        <div ng-view></div>
-    </div>
+    <div ui-view layout="row" layout-fill></div>
+
     <!-- Angular Material requires Angular.js Libraries -->
     <script src="Scripts/angular.min.js"></script>
     <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/angular-cookies.min.js"></script>
+    <script src="Scripts/angular-touch.min.js"></script>
+    <script src="Scripts/angular-ui-router.min.js"></script>
+    <script src="Scripts/angular-sanitize.min.js"></script>
     <script src="Scripts/angular-animate/angular-animate.min.js"></script>
     <script src="Scripts/angular-aria/angular-aria.min.js"></script>
     <script src="Scripts/angular-messages.min.js"></script>
@@ -24,6 +29,9 @@
 
     <!-- Your application bootstrap -->
     <script src="app/app.js"></script>
+    <script src="app/services/schemaDataService.js"></script>
+    <script src="app/services/navService.js"></script>
+    <script src="app/controllers/mainController.js"></script>
     <script src="app/controllers/schemaController.js"></script>
 </body>
 </html>

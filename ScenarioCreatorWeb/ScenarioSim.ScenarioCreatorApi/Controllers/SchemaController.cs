@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.ScenarioCreatorApi.Models;
 using ScenarioSim.Services.ScenarioCreator;
@@ -12,6 +13,7 @@ namespace ScenarioSim.ScenarioCreatorApi.Controllers
     /// The Api controller that receives all schema related calls.
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
+    [EnableCors("http://localhost:45723", "*", "*")]
     public class SchemaController : ApiController
     {
         /// <summary>
@@ -39,7 +41,7 @@ namespace ScenarioSim.ScenarioCreatorApi.Controllers
         /// <returns></returns>
         public IEnumerable<SchemaViewModel> Get()
         {
-            return manager.GetAllSchemas().Select(s => new SchemaViewModel { Id = s.Id, Name = s.Name });
+            return manager.GetAllSchemas().Select(s => new SchemaViewModel { Id = s.Id, Name = s.Name, Description = s.Description });
         }
 
         // GET: api/Schema/5
@@ -48,14 +50,15 @@ namespace ScenarioSim.ScenarioCreatorApi.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public SchemaViewModel Get(Guid id)
+        public SchemaDetailsViewModel Get(Guid id)
         {
             Schema schema = manager.GetSchema(id);
 
-            return new SchemaViewModel
+            return new SchemaDetailsViewModel
             {
                 Id = schema.Id,
-                Name = schema.Name
+                Name = schema.Name,
+                Description = schema.Description
             };
         }
 
@@ -68,7 +71,8 @@ namespace ScenarioSim.ScenarioCreatorApi.Controllers
         {
             Schema schema = new Schema
             {
-                Name = model.Name
+                Name = model.Name,
+                Description = model.Description
             };
 
             manager.CreateSchema(schema);
@@ -85,7 +89,8 @@ namespace ScenarioSim.ScenarioCreatorApi.Controllers
             Schema schema = new Schema
             {
                 Id = model.Id,
-                Name = model.Name
+                Name = model.Name,
+                Description = model.Description
             };
 
             manager.UpdateSchema(id, schema);

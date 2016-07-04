@@ -1,4 +1,36 @@
-﻿<h1>Schema Index View</h1>
-<ul>
-    <li ng-repeat="schema in Schemas">{{ schema.Id }} - {{ schema.Name }}</li>
-</ul>
+﻿
+<!-- floating button for creating schema -->
+<md-button class="md-fab md-fab-bottom-right" ng-click="showCreateSchemaDialog($event)">
+    <i class="material-icons">add</i>
+</md-button>
+<div layout="row" layout-wrap>
+    <div flex="5"></div>
+    <div flex="90">
+        <h3>Schemas</h3>
+        <div class="table-responsive-vertical md-whiteframe-z1">
+            <table id="table" class="table table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th style="text-align: center">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="schema in Schemas">
+                    <td data-title="ID">{{schema.Id}}</td>
+                    <td data-title="Name">{{schema.Name}}</td>
+                    <td data-title="Description">{{schema.Description}}</td>
+                    <td layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                        <md-button class="md-raised md-accent" flex="40" ng-click="showEditSchemaDialog($event, schema.Id)"><i class="material-icons left">edit</i>Edit</md-button>
+                        <md-button class="md-raised md-accent" flex="40" ng-click="showDeleteSchemaDialog($event, schema.Id)"><i class="material-icons left">delete</i>Delete</md-button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div flex="5"></div>
+
+</div>
