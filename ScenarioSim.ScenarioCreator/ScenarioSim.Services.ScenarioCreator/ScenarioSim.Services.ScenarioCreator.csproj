@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IActorManager.cs" />
+    <Compile Include="IAssetManager.cs" />
+    <Compile Include="IProgramManager.cs" />
+    <Compile Include="IScenarioManager.cs" />
     <Compile Include="ISchemaManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
