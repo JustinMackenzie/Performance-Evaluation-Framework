@@ -26,7 +26,6 @@
            url: "/actor",
            templateUrl: "app/views/actor/index.html",
            controller: "ActorController",
-           controllerAs: "vm",
            data: {
                title: "Actors"
            }

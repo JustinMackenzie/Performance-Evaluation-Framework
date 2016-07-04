@@ -1,11 +1,11 @@
-﻿<!-- floating button for creating schema -->
-<md-button class="md-fab md-fab-bottom-right" ng-click="showCreateSchemaDialog($event)">
+﻿<!-- floating button for creating actor -->
+<md-button class="md-fab md-fab-bottom-right" ng-click="showCreateActorDialog($event)">
     <i class="material-icons">add</i>
 </md-button>
 <div layout="row" layout-wrap>
     <div flex="5"></div>
     <div flex="90">
-        <h3>Schemas</h3>
+        <h3>Actors</h3>
         <div class="table-responsive-vertical md-whiteframe-z1">
             <table id="table" class="table table-hover table-bordered">
                 <thead>
@@ -17,13 +17,13 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="schema in Schemas">
-                    <td data-title="ID">{{schema.Id}}</td>
-                    <td data-title="Name">{{schema.Name}}</td>
-                    <td data-title="Description">{{schema.Description}}</td>
+                <tr ng-repeat="actor in Actors">
+                    <td data-title="ID">{{actor.Id}}</td>
+                    <td data-title="Name">{{actor.Name}}</td>
+                    <td data-title="Description">{{actor.Description}}</td>
                     <td layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
-                        <md-button class="md-raised md-accent" flex="40" ng-click="showEditSchemaDialog($event, schema.Id)"><i class="material-icons left">edit</i>Edit</md-button>
-                        <md-button class="md-raised md-accent" flex="40" ng-click="showDeleteSchemaDialog($event, schema.Id)"><i class="material-icons left">delete</i>Delete</md-button>
+                        <md-button class="md-raised md-accent" flex="40" ng-click="showEditActorDialog($event, actor.Id)"><i class="material-icons left">edit</i>Edit</md-button>
+                        <md-button class="md-raised md-accent" flex="40" ng-click="showDeleteActorDialog($event, actor.Id)"><i class="material-icons left">delete</i>Delete</md-button>
                     </td>
                 </tr>
                 </tbody>

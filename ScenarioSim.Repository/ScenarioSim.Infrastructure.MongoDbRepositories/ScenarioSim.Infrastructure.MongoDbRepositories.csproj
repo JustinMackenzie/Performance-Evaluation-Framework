@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MongoDbActorRepository.cs" />
     <Compile Include="MongoDbEntityRepository.cs" />
     <Compile Include="MongoDbSchemaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IActorRepository.cs" />
     <Compile Include="IEntityRepository.cs" />
     <Compile Include="IProgramRepository.cs" />
     <Compile Include="IScenarioRepository.cs" />

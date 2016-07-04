@@ -67,12 +67,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
-    <Content Include="app\controllers\createSchemaController.js" />
+    <Content Include="app\controllers\actorController.js" />
     <Content Include="app\controllers\mainController.js" />
     <Content Include="app\controllers\schemaController.js" />
     <Content Include="app\index.js" />
+    <Content Include="app\services\actorDataService.js" />
     <Content Include="app\services\navService.js" />
     <Content Include="app\services\schemaDataService.js" />
+    <Content Include="app\views\actor\create.html" />
+    <Content Include="app\views\actor\edit.html" />
+    <Content Include="app\views\actor\index.html" />
     <Content Include="app\views\schema\create.html" />
     <Content Include="app\views\schema\edit.html" />
     <Content Include="app\views\schema\index.html" />
