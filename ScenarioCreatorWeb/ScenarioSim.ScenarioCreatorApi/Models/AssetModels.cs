@@ -3,9 +3,9 @@
 namespace ScenarioSim.ScenarioCreatorApi.Models
 {
     /// <summary>
-    /// The view model for actor details.
+    /// The view model for asset details.
     /// </summary>
-    public class ActorViewModel
+    public class AssetViewModel
     {
         /// <summary>
         /// Gets or sets the identifier.
@@ -33,9 +33,9 @@ namespace ScenarioSim.ScenarioCreatorApi.Models
     }
 
     /// <summary>
-    /// The create actor view model.
+    /// The create asset view model.
     /// </summary>
-    public class CreateActorViewModel
+    public class CreateAssetViewModel
     {
         /// <summary>
         /// Gets or sets the name.
@@ -54,7 +54,7 @@ namespace ScenarioSim.ScenarioCreatorApi.Models
         public string Description { get; set; }
     }
 
-    public class ActorDetailsViewModel
+    public class AssetDetailsViewModel
     {
         /// <summary>
         /// Gets or sets the identifier.
@@ -82,9 +82,9 @@ namespace ScenarioSim.ScenarioCreatorApi.Models
     }
 
     /// <summary>
-    /// The edit actor view model.
+    /// The edit asset view model.
     /// </summary>
-    public class EditActorViewModel
+    public class EditAssetViewModel
     {
         /// <summary>
         /// Gets or sets the identifier.
