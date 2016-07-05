@@ -64,7 +64,7 @@
         function showDeleteActorDialog($event, id) {
             var confirm = $mdDialog.confirm()
               .title("Are you sure you wish to delete the actor?")
-              .textContent("This action cannot be undone and all related scenarios will be deleted as well.")
+              .textContent("This action cannot be undone and all scenarios that depend on this actor will be affected.")
               .ariaLabel("Confirm")
               .targetEvent($event)
               .ok("Yes")

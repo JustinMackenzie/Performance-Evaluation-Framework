@@ -34,7 +34,6 @@
            url: "/scenario",
            templateUrl: "app/views/scenario/index.html",
            controller: "ScenarioController",
-           controllerAs: "vm",
            data: {
                title: "Scenarios"
            }
@@ -43,7 +42,6 @@
            url: "/program",
            templateUrl: "app/views/program/index.html",
            controller: "ProgramController",
-           controllerAs: "vm",
            data: {
                title: "Programs"
            }
