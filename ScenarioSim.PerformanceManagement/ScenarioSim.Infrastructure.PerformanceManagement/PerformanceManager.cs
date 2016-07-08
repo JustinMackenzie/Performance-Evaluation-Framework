@@ -44,6 +44,23 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
         /// <summary>
         /// Gets all performances.
         /// </summary>
+        /// <returns></returns>
+        public IEnumerable<ScenarioPerformance> GetAllPerformances()
+        {
+            try
+            {
+                return repository.GetAll();
+            }
+            catch (Exception ex)
+            {
+                logger.LogException(ex);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Gets all performances.
+        /// </summary>
         /// <param name="schema">The schema.</param>
         /// <returns></returns>
         /// <exception cref="System.ArgumentNullException"></exception>
@@ -64,6 +81,27 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
         }
 
         /// <summary>
+        /// Gets all performances.
+        /// </summary>
+        /// <param name="performer">The performer.</param>
+        /// <returns></returns>
+        public IEnumerable<ScenarioPerformance> GetAllPerformances(Performer performer)
+        {
+            if (performer == null)
+                throw new ArgumentNullException(nameof(performer));
+
+            try
+            {
+                return repository.GetAll().Where(p => p.PerformerId == performer.Id);
+            }
+            catch (Exception ex)
+            {
+                logger.LogException(ex);
+                throw;
+            }
+        }
+
+        /// <summary>
         /// Gets all performances by performer.
         /// </summary>
         /// <param name="schema">The schema.</param>
@@ -71,7 +109,7 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
         /// <returns></returns>
         /// <exception cref="System.ArgumentNullException">
         /// </exception>
-        public IEnumerable<ScenarioPerformance> GetAllPerformancesByPerformer(Schema schema, Performer performer)
+        public IEnumerable<ScenarioPerformance> GetAllPerformances(Schema schema, Performer performer)
         {
             if (schema == null)
                 throw new ArgumentNullException(nameof(schema));
@@ -108,6 +146,11 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
                 logger.LogException(ex);
                 throw;
             }
+        }
+
+        public ScenarioPerformance GetPerformance(Guid id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

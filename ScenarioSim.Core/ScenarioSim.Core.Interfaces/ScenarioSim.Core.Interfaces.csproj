@@ -53,7 +53,7 @@
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="IUserActionRepository.cs" />
     <Compile Include="IScenarioPerformanceRepository.cs" />
-    <Compile Include="IUserRepository.cs" />
+    <Compile Include="IPerformerRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

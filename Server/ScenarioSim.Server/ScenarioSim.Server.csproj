@@ -238,6 +238,7 @@
     <Compile Include="Controllers\ActorController.cs" />
     <Compile Include="Controllers\AssetController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PerformanceController.cs" />
     <Compile Include="Controllers\ProgramController.cs" />
     <Compile Include="Controllers\ScenarioController.cs" />
     <Compile Include="Controllers\SchemaController.cs" />
@@ -250,6 +251,7 @@
     <Compile Include="Models\ActorModels.cs" />
     <Compile Include="Models\AssetModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\PerformanceViewModels.cs" />
     <Compile Include="Models\ProgramModels.cs" />
     <Compile Include="Models\ScenarioModels.cs" />
     <Compile Include="Models\SchemaModels.cs" />
