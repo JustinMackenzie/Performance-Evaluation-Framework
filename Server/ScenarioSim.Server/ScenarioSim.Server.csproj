@@ -247,6 +247,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607132228288_Initial.cs" />
+    <Compile Include="Migrations\201607132228288_Initial.Designer.cs">
+      <DependentUpon>201607132228288_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ActorModels.cs" />
@@ -372,6 +377,11 @@
       <Project>{abce5169-3ecb-42cf-a1b9-d9b5f4c9ea3d}</Project>
       <Name>ScenarioSim.Services.Serialization</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201607132228288_Initial.resx">
+      <DependentUpon>201607132228288_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
