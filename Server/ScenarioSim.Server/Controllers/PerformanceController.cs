@@ -18,33 +18,17 @@ namespace ScenarioSim.Server.Controllers
         private readonly IPerformanceManager manager;
 
         /// <summary>
-        /// The schema manager
-        /// </summary>
-        private readonly ISchemaManager schemaManager;
-
-        /// <summary>
-        /// The performer manager
-        /// </summary>
-        private readonly IPerformerManager performerManager;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="PerformanceController" /> class.
         /// </summary>
         /// <param name="manager">The manager.</param>
         /// <param name="schemaManager">The schema manager.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
-        public PerformanceController(IPerformanceManager manager, ISchemaManager schemaManager, IPerformerManager performerManager)
+        public PerformanceController(IPerformanceManager manager)
         {
             if (manager == null)
                 throw new ArgumentNullException(nameof(manager));
-            if (schemaManager == null)
-                throw new ArgumentNullException(nameof(schemaManager));
-            if (performerManager == null) 
-                throw new ArgumentNullException(nameof(performerManager));
 
             this.manager = manager;
-            this.schemaManager = schemaManager;
-            this.performerManager = performerManager;
         }
 
         // GET: api/Performance
