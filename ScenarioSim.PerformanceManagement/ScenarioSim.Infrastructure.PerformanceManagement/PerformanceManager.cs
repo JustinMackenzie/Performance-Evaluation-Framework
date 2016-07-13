@@ -25,20 +25,28 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
         private readonly IScenarioPerformanceRepository repository;
 
         /// <summary>
+        /// The repository
+        /// </summary>
+        private readonly IScenarioRepository scenarioRepository;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="PerformanceManager" /> class.
         /// </summary>
         /// <param name="logger">The logger.</param>
         /// <param name="repository">The repository.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
-        public PerformanceManager(ILogger logger, IScenarioPerformanceRepository repository)
+        public PerformanceManager(ILogger logger, IScenarioPerformanceRepository repository, IScenarioRepository scenarioRepository)
         {
             if (logger == null)
                 throw new ArgumentNullException(nameof(logger));
             if (repository == null)
                 throw new ArgumentNullException(nameof(repository));
+            if (scenarioRepository == null)
+                throw new ArgumentNullException(nameof(scenarioRepository));
 
             this.logger = logger;
             this.repository = repository;
+            this.scenarioRepository = scenarioRepository;
         }
 
         /// <summary>
@@ -71,7 +79,8 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
 
             try
             {
-                return repository.GetBySchema(schema);
+                IEnumerable<Scenario> scenarios = scenarioRepository.GetAll().Where(s => s.SchemaId == schema.Id);
+                return scenarios.SelectMany(s => repository.GetByScenario(s));
             }
             catch (Exception ex)
             {

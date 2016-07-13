@@ -9,12 +9,20 @@ namespace ScenarioSim.Core.Entities
     public class ScenarioPerformance : Entity
     {
         /// <summary>
-        /// Gets or sets the scenario identifier.
+        /// Gets or sets the start time.
         /// </summary>
         /// <value>
-        /// The scenario identifier.
+        /// The start time.
         /// </value>
-        public Guid ScenarioId { get; set; }
+        public DateTimeOffset StartTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets the end time.
+        /// </summary>
+        /// <value>
+        /// The end time.
+        /// </value>
+        public DateTimeOffset EndTime { get; set; }
 
         /// <summary>
         /// The scenario that was performed.
@@ -68,10 +76,14 @@ namespace ScenarioSim.Core.Entities
         /// <returns></returns>
         private TreeNode<TaskPerformance> BuildTaskPerfomanceTree(TreeNode<Task> taskTree)
         {
-            TreeNode<TaskPerformance> treeNode = new TreeNode<TaskPerformance>(TaskPerformances[taskTree.Value.Id]);
+            TaskPerformance performance = TaskPerformances.ContainsKey(taskTree.Value.Id)
+                ? TaskPerformances[taskTree.Value.Id]
+                : null;
+
+            TreeNode <TaskPerformance> treeNode = new TreeNode<TaskPerformance>(performance);
 
             foreach (TreeNode<Task> child in taskTree.Children)
-                treeNode.AppendChild(TaskPerformances[child.Value.Id]);
+                treeNode.AppendChild(BuildTaskPerfomanceTree(child));
 
             return treeNode;
         }

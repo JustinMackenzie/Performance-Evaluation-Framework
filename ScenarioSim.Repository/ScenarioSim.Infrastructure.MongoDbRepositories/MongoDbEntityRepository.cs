@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Collections.Generic;
+using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Core.Interfaces;
@@ -45,7 +46,7 @@ namespace ScenarioSim.Infrastructure.MongoDbRepositories
         /// <value>
         /// The database.
         /// </value>
-        private IMongoDatabase Database
+        protected IMongoDatabase Database
         {
             get
             {
@@ -80,6 +81,12 @@ namespace ScenarioSim.Infrastructure.MongoDbRepositories
 
             this.connectionStringOrName = connectionStringOrName;
             this.databaseName = databaseName;
+
+            RegisterMapIfNeeded<CompositeTask>();
+            RegisterMapIfNeeded<ParallelTask>();
+            RegisterMapIfNeeded<ReactionTaskValues>();
+            RegisterMapIfNeeded<FittsTaskValues>();
+            RegisterMapIfNeeded<SteeringTaskValues>();
         }
 
         /// <summary>
@@ -87,7 +94,7 @@ namespace ScenarioSim.Infrastructure.MongoDbRepositories
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public T Get(Guid id)
+        public virtual T Get(Guid id)
         {
             return Collection.Find(e => e.Id == id).FirstOrDefault();
         }
@@ -96,7 +103,7 @@ namespace ScenarioSim.Infrastructure.MongoDbRepositories
         /// Gets all entities.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<T> GetAll()
+        public virtual IEnumerable<T> GetAll()
         {
             return Collection.Find(x => true).ToList();
         }
@@ -105,7 +112,7 @@ namespace ScenarioSim.Infrastructure.MongoDbRepositories
         /// Removes the specified entity.
         /// </summary>
         /// <param name="entity">The entity.</param>
-        public void Remove(T entity)
+        public virtual void Remove(T entity)
         {
             Collection.DeleteOne(e => e.Id == entity.Id);
         }
@@ -114,7 +121,7 @@ namespace ScenarioSim.Infrastructure.MongoDbRepositories
         /// Saves the specified entity.
         /// </summary>
         /// <param name="entity">The entity.</param>
-        public void Save(T entity)
+        public virtual void Save(T entity)
         {
             if (entity.Id == Guid.Empty)
             {
@@ -130,6 +137,16 @@ namespace ScenarioSim.Infrastructure.MongoDbRepositories
             }
 
             Collection.ReplaceOne(e => e.Id == entity.Id, entity);
+        }
+
+        /// <summary>
+        /// Registers the map if needed.
+        /// </summary>
+        /// <typeparam name="TClass">The type of the class.</typeparam>
+        private void RegisterMapIfNeeded<TClass>()
+        {
+            if (!BsonClassMap.IsClassMapRegistered(typeof(TClass)))
+                BsonClassMap.RegisterClassMap<TClass>();
         }
     }
 }

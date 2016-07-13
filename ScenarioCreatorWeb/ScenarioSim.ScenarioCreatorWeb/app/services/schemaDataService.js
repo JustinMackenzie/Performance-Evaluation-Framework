@@ -2,7 +2,7 @@
     .factory("schemaDataFactory", ["$http", function ($http) {
 
         var schemaDataFactory = {};
-        var urlBase = "http://localhost:22045/api/Schema";
+        var urlBase = "http://localhost:65035/api/Schema";
 
         schemaDataFactory.getSchemas = function () {
             return $http.get(urlBase);

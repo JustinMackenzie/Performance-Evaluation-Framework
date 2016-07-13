@@ -15,14 +15,5 @@ namespace ScenarioSim.Core.Interfaces
         /// <param name="scenario">The scenario.</param>
         /// <returns></returns>
         IEnumerable<ScenarioPerformance> GetByScenario(Scenario scenario);
-
-        /// <summary>
-        /// Gets the scenario performances by schema.
-        /// </summary>
-        /// <param name="schema">The schema.</param>
-        /// <returns></returns>
-        IEnumerable<ScenarioPerformance> GetBySchema(Schema schema);
-
-
     }
 }

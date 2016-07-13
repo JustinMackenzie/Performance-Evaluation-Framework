@@ -1,4 +1,6 @@
-﻿using ScenarioSim.Core.Entities;
+﻿using System;
+using MongoDB.Driver;
+using ScenarioSim.Core.Entities;
 using ScenarioSim.Core.Interfaces;
 
 namespace ScenarioSim.Infrastructure.MongoDbRepositories
@@ -6,7 +8,7 @@ namespace ScenarioSim.Infrastructure.MongoDbRepositories
     /// <summary>
     /// An implementation of the scenario repository interface that uses MongoDb to store scenarios.
     /// </summary>
-    /// <seealso cref="ScenarioSim.Infrastructure.MongoDbRepositories.MongoDbEntityRepository{ScenarioSim.Core.Entities.Scenario}" />
+    /// <seealso cref="Scenario" />
     /// <seealso cref="ScenarioSim.Core.Interfaces.IScenarioRepository" />
     public class MongoDbScenarioRepository : MongoDbEntityRepository<Scenario>, IScenarioRepository
     {
@@ -17,6 +19,19 @@ namespace ScenarioSim.Infrastructure.MongoDbRepositories
         /// <param name="databaseName">Name of the database.</param>
         public MongoDbScenarioRepository(string connectionStringOrName, string databaseName) : base(connectionStringOrName, databaseName)
         {
+        }
+
+        public override Scenario Get(Guid id)
+        {
+            Scenario scenario = base.Get(id);
+
+            if (scenario == null)
+                return null;
+
+            IMongoCollection<Schema> schemas = Database.GetCollection<Schema>(typeof (Schema).Name);
+            scenario.Schema = schemas.Find(s => s.Id == scenario.SchemaId).FirstOrDefault();
+
+            return scenario;
         }
     }
 }

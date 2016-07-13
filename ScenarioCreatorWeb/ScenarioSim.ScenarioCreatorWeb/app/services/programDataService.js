@@ -2,7 +2,7 @@
     .factory("programDataFactory", ["$http", function ($http) {
 
         var programDataFactory = {};
-        var urlBase = "http://localhost:22045/api/Program";
+        var urlBase = "http://localhost:65035/api/Program";
 
         programDataFactory.getPrograms = function () {
             return $http.get(urlBase);

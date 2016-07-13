@@ -35,11 +35,9 @@ namespace ScenarioSim.Server.Controllers
         /// Gets the scenarios.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<ScenarioViewModel> Get()
+        public IEnumerable<Scenario> Get()
         {
-            return
-                manager.GetAllScenarios()
-                    .Select(s => new ScenarioViewModel {Id = s.Id, Name = s.Name, Description = s.Description});
+            return manager.GetAllScenarios();
         }
 
         // GET: api/Scenario/5
@@ -48,16 +46,9 @@ namespace ScenarioSim.Server.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public ScenarioDetailsViewModel Get(Guid id)
+        public Scenario Get(Guid id)
         {
-            Scenario scenario = manager.GetScenario(id);
-
-            return new ScenarioDetailsViewModel
-            {
-                Id = scenario.Id,
-                Name = scenario.Name,
-                Description = scenario.Description
-            };
+            return manager.GetScenario(id);
         }
 
         // POST: api/Scenario

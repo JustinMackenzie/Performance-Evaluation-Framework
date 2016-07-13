@@ -6,7 +6,7 @@ using Newtonsoft.Json.Serialization;
 
 namespace ScenarioSim.Infrastructure.JsonNetSerializer
 {
-    internal class WriteablePropertiesOnlyResolver : DefaultContractResolver
+    public class WriteablePropertiesOnlyResolver : DefaultContractResolver
     {
         protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
         {

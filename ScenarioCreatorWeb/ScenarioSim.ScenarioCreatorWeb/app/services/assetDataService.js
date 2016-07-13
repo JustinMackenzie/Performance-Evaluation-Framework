@@ -2,7 +2,7 @@
     .factory("assetDataFactory", ["$http", function ($http) {
 
         var assetDataFactory = {};
-        var urlBase = "http://localhost:22045/api/Asset";
+        var urlBase = "http://localhost:65035/api/Asset";
 
         assetDataFactory.getAssets = function () {
             return $http.get(urlBase);

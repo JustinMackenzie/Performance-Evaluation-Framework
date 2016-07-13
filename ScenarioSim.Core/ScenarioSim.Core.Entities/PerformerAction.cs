@@ -30,7 +30,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The timestamp.
         /// </value>
-        public DateTime Timestamp { get; set; }
+        public DateTimeOffset Timestamp { get; set; }
 
         /// <summary>
         /// Gets or sets the performer action parameters.

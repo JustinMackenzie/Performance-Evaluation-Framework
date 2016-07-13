@@ -2,7 +2,7 @@
     .factory("scenarioDataFactory", ["$http", function ($http) {
 
         var scenarioDataFactory = {};
-        var urlBase = "http://localhost:22045/api/Scenario";
+        var urlBase = "http://localhost:65035/api/Scenario";
 
         scenarioDataFactory.getScenarios = function () {
             return $http.get(urlBase);

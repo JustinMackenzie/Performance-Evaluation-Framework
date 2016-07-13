@@ -4,7 +4,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
-using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json;
+using ScenarioSim.Infrastructure.JsonNetSerializer;
 
 namespace ScenarioSim.Server
 {
@@ -27,6 +28,9 @@ namespace ScenarioSim.Server
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new WriteablePropertiesOnlyResolver();
+            config.Formatters.JsonFormatter.SerializerSettings.TypeNameHandling = TypeNameHandling.Objects;
         }
     }
 }

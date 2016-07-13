@@ -55,7 +55,9 @@
     <Compile Include="MongoDbActorRepository.cs" />
     <Compile Include="MongoDbAssetRepository.cs" />
     <Compile Include="MongoDbEntityRepository.cs" />
+    <Compile Include="MongoDbPerformerRepository.cs" />
     <Compile Include="MongoDbProgramRepository.cs" />
+    <Compile Include="MongoDbScenarioPerformanceRepository.cs" />
     <Compile Include="MongoDbScenarioRepository.cs" />
     <Compile Include="MongoDbSchemaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

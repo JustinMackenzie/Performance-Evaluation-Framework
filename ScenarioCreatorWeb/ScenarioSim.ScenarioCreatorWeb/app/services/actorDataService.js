@@ -2,7 +2,7 @@
     .factory("actorDataFactory", ["$http", function ($http) {
 
         var actorDataFactory = {};
-        var urlBase = "http://localhost:22045/api/Actor";
+        var urlBase = "http://localhost:65035/api/Actor";
 
         actorDataFactory.getActors = function () {
             return $http.get(urlBase);

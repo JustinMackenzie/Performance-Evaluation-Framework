@@ -39,7 +39,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The task.
         /// </value>
-        public Task Task => TaskTree.Value;
+        public Task Task => TaskTree?.Value;
 
         /// <summary>
         /// Gets the task transitions.
@@ -47,7 +47,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The task transitions.
         /// </value>
-        public IEnumerable<TaskTransition> TaskTransitions => Schema.TaskTransitions; 
+        public IEnumerable<TaskTransition> TaskTransitions => Schema?.TaskTransitions; 
 
         /// <summary>
         /// Gets the task tree.
@@ -59,6 +59,9 @@ namespace ScenarioSim.Core.Entities
         {
             get
             {
+                if (Schema == null)
+                    return null;
+
                 TreeNode<Task> node = Schema.TaskTree;        
                 node.Traverse(CopyScenarioSpecificTaskValues);
                 return node;
