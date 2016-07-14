@@ -251,6 +251,10 @@
     <Compile Include="Migrations\201607132228288_Initial.Designer.cs">
       <DependentUpon>201607132228288_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607140220406_AddedPerformerIdToApplicationUser.cs" />
+    <Compile Include="Migrations\201607140220406_AddedPerformerIdToApplicationUser.Designer.cs">
+      <DependentUpon>201607140220406_AddedPerformerIdToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -381,6 +385,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201607132228288_Initial.resx">
       <DependentUpon>201607132228288_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607140220406_AddedPerformerIdToApplicationUser.resx">
+      <DependentUpon>201607140220406_AddedPerformerIdToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
