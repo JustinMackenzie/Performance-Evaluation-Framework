@@ -240,6 +240,7 @@
     <Compile Include="Controllers\AssetController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PerformanceController.cs" />
+    <Compile Include="Controllers\PerformerController.cs" />
     <Compile Include="Controllers\ProgramController.cs" />
     <Compile Include="Controllers\ScenarioController.cs" />
     <Compile Include="Controllers\SchemaController.cs" />
@@ -254,6 +255,10 @@
     <Compile Include="Migrations\201607140220406_AddedPerformerIdToApplicationUser.cs" />
     <Compile Include="Migrations\201607140220406_AddedPerformerIdToApplicationUser.Designer.cs">
       <DependentUpon>201607140220406_AddedPerformerIdToApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607151249356_AddedFirstLastName.cs" />
+    <Compile Include="Migrations\201607151249356_AddedFirstLastName.Designer.cs">
+      <DependentUpon>201607151249356_AddedFirstLastName.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -388,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607140220406_AddedPerformerIdToApplicationUser.resx">
       <DependentUpon>201607140220406_AddedPerformerIdToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607151249356_AddedFirstLastName.resx">
+      <DependentUpon>201607151249356_AddedFirstLastName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

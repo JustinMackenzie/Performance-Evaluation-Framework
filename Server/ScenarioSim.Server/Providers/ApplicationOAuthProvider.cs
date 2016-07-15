@@ -91,7 +91,9 @@ namespace ScenarioSim.Server.Providers
             IDictionary<string, string> data = new Dictionary<string, string>
             {
                 { "userName", user.UserName },
-                { "performerId", user.PerformerId.ToString() }
+                { "id", user.Id.ToString() },
+                { "firstName", user.FirstName },
+                { "lastName", user.LastName }
             };
             return new AuthenticationProperties(data);
         }
