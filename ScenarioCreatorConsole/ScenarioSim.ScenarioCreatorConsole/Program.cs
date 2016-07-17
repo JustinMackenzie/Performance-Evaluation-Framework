@@ -19,6 +19,7 @@ namespace ScenarioSim.ScenarioCreatorConsole
             ISchemaManager schemaManager = container.Resolve<ISchemaManager>();
             IScenarioManager scenarioManager = container.Resolve<IScenarioManager>();
             IActorManager actorManager = container.Resolve<IActorManager>();
+            IAssetManager assetManager = container.Resolve<IAssetManager>();
 
             Actor actor = new Actor
             {
@@ -68,6 +69,11 @@ namespace ScenarioSim.ScenarioCreatorConsole
                 }
             };
 
+            Asset target = new Asset { Id = Guid.NewGuid(), Name = "Target", Description = "The target to hit" };
+            Asset tunnel = new Asset { Id = Guid.NewGuid(), Name = "Tunnel", Description = "The tunnel to navigate through." };
+            Asset device = new Asset { Id = Guid.NewGuid(), Name = "Device", Description = "The device used to target with." };
+            Asset finalTarget = new Asset { Id = Guid.NewGuid(), Name = "Final Target", Description = "The final target to hit." };
+
             Scenario scenario = new Scenario
             {
                 Id = Guid.NewGuid(),
@@ -82,16 +88,19 @@ namespace ScenarioSim.ScenarioCreatorConsole
                 },
                 ScenarioAssets = new List<ScenarioAsset>
                 {
-                    new ScenarioAsset { Id = Guid.NewGuid(), Transform = new Transform(new Vector3f(-4,0,0), new Vector3f(0,0,0), new Vector3f(1,1,1))},
-                    new ScenarioAsset { Id = Guid.NewGuid(), Transform = new Transform(new Vector3f(4,0,0), new Vector3f(0,0,0), new Vector3f(1,1,1))},
-                    new ScenarioAsset { Id = Guid.NewGuid(), Transform = new Transform(new Vector3f(4,3,0), new Vector3f(0,0,0), new Vector3f(1,1,1))},
-                    new ScenarioAsset { Id = Guid.NewGuid(), Transform = new Transform(new Vector3f(0,0,0), new Vector3f(0,0,0), new Vector3f(1,1,1))},
-                    new ScenarioAsset { Id = Guid.NewGuid(), Transform = new Transform(new Vector3f(-4,-4,0), new Vector3f(0,0,0), new Vector3f(1,1,1))}
+                    new ScenarioAsset { Id = Guid.NewGuid(), AssetId = target.Id, Transform = new Transform(new Vector3f(-4,0,0), new Vector3f(0,0,0), new Vector3f(1,1,1))},
+                    new ScenarioAsset { Id = Guid.NewGuid(), AssetId = finalTarget.Id, Transform = new Transform(new Vector3f(4,3,0), new Vector3f(0,0,0), new Vector3f(1,1,1))},
+                    new ScenarioAsset { Id = Guid.NewGuid(), AssetId = tunnel.Id, Transform = new Transform(new Vector3f(0,0,0), new Vector3f(0,0,0), new Vector3f(1,1,1))},
+                    new ScenarioAsset { Id = Guid.NewGuid(), AssetId = device.Id, Transform = new Transform(new Vector3f(-4,-4,0), new Vector3f(0,0,0), new Vector3f(1,1,1))}
                 }
 
             };
 
             actorManager.CreateActor(actor);
+            assetManager.CreateAsset(device);
+            assetManager.CreateAsset(target);
+            assetManager.CreateAsset(tunnel);
+            assetManager.CreateAsset(finalTarget);
             schemaManager.CreateSchema(schema);
             scenarioManager.CreateScenario(scenario);
         }
