@@ -85,6 +85,7 @@ namespace ScenarioSim.ScenarioCreatorConsole
                     new ScenarioTaskDefinition { TaskId = navigateToTarget1.Id, TaskValues = new FittsTaskValues(4, 1)},
                     new ScenarioTaskDefinition { TaskId = navigateThroughTunnel.Id, TaskValues = new SteeringTaskValues(8, 3)},
                     new ScenarioTaskDefinition { TaskId = navigateToTarget2.Id, TaskValues = new FittsTaskValues(3, 1)},
+                    new ScenarioTaskDefinition { TaskId = reactionTask.Id, TaskValues = new ReactionTaskValues(3)}
                 },
                 ScenarioAssets = new List<ScenarioAsset>
                 {
