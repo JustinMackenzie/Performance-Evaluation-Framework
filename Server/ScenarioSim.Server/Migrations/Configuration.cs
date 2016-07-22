@@ -47,7 +47,7 @@ namespace ScenarioSim.Server.Migrations
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
-                var user = new ApplicationUser { UserName = username };
+                var user = new ApplicationUser { UserName = username, FirstName = "Test", LastName = "User" };
 
                 manager.Create(user, password);
 

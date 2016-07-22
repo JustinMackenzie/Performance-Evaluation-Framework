@@ -11,7 +11,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The delay.
         /// </value>
-        public float Delay { get; }
+        public float Delay { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ReactionTaskValues"/> class.
