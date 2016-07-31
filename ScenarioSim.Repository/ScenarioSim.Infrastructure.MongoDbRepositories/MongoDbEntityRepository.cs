@@ -87,6 +87,11 @@ namespace ScenarioSim.Infrastructure.MongoDbRepositories
             RegisterMapIfNeeded<ReactionTaskValues>();
             RegisterMapIfNeeded<FittsTaskValues>();
             RegisterMapIfNeeded<SteeringTaskValues>();
+            RegisterMapIfNeeded<SimulatorEvent>();
+            RegisterMapIfNeeded<PerformerAction>();
+            RegisterMapIfNeeded<GoalCompletedEvent>();
+            RegisterMapIfNeeded<DynamicFittsTaskValues>();
+            RegisterMapIfNeeded<RandomReactionTaskValues>();
         }
 
         /// <summary>

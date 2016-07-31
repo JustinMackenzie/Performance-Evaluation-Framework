@@ -40,5 +40,12 @@ namespace ScenarioSim.Services.ScenarioCreator
         /// </summary>
         /// <param name="id">The identifier.</param>
         void DeleteScenario(Guid id);
+
+        /// <summary>
+        /// Gets all scenarios by program.
+        /// </summary>
+        /// <param name="program">The program.</param>
+        /// <returns></returns>
+        IEnumerable<Scenario> GetAllScenariosByProgram(Program program);
     }
 }

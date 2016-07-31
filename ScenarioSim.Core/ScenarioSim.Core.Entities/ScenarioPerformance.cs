@@ -67,7 +67,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The user actions.
         /// </value>
-        public List<PerformerAction> UserActions { get; set; }
+        public List<Event> Events { get; set; }
 
         /// <summary>
         /// Builds the task perfomance tree.

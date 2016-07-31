@@ -28,24 +28,15 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // GET: api/Program
-        public IEnumerable<ProgramViewModel> Get()
+        public IEnumerable<Program> Get()
         {
-            return
-                manager.GetAllPrograms()
-                    .Select(p => new ProgramViewModel {Id = p.Id, Name = p.Name, Description = p.Description});
+            return manager.GetAllPrograms();
         }
 
         // GET: api/Program/5
-        public ProgramDetailsViewModel Get(Guid id)
+        public Program Get(Guid id)
         {
-            Program program = manager.GetProgram(id);
-
-            return new ProgramDetailsViewModel
-            {
-                Id = program.Id,
-                Name = program.Name,
-                Description = program.Description
-            };
+            return manager.GetProgram(id);
         }
 
         // POST: api/Program

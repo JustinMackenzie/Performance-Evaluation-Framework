@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Core.Interfaces;
 using ScenarioSim.Services.Logging;
@@ -120,6 +121,24 @@ namespace ScenarioSim.Infrastructure.ScenarioCreator
             {
                 Scenario scenario = GetScenario(id);
                 repository.Remove(scenario);
+            }
+            catch (Exception ex)
+            {
+                logger.LogException(ex);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Gets all scenarios by program.
+        /// </summary>
+        /// <param name="program">The program.</param>
+        /// <returns></returns>
+        public IEnumerable<Scenario> GetAllScenariosByProgram(Program program)
+        {
+            try
+            {
+                return program.ScenarioIds.Select(GetScenario);
             }
             catch (Exception ex)
             {

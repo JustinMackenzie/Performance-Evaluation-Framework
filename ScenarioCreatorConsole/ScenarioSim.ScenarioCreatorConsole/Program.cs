@@ -20,8 +20,13 @@ namespace ScenarioSim.ScenarioCreatorConsole
             IScenarioManager scenarioManager = container.Resolve<IScenarioManager>();
             IActorManager actorManager = container.Resolve<IActorManager>();
             IAssetManager assetManager = container.Resolve<IAssetManager>();
+            IProgramManager programManager = container.Resolve<IProgramManager>();
 
-            Actor actor = new Actor
+            FittsMultiPhaseProgramGenerator generator = new FittsMultiPhaseProgramGenerator(scenarioManager, programManager);
+
+            generator.Generate(schemaManager.GetSchema(Guid.Parse("2b439b2e-9530-4e9c-b5e6-2c814275bbd3")), "Multi-Phase Fitts Task Set", 10);
+
+            /*Actor actor = new Actor
             {
                 Id = Guid.NewGuid(),
                 Name = "Fitts' Performer",
@@ -103,7 +108,9 @@ namespace ScenarioSim.ScenarioCreatorConsole
             assetManager.CreateAsset(tunnel);
             assetManager.CreateAsset(finalTarget);
             schemaManager.CreateSchema(schema);
-            scenarioManager.CreateScenario(scenario);
+            scenarioManager.CreateScenario(scenario);*/
         }
+
+
     }
 }

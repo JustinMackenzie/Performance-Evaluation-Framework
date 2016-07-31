@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using MongoDB.Driver;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Core.Interfaces;
@@ -32,6 +34,13 @@ namespace ScenarioSim.Infrastructure.MongoDbRepositories
             scenario.Schema = schemas.Find(s => s.Id == scenario.SchemaId).FirstOrDefault();
 
             return scenario;
+        }
+
+        public IEnumerable<Scenario> GetByScenarioIds(IList<Guid> scenarioIds)
+        {
+            return GetAll()
+                .Where(s => scenarioIds.Contains(s.Id))
+                .OrderBy(s => scenarioIds.IndexOf(s.Id));
         }
     }
 }

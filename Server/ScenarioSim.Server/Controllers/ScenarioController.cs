@@ -22,12 +22,18 @@ namespace ScenarioSim.Server.Controllers
         private readonly IScenarioManager manager;
 
         /// <summary>
+        /// The program manager
+        /// </summary>
+        private readonly IProgramManager programManager;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ScenarioController"/> class.
         /// </summary>
         /// <param name="manager">The manager.</param>
-        public ScenarioController(IScenarioManager manager)
+        public ScenarioController(IScenarioManager manager, IProgramManager programManager)
         {
             this.manager = manager;
+            this.programManager = programManager;
         }
 
         // GET: api/Scenario
@@ -93,6 +99,18 @@ namespace ScenarioSim.Server.Controllers
         public void Delete(Guid id)
         {
             manager.DeleteScenario(id);
+        }
+
+        /// <summary>
+        /// Gets the scenarios by program.
+        /// </summary>
+        /// <param name="programId">The program identifier.</param>
+        [Route("api/GetScenariosByProgram/{programId}")]
+        [HttpGet]
+        public IEnumerable<Scenario> GetScenariosByProgram(Guid programId)
+        {
+            Program program = programManager.GetProgram(programId);
+            return manager.GetAllScenariosByProgram(program);
         }
     }
 }

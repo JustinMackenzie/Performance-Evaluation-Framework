@@ -60,7 +60,7 @@ namespace ScenarioSim.Core.Entities
         /// <returns>The angle between the two vectors.</returns>
         public static float AngleBetween(Vector3f a, Vector3f b)
         {
-            return (float)(Math.Acos(Dot(a, b) / (a.Magnitude * b.Magnitude)) * 180/Math.PI);
+            return (float)(Math.Acos(Dot(a, b) / (a.Magnitude * b.Magnitude)) * 180 / Math.PI);
         }
 
         /// <summary>
@@ -97,6 +97,45 @@ namespace ScenarioSim.Core.Entities
         public static Vector3f operator -(Vector3f a, Vector3f b)
         {
             return new Vector3f(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
+        }
+
+        /// <summary>
+        /// Implements the operator *.
+        /// </summary>
+        /// <param name="a">a.</param>
+        /// <param name="b">The b.</param>
+        /// <returns>
+        /// The result of the operator.
+        /// </returns>
+        public static Vector3f operator *(Vector3f a, Vector3f b)
+        {
+            return new Vector3f(a.X * b.X, a.Y * b.Y, a.Z * b.Z);
+        }
+
+        /// <summary>
+        /// Implements the operator *.
+        /// </summary>
+        /// <param name="a">a.</param>
+        /// <param name="b">The b.</param>
+        /// <returns>
+        /// The result of the operator.
+        /// </returns>
+        public static Vector3f operator *(float a, Vector3f b)
+        {
+            return new Vector3f(a * b.X, a * b.Y, a * b.Z);
+        }
+
+        /// <summary>
+        /// Implements the operator /.
+        /// </summary>
+        /// <param name="a">a.</param>
+        /// <param name="b">The b.</param>
+        /// <returns>
+        /// The result of the operator.
+        /// </returns>
+        public static Vector3f operator /(Vector3f a, Vector3f b)
+        {
+            return new Vector3f(a.X / b.X, a.Y / b.Y, a.Z / b.Z);
         }
 
         /// <summary>
