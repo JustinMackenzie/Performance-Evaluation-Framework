@@ -41,6 +41,14 @@ namespace ScenarioSim.Core.Entities
         public Dictionary<string, EventParameter> Parameters { get; set; }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Event"/> class.
+        /// </summary>
+        public Event()
+        {
+            Parameters = new Dictionary<string, EventParameter>();
+        }
+
+        /// <summary>
         /// Adds the parameter.
         /// </summary>
         /// <param name="name">The name.</param>
