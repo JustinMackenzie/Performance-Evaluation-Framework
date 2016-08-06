@@ -40,25 +40,25 @@ namespace ScenarioSim.ScenarioCreatorConsole
             ScenarioAsset deviceAsset = new ScenarioAsset
             {
                 AssetId = settings.DeviceAssetId,
-                Transform = GetTransform(settings.DeviceMeanTransform, settings.DeviceRangeTransform, new Vector3f(1, 1, 0))
+                Transform = GetTransform(settings.DevicePositionMean, settings.DevicePositionVariance, settings.DeviceScaleMean, settings.DeviceScaleVariance, new Vector3f(1, 1, 0))
             };
 
             ScenarioAsset target1Asset = new ScenarioAsset
             {
                 AssetId = settings.Target1AssetId,
-                Transform = GetTransform(settings.Target1MeanTransform, settings.Target1RangeTransform, new Vector3f(1, 1, 0))
+                Transform = GetTransform(settings.Target1PositionMean, settings.Target1PositionVariance, settings.Target1ScaleMean, settings.Target1ScaleVariance, new Vector3f(1, 1, 0))
             };
 
             ScenarioAsset tunnelAsset = new ScenarioAsset
             {
                 AssetId = settings.TunnelAssetId,
-                Transform = GetTunnelTransform(settings.TunnelMeanTransform, settings.TunnelRangeTransform, target1Asset.Transform, new Vector3f(settings.DefaultTunnelLength, settings.DefaultTunnelWidth, 1))
+                Transform = GetTunnelTransform(settings.TunnelScaleMean, settings.TunnelScaleVariance, target1Asset.Transform, new Vector3f(settings.DefaultTunnelLength, settings.DefaultTunnelWidth, 1))
             };
 
             ScenarioAsset target2Asset = new ScenarioAsset
             {
                 AssetId = settings.Target2AssetId,
-                Transform = GetTransform(settings.Target2MeanTransform, settings.Target2RangeTransform, new Vector3f(1, 1, 0))
+                Transform = GetTransform(settings.Target2PositionMean, settings.Target2PositionVariance, settings.Target2ScaleMean, settings.Target2ScaleVariance, new Vector3f(1, 1, 0))
             };
 
             ScenarioTaskDefinition target1TaskDefinition = new ScenarioTaskDefinition
@@ -107,19 +107,17 @@ namespace ScenarioSim.ScenarioCreatorConsole
             scenario.ScenarioAssets.Add(target2Asset);
         }
 
-        private Transform GetTransform(Transform mean, Transform range, Vector3f defaultSize)
+        private Transform GetTransform(Vector3f meanPosition, Vector3f rangePosition, float scaleMean, float scaleVariance, Vector3f defaultSize)
         {
             Random random = new Random();
 
-            Vector3f lowScale = mean.Scale / range.Scale;
-            Vector3f highScale = mean.Scale * range.Scale;
+            float lowScale = scaleMean / scaleVariance;
+            float highScale = scaleMean * scaleVariance;
 
-            Vector3f scale = new Vector3f((float)random.NextDouble() * (highScale.X - lowScale.X) + lowScale.X,
-                (float)random.NextDouble() * (highScale.Y - lowScale.Y) + lowScale.Y,
-                (float)random.NextDouble() * (highScale.Z - lowScale.Z) + lowScale.Z);
+            float scale = (float)random.NextDouble() * (highScale - lowScale) + lowScale;
 
-            Vector3f lowPos = mean.Position - range.Position + 0.5f * (defaultSize * scale);
-            Vector3f highPos = mean.Position + range.Position - 0.5f * (defaultSize * scale);
+            Vector3f lowPos = meanPosition - rangePosition + 0.5f * (scale * defaultSize);
+            Vector3f highPos = meanPosition + rangePosition - 0.5f * (scale * defaultSize);
             Vector3f diffPos = highPos - lowPos;
 
             Vector3f position = new Vector3f((float)random.NextDouble() * diffPos.X + lowPos.X,
@@ -128,17 +126,17 @@ namespace ScenarioSim.ScenarioCreatorConsole
 
             return new Transform(
                 position,
-                GetVector(mean.Rotation, range.Rotation, random),
-                scale);
+                new Vector3f(0, 0, 0),
+                new Vector3f(scale, scale, 1));
         }
 
-        private Transform GetTunnelTransform(Transform meanTransform, Transform rangeTransform, Transform target1Transform,
+        private Transform GetTunnelTransform(Vector3f scaleMean, Vector3f scaleVariance, Transform target1Transform,
             Vector3f defaultTunnelSize)
         {
             Random random = new Random();
 
-            Vector3f lowScale = meanTransform.Scale / rangeTransform.Scale;
-            Vector3f highScale = meanTransform.Scale * rangeTransform.Scale;
+            Vector3f lowScale = scaleMean / scaleVariance;
+            Vector3f highScale = scaleMean * scaleVariance;
 
             Vector3f scale = new Vector3f((float)random.NextDouble() * (highScale.X - lowScale.X) + lowScale.X,
                 (float)random.NextDouble() * (highScale.Y - lowScale.Y) + lowScale.Y,

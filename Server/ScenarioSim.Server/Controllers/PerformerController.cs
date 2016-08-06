@@ -1,39 +1,64 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
+using ScenarioSim.Core.Entities;
+using ScenarioSim.Services.Logging;
+using ScenarioSim.Services.PerformanceManagement;
 
 namespace ScenarioSim.Server.Controllers
 {
+    /// <summary>
+    /// The controller that receives performer related API calls.
+    /// </summary>
+    /// <seealso cref="System.Web.Http.ApiController" />
     public class PerformerController : ApiController
     {
-        // GET: api/Performer
-        public IEnumerable<string> Get()
+        /// <summary>
+        /// The manager
+        /// </summary>
+        private readonly IPerformerManager manager;
+
+        /// <summary>
+        /// The logger
+        /// </summary>
+        private readonly ILogger logger;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PerformerController"/> class.
+        /// </summary>
+        /// <param name="manager">The manager.</param>
+        public PerformerController(IPerformerManager manager, ILogger logger)
         {
-            return new string[] { "value1", "value2" };
+            this.manager = manager;
+            this.logger = logger;
+        }
+
+        // GET: api/Performer
+        public IEnumerable<Performer> Get()
+        {
+            try
+            {
+                return manager.GetAllPerformers();
+            }
+            catch (Exception ex)
+            {
+                logger.LogException(ex);
+                throw;
+            }
         }
 
         // GET: api/Performer/5
-        public string Get(int id)
+        public Performer Get(Guid id)
         {
-            return "value";
-        }
-
-        // POST: api/Performer
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT: api/Performer/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Performer/5
-        public void Delete(int id)
-        {
+            try
+            {
+                return manager.GetPerformer(id);
+            }
+            catch (Exception ex)
+            {
+                logger.LogException(ex);
+                throw;
+            }
         }
     }
 }

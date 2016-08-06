@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ScenarioSim.Core.Entities;
 
 namespace ScenarioSim.Services.PerformanceManagement
@@ -14,5 +15,11 @@ namespace ScenarioSim.Services.PerformanceManagement
         /// <param name="performerId">The performer identifier.</param>
         /// <returns></returns>
         Performer GetPerformer(Guid performerId);
+
+        /// <summary>
+        /// Gets all performers.
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<Performer> GetAllPerformers();
     }
 }

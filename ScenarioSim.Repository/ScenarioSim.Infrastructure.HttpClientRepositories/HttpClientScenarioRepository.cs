@@ -1,4 +1,7 @@
-﻿using ScenarioSim.Core.Entities;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using ScenarioSim.Core.Entities;
 using ScenarioSim.Core.Interfaces;
 
 namespace ScenarioSim.Infrastructure.HttpClientRepositories
@@ -20,5 +23,15 @@ namespace ScenarioSim.Infrastructure.HttpClientRepositories
         /// The name of the resource.
         /// </value>
         protected override string ResourceName => "scenario";
+
+        /// <summary>
+        /// Gets the by scenario ids.
+        /// </summary>
+        /// <param name="scenarioIds">The scenario ids.</param>
+        /// <returns></returns>
+        public IEnumerable<Scenario> GetByScenarioIds(IList<Guid> scenarioIds)
+        {
+            return GetAll().Where(s => scenarioIds.Contains(s.Id));
+        }
     }
 }

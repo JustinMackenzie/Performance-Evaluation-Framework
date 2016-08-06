@@ -52,6 +52,7 @@
     <Compile Include="HttpClientEntityRepository.cs" />
     <Compile Include="HttpClientScenarioPerformanceRepository.cs" />
     <Compile Include="HttpClientScenarioRepository.cs" />
+    <Compile Include="HttpClientSchemaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

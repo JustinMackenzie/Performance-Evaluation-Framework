@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity.Owin;
+using ScenarioSim.Core.Entities;
+using ScenarioSim.Core.Interfaces;
 
 namespace ScenarioSim.Server.Models
 {
@@ -31,10 +34,64 @@ namespace ScenarioSim.Server.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+    }
+
+    public class PerformerRepository : IPerformerRepository
+    {
+        /// <summary>
+        /// The context
+        /// </summary>
+        private ApplicationDbContext context = new ApplicationDbContext();
+
+        /// <summary>
+        /// Gets all.
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Performer> GetAll()
+        {
+            IEnumerable<ApplicationUser> users = context.Users.ToList();
+            return users.Select(u => new Performer { Id = Guid.Parse(u.Id), Name = $"{u.FirstName} {u.LastName}" });
+        }
+
+        /// <summary>
+        /// Gets the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
+        public Performer Get(Guid id)
+        {
+            ApplicationUser user = context.Users.Find(id.ToString());
+
+            return new Performer
+            {
+                Id = id,
+                Name = $"{user.FirstName} {user.LastName}"
+            };
+        }
+
+        /// <summary>
+        /// Saves the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
+        /// <exception cref="NotImplementedException"></exception>
+        public void Save(Performer entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Removes the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
+        /// <exception cref="NotImplementedException"></exception>
+        public void Remove(Performer entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }

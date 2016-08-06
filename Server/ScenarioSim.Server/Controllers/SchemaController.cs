@@ -39,9 +39,9 @@ namespace ScenarioSim.Server.Controllers
         /// Gets this instance.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<SchemaViewModel> Get()
+        public IEnumerable<Schema> Get()
         {
-            return manager.GetAllSchemas().Select(s => new SchemaViewModel { Id = s.Id, Name = s.Name, Description = s.Description });
+            return manager.GetAllSchemas();
         }
 
         // GET: api/Schema/5
@@ -50,16 +50,9 @@ namespace ScenarioSim.Server.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public SchemaDetailsViewModel Get(Guid id)
+        public Schema Get(Guid id)
         {
-            Schema schema = manager.GetSchema(id);
-
-            return new SchemaDetailsViewModel
-            {
-                Id = schema.Id,
-                Name = schema.Name,
-                Description = schema.Description
-            };
+            return manager.GetSchema(id);
         }
 
         // POST: api/Schema

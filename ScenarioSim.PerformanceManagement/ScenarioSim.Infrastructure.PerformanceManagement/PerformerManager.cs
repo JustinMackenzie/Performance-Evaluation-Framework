@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Core.Interfaces;
 using ScenarioSim.Services.Logging;
@@ -55,6 +56,11 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
                 logger.LogException(ex);
                 throw;
             }
+        }
+
+        public IEnumerable<Performer> GetAllPerformers()
+        {
+            return repository.GetAll();
         }
     }
 }
