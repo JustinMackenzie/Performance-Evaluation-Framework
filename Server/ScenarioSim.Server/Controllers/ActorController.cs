@@ -14,6 +14,7 @@ namespace ScenarioSim.Server.Controllers
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [EnableCors("http://localhost:45723", "*", "*")]
+    [Authorize]
     public class ActorController : ApiController
     {
         /// <summary>
@@ -66,6 +67,7 @@ namespace ScenarioSim.Server.Controllers
         /// Posts the specified actor.
         /// </summary>
         /// <param name="model">The model.</param>
+        [Authorize(Roles = "Scenario Author, Administrator")]
         public void Post(CreateActorViewModel model)
         {
             Actor actor = new Actor
@@ -83,6 +85,7 @@ namespace ScenarioSim.Server.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="model">The model.</param>
+        [Authorize(Roles = "Scenario Author, Administrator")]
         public void Put(Guid id, EditActorViewModel model)
         {
             Actor actor = new Actor
@@ -100,6 +103,7 @@ namespace ScenarioSim.Server.Controllers
         /// Deletes the specified actor.
         /// </summary>
         /// <param name="id">The identifier.</param>
+        [Authorize(Roles = "Scenario Author, Administrator")]
         public void Delete(Guid id)
         {
             manager.RemoveActor(id);

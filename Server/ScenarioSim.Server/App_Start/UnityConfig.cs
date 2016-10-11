@@ -5,8 +5,14 @@ using Unity.WebApi;
 
 namespace ScenarioSim.Server
 {
+    /// <summary>
+    /// Configures Unity, the dependency injection container.
+    /// </summary>
     public static class UnityConfig
     {
+        /// <summary>
+        /// Registers the components.
+        /// </summary>
         public static void RegisterComponents()
         {
             var container = new UnityContainer();

@@ -7,8 +7,14 @@ using ScenarioSim.Server.Models;
 
 namespace ScenarioSim.Server
 {
+    /// <summary>
+    /// The configuration of the mapping.
+    /// </summary>
     public class MappingConfig
     {
+        /// <summary>
+        /// Configures the mappings.
+        /// </summary>
         public static void ConfigureMappings()
         {
             Mapper.Initialize(cfg =>
@@ -46,7 +52,6 @@ namespace ScenarioSim.Server
     /// <summary>
     /// Resolves a hierarchical task representation to a flat list of tasks.
     /// </summary>
-    /// <seealso cref="AutoMapper.IValueResolver{ScenarioSim.Core.Entities.Schema, ScenarioSim.Server.Models.SchemaViewModel, System.Collections.Generic.List{ScenarioSim.Server.Models.TaskViewModel}}" />
     public class TaskResolver : IValueResolver<Schema, SchemaViewModel, List<TaskViewModel>>
     {
         /// <summary>

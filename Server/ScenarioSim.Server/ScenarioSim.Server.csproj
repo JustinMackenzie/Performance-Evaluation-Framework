@@ -254,7 +254,6 @@
     <Compile Include="Controllers\ProgramController.cs" />
     <Compile Include="Controllers\ScenarioController.cs" />
     <Compile Include="Controllers\SchemaController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

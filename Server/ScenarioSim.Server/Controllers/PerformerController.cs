@@ -11,6 +11,7 @@ namespace ScenarioSim.Server.Controllers
     /// The controller that receives performer related API calls.
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
+    [Authorize]
     public class PerformerController : ApiController
     {
         /// <summary>
@@ -24,9 +25,10 @@ namespace ScenarioSim.Server.Controllers
         private readonly ILogger logger;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PerformerController"/> class.
+        /// Initializes a new instance of the <see cref="PerformerController" /> class.
         /// </summary>
         /// <param name="manager">The manager.</param>
+        /// <param name="logger">The logger.</param>
         public PerformerController(IPerformerManager manager, ILogger logger)
         {
             this.manager = manager;
@@ -34,6 +36,10 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // GET: api/Performer
+        /// <summary>
+        /// Gets all performers.
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Performer> Get()
         {
             try
@@ -48,6 +54,11 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // GET: api/Performer/5
+        /// <summary>
+        /// Gets the performer with the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public Performer Get(Guid id)
         {
             try

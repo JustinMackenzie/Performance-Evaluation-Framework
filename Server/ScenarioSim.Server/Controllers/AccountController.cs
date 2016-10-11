@@ -18,17 +18,29 @@ using ScenarioSim.Server.Results;
 
 namespace ScenarioSim.Server.Controllers
 {
+    /// <summary>
+    /// Used to manage user accounts.
+    /// </summary>
+    /// <seealso cref="System.Web.Http.ApiController" />
     [Authorize]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";
-        private ApplicationUserManager _userManager;
+        private ApplicationUserManager userManager;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccountController"/> class.
+        /// </summary>
         public AccountController()
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccountController"/> class.
+        /// </summary>
+        /// <param name="userManager">The user manager.</param>
+        /// <param name="accessTokenFormat">The access token format.</param>
         public AccountController(ApplicationUserManager userManager,
             ISecureDataFormat<AuthenticationTicket> accessTokenFormat)
         {
@@ -36,21 +48,37 @@ namespace ScenarioSim.Server.Controllers
             AccessTokenFormat = accessTokenFormat;
         }
 
+        /// <summary>
+        /// Gets the user manager.
+        /// </summary>
+        /// <value>
+        /// The user manager.
+        /// </value>
         public ApplicationUserManager UserManager
         {
             get
             {
-                return _userManager ?? Request.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                return userManager ?? Request.GetOwinContext().GetUserManager<ApplicationUserManager>();
             }
             private set
             {
-                _userManager = value;
+                userManager = value;
             }
         }
 
+        /// <summary>
+        /// Gets the access token format.
+        /// </summary>
+        /// <value>
+        /// The access token format.
+        /// </value>
         public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; private set; }
 
         // GET api/Account/UserInfo
+        /// <summary>
+        /// Gets the user information.
+        /// </summary>
+        /// <returns></returns>
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
         [Route("UserInfo")]
         public UserInfoViewModel GetUserInfo()
@@ -66,6 +94,10 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // POST api/Account/Logout
+        /// <summary>
+        /// Logouts this account.
+        /// </summary>
+        /// <returns></returns>
         [Route("Logout")]
         public IHttpActionResult Logout()
         {
@@ -74,6 +106,12 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // GET api/Account/ManageInfo?returnUrl=%2F&generateState=true
+        /// <summary>
+        /// Gets the manage information.
+        /// </summary>
+        /// <param name="returnUrl">The return URL.</param>
+        /// <param name="generateState">if set to <c>true</c> [generate state].</param>
+        /// <returns></returns>
         [Route("ManageInfo")]
         public async Task<ManageInfoViewModel> GetManageInfo(string returnUrl, bool generateState = false)
         {
@@ -114,6 +152,11 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // POST api/Account/ChangePassword
+        /// <summary>
+        /// Changes the password.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
         [Route("ChangePassword")]
         public async Task<IHttpActionResult> ChangePassword(ChangePasswordBindingModel model)
         {
@@ -134,6 +177,11 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // POST api/Account/SetPassword
+        /// <summary>
+        /// Sets the password.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
         [Route("SetPassword")]
         public async Task<IHttpActionResult> SetPassword(SetPasswordBindingModel model)
         {
@@ -153,6 +201,11 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // POST api/Account/AddExternalLogin
+        /// <summary>
+        /// Adds the external login.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
         [Route("AddExternalLogin")]
         public async Task<IHttpActionResult> AddExternalLogin(AddExternalLoginBindingModel model)
         {
@@ -191,6 +244,11 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // POST api/Account/RemoveLogin
+        /// <summary>
+        /// Removes the login.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
         [Route("RemoveLogin")]
         public async Task<IHttpActionResult> RemoveLogin(RemoveLoginBindingModel model)
         {
@@ -220,6 +278,12 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // GET api/Account/ExternalLogin
+        /// <summary>
+        /// Gets the external login.
+        /// </summary>
+        /// <param name="provider">The provider.</param>
+        /// <param name="error">The error.</param>
+        /// <returns></returns>
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalCookie)]
         [AllowAnonymous]
@@ -277,6 +341,12 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // GET api/Account/ExternalLogins?returnUrl=%2F&generateState=true
+        /// <summary>
+        /// Gets the external logins.
+        /// </summary>
+        /// <param name="returnUrl">The return URL.</param>
+        /// <param name="generateState">if set to <c>true</c> [generate state].</param>
+        /// <returns></returns>
         [AllowAnonymous]
         [Route("ExternalLogins")]
         public IEnumerable<ExternalLoginViewModel> GetExternalLogins(string returnUrl, bool generateState = false)
@@ -318,6 +388,11 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // POST api/Account/Register
+        /// <summary>
+        /// Registers the specified account.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
         [AllowAnonymous]
         [Route("Register")]
         public async Task<IHttpActionResult> Register(RegisterBindingModel model)
@@ -340,6 +415,11 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // POST api/Account/RegisterExternal
+        /// <summary>
+        /// Registers the external.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
         [Route("RegisterExternal")]
@@ -372,12 +452,16 @@ namespace ScenarioSim.Server.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Releases the unmanaged resources that are used by the object and, optionally, releases the managed resources.
+        /// </summary>
+        /// <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && _userManager != null)
+            if (disposing && userManager != null)
             {
-                _userManager.Dispose();
-                _userManager = null;
+                userManager.Dispose();
+                userManager = null;
             }
 
             base.Dispose(disposing);
@@ -385,11 +469,22 @@ namespace ScenarioSim.Server.Controllers
 
         #region Helpers
 
+        /// <summary>
+        /// Gets the authentication.
+        /// </summary>
+        /// <value>
+        /// The authentication.
+        /// </value>
         private IAuthenticationManager Authentication
         {
             get { return Request.GetOwinContext().Authentication; }
         }
 
+        /// <summary>
+        /// Gets the error result.
+        /// </summary>
+        /// <param name="result">The result.</param>
+        /// <returns></returns>
         private IHttpActionResult GetErrorResult(IdentityResult result)
         {
             if (result == null)
@@ -425,6 +520,10 @@ namespace ScenarioSim.Server.Controllers
             public string ProviderKey { get; set; }
             public string UserName { get; set; }
 
+            /// <summary>
+            /// Gets the claims.
+            /// </summary>
+            /// <returns></returns>
             public IList<Claim> GetClaims()
             {
                 IList<Claim> claims = new List<Claim>();
@@ -438,6 +537,11 @@ namespace ScenarioSim.Server.Controllers
                 return claims;
             }
 
+            /// <summary>
+            /// Froms the identity.
+            /// </summary>
+            /// <param name="identity">The identity.</param>
+            /// <returns></returns>
             public static ExternalLoginData FromIdentity(ClaimsIdentity identity)
             {
                 if (identity == null)
@@ -471,6 +575,12 @@ namespace ScenarioSim.Server.Controllers
         {
             private static RandomNumberGenerator _random = new RNGCryptoServiceProvider();
 
+            /// <summary>
+            /// Generates the specified strength in bits.
+            /// </summary>
+            /// <param name="strengthInBits">The strength in bits.</param>
+            /// <returns></returns>
+            /// <exception cref="ArgumentException">strengthInBits must be evenly divisible by 8. - strengthInBits</exception>
             public static string Generate(int strengthInBits)
             {
                 const int bitsPerByte = 8;

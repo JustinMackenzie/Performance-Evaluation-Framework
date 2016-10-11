@@ -9,7 +9,12 @@ using ScenarioSim.Services.ScenarioCreator;
 
 namespace ScenarioSim.Server.Controllers
 {
+    /// <summary>
+    /// Retrieves and stores assets.
+    /// </summary>
+    /// <seealso cref="System.Web.Http.ApiController" />
     [EnableCors("http://localhost:45723", "*", "*")]
+    [Authorize]
     public class AssetController : ApiController
     {
         private readonly IAssetManager manager;
@@ -28,6 +33,10 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // GET: api/Asset
+        /// <summary>
+        /// Gets this instance.
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<AssetViewModel> Get()
         {
             return
@@ -36,6 +45,11 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // GET: api/Asset/5
+        /// <summary>
+        /// Gets the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public AssetDetailsViewModel Get(Guid id)
         {
             Asset asset = manager.GetAsset(id);
@@ -49,6 +63,11 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // POST: api/Asset
+        /// <summary>
+        /// Posts the specified model.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        [Authorize(Roles = "Scenario Author, Administrator")]
         public void Post(CreateAssetViewModel model)
         {
             Asset asset = new Asset
@@ -61,6 +80,12 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // PUT: api/Asset/5
+        /// <summary>
+        /// Puts the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="model">The model.</param>
+        [Authorize(Roles = "Scenario Author, Administrator")]
         public void Put(Guid id, EditAssetViewModel model)
         {
             Asset asset = new Asset
@@ -74,6 +99,11 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // DELETE: api/Asset/5
+        /// <summary>
+        /// Deletes the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        [Authorize(Roles = "Scenario Author, Administrator")]
         public void Delete(Guid id)
         {
             manager.DeleteAsset(id);

@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using ScenarioSim.Server.Providers;
@@ -13,13 +9,32 @@ using ScenarioSim.Server.Models;
 
 namespace ScenarioSim.Server
 {
+    /// <summary>
+    /// Utility class used for methods that run on application startup.
+    /// </summary>
     public partial class Startup
     {
+        /// <summary>
+        /// Gets the OAuth options.
+        /// </summary>
+        /// <value>
+        /// The o authentication options.
+        /// </value>
         public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
 
+        /// <summary>
+        /// Gets the public client identifier.
+        /// </summary>
+        /// <value>
+        /// The public client identifier.
+        /// </value>
         public static string PublicClientId { get; private set; }
 
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
+        /// <summary>
+        /// Configures the authentication.
+        /// </summary>
+        /// <param name="app">The application.</param>
         public void ConfigureAuth(IAppBuilder app)
         {
             // Configure the db context and user manager to use a single instance per request

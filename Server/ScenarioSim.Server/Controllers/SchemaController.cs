@@ -15,6 +15,7 @@ namespace ScenarioSim.Server.Controllers
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [EnableCors("http://localhost:45723", "*", "*")]
+    [Authorize]
     public class SchemaController : ApiController
     {
         /// <summary>
@@ -26,7 +27,6 @@ namespace ScenarioSim.Server.Controllers
         /// Initializes a new instance of the <see cref="SchemaController" /> class.
         /// </summary>
         /// <param name="manager">The manager.</param>
-        /// <param name="mapper">The mapper.</param>
         /// <exception cref="ArgumentNullException">manager</exception>
         public SchemaController(ISchemaManager manager)
         {
@@ -63,6 +63,7 @@ namespace ScenarioSim.Server.Controllers
         /// Creates the given schema.
         /// </summary>
         /// <param name="model">The create schema view model.</param>
+        [Authorize(Roles = "Scenario Author, Administrator")]
         public void Post(SchemaViewModel model)
         {
             Schema schema = new Schema
@@ -80,6 +81,7 @@ namespace ScenarioSim.Server.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="model">The schema.</param>
+        [Authorize(Roles = "Scenario Author, Administrator")]
         public void Put(Guid id, SchemaViewModel model)
         {
             Schema schema = new Schema
@@ -97,6 +99,7 @@ namespace ScenarioSim.Server.Controllers
         /// Deletes the specified schema.
         /// </summary>
         /// <param name="id">The identifier.</param>
+        [Authorize(Roles = "Scenario Author, Administrator")]
         public void Delete(Guid id)
         {
             manager.DeleteSchema(id);

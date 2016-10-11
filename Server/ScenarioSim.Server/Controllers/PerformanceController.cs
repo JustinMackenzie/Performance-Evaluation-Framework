@@ -43,12 +43,21 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // GET: api/Performance
+        /// <summary>
+        /// Gets this instance.
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<ScenarioPerformance> Get()
         {
             return manager.GetAllPerformances();
         }
 
         // GET: api/Performance/5
+        /// <summary>
+        /// Gets the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public PerformanceViewModel Get(Guid id)
         {
             ScenarioPerformance performance = manager.GetPerformance(id);
@@ -60,6 +69,13 @@ namespace ScenarioSim.Server.Controllers
             };
         }
 
+        /// <summary>
+        /// Gets the scenario performances based on the given filters.
+        /// </summary>
+        /// <param name="schemaId">The schema identifier.</param>
+        /// <param name="scenarioId">The scenario identifier.</param>
+        /// <param name="performerId">The performer identifier.</param>
+        /// <returns></returns>
         [Route("api/ScenarioPerformances")]
         [HttpGet]
         public IEnumerable<ScenarioPerformance> ScenarioPerformances(Guid? schemaId = null, Guid? scenarioId = null,

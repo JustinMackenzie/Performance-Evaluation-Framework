@@ -9,7 +9,12 @@ using ScenarioSim.Services.ScenarioCreator;
 
 namespace ScenarioSim.Server.Controllers
 {
+    /// <summary>
+    /// Used to retrieve and store programs.
+    /// </summary>
+    /// <seealso cref="System.Web.Http.ApiController" />
     [EnableCors("http://localhost:45723", "*", "*")]
+    [Authorize]
     public class ProgramController : ApiController
     {
         private readonly IProgramManager manager;
@@ -18,7 +23,6 @@ namespace ScenarioSim.Server.Controllers
         /// Initializes a new instance of the <see cref="ProgramController"/> class.
         /// </summary>
         /// <param name="manager">The manager.</param>
-        /// <exception cref="System.ArgumentNullException"></exception>
         public ProgramController(IProgramManager manager)
         {
             if (manager == null)
@@ -28,18 +32,32 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // GET: api/Program
+        /// <summary>
+        /// Gets all of the programs.
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Program> Get()
         {
             return manager.GetAllPrograms();
         }
 
         // GET: api/Program/5
+        /// <summary>
+        /// Gets the program with the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public Program Get(Guid id)
         {
             return manager.GetProgram(id);
         }
 
         // POST: api/Program
+        /// <summary>
+        /// Adds the specified program
+        /// </summary>
+        /// <param name="model">The model.</param>
+        [Authorize(Roles = "Curriculum Designer, Administrator")]
         public void Post(CreateProgramViewModel model)
         {
             Program program = new Program
@@ -52,6 +70,12 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // PUT: api/Program/5
+        /// <summary>
+        /// Updates the program with the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="model">The model.</param>
+        [Authorize(Roles = "Curriculum Designer, Administrator")]
         public void Put(Guid id, EditProgramViewModel model)
         {
             Program program = new Program
@@ -65,6 +89,11 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // DELETE: api/Program/5
+        /// <summary>
+        /// Deletes the program with the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        [Authorize(Roles = "Curriculum Designer, Administrator")]
         public void Delete(Guid id)
         {
             manager.DeleteProgram(id);
