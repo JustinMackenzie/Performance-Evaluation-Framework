@@ -34,7 +34,7 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
         /// </summary>
         /// <param name="logger">The logger.</param>
         /// <param name="repository">The repository.</param>
-        /// <exception cref="System.ArgumentNullException"></exception>
+        /// <param name="scenarioRepository">The scenario repository.</param>
         public PerformanceManager(ILogger logger, IScenarioPerformanceRepository repository, IScenarioRepository scenarioRepository)
         {
             if (logger == null)
@@ -55,15 +55,7 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
         /// <returns></returns>
         public IEnumerable<ScenarioPerformance> GetAllPerformances()
         {
-            try
-            {
-                return repository.GetAll();
-            }
-            catch (Exception ex)
-            {
-                logger.LogException(ex);
-                throw;
-            }
+            return repository.GetAll();
         }
 
         /// <summary>
@@ -77,16 +69,8 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
             if (schema == null)
                 throw new ArgumentNullException(nameof(schema));
 
-            try
-            {
-                IEnumerable<Scenario> scenarios = scenarioRepository.GetAll().Where(s => s.SchemaId == schema.Id);
-                return scenarios.SelectMany(s => repository.GetByScenario(s));
-            }
-            catch (Exception ex)
-            {
-                logger.LogException(ex);
-                throw;
-            }
+            IEnumerable<Scenario> scenarios = scenarioRepository.GetAll().Where(s => s.SchemaId == schema.Id);
+            return scenarios.SelectMany(s => repository.GetByScenario(s));
         }
 
         /// <summary>
@@ -99,15 +83,7 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
             if (performer == null)
                 throw new ArgumentNullException(nameof(performer));
 
-            try
-            {
-                return repository.GetAll().Where(p => p.PerformerId == performer.Id);
-            }
-            catch (Exception ex)
-            {
-                logger.LogException(ex);
-                throw;
-            }
+            return repository.GetAll().Where(p => p.PerformerId == performer.Id);
         }
 
         /// <summary>
@@ -125,15 +101,7 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
             if (performer == null)
                 throw new ArgumentNullException(nameof(performer));
 
-            try
-            {
-                return GetAllPerformances(schema).Where(p => p.PerformerId == performer.Id);
-            }
-            catch (Exception ex)
-            {
-                logger.LogException(ex);
-                throw;
-            }
+            return GetAllPerformances(schema).Where(p => p.PerformerId == performer.Id);
         }
 
         /// <summary>
@@ -146,20 +114,25 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
             if (performance == null)
                 throw new ArgumentNullException(nameof(performance));
 
-            try
-            {
-                repository.Save(performance);
-            }
-            catch (Exception ex)
-            {
-                logger.LogException(ex);
-                throw;
-            }
+            repository.Save(performance);
         }
 
         public ScenarioPerformance GetPerformance(Guid id)
         {
             throw new NotImplementedException();
+        }
+
+        public void DeletePerformance(Guid id)
+        {
+            if (id == Guid.Empty)
+                throw new ArgumentException("The identifier cannot be empty.", nameof(id));
+
+            ScenarioPerformance performance = GetPerformance(id);
+
+            if (performance == null)
+                throw new InvalidOperationException("A scenario performance with the given identifier does not exist.");
+
+            repository.Remove(performance);
         }
     }
 }

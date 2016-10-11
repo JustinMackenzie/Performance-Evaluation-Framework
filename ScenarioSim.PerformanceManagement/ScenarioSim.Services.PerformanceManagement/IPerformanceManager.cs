@@ -49,5 +49,11 @@ namespace ScenarioSim.Services.PerformanceManagement
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
         ScenarioPerformance GetPerformance(Guid id);
+
+        /// <summary>
+        /// Deletes the performance with the given identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        void DeletePerformance(Guid id);
     }
 }

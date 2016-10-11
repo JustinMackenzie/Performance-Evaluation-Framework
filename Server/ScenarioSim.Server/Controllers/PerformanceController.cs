@@ -1,17 +1,26 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Server.Models;
+using ScenarioSim.Services.Logging;
 using ScenarioSim.Services.PerformanceManagement;
-using ScenarioSim.Services.ScenarioCreator;
 
 namespace ScenarioSim.Server.Controllers
 {
+    /// <summary>
+    /// Allows access to and storage of performances.
+    /// </summary>
+    /// <seealso cref="System.Web.Http.ApiController" />
+    [Authorize]
     public class PerformanceController : ApiController
     {
+        /// <summary>
+        /// The logger
+        /// </summary>
+        private readonly ILogger logger;
+
         /// <summary>
         /// The manager
         /// </summary>
@@ -20,14 +29,16 @@ namespace ScenarioSim.Server.Controllers
         /// <summary>
         /// Initializes a new instance of the <see cref="PerformanceController" /> class.
         /// </summary>
+        /// <param name="logger">The logger.</param>
         /// <param name="manager">The manager.</param>
-        /// <param name="schemaManager">The schema manager.</param>
-        /// <exception cref="System.ArgumentNullException"></exception>
-        public PerformanceController(IPerformanceManager manager)
+        public PerformanceController(ILogger logger, IPerformanceManager manager)
         {
+            if (logger == null)
+                throw new ArgumentNullException(nameof(logger));
             if (manager == null)
                 throw new ArgumentNullException(nameof(manager));
 
+            this.logger = logger;
             this.manager = manager;
         }
 
@@ -35,7 +46,7 @@ namespace ScenarioSim.Server.Controllers
         public IEnumerable<ScenarioPerformance> Get()
         {
             return manager.GetAllPerformances();
-        }  
+        }
 
         // GET: api/Performance/5
         public PerformanceViewModel Get(Guid id)
@@ -69,19 +80,41 @@ namespace ScenarioSim.Server.Controllers
         }
 
         // POST: api/Performance
+        /// <summary>
+        /// Stores the specified performance.
+        /// </summary>
+        /// <param name="performance">The performance.</param>
+        [Authorize(Roles = "Performer")]
         public void Post(ScenarioPerformance performance)
         {
-            manager.AddPerformance(performance);
-        }
-
-        // PUT: api/Performance/5
-        public void Put(int id, [FromBody]string value)
-        {
+            try
+            {
+                manager.AddPerformance(performance);
+            }
+            catch (Exception ex)
+            {
+                logger.LogException(ex);
+                throw;
+            }
         }
 
         // DELETE: api/Performance/5
-        public void Delete(int id)
+        /// <summary>
+        /// Deletes the specified performance with the given identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        [Authorize(Roles = "Evaluator, Administrator")]
+        public void Delete(Guid id)
         {
+            try
+            {
+                manager.DeletePerformance(id);
+            }
+            catch (Exception ex)
+            {
+                logger.LogException(ex);
+                throw;
+            }
         }
     }
 }

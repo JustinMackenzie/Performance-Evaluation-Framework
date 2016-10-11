@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using AutoMapper;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Server.Models;
 using ScenarioSim.Services.ScenarioCreator;
@@ -22,10 +23,11 @@ namespace ScenarioSim.Server.Controllers
         private readonly ISchemaManager manager;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SchemaController"/> class.
+        /// Initializes a new instance of the <see cref="SchemaController" /> class.
         /// </summary>
         /// <param name="manager">The manager.</param>
-        /// <exception cref="System.ArgumentNullException"></exception>
+        /// <param name="mapper">The mapper.</param>
+        /// <exception cref="ArgumentNullException">manager</exception>
         public SchemaController(ISchemaManager manager)
         {
             if (manager == null)
@@ -39,9 +41,9 @@ namespace ScenarioSim.Server.Controllers
         /// Gets this instance.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Schema> Get()
+        public IEnumerable<SchemaViewModel> Get()
         {
-            return manager.GetAllSchemas();
+            return manager.GetAllSchemas().Select(Mapper.Map<Schema, SchemaViewModel>);
         }
 
         // GET: api/Schema/5
@@ -50,9 +52,10 @@ namespace ScenarioSim.Server.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public Schema Get(Guid id)
+        public SchemaViewModel Get(Guid id)
         {
-            return manager.GetSchema(id);
+            Schema schema =  manager.GetSchema(id);
+            return Mapper.Map<Schema, SchemaViewModel>(schema);
         }
 
         // POST: api/Schema
@@ -60,7 +63,7 @@ namespace ScenarioSim.Server.Controllers
         /// Creates the given schema.
         /// </summary>
         /// <param name="model">The create schema view model.</param>
-        public void Post(CreateSchemaViewModel model)
+        public void Post(SchemaViewModel model)
         {
             Schema schema = new Schema
             {
@@ -77,7 +80,7 @@ namespace ScenarioSim.Server.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="model">The schema.</param>
-        public void Put(Guid id, EditSchemaViewModel model)
+        public void Put(Guid id, SchemaViewModel model)
         {
             Schema schema = new Schema
             {

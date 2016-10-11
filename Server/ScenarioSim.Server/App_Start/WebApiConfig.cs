@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Web.Http;
+﻿using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
-using Newtonsoft.Json;
-using ScenarioSim.Infrastructure.JsonNetSerializer;
 
 namespace ScenarioSim.Server
 {
@@ -29,8 +23,8 @@ namespace ScenarioSim.Server
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new WriteablePropertiesOnlyResolver();
-            config.Formatters.JsonFormatter.SerializerSettings.TypeNameHandling = TypeNameHandling.Objects;
+            /*config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new WriteablePropertiesOnlyResolver();
+            config.Formatters.JsonFormatter.SerializerSettings.TypeNameHandling = TypeNameHandling.Objects;*/
         }
     }
 }

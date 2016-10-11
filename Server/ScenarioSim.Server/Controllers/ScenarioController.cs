@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using AutoMapper;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Server.Models;
+using ScenarioSim.Services.Logging;
 using ScenarioSim.Services.ScenarioCreator;
 
 namespace ScenarioSim.Server.Controllers
@@ -17,6 +19,11 @@ namespace ScenarioSim.Server.Controllers
     public class ScenarioController : ApiController
     {
         /// <summary>
+        /// The logger
+        /// </summary>
+        private readonly ILogger logger;
+
+        /// <summary>
         /// The manager
         /// </summary>
         private readonly IScenarioManager manager;
@@ -27,11 +34,15 @@ namespace ScenarioSim.Server.Controllers
         private readonly IProgramManager programManager;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScenarioController"/> class.
+        /// Initializes a new instance of the <see cref="ScenarioController" /> class.
         /// </summary>
+        /// <param name="logger">The logger.</param>
         /// <param name="manager">The manager.</param>
-        public ScenarioController(IScenarioManager manager, IProgramManager programManager)
+        /// <param name="programManager">The program manager.</param>
+        public ScenarioController(ILogger logger, IScenarioManager manager,
+            IProgramManager programManager)
         {
+            this.logger = logger;
             this.manager = manager;
             this.programManager = programManager;
         }
@@ -41,9 +52,17 @@ namespace ScenarioSim.Server.Controllers
         /// Gets the scenarios.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Scenario> Get()
+        public IEnumerable<ScenarioViewModel> Get()
         {
-            return manager.GetAllScenarios();
+            try
+            {
+                return manager.GetAllScenarios().Select(Mapper.Map<Scenario, ScenarioViewModel>).ToList();
+            }
+            catch (Exception ex)
+            {
+                logger.LogException(ex);
+                throw;
+            }
         }
 
         // GET: api/Scenario/5
@@ -52,9 +71,18 @@ namespace ScenarioSim.Server.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public Scenario Get(Guid id)
+        public ScenarioViewModel Get(Guid id)
         {
-            return manager.GetScenario(id);
+            try
+            {
+                Scenario scenario = manager.GetScenario(id);
+                return Mapper.Map<Scenario, ScenarioViewModel>(scenario);
+            }
+            catch (Exception ex)
+            {
+                logger.LogException(ex);
+                throw;
+            }
         }
 
         // POST: api/Scenario
@@ -62,15 +90,18 @@ namespace ScenarioSim.Server.Controllers
         /// Posts the specified scenario.
         /// </summary>
         /// <param name="model">The model.</param>
-        public void Post(CreateScenarioViewModel model)
+        public void Post(ScenarioViewModel model)
         {
-            Scenario scenario = new Scenario
+            try
             {
-                Name = model.Name,
-                Description = model.Description
-            };
-
-            manager.CreateScenario(scenario);
+                Scenario scenario = Mapper.Map<ScenarioViewModel, Scenario>(model);
+                manager.CreateScenario(scenario);
+            }
+            catch (Exception ex)
+            {
+                logger.LogException(ex);
+                throw;
+            }
         }
 
         // PUT: api/Scenario/5
@@ -79,7 +110,7 @@ namespace ScenarioSim.Server.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="model">The model.</param>
-        public void Put(Guid id, EditScenarioViewModel model)
+        public void Put(Guid id, ScenarioViewModel model)
         {
             Scenario scenario = new Scenario
             {
@@ -107,10 +138,10 @@ namespace ScenarioSim.Server.Controllers
         /// <param name="programId">The program identifier.</param>
         [Route("api/GetScenariosByProgram/{programId}")]
         [HttpGet]
-        public IEnumerable<Scenario> GetScenariosByProgram(Guid programId)
+        public IEnumerable<ScenarioViewModel> GetScenariosByProgram(Guid programId)
         {
             Program program = programManager.GetProgram(programId);
-            return manager.GetAllScenariosByProgram(program);
+            return manager.GetAllScenariosByProgram(program).Select(Mapper.Map<Scenario, ScenarioViewModel>);
         }
     }
 }
