@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using ScenarioSim.Core.DataTransfer;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Server.Models;
 using ScenarioSim.Services.ScenarioCreator;
+using Program = ScenarioSim.Core.Entities.Program;
 
 namespace ScenarioSim.Server.Controllers
 {
@@ -58,7 +60,7 @@ namespace ScenarioSim.Server.Controllers
         /// </summary>
         /// <param name="model">The model.</param>
         [Authorize(Roles = "Curriculum Designer, Administrator")]
-        public void Post(CreateProgramViewModel model)
+        public void Post(Core.DataTransfer.Program model)
         {
             Program program = new Program
             {
@@ -76,7 +78,7 @@ namespace ScenarioSim.Server.Controllers
         /// <param name="id">The identifier.</param>
         /// <param name="model">The model.</param>
         [Authorize(Roles = "Curriculum Designer, Administrator")]
-        public void Put(Guid id, EditProgramViewModel model)
+        public void Put(Guid id, Core.DataTransfer.Program model)
         {
             Program program = new Program
             {

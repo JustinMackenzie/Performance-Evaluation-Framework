@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using AutoMapper;
+using ScenarioSim.Core.DataTransfer;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Server.Models;
 using ScenarioSim.Services.Logging;
@@ -47,9 +49,9 @@ namespace ScenarioSim.Server.Controllers
         /// Gets this instance.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<ScenarioPerformance> Get()
+        public IEnumerable<Performance> Get()
         {
-            return manager.GetAllPerformances();
+            return manager.GetAllPerformances().Select(Mapper.Map<ScenarioPerformance, Performance>);
         }
 
         // GET: api/Performance/5
@@ -58,15 +60,11 @@ namespace ScenarioSim.Server.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public PerformanceViewModel Get(Guid id)
+        public Performance Get(Guid id)
         {
             ScenarioPerformance performance = manager.GetPerformance(id);
 
-            return new PerformanceViewModel
-            {
-                Id = performance.Id,
-                PerformerId = performance.PerformerId
-            };
+            return Mapper.Map<ScenarioPerformance, Performance>(performance);
         }
 
         /// <summary>
@@ -78,7 +76,7 @@ namespace ScenarioSim.Server.Controllers
         /// <returns></returns>
         [Route("api/ScenarioPerformances")]
         [HttpGet]
-        public IEnumerable<ScenarioPerformance> ScenarioPerformances(Guid? schemaId = null, Guid? scenarioId = null,
+        public IEnumerable<Performance> ScenarioPerformances(Guid? schemaId = null, Guid? scenarioId = null,
             Guid? performerId = null)
         {
             IEnumerable<ScenarioPerformance> performances = manager.GetAllPerformances();
@@ -92,7 +90,7 @@ namespace ScenarioSim.Server.Controllers
             if (performerId.HasValue)
                 performances = performances.Where(p => p.PerformerId == performerId.Value);
 
-            return performances;
+            return performances.Select(Mapper.Map<ScenarioPerformance, Performance>);
         }
 
         // POST: api/Performance
@@ -101,11 +99,12 @@ namespace ScenarioSim.Server.Controllers
         /// </summary>
         /// <param name="performance">The performance.</param>
         [Authorize(Roles = "Performer")]
-        public void Post(ScenarioPerformance performance)
+        public void Post(Performance performance)
         {
             try
             {
-                manager.AddPerformance(performance);
+                ScenarioPerformance p = Mapper.Map<Performance, ScenarioPerformance>(performance);
+                manager.AddPerformance(p);
             }
             catch (Exception ex)
             {

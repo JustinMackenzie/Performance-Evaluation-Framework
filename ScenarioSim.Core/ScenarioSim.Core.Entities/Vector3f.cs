@@ -144,7 +144,20 @@ namespace ScenarioSim.Core.Entities
         /// <returns>A string representation of the vector.</returns>
         public override string ToString()
         {
-            return $"[{X} {Y} {Z}]";
+            return $"[{X},{Y},{Z}]";
+        }
+
+        /// <summary>
+        /// Parses the specified input.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <returns></returns>
+        public static Vector3f Parse(string input)
+        {
+            string trimmed = input.Replace("[", string.Empty).Replace("]", string.Empty);
+            string[] seperated = trimmed.Split(',');
+
+            return new Vector3f(float.Parse(seperated[0]), float.Parse(seperated[1]), float.Parse(seperated[2]));
         }
     }
 }

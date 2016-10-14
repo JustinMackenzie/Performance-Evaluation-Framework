@@ -44,10 +44,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoMapMapper.cs" />
+    <Compile Include="AutoMapperMapper.cs" />
+    <Compile Include="MappingConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ScenarioSim.Core\ScenarioSim.Core.DataTransfer\ScenarioSim.Core.DataTransfer.csproj">
+      <Project>{c973b4e3-7293-441f-bc32-4547f89ca8d5}</Project>
+      <Name>ScenarioSim.Core.DataTransfer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Core\ScenarioSim.Core.Entities\ScenarioSim.Core.Entities.csproj">
+      <Project>{0ca14dc9-3d32-4ad5-bebb-9d6b639861ec}</Project>
+      <Name>ScenarioSim.Core.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ScenarioSim.Services.Mapping\ScenarioSim.Services.Mapping.csproj">
       <Project>{5234392D-3D36-48B9-B74C-F287B741E7EA}</Project>
       <Name>ScenarioSim.Services.Mapping</Name>

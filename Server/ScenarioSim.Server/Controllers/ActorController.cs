@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using ScenarioSim.Core.DataTransfer;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Server.Models;
 using ScenarioSim.Services.ScenarioCreator;
+using Actor = ScenarioSim.Core.DataTransfer.Actor;
 
 namespace ScenarioSim.Server.Controllers
 {
@@ -39,9 +41,9 @@ namespace ScenarioSim.Server.Controllers
         /// Gets all actors.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<ActorViewModel> Get()
+        public IEnumerable<Actor> Get()
         {
-            return manager.GetAllActors().Select(a => new ActorViewModel { Id = a.Id, Name = a.Name, Description = a.Description});
+            return manager.GetAllActors().Select(a => new Actor { Id = a.Id, Name = a.Name, Description = a.Description});
         }
 
         // GET: api/Actor/5
@@ -50,11 +52,11 @@ namespace ScenarioSim.Server.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public ActorDetailsViewModel Get(Guid id)
+        public Actor Get(Guid id)
         {
-            Actor actor = manager.GetActor(id);
+            Core.Entities.Actor actor = manager.GetActor(id);
 
-            return new ActorDetailsViewModel
+            return new Actor
             {
                 Id = actor.Id,
                 Name = actor.Name,
@@ -68,9 +70,9 @@ namespace ScenarioSim.Server.Controllers
         /// </summary>
         /// <param name="model">The model.</param>
         [Authorize(Roles = "Scenario Author, Administrator")]
-        public void Post(CreateActorViewModel model)
+        public void Post(Actor model)
         {
-            Actor actor = new Actor
+            Core.Entities.Actor actor = new Core.Entities.Actor
             {
                 Name = model.Name,
                 Description = model.Description
@@ -86,9 +88,9 @@ namespace ScenarioSim.Server.Controllers
         /// <param name="id">The identifier.</param>
         /// <param name="model">The model.</param>
         [Authorize(Roles = "Scenario Author, Administrator")]
-        public void Put(Guid id, EditActorViewModel model)
+        public void Put(Guid id, Actor model)
         {
-            Actor actor = new Actor
+            Core.Entities.Actor actor = new Core.Entities.Actor
             {
                 Id = model.Id,
                 Name = model.Name,

@@ -1,8 +1,11 @@
 ﻿using System;
 
-namespace ScenarioSim.Server.Models
+namespace ScenarioSim.Core.DataTransfer
 {
-    public class PerformanceViewModel
+    /// <summary>
+    /// The view model for actor details.
+    /// </summary>
+    public class Actor
     {
         /// <summary>
         /// Gets or sets the identifier.
@@ -13,19 +16,19 @@ namespace ScenarioSim.Server.Models
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the scenario identifier.
+        /// Gets or sets the name.
         /// </summary>
         /// <value>
-        /// The scenario identifier.
+        /// The name.
         /// </value>
-        public Guid ScenarioId { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the performer identifier.
+        /// Gets or sets the description.
         /// </summary>
         /// <value>
-        /// The performer identifier.
+        /// The description.
         /// </value>
-        public Guid PerformerId { get; set; }
+        public string Description { get; set; }
     }
 }

@@ -4,9 +4,11 @@ using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using AutoMapper;
+using ScenarioSim.Core.DataTransfer;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Server.Models;
 using ScenarioSim.Services.ScenarioCreator;
+using Schema = ScenarioSim.Core.DataTransfer.Schema;
 
 namespace ScenarioSim.Server.Controllers
 {
@@ -41,9 +43,9 @@ namespace ScenarioSim.Server.Controllers
         /// Gets this instance.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<SchemaViewModel> Get()
+        public IEnumerable<Schema> Get()
         {
-            return manager.GetAllSchemas().Select(Mapper.Map<Schema, SchemaViewModel>);
+            return manager.GetAllSchemas().Select(Mapper.Map<Core.Entities.Schema, Schema>);
         }
 
         // GET: api/Schema/5
@@ -52,10 +54,10 @@ namespace ScenarioSim.Server.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public SchemaViewModel Get(Guid id)
+        public Schema Get(Guid id)
         {
-            Schema schema =  manager.GetSchema(id);
-            return Mapper.Map<Schema, SchemaViewModel>(schema);
+            Core.Entities.Schema schema =  manager.GetSchema(id);
+            return Mapper.Map<Core.Entities.Schema, Schema>(schema);
         }
 
         // POST: api/Schema
@@ -64,9 +66,9 @@ namespace ScenarioSim.Server.Controllers
         /// </summary>
         /// <param name="model">The create schema view model.</param>
         [Authorize(Roles = "Scenario Author, Administrator")]
-        public void Post(SchemaViewModel model)
+        public void Post(Schema model)
         {
-            Schema schema = new Schema
+            Core.Entities.Schema schema = new Core.Entities.Schema
             {
                 Name = model.Name,
                 Description = model.Description
@@ -82,9 +84,9 @@ namespace ScenarioSim.Server.Controllers
         /// <param name="id">The identifier.</param>
         /// <param name="model">The schema.</param>
         [Authorize(Roles = "Scenario Author, Administrator")]
-        public void Put(Guid id, SchemaViewModel model)
+        public void Put(Guid id, Schema model)
         {
-            Schema schema = new Schema
+            Core.Entities.Schema schema = new Core.Entities.Schema
             {
                 Id = model.Id,
                 Name = model.Name,

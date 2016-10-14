@@ -1,7 +1,7 @@
-﻿namespace ScenarioSim.Core.Entities
+﻿namespace ScenarioSim.Core.DataTransfer
 {
     /// <summary>
-    /// Represents a parameter to be included with scenario events.
+    /// Represents an event parameter.
     /// </summary>
     public class EventParameter
     {
@@ -28,16 +28,5 @@
         /// The type of the parameter.
         /// </value>
         public string ParameterType { get; set; }
-
-        /// <summary>
-        /// Returns a <see cref="System.String" /> that represents this instance.
-        /// </summary>
-        /// <returns>
-        /// A <see cref="System.String" /> that represents this instance.
-        /// </returns>
-        public override string ToString()
-        {
-            return $"{Name} : {Value}";
-        }
     }
 }

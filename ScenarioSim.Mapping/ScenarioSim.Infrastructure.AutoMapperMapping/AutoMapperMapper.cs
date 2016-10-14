@@ -7,8 +7,9 @@ namespace ScenarioSim.Infrastructure.AutoMapperMapping
     /// An implementation of the mapping service that uses AutoMapper.
     /// </summary>
     /// <seealso cref="ScenarioSim.Services.Mapping.IMapper" />
-    public class AutoMapMapper : IMapper
+    public class AutoMapperMapper : IMapper
     {
+        private static bool ConfigurationInitialized;
         /// <summary>
         /// Maps the specified source object to the destination object type.
         /// </summary>
@@ -18,6 +19,12 @@ namespace ScenarioSim.Infrastructure.AutoMapperMapping
         /// <returns></returns>
         public TDestination Map<TSource, TDestination>(TSource sourceObject)
         {
+            if (!ConfigurationInitialized)
+            {
+                MappingConfig.ConfigureMappings();
+                ConfigurationInitialized = true;
+            }
+
             return Mapper.Map<TSource, TDestination>(sourceObject);
         }
     }

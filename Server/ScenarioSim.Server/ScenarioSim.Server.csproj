@@ -212,7 +212,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
-    <Compile Include="App_Start\MappingConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
@@ -272,13 +271,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\ActorModels.cs" />
-    <Compile Include="Models\AssetModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\PerformanceViewModels.cs" />
-    <Compile Include="Models\ProgramModels.cs" />
-    <Compile Include="Models\ScenarioModels.cs" />
-    <Compile Include="Models\SchemaModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -358,6 +351,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ScenarioSim.Core\ScenarioSim.Core.DataTransfer\ScenarioSim.Core.DataTransfer.csproj">
+      <Project>{C973B4E3-7293-441F-BC32-4547F89CA8D5}</Project>
+      <Name>ScenarioSim.Core.DataTransfer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ScenarioSim.Core\ScenarioSim.Core.Entities\ScenarioSim.Core.Entities.csproj">
       <Project>{0ca14dc9-3d32-4ad5-bebb-9d6b639861ec}</Project>
       <Name>ScenarioSim.Core.Entities</Name>
@@ -373,6 +370,14 @@
     <ProjectReference Include="..\..\ScenarioSim.Logging\ScenarioSim.Services.Logging\ScenarioSim.Services.Logging.csproj">
       <Project>{e650d0c0-100c-4d8f-a894-85963c50280f}</Project>
       <Name>ScenarioSim.Services.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Mapping\ScenarioSim.Infrastructure.AutoMapperMapping\ScenarioSim.Infrastructure.AutoMapperMapping.csproj">
+      <Project>{6D2FB1EC-180A-429A-82ED-672BA9F7B06D}</Project>
+      <Name>ScenarioSim.Infrastructure.AutoMapperMapping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Mapping\ScenarioSim.Services.Mapping\ScenarioSim.Services.Mapping.csproj">
+      <Project>{5234392d-3d36-48b9-b74c-f287b741e7ea}</Project>
+      <Name>ScenarioSim.Services.Mapping</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ScenarioSim.PerformanceManagement\ScenarioSim.Infrastructure.PerformanceManagement\ScenarioSim.Infrastructure.PerformanceManagement.csproj">
       <Project>{d346afa3-df7c-4293-90c1-635d6eee7f38}</Project>

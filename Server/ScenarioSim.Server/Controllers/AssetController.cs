@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using ScenarioSim.Core.DataTransfer;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Server.Models;
 using ScenarioSim.Services.ScenarioCreator;
+using Asset = ScenarioSim.Core.DataTransfer.Asset;
 
 namespace ScenarioSim.Server.Controllers
 {
@@ -37,11 +39,11 @@ namespace ScenarioSim.Server.Controllers
         /// Gets this instance.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<AssetViewModel> Get()
+        public IEnumerable<Asset> Get()
         {
             return
                 manager.GetAllAssets()
-                    .Select(a => new AssetViewModel { Id = a.Id, Name = a.Name, Description = a.Description });
+                    .Select(a => new Asset { Id = a.Id, Name = a.Name, Description = a.Description });
         }
 
         // GET: api/Asset/5
@@ -50,11 +52,11 @@ namespace ScenarioSim.Server.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public AssetDetailsViewModel Get(Guid id)
+        public Asset Get(Guid id)
         {
-            Asset asset = manager.GetAsset(id);
+            Core.Entities.Asset asset = manager.GetAsset(id);
 
-            return new AssetDetailsViewModel
+            return new Asset
             {
                 Id = asset.Id,
                 Name = asset.Name,
@@ -68,9 +70,9 @@ namespace ScenarioSim.Server.Controllers
         /// </summary>
         /// <param name="model">The model.</param>
         [Authorize(Roles = "Scenario Author, Administrator")]
-        public void Post(CreateAssetViewModel model)
+        public void Post(Asset model)
         {
-            Asset asset = new Asset
+            Core.Entities.Asset asset = new Core.Entities.Asset
             {
                 Name = model.Name,
                 Description = model.Description
@@ -86,9 +88,9 @@ namespace ScenarioSim.Server.Controllers
         /// <param name="id">The identifier.</param>
         /// <param name="model">The model.</param>
         [Authorize(Roles = "Scenario Author, Administrator")]
-        public void Put(Guid id, EditAssetViewModel model)
+        public void Put(Guid id, Asset model)
         {
-            Asset asset = new Asset
+            Core.Entities.Asset asset = new Core.Entities.Asset
             {
                 Id = model.Id,
                 Name = model.Name,
