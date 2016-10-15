@@ -34,11 +34,13 @@ namespace ScenarioSim.Infrastructure.EfRepositories
                 Context.Set<T>().Add(entity);
             else
                 entry.State = EntityState.Modified;
+            Context.SaveChanges();
         }
 
         public void Remove(T entity)
         {
             Context.Set<T>().Remove(entity);
+            Context.SaveChanges();
         }
     }
 }

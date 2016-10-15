@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.HttpClientRepositories", "ScenarioSim.Infrastructure.HttpClientRepositories\ScenarioSim.Infrastructure.HttpClientRepositories.csproj", "{45F2240D-E275-4BD7-91CC-6ABD7BE5337B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Services.Mapping", "..\ScenarioSim.Mapping\ScenarioSim.Services.Mapping\ScenarioSim.Services.Mapping.csproj", "{5234392D-3D36-48B9-B74C-F287B741E7EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{45F2240D-E275-4BD7-91CC-6ABD7BE5337B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45F2240D-E275-4BD7-91CC-6ABD7BE5337B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45F2240D-E275-4BD7-91CC-6ABD7BE5337B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5234392D-3D36-48B9-B74C-F287B741E7EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5234392D-3D36-48B9-B74C-F287B741E7EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5234392D-3D36-48B9-B74C-F287B741E7EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5234392D-3D36-48B9-B74C-F287B741E7EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
