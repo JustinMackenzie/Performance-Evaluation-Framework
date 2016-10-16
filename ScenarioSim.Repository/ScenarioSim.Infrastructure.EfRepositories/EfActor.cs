@@ -3,18 +3,10 @@
 namespace ScenarioSim.Infrastructure.EfRepositories
 {
     /// <summary>
-    /// The view model for asset details.
+    /// The view model for actor details.
     /// </summary>
-    public class Asset
+    public class EfActor : EfEntity
     {
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>
-        /// The identifier.
-        /// </value>
-        public Guid Id { get; set; }
-
         /// <summary>
         /// Gets or sets the name.
         /// </summary>

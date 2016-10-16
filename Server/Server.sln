@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Services.Mappin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.AutoMapperMapping", "..\ScenarioSim.Mapping\ScenarioSim.Infrastructure.AutoMapperMapping\ScenarioSim.Infrastructure.AutoMapperMapping.csproj", "{6D2FB1EC-180A-429A-82ED-672BA9F7B06D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.EfRepositories", "..\ScenarioSim.Repository\ScenarioSim.Infrastructure.EfRepositories\ScenarioSim.Infrastructure.EfRepositories.csproj", "{BA845FEB-1180-45F1-8AA9-15267D8A64AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{6D2FB1EC-180A-429A-82ED-672BA9F7B06D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D2FB1EC-180A-429A-82ED-672BA9F7B06D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D2FB1EC-180A-429A-82ED-672BA9F7B06D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA845FEB-1180-45F1-8AA9-15267D8A64AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA845FEB-1180-45F1-8AA9-15267D8A64AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA845FEB-1180-45F1-8AA9-15267D8A64AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA845FEB-1180-45F1-8AA9-15267D8A64AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

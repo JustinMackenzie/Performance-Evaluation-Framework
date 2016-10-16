@@ -3,6 +3,8 @@ using System.Linq;
 using AutoMapper;
 using ScenarioSim.Core.DataTransfer;
 using ScenarioSim.Core.Entities;
+using ScenarioSim.Infrastructure.AutoMapperMapping;
+using ScenarioSim.Services.Mapping;
 using EventParameter = ScenarioSim.Core.DataTransfer.EventParameter;
 using Scenario = ScenarioSim.Core.DataTransfer.Scenario;
 using ScenarioEvent = ScenarioSim.Core.DataTransfer.ScenarioEvent;
@@ -11,24 +13,35 @@ using Task = ScenarioSim.Core.DataTransfer.Task;
 using TaskPerformance = ScenarioSim.Core.DataTransfer.TaskPerformance;
 using TaskTransition = ScenarioSim.Core.DataTransfer.TaskTransition;
 
-namespace ScenarioSim.Infrastructure.AutoMapperMapping
+namespace ScenarioSim.Server.Mapping
 {
     /// <summary>
-    /// The configuration of the mapping.
+    /// 
     /// </summary>
-    public class MappingConfig
+    /// <seealso cref="ScenarioSim.Services.Mapping.IMappingConfiguration" />
+    public class ServerMappingConfiguration : IMappingConfiguration
     {
         /// <summary>
-        /// Configures the mappings.
+        /// Has this configuration been initialized.
         /// </summary>
-        public static void ConfigureMappings()
+        private static bool isInitialized;
+
+        /// <summary>
+        /// Initializes the mapping configuration.
+        /// </summary>
+        public void Initialize()
         {
+            if (isInitialized)
+                return;
+
             Mapper.Initialize(cfg =>
             {
                 ConfigureScenarioMappings(cfg);
                 ConfigureSchemaMappings(cfg);
                 ConfigurePerformanceMappings(cfg);
             });
+
+            isInitialized = true;
         }
 
         /// <summary>

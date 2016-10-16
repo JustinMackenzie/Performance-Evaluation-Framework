@@ -6,7 +6,7 @@ namespace ScenarioSim.Infrastructure.EfRepositories
     /// <summary>
     /// Represents a task definition.
     /// </summary>
-    public class EfTaskDefinition
+    public class EfTaskDefinition : EfEntity
     {
         /// <summary>
         /// Gets or sets the task values.

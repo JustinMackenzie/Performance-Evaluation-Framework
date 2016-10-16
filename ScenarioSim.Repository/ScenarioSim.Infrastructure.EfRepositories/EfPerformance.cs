@@ -62,7 +62,7 @@ namespace ScenarioSim.Infrastructure.EfRepositories
         /// <value>
         /// The task performances.
         /// </value>
-        public Dictionary<Guid, EfTaskPerformance> TaskPerformances { get; set; }
+        public List<EfTaskPerformance> TaskPerformances { get; set; }
 
         /// <summary>
         /// Gets or sets the user actions.

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ScenarioSim.Services.Mapping;
 using IMapper = ScenarioSim.Services.Mapping.IMapper;
 
 namespace ScenarioSim.Infrastructure.AutoMapperMapping
@@ -9,7 +10,15 @@ namespace ScenarioSim.Infrastructure.AutoMapperMapping
     /// <seealso cref="ScenarioSim.Services.Mapping.IMapper" />
     public class AutoMapperMapper : IMapper
     {
-        private static bool ConfigurationInitialized;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutoMapperMapper"/> class.
+        /// </summary>
+        /// <param name="configuration">The configuration.</param>
+        public AutoMapperMapper(IMappingConfiguration configuration)
+        {
+            configuration.Initialize();
+        }
+
         /// <summary>
         /// Maps the specified source object to the destination object type.
         /// </summary>
@@ -19,12 +28,6 @@ namespace ScenarioSim.Infrastructure.AutoMapperMapping
         /// <returns></returns>
         public TDestination Map<TSource, TDestination>(TSource sourceObject)
         {
-            if (!ConfigurationInitialized)
-            {
-                MappingConfig.ConfigureMappings();
-                ConfigurationInitialized = true;
-            }
-
             return Mapper.Map<TSource, TDestination>(sourceObject);
         }
     }

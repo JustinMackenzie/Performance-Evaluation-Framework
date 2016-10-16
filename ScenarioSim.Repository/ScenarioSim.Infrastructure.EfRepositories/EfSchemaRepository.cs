@@ -1,13 +1,12 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
-using ScenarioSim.Core.Entities;
+﻿using ScenarioSim.Core.Entities;
 using ScenarioSim.Core.Interfaces;
+using ScenarioSim.Services.Mapping;
 
 namespace ScenarioSim.Infrastructure.EfRepositories
 {
-    public class EfSchemaRepository : EfEntityRepository<Schema>, ISchemaRepository
+    public class EfSchemaRepository : EfMappedEntityRepository<Schema, EfSchema>, ISchemaRepository
     {
-        public EfSchemaRepository(ScenarioContext context) : base(context)
+        public EfSchemaRepository(IDbContext context, IMapper mapper) : base(context, mapper)
         {
         }
     }

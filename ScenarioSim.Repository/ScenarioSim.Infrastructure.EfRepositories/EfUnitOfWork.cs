@@ -19,7 +19,6 @@ namespace ScenarioSim.Infrastructure.EfRepositories
         public EfUnitOfWork()
         {
             context = new ScenarioContext();
-            SchemaRepository = new EfSchemaRepository(context);
         }
 
         /// <summary>

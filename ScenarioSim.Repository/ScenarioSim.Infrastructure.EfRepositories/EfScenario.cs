@@ -62,6 +62,6 @@ namespace ScenarioSim.Infrastructure.EfRepositories
         /// <value>
         /// The assets.
         /// </value>
-        public List<Asset> Assets { get; set; }
+        public List<EfAsset> Assets { get; set; }
     }
 }

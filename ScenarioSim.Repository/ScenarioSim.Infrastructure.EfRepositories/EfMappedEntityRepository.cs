@@ -16,7 +16,7 @@ namespace ScenarioSim.Infrastructure.EfRepositories
     /// <typeparam name="TDataEntity">The type of the data entity.</typeparam>
     /// <seealso cref="ScenarioSim.Core.Interfaces.IEntityRepository{TEntity}" />
     public abstract class EfMappedEntityRepository<TEntity, TDataEntity> : IEntityRepository<TEntity> 
-        where TEntity : Entity 
+        where TEntity : Entity
         where TDataEntity : EfEntity
     {
         /// <summary>
@@ -25,7 +25,7 @@ namespace ScenarioSim.Infrastructure.EfRepositories
         /// <value>
         /// The context.
         /// </value>
-        protected ScenarioContext Context { get; set; }
+        protected IDbContext Context { get; set; }
 
         /// <summary>
         /// Gets or sets the mapper.
@@ -40,7 +40,7 @@ namespace ScenarioSim.Infrastructure.EfRepositories
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="mapper">The mapper.</param>
-        protected EfMappedEntityRepository(ScenarioContext context, IMapper mapper)
+        protected EfMappedEntityRepository(IDbContext context, IMapper mapper)
         {
             Context = context;
             Mapper = mapper;
