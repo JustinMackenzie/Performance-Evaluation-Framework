@@ -8,11 +8,11 @@ namespace ScenarioSim.Services.Evaluation
         /// <summary>
         /// Evaluates the user history.
         /// </summary>
-        /// <param name="user">The user.</param>
+        /// <param name="performer">The user.</param>
         /// <param name="scenario">The scenario.</param>
         /// <param name="windowSize">Size of the window.</param>
         /// <returns></returns>
-        IEnumerable<TaskPerformanceEvaluation> EvaluateUserHistory(User user, Scenario scenario, int windowSize);
+        IEnumerable<TaskPerformanceEvaluation> EvaluateUserHistory(Performer performer, Scenario scenario, int windowSize);
 
         /// <summary>
         /// Evaluates the results.
@@ -27,6 +27,6 @@ namespace ScenarioSim.Services.Evaluation
         /// <param name="schema">The schema.</param>
         /// <param name="scenarioPerformances">The scenario performances.</param>
         /// <returns></returns>
-        ScenarioPerformanceEvaluation EvaluateScenarioPerformances(Schema schema, IEnumerable<ScenarioPerformance> scenarioPerformances);
+        PerformanceEvaluation EvaluateScenarioPerformances(Schema schema, IEnumerable<ScenarioPerformance> scenarioPerformances);
     }
 }

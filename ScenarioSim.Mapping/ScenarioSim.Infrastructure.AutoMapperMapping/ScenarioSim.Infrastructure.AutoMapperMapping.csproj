@@ -60,6 +60,10 @@
       <Project>{0ca14dc9-3d32-4ad5-bebb-9d6b639861ec}</Project>
       <Name>ScenarioSim.Core.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Evaluation\ScenarioSim.Services.Evaluation\ScenarioSim.Services.Evaluation.csproj">
+      <Project>{6f66a588-5868-4ca5-97db-c5daa7a2fd17}</Project>
+      <Name>ScenarioSim.Services.Evaluation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ScenarioSim.Services.Mapping\ScenarioSim.Services.Mapping.csproj">
       <Project>{5234392D-3D36-48B9-B74C-F287B741E7EA}</Project>
       <Name>ScenarioSim.Services.Mapping</Name>

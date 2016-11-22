@@ -37,6 +37,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.EfRepositories", "..\ScenarioSim.Repository\ScenarioSim.Infrastructure.EfRepositories\ScenarioSim.Infrastructure.EfRepositories.csproj", "{BA845FEB-1180-45F1-8AA9-15267D8A64AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Services.Evaluation", "..\ScenarioSim.Evaluation\ScenarioSim.Services.Evaluation\ScenarioSim.Services.Evaluation.csproj", "{6F66A588-5868-4CA5-97DB-C5DAA7A2FD17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.Evaluation", "..\ScenarioSim.Evaluation\ScenarioSim.Infrastructure.Evaluation\ScenarioSim.Infrastructure.Evaluation.csproj", "{3D6C79A6-3BEB-450D-91FA-1C6A9F63F207}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +115,14 @@ Global
 		{BA845FEB-1180-45F1-8AA9-15267D8A64AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA845FEB-1180-45F1-8AA9-15267D8A64AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA845FEB-1180-45F1-8AA9-15267D8A64AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F66A588-5868-4CA5-97DB-C5DAA7A2FD17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F66A588-5868-4CA5-97DB-C5DAA7A2FD17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F66A588-5868-4CA5-97DB-C5DAA7A2FD17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F66A588-5868-4CA5-97DB-C5DAA7A2FD17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D6C79A6-3BEB-450D-91FA-1C6A9F63F207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D6C79A6-3BEB-450D-91FA-1C6A9F63F207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D6C79A6-3BEB-450D-91FA-1C6A9F63F207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D6C79A6-3BEB-450D-91FA-1C6A9F63F207}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,7 +4,7 @@ using System.Linq;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Services.Evaluation;
 
-namespace ScenarioSim.Infrastructure.Evaluator
+namespace ScenarioSim.Infrastructure.Evaluation
 {
     /// <summary>
     /// Represents an evaluator that evaluates a task and series of task results.
@@ -39,7 +39,7 @@ namespace ScenarioSim.Infrastructure.Evaluator
         /// <param name="windowSize">Size of the window.</param>
         /// <returns></returns>
         /// <exception cref="System.NotImplementedException"></exception>
-        public IEnumerable<TaskPerformanceEvaluation> EvaluateUserHistory(User user, Scenario scenario, int windowSize)
+        public IEnumerable<TaskPerformanceEvaluation> EvaluateUserHistory(Performer user, Scenario scenario, int windowSize)
         {
             throw new NotImplementedException();
         }
@@ -73,7 +73,7 @@ namespace ScenarioSim.Infrastructure.Evaluator
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentException">All given scenario results must be from the given schema.</exception>
-        public ScenarioPerformanceEvaluation EvaluateScenarioPerformances(Schema schema, IEnumerable<ScenarioPerformance> scenarioPerformances)
+        public PerformanceEvaluation EvaluateScenarioPerformances(Schema schema, IEnumerable<ScenarioPerformance> scenarioPerformances)
         {
             if (scenarioPerformances == null)
                 throw new ArgumentNullException(nameof(scenarioPerformances));
@@ -81,7 +81,7 @@ namespace ScenarioSim.Infrastructure.Evaluator
             if (scenarioPerformances.Count(r => r.Scenario.Schema != schema) > 1)
                 throw new ArgumentException("All given scenario results must be from the given schema.", nameof(scenarioPerformances));
 
-            ScenarioPerformanceEvaluation scenarioPerformanceEvaluation = new ScenarioPerformanceEvaluation
+            PerformanceEvaluation performanceEvaluation = new PerformanceEvaluation
             {
                 ScenarioResults = scenarioPerformances,
                 Schema = schema
@@ -92,9 +92,9 @@ namespace ScenarioSim.Infrastructure.Evaluator
             foreach (ScenarioPerformance result in scenarioPerformances)
                 BuildResultDictionary(result.TaskPerformanceTree, resultsByTask);
 
-            scenarioPerformanceEvaluation.TaskPerformanceEvaluations = resultsByTask.ToDictionary(pair => pair.Key, pair => EvaluateTaskResults(pair.Value));
+            performanceEvaluation.TaskPerformanceEvaluations = resultsByTask.ToDictionary(pair => pair.Key, pair => EvaluateTaskResults(pair.Value));
 
-            return scenarioPerformanceEvaluation;
+            return performanceEvaluation;
         }
 
         /// <summary>

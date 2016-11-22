@@ -2,7 +2,7 @@
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Services.Evaluation;
 
-namespace ScenarioSim.Infrastructure.Evaluator
+namespace ScenarioSim.Infrastructure.Evaluation
 {
     /// <summary>
     /// Represents an implementation of the evaluator factory.

@@ -7,7 +7,7 @@ namespace ScenarioSim.Services.Evaluation
     /// <summary>
     /// Represents the evaluation of a collection scenario performances.
     /// </summary>
-    public class ScenarioPerformanceEvaluation
+    public class PerformanceEvaluation
     {
         /// <summary>
         /// Gets or sets the schema.

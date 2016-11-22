@@ -7,18 +7,21 @@ using ScenarioSim.Services.Evaluation;
 
 namespace ScenarioSim.Infrastructure.Evaluation
 {
-    /// <summary>
-    /// Represents an evaluator that evaluates Fitts task results.
-    /// </summary>
-    /// <seealso cref="ScenarioSim.Services.Evaluation.IEvaluator" />
-    public class FittsEvaluator : IEvaluator
+    public class FittsTaskEvaluator : ITaskEvaluator
     {
+        public IEnumerable<TaskPerformanceEvaluation> EvaluateUserHistory(Performer performer, Scenario scenario, int windowSize)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
-        /// Evaluates the specified task results.
+        /// Evaluates the results.
         /// </summary>
         /// <param name="taskResults">The task results.</param>
-        /// <returns></returns>
-        public TaskPerformanceEvaluation Evaluate(IEnumerable<TaskPerformance> taskResults)
+        /// <returns>
+        /// The evaluation of the results.
+        /// </returns>
+        public TaskPerformanceEvaluation EvaluateTaskResults(IEnumerable<TaskPerformance> taskResults)
         {
             double[] xValues =
                 taskResults.Select(r => (double)(r.Task.TaskValues as FittsTaskValues).IndexOfDifficulty).ToArray();
@@ -36,6 +39,11 @@ namespace ScenarioSim.Infrastructure.Evaluation
                 },
                 TaskPerformances = taskResults
             };
+        }
+
+        public PerformanceEvaluation EvaluateScenarioPerformances(Schema schema, IEnumerable<ScenarioPerformance> scenarioPerformances)
+        {
+            throw new NotImplementedException();
         }
     }
 }

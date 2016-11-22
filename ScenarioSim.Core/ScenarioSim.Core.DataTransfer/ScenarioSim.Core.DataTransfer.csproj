@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ScenarioSim.Core.DataTransfer</RootNamespace>
     <AssemblyName>ScenarioSim.Core.DataTransfer</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,6 +44,7 @@
     <Compile Include="Actor.cs" />
     <Compile Include="Asset.cs" />
     <Compile Include="EventParameter.cs" />
+    <Compile Include="PerformanceEvaluation.cs" />
     <Compile Include="PerformanceEvent.cs" />
     <Compile Include="Performance.cs" />
     <Compile Include="Program.cs" />
@@ -52,6 +54,7 @@
     <Compile Include="Schema.cs" />
     <Compile Include="TaskDefinition.cs" />
     <Compile Include="TaskPerformance.cs" />
+    <Compile Include="TaskPerformanceEvaluation.cs" />
     <Compile Include="TaskTransition.cs" />
     <Compile Include="Task.cs" />
   </ItemGroup>

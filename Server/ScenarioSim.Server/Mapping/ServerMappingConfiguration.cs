@@ -4,6 +4,7 @@ using AutoMapper;
 using ScenarioSim.Core.DataTransfer;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Infrastructure.AutoMapperMapping;
+using ScenarioSim.Infrastructure.EfRepositories;
 using ScenarioSim.Services.Mapping;
 using EventParameter = ScenarioSim.Core.DataTransfer.EventParameter;
 using Scenario = ScenarioSim.Core.DataTransfer.Scenario;
@@ -36,19 +37,36 @@ namespace ScenarioSim.Server.Mapping
 
             Mapper.Initialize(cfg =>
             {
-                ConfigureScenarioMappings(cfg);
-                ConfigureSchemaMappings(cfg);
-                ConfigurePerformanceMappings(cfg);
+                ConfigureScenarioTransferMappings(cfg);
+                ConfigureSchemaTransferMappings(cfg);
+                ConfigurePerformanceTransferMappings(cfg);
+                ConfigureEfMappings(cfg);
             });
 
             isInitialized = true;
         }
 
         /// <summary>
+        /// Configures the entity framework mappings.
+        /// </summary>
+        /// <param name="cfg">The CFG.</param>
+        private static void ConfigureEfMappings(IMapperConfigurationExpression cfg)
+        {
+            cfg.CreateMap<Scenario, EfScenario>();
+            cfg.CreateMap<EfScenario, Scenario>();
+
+            cfg.CreateMap<ScenarioEvent, EfScenarioEvent>();
+            cfg.CreateMap<EfScenarioEvent, ScenarioEvent>();
+
+            cfg.CreateMap<Schema, EfSchema>();
+            cfg.CreateMap<EfSchema, Schema>();
+        }
+
+        /// <summary>
         /// Configures the schema mappings.
         /// </summary>
         /// <param name="cfg">The CFG.</param>
-        private static void ConfigureSchemaMappings(IMapperConfigurationExpression cfg)
+        private static void ConfigureSchemaTransferMappings(IMapperConfigurationExpression cfg)
         {
             cfg.CreateMap<Core.Entities.Schema, Schema>()
                 .ForMember(dest => dest.Tasks,
@@ -75,7 +93,7 @@ namespace ScenarioSim.Server.Mapping
         /// Configures the scenario mappings.
         /// </summary>
         /// <param name="cfg">The CFG.</param>
-        private static void ConfigureScenarioMappings(IMapperConfigurationExpression cfg)
+        private static void ConfigureScenarioTransferMappings(IMapperConfigurationExpression cfg)
         {
             cfg.CreateMap<Core.Entities.Scenario, Scenario>();
             cfg.CreateMap<ScenarioTaskDefinition, TaskDefinition>()
@@ -103,7 +121,7 @@ namespace ScenarioSim.Server.Mapping
         /// Configures the performance mappings.
         /// </summary>
         /// <param name="cfg">The CFG.</param>
-        public static void ConfigurePerformanceMappings(IMapperConfigurationExpression cfg)
+        public static void ConfigurePerformanceTransferMappings(IMapperConfigurationExpression cfg)
         {
             cfg.CreateMap<ScenarioPerformance, Performance>();
             cfg.CreateMap<Event, PerformanceEvent>();

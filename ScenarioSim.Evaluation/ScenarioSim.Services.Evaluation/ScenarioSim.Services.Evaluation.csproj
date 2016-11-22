@@ -42,10 +42,12 @@
     <Compile Include="FittsTaskEvaluationValues.cs" />
     <Compile Include="IEvaluator.cs" />
     <Compile Include="IEvaluatorFactory.cs" />
+    <Compile Include="IPerformanceEvaluator.cs" />
     <Compile Include="ITaskEvaluator.cs" />
+    <Compile Include="ITaskEvaluatorFactory.cs" />
     <Compile Include="ITaskResultEvaluationFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScenarioPerformanceEvaluation.cs" />
+    <Compile Include="PerformanceEvaluation.cs" />
     <Compile Include="TaskEvaluationValues.cs" />
     <Compile Include="TaskPerformanceEvaluation.cs" />
   </ItemGroup>

@@ -26,7 +26,29 @@ namespace ScenarioSim.Infrastructure.AutoMapperMapping
                 ConfigureScenarioMappings(cfg);
                 ConfigureSchemaMappings(cfg);
                 ConfigurePerformanceMappings(cfg);
+                ConfigureEvaluationMappings(cfg);
             });
+        }
+
+        /// <summary>
+        /// Configures the evaluation mappings.
+        /// </summary>
+        /// <param name="cfg">The CFG.</param>
+        private static void ConfigureEvaluationMappings(IMapperConfigurationExpression cfg)
+        {
+            cfg.CreateMap<ScenarioSim.Services.Evaluation.PerformanceEvaluation, PerformanceEvaluation>();
+            cfg.CreateMap<ScenarioSim.Services.Evaluation.TaskPerformanceEvaluation, TaskPerformanceEvaluation>()
+                .ForMember(dest => dest.TaskEvaluationValues,
+                    opts => opts.MapFrom(
+                        src =>
+                            src.TaskEvaluationValues.GetType()
+                                .GetProperties()
+                                .Where(x => !x.Name.Equals("Id", StringComparison.OrdinalIgnoreCase))
+                                .ToDictionary(x => x.Name,
+                                    x =>
+                                        x.GetGetMethod().Invoke(src.TaskEvaluationValues, null) == null
+                                            ? string.Empty
+                                            : x.GetGetMethod().Invoke(src.TaskEvaluationValues, null).ToString())));
         }
 
         /// <summary>

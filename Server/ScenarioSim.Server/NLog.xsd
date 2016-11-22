@@ -641,7 +641,7 @@
     </xs:attribute>
     <xs:attribute name="compileRegex" type="xs:boolean">
       <xs:annotation>
-        <xs:documentation>Compile the ? This can improve the performance, but at the costs of more memory usage. If false, the Regex Cache is used.</xs:documentation>
+        <xs:documentation>Compile the ? This can improve the performances, but at the costs of more memory usage. If false, the Regex Cache is used.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="backgroundColor" type="NLog.Targets.ConsoleOutputColor">
@@ -1109,7 +1109,7 @@
         </xs:attribute>
         <xs:attribute name="cleanupFileName" type="xs:boolean">
           <xs:annotation>
-            <xs:documentation>Cleanup invalid values in a filename, e.g. slashes in a filename. If set to true, this can impact the performance of massive writes. If set to false, nothing gets written when the filename is wrong.</xs:documentation>
+            <xs:documentation>Cleanup invalid values in a filename, e.g. slashes in a filename. If set to true, this can impact the performances of massive writes. If set to false, nothing gets written when the filename is wrong.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="fileName" type="SimpleLayoutAttribute">
@@ -1174,7 +1174,7 @@
         </xs:attribute>
         <xs:attribute name="openFileCacheSize" type="xs:integer">
           <xs:annotation>
-            <xs:documentation>Number of files to be kept open. Setting this to a higher value may improve performance in a situation where a single File target is writing to many files (such as splitting by level or by logger).</xs:documentation>
+            <xs:documentation>Number of files to be kept open. Setting this to a higher value may improve performances in a situation where a single File target is writing to many files (such as splitting by level or by logger).</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="openFileCacheTimeout" type="xs:integer">
@@ -1965,12 +1965,12 @@
         </xs:attribute>
         <xs:attribute name="autoCreate" type="xs:boolean">
           <xs:annotation>
-            <xs:documentation>Indicates whether performance counter should be automatically created.</xs:documentation>
+            <xs:documentation>Indicates whether performances counter should be automatically created.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="categoryName" type="xs:string">
           <xs:annotation>
-            <xs:documentation>Name of the performance counter category.</xs:documentation>
+            <xs:documentation>Name of the performances counter category.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="counterHelp" type="xs:string">
@@ -1980,7 +1980,7 @@
         </xs:attribute>
         <xs:attribute name="counterName" type="xs:string">
           <xs:annotation>
-            <xs:documentation>Name of the performance counter.</xs:documentation>
+            <xs:documentation>Name of the performances counter.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="counterType" type="System.Diagnostics.PerformanceCounterType">
