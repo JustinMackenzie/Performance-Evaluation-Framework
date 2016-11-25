@@ -12,9 +12,12 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
+using ScenarioSim.Core.Entities;
+using ScenarioSim.Infrastructure.PerformanceManagement;
 using ScenarioSim.Server.Models;
 using ScenarioSim.Server.Providers;
 using ScenarioSim.Server.Results;
+using ScenarioSim.Services.PerformanceManagement;
 
 namespace ScenarioSim.Server.Controllers
 {
@@ -26,26 +29,32 @@ namespace ScenarioSim.Server.Controllers
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {
+        private readonly IPerformerManager performerManager;
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager userManager;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AccountController"/> class.
+        /// Initializes a new instance of the <see cref="AccountController" /> class.
         /// </summary>
-        public AccountController()
+        /// <param name="userManager">The user manager.</param>
+        /// <param name="accessTokenFormat">The access token format.</param>
+        /// <param name="performerManager">The performer manager.</param>
+        public AccountController(ApplicationUserManager userManager,
+            ISecureDataFormat<AuthenticationTicket> accessTokenFormat,
+            IPerformerManager performerManager)
         {
+            UserManager = userManager;
+            AccessTokenFormat = accessTokenFormat;
+            this.performerManager = performerManager;
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountController"/> class.
         /// </summary>
-        /// <param name="userManager">The user manager.</param>
-        /// <param name="accessTokenFormat">The access token format.</param>
-        public AccountController(ApplicationUserManager userManager,
-            ISecureDataFormat<AuthenticationTicket> accessTokenFormat)
+        /// <param name="performerManager">The performer manager.</param>
+        public AccountController(IPerformerManager performerManager)
         {
-            UserManager = userManager;
-            AccessTokenFormat = accessTokenFormat;
+            this.performerManager = performerManager;
         }
 
         /// <summary>
@@ -402,7 +411,14 @@ namespace ScenarioSim.Server.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
+            Performer performer = new Performer
+            {
+                Name = $"{model.FirstName} {model.LastName}"
+            };
+
+            performerManager.AddPerformer(performer);
+
+            var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, PerformerId = performer.Id };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 
