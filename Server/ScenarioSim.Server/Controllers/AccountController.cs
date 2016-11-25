@@ -13,7 +13,6 @@ using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using ScenarioSim.Core.Entities;
-using ScenarioSim.Infrastructure.PerformanceManagement;
 using ScenarioSim.Server.Models;
 using ScenarioSim.Server.Providers;
 using ScenarioSim.Server.Results;
