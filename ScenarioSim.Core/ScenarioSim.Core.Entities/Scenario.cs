@@ -31,7 +31,15 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The schema.
         /// </value>
-        public Schema Schema { get; set; } 
+        public virtual Schema Schema { get; set; }
+
+        /// <summary>
+        /// Gets or sets the programs.
+        /// </summary>
+        /// <value>
+        /// The programs.
+        /// </value>
+        public virtual ICollection<Program> Programs { get; set; }
 
         /// <summary>
         /// Gets the task.
@@ -74,7 +82,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The scenario events.
         /// </value>
-        public List<ScenarioEvent> ScenarioEvents { get; set; }
+        public virtual ICollection<ScenarioEvent> ScenarioEvents { get; set; }
 
         /// <summary>
         /// Gets the scenario assets.
@@ -82,7 +90,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The scenario assets.
         /// </value>
-        public List<ScenarioAsset> ScenarioAssets { get; set; }
+        public virtual ICollection<ScenarioAsset> ScenarioAssets { get; set; }
 
         /// <summary>
         /// Gets or sets the scenario task definitions.
@@ -90,7 +98,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The scenario task definitions.
         /// </value>
-        public List<ScenarioTaskDefinition> ScenarioTaskDefinitions { get; set; }
+        public virtual ICollection<ScenarioTaskDefinition> ScenarioTaskDefinitions { get; set; }
 
         /// <summary>
         /// Gets the scenario specific tasks.

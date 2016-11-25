@@ -1,6 +1,6 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using ScenarioSim.Core.Entities;
 
 namespace ScenarioSim.Infrastructure.EfRepositories
 {
@@ -11,7 +11,7 @@ namespace ScenarioSim.Infrastructure.EfRepositories
         /// </summary>
         /// <typeparam name="TEntity">Entity type</typeparam>
         /// <returns>DbSet</returns>
-        IDbSet<TEntity> Set<TEntity>() where TEntity : EfEntity;
+        IDbSet<TEntity> Set<TEntity>() where TEntity : Entity;
 
         /// <summary>
         /// Save changes
@@ -25,6 +25,6 @@ namespace ScenarioSim.Infrastructure.EfRepositories
         /// <typeparam name="TEntity">The type of the entity.</typeparam>
         /// <param name="entity">The entity.</param>
         /// <returns></returns>
-        DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : EfEntity;
+        DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : Entity;
     }
 }

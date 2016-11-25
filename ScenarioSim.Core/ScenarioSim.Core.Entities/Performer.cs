@@ -13,7 +13,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The scenario performances.
         /// </value>
-        public List<ScenarioPerformance> ScenarioPerformances { get; set; } 
+        public virtual ICollection<ScenarioPerformance> ScenarioPerformances { get; set; } 
 
         /// <summary>
         /// Gets or sets the name.

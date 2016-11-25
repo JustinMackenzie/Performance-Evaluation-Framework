@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ScenarioSim.Core.Entities
 {
@@ -23,6 +24,14 @@ namespace ScenarioSim.Core.Entities
         /// The end time.
         /// </value>
         public DateTimeOffset EndTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets the scenario identifier.
+        /// </summary>
+        /// <value>
+        /// The scenario identifier.
+        /// </value>
+        public Guid ScenarioId { get; set; }
 
         /// <summary>
         /// The scenario that was performed.
@@ -51,7 +60,16 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The task performances.
         /// </value>
-        public Dictionary<Guid, TaskPerformance> TaskPerformances { get; set; }
+        public Dictionary<Guid, TaskPerformance> TaskPerformances
+            => TaskPerformanceCollection.ToDictionary(t => t.TaskId);
+
+        /// <summary>
+        /// Gets or sets the task performance collection.
+        /// </summary>
+        /// <value>
+        /// The task performance collection.
+        /// </value>
+        public virtual ICollection<TaskPerformance> TaskPerformanceCollection { get; set; }
 
         /// <summary>
         /// Gets the task performance tree.
@@ -67,7 +85,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The user actions.
         /// </value>
-        public List<Event> Events { get; set; }
+        public virtual ICollection<Event> Events { get; set; }
 
         /// <summary>
         /// Builds the task perfomance tree.
@@ -80,7 +98,7 @@ namespace ScenarioSim.Core.Entities
                 ? TaskPerformances[taskTree.Value.Id]
                 : null;
 
-            TreeNode <TaskPerformance> treeNode = new TreeNode<TaskPerformance>(performance);
+            TreeNode<TaskPerformance> treeNode = new TreeNode<TaskPerformance>(performance);
 
             foreach (TreeNode<Task> child in taskTree.Children)
                 treeNode.AppendChild(BuildTaskPerfomanceTree(child));

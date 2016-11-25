@@ -1,13 +1,29 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ScenarioSim.Core.Entities
 {
     /// <summary>
     /// The base class for all actions.
     /// </summary>
-    public class Event
-    {    
+    public class Event : Entity
+    {
+        /// <summary>
+        /// Gets or sets the scenario performance identifier.
+        /// </summary>
+        /// <value>
+        /// The scenario performance identifier.
+        /// </value>
+        public Guid ScenarioPerformanceId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the scenario performance.
+        /// </summary>
+        /// <value>
+        /// The scenario performance.
+        /// </value>
+        public virtual ScenarioPerformance ScenarioPerformance { get; set; }
         /// <summary>
         /// Gets or sets the name.
         /// </summary>
@@ -33,20 +49,20 @@ namespace ScenarioSim.Core.Entities
         public DateTimeOffset Timestamp { get; set; }
 
         /// <summary>
-        /// Gets or sets the performer action parameters.
+        /// Gets the parameters.
         /// </summary>
         /// <value>
-        /// The performer action parameters.
+        /// The parameters.
         /// </value>
-        public Dictionary<string, EventParameter> Parameters { get; set; }
+        public Dictionary<string, EventParameter> Parameters => ParameterCollection.ToDictionary(p => p.Name);
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Event"/> class.
+        /// Gets or sets the parameter collection.
         /// </summary>
-        public Event()
-        {
-            Parameters = new Dictionary<string, EventParameter>();
-        }
+        /// <value>
+        /// The parameter collection.
+        /// </value>
+        public virtual ICollection<EventParameter> ParameterCollection { get; set; }
 
         /// <summary>
         /// Adds the parameter.

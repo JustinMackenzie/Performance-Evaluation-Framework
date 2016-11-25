@@ -1136,12 +1136,6 @@
             Initializes the mapping configuration.
             </summary>
         </member>
-        <member name="M:ScenarioSim.Server.Mapping.ServerMappingConfiguration.ConfigureEfMappings(AutoMapper.IMapperConfigurationExpression)">
-            <summary>
-            Configures the entity framework mappings.
-            </summary>
-            <param name="cfg">The CFG.</param>
-        </member>
         <member name="M:ScenarioSim.Server.Mapping.ServerMappingConfiguration.ConfigureSchemaTransferMappings(AutoMapper.IMapperConfigurationExpression)">
             <summary>
             Configures the schema mappings.

@@ -5,8 +5,23 @@ namespace ScenarioSim.Core.Entities
     /// <summary>
     /// This class represents the results from a performance of a given task.
     /// </summary>
-    public class TaskPerformance
+    public class TaskPerformance : Entity
     {
+        /// <summary>
+        /// Gets or sets the scenario performance identifier.
+        /// </summary>
+        /// <value>
+        /// The scenario performance identifier.
+        /// </value>
+        public Guid ScenarioPerformanceId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the scenario performance.
+        /// </summary>
+        /// <value>
+        /// The scenario performance.
+        /// </value>
+        public virtual ScenarioPerformance ScenarioPerformance { get; set; }
 
         /// <summary>
         /// Gets or sets the task identifier.
@@ -22,7 +37,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The task.
         /// </value>
-        public Task Task { get; set; }
+        public virtual Task Task { get; set; }
 
         /// <summary>
         /// Gets or sets the timestamp.
@@ -30,15 +45,15 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The timestamp.
         /// </value>
-        public DateTime Timestamp { get; set; }
+        public DateTimeOffset Timestamp { get; set; }
 
         /// <summary>
-        /// Gets or sets the user.
+        /// Gets or sets the task performance values identifier.
         /// </summary>
         /// <value>
-        /// The user that performed this task.
+        /// The task performance values identifier.
         /// </value>
-        public Performer Performer { get; set; }
+        public virtual TaskPerformanceValues TaskPerformanceValuesId { get; set; }
 
         /// <summary>
         /// Gets or sets the task performance values.

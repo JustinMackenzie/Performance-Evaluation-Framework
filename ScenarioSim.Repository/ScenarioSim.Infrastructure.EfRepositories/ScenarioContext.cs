@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using ScenarioSim.Core.Entities;
 
 namespace ScenarioSim.Infrastructure.EfRepositories
 {
@@ -13,8 +14,7 @@ namespace ScenarioSim.Infrastructure.EfRepositories
         /// Initializes a new instance of the <see cref="ScenarioContext"/> class.
         /// </summary>
         public ScenarioContext() : base("ScenarioContext")
-        {
-            
+        {          
         }
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace ScenarioSim.Infrastructure.EfRepositories
         /// </summary>
         /// <typeparam name="TEntity">Entity type</typeparam>
         /// <returns>DbSet</returns>
-        public new IDbSet<TEntity> Set<TEntity>() where TEntity : EfEntity
+        public new IDbSet<TEntity> Set<TEntity>() where TEntity : Entity
         {
             return base.Set<TEntity>();
         }
@@ -36,7 +36,7 @@ namespace ScenarioSim.Infrastructure.EfRepositories
         /// <returns>
         /// An entry for the entity.
         /// </returns>
-        public new DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : EfEntity
+        public new DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : Entity
         {
             return base.Entry(entity);
         }

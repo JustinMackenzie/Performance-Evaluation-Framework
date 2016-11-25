@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents a parameter to be included with scenario events.
     /// </summary>
-    public class EventParameter
+    public class EventParameter : Entity
     {
         /// <summary>
         /// Gets or sets the name.
