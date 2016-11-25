@@ -53,7 +53,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The task performance values identifier.
         /// </value>
-        public virtual TaskPerformanceValues TaskPerformanceValuesId { get; set; }
+        public Guid TaskPerformanceValuesId { get; set; }
 
         /// <summary>
         /// Gets or sets the task performance values.
@@ -61,6 +61,6 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The task performance values.
         /// </value>
-        public TaskPerformanceValues TaskPerformanceValues { get; set; }
+        public virtual TaskPerformanceValues TaskPerformanceValues { get; set; }
     }
 }

@@ -40,11 +40,19 @@ namespace ScenarioSim.Core.Entities
         public virtual Task Task { get; set; }
 
         /// <summary>
+        /// Gets or sets the task values identifier.
+        /// </summary>
+        /// <value>
+        /// The task values identifier.
+        /// </value>
+        public Guid TaskValuesId { get; set; }
+
+        /// <summary>
         /// Gets or sets the task values.
         /// </summary>
         /// <value>
         /// The task values.
         /// </value>
-        public TaskValues TaskValues { get; set; }
+        public virtual TaskValues TaskValues { get; set; }
     }
 }

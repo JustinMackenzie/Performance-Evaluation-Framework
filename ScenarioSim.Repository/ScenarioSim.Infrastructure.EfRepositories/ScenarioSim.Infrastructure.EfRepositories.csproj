@@ -52,6 +52,10 @@
     <Compile Include="EfEntityRepository.cs" />
     <Compile Include="EfSchemaRepository.cs" />
     <Compile Include="IDbContext.cs" />
+    <Compile Include="Migrations\201611250435105_InitialMigration.cs" />
+    <Compile Include="Migrations\201611250435105_InitialMigration.Designer.cs">
+      <DependentUpon>201611250435105_InitialMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="EfActorRepository.cs" />
     <Compile Include="EfAssetRepository.cs" />
@@ -85,6 +89,11 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611250435105_InitialMigration.resx">
+      <DependentUpon>201611250435105_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

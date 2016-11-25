@@ -31,13 +31,5 @@ namespace ScenarioSim.Core.Entities
         /// The description.
         /// </value>
         public string Description { get; set; }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Program"/> class.
-        /// </summary>
-        public Program()
-        {
-            Scenarios = new List<Scenario>();
-        }
     }
 }
