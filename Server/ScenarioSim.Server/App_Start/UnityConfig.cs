@@ -1,30 +1,40 @@
+using System;
 using Microsoft.Practices.Unity;
-using System.Web.Http;
 using Microsoft.Practices.Unity.Configuration;
-using Unity.WebApi;
+using ScenarioSim.Infrastructure.EfRepositories;
 
 namespace ScenarioSim.Server
 {
     /// <summary>
-    /// Configures Unity, the dependency injection container.
+    /// Specifies the Unity configuration for the main container.
     /// </summary>
-    public static class UnityConfig
+    public class UnityConfig
     {
-        /// <summary>
-        /// Registers the components.
-        /// </summary>
-        public static void RegisterComponents()
+        #region Unity Container
+        private static Lazy<IUnityContainer> container = new Lazy<IUnityContainer>(() =>
         {
             var container = new UnityContainer();
+            RegisterTypes(container);
+            return container;
+        });
 
-            // register all your components with the container here
-            // it is NOT necessary to register your controllers
+        /// <summary>
+        /// Gets the configured Unity container.
+        /// </summary>
+        public static IUnityContainer GetConfiguredContainer()
+        {
+            return container.Value;
+        }
+        #endregion
 
-            // e.g. container.RegisterType<ITestService, TestService>();
-
+        /// <summary>Registers the type mappings with the Unity container.</summary>
+        /// <param name="container">The unity container to configure.</param>
+        /// <remarks>There is no need to register concrete types such as controllers or API controllers (unless you want to 
+        /// change the defaults), as Unity allows resolving a concrete type even if it was not previously registered.</remarks>
+        public static void RegisterTypes(IUnityContainer container)
+        {
+            container.RegisterType<IDbContext, ScenarioContext>(new PerRequestLifetimeManager());
             container.LoadConfiguration();
-
-            GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
     }
 }

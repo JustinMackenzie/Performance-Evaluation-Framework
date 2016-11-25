@@ -11,7 +11,7 @@ namespace ScenarioSim.Server
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            UnityConfig.RegisterComponents();
+            UnityConfig.RegisterTypes(UnityConfig.GetConfiguredContainer());
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
