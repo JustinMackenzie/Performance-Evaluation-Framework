@@ -95,6 +95,31 @@ namespace ScenarioSim.Server.Controllers
         }
 
         /// <summary>
+        /// Gets the schema performance evaluation.
+        /// </summary>
+        /// <param name="schemaId">The schema identifier.</param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("/api/Evaluation/SchemaEvaluation/{schemaId}")]
+        public PerformanceEvaluation GetSchemaPerformanceEvaluation(Guid schemaId)
+        {
+            try
+            {
+                Schema schema = schemaManager.GetSchema(schemaId);
+                IEnumerable<ScenarioPerformance> performances = manager.GetAllPerformances(schema);
+
+                return
+                    mapper.Map<ScenarioSim.Services.Evaluation.PerformanceEvaluation, PerformanceEvaluation>(
+                        evaluator.GetPerformanceEvaluation(performances));
+            }
+            catch (Exception ex)
+            {
+                logger.LogException(ex);
+                throw;
+            }
+        }
+
+        /// <summary>
         /// Gets the performance evaluation.
         /// </summary>
         /// <param name="performances">The performances.</param>
