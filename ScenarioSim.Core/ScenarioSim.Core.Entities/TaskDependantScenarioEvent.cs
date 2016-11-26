@@ -8,13 +8,27 @@ namespace ScenarioSim.Core.Entities
     public class TaskDependantScenarioEvent : ScenarioEvent
     {
         /// <summary>
-        /// The task that the complication depends on.
+        /// Gets or sets the task identifier.
         /// </summary>
+        /// <value>
+        /// The task identifier.
+        /// </value>
         public Guid TaskId { get; set; }
 
         /// <summary>
-        /// Determines if the complication is triggered at the start of a task. 
+        /// Gets or sets the task.
         /// </summary>
+        /// <value>
+        /// The task.
+        /// </value>
+        public virtual Task Task { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="TaskDependantScenarioEvent"/> is entry.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if entry; otherwise, <c>false</c>.
+        /// </value>
         public bool Entry { get; set; }
     }
 }

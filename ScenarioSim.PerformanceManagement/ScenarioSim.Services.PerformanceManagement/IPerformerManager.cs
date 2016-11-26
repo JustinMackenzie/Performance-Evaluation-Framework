@@ -21,5 +21,11 @@ namespace ScenarioSim.Services.PerformanceManagement
         /// </summary>
         /// <returns></returns>
         IEnumerable<Performer> GetAllPerformers();
+
+        /// <summary>
+        /// Adds the performer.
+        /// </summary>
+        /// <param name="performer">The performer.</param>
+        void AddPerformer(Performer performer);
     }
 }

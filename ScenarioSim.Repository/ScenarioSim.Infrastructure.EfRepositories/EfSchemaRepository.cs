@@ -1,12 +1,20 @@
 ﻿using ScenarioSim.Core.Entities;
 using ScenarioSim.Core.Interfaces;
-using ScenarioSim.Services.Mapping;
 
 namespace ScenarioSim.Infrastructure.EfRepositories
 {
-    public class EfSchemaRepository : EfMappedEntityRepository<Schema, EfSchema>, ISchemaRepository
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="ScenarioSim.Infrastructure.EfRepositories.EfEntityRepository{ScenarioSim.Core.Entities.Schema}" />
+    /// <seealso cref="ScenarioSim.Core.Interfaces.ISchemaRepository" />
+    public class EfSchemaRepository : EfEntityRepository<Schema>, ISchemaRepository
     {
-        public EfSchemaRepository(IDbContext context, IMapper mapper) : base(context, mapper)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EfSchemaRepository"/> class.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        public EfSchemaRepository(IDbContext context) : base(context)
         {
         }
     }

@@ -49,19 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EfActor.cs" />
-    <Compile Include="EfAsset.cs" />
-    <Compile Include="EfEntity.cs" />
-    <Compile Include="EfMappedEntityRepository.cs" />
-    <Compile Include="EfPerformer.cs" />
+    <Compile Include="EfEntityRepository.cs" />
     <Compile Include="EfSchemaRepository.cs" />
-    <Compile Include="EfUnitOfWork.cs" />
-    <Compile Include="EfEventParameter.cs" />
     <Compile Include="IDbContext.cs" />
+    <Compile Include="Migrations\201611250435105_InitialMigration.cs" />
+    <Compile Include="Migrations\201611250435105_InitialMigration.Designer.cs">
+      <DependentUpon>201611250435105_InitialMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="EfPerformance.cs" />
-    <Compile Include="EfPerformanceEvent.cs" />
-    <Compile Include="EfProgram.cs" />
     <Compile Include="EfActorRepository.cs" />
     <Compile Include="EfAssetRepository.cs" />
     <Compile Include="EfPerformerRepository.cs" />
@@ -69,14 +64,7 @@
     <Compile Include="EfPerformanceRepository.cs" />
     <Compile Include="EfScenarioRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="EfScenario.cs" />
     <Compile Include="ScenarioContext.cs" />
-    <Compile Include="EfScenarioEvent.cs" />
-    <Compile Include="EfSchema.cs" />
-    <Compile Include="EfTask.cs" />
-    <Compile Include="EfTaskDefinition.cs" />
-    <Compile Include="EfTaskPerformance.cs" />
-    <Compile Include="EfTaskTransition.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ScenarioSim.Core\ScenarioSim.Core.Entities\ScenarioSim.Core.Entities.csproj">
@@ -86,10 +74,6 @@
     <ProjectReference Include="..\..\ScenarioSim.Core\ScenarioSim.Core.Interfaces\ScenarioSim.Core.Interfaces.csproj">
       <Project>{de8824b9-da8f-4d8e-b2c7-080ba045f0f0}</Project>
       <Name>ScenarioSim.Core.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\ScenarioSim.Mapping\ScenarioSim.Services.Mapping\ScenarioSim.Services.Mapping.csproj">
-      <Project>{5234392d-3d36-48b9-b74c-f287b741e7ea}</Project>
-      <Name>ScenarioSim.Services.Mapping</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ScenarioSim.Serialization\ScenarioSim.Infrastructure.JsonNetSerializer\ScenarioSim.Infrastructure.JsonNetSerializer.csproj">
       <Project>{b47c0e8c-f010-4d7f-9085-f9f076c55269}</Project>
@@ -105,6 +89,11 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611250435105_InitialMigration.resx">
+      <DependentUpon>201611250435105_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -22,7 +22,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The scenarios.
         /// </value>
-        public List<Guid> ScenarioIds { get; set; }
+        public virtual ICollection<Scenario> Scenarios { get; set; }
 
         /// <summary>
         /// Gets or sets the description.
@@ -31,13 +31,5 @@ namespace ScenarioSim.Core.Entities
         /// The description.
         /// </value>
         public string Description { get; set; }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Program"/> class.
-        /// </summary>
-        public Program()
-        {
-            ScenarioIds = new List<Guid>();
-        }
     }
 }

@@ -19,12 +19,28 @@ namespace ScenarioSim.Core.Entities
         public Guid SchemaId { get; set; }
 
         /// <summary>
+        /// Gets or sets the schema.
+        /// </summary>
+        /// <value>
+        /// The schema.
+        /// </value>
+        public virtual Schema Schema { get; set; }
+
+        /// <summary>
         /// Gets or sets the source identifier.
         /// </summary>
         /// <value>
         /// The source identifier.
         /// </value>
-        public Guid SourceId { get; set; }
+        public Guid SourceTaskId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the source task.
+        /// </summary>
+        /// <value>
+        /// The source task.
+        /// </value>
+        public virtual Task SourceTask { get; set; }
 
         /// <summary>
         /// Gets or sets the destination identifier.
@@ -32,7 +48,15 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The destination identifier.
         /// </value>
-        public Guid DestinationId { get; set; }
+        public Guid DestinationTaskId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the destination task.
+        /// </summary>
+        /// <value>
+        /// The destination task.
+        /// </value>
+        public virtual Task DestinationTask { get; set; }
 
         /// <summary>
         /// Gets or sets the performer action identifier.
@@ -41,5 +65,13 @@ namespace ScenarioSim.Core.Entities
         /// The performer action identifier.
         /// </value>
         public Guid PerformerActionId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the performer action.
+        /// </summary>
+        /// <value>
+        /// The performer action.
+        /// </value>
+        public PerformerAction PerformerAction { get; set; }
     }
 }

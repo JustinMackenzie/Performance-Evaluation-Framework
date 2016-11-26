@@ -13,7 +13,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The sub tasks.
         /// </value>
-        public List<Task> Tasks { get; set; }
+        public virtual ICollection<Task> Tasks { get; set; }
 
         /// <summary>
         /// Gets the task tree node.

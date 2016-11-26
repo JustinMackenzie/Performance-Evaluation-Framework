@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents the values of a task performance.
     /// </summary>
-    public class TaskPerformanceValues
+    public class TaskPerformanceValues : Entity
     {
         /// <summary>
         /// Gets or sets the elapsed time.

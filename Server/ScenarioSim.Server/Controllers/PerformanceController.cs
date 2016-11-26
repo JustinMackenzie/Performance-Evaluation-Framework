@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Web;
 using System.Web.Http;
 using AutoMapper;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using ScenarioSim.Core.DataTransfer;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Server.Models;
@@ -29,19 +33,28 @@ namespace ScenarioSim.Server.Controllers
         private readonly IPerformanceManager manager;
 
         /// <summary>
+        /// The performer manager
+        /// </summary>
+        private readonly IPerformerManager performerManager;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="PerformanceController" /> class.
         /// </summary>
         /// <param name="logger">The logger.</param>
         /// <param name="manager">The manager.</param>
-        public PerformanceController(ILogger logger, IPerformanceManager manager)
+        /// <param name="performerManager">The performer manager.</param>
+        public PerformanceController(ILogger logger, IPerformanceManager manager, IPerformerManager performerManager)
         {
             if (logger == null)
                 throw new ArgumentNullException(nameof(logger));
             if (manager == null)
                 throw new ArgumentNullException(nameof(manager));
+            if (performerManager == null)
+                throw new ArgumentNullException(nameof(performerManager));
 
             this.logger = logger;
             this.manager = manager;
+            this.performerManager = performerManager;
         }
 
         // GET: api/Performance
@@ -103,7 +116,17 @@ namespace ScenarioSim.Server.Controllers
         {
             try
             {
+                string userId = RequestContext.Principal.Identity.GetUserId();
+                ApplicationUser user = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(userId);
+
                 ScenarioPerformance p = Mapper.Map<Performance, ScenarioPerformance>(performance);
+
+                if (!user.PerformerId.HasValue)
+                {
+                    throw new HttpException(HttpStatusCode.Unauthorized.ToString());
+                }
+
+                p.PerformerId = user.PerformerId.Value;
                 manager.AddPerformance(p);
             }
             catch (Exception ex)

@@ -58,9 +58,22 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
             }
         }
 
+        /// <summary>
+        /// Gets all performers.
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Performer> GetAllPerformers()
         {
             return repository.GetAll();
+        }
+
+        /// <summary>
+        /// Adds the performer.
+        /// </summary>
+        /// <param name="performer">The performer.</param>
+        public void AddPerformer(Performer performer)
+        {
+            repository.Save(performer);
         }
     }
 }

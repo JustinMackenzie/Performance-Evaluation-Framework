@@ -138,7 +138,7 @@ namespace ScenarioSim.Infrastructure.ScenarioCreator
         {
             try
             {
-                return program.ScenarioIds.Select(GetScenario);
+                return program.Scenarios;
             }
             catch (Exception ex)
             {
