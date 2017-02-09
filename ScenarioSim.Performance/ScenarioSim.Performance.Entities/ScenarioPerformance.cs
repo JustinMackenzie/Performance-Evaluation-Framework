@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using ScenarioSim.Core.Entities;
+using ScenarioSim.Utility;
 
 namespace ScenarioSim.Performance.Entities
 {

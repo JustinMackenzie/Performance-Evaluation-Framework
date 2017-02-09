@@ -1,4 +1,5 @@
 ﻿using System;
+using ScenarioSim.Utility;
 
 namespace ScenarioSim.Core.Entities
 {

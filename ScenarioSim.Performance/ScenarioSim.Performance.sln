@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Performance.Rep
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Core.Interfaces", "..\ScenarioSim.Core\ScenarioSim.Core.Interfaces\ScenarioSim.Core.Interfaces.csproj", "{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Utility", "..\ScenarioSim.Utility\ScenarioSim.Utility\ScenarioSim.Utility.csproj", "{07387F32-52D2-4169-96D3-6C39D4D1C547}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07387F32-52D2-4169-96D3-6C39D4D1C547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07387F32-52D2-4169-96D3-6C39D4D1C547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07387F32-52D2-4169-96D3-6C39D4D1C547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07387F32-52D2-4169-96D3-6C39D4D1C547}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

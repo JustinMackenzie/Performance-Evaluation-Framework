@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace ScenarioSim.Core.Entities
+namespace ScenarioSim.Utility
 {
     /// <summary>
     /// This class represents a node in N-ary tree structure. It is generic

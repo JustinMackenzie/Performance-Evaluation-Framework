@@ -6,6 +6,7 @@ using MongoDB.Driver;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Core.Interfaces;
 using ScenarioSim.Performance.Entities;
+using ScenarioSim.Utility;
 
 namespace ScenarioSim.Infrastructure.MongoDbRepositories
 {

@@ -1,4 +1,4 @@
-﻿namespace ScenarioSim.Core.Entities
+﻿namespace ScenarioSim.Utility
 {
     /// <summary>
     /// A structure that represents the geometrical placement of an object. This

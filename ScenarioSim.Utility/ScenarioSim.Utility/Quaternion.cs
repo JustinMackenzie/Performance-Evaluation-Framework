@@ -1,4 +1,4 @@
-﻿namespace ScenarioSim.Core.Entities
+﻿namespace ScenarioSim.Utility
 {
     /// <summary>
     /// Represents a mathematical quaternion.

@@ -79,6 +79,10 @@
       <Project>{20f924e0-1948-40b3-8cb7-02243ba8b81e}</Project>
       <Name>ScenarioSim.Performance.Repositories</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Utility\ScenarioSim.Utility\ScenarioSim.Utility.csproj">
+      <Project>{07387F32-52D2-4169-96D3-6C39D4D1C547}</Project>
+      <Name>ScenarioSim.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

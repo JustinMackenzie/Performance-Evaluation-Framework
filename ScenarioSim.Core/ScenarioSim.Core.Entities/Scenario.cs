@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ScenarioSim.Utility;
 
 namespace ScenarioSim.Core.Entities
 {

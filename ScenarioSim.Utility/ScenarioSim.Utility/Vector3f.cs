@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ScenarioSim.Core.Entities
+namespace ScenarioSim.Utility
 {
     /// <summary>
     /// This structure represents a three dimensional vector that holds
