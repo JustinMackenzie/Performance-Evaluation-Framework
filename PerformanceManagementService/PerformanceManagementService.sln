@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.PerformanceManagementService", "ScenarioSim.PerformanceManagementService\ScenarioSim.PerformanceManagementService.csproj", "{C432C1D9-670F-4B25-B251-0404A82E69AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Core.Entities", "..\ScenarioSim.Core\ScenarioSim.Core.Entities\ScenarioSim.Core.Entities.csproj", "{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Core.Interfaces", "..\ScenarioSim.Core\ScenarioSim.Core.Interfaces\ScenarioSim.Core.Interfaces.csproj", "{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Services.Logging", "..\ScenarioSim.Logging\ScenarioSim.Services.Logging\ScenarioSim.Services.Logging.csproj", "{E650D0C0-100C-4D8F-A894-85963C50280F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.Logging.NLog", "..\ScenarioSim.Logging\ScenarioSim.Infrastructure.Logging.NLog\ScenarioSim.Infrastructure.Logging.NLog.csproj", "{E3442416-2053-49BB-A8C2-65A5CF49C385}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Services.PerformanceManagement", "..\ScenarioSim.PerformanceManagement\ScenarioSim.Services.PerformanceManagement\ScenarioSim.Services.PerformanceManagement.csproj", "{B1DC7560-D4D2-4B00-B955-8B760E0615E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.PerformanceManagement", "..\ScenarioSim.PerformanceManagement\ScenarioSim.Infrastructure.PerformanceManagement\ScenarioSim.Infrastructure.PerformanceManagement.csproj", "{D346AFA3-DF7C-4293-90C1-635D6EEE7F38}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C432C1D9-670F-4B25-B251-0404A82E69AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C432C1D9-670F-4B25-B251-0404A82E69AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C432C1D9-670F-4B25-B251-0404A82E69AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C432C1D9-670F-4B25-B251-0404A82E69AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE8824B9-DA8F-4D8E-B2C7-080BA045F0F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E650D0C0-100C-4D8F-A894-85963C50280F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E650D0C0-100C-4D8F-A894-85963C50280F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E650D0C0-100C-4D8F-A894-85963C50280F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E650D0C0-100C-4D8F-A894-85963C50280F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3442416-2053-49BB-A8C2-65A5CF49C385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3442416-2053-49BB-A8C2-65A5CF49C385}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3442416-2053-49BB-A8C2-65A5CF49C385}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3442416-2053-49BB-A8C2-65A5CF49C385}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1DC7560-D4D2-4B00-B955-8B760E0615E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1DC7560-D4D2-4B00-B955-8B760E0615E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1DC7560-D4D2-4B00-B955-8B760E0615E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1DC7560-D4D2-4B00-B955-8B760E0615E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D346AFA3-DF7C-4293-90C1-635D6EEE7F38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D346AFA3-DF7C-4293-90C1-635D6EEE7F38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D346AFA3-DF7C-4293-90C1-635D6EEE7F38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D346AFA3-DF7C-4293-90C1-635D6EEE7F38}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
