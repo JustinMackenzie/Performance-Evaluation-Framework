@@ -5,6 +5,7 @@ using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Core.Interfaces;
+using ScenarioSim.Performance.Entities;
 
 namespace ScenarioSim.Infrastructure.MongoDbRepositories
 {

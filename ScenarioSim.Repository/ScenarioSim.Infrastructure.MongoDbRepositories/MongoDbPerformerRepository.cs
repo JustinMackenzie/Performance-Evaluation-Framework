@@ -1,13 +1,13 @@
-﻿using ScenarioSim.Core.Entities;
-using ScenarioSim.Core.Interfaces;
+﻿using ScenarioSim.Performance.Entities;
+using ScenarioSim.Performance.Repositories;
 
 namespace ScenarioSim.Infrastructure.MongoDbRepositories
 {
     /// <summary>
     /// An implementation of the performer repository interface that uses MongoDb to store performers.
     /// </summary>
-    /// <seealso cref="ScenarioSim.Core.Interfaces.IPerformerRepository" />
-    /// <seealso cref="ScenarioSim.Infrastructure.MongoDbRepositories.MongoDbEntityRepository{ScenarioSim.Core.Entities.Performer}" />
+    /// <seealso cref="IPerformerRepository" />
+    /// <seealso cref="Performer" />
     public class MongoDbPerformerRepository : MongoDbEntityRepository<Performer>, IPerformerRepository
     {
         /// <summary>

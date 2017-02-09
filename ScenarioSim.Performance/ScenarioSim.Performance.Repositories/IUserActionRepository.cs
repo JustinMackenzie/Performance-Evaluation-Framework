@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using ScenarioSim.Core.Entities;
+using ScenarioSim.Performance.Entities;
 
-namespace ScenarioSim.Core.Interfaces
+namespace ScenarioSim.Performance.Repositories
 {
     /// <summary>
     /// An interface that provides the means to store and retrieve user action entities.

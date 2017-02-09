@@ -71,6 +71,14 @@
       <Project>{de8824b9-da8f-4d8e-b2c7-080ba045f0f0}</Project>
       <Name>ScenarioSim.Core.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Performance\ScenarioSim.Performance.Entities\ScenarioSim.Performance.Entities.csproj">
+      <Project>{1bb824c3-a1e0-49f9-a4c2-9ba0e15e4643}</Project>
+      <Name>ScenarioSim.Performance.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Performance\ScenarioSim.Performance.Repositories\ScenarioSim.Performance.Repositories.csproj">
+      <Project>{20f924e0-1948-40b3-8cb7-02243ba8b81e}</Project>
+      <Name>ScenarioSim.Performance.Repositories</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

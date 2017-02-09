@@ -49,6 +49,10 @@
       <Project>{0ca14dc9-3d32-4ad5-bebb-9d6b639861ec}</Project>
       <Name>ScenarioSim.Core.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Performance\ScenarioSim.Performance.Entities\ScenarioSim.Performance.Entities.csproj">
+      <Project>{1bb824c3-a1e0-49f9-a4c2-9ba0e15e4643}</Project>
+      <Name>ScenarioSim.Performance.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

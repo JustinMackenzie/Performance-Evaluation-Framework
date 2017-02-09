@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using ScenarioSim.Core.Entities;
+using ScenarioSim.Core.Interfaces;
+using ScenarioSim.Performance.Entities;
 
-namespace ScenarioSim.Core.Interfaces
+namespace ScenarioSim.Performance.Repositories
 {
     /// <summary>
     /// Used to store and retrieve scenario performances.

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ScenarioSim.Core.Entities;
+using ScenarioSim.Performance.Entities;
 
 namespace ScenarioSim.Services.PerformanceManagement
 {

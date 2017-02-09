@@ -342,6 +342,10 @@
       <Project>{B1DC7560-D4D2-4B00-B955-8B760E0615E5}</Project>
       <Name>ScenarioSim.Services.PerformanceManagement</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Performance\ScenarioSim.Performance.Entities\ScenarioSim.Performance.Entities.csproj">
+      <Project>{1BB824C3-A1E0-49F9-A4C2-9BA0E15E4643}</Project>
+      <Name>ScenarioSim.Performance.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

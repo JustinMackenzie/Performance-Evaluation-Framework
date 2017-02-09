@@ -1,11 +1,12 @@
-﻿using ScenarioSim.Core.Entities;
+﻿using ScenarioSim.Core.Interfaces;
+using ScenarioSim.Performance.Entities;
 
-namespace ScenarioSim.Core.Interfaces
+namespace ScenarioSim.Performance.Repositories
 {
     /// <summary>
     /// An interface used to retrieve and store performers.
     /// </summary>
-    /// <seealso cref="ScenarioSim.Core.Interfaces.IEntityRepository{ScenarioSim.Core.Entities.Performer}" />
+    /// <seealso cref="Performer" />
     public interface IPerformerRepository : IEntityRepository<Performer>
     {
 

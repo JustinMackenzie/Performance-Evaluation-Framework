@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D346AFA3-DF7C-4293-90C1-635D6EEE7F38}</ProjectGuid>
+    <ProjectGuid>{20F924E0-1948-40B3-8CB7-02243BA8B81E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScenarioSim.Infrastructure.PerformanceManagement</RootNamespace>
-    <AssemblyName>ScenarioSim.Infrastructure.PerformanceManagement</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>ScenarioSim.Performance.Repositories</RootNamespace>
+    <AssemblyName>ScenarioSim.Performance.Repositories</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,8 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PerformanceManager.cs" />
-    <Compile Include="PerformerManager.cs" />
+    <Compile Include="IPerformerRepository.cs" />
+    <Compile Include="IScenarioPerformanceRepository.cs" />
+    <Compile Include="IUserActionRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -53,21 +55,9 @@
       <Project>{de8824b9-da8f-4d8e-b2c7-080ba045f0f0}</Project>
       <Name>ScenarioSim.Core.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\ScenarioSim.Logging\ScenarioSim.Services.Logging\ScenarioSim.Services.Logging.csproj">
-      <Project>{E650D0C0-100C-4D8F-A894-85963C50280F}</Project>
-      <Name>ScenarioSim.Services.Logging</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\ScenarioSim.Performance\ScenarioSim.Performance.Entities\ScenarioSim.Performance.Entities.csproj">
-      <Project>{1bb824c3-a1e0-49f9-a4c2-9ba0e15e4643}</Project>
+    <ProjectReference Include="..\ScenarioSim.Performance.Entities\ScenarioSim.Performance.Entities.csproj">
+      <Project>{1BB824C3-A1E0-49F9-A4C2-9BA0E15E4643}</Project>
       <Name>ScenarioSim.Performance.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\ScenarioSim.Performance\ScenarioSim.Performance.Repositories\ScenarioSim.Performance.Repositories.csproj">
-      <Project>{20f924e0-1948-40b3-8cb7-02243ba8b81e}</Project>
-      <Name>ScenarioSim.Performance.Repositories</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ScenarioSim.Services.PerformanceManagement\ScenarioSim.Services.PerformanceManagement.csproj">
-      <Project>{b1dc7560-d4d2-4b00-b955-8b760e0615e5}</Project>
-      <Name>ScenarioSim.Services.PerformanceManagement</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

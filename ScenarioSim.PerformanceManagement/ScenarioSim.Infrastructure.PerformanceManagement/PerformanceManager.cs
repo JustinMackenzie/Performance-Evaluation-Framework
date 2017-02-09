@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Core.Interfaces;
+using ScenarioSim.Performance.Entities;
+using ScenarioSim.Performance.Repositories;
 using ScenarioSim.Services.Logging;
 using ScenarioSim.Services.PerformanceManagement;
 

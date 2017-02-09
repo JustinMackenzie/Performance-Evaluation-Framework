@@ -51,9 +51,6 @@
     <Compile Include="ISchemaFactory.cs" />
     <Compile Include="ISchemaRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
-    <Compile Include="IUserActionRepository.cs" />
-    <Compile Include="IScenarioPerformanceRepository.cs" />
-    <Compile Include="IPerformerRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

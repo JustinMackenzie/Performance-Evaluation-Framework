@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Web;
 using System.Web.Http;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using ScenarioSim.Core.Entities;
-using ScenarioSim.PerformanceManagementService.Models;
+using ScenarioSim.Performance.Entities;
 using ScenarioSim.Services.Logging;
 using ScenarioSim.Services.PerformanceManagement;
 
@@ -31,28 +26,19 @@ namespace ScenarioSim.PerformanceManagementService.Controllers
         private readonly IPerformanceManager manager;
 
         /// <summary>
-        /// The performer manager
-        /// </summary>
-        private readonly IPerformerManager performerManager;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="PerformanceController" /> class.
         /// </summary>
         /// <param name="logger">The logger.</param>
         /// <param name="manager">The manager.</param>
-        /// <param name="performerManager">The performer manager.</param>
-        public PerformanceController(ILogger logger, IPerformanceManager manager, IPerformerManager performerManager)
+        public PerformanceController(ILogger logger, IPerformanceManager manager)
         {
             if (logger == null)
                 throw new ArgumentNullException(nameof(logger));
             if (manager == null)
                 throw new ArgumentNullException(nameof(manager));
-            if (performerManager == null)
-                throw new ArgumentNullException(nameof(performerManager));
 
             this.logger = logger;
             this.manager = manager;
-            this.performerManager = performerManager;
         }
 
         // GET: api/Performance

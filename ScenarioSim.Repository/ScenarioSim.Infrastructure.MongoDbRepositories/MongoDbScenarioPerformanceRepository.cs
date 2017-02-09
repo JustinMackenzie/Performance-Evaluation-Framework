@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ScenarioSim.Core.Entities;
-using ScenarioSim.Core.Interfaces;
+using ScenarioSim.Performance.Entities;
+using ScenarioSim.Performance.Repositories;
 
 namespace ScenarioSim.Infrastructure.MongoDbRepositories
 {
     /// <summary>
     /// An implementation of the scenario performance repository that uses MongoDb to store scenario performances.
     /// </summary>
-    /// <seealso cref="ScenarioSim.Infrastructure.MongoDbRepositories.MongoDbEntityRepository{ScenarioSim.Core.Entities.ScenarioPerformance}" />
-    /// <seealso cref="ScenarioSim.Core.Interfaces.IScenarioPerformanceRepository" />
+    /// <seealso cref="ScenarioPerformance" />
+    /// <seealso cref="IScenarioPerformanceRepository" />
     public class MongoDbScenarioPerformanceRepository : MongoDbEntityRepository<ScenarioPerformance>, IScenarioPerformanceRepository
     {
         /// <summary>
