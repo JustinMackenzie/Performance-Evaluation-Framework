@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace ScenarioSim.Core.Entities
+namespace ScenarioSim.Performance.Entities
 {
     /// <summary>
     /// An event that represents that a goal was completed.
     /// </summary>
-    /// <seealso cref="ScenarioSim.Core.Entities.Event" />
+    /// <seealso cref="Event" />
     public class GoalCompletedEvent : Event
     {
         /// <summary>

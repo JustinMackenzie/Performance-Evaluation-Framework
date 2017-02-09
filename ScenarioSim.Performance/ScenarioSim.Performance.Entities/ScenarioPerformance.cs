@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ScenarioSim.Core.Entities;
 
-namespace ScenarioSim.Core.Entities
+namespace ScenarioSim.Performance.Entities
 {
     /// <summary>
     /// The performance of a scenario performance.

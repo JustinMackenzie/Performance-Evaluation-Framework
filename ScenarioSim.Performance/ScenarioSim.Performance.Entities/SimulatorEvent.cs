@@ -1,4 +1,4 @@
-﻿namespace ScenarioSim.Core.Entities
+﻿namespace ScenarioSim.Performance.Entities
 {
     /// <summary>
     /// Represents an event invoked by the simulator.

@@ -1,13 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using ScenarioSim.Core.Entities;
 
-namespace ScenarioSim.Core.Entities
+namespace ScenarioSim.Performance.Entities
 {
     /// <summary>
-    /// The base class for all actions.
+    /// This class represents the results from a performance of a given task.
     /// </summary>
-    public class Event : Entity
+    public class TaskPerformance : Entity
     {
         /// <summary>
         /// Gets or sets the scenario performance identifier.
@@ -24,21 +23,22 @@ namespace ScenarioSim.Core.Entities
         /// The scenario performance.
         /// </value>
         public virtual ScenarioPerformance ScenarioPerformance { get; set; }
-        /// <summary>
-        /// Gets or sets the name.
-        /// </summary>
-        /// <value>
-        /// The name.
-        /// </value>
-        public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the description.
+        /// Gets or sets the task identifier.
         /// </summary>
         /// <value>
-        /// The description.
+        /// The task identifier.
         /// </value>
-        public string Description { get; set; }
+        public Guid TaskId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the task.
+        /// </summary>
+        /// <value>
+        /// The task.
+        /// </value>
+        public virtual Task Task { get; set; }
 
         /// <summary>
         /// Gets or sets the timestamp.
@@ -49,29 +49,19 @@ namespace ScenarioSim.Core.Entities
         public DateTimeOffset Timestamp { get; set; }
 
         /// <summary>
-        /// Gets the parameters.
+        /// Gets or sets the task performance values identifier.
         /// </summary>
         /// <value>
-        /// The parameters.
+        /// The task performance values identifier.
         /// </value>
-        public Dictionary<string, EventParameter> Parameters => ParameterCollection.ToDictionary(p => p.Name);
+        public Guid TaskPerformanceValuesId { get; set; }
 
         /// <summary>
-        /// Gets or sets the parameter collection.
+        /// Gets or sets the task performance values.
         /// </summary>
         /// <value>
-        /// The parameter collection.
+        /// The task performance values.
         /// </value>
-        public virtual ICollection<EventParameter> ParameterCollection { get; set; }
-
-        /// <summary>
-        /// Adds the parameter.
-        /// </summary>
-        /// <param name="name">The name.</param>
-        /// <param name="parameter">The parameter.</param>
-        public void AddParameter(string name, EventParameter parameter)
-        {
-            Parameters.Add(name, parameter);
-        }
+        public virtual TaskPerformanceValues TaskPerformanceValues { get; set; }
     }
 }

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Performance.Entities", "ScenarioSim.Performance.Entities\ScenarioSim.Performance.Entities.csproj", "{1BB824C3-A1E0-49F9-A4C2-9BA0E15E4643}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Core.Entities", "..\ScenarioSim.Core\ScenarioSim.Core.Entities\ScenarioSim.Core.Entities.csproj", "{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1BB824C3-A1E0-49F9-A4C2-9BA0E15E4643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BB824C3-A1E0-49F9-A4C2-9BA0E15E4643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BB824C3-A1E0-49F9-A4C2-9BA0E15E4643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BB824C3-A1E0-49F9-A4C2-9BA0E15E4643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA14DC9-3D32-4AD5-BEBB-9D6B639861EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
