@@ -46,10 +46,8 @@
     <Compile Include="DynamicFittsTaskValues.cs" />
     <Compile Include="Actor.cs" />
     <Compile Include="Asset.cs" />
-    <Compile Include="CompositeTask.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="FittsTaskValues.cs" />
-    <Compile Include="ParallelTask.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="RandomReactionTaskValues.cs" />
     <Compile Include="ReactionTaskValues.cs" />
@@ -60,7 +58,6 @@
     <Compile Include="ScenarioTaskDefinition.cs" />
     <Compile Include="Schema.cs" />
     <Compile Include="SteeringTaskValues.cs" />
-    <Compile Include="TaskPerformanceValues.cs" />
     <Compile Include="TaskValues.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="TaskDependantScenarioEvent.cs" />

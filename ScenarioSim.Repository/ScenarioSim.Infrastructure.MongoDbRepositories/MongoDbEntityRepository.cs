@@ -84,8 +84,6 @@ namespace ScenarioSim.Infrastructure.MongoDbRepositories
             this.connectionStringOrName = connectionStringOrName;
             this.databaseName = databaseName;
 
-            RegisterMapIfNeeded<CompositeTask>();
-            RegisterMapIfNeeded<ParallelTask>();
             RegisterMapIfNeeded<ReactionTaskValues>();
             RegisterMapIfNeeded<FittsTaskValues>();
             RegisterMapIfNeeded<SteeringTaskValues>();

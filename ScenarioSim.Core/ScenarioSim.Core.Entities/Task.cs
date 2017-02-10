@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ScenarioSim.Utility;
 
 namespace ScenarioSim.Core.Entities
@@ -58,12 +59,27 @@ namespace ScenarioSim.Core.Entities
         public virtual Task ParentTask { get; set; }
 
         /// <summary>
+        /// Gets or sets the sub tasks.
+        /// </summary>
+        /// <value>
+        /// The sub tasks.
+        /// </value>
+        public virtual ICollection<Task> Tasks { get; set; }
+
+        /// <summary>
         /// Gets the task tree node.
         /// </summary>
-        /// <returns>A task tree node based on this task.</returns>
-        public virtual TreeNode<Task> GetTaskTreeNode()
+        /// <returns>
+        /// A task tree node based on this task.
+        /// </returns>
+        public TreeNode<Task> GetTaskTreeNode()
         {
-            return new TreeNode<Task>(this);
+            TreeNode<Task> node = new TreeNode<Task>(this);
+
+            foreach (Task subTask in Tasks)
+                node.AppendChild(subTask.GetTaskTreeNode());
+
+            return node;
         }
     }
 }

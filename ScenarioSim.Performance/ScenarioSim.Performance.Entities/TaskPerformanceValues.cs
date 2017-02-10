@@ -1,4 +1,6 @@
-﻿namespace ScenarioSim.Core.Entities
+﻿using ScenarioSim.Core.Entities;
+
+namespace ScenarioSim.Performance.Entities
 {
     /// <summary>
     /// Represents the values of a task performance.

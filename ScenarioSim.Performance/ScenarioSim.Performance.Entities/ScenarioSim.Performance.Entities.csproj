@@ -49,6 +49,7 @@
     <Compile Include="ScenarioPerformance.cs" />
     <Compile Include="SimulatorEvent.cs" />
     <Compile Include="TaskPerformance.cs" />
+    <Compile Include="TaskPerformanceValues.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ScenarioSim.Core\ScenarioSim.Core.Entities\ScenarioSim.Core.Entities.csproj">

@@ -72,6 +72,6 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The performer action.
         /// </value>
-        public Trigger Trigger { get; set; }
+        public Guid TriggerId { get; set; }
     }
 }
