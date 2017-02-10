@@ -34,6 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>App_Data/ScenarioSim.ScenarioManagementService.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -351,9 +352,17 @@
       <Project>{de8824b9-da8f-4d8e-b2c7-080ba045f0f0}</Project>
       <Name>ScenarioSim.Core.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Logging\ScenarioSim.Infrastructure.Logging.NLog\ScenarioSim.Infrastructure.Logging.NLog.csproj">
+      <Project>{e3442416-2053-49bb-a8c2-65a5cf49c385}</Project>
+      <Name>ScenarioSim.Infrastructure.Logging.NLog</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ScenarioSim.Logging\ScenarioSim.Services.Logging\ScenarioSim.Services.Logging.csproj">
       <Project>{E650D0C0-100C-4D8F-A894-85963C50280F}</Project>
       <Name>ScenarioSim.Services.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Repository\ScenarioSim.Infrastructure.MongoDbRepositories\ScenarioSim.Infrastructure.MongoDbRepositories.csproj">
+      <Project>{41d9469c-8b9a-49df-ab92-cae673c9291c}</Project>
+      <Name>ScenarioSim.Infrastructure.MongoDbRepositories</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ScenarioSim.ScenarioCreator\ScenarioSim.Infrastructure.ScenarioCreator\ScenarioSim.Infrastructure.ScenarioCreator.csproj">
       <Project>{097071bb-f82f-46f3-8248-b6f49d69104c}</Project>
@@ -362,6 +371,18 @@
     <ProjectReference Include="..\..\ScenarioSim.ScenarioCreator\ScenarioSim.Services.ScenarioCreator\ScenarioSim.Services.ScenarioCreator.csproj">
       <Project>{2151bc08-6a38-4456-a55e-227da06eef75}</Project>
       <Name>ScenarioSim.Services.ScenarioCreator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Serialization\ScenarioSim.Infrastructure.JsonNetSerializer\ScenarioSim.Infrastructure.JsonNetSerializer.csproj">
+      <Project>{b47c0e8c-f010-4d7f-9085-f9f076c55269}</Project>
+      <Name>ScenarioSim.Infrastructure.JsonNetSerializer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Serialization\ScenarioSim.Services.Serialization\ScenarioSim.Services.Serialization.csproj">
+      <Project>{abce5169-3ecb-42cf-a1b9-d9b5f4c9ea3d}</Project>
+      <Name>ScenarioSim.Services.Serialization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Utility\ScenarioSim.Utility\ScenarioSim.Utility.csproj">
+      <Project>{07387f32-52d2-4169-96d3-6c39d4d1c547}</Project>
+      <Name>ScenarioSim.Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

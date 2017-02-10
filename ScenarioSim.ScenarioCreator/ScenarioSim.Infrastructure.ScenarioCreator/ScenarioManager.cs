@@ -114,7 +114,6 @@ namespace ScenarioSim.Infrastructure.ScenarioCreator
         /// Deletes the scenario.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        /// <exception cref="System.NotImplementedException"></exception>
         public void DeleteScenario(Guid id)
         {
             try

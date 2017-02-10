@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
+﻿using System.Web;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
-using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json;
+using ScenarioSim.ScenarioManagementService.Areas.HelpPage;
+using ScenarioSim.Infrastructure.JsonNetSerializer;
 
 namespace ScenarioSim.ScenarioManagementService
 {
@@ -25,6 +24,12 @@ namespace ScenarioSim.ScenarioManagementService
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.SetDocumentationProvider(new XmlDocumentationProvider(
+                HttpContext.Current.Server.MapPath("~/App_Data/ScenarioSim.ScenarioManagementService.xml")));
+
+            config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new WriteablePropertiesOnlyResolver();
         }
     }
 }
