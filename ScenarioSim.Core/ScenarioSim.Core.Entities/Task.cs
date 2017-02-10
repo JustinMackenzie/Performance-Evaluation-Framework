@@ -27,14 +27,6 @@ namespace ScenarioSim.Core.Entities
         public Guid ActorId { get; set; }
 
         /// <summary>
-        /// Gets or sets the actor.
-        /// </summary>
-        /// <value>
-        /// The actor responsible for completing this task.
-        /// </value>
-        public Actor Actor { get; set; }
-
-        /// <summary>
         /// Gets or sets the task values.
         /// </summary>
         /// <value>
@@ -51,20 +43,20 @@ namespace ScenarioSim.Core.Entities
         public Guid? ParentTaskId { get; set; }
 
         /// <summary>
-        /// Gets or sets the parent task.
-        /// </summary>
-        /// <value>
-        /// The parent task.
-        /// </value>
-        public virtual Task ParentTask { get; set; }
-
-        /// <summary>
         /// Gets or sets the sub tasks.
         /// </summary>
         /// <value>
         /// The sub tasks.
         /// </value>
-        public virtual ICollection<Task> Tasks { get; set; }
+        public List<Task> SubTasks { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Task"/> class.
+        /// </summary>
+        public Task()
+        {
+            SubTasks = new List<Task>();
+        }
 
         /// <summary>
         /// Gets the task tree node.
@@ -76,7 +68,7 @@ namespace ScenarioSim.Core.Entities
         {
             TreeNode<Task> node = new TreeNode<Task>(this);
 
-            foreach (Task subTask in Tasks)
+            foreach (Task subTask in SubTasks)
                 node.AppendChild(subTask.GetTaskTreeNode());
 
             return node;

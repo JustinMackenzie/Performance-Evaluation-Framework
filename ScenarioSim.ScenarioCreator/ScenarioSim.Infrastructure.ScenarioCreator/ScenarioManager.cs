@@ -136,15 +136,7 @@ namespace ScenarioSim.Infrastructure.ScenarioCreator
         /// <returns></returns>
         public IEnumerable<Scenario> GetAllScenariosByProgram(Program program)
         {
-            try
-            {
-                return program.Scenarios;
-            }
-            catch (Exception ex)
-            {
-                logger.LogException(ex);
-                throw;
-            }
+            return repository.GetByScenarioIds(program.ScenarioIds);
         }
     }
 }

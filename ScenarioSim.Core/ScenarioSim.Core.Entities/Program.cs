@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ScenarioSim.Core.Entities
 {
@@ -21,7 +22,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The scenarios.
         /// </value>
-        public virtual ICollection<Scenario> Scenarios { get; set; }
+        public List<Guid> ScenarioIds { get; set; }
 
         /// <summary>
         /// Gets or sets the description.

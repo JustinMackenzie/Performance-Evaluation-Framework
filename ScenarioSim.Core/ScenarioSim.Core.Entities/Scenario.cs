@@ -19,6 +19,14 @@ namespace ScenarioSim.Core.Entities
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the description.
+        /// </summary>
+        /// <value>
+        /// The description.
+        /// </value>
+        public string Description { get; set; }
+
+        /// <summary>
         /// Gets or sets the schema identifier.
         /// </summary>
         /// <value>
@@ -33,14 +41,6 @@ namespace ScenarioSim.Core.Entities
         /// The schema.
         /// </value>
         public virtual Schema Schema { get; set; }
-
-        /// <summary>
-        /// Gets or sets the programs.
-        /// </summary>
-        /// <value>
-        /// The programs.
-        /// </value>
-        public virtual ICollection<Program> Programs { get; set; }
 
         /// <summary>
         /// Gets the task.
@@ -83,7 +83,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The scenario events.
         /// </value>
-        public virtual ICollection<ScenarioEvent> ScenarioEvents { get; set; }
+        public List<ScenarioEvent> ScenarioEvents { get; set; }
 
         /// <summary>
         /// Gets the scenario assets.
@@ -91,7 +91,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The scenario assets.
         /// </value>
-        public virtual ICollection<ScenarioAsset> ScenarioAssets { get; set; }
+        public List<ScenarioAsset> ScenarioAssets { get; set; }
 
         /// <summary>
         /// Gets or sets the scenario task definitions.
@@ -99,7 +99,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The scenario task definitions.
         /// </value>
-        public virtual ICollection<ScenarioTaskDefinition> ScenarioTaskDefinitions { get; set; }
+        public List<ScenarioTaskDefinition> ScenarioTaskDefinitions { get; set; }
 
         /// <summary>
         /// Gets the scenario specific tasks.
@@ -108,14 +108,6 @@ namespace ScenarioSim.Core.Entities
         /// The scenario specific tasks.
         /// </value>
         public Dictionary<Guid, TaskValues> ScenarioSpecificTasks => ScenarioTaskDefinitions.ToDictionary(t => t.TaskId, t => t.TaskValues);
-
-        /// <summary>
-        /// Gets or sets the description.
-        /// </summary>
-        /// <value>
-        /// The description.
-        /// </value>
-        public string Description { get; set; }
 
         /// <summary>
         /// Copies the scenario specific task values.

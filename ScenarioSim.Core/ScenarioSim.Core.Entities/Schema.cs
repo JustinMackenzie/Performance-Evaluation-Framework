@@ -25,28 +25,12 @@ namespace ScenarioSim.Core.Entities
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or sets the scenarios.
-        /// </summary>
-        /// <value>
-        /// The scenarios.
-        /// </value>
-        public virtual ICollection<Scenario> Scenarios { get; set; }
-
-        /// <summary>
-        /// Gets or sets the task identifier.
-        /// </summary>
-        /// <value>
-        /// The task identifier.
-        /// </value>
-        public int TaskId { get; set; }
-
-        /// <summary>
         /// Gets the task.
         /// </summary>
         /// <value>
         /// The task.
         /// </value>
-        public virtual Task Task { get; set; }
+        public Task Task { get; set; }
 
         /// <summary>
         /// Gets the task transitions.
@@ -54,7 +38,7 @@ namespace ScenarioSim.Core.Entities
         /// <value>
         /// The task transitions.
         /// </value>
-        public virtual ICollection<TaskTransition> TaskTransitions { get; set; }
+        public List<TaskTransition> TaskTransitions { get; set; }
 
         /// <summary>
         /// Gets the task tree.

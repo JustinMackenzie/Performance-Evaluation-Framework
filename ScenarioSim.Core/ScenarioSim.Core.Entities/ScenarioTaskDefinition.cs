@@ -8,22 +8,6 @@ namespace ScenarioSim.Core.Entities
     public class ScenarioTaskDefinition : Entity
     {
         /// <summary>
-        /// Gets or sets the scenario identifier.
-        /// </summary>
-        /// <value>
-        /// The scenario identifier.
-        /// </value>
-        public Guid ScenarioId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the scenario.
-        /// </summary>
-        /// <value>
-        /// The scenario.
-        /// </value>
-        public virtual Scenario Scenario { get; set; }
-
-        /// <summary>
         /// Gets or sets the task identifier.
         /// </summary>
         /// <value>
@@ -32,27 +16,11 @@ namespace ScenarioSim.Core.Entities
         public Guid TaskId { get; set; }
 
         /// <summary>
-        /// Gets or sets the task.
-        /// </summary>
-        /// <value>
-        /// The task.
-        /// </value>
-        public virtual Task Task { get; set; }
-
-        /// <summary>
-        /// Gets or sets the task values identifier.
-        /// </summary>
-        /// <value>
-        /// The task values identifier.
-        /// </value>
-        public Guid TaskValuesId { get; set; }
-
-        /// <summary>
         /// Gets or sets the task values.
         /// </summary>
         /// <value>
         /// The task values.
         /// </value>
-        public virtual TaskValues TaskValues { get; set; }
+        public TaskValues TaskValues { get; set; }
     }
 }

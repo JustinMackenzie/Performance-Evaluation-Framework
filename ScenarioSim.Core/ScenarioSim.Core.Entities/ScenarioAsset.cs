@@ -28,21 +28,5 @@ namespace ScenarioSim.Core.Entities
         /// The asset.
         /// </value>
         public Asset Asset { get; set; }
-
-        /// <summary>
-        /// Gets or sets the scenario identifier.
-        /// </summary>
-        /// <value>
-        /// The scenario identifier.
-        /// </value>
-        public Guid ScenarioId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the scenario.
-        /// </summary>
-        /// <value>
-        /// The scenario.
-        /// </value>
-        public virtual Scenario Scenario { get; set; }
     }
 }
