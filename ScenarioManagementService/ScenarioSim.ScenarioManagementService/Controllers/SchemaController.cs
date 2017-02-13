@@ -12,7 +12,6 @@ namespace ScenarioSim.ScenarioManagementService.Controllers
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [EnableCors("http://localhost:45723", "*", "*")]
-    [Authorize]
     public class SchemaController : ApiController
     {
         /// <summary>

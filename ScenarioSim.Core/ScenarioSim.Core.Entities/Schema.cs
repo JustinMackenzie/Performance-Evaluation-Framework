@@ -47,5 +47,13 @@ namespace ScenarioSim.Core.Entities
         /// The task tree.
         /// </value>
         public TreeNode<Task> TaskTree => Task.GetTaskTreeNode();
+
+        /// <summary>
+        /// Gets or sets the actors.
+        /// </summary>
+        /// <value>
+        /// The actors.
+        /// </value>
+        public List<Actor> Actors { get; set; }
     }
 }

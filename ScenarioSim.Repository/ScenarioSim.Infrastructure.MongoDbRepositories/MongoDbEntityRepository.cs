@@ -37,8 +37,8 @@ namespace ScenarioSim.Infrastructure.MongoDbRepositories
         {
             get
             {
-                string connectionString = ConfigurationManager.ConnectionStrings[connectionStringOrName].ConnectionString;
-                return string.IsNullOrEmpty(connectionString) ? connectionStringOrName : connectionString;
+                ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings[connectionStringOrName];
+                return settings == null ? connectionStringOrName : settings.ConnectionString;
             }
         }
 

@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Services.Serial
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Infrastructure.JsonNetSerializer", "..\ScenarioSim.Serialization\ScenarioSim.Infrastructure.JsonNetSerializer\ScenarioSim.Infrastructure.JsonNetSerializer.csproj", "{B47C0E8C-F010-4D7F-9085-F9F076C55269}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Performance.Entities", "..\ScenarioSim.Performance\ScenarioSim.Performance.Entities\ScenarioSim.Performance.Entities.csproj", "{1BB824C3-A1E0-49F9-A4C2-9BA0E15E4643}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioSim.Performance.Repositories", "..\ScenarioSim.Performance\ScenarioSim.Performance.Repositories\ScenarioSim.Performance.Repositories.csproj", "{20F924E0-1948-40B3-8CB7-02243BA8B81E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,14 @@ Global
 		{B47C0E8C-F010-4D7F-9085-F9F076C55269}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B47C0E8C-F010-4D7F-9085-F9F076C55269}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B47C0E8C-F010-4D7F-9085-F9F076C55269}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BB824C3-A1E0-49F9-A4C2-9BA0E15E4643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BB824C3-A1E0-49F9-A4C2-9BA0E15E4643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BB824C3-A1E0-49F9-A4C2-9BA0E15E4643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BB824C3-A1E0-49F9-A4C2-9BA0E15E4643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20F924E0-1948-40B3-8CB7-02243BA8B81E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20F924E0-1948-40B3-8CB7-02243BA8B81E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20F924E0-1948-40B3-8CB7-02243BA8B81E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20F924E0-1948-40B3-8CB7-02243BA8B81E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

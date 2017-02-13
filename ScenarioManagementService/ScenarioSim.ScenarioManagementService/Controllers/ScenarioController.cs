@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using ScenarioSim.Core.Entities;
@@ -14,7 +13,6 @@ namespace ScenarioSim.ScenarioManagementService.Controllers
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [EnableCors("http://localhost:45723", "*", "*")]
-    [Authorize]
     public class ScenarioController : ApiController
     {
         /// <summary>
