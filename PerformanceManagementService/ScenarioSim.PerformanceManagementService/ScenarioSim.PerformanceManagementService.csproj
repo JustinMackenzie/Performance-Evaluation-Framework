@@ -77,6 +77,26 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -95,9 +115,6 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
     </Reference>
@@ -138,6 +155,10 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.WebApi, Version=5.2.3.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.WebAPI.5.2.3\lib\net45\Unity.WebApi.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -204,6 +225,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
@@ -236,7 +258,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PerformanceController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -279,6 +300,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\scenariosim-performancemanagement - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -345,6 +367,26 @@
     <ProjectReference Include="..\..\ScenarioSim.Performance\ScenarioSim.Performance.Entities\ScenarioSim.Performance.Entities.csproj">
       <Project>{1BB824C3-A1E0-49F9-A4C2-9BA0E15E4643}</Project>
       <Name>ScenarioSim.Performance.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Performance\ScenarioSim.Performance.Repositories\ScenarioSim.Performance.Repositories.csproj">
+      <Project>{20f924e0-1948-40b3-8cb7-02243ba8b81e}</Project>
+      <Name>ScenarioSim.Performance.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Repository\ScenarioSim.Infrastructure.MongoDbRepositories\ScenarioSim.Infrastructure.MongoDbRepositories.csproj">
+      <Project>{41d9469c-8b9a-49df-ab92-cae673c9291c}</Project>
+      <Name>ScenarioSim.Infrastructure.MongoDbRepositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Serialization\ScenarioSim.Infrastructure.JsonNetSerializer\ScenarioSim.Infrastructure.JsonNetSerializer.csproj">
+      <Project>{b47c0e8c-f010-4d7f-9085-f9f076c55269}</Project>
+      <Name>ScenarioSim.Infrastructure.JsonNetSerializer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Serialization\ScenarioSim.Services.Serialization\ScenarioSim.Services.Serialization.csproj">
+      <Project>{abce5169-3ecb-42cf-a1b9-d9b5f4c9ea3d}</Project>
+      <Name>ScenarioSim.Services.Serialization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScenarioSim.Utility\ScenarioSim.Utility\ScenarioSim.Utility.csproj">
+      <Project>{07387f32-52d2-4169-96d3-6c39d4d1c547}</Project>
+      <Name>ScenarioSim.Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

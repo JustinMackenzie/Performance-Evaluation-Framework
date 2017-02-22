@@ -38,8 +38,7 @@ namespace ScenarioSim.Infrastructure.MongoDbRepositories
 
         public IEnumerable<Scenario> GetByScenarioIds(IList<Guid> scenarioIds)
         {
-            return GetAll()
-                .Where(s => scenarioIds.Contains(s.Id))
+            return scenarioIds.Select(Get)
                 .OrderBy(s => scenarioIds.IndexOf(s.Id));
         }
     }

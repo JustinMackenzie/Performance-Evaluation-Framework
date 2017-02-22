@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using ScenarioSim.Performance.Entities;
 using ScenarioSim.Performance.Repositories;
-using ScenarioSim.Services.Logging;
 using ScenarioSim.Services.PerformanceManagement;
 
 namespace ScenarioSim.Infrastructure.PerformanceManagement
@@ -14,11 +13,6 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
     public class PerformerManager : IPerformerManager
     {
         /// <summary>
-        /// The logger
-        /// </summary>
-        private readonly ILogger logger;
-
-        /// <summary>
         /// The repository
         /// </summary>
         private readonly IPerformerRepository repository;
@@ -26,17 +20,13 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
         /// <summary>
         /// Initializes a new instance of the <see cref="PerformerManager" /> class.
         /// </summary>
-        /// <param name="logger">The logger.</param>
         /// <param name="repository">The repository.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
-        public PerformerManager(ILogger logger, IPerformerRepository repository)
+        public PerformerManager(IPerformerRepository repository)
         {
-            if (logger == null)
-                throw new ArgumentNullException(nameof(logger));
             if (repository == null)
                 throw new ArgumentNullException(nameof(repository));
 
-            this.logger = logger;
             this.repository = repository;
         }
 
@@ -47,15 +37,7 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
         /// <returns></returns>
         public Performer GetPerformer(Guid performerId)
         {
-            try
-            {
-                return repository.Get(performerId);
-            }
-            catch (Exception ex)
-            {
-                logger.LogException(ex);
-                throw;
-            }
+            return repository.Get(performerId);
         }
 
         /// <summary>

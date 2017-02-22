@@ -12,7 +12,6 @@ namespace ScenarioSim.PerformanceManagementService.Controllers
     /// Allows access to and storage of performances.
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
-    [Authorize]
     public class PerformanceController : ApiController
     {
         /// <summary>
@@ -95,7 +94,6 @@ namespace ScenarioSim.PerformanceManagementService.Controllers
         /// Stores the specified performance.
         /// </summary>
         /// <param name="performance">The performance.</param>
-        [Authorize(Roles = "Performer")]
         public void Post(ScenarioPerformance performance)
         {
             try
@@ -114,7 +112,6 @@ namespace ScenarioSim.PerformanceManagementService.Controllers
         /// Deletes the specified performance with the given identifier.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        [Authorize(Roles = "Evaluator, Administrator")]
         public void Delete(Guid id)
         {
             try

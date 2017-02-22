@@ -71,7 +71,7 @@ namespace ScenarioSim.Performance.Entities
         /// <value>
         /// The task performance collection.
         /// </value>
-        public virtual ICollection<TaskPerformance> TaskPerformanceCollection { get; set; }
+        public List <TaskPerformance> TaskPerformanceCollection { get; set; }
 
         /// <summary>
         /// Gets the task performance tree.
@@ -87,7 +87,16 @@ namespace ScenarioSim.Performance.Entities
         /// <value>
         /// The user actions.
         /// </value>
-        public virtual ICollection<Event> Events { get; set; }
+        public List<Event> Events { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ScenarioPerformance"/> class.
+        /// </summary>
+        public ScenarioPerformance()
+        {
+            Events = new List<Event>();
+            TaskPerformanceCollection = new List<TaskPerformance>();
+        }
 
         /// <summary>
         /// Builds the task perfomance tree.

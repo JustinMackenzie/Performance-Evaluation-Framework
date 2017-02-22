@@ -83,17 +83,6 @@ namespace ScenarioSim.Infrastructure.MongoDbRepositories
 
             this.connectionStringOrName = connectionStringOrName;
             this.databaseName = databaseName;
-
-            RegisterMapIfNeeded<ReactionTaskValues>();
-            RegisterMapIfNeeded<FittsTaskValues>();
-            RegisterMapIfNeeded<SteeringTaskValues>();
-            RegisterMapIfNeeded<SimulatorEvent>();
-            RegisterMapIfNeeded<PerformerAction>();
-            RegisterMapIfNeeded<GoalCompletedEvent>();
-            RegisterMapIfNeeded<DynamicFittsTaskValues>();
-            RegisterMapIfNeeded<RandomReactionTaskValues>();
-            RegisterMapIfNeeded<Quaternion>();
-            RegisterMapIfNeeded<Vector3f>();
         }
 
         /// <summary>

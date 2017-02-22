@@ -1,4 +1,3 @@
-using System;
 using System.Dynamic;
 
 namespace ScenarioSim.Performance.Entities
@@ -6,7 +5,7 @@ namespace ScenarioSim.Performance.Entities
     /// <summary>
     /// The base class for all actions.
     /// </summary>
-    public class Event : DynamicObject
+    public class Event
     {
         /// <summary>
         /// Gets or sets the name.
@@ -30,6 +29,22 @@ namespace ScenarioSim.Performance.Entities
         /// <value>
         /// The timestamp.
         /// </value>
-        public DateTimeOffset Timestamp { get; set; }
+        public long Timestamp { get; set; }
+
+        /// <summary>
+        /// Gets or sets the properties.
+        /// </summary>
+        /// <value>
+        /// The properties.
+        /// </value>
+        public ExpandoObject Properties { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Event"/> class.
+        /// </summary>
+        public Event()
+        {
+            Properties = new ExpandoObject();
+        }
     }
 }

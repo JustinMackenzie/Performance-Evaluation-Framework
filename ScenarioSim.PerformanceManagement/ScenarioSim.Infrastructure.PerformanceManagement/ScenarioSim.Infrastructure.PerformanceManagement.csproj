@@ -53,10 +53,6 @@
       <Project>{de8824b9-da8f-4d8e-b2c7-080ba045f0f0}</Project>
       <Name>ScenarioSim.Core.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\ScenarioSim.Logging\ScenarioSim.Services.Logging\ScenarioSim.Services.Logging.csproj">
-      <Project>{E650D0C0-100C-4D8F-A894-85963C50280F}</Project>
-      <Name>ScenarioSim.Services.Logging</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\ScenarioSim.Performance\ScenarioSim.Performance.Entities\ScenarioSim.Performance.Entities.csproj">
       <Project>{1bb824c3-a1e0-49f9-a4c2-9ba0e15e4643}</Project>
       <Name>ScenarioSim.Performance.Entities</Name>

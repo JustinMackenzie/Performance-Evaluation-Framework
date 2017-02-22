@@ -110,6 +110,16 @@ namespace ScenarioSim.Core.Entities
         public Dictionary<Guid, TaskValues> ScenarioSpecificTasks => ScenarioTaskDefinitions.ToDictionary(t => t.TaskId, t => t.TaskValues);
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Scenario"/> class.
+        /// </summary>
+        public Scenario()
+        {
+            ScenarioTaskDefinitions = new List<ScenarioTaskDefinition>();
+            ScenarioAssets = new List<ScenarioAsset>();
+            ScenarioEvents = new List<ScenarioEvent>();
+        }
+
+        /// <summary>
         /// Copies the scenario specific task values.
         /// </summary>
         /// <param name="task">The task.</param>

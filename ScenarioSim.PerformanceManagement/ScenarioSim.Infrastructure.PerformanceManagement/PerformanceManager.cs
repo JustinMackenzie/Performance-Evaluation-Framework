@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using ScenarioSim.Core.Entities;
-using ScenarioSim.Core.Interfaces;
 using ScenarioSim.Performance.Entities;
 using ScenarioSim.Performance.Repositories;
-using ScenarioSim.Services.Logging;
 using ScenarioSim.Services.PerformanceManagement;
 
 namespace ScenarioSim.Infrastructure.PerformanceManagement
@@ -17,38 +15,20 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
     public class PerformanceManager : IPerformanceManager
     {
         /// <summary>
-        /// The logger
-        /// </summary>
-        private readonly ILogger logger;
-
-        /// <summary>
         /// The repository
         /// </summary>
         private readonly IScenarioPerformanceRepository repository;
 
         /// <summary>
-        /// The repository
-        /// </summary>
-        private readonly IScenarioRepository scenarioRepository;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="PerformanceManager" /> class.
         /// </summary>
-        /// <param name="logger">The logger.</param>
         /// <param name="repository">The repository.</param>
-        /// <param name="scenarioRepository">The scenario repository.</param>
-        public PerformanceManager(ILogger logger, IScenarioPerformanceRepository repository, IScenarioRepository scenarioRepository)
+        public PerformanceManager(IScenarioPerformanceRepository repository)
         {
-            if (logger == null)
-                throw new ArgumentNullException(nameof(logger));
             if (repository == null)
                 throw new ArgumentNullException(nameof(repository));
-            if (scenarioRepository == null)
-                throw new ArgumentNullException(nameof(scenarioRepository));
 
-            this.logger = logger;
             this.repository = repository;
-            this.scenarioRepository = scenarioRepository;
         }
 
         /// <summary>
@@ -71,8 +51,7 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
             if (schema == null)
                 throw new ArgumentNullException(nameof(schema));
 
-            IEnumerable<Scenario> scenarios = scenarioRepository.GetAll().Where(s => s.SchemaId == schema.Id);
-            return scenarios.SelectMany(s => repository.GetByScenario(s));
+            return repository.GetAll().Where(p => p.Scenario.SchemaId == schema.Id);
         }
 
         /// <summary>
@@ -121,7 +100,7 @@ namespace ScenarioSim.Infrastructure.PerformanceManagement
 
         public ScenarioPerformance GetPerformance(Guid id)
         {
-            throw new NotImplementedException();
+            return repository.Get(id);
         }
 
         public void DeletePerformance(Guid id)
