@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using MathNet.Numerics.LinearRegression;
 using ScenarioSim.Core.Entities;
+using ScenarioSim.Evaluation.Entities;
+using ScenarioSim.Performance.Entities;
 using ScenarioSim.Services.Evaluation;
 
 namespace ScenarioSim.Infrastructure.Evaluation
@@ -30,13 +33,13 @@ namespace ScenarioSim.Infrastructure.Evaluation
 
             Tuple<double, double> results = SimpleRegression.Fit(xValues, yValues);
 
+            dynamic values = new ExpandoObject();
+            values.A = Convert.ToSingle(results.Item1);
+            values.B = Convert.ToSingle(results.Item2);
+
             return new TaskPerformanceEvaluation
             {
-                TaskEvaluationValues = new FittsTaskEvaluationValues
-                {
-                    A = Convert.ToSingle(results.Item1),
-                    B = Convert.ToSingle(results.Item2)
-                },
+                TaskEvaluationValues = values,
                 TaskPerformances = taskResults
             };
         }

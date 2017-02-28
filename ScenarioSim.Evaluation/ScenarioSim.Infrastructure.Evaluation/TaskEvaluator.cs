@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using ScenarioSim.Core.Entities;
+using ScenarioSim.Evaluation.Entities;
+using ScenarioSim.Performance.Entities;
 using ScenarioSim.Services.Evaluation;
+using ScenarioSim.Utility;
 
 namespace ScenarioSim.Infrastructure.Evaluation
 {

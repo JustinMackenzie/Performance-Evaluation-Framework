@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using ScenarioSim.Core.Entities;
+using ScenarioSim.Evaluation.Entities;
+using ScenarioSim.Performance.Entities;
 using ScenarioSim.Services.Evaluation;
 
 namespace ScenarioSim.Infrastructure.Evaluation

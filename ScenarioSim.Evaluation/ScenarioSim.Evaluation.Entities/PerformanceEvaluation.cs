@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using ScenarioSim.Core.Entities;
+using ScenarioSim.Performance.Entities;
+using ScenarioSim.Utility;
 
-namespace ScenarioSim.Services.Evaluation
+namespace ScenarioSim.Evaluation.Entities
 {
     /// <summary>
     /// Represents the evaluation of a collection scenario performances.

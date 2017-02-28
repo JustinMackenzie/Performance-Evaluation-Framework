@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
-using ScenarioSim.Core.Entities;
+using System.Dynamic;
+using ScenarioSim.Performance.Entities;
+using ScenarioSim.Utility;
 
-namespace ScenarioSim.Services.Evaluation
+namespace ScenarioSim.Evaluation.Entities
 {
     /// <summary>
     /// Represents the evaluation of the task results.
@@ -22,7 +24,7 @@ namespace ScenarioSim.Services.Evaluation
         /// <value>
         /// The task evaluation values.
         /// </value>
-        public TaskEvaluationValues TaskEvaluationValues { get; set; }
+        public ExpandoObject TaskEvaluationValues { get; set; }
 
         /// <summary>
         /// Gets the tree node.

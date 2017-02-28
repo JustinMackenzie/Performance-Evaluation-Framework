@@ -1,4 +1,4 @@
-namespace ScenarioSim.Services.Evaluation
+namespace ScenarioSim.Evaluation.Entities
 {
     /// <summary>
     /// Represents the data values of a task evaluation.

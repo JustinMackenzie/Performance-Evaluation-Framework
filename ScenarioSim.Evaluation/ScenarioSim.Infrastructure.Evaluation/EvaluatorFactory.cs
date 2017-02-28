@@ -1,6 +1,7 @@
 ﻿using System;
 using ScenarioSim.Core.Entities;
 using ScenarioSim.Services.Evaluation;
+using ScenarioSim.Performance.Entities;
 
 namespace ScenarioSim.Infrastructure.Evaluation
 {
