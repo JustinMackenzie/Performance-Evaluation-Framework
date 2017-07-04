@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ConsoleSchemaManager": {
+      "commandName": "Project",
+      "commandLineArgs": "create-schema --server \"http://localhost:59009\" --name Test --description \"Test Description\""
+    }
+  }
+}

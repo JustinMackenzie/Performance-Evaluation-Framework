@@ -1,7 +1,9 @@
+using System;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Schema.API.Application.Commands;
+using Schema.Domain.Exceptions;
 
 namespace Schema.API.Controllers
 {
@@ -30,8 +32,19 @@ namespace Schema.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]CreateSchemaCommand command)
         {
-            await this._mediator.Send(command);
-            return Ok();
+            try
+            {
+                await this._mediator.Send(command);
+                return Ok();
+            }
+            catch (SchemaDomainException e)
+            {
+                return BadRequest(e.Message);
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
     }
 }
