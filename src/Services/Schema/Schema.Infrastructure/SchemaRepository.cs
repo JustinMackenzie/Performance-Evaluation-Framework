@@ -1,6 +1,9 @@
 ﻿using System;
+using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using Schema.Domain;
+using Schema.Domain.SeedWork;
+using Schema = Schema.Domain.Schema;
 
 namespace Schema.Infrastructure
 {
@@ -8,7 +11,7 @@ namespace Schema.Infrastructure
     /// An implementation of the schema repository interface using MongoDB
     /// as a storage mechanism.
     /// </summary>
-    /// <seealso cref="Schema.Domain.ISchemaRepository" />
+    /// <seealso cref="ISchemaRepository" />
     public class SchemaRepository : ISchemaRepository
     {
         /// <summary>
@@ -62,6 +65,40 @@ namespace Schema.Infrastructure
 
             this._connectionString = connectionString;
             this._databaseName = databaseName;
+
+            if (!BsonClassMap.IsClassMapRegistered(typeof(Entity)))
+            {
+                BsonClassMap.RegisterClassMap<Entity>(cm =>
+                {
+                    cm.AutoMap();
+                    cm.MapField("_id").SetElementName("Id");
+                    cm.SetIsRootClass(true);
+                    cm.AddKnownType(typeof(Domain.Schema));
+                    cm.AddKnownType(typeof(Scenario));
+                });
+            }
+
+            if (!BsonClassMap.IsClassMapRegistered(typeof(Domain.Schema)))
+            {
+                BsonClassMap.RegisterClassMap<Domain.Schema>(cm =>
+                {
+                    cm.AutoMap();
+                    cm.MapProperty(s => s.Name);
+                    cm.MapProperty(s => s.Description);
+                    cm.MapField("_scenarios").SetElementName("Scenarios");
+                    cm.MapCreator(schema => new Domain.Schema(schema.Name, schema.Description));
+                });
+            }
+
+            if (!BsonClassMap.IsClassMapRegistered(typeof(Scenario)))
+            {
+                BsonClassMap.RegisterClassMap<Scenario>(cm =>
+                {
+                    cm.AutoMap();
+                    cm.MapProperty(s => s.Name);
+                    cm.MapCreator(scenario => new Scenario(scenario.Name));
+                });
+            }
         }
 
         /// <summary>

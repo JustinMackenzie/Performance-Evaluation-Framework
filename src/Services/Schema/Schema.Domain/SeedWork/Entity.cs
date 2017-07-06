@@ -11,6 +11,7 @@ namespace Schema.Domain.SeedWork
         /// The identifier
         /// </summary>
         private Guid _id;
+
         /// <summary>
         /// The requested hash code
         /// </summary>
@@ -24,8 +25,12 @@ namespace Schema.Domain.SeedWork
         /// </value>
         public Guid Id
         {
-            get => _id;
-            protected set => _id = value;
+            get => this._id;
+        }
+
+        protected Entity()
+        {
+            this._id = Guid.NewGuid();
         }
 
         /// <summary>

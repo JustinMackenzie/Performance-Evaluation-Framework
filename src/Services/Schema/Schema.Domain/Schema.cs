@@ -14,16 +14,6 @@ namespace Schema.Domain
     public class Schema : Entity, IAggregateRoot
     {
         /// <summary>
-        /// The name
-        /// </summary>
-        private string _name;
-
-        /// <summary>
-        /// The description
-        /// </summary>
-        private string _description;
-
-        /// <summary>
         /// The scenarios
         /// </summary>
         private readonly List<Scenario> _scenarios;
@@ -54,7 +44,7 @@ namespace Schema.Domain
         /// <value>
         /// The name.
         /// </value>
-        public string Name => this._name;
+        public string Name { get; private set; }
 
         /// <summary>
         /// Gets the description.
@@ -62,7 +52,7 @@ namespace Schema.Domain
         /// <value>
         /// The description.
         /// </value>
-        public string Description => this._description;
+        public string Description { get; private set; }
 
         /// <summary>
         /// Gets the scenarios.
@@ -111,9 +101,8 @@ namespace Schema.Domain
         /// <param name="description">The description.</param>
         public Schema(string name, string description)
         {
-            Id = Guid.NewGuid();
-            this._name = name;
-            this._description = description;
+            this.Name = name;
+            this.Description = description;
             this._scenarios = new List<Scenario>();
             this._events = new List<Event>();
             this._taskTransitions = new List<TaskTransition>();

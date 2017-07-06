@@ -28,7 +28,6 @@ namespace Schema.Domain
         /// <param name="name">The name.</param>
         public Task(string name)
         {
-            Id = Guid.NewGuid();
             this._name = name;
         }
     }

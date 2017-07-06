@@ -14,9 +14,10 @@ namespace ConsoleSchemaManager
                 .AddTransient<ISchemaService, SchemaService>()
                 .BuildServiceProvider();
 
-            Parser.Default.ParseArguments<CreateSchemaCommand>(args)
+            Parser.Default.ParseArguments<CreateSchemaCommand, CreateScenarioCommand>(args)
                 .MapResult(
-                    options => new CreateSchemaCommandHandler(serviceProvider.GetService<ISchemaService>()).Handle(options),
+                    (CreateSchemaCommand options) => new CreateSchemaCommandHandler(serviceProvider.GetService<ISchemaService>()).Handle(options),
+                    (CreateScenarioCommand options) => new CreateScenarioCommandHandler(serviceProvider.GetService<ISchemaService>()).Handle(options),
                     errs => 1);
         }
     }

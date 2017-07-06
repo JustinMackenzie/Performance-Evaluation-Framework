@@ -21,12 +21,40 @@ namespace ConsoleSchemaManager.Services
                 }
             }
         }
+
+        public void CreateScenario(CreateScenarioRequest request)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                string json = JsonConvert.SerializeObject(request);
+                var response = client.PostAsync($"{request.ServerUrl}/api/Schema/{request.SchemaId}/Scenario", new StringContent(json, Encoding.UTF8, "application/json")).Result;
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception(response.Content.ReadAsStringAsync().Result);
+                }
+            }
+        }
     }
 
-    public class CreateSchemaRequest
+    public abstract class ApiRequest
+    {
+        [JsonIgnore]
+        public string ServerUrl { get; set; }
+    }
+
+    public class CreateSchemaRequest : ApiRequest
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public string ServerUrl { get; set; }
+
+    }
+
+    public class CreateScenarioRequest : ApiRequest
+    {
+        public string Name { get; set; }
+
+        [JsonIgnore]
+        public Guid SchemaId { get; set; }
     }
 }

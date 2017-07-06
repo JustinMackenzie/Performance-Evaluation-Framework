@@ -11,14 +11,11 @@ namespace Schema.Domain
     public class Scenario : Entity
     {
         /// <summary>
-        /// The name
-        /// </summary>
-        private string _name;
-        
-        /// <summary>
         /// The scenario assets
         /// </summary>
         private List<ScenarioAsset> _scenarioAssets;
+
+        public string Name { get; private set; }
 
         /// <summary>
         /// Gets the assets.
@@ -34,8 +31,7 @@ namespace Schema.Domain
         /// <param name="name">The name.</param>
         public Scenario(string name)
         {
-            Id = Guid.NewGuid();
-            _name = name;
+            this.Name = name;
             this._scenarioAssets = new List<ScenarioAsset>();
         }
 
