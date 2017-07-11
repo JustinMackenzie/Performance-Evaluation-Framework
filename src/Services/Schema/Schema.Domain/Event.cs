@@ -10,17 +10,12 @@ namespace Schema.Domain
     public class Event : ValueObject
     {
         /// <summary>
-        /// The name
-        /// </summary>
-        private string _name;
-
-        /// <summary>
         /// Gets the name.
         /// </summary>
         /// <value>
         /// The name.
         /// </value>
-        public string Name => _name;
+        public string Name { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Event"/> class.
@@ -28,7 +23,7 @@ namespace Schema.Domain
         /// <param name="name">The name.</param>
         public Event(string name)
         {
-            this._name = name;
+            this.Name = name;
         }
 
         /// <summary>
@@ -37,7 +32,7 @@ namespace Schema.Domain
         /// <returns></returns>
         protected override IEnumerable<object> GetAtomicValues()
         {
-            yield return this._name;
+            yield return this.Name;
         }
     }
 }

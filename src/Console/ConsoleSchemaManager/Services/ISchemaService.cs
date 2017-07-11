@@ -8,5 +8,6 @@ namespace ConsoleSchemaManager.Services
     {
         void CreateSchema(CreateSchemaRequest request);
         void CreateScenario(CreateScenarioRequest request);
+        void CreateSchemaEvent(CreateSchemaEventRequest request);
     }
 }

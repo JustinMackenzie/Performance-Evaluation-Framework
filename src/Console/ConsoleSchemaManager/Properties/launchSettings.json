@@ -2,7 +2,7 @@
   "profiles": {
     "ConsoleSchemaManager": {
       "commandName": "Project",
-      "commandLineArgs": "create-schema --server \"http://localhost:59009\" --name Test --description \"Test Description\""
+      "commandLineArgs": "create-event --server \"http://localhost:59009\" --name \"Test Event 2\" --schema-id \"033d0172-f82a-4c87-8209-3cb8af2947cc\""
     }
   }
 }

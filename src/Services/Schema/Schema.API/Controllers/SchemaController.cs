@@ -66,5 +66,25 @@ namespace Schema.API.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpPost]
+        [Route("{id}/event")]
+        public async Task<IActionResult> CreateEvent(Guid id, [FromBody] CreateSchemaEventCommand command)
+        {
+            try
+            {
+                command.SchemaId = id;
+                await this._mediator.Send(command);
+                return Ok();
+            }
+            catch (SchemaDomainException e)
+            {
+                return BadRequest(e.Message);
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
     }
 }

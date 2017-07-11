@@ -16,12 +16,12 @@ namespace Schema.Domain
         /// <summary>
         /// The scenarios
         /// </summary>
-        private readonly List<Scenario> _scenarios;
+        private List<Scenario> _scenarios;
 
         /// <summary>
         /// The events
         /// </summary>
-        private readonly List<Event> _events;
+        private List<Event> _events;
 
         /// <summary>
         /// The task transitions
@@ -117,7 +117,7 @@ namespace Schema.Domain
         public void AddScenario(string name)
         {
             Scenario scenario = new Scenario(name);
-            _scenarios.Add(scenario);
+            this._scenarios.Add(scenario);
         }
 
         /// <summary>
@@ -126,8 +126,14 @@ namespace Schema.Domain
         /// <param name="name">The name.</param>
         public void AddEvent(string name)
         {
+            if (string.IsNullOrEmpty(name))
+                throw new ArgumentException("The name cannot be null or empty.", nameof(name));
+
+            if (this._events.Any(e => e.Name == name))
+                throw new SchemaDomainException($"Cannot add event. There already exists an event in the schema with the name '{name}'.");
+
             Event @event = new Event(name);
-            _events.Add(@event);
+            this._events.Add(@event);
         }
 
         /// <summary>

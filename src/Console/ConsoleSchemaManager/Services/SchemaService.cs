@@ -35,6 +35,28 @@ namespace ConsoleSchemaManager.Services
                 }
             }
         }
+
+        public void CreateSchemaEvent(CreateSchemaEventRequest request)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                string json = JsonConvert.SerializeObject(request);
+                var response = client.PostAsync($"{request.ServerUrl}/api/Schema/{request.SchemaId}/Event", new StringContent(json, Encoding.UTF8, "application/json")).Result;
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception(response.Content.ReadAsStringAsync().Result);
+                }
+            }
+        }
+    }
+
+    public class CreateSchemaEventRequest : ApiRequest
+    {
+        public string Name { get; set; }
+
+        [JsonIgnore]
+        public Guid SchemaId { get; set; }
     }
 
     public abstract class ApiRequest

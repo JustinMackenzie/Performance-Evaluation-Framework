@@ -3,7 +3,6 @@ using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using Schema.Domain;
 using Schema.Domain.SeedWork;
-using Schema = Schema.Domain.Schema;
 
 namespace Schema.Infrastructure
 {
@@ -85,8 +84,9 @@ namespace Schema.Infrastructure
                     cm.AutoMap();
                     cm.MapProperty(s => s.Name);
                     cm.MapProperty(s => s.Description);
-                    cm.MapField("_scenarios").SetElementName("Scenarios");
                     cm.MapCreator(schema => new Domain.Schema(schema.Name, schema.Description));
+                    cm.MapField("_scenarios").SetElementName("Scenarios");
+                    cm.MapField("_events").SetElementName("Events");
                 });
             }
 
@@ -97,6 +97,16 @@ namespace Schema.Infrastructure
                     cm.AutoMap();
                     cm.MapProperty(s => s.Name);
                     cm.MapCreator(scenario => new Scenario(scenario.Name));
+                });
+            }
+
+            if (!BsonClassMap.IsClassMapRegistered(typeof(Event)))
+            {
+                BsonClassMap.RegisterClassMap<Event>(cm =>
+                {
+                    cm.AutoMap();
+                    cm.MapProperty(e => e.Name);
+                    cm.MapCreator(@event => new Event(@event.Name));
                 });
             }
         }
