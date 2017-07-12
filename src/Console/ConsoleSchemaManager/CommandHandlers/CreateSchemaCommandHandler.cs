@@ -4,15 +4,31 @@ using ConsoleSchemaManager.Services;
 
 namespace ConsoleSchemaManager.CommandHandlers
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="ConsoleSchemaManager.CommandHandlers.ICommandHandler{ConsoleSchemaManager.Commands.CreateSchemaCommand}" />
     public class CreateSchemaCommandHandler : ICommandHandler<CreateSchemaCommand>
     {
+        /// <summary>
+        /// The schema service
+        /// </summary>
         private readonly ISchemaService _schemaService;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateSchemaCommandHandler"/> class.
+        /// </summary>
+        /// <param name="schemaService">The schema service.</param>
         public CreateSchemaCommandHandler(ISchemaService schemaService)
         {
             this._schemaService = schemaService;
         }
 
+        /// <summary>
+        /// Handles the specified command.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <returns></returns>
         public int Handle(CreateSchemaCommand command)
         {
             CreateSchemaRequest request = new CreateSchemaRequest

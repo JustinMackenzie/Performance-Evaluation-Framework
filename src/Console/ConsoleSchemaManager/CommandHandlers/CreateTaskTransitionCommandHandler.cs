@@ -16,7 +16,7 @@ namespace ConsoleSchemaManager.CommandHandlers
         private readonly ISchemaService _service;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateTaskTransitionCommandHandler"/> class.
+        /// Initializes a new instance of the <see cref="CreateTaskTransitionCommandHandler" /> class.
         /// </summary>
         /// <param name="service">The service.</param>
         public CreateTaskTransitionCommandHandler(ISchemaService service)

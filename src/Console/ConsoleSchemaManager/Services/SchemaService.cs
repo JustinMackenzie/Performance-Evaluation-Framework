@@ -5,8 +5,17 @@ using Newtonsoft.Json;
 
 namespace ConsoleSchemaManager.Services
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="ConsoleSchemaManager.Services.ISchemaService" />
     public class SchemaService : ISchemaService
     {
+        /// <summary>
+        /// Creates the schema.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <exception cref="Exception"></exception>
         public void CreateSchema(CreateSchemaRequest request)
         {
             using (HttpClient client = new HttpClient())
@@ -21,6 +30,11 @@ namespace ConsoleSchemaManager.Services
             }
         }
 
+        /// <summary>
+        /// Creates the scenario.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <exception cref="Exception"></exception>
         public void CreateScenario(CreateScenarioRequest request)
         {
             using (HttpClient client = new HttpClient())
@@ -35,6 +49,11 @@ namespace ConsoleSchemaManager.Services
             }
         }
 
+        /// <summary>
+        /// Creates the schema event.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <exception cref="Exception"></exception>
         public void CreateSchemaEvent(CreateSchemaEventRequest request)
         {
             using (HttpClient client = new HttpClient())
@@ -49,6 +68,11 @@ namespace ConsoleSchemaManager.Services
             }
         }
 
+        /// <summary>
+        /// Creates the schema task.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <exception cref="Exception"></exception>
         public void CreateSchemaTask(CreateSchemaTaskRequest request)
         {
             using (HttpClient client = new HttpClient())
@@ -63,6 +87,11 @@ namespace ConsoleSchemaManager.Services
             }
         }
 
+        /// <summary>
+        /// Creates the task transition.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <exception cref="Exception"></exception>
         public void CreateTaskTransition(CreateTaskTransitionRequest request)
         {
             using (HttpClient client = new HttpClient())
