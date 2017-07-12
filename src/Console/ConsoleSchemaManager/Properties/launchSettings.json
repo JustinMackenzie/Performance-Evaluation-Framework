@@ -2,7 +2,7 @@
   "profiles": {
     "ConsoleSchemaManager": {
       "commandName": "Project",
-      "commandLineArgs": "create-task --server \"http://localhost:59009\" --name \"Test Task\" --schema-id \"033d0172-f82a-4c87-8209-3cb8af2947cc\""
+      "commandLineArgs": "create-task-transition --server \"http://localhost:59009\" --event \"Test Event 2\" --source-task \"Test Task\" --destination-task \"Test Task 2\" --schema-id \"033d0172-f82a-4c87-8209-3cb8af2947cc\""
     }
   }
 }

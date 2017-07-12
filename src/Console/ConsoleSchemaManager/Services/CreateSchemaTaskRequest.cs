@@ -1,8 +1,7 @@
 ﻿using System;
-using ConsoleSchemaManager.Services;
 using Newtonsoft.Json;
 
-namespace ConsoleSchemaManager.CommandHandlers
+namespace ConsoleSchemaManager.Services
 {
     public class CreateSchemaTaskRequest : ApiRequest
     {

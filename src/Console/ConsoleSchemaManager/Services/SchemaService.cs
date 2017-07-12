@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
-using ConsoleSchemaManager.CommandHandlers;
 using Newtonsoft.Json;
 
 namespace ConsoleSchemaManager.Services
@@ -57,6 +55,20 @@ namespace ConsoleSchemaManager.Services
             {
                 string json = JsonConvert.SerializeObject(request);
                 var response = client.PostAsync($"{request.ServerUrl}/api/Schema/{request.SchemaId}/Task", new StringContent(json, Encoding.UTF8, "application/json")).Result;
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception(response.Content.ReadAsStringAsync().Result);
+                }
+            }
+        }
+
+        public void CreateTaskTransition(CreateTaskTransitionRequest request)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                string json = JsonConvert.SerializeObject(request);
+                var response = client.PostAsync($"{request.ServerUrl}/api/Schema/{request.SchemaId}/TaskTransition", new StringContent(json, Encoding.UTF8, "application/json")).Result;
 
                 if (!response.IsSuccessStatusCode)
                 {

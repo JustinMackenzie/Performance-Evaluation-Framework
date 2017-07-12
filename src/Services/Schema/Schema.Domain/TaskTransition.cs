@@ -10,27 +10,12 @@ namespace Schema.Domain
     public class TaskTransition : ValueObject
     {
         /// <summary>
-        /// The event name
-        /// </summary>
-        private string _eventName;
-
-        /// <summary>
-        /// The source task name
-        /// </summary>
-        private string _sourceTaskName;
-
-        /// <summary>
-        /// The destination task name
-        /// </summary>
-        private string _destinationTaskName;
-
-        /// <summary>
         /// Gets the name of the event.
         /// </summary>
         /// <value>
         /// The name of the event.
         /// </value>
-        public string EventName => this._eventName;
+        public string EventName { get; private set; }
 
         /// <summary>
         /// Gets the name of the source task.
@@ -38,7 +23,7 @@ namespace Schema.Domain
         /// <value>
         /// The name of the source task.
         /// </value>
-        public string SourceTaskName => this._sourceTaskName;
+        public string SourceTaskName { get; private set; }
 
         /// <summary>
         /// Gets the name of the destination task.
@@ -46,7 +31,7 @@ namespace Schema.Domain
         /// <value>
         /// The name of the destination task.
         /// </value>
-        public string DestinationTaskName => this._destinationTaskName;
+        public string DestinationTaskName { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TaskTransition"/> class.
@@ -56,9 +41,9 @@ namespace Schema.Domain
         /// <param name="destinationTaskName">Name of the destination task.</param>
         public TaskTransition(string eventName, string sourceTaskName, string destinationTaskName)
         {
-            this._eventName = eventName;
-            this._sourceTaskName = sourceTaskName;
-            this._destinationTaskName = destinationTaskName;
+            this.EventName = eventName;
+            this.SourceTaskName = sourceTaskName;
+            this.DestinationTaskName = destinationTaskName;
         }
 
         /// <summary>
@@ -67,9 +52,9 @@ namespace Schema.Domain
         /// <returns></returns>
         protected override IEnumerable<object> GetAtomicValues()
         {
-            yield return this._eventName;
-            yield return this._sourceTaskName;
-            yield return this._destinationTaskName;
+            yield return this.EventName;
+            yield return this.SourceTaskName;
+            yield return this.DestinationTaskName;
         }
     }
 }

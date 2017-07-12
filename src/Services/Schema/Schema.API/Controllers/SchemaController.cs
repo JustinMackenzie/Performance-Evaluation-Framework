@@ -22,7 +22,7 @@ namespace Schema.API.Controllers
         /// <param name="mediator">The mediator.</param>
         public SchemaController(IMediator mediator)
         {
-            _mediator = mediator;
+            this._mediator = mediator;
         }
 
         /// <summary>
@@ -90,6 +90,26 @@ namespace Schema.API.Controllers
         [HttpPost]
         [Route("{id}/task")]
         public async Task<IActionResult> CreateTask(Guid id, [FromBody] CreateSchemaTaskEventCommand command)
+        {
+            try
+            {
+                command.SchemaId = id;
+                await this._mediator.Send(command);
+                return Ok();
+            }
+            catch (SchemaDomainException e)
+            {
+                return BadRequest(e.Message);
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPost]
+        [Route("{id}/tasktransition")]
+        public async Task<IActionResult> CreateTaskTransition(Guid id, [FromBody] CreateTaskTransitionCommand command)
         {
             try
             {

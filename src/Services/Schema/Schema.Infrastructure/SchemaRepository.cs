@@ -89,6 +89,7 @@ namespace Schema.Infrastructure
                     cm.MapField("_scenarios").SetElementName("Scenarios");
                     cm.MapField("_events").SetElementName("Events");
                     cm.MapField("_tasks").SetElementName("Tasks");
+                    cm.MapField("_taskTransitions").SetElementName("TaskTransitions");
                 });
             }
 
@@ -119,6 +120,18 @@ namespace Schema.Infrastructure
                     cm.AutoMap();
                     cm.MapProperty(t => t.Name);
                     cm.MapCreator(task => new Task(task.Name));
+                });
+            }
+
+            if (!BsonClassMap.IsClassMapRegistered(typeof(TaskTransition)))
+            {
+                BsonClassMap.RegisterClassMap<TaskTransition>(cm =>
+                {
+                    cm.AutoMap();
+                    cm.MapProperty(t => t.EventName);
+                    cm.MapProperty(t => t.SourceTaskName);
+                    cm.MapProperty(t => t.DestinationTaskName);
+                    cm.MapCreator(t => new TaskTransition(t.EventName, t.SourceTaskName, t.DestinationTaskName));
                 });
             }
         }
