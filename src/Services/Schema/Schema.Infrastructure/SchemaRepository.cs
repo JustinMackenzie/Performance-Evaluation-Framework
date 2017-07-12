@@ -1,10 +1,10 @@
 ﻿using System;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
-using Schema.Domain;
-using Schema.Domain.SeedWork;
+using SchemaManagement.Domain;
+using SchemaManagement.Domain.SeedWork;
 
-namespace Schema.Infrastructure
+namespace SchemaManagement.Infrastructure
 {
     /// <summary>
     /// An implementation of the schema repository interface using MongoDB

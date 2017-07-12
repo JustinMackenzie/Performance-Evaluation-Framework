@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Schema.Domain.SeedWork;
+using SchemaManagement.Domain.SeedWork;
 
-namespace Schema.Domain
+namespace SchemaManagement.Domain
 {
     /// <summary>
     /// 

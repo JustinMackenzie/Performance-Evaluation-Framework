@@ -1,6 +1,6 @@
 using System;
 
-namespace Schema.Domain.SeedWork
+namespace SchemaManagement.Domain.SeedWork
 {
     /// <summary>
     /// 

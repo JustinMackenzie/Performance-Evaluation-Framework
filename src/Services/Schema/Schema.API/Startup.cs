@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Schema.Domain;
-using Schema.Infrastructure;
+using SchemaManagement.Domain;
+using SchemaManagement.Infrastructure;
 
-namespace Schema.API
+namespace SchemaManagement.API
 {
     public class Startup
     {

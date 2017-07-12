@@ -2,10 +2,10 @@ using System;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Schema.API.Application.Commands;
-using Schema.Domain.Exceptions;
+using SchemaManagement.API.Application.Commands;
+using SchemaManagement.Domain.Exceptions;
 
-namespace Schema.API.Controllers
+namespace SchemaManagement.API.Controllers
 {
     [Produces("application/json")]
     [Route("api/Schema")]

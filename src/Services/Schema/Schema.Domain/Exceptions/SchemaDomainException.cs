@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Schema.Domain.Exceptions
+namespace SchemaManagement.Domain.Exceptions
 {
     /// <summary>
     /// 

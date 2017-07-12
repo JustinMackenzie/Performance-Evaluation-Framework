@@ -1,8 +1,8 @@
 using MediatR;
-using Schema.Domain;
+using SchemaManagement.Domain;
 using Task = System.Threading.Tasks.Task;
 
-namespace Schema.API.Application.Commands
+namespace SchemaManagement.API.Application.Commands
 {
     /// <summary>
     /// 

@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using MediatR;
-using Schema.Domain;
+﻿using MediatR;
+using SchemaManagement.Domain;
 using Task = System.Threading.Tasks.Task;
 
-namespace Schema.API.Application.Commands
+namespace SchemaManagement.API.Application.Commands
 {
     public class CreateSchemaEventCommandHandler : IAsyncRequestHandler<CreateSchemaEventCommand>
     {

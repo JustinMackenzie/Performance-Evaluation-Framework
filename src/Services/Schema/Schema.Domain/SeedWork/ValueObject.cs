@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Schema.Domain.SeedWork
+namespace SchemaManagement.Domain.SeedWork
 {
     /// <summary>
     /// 

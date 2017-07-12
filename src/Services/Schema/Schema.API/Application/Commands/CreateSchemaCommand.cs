@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Schema.API.Application.Commands
+namespace SchemaManagement.API.Application.Commands
 {
     /// <summary>
     /// 

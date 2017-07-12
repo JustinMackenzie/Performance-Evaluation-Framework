@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Schema.Domain.Exceptions;
-using Schema.Domain.SeedWork;
+using SchemaManagement.Domain.Exceptions;
+using SchemaManagement.Domain.SeedWork;
 
-namespace Schema.Domain
+namespace SchemaManagement.Domain
 {
     /// <summary>
     /// 

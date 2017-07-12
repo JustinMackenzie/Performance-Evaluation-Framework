@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using Schema.Domain;
+using SchemaManagement.Domain;
 
-namespace Schema.API.Application.Commands
+namespace SchemaManagement.API.Application.Commands
 {
     /// <summary>
     /// 

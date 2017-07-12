@@ -1,8 +1,8 @@
 using System;
 using MediatR;
-using Schema = Schema.Domain.Schema;
+using Schema = SchemaManagement.Domain.Schema;
 
-namespace Schema.API.Application.Commands
+namespace SchemaManagement.API.Application.Commands
 {
     public class CreateScenarioCommand : IRequest
     {

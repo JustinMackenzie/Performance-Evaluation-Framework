@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Schema.API
+namespace SchemaManagement.API
 {
     public class Program
     {

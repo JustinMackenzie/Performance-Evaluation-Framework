@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Schema.Domain.SeedWork;
+using SchemaManagement.Domain.SeedWork;
 
-namespace Schema.Domain
+namespace SchemaManagement.Domain
 {
     /// <summary>
     /// Represents the transition from one task to another.
