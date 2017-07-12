@@ -64,7 +64,14 @@ namespace Schema.Infrastructure
 
             this._connectionString = connectionString;
             this._databaseName = databaseName;
+            this.RegisterClassMaps();
+        }
 
+        /// <summary>
+        /// Registers the class maps.
+        /// </summary>
+        private void RegisterClassMaps()
+        {
             if (!BsonClassMap.IsClassMapRegistered(typeof(Entity)))
             {
                 BsonClassMap.RegisterClassMap<Entity>(cm =>
