@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ConsoleSchemaManager.CommandHandlers;
 
 namespace ConsoleSchemaManager.Services
 {
@@ -9,5 +10,6 @@ namespace ConsoleSchemaManager.Services
         void CreateSchema(CreateSchemaRequest request);
         void CreateScenario(CreateScenarioRequest request);
         void CreateSchemaEvent(CreateSchemaEventRequest request);
+        void CreateSchemaTask(CreateSchemaTaskRequest request);
     }
 }

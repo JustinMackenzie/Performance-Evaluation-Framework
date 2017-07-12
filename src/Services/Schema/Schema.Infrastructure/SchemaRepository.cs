@@ -74,6 +74,7 @@ namespace Schema.Infrastructure
                     cm.SetIsRootClass(true);
                     cm.AddKnownType(typeof(Domain.Schema));
                     cm.AddKnownType(typeof(Scenario));
+                    cm.AddKnownType(typeof(Task));
                 });
             }
 
@@ -87,6 +88,7 @@ namespace Schema.Infrastructure
                     cm.MapCreator(schema => new Domain.Schema(schema.Name, schema.Description));
                     cm.MapField("_scenarios").SetElementName("Scenarios");
                     cm.MapField("_events").SetElementName("Events");
+                    cm.MapField("_tasks").SetElementName("Tasks");
                 });
             }
 
@@ -107,6 +109,16 @@ namespace Schema.Infrastructure
                     cm.AutoMap();
                     cm.MapProperty(e => e.Name);
                     cm.MapCreator(@event => new Event(@event.Name));
+                });
+            }
+
+            if (!BsonClassMap.IsClassMapRegistered(typeof(Task)))
+            {
+                BsonClassMap.RegisterClassMap<Task>(cm =>
+                {
+                    cm.AutoMap();
+                    cm.MapProperty(t => t.Name);
+                    cm.MapCreator(task => new Task(task.Name));
                 });
             }
         }

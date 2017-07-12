@@ -10,17 +10,12 @@ namespace Schema.Domain
     public class Task : Entity
     {
         /// <summary>
-        /// The name
-        /// </summary>
-        private string _name;
-
-        /// <summary>
         /// Gets the name.
         /// </summary>
         /// <value>
         /// The name.
         /// </value>
-        public string Name => this._name;
+        public string Name { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Task"/> class.
@@ -28,7 +23,7 @@ namespace Schema.Domain
         /// <param name="name">The name.</param>
         public Task(string name)
         {
-            this._name = name;
+            this.Name = name;
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using ConsoleSchemaManager.CommandHandlers;
 using Newtonsoft.Json;
 
 namespace ConsoleSchemaManager.Services
@@ -49,34 +50,19 @@ namespace ConsoleSchemaManager.Services
                 }
             }
         }
-    }
 
-    public class CreateSchemaEventRequest : ApiRequest
-    {
-        public string Name { get; set; }
+        public void CreateSchemaTask(CreateSchemaTaskRequest request)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                string json = JsonConvert.SerializeObject(request);
+                var response = client.PostAsync($"{request.ServerUrl}/api/Schema/{request.SchemaId}/Task", new StringContent(json, Encoding.UTF8, "application/json")).Result;
 
-        [JsonIgnore]
-        public Guid SchemaId { get; set; }
-    }
-
-    public abstract class ApiRequest
-    {
-        [JsonIgnore]
-        public string ServerUrl { get; set; }
-    }
-
-    public class CreateSchemaRequest : ApiRequest
-    {
-        public string Name { get; set; }
-        public string Description { get; set; }
-
-    }
-
-    public class CreateScenarioRequest : ApiRequest
-    {
-        public string Name { get; set; }
-
-        [JsonIgnore]
-        public Guid SchemaId { get; set; }
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception(response.Content.ReadAsStringAsync().Result);
+                }
+            }
+        }
     }
 }
