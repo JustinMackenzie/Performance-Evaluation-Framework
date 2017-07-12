@@ -5,19 +5,27 @@ VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{12C1D84A-7AEA-4957-9CE3-64BDEAA99EB5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Schema", "Schema", "{4669A5A5-54E5-4510-B931-FD0983870AAB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SchemaManagement", "SchemaManagement", "{4669A5A5-54E5-4510-B931-FD0983870AAB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{ED868824-413A-4504-B406-B8E08A2D9915}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Schema.API", "src\Services\Schema\Schema.API\Schema.API.csproj", "{204AADCD-F5D9-4D0C-9B08-960794A78E73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchemaManagement.API", "src\Services\SchemaManagement\SchemaManagement.API\SchemaManagement.API.csproj", "{204AADCD-F5D9-4D0C-9B08-960794A78E73}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Schema.Domain", "src\Services\Schema\Schema.Domain\Schema.Domain.csproj", "{49FF3D21-4348-4F76-B36D-356265F92EF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchemaManagement.Domain", "src\Services\SchemaManagement\SchemaManagement.Domain\SchemaManagement.Domain.csproj", "{49FF3D21-4348-4F76-B36D-356265F92EF3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Schema.Infrastructure", "src\Services\Schema\Schema.Infrastructure\Schema.Infrastructure.csproj", "{904BF3EC-C278-43DC-A101-60A41B82050A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchemaManagement.Infrastructure", "src\Services\SchemaManagement\SchemaManagement.Infrastructure\SchemaManagement.Infrastructure.csproj", "{904BF3EC-C278-43DC-A101-60A41B82050A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{739EFDCC-F592-4B57-99E5-793FD6A9C4D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleSchemaManager", "src\Console\ConsoleSchemaManager\ConsoleSchemaManager.csproj", "{3507F144-AAD0-4724-ACCB-B271BB34ACB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleSchemaManager", "src\Console\ConsoleSchemaManager\ConsoleSchemaManager.csproj", "{3507F144-AAD0-4724-ACCB-B271BB34ACB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScenarioManagement", "ScenarioManagement", "{84DFD6C7-1E44-42BC-BD09-BEC61991A2E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioManagement.Domain", "src\Services\ScenarioManagement\ScenarioManagement.Domain\ScenarioManagement.Domain.csproj", "{C3F48597-90E9-4B76-A378-BE8336826970}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TrialManagement", "TrialManagement", "{3E49690D-63BC-4F2A-90FE-31BB0DADE106}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrialManagement.Domain", "src\Services\TrialManagement\TrialManagement.Domain\TrialManagement.Domain.csproj", "{FEAD6D48-B774-429D-BC67-33D9CA639DCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +49,14 @@ Global
 		{3507F144-AAD0-4724-ACCB-B271BB34ACB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3507F144-AAD0-4724-ACCB-B271BB34ACB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3507F144-AAD0-4724-ACCB-B271BB34ACB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3F48597-90E9-4B76-A378-BE8336826970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3F48597-90E9-4B76-A378-BE8336826970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3F48597-90E9-4B76-A378-BE8336826970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3F48597-90E9-4B76-A378-BE8336826970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEAD6D48-B774-429D-BC67-33D9CA639DCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEAD6D48-B774-429D-BC67-33D9CA639DCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEAD6D48-B774-429D-BC67-33D9CA639DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEAD6D48-B774-429D-BC67-33D9CA639DCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,5 +69,9 @@ Global
 		{904BF3EC-C278-43DC-A101-60A41B82050A} = {4669A5A5-54E5-4510-B931-FD0983870AAB}
 		{739EFDCC-F592-4B57-99E5-793FD6A9C4D3} = {ED868824-413A-4504-B406-B8E08A2D9915}
 		{3507F144-AAD0-4724-ACCB-B271BB34ACB1} = {739EFDCC-F592-4B57-99E5-793FD6A9C4D3}
+		{84DFD6C7-1E44-42BC-BD09-BEC61991A2E9} = {12C1D84A-7AEA-4957-9CE3-64BDEAA99EB5}
+		{C3F48597-90E9-4B76-A378-BE8336826970} = {84DFD6C7-1E44-42BC-BD09-BEC61991A2E9}
+		{3E49690D-63BC-4F2A-90FE-31BB0DADE106} = {12C1D84A-7AEA-4957-9CE3-64BDEAA99EB5}
+		{FEAD6D48-B774-429D-BC67-33D9CA639DCC} = {3E49690D-63BC-4F2A-90FE-31BB0DADE106}
 	EndGlobalSection
 EndGlobal
