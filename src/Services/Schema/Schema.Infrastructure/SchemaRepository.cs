@@ -68,6 +68,34 @@ namespace Schema.Infrastructure
         }
 
         /// <summary>
+        /// Adds the specified schema.
+        /// </summary>
+        /// <param name="schema">The schema.</param>
+        public void Add(Domain.Schema schema)
+        {
+            this.Collection.InsertOne(schema);
+        }
+
+        /// <summary>
+        /// Updates the specified schema.
+        /// </summary>
+        /// <param name="schema">The schema.</param>
+        public void Update(Domain.Schema schema)
+        {
+            this.Collection.ReplaceOne(s => s.Id == schema.Id, schema);
+        }
+
+        /// <summary>
+        /// Gets the schema with the given identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
+        public Domain.Schema Get(Guid id)
+        {
+            return this.Collection.Find(s => s.Id == id).FirstOrDefault();
+        }
+
+        /// <summary>
         /// Registers the class maps.
         /// </summary>
         private void RegisterClassMaps()
@@ -141,34 +169,6 @@ namespace Schema.Infrastructure
                     cm.MapCreator(t => new TaskTransition(t.EventName, t.SourceTaskName, t.DestinationTaskName));
                 });
             }
-        }
-
-        /// <summary>
-        /// Adds the specified schema.
-        /// </summary>
-        /// <param name="schema">The schema.</param>
-        public void Add(Domain.Schema schema)
-        {
-            this.Collection.InsertOne(schema);
-        }
-
-        /// <summary>
-        /// Updates the specified schema.
-        /// </summary>
-        /// <param name="schema">The schema.</param>
-        public void Update(Domain.Schema schema)
-        {
-            this.Collection.ReplaceOne(s => s.Id == schema.Id, schema);
-        }
-
-        /// <summary>
-        /// Gets the schema with the given identifier.
-        /// </summary>
-        /// <param name="id">The identifier.</param>
-        /// <returns></returns>
-        public Domain.Schema Get(Guid id)
-        {
-            return this.Collection.Find(s => s.Id == id).FirstOrDefault();
         }
     }
 }
