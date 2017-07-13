@@ -21,15 +21,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleSchemaManager", "src
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScenarioManagement", "ScenarioManagement", "{84DFD6C7-1E44-42BC-BD09-BEC61991A2E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioManagement.Domain", "src\Services\ScenarioManagement\ScenarioManagement.Domain\ScenarioManagement.Domain.csproj", "{C3F48597-90E9-4B76-A378-BE8336826970}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScenarioManagement.Domain", "src\Services\ScenarioManagement\ScenarioManagement.Domain\ScenarioManagement.Domain.csproj", "{C3F48597-90E9-4B76-A378-BE8336826970}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TrialManagement", "TrialManagement", "{3E49690D-63BC-4F2A-90FE-31BB0DADE106}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrialManagement.Domain", "src\Services\TrialManagement\TrialManagement.Domain\TrialManagement.Domain.csproj", "{FEAD6D48-B774-429D-BC67-33D9CA639DCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrialManagement.Domain", "src\Services\TrialManagement\TrialManagement.Domain\TrialManagement.Domain.csproj", "{FEAD6D48-B774-429D-BC67-33D9CA639DCC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PerformanceEvaluation", "PerformanceEvaluation", "{470BABFB-793B-4655-8AFD-E10D19E5FABE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerformanceEvaluation.Domain", "src\Services\PerformanceEvaluation\PerformanceEvaluation.Domain\PerformanceEvaluation.Domain.csproj", "{F4096266-BD48-4D43-8701-24AEBB7B985D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PerformanceEvaluation.Domain", "src\Services\PerformanceEvaluation\PerformanceEvaluation.Domain\PerformanceEvaluation.Domain.csproj", "{F4096266-BD48-4D43-8701-24AEBB7B985D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{6C183A59-A203-472C-A01E-A95E2E0A33F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus", "src\BuildingBlocks\EventBus\EventBus.csproj", "{271CDED1-CD18-4982-B8BB-F0B9E3D4BFC6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.RabbitMQ", "src\BuildingBlocks\EventBus.RabbitMQ\EventBus.RabbitMQ.csproj", "{B40C1A6A-1752-4365-96A6-3FF9BEC9FC67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioManagement.Infrastructure", "src\Services\ScenarioManagement\ScenarioManagement.Infrastructure\ScenarioManagement.Infrastructure.csproj", "{C748437C-F0C9-42DC-970B-71CA46251992}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioManagement.API", "src\Services\ScenarioManagement\ScenarioManagement.API\ScenarioManagement.API.csproj", "{281DAC01-533C-444B-95B8-B91C38411303}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +75,22 @@ Global
 		{F4096266-BD48-4D43-8701-24AEBB7B985D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4096266-BD48-4D43-8701-24AEBB7B985D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4096266-BD48-4D43-8701-24AEBB7B985D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{271CDED1-CD18-4982-B8BB-F0B9E3D4BFC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{271CDED1-CD18-4982-B8BB-F0B9E3D4BFC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{271CDED1-CD18-4982-B8BB-F0B9E3D4BFC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{271CDED1-CD18-4982-B8BB-F0B9E3D4BFC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B40C1A6A-1752-4365-96A6-3FF9BEC9FC67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B40C1A6A-1752-4365-96A6-3FF9BEC9FC67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B40C1A6A-1752-4365-96A6-3FF9BEC9FC67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B40C1A6A-1752-4365-96A6-3FF9BEC9FC67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C748437C-F0C9-42DC-970B-71CA46251992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C748437C-F0C9-42DC-970B-71CA46251992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C748437C-F0C9-42DC-970B-71CA46251992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C748437C-F0C9-42DC-970B-71CA46251992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{281DAC01-533C-444B-95B8-B91C38411303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{281DAC01-533C-444B-95B8-B91C38411303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{281DAC01-533C-444B-95B8-B91C38411303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{281DAC01-533C-444B-95B8-B91C38411303}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,5 +109,10 @@ Global
 		{FEAD6D48-B774-429D-BC67-33D9CA639DCC} = {3E49690D-63BC-4F2A-90FE-31BB0DADE106}
 		{470BABFB-793B-4655-8AFD-E10D19E5FABE} = {12C1D84A-7AEA-4957-9CE3-64BDEAA99EB5}
 		{F4096266-BD48-4D43-8701-24AEBB7B985D} = {470BABFB-793B-4655-8AFD-E10D19E5FABE}
+		{6C183A59-A203-472C-A01E-A95E2E0A33F2} = {ED868824-413A-4504-B406-B8E08A2D9915}
+		{271CDED1-CD18-4982-B8BB-F0B9E3D4BFC6} = {6C183A59-A203-472C-A01E-A95E2E0A33F2}
+		{B40C1A6A-1752-4365-96A6-3FF9BEC9FC67} = {6C183A59-A203-472C-A01E-A95E2E0A33F2}
+		{C748437C-F0C9-42DC-970B-71CA46251992} = {84DFD6C7-1E44-42BC-BD09-BEC61991A2E9}
+		{281DAC01-533C-444B-95B8-B91C38411303} = {84DFD6C7-1E44-42BC-BD09-BEC61991A2E9}
 	EndGlobalSection
 EndGlobal
