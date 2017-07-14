@@ -45,8 +45,8 @@ namespace TrialManagement.Domain
         /// </summary>
         public Trial(DateTime start, DateTime end)
         {
-            this.Start = start;
-            this.End = end;
+            this.Start = start.ToUniversalTime();
+            this.End = end.ToUniversalTime();
             this._events = new List<Event>();
         }
 
