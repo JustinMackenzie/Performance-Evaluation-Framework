@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ScenarioManagement.Domain.SeedWork;
 
 namespace ScenarioManagement.Domain
@@ -27,5 +28,11 @@ namespace ScenarioManagement.Domain
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
         TrialSet Get(Guid id);
+
+        /// <summary>
+        /// Gets all trial sets.
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<TrialSet> GetAll();
     }
 }

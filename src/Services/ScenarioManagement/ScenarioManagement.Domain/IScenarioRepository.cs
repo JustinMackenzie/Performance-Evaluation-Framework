@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ScenarioManagement.Domain.SeedWork;
 
 namespace ScenarioManagement.Domain
@@ -27,5 +28,12 @@ namespace ScenarioManagement.Domain
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
         Scenario Get(Guid id);
+
+        /// <summary>
+        /// Gets the scenarios.
+        /// </summary>
+        /// <param name="ids">The ids.</param>
+        /// <returns></returns>
+        IEnumerable<Scenario> GetScenarios(IList<Guid> ids);
     }
 }

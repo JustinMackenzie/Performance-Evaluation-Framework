@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MongoDB.Driver;
 using ScenarioManagement.Domain;
 
@@ -21,7 +22,7 @@ namespace ScenarioManagement.Infrastructure
         /// <param name="trialSet">The trial set.</param>
         public void Update(TrialSet trialSet)
         {
-            this.Collection.ReplaceOne(s => s.Id == trialSet.Id, trialSet);
+            this.Collection.ReplaceOne(t => t.Id == trialSet.Id, trialSet);
         }
 
         /// <summary>
@@ -31,7 +32,16 @@ namespace ScenarioManagement.Infrastructure
         /// <returns></returns>
         public TrialSet Get(Guid id)
         {
-            return this.Collection.Find(s => s.Id == id).FirstOrDefault();
+            return this.Collection.Find(t => t.Id == id).FirstOrDefault();
+        }
+
+        /// <summary>
+        /// Gets all trial sets.
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<TrialSet> GetAll()
+        {
+            return this.Collection.Find(t => true).ToList();
         }
 
         /// <summary>

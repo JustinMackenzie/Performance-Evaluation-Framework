@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using MongoDB.Driver;
 using ScenarioManagement.Domain;
 
@@ -54,6 +56,18 @@ namespace ScenarioManagement.Infrastructure
         public Scenario Get(Guid id)
         {
             return this.Collection.Find(s => s.Id == id).FirstOrDefault();
+        }
+
+        /// <summary>
+        /// Gets the scenarios.
+        /// </summary>
+        /// <param name="ids">The ids.</param>
+        /// <returns></returns>
+        public IEnumerable<Scenario> GetScenarios(IList<Guid> ids)
+        {
+            List<Scenario> scenarios = this.Collection.Find(s => ids.Contains(s.Id))
+                .ToList();
+            return scenarios.OrderBy(s => ids.IndexOf(s.Id));
         }
     }
 }
