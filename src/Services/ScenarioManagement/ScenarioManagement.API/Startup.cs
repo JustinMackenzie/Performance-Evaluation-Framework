@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using ScenarioManagement.API.Application.Queries;
+using ScenarioManagement.Domain;
+using ScenarioManagement.Infrastructure;
 
 namespace ScenarioManagement.API
 {
@@ -29,6 +32,12 @@ namespace ScenarioManagement.API
         {
             // Add framework services.
             services.AddMvc();
+
+            services.AddTransient<IScenarioRepository, ScenarioRepository>(provder =>
+                new ScenarioRepository(Configuration.GetConnectionString("ScenarioDatabase"), "scenario-context"));
+            services.AddTransient<ITrialSetRepository, TrialSetRepository>(provder =>
+                new TrialSetRepository(Configuration.GetConnectionString("ScenarioDatabase"), "scenario-context"));
+            services.AddTransient<ITrialSetQueries, TrialSetQueries>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

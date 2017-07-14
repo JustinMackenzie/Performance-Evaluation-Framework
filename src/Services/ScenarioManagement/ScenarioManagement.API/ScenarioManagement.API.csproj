@@ -26,6 +26,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ScenarioManagement.Domain\ScenarioManagement.Domain.csproj" />
+    <ProjectReference Include="..\ScenarioManagement.Infrastructure\ScenarioManagement.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
