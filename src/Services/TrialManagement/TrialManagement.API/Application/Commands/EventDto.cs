@@ -1,9 +1,11 @@
-namespace Simulator.Unity
+using System.Dynamic;
+
+namespace TrialManagement.API.Application.Commands
 {
     /// <summary>
     /// 
     /// </summary>
-    public class Event
+    public class EventDto
     {
         /// <summary>
         /// Gets or sets the name.
@@ -27,6 +29,6 @@ namespace Simulator.Unity
         /// <value>
         /// The properties.
         /// </value>
-        public EventProperties Properties { get; set; }
+        public ExpandoObject Properties { get; set; }
     }
 }

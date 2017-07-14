@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using TrialManagement.Domain;
+using TrialManagement.Infrastructure;
 
 namespace TrialManagement.API
 {
@@ -29,6 +28,10 @@ namespace TrialManagement.API
         {
             // Add framework services.
             services.AddMvc();
+            services.AddMediatR(typeof(Startup));
+
+            services.AddTransient<ITrialRepository, TrialRepository>(provder =>
+                new TrialRepository(Configuration.GetConnectionString("TrialDatabase"), "trial-context"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,7 +40,12 @@ namespace TrialManagement.API
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }
