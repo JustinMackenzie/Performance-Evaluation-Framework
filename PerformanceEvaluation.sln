@@ -45,6 +45,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simulator", "Simulator", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simulator.Unity", "src\Simulator\Simulator.Unity\Simulator.Unity.csproj", "{2A34D5DC-CDB4-4840-A0A3-044466E82669}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrialManagement.Infrastructure", "src\Services\TrialManagement\TrialManagement.Infrastructure\TrialManagement.Infrastructure.csproj", "{04F86AC5-33CC-4CC5-AD7D-1BA4F7A2EC86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{2A34D5DC-CDB4-4840-A0A3-044466E82669}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A34D5DC-CDB4-4840-A0A3-044466E82669}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A34D5DC-CDB4-4840-A0A3-044466E82669}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04F86AC5-33CC-4CC5-AD7D-1BA4F7A2EC86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04F86AC5-33CC-4CC5-AD7D-1BA4F7A2EC86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04F86AC5-33CC-4CC5-AD7D-1BA4F7A2EC86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04F86AC5-33CC-4CC5-AD7D-1BA4F7A2EC86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -124,5 +130,6 @@ Global
 		{281DAC01-533C-444B-95B8-B91C38411303} = {84DFD6C7-1E44-42BC-BD09-BEC61991A2E9}
 		{3B8A79BD-8B85-4090-9DC3-E347E92908B1} = {ED868824-413A-4504-B406-B8E08A2D9915}
 		{2A34D5DC-CDB4-4840-A0A3-044466E82669} = {3B8A79BD-8B85-4090-9DC3-E347E92908B1}
+		{04F86AC5-33CC-4CC5-AD7D-1BA4F7A2EC86} = {3E49690D-63BC-4F2A-90FE-31BB0DADE106}
 	EndGlobalSection
 EndGlobal
