@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioManagement.Infrastr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioManagement.API", "src\Services\ScenarioManagement\ScenarioManagement.API\ScenarioManagement.API.csproj", "{281DAC01-533C-444B-95B8-B91C38411303}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simulator", "Simulator", "{3B8A79BD-8B85-4090-9DC3-E347E92908B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simulator.Unity", "src\Simulator\Simulator.Unity\Simulator.Unity.csproj", "{2A34D5DC-CDB4-4840-A0A3-044466E82669}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +95,10 @@ Global
 		{281DAC01-533C-444B-95B8-B91C38411303}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{281DAC01-533C-444B-95B8-B91C38411303}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{281DAC01-533C-444B-95B8-B91C38411303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A34D5DC-CDB4-4840-A0A3-044466E82669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A34D5DC-CDB4-4840-A0A3-044466E82669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A34D5DC-CDB4-4840-A0A3-044466E82669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A34D5DC-CDB4-4840-A0A3-044466E82669}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,5 +122,7 @@ Global
 		{B40C1A6A-1752-4365-96A6-3FF9BEC9FC67} = {6C183A59-A203-472C-A01E-A95E2E0A33F2}
 		{C748437C-F0C9-42DC-970B-71CA46251992} = {84DFD6C7-1E44-42BC-BD09-BEC61991A2E9}
 		{281DAC01-533C-444B-95B8-B91C38411303} = {84DFD6C7-1E44-42BC-BD09-BEC61991A2E9}
+		{3B8A79BD-8B85-4090-9DC3-E347E92908B1} = {ED868824-413A-4504-B406-B8E08A2D9915}
+		{2A34D5DC-CDB4-4840-A0A3-044466E82669} = {3B8A79BD-8B85-4090-9DC3-E347E92908B1}
 	EndGlobalSection
 EndGlobal
