@@ -41,5 +41,13 @@ namespace TrialManagement.API.Application.Commands
         /// The scenario identifier.
         /// </value>
         public Guid ScenarioId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the user identifier.
+        /// </summary>
+        /// <value>
+        /// The user identifier.
+        /// </value>
+        public Guid UserId { get; set; }
     }
 }

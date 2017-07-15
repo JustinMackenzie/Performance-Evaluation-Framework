@@ -49,11 +49,24 @@ namespace TrialManagement.Domain
         public Guid ScenarioId { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Trial"/> class.
+        /// Gets the user identifier.
         /// </summary>
-        public Trial(Guid scenarioId, DateTime start, DateTime end)
+        /// <value>
+        /// The user identifier.
+        /// </value>
+        public Guid UserId { get; private set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Trial" /> class.
+        /// </summary>
+        /// <param name="scenarioId">The scenario identifier.</param>
+        /// <param name="userId">The user identifier.</param>
+        /// <param name="start">The start.</param>
+        /// <param name="end">The end.</param>
+        public Trial(Guid scenarioId, Guid userId, DateTime start, DateTime end)
         {
             this.ScenarioId = scenarioId;
+            this.UserId = userId;
             this.Start = start.ToUniversalTime();
             this.End = end.ToUniversalTime();
             this._events = new List<Event>();

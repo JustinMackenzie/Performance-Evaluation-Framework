@@ -104,9 +104,10 @@ namespace TrialManagement.Infrastructure
                 {
                     cm.AutoMap();
                     cm.MapProperty(t => t.ScenarioId);
+                    cm.MapProperty(t => t.UserId);
                     cm.MapProperty(t => t.Start);
                     cm.MapProperty(t => t.End);
-                    cm.MapCreator(t => new Trial(t.ScenarioId, t.Start, t.End));
+                    cm.MapCreator(t => new Trial(t.ScenarioId, t.UserId, t.Start, t.End));
                     cm.MapField("_events").SetElementName("Events");
                 });
             }
