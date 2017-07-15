@@ -12,6 +12,14 @@ namespace TrialManagement.API.IntegrationEvents.Events
     public class TrialAddedIntegrationEvent : IntegrationEvent
     {
         /// <summary>
+        /// Gets or sets the trial identifier.
+        /// </summary>
+        /// <value>
+        /// The trial identifier.
+        /// </value>
+        public Guid TrialId { get; private set; }
+        
+        /// <summary>
         /// Gets the scenario identifier.
         /// </summary>
         /// <value>
@@ -52,15 +60,23 @@ namespace TrialManagement.API.IntegrationEvents.Events
         public IEnumerable<EventDto> Events { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TrialAddedIntegrationEvent"/> class.
+        /// Initializes a new instance of the <see cref="TrialAddedIntegrationEvent" /> class.
         /// </summary>
+        /// <param name="trialId">The trial identifier.</param>
         /// <param name="scenarioId">The scenario identifier.</param>
         /// <param name="userId">The user identifier.</param>
         /// <param name="start">The start.</param>
         /// <param name="end">The end.</param>
         /// <param name="events">The events.</param>
-        public TrialAddedIntegrationEvent(Guid scenarioId, Guid userId, DateTime start, DateTime end, IEnumerable<EventDto> events)
+        public TrialAddedIntegrationEvent(
+            Guid trialId, 
+            Guid scenarioId, 
+            Guid userId, 
+            DateTime start, 
+            DateTime end, 
+            IEnumerable<EventDto> events)
         {
+            this.TrialId = trialId;
             this.ScenarioId = scenarioId;
             this.UserId = userId;
             this.Start = start;

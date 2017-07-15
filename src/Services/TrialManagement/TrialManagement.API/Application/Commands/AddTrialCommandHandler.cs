@@ -46,7 +46,13 @@ namespace TrialManagement.API.Application.Commands
 
             this._trialRepository.Add(trial);
 
-            this._eventBus.Publish(new TrialAddedIntegrationEvent(message.ScenarioId, message.UserId, message.Start, message.End, message.Events));
+            this._eventBus.Publish(new TrialAddedIntegrationEvent(
+                trial.Id,
+                trial.ScenarioId,
+                trial.UserId,
+                trial.Start,
+                trial.End, 
+                message.Events));
 
             return Task.CompletedTask;
         }
