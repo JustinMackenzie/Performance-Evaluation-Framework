@@ -25,5 +25,18 @@ namespace Simulator.Unity
         /// The z.
         /// </value>
         public float Z { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Vector"/> class.
+        /// </summary>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
+        /// <param name="z">The z.</param>
+        public Vector(float x, float y, float z)
+        {
+            this.X = x;
+            this.Y = y;
+            this.Z = z;
+        }
     }
 }

@@ -9,6 +9,22 @@ namespace Simulator.Unity
     public class Trial
     {
         /// <summary>
+        /// Gets or sets the user identifier.
+        /// </summary>
+        /// <value>
+        /// The user identifier.
+        /// </value>
+        public Guid UserId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the scenario identifier.
+        /// </summary>
+        /// <value>
+        /// The scenario identifier.
+        /// </value>
+        public Guid ScenarioId { get; set; }
+
+        /// <summary>
         /// Gets or sets the start.
         /// </summary>
         /// <value>

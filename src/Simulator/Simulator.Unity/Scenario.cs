@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Simulator.Unity
 {
@@ -8,9 +9,20 @@ namespace Simulator.Unity
     public class Scenario
     {
         /// <summary>
-        /// The assets
+        /// Gets or sets the identifier.
         /// </summary>
-        public List<Asset> Assets;
+        /// <value>
+        /// The identifier.
+        /// </value>
+        public Guid Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the assets.
+        /// </summary>
+        /// <value>
+        /// The assets.
+        /// </value>
+        public List<Asset> Assets { get; set; }
 
         /// <summary>
         /// Gets or sets the name.

@@ -11,7 +11,7 @@ namespace Simulator.Unity
         /// <value>
         /// The scenarios.
         /// </value>
-        public IEnumerable<Scenario> Scenarios { get; set; }
+        public List<Scenario> Scenarios { get; set; }
 
         /// <summary>
         /// Gets or sets the name.
