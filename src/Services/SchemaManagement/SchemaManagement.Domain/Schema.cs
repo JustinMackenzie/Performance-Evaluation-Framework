@@ -114,10 +114,12 @@ namespace SchemaManagement.Domain
         /// Adds the scenario.
         /// </summary>
         /// <param name="name">The name.</param>
-        public void AddScenario(string name)
+        /// <returns>The newly created scenario.</returns>
+        public Scenario AddScenario(string name)
         {
             Scenario scenario = new Scenario(name);
             this._scenarios.Add(scenario);
+            return scenario;
         }
 
         /// <summary>

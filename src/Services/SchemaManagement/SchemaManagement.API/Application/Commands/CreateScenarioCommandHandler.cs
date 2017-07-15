@@ -1,4 +1,6 @@
+using BuildingBlocks.EventBus.Abstractions;
 using MediatR;
+using SchemaManagement.API.IntegrationEvents.Events;
 using SchemaManagement.Domain;
 using Task = System.Threading.Tasks.Task;
 
@@ -8,16 +10,21 @@ namespace SchemaManagement.API.Application.Commands
     {
         private readonly ISchemaRepository _repository;
 
-        public CreateScenarioCommandHandler(ISchemaRepository repository)
+        private readonly IEventBus _eventBus;
+
+        public CreateScenarioCommandHandler(ISchemaRepository repository, IEventBus eventBus)
         {
             this._repository = repository;
+            _eventBus = eventBus;
         }
 
         public Task Handle(CreateScenarioCommand message)
         {
-            Domain.Schema schema = this._repository.Get(message.SchemaId);
-            schema.AddScenario(message.Name);
+            Schema schema = this._repository.Get(message.SchemaId);
+            Scenario scenario = schema.AddScenario(message.Name);
             this._repository.Update(schema);
+
+            this._eventBus.Publish(new ScenarioCreatedIntegrationEvent(scenario.Id, schema.Id, scenario.Name));
 
             return Task.CompletedTask;
         }
