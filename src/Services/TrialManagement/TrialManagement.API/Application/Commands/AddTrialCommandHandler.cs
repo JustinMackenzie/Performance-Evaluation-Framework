@@ -31,7 +31,7 @@ namespace TrialManagement.API.Application.Commands
         /// <returns></returns>
         public Task Handle(AddTrialCommand message)
         {
-            Trial trial = new Trial(message.Start, message.End);
+            Trial trial = new Trial(message.ScenarioId, message.Start, message.End);
 
             foreach (var @event in message.Events)
                 trial.AddEvent(new Event(@event.Name, @event.Timestamp, @event.Properties));

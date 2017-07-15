@@ -41,10 +41,19 @@ namespace TrialManagement.Domain
         public DateTime End { get; private set; }
 
         /// <summary>
+        /// Gets the scenario identifier.
+        /// </summary>
+        /// <value>
+        /// The scenario identifier.
+        /// </value>
+        public Guid ScenarioId { get; private set; }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="Trial"/> class.
         /// </summary>
-        public Trial(DateTime start, DateTime end)
+        public Trial(Guid scenarioId, DateTime start, DateTime end)
         {
+            this.ScenarioId = scenarioId;
             this.Start = start.ToUniversalTime();
             this.End = end.ToUniversalTime();
             this._events = new List<Event>();

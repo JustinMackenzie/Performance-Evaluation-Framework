@@ -33,5 +33,13 @@ namespace TrialManagement.API.Application.Commands
         /// The events.
         /// </value>
         public IEnumerable<EventDto> Events { get; set; }
+
+        /// <summary>
+        /// Gets or sets the scenario identifier.
+        /// </summary>
+        /// <value>
+        /// The scenario identifier.
+        /// </value>
+        public Guid ScenarioId { get; set; }
     }
 }

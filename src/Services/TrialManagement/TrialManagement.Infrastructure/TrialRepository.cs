@@ -103,9 +103,10 @@ namespace TrialManagement.Infrastructure
                 BsonClassMap.RegisterClassMap<Trial>(cm =>
                 {
                     cm.AutoMap();
-                    cm.MapProperty(s => s.Start);
-                    cm.MapProperty(s => s.End);
-                    cm.MapCreator(t => new Trial(t.Start, t.End));
+                    cm.MapProperty(t => t.ScenarioId);
+                    cm.MapProperty(t => t.Start);
+                    cm.MapProperty(t => t.End);
+                    cm.MapCreator(t => new Trial(t.ScenarioId, t.Start, t.End));
                     cm.MapField("_events").SetElementName("Events");
                 });
             }
