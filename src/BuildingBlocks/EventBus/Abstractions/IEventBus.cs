@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Events;
 
 namespace BuildingBlocks.EventBus.Abstractions
@@ -8,6 +9,7 @@ namespace BuildingBlocks.EventBus.Abstractions
         void Subscribe<T, TH>(Func<TH> handler)
             where T : IntegrationEvent
             where TH : IIntegrationEventHandler<T>;
+
         void Unsubscribe<T, TH>()
             where TH : IIntegrationEventHandler<T>
             where T : IntegrationEvent;
