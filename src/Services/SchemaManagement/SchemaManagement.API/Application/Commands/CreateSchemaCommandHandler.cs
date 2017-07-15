@@ -1,4 +1,6 @@
-﻿using MediatR;
+﻿using BuildingBlocks.EventBus.Abstractions;
+using MediatR;
+using SchemaManagement.API.IntegrationEvents.Events;
 using SchemaManagement.Domain;
 
 namespace SchemaManagement.API.Application.Commands
@@ -15,12 +17,19 @@ namespace SchemaManagement.API.Application.Commands
         private readonly ISchemaRepository _repository;
 
         /// <summary>
+        /// The event bus
+        /// </summary>
+        private readonly IEventBus _eventBus;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="CreateSchemaCommandHandler" /> class.
         /// </summary>
         /// <param name="repository">The repository.</param>
-        public CreateSchemaCommandHandler(ISchemaRepository repository)
+        /// <param name="eventBus">The event bus.</param>
+        public CreateSchemaCommandHandler(ISchemaRepository repository, IEventBus eventBus)
         {
             this._repository = repository;
+            this._eventBus = eventBus;
         }
 
         /// <summary>
@@ -30,8 +39,12 @@ namespace SchemaManagement.API.Application.Commands
         /// <returns></returns>
         System.Threading.Tasks.Task IAsyncRequestHandler<CreateSchemaCommand>.Handle(CreateSchemaCommand message)
         {
-            Domain.Schema schema = new Domain.Schema(message.Name, message.Description);
+            Schema schema = new Schema(message.Name, message.Description);
+
             this._repository.Add(schema);
+
+            this._eventBus.Publish(new SchemaCreatedIntegrationEvent(schema.Id, schema.Name, schema.Description));
+
             return System.Threading.Tasks.Task.CompletedTask;
         }
     }
