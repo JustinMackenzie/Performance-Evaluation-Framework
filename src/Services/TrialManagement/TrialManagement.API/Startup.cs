@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using RawRabbit.Serialization;
 using RawRabbit.vNext;
 using TrialManagement.Domain;
 using TrialManagement.Infrastructure;
@@ -33,10 +34,12 @@ namespace TrialManagement.API
             // Add framework services.
             services.AddMvc();
             services.AddMediatR(typeof(Startup));
-            services.AddRawRabbit(cfg => cfg.SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("rawrabbit.json"));
+            services.AddRawRabbit(cfg => cfg.SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("rawrabbit.json"),
+                ioc => ioc.AddSingleton<IMessageSerializer, TypelessJsonSerializer>());
 
             services.AddTransient<ITrialRepository, TrialRepository>(provder =>
                 new TrialRepository(Configuration.GetConnectionString("TrialDatabase"), "trial-context"));
+            services.AddSingleton<IRawRabbitSubscriptionRepository, InMemoryRawRabbitSubscriptionRepository>();
             services.AddTransient<IEventBus, RawRabbitEventBus>();
         }
 
