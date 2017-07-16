@@ -10,7 +10,7 @@ namespace TrialManagement.API.Application.Commands
     /// 
     /// </summary>
     /// <seealso cref="MediatR.IAsyncRequestHandler{TrialManagement.API.Application.Commands.AddTrialCommand}" />
-    public class AddTrialCommandHandler : IAsyncRequestHandler<AddTrialCommand>
+    public class AddTrialCommandHandler : IAsyncRequestHandler<AddTrialCommand, Trial>
     {
         /// <summary>
         /// The trial repository.
@@ -37,7 +37,7 @@ namespace TrialManagement.API.Application.Commands
         /// </summary>
         /// <param name="message">The message.</param>
         /// <returns></returns>
-        public Task Handle(AddTrialCommand message)
+        public Task<Trial> Handle(AddTrialCommand message)
         {
             Trial trial = new Trial(message.ScenarioId, message.UserId, message.Start, message.End);
 
@@ -54,7 +54,7 @@ namespace TrialManagement.API.Application.Commands
                 trial.End, 
                 message.Events));
 
-            return Task.CompletedTask;
+            return Task.FromResult(trial);
         }
     }
 }

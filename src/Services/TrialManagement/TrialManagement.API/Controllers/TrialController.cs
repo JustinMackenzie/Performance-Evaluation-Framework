@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
 using TrialManagement.API.Application.Commands;
+using TrialManagement.Domain;
 
 namespace TrialManagement.API.Controllers
 {
@@ -38,10 +39,10 @@ namespace TrialManagement.API.Controllers
         {
             try
             {
-                await this._mediator.Send(command);
-                return Ok();
+                Trial trial = await this._mediator.Send(command);
+                return Ok(trial);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return BadRequest();
             }

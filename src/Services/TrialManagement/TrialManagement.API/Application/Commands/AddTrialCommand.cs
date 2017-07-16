@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MediatR;
+using TrialManagement.Domain;
 
 namespace TrialManagement.API.Application.Commands
 {
@@ -8,7 +9,7 @@ namespace TrialManagement.API.Application.Commands
     /// 
     /// </summary>
     /// <seealso cref="MediatR.IRequest" />
-    public class AddTrialCommand : IRequest
+    public class AddTrialCommand : IRequest<Trial>
     {
         /// <summary>
         /// Gets or sets the start.
