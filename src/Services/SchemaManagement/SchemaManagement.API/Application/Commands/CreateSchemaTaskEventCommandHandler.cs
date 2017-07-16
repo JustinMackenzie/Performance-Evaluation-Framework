@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using MediatR;
 using SchemaManagement.Domain;
 using Task = System.Threading.Tasks.Task;
@@ -7,8 +8,8 @@ namespace SchemaManagement.API.Application.Commands
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="MediatR.IAsyncRequestHandler{Schema.API.Application.Commands.CreateSchemaTaskEventCommand}" />
-    public class CreateSchemaTaskEventCommandHandler : IAsyncRequestHandler<CreateSchemaTaskEventCommand>
+    /// <seealso cref="CreateSchemaTaskEventCommand" />
+    public class CreateSchemaTaskEventCommandHandler : IAsyncRequestHandler<CreateSchemaTaskEventCommand, Domain.Task>
     {
         /// <summary>
         /// The repository
@@ -29,13 +30,13 @@ namespace SchemaManagement.API.Application.Commands
         /// </summary>
         /// <param name="message">The message.</param>
         /// <returns></returns>
-        public Task Handle(CreateSchemaTaskEventCommand message)
+        public Task<Domain.Task> Handle(CreateSchemaTaskEventCommand message)
         {
-            Domain.Schema schema = this._repository.Get(message.SchemaId);
-            schema.AddTask(message.Name);
+            Schema schema = this._repository.Get(message.SchemaId);
+            Domain.Task task = schema.AddTask(message.Name);
             this._repository.Update(schema);
 
-            return Task.CompletedTask;;
+            return Task.FromResult(task);
         }
     }
 }

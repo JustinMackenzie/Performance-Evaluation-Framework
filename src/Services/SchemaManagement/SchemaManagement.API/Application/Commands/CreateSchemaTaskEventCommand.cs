@@ -1,5 +1,6 @@
 using System;
 using MediatR;
+using SchemaManagement.Domain;
 
 namespace SchemaManagement.API.Application.Commands
 {
@@ -7,7 +8,7 @@ namespace SchemaManagement.API.Application.Commands
     /// 
     /// </summary>
     /// <seealso cref="MediatR.IRequest" />
-    public class CreateSchemaTaskEventCommand : IRequest
+    public class CreateSchemaTaskEventCommand : IRequest<Task>
     {
         /// <summary>
         /// Gets or sets the schema identifier.
