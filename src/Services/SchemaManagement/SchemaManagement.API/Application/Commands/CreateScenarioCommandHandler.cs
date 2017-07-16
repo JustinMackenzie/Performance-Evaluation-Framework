@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Abstractions;
 using MediatR;
 using SchemaManagement.API.IntegrationEvents.Events;
@@ -9,8 +10,8 @@ namespace SchemaManagement.API.Application.Commands
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="MediatR.IAsyncRequestHandler{SchemaManagement.API.Application.Commands.CreateScenarioCommand}" />
-    public class CreateScenarioCommandHandler : IAsyncRequestHandler<CreateScenarioCommand>
+    /// <seealso cref="CreateScenarioCommand" />
+    public class CreateScenarioCommandHandler : IAsyncRequestHandler<CreateScenarioCommand, Scenario>
     {
         /// <summary>
         /// The repository
@@ -38,7 +39,7 @@ namespace SchemaManagement.API.Application.Commands
         /// </summary>
         /// <param name="message">The message.</param>
         /// <returns></returns>
-        public Task Handle(CreateScenarioCommand message)
+        public Task<Scenario> Handle(CreateScenarioCommand message)
         {
             Schema schema = this._repository.Get(message.SchemaId);
             Scenario scenario = schema.AddScenario(message.Name);
@@ -46,7 +47,7 @@ namespace SchemaManagement.API.Application.Commands
 
             this._eventBus.Publish(new ScenarioCreatedIntegrationEvent(scenario.Id, schema.Id, scenario.Name));
 
-            return Task.CompletedTask;
+            return Task.FromResult(scenario);
         }
     }
 }
