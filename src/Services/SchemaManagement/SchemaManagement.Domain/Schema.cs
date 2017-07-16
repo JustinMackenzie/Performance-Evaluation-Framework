@@ -126,7 +126,7 @@ namespace SchemaManagement.Domain
         /// Adds the event.
         /// </summary>
         /// <param name="name">The name.</param>
-        public void AddEvent(string name)
+        public Event AddEvent(string name)
         {
             if (string.IsNullOrEmpty(name))
                 throw new ArgumentException("The name cannot be null or empty.", nameof(name));
@@ -136,16 +136,19 @@ namespace SchemaManagement.Domain
 
             Event @event = new Event(name);
             this._events.Add(@event);
+            return @event;
         }
 
         /// <summary>
         /// Adds the task.
         /// </summary>
         /// <param name="name">The name.</param>
-        public void AddTask(string name)
+        public Task AddTask(string name)
         {
             Task task = new Task(name);
-            _tasks.Add(task);
+            this._tasks.Add(task);
+
+            return task;
         }
 
         /// <summary>
