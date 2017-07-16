@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using BuildingBlocks.EventBus.Abstractions;
 using BuildingBlocks.EventBus.Events;
 using RawRabbit;
@@ -12,18 +13,26 @@ namespace EventBus.RawRabbit
     /// <seealso cref="BuildingBlocks.EventBus.Abstractions.IEventBus" />
     public class RawRabbitEventBus : IEventBus
     {
+        private const string ExchangeName = @"ScenarioSim-EventBus";
         /// <summary>
         /// The bus client
         /// </summary>
         private readonly IBusClient _busClient;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RawRabbitEventBus"/> class.
+        /// The repository
+        /// </summary>
+        private readonly IRawRabbitSubscriptionRepository _repository;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RawRabbitEventBus" /> class.
         /// </summary>
         /// <param name="busClient">The bus client.</param>
-        public RawRabbitEventBus(IBusClient busClient)
+        /// <param name="repository">The repository.</param>
+        public RawRabbitEventBus(IBusClient busClient, IRawRabbitSubscriptionRepository repository)
         {
             this._busClient = busClient;
+            _repository = repository;
         }
 
         /// <summary>
@@ -38,9 +47,10 @@ namespace EventBus.RawRabbit
             {
                 TH h = handler.Invoke();
                 await h.Handle(msg);
-            });
+            },
+            cfg => cfg.WithExchange(e => e.WithName(ExchangeName)).WithRoutingKey(typeof(T).Name));
 
-            subscription.Dispose();
+            this._repository.Add(subscription);
         }
 
         /// <summary>
@@ -60,7 +70,7 @@ namespace EventBus.RawRabbit
         /// <param name="event">The event.</param>
         public void Publish(IntegrationEvent @event)
         {
-            this._busClient.PublishAsync(@event).Wait();
+            this._busClient.PublishAsync(@event, configuration: cfg => cfg.WithExchange(e => e.WithName(ExchangeName)).WithRoutingKey(@event.GetType().Name)).Wait();
         }
     }
 }
