@@ -1,10 +1,11 @@
-﻿using MediatR;
+﻿using System.Threading.Tasks;
+using MediatR;
 using SchemaManagement.Domain;
 using Task = System.Threading.Tasks.Task;
 
 namespace SchemaManagement.API.Application.Commands
 {
-    public class CreateSchemaEventCommandHandler : IAsyncRequestHandler<CreateSchemaEventCommand>
+    public class CreateSchemaEventCommandHandler : IAsyncRequestHandler<CreateSchemaEventCommand, Event>
     {
         private readonly ISchemaRepository _repository;
 
@@ -13,13 +14,13 @@ namespace SchemaManagement.API.Application.Commands
             _repository = repository;
         }
 
-        public Task Handle(CreateSchemaEventCommand message)
+        public Task<Event> Handle(CreateSchemaEventCommand message)
         {
             Domain.Schema schema = this._repository.Get(message.SchemaId);
-            schema.AddEvent(message.Name);
+            Event @event = schema.AddEvent(message.Name);
             this._repository.Update(schema);
 
-            return Task.CompletedTask;
+            return Task.FromResult(@event);
         }
     }
 }

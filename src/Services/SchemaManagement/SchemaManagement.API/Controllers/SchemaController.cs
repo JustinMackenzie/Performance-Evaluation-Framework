@@ -75,8 +75,8 @@ namespace SchemaManagement.API.Controllers
             try
             {
                 command.SchemaId = id;
-                await this._mediator.Send(command);
-                return Ok();
+                Event @event = await this._mediator.Send(command);
+                return Ok(@event);
             }
             catch (SchemaDomainException e)
             {
