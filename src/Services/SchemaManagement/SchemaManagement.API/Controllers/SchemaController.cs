@@ -115,8 +115,8 @@ namespace SchemaManagement.API.Controllers
             try
             {
                 command.SchemaId = id;
-                await this._mediator.Send(command);
-                return Ok();
+                TaskTransition taskTransition = await this._mediator.Send(command);
+                return Ok(taskTransition);
             }
             catch (SchemaDomainException e)
             {

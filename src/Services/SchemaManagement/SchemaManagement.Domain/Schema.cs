@@ -159,7 +159,7 @@ namespace SchemaManagement.Domain
         /// <param name="destinationTaskName">Name of the destination task.</param>
         /// <exception cref="Schema.Domain.SchemaDomainException">
         /// </exception>
-        public void AddTaskTransition(string eventName, string sourceTaskName, string destinationTaskName)
+        public TaskTransition AddTaskTransition(string eventName, string sourceTaskName, string destinationTaskName)
         {
             if (!this._events.Any(e => e.Name == eventName))
             {
@@ -183,6 +183,8 @@ namespace SchemaManagement.Domain
 
             TaskTransition taskTransition = new TaskTransition(eventName, sourceTaskName, destinationTaskName);
             this._taskTransitions.Add(taskTransition);
+
+            return taskTransition;
         }
 
         /// <summary>

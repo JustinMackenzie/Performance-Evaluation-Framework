@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using System.Threading.Tasks;
+using MediatR;
 using SchemaManagement.Domain;
 using Task = System.Threading.Tasks.Task;
 
@@ -7,8 +8,8 @@ namespace SchemaManagement.API.Application.Commands
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="MediatR.IAsyncRequestHandler{Schema.API.Application.Commands.CreateTaskTransitionCommand}" />
-    public class CreateTaskTransitionCommandHandler : IAsyncRequestHandler<CreateTaskTransitionCommand>
+    /// <seealso cref="CreateTaskTransitionCommand" />
+    public class CreateTaskTransitionCommandHandler : IAsyncRequestHandler<CreateTaskTransitionCommand, TaskTransition>
     {
         /// <summary>
         /// The repository
@@ -29,13 +30,13 @@ namespace SchemaManagement.API.Application.Commands
         /// </summary>
         /// <param name="message">The message.</param>
         /// <returns></returns>
-        public Task Handle(CreateTaskTransitionCommand message)
+        public Task<TaskTransition> Handle(CreateTaskTransitionCommand message)
         {
-            Domain.Schema schema = this._repository.Get(message.SchemaId);
-            schema.AddTaskTransition(message.EventName, message.SourceTaskName, message.DestinationTaskName);
+            Schema schema = this._repository.Get(message.SchemaId);
+            TaskTransition taskTransition = schema.AddTaskTransition(message.EventName, message.SourceTaskName, message.DestinationTaskName);
             this._repository.Update(schema);
 
-            return Task.CompletedTask;
+            return Task.FromResult(taskTransition);
         }
     }
 }
