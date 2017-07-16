@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SchemaManagement.API.Application.Commands;
+using SchemaManagement.Domain;
 using SchemaManagement.Domain.Exceptions;
 
 namespace SchemaManagement.API.Controllers
@@ -34,8 +35,8 @@ namespace SchemaManagement.API.Controllers
         {
             try
             {
-                await this._mediator.Send(command);
-                return Ok();
+                Schema schema = await this._mediator.Send(command);
+                return Ok(schema);
             }
             catch (SchemaDomainException e)
             {

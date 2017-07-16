@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using SchemaManagement.Domain;
 
 namespace SchemaManagement.API.Application.Commands
 {
@@ -6,7 +7,7 @@ namespace SchemaManagement.API.Application.Commands
     /// 
     /// </summary>
     /// <seealso cref="MediatR.IRequest" />
-    public class CreateSchemaCommand : IRequest
+    public class CreateSchemaCommand : IRequest<Schema>
     {
         /// <summary>
         /// Gets or sets the name.

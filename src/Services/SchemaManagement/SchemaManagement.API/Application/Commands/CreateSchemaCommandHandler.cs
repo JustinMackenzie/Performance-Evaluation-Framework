@@ -1,4 +1,5 @@
-﻿using BuildingBlocks.EventBus.Abstractions;
+﻿using System.Threading.Tasks;
+using BuildingBlocks.EventBus.Abstractions;
 using MediatR;
 using SchemaManagement.API.IntegrationEvents.Events;
 using SchemaManagement.Domain;
@@ -9,7 +10,7 @@ namespace SchemaManagement.API.Application.Commands
     /// 
     /// </summary>
     /// <seealso cref="MediatR.IAsyncRequestHandler{Schema.API.Application.Commands.CreateSchemaCommand}" />
-    public class CreateSchemaCommandHandler : IAsyncRequestHandler<CreateSchemaCommand>
+    public class CreateSchemaCommandHandler : IAsyncRequestHandler<CreateSchemaCommand, Schema>
     {
         /// <summary>
         /// The repository
@@ -33,19 +34,19 @@ namespace SchemaManagement.API.Application.Commands
         }
 
         /// <summary>
-        /// Handles the specified message.
+        /// Handles the specified command.
         /// </summary>
-        /// <param name="message">The message.</param>
+        /// <param name="command">The command.</param>
         /// <returns></returns>
-        System.Threading.Tasks.Task IAsyncRequestHandler<CreateSchemaCommand>.Handle(CreateSchemaCommand message)
+        public Task<Schema> Handle(CreateSchemaCommand command)
         {
-            Schema schema = new Schema(message.Name, message.Description);
+            Schema schema = new Schema(command.Name, command.Description);
 
             this._repository.Add(schema);
 
             this._eventBus.Publish(new SchemaCreatedIntegrationEvent(schema.Id, schema.Name, schema.Description));
 
-            return System.Threading.Tasks.Task.CompletedTask;
+            return System.Threading.Tasks.Task.FromResult(schema);
         }
     }
 }
