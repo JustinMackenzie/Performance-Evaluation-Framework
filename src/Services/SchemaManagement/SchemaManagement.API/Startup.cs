@@ -7,7 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using RawRabbit.Serialization;
 using RawRabbit.vNext;
+using SchemaManagement.API.IntegrationEvents.Events;
 using SchemaManagement.Domain;
 using SchemaManagement.Infrastructure;
 
@@ -33,11 +35,13 @@ namespace SchemaManagement.API
             // Add framework services.
             services.AddMvc();
             services.AddMediatR(typeof(Startup));
-            services.AddRawRabbit(cfg => cfg.SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("rawrabbit.json"));
+            services.AddRawRabbit(cfg => cfg.SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("rawrabbit.json"),
+                ioc => ioc.AddSingleton<IMessageSerializer, TypelessJsonSerializer>());
 
             services.AddTransient<ISchemaRepository, SchemaRepository>(provder =>
                 new SchemaRepository(Configuration.GetConnectionString("SchemaDatabase"), "schema-context"));
-            services.AddTransient<IEventBus, RawRabbitEventBus>();
+            services.AddSingleton<IRawRabbitSubscriptionRepository, InMemoryRawRabbitSubscriptionRepository>();
+            services.AddSingleton<IEventBus, RawRabbitEventBus>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
