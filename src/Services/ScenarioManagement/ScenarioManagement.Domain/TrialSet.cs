@@ -45,13 +45,13 @@ namespace ScenarioManagement.Domain
         /// <summary>
         /// Adds the scenario.
         /// </summary>
-        /// <param name="scenario">The scenario.</param>
-        public void AddScenario(Scenario scenario)
+        /// <param name="scenarioId">The scenario.</param>
+        public void AddScenario(Guid scenarioId)
         {
-            if (scenario == null)
-                throw new ArgumentNullException(nameof(scenario));
+            if (scenarioId == null)
+                throw new ArgumentNullException(nameof(scenarioId));
 
-            this._scenarioIds.Add(scenario.Id);
+            this._scenarioIds.Add(scenarioId);
         }
     }
 }

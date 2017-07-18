@@ -68,5 +68,22 @@ namespace ScenarioManagement.API.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpPost]
+        [Route("{id}/scenario")]
+        public async Task<IActionResult> AddScenario(Guid trialSetId, [FromBody] AddScenarioCommand command)
+        {
+            command.TrialSetId = trialSetId;
+
+            try
+            {
+                await this._mediator.Send(command);
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
     }
 }
