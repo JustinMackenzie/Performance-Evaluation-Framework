@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Abstractions;
 using EventBus.RawRabbit;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -39,6 +40,7 @@ namespace ScenarioManagement.API
         {
             // Add framework services.
             services.AddMvc();
+            services.AddMediatR();
             services.AddRawRabbit(cfg => cfg.SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("rawrabbit.json"),
                 ioc => ioc.AddSingleton<IMessageSerializer, TypelessJsonSerializer>());
 

@@ -1,6 +1,10 @@
 using System;
+using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using ScenarioManagement.API.Application.Commands;
 using ScenarioManagement.API.Application.Queries;
+using ScenarioManagement.Domain;
 
 namespace ScenarioManagement.API.Controllers
 {
@@ -10,9 +14,12 @@ namespace ScenarioManagement.API.Controllers
     {
         private readonly ITrialSetQueries _trialSetQueries;
 
-        public TrialSetController(ITrialSetQueries trialSetQueries)
+        private readonly IMediator _mediator;
+
+        public TrialSetController(ITrialSetQueries trialSetQueries, IMediator mediator)
         {
             _trialSetQueries = trialSetQueries;
+            _mediator = mediator;
         }
 
         [HttpGet]
@@ -29,6 +36,20 @@ namespace ScenarioManagement.API.Controllers
         {
             var trial = this._trialSetQueries.GetTrialSetById(id);
             return Ok(trial);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] CreateTrialSetCommand command)
+        {
+            try
+            {
+                TrialSet trialSet = await this._mediator.Send(command);
+                return Ok(trialSet);
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
     }
 }
