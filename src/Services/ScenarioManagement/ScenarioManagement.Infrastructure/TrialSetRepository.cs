@@ -45,6 +45,15 @@ namespace ScenarioManagement.Infrastructure
         }
 
         /// <summary>
+        /// Deletes the trial set with the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        public void Delete(Guid id)
+        {
+            this.Collection.DeleteOne(t => t.Id == id);
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="TrialSetRepository"/> class.
         /// </summary>
         /// <param name="connectionString">The connection string or the name of a connection string.</param>

@@ -34,5 +34,11 @@ namespace ScenarioManagement.Domain
         /// </summary>
         /// <returns></returns>
         IEnumerable<TrialSet> GetAll();
+
+        /// <summary>
+        /// Deletes the trial set with the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        void Delete(Guid id);
     }
 }

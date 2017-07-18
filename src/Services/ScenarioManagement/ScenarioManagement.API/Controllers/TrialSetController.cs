@@ -51,5 +51,22 @@ namespace ScenarioManagement.API.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            DeleteTrialSetCommand command = new DeleteTrialSetCommand { TrialSetId = id };
+
+            try
+            {
+                await this._mediator.Send(command);
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
     }
 }
