@@ -53,5 +53,10 @@ namespace ScenarioManagement.Domain
 
             this._scenarioIds.Add(scenarioId);
         }
+
+        public void RemoveScenario(Guid scenarioId)
+        {
+            this._scenarioIds.Remove(scenarioId);
+        }
     }
 }
