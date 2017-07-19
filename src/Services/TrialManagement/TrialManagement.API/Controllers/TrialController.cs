@@ -42,7 +42,7 @@ namespace TrialManagement.API.Controllers
                 Trial trial = await this._mediator.Send(command);
                 return Ok(trial);
             }
-            catch (Exception ex)
+            catch
             {
                 return BadRequest();
             }
