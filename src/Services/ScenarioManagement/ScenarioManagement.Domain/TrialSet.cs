@@ -58,5 +58,13 @@ namespace ScenarioManagement.Domain
         {
             this._scenarioIds.Remove(scenarioId);
         }
+
+        public void ChangeName(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+                throw new ArgumentException("The name cannot be null or empty.", nameof(name));
+
+            this.Name = name;
+        }
     }
 }
