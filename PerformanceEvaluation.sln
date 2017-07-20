@@ -19,9 +19,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{739E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleSchemaManager", "src\Console\ConsoleSchemaManager\ConsoleSchemaManager.csproj", "{3507F144-AAD0-4724-ACCB-B271BB34ACB1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScenarioManagement", "ScenarioManagement", "{84DFD6C7-1E44-42BC-BD09-BEC61991A2E9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TrialSetManagement", "TrialSetManagement", "{84DFD6C7-1E44-42BC-BD09-BEC61991A2E9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScenarioManagement.Domain", "src\Services\ScenarioManagement\ScenarioManagement.Domain\ScenarioManagement.Domain.csproj", "{C3F48597-90E9-4B76-A378-BE8336826970}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrialSetManagement.Domain", "src\Services\TrialSetManagement\TrialSetManagement.Domain\TrialSetManagement.Domain.csproj", "{C3F48597-90E9-4B76-A378-BE8336826970}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TrialManagement", "TrialManagement", "{3E49690D-63BC-4F2A-90FE-31BB0DADE106}"
 EndProject
@@ -37,9 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus", "src\BuildingBlo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.RabbitMQ", "src\BuildingBlocks\EventBus.RabbitMQ\EventBus.RabbitMQ.csproj", "{B40C1A6A-1752-4365-96A6-3FF9BEC9FC67}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScenarioManagement.Infrastructure", "src\Services\ScenarioManagement\ScenarioManagement.Infrastructure\ScenarioManagement.Infrastructure.csproj", "{C748437C-F0C9-42DC-970B-71CA46251992}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrialSetManagement.Infrastructure", "src\Services\TrialSetManagement\TrialSetManagement.Infrastructure\TrialSetManagement.Infrastructure.csproj", "{C748437C-F0C9-42DC-970B-71CA46251992}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScenarioManagement.API", "src\Services\ScenarioManagement\ScenarioManagement.API\ScenarioManagement.API.csproj", "{281DAC01-533C-444B-95B8-B91C38411303}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrialSetManagement.API", "src\Services\TrialSetManagement\TrialSetManagement.API\TrialSetManagement.API.csproj", "{281DAC01-533C-444B-95B8-B91C38411303}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simulator", "Simulator", "{3B8A79BD-8B85-4090-9DC3-E347E92908B1}"
 EndProject
@@ -49,7 +49,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrialManagement.Infrastruct
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrialManagement.API", "src\Services\TrialManagement\TrialManagement.API\TrialManagement.API.csproj", "{ECF08F6A-7A99-4113-BE2D-190640A5D5E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus.RawRabbit", "src\BuildingBlocks\EventBus.RawRabbit\EventBus.RawRabbit.csproj", "{77F4FEC3-F1E5-43B2-A32E-EFEFEEF981F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.RawRabbit", "src\BuildingBlocks\EventBus.RawRabbit\EventBus.RawRabbit.csproj", "{77F4FEC3-F1E5-43B2-A32E-EFEFEEF981F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
