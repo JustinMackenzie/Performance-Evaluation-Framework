@@ -8,6 +8,10 @@ using SchemaManagement.Domain.Exceptions;
 
 namespace SchemaManagement.API.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="Microsoft.AspNetCore.Mvc.Controller" />
     [Produces("application/json")]
     [Route("api/Schema")]
     public class SchemaController : Controller
@@ -30,6 +34,7 @@ namespace SchemaManagement.API.Controllers
         /// Creates the schema.
         /// </summary>
         /// <param name="command">The command.</param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]CreateSchemaCommand command)
         {
@@ -48,6 +53,12 @@ namespace SchemaManagement.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates the scenario.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="command">The command.</param>
+        /// <returns></returns>
         [HttpPost]
         [Route("{id}/scenario")]
         public async Task<IActionResult> CreateScenario(Guid id, [FromBody] CreateScenarioCommand command)
@@ -68,6 +79,12 @@ namespace SchemaManagement.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates the event.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="command">The command.</param>
+        /// <returns></returns>
         [HttpPost]
         [Route("{id}/event")]
         public async Task<IActionResult> CreateEvent(Guid id, [FromBody] CreateSchemaEventCommand command)
@@ -88,6 +105,12 @@ namespace SchemaManagement.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates the task.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="command">The command.</param>
+        /// <returns></returns>
         [HttpPost]
         [Route("{id}/task")]
         public async Task<IActionResult> CreateTask(Guid id, [FromBody] CreateSchemaTaskEventCommand command)
@@ -108,6 +131,12 @@ namespace SchemaManagement.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates the task transition.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="command">The command.</param>
+        /// <returns></returns>
         [HttpPost]
         [Route("{id}/tasktransition")]
         public async Task<IActionResult> CreateTaskTransition(Guid id, [FromBody] CreateTaskTransitionCommand command)
@@ -128,6 +157,12 @@ namespace SchemaManagement.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates the asset.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="command">The command.</param>
+        /// <returns></returns>
         [HttpPost]
         [Route("{id}/asset")]
         public async Task<IActionResult> CreateAsset(Guid id, [FromBody] CreateAssetCommand command)
