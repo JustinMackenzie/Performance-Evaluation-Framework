@@ -47,9 +47,9 @@
     <Compile Include="EventProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenario.cs" />
-    <Compile Include="Services\IScenarioManagementService.cs" />
+    <Compile Include="Services\ITrialSetManagementService.cs" />
     <Compile Include="Services\ITrialManagementService.cs" />
-    <Compile Include="Services\ScenarioManagementService.cs" />
+    <Compile Include="Services\TrialSetManagementService.cs" />
     <Compile Include="Services\TrialManagementService.cs" />
     <Compile Include="Trial.cs" />
     <Compile Include="TrialSet.cs" />

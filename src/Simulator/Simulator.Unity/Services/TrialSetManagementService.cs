@@ -9,8 +9,8 @@ namespace Simulator.Unity.Services
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="Simulator.Unity.Services.IScenarioManagementService" />
-    public class ScenarioManagementService : IScenarioManagementService
+    /// <seealso cref="ITrialSetManagementService" />
+    public class TrialSetManagementService : ITrialSetManagementService
     {
         /// <summary>
         /// The base URL
@@ -18,10 +18,10 @@ namespace Simulator.Unity.Services
         private readonly string baseUrl;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScenarioManagementService"/> class.
+        /// Initializes a new instance of the <see cref="TrialSetManagementService"/> class.
         /// </summary>
         /// <param name="baseUrl">The base URL.</param>
-        public ScenarioManagementService(string baseUrl)
+        public TrialSetManagementService(string baseUrl)
         {
             this.baseUrl = baseUrl;
         }

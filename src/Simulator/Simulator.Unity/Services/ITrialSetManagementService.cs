@@ -6,7 +6,7 @@ namespace Simulator.Unity.Services
     /// <summary>
     /// 
     /// </summary>
-    public interface IScenarioManagementService
+    public interface ITrialSetManagementService
     {
         /// <summary>
         /// Gets the trial set by identifier.
