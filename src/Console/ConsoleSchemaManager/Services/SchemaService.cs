@@ -105,5 +105,35 @@ namespace ConsoleSchemaManager.Services
                 }
             }
         }
+
+        public void CreateSchemaAsset(CreateSchemaAssetRequest request)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                string json = JsonConvert.SerializeObject(request);
+                var response = client.PostAsync($"{request.ServerUrl}/api/Schema/{request.SchemaId}/Asset",
+                    new StringContent(json, Encoding.UTF8, "application/json")).Result;
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception(response.Content.ReadAsStringAsync().Result);
+                }
+            }
+        }
+
+        public void SetScenarioAsset(SetScenarioAssetRequest request)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                string json = JsonConvert.SerializeObject(request);
+                var response = client.PutAsync($"{request.ServerUrl}/api/Schema/{request.SchemaId}/Scenario/{request.ScenarioId}/Asset",
+                    new StringContent(json, Encoding.UTF8, "application/json")).Result;
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception(response.Content.ReadAsStringAsync().Result);
+                }
+            }
+        }
     }
 }

@@ -20,13 +20,17 @@ namespace ConsoleSchemaManager
                 CreateScenarioCommand, 
                 CreateSchemaEventCommand, 
                 CreateSchemaTaskCommand,
-                CreateTaskTransitionCommand>(args)
+                CreateTaskTransitionCommand,
+                CreateSchemaAssetCommand,
+                SetScenarioAssetCommand>(args)
                 .MapResult(
-                    (CreateSchemaCommand options) => new CreateSchemaCommandHandler(schemaService).Handle(options),
-                    (CreateScenarioCommand options) => new CreateScenarioCommandHandler(schemaService).Handle(options),
-                    (CreateSchemaEventCommand options) => new CreateSchemaEventCommandHandler(schemaService).Handle(options),
-                    (CreateSchemaTaskCommand options) => new CreateSchemaTaskCommandHandler(schemaService).Handle(options),
-                    (CreateTaskTransitionCommand options) => new CreateTaskTransitionCommandHandler(schemaService).Handle(options),
+                    (CreateSchemaCommand command) => new CreateSchemaCommandHandler(schemaService).Handle(command),
+                    (CreateScenarioCommand command) => new CreateScenarioCommandHandler(schemaService).Handle(command),
+                    (CreateSchemaEventCommand command) => new CreateSchemaEventCommandHandler(schemaService).Handle(command),
+                    (CreateSchemaTaskCommand command) => new CreateSchemaTaskCommandHandler(schemaService).Handle(command),
+                    (CreateTaskTransitionCommand command) => new CreateTaskTransitionCommandHandler(schemaService).Handle(command),
+                    (CreateSchemaAssetCommand command) => new CreateSchemaAssetCommandHandler(schemaService).Handle(command),
+                    (SetScenarioAssetCommand command) => new SetScenarioAssetCommandHandler(schemaService).Handle(command),
                     errs => 1);
         }
     }

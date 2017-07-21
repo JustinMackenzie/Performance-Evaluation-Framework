@@ -34,5 +34,9 @@
         /// </summary>
         /// <param name="request">The request.</param>
         void CreateTaskTransition(CreateTaskTransitionRequest request);
+
+        void CreateSchemaAsset(CreateSchemaAssetRequest request);
+
+        void SetScenarioAsset(SetScenarioAssetRequest request);
     }
 }
