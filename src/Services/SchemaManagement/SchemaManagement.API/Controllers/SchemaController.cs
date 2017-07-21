@@ -127,5 +127,25 @@ namespace SchemaManagement.API.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpPost]
+        [Route("{id}/asset")]
+        public async Task<IActionResult> CreateAsset(Guid id, [FromBody] CreateAssetCommand command)
+        {
+            try
+            {
+                command.SchemaId = id;
+                Asset asset = await this._mediator.Send(command);
+                return Ok(asset);
+            }
+            catch (SchemaDomainException e)
+            {
+                return BadRequest(e.Message);
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
     }
 }

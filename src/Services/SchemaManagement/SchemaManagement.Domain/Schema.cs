@@ -190,10 +190,11 @@ namespace SchemaManagement.Domain
         /// <summary>
         /// Adds the schema object.
         /// </summary>
-        public void AddAsset(string name, string tag)
+        public Asset AddAsset(string name, string tag)
         {
             Asset asset = new Asset(name, tag);
             this._assets.Add(asset);
+            return asset;
         }
 
         /// <summary>
