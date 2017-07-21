@@ -42,10 +42,11 @@ namespace SchemaManagement.Domain
         /// <param name="position">The position.</param>
         /// <param name="rotation">The rotation.</param>
         /// <param name="scale">The scale.</param>
-        public void AddAsset(Guid assetId, Vector position, Vector rotation, Vector scale)
+        public ScenarioAsset AddAsset(Guid assetId, Vector position, Vector rotation, Vector scale)
         {
             ScenarioAsset asset = new ScenarioAsset(assetId, position, rotation, scale);
             this._scenarioAssets.Add(asset);
+            return asset;
         }
     }
 }

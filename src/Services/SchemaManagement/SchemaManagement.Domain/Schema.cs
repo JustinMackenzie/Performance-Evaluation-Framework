@@ -205,7 +205,7 @@ namespace SchemaManagement.Domain
         /// <param name="position">The position.</param>
         /// <param name="rotation">The rotation.</param>
         /// <param name="scale">The scale.</param>
-        public void SetAssetInScenario(Guid scenarioId, Guid assetId, Vector position, Vector rotation, Vector scale)
+        public ScenarioAsset SetAssetInScenario(Guid scenarioId, Guid assetId, Vector position, Vector rotation, Vector scale)
         {
             Scenario scenario = this._scenarios.FirstOrDefault(s => s.Id == scenarioId);
 
@@ -219,7 +219,7 @@ namespace SchemaManagement.Domain
                 throw new SchemaDomainException($"Cannot set asset in scenario. The asset with the Id given '{assetId}', does not exist in the schema.");
             }
 
-            scenario.AddAsset(assetId, position, rotation, position);
+            return scenario.AddAsset(assetId, position, rotation, position);
         }
     }
 }
