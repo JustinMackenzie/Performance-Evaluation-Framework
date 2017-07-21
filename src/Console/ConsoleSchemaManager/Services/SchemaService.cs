@@ -16,7 +16,7 @@ namespace ConsoleSchemaManager.Services
         /// </summary>
         /// <param name="request">The request.</param>
         /// <exception cref="Exception"></exception>
-        public void CreateSchema(CreateSchemaRequest request)
+        public ApiResponse CreateSchema(CreateSchemaRequest request)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -27,6 +27,8 @@ namespace ConsoleSchemaManager.Services
                 {
                     throw new Exception(response.Content.ReadAsStringAsync().Result);
                 }
+
+                return new ApiResponse(response.Content.ReadAsStringAsync().Result);
             }
         }
 
@@ -35,7 +37,7 @@ namespace ConsoleSchemaManager.Services
         /// </summary>
         /// <param name="request">The request.</param>
         /// <exception cref="Exception"></exception>
-        public void CreateScenario(CreateScenarioRequest request)
+        public ApiResponse CreateScenario(CreateScenarioRequest request)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -46,6 +48,8 @@ namespace ConsoleSchemaManager.Services
                 {
                     throw new Exception(response.Content.ReadAsStringAsync().Result);
                 }
+
+                return new ApiResponse(response.Content.ReadAsStringAsync().Result);
             }
         }
 
@@ -54,7 +58,7 @@ namespace ConsoleSchemaManager.Services
         /// </summary>
         /// <param name="request">The request.</param>
         /// <exception cref="Exception"></exception>
-        public void CreateSchemaEvent(CreateSchemaEventRequest request)
+        public ApiResponse CreateSchemaEvent(CreateSchemaEventRequest request)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -65,6 +69,8 @@ namespace ConsoleSchemaManager.Services
                 {
                     throw new Exception(response.Content.ReadAsStringAsync().Result);
                 }
+
+                return new ApiResponse(response.Content.ReadAsStringAsync().Result);
             }
         }
 
@@ -73,7 +79,7 @@ namespace ConsoleSchemaManager.Services
         /// </summary>
         /// <param name="request">The request.</param>
         /// <exception cref="Exception"></exception>
-        public void CreateSchemaTask(CreateSchemaTaskRequest request)
+        public ApiResponse CreateSchemaTask(CreateSchemaTaskRequest request)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -84,6 +90,8 @@ namespace ConsoleSchemaManager.Services
                 {
                     throw new Exception(response.Content.ReadAsStringAsync().Result);
                 }
+
+                return new ApiResponse(response.Content.ReadAsStringAsync().Result);
             }
         }
 
@@ -92,7 +100,7 @@ namespace ConsoleSchemaManager.Services
         /// </summary>
         /// <param name="request">The request.</param>
         /// <exception cref="Exception"></exception>
-        public void CreateTaskTransition(CreateTaskTransitionRequest request)
+        public ApiResponse CreateTaskTransition(CreateTaskTransitionRequest request)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -103,10 +111,12 @@ namespace ConsoleSchemaManager.Services
                 {
                     throw new Exception(response.Content.ReadAsStringAsync().Result);
                 }
+
+                return new ApiResponse(response.Content.ReadAsStringAsync().Result);
             }
         }
 
-        public void CreateSchemaAsset(CreateSchemaAssetRequest request)
+        public ApiResponse CreateSchemaAsset(CreateSchemaAssetRequest request)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -118,10 +128,12 @@ namespace ConsoleSchemaManager.Services
                 {
                     throw new Exception(response.Content.ReadAsStringAsync().Result);
                 }
+
+                return new ApiResponse(response.Content.ReadAsStringAsync().Result);
             }
         }
 
-        public void SetScenarioAsset(SetScenarioAssetRequest request)
+        public ApiResponse SetScenarioAsset(SetScenarioAssetRequest request)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -133,6 +145,8 @@ namespace ConsoleSchemaManager.Services
                 {
                     throw new Exception(response.Content.ReadAsStringAsync().Result);
                 }
+
+                return new ApiResponse(response.Content.ReadAsStringAsync().Result);
             }
         }
     }

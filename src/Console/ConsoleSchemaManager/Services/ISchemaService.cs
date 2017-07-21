@@ -9,34 +9,34 @@
         /// Creates the schema.
         /// </summary>
         /// <param name="request">The request.</param>
-        void CreateSchema(CreateSchemaRequest request);
+        ApiResponse CreateSchema(CreateSchemaRequest request);
 
         /// <summary>
         /// Creates the scenario.
         /// </summary>
         /// <param name="request">The request.</param>
-        void CreateScenario(CreateScenarioRequest request);
+        ApiResponse CreateScenario(CreateScenarioRequest request);
 
         /// <summary>
         /// Creates the schema event.
         /// </summary>
         /// <param name="request">The request.</param>
-        void CreateSchemaEvent(CreateSchemaEventRequest request);
+        ApiResponse CreateSchemaEvent(CreateSchemaEventRequest request);
 
         /// <summary>
         /// Creates the schema task.
         /// </summary>
         /// <param name="request">The request.</param>
-        void CreateSchemaTask(CreateSchemaTaskRequest request);
+        ApiResponse CreateSchemaTask(CreateSchemaTaskRequest request);
 
         /// <summary>
         /// Creates the task transition.
         /// </summary>
         /// <param name="request">The request.</param>
-        void CreateTaskTransition(CreateTaskTransitionRequest request);
+        ApiResponse CreateTaskTransition(CreateTaskTransitionRequest request);
 
-        void CreateSchemaAsset(CreateSchemaAssetRequest request);
+        ApiResponse CreateSchemaAsset(CreateSchemaAssetRequest request);
 
-        void SetScenarioAsset(SetScenarioAssetRequest request);
+        ApiResponse SetScenarioAsset(SetScenarioAssetRequest request);
     }
 }

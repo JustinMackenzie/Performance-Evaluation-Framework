@@ -46,7 +46,8 @@ namespace ConsoleSchemaManager.CommandHandlers
                     Scale = this.GetVector(command.Scale)
                 };
 
-                this._schemaService.SetScenarioAsset(request);
+                var response = this._schemaService.SetScenarioAsset(request);
+                Console.WriteLine(response);
                 return 0;
             }
             catch (Exception e)

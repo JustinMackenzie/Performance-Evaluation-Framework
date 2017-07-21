@@ -42,7 +42,8 @@ namespace ConsoleSchemaManager.CommandHandlers
 
             try
             {
-                this._service.CreateTaskTransition(request);
+                var response = this._service.CreateTaskTransition(request);
+                Console.WriteLine(response);
                 return 0;
             }
             catch (Exception ex)

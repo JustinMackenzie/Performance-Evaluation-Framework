@@ -27,7 +27,8 @@ namespace ConsoleSchemaManager.CommandHandlers
 
             try
             {
-                this.schemaService.CreateSchemaAsset(request);
+                var response = this.schemaService.CreateSchemaAsset(request);
+                Console.WriteLine(response);
                 return 0;
             }
             catch (Exception e)

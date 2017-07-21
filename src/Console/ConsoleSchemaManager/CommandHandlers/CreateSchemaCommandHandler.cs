@@ -40,7 +40,8 @@ namespace ConsoleSchemaManager.CommandHandlers
 
             try
             {
-                this._schemaService.CreateSchema(request);
+                var response = this._schemaService.CreateSchema(request);
+                Console.WriteLine(response);
                 return 0;
             }
             catch (Exception e)
