@@ -42,6 +42,7 @@ namespace SchemaManagement.API.Application.Commands
         {
             Schema schema = this._schemaRepository.Get(message.SchemaId);
             ScenarioAsset asset = schema.SetAssetInScenario(message.ScenarioId, message.AssetId, message.Position.ToVector(), message.Rotation.ToVector(), message.Rotation.ToVector());
+            this._schemaRepository.Update(schema);
 
             this._eventBus.Publish(new ScenarioAssetSetIntegrationEvent(schema.Id, message.ScenarioId, message.AssetId, message.Position, message.Rotation, message.Scale));
 
