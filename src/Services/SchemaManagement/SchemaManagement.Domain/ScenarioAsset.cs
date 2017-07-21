@@ -7,52 +7,41 @@ namespace SchemaManagement.Domain
     /// <summary>
     /// 
     /// </summary>
+    /// <seealso cref="SchemaManagement.Domain.SeedWork.ValueObject" />
     /// <seealso cref="Schema.Domain.SeedWork.ValueObject" />
     public class ScenarioAsset : ValueObject
     {
         /// <summary>
         /// The asset identifier
         /// </summary>
-        private Guid _assetId;
+        /// <value>
+        /// The asset identifier.
+        /// </value>
+        public Guid AssetId { get; private set; }
 
         /// <summary>
         /// The position
         /// </summary>
-        private Vector _position;
+        /// <value>
+        /// The position.
+        /// </value>
+        public Vector Position { get; set; }
 
         /// <summary>
         /// The rotation
         /// </summary>
-        private Vector _rotation;
+        /// <value>
+        /// The rotation.
+        /// </value>
+        public Vector Rotation { get; private set; }
 
         /// <summary>
         /// The scale
         /// </summary>
-        private Vector _scale;
-
-        /// <summary>
-        /// Gets the position.
-        /// </summary>
-        /// <value>
-        /// The position.
-        /// </value>
-        public Vector Position => this._position;
-
-        /// <summary>
-        /// Gets the rotation.
-        /// </summary>
-        /// <value>
-        /// The rotation.
-        /// </value>
-        public Vector Rotation => this._rotation;
-
-        /// <summary>
-        /// Gets the scale.
-        /// </summary>
         /// <value>
         /// The scale.
         /// </value>
-        public Vector Scale => this._scale;
+        public Vector Scale { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ScenarioAsset" /> class.
@@ -63,10 +52,10 @@ namespace SchemaManagement.Domain
         /// <param name="scale">The scale.</param>
         public ScenarioAsset(Guid assetId, Vector position, Vector rotation, Vector scale)
         {
-            this._assetId = assetId;
-            this._position = position;
-            this._rotation = rotation;
-            this._scale = scale;
+            this.AssetId = assetId;
+            this.Position = position;
+            this.Rotation = rotation;
+            this.Scale = scale;
         }
 
         /// <summary>
@@ -75,10 +64,10 @@ namespace SchemaManagement.Domain
         /// <returns></returns>
         protected override IEnumerable<object> GetAtomicValues()
         {
-            yield return this._assetId;
-            yield return this._position;
-            yield return this._rotation;
-            yield return this._scale;
+            yield return this.AssetId;
+            yield return this.Position;
+            yield return this.Rotation;
+            yield return this.Scale;
         }
     }
 }

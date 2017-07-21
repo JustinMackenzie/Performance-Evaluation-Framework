@@ -110,6 +110,7 @@ namespace SchemaManagement.Infrastructure
                     cm.AddKnownType(typeof(Domain.Schema));
                     cm.AddKnownType(typeof(Scenario));
                     cm.AddKnownType(typeof(Task));
+                    cm.AddKnownType(typeof(Asset));
                 });
             }
 
@@ -167,6 +168,42 @@ namespace SchemaManagement.Infrastructure
                     cm.MapProperty(t => t.SourceTaskName);
                     cm.MapProperty(t => t.DestinationTaskName);
                     cm.MapCreator(t => new TaskTransition(t.EventName, t.SourceTaskName, t.DestinationTaskName));
+                });
+            }
+
+            if (!BsonClassMap.IsClassMapRegistered(typeof(Asset)))
+            {
+                BsonClassMap.RegisterClassMap<Asset>(cm =>
+                {
+                    cm.AutoMap();
+                    cm.MapProperty(a => a.Name);
+                    cm.MapProperty(a => a.Tag);
+                    cm.MapCreator(a => new Asset(a.Name, a.Tag));
+                });
+            }
+
+            if (!BsonClassMap.IsClassMapRegistered(typeof(ScenarioAsset)))
+            {
+                BsonClassMap.RegisterClassMap<ScenarioAsset>(cm =>
+                {
+                    cm.AutoMap();
+                    cm.MapProperty(a => a.AssetId);
+                    cm.MapProperty(a => a.Position);
+                    cm.MapProperty(a => a.Rotation);
+                    cm.MapProperty(a => a.Scale);
+                    cm.MapCreator(a => new ScenarioAsset(a.AssetId, a.Position, a.Rotation, a.Scale));
+                });
+            }
+
+            if (!BsonClassMap.IsClassMapRegistered(typeof(Vector)))
+            {
+                BsonClassMap.RegisterClassMap<Vector>(cm =>
+                {
+                    cm.AutoMap();
+                    cm.MapProperty(v => v.X);
+                    cm.MapProperty(v => v.Y);
+                    cm.MapProperty(v => v.Z);
+                    cm.MapCreator(v => new Vector(v.X, v.Y, v.Z));
                 });
             }
         }

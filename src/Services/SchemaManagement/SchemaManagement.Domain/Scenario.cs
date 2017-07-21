@@ -15,6 +15,12 @@ namespace SchemaManagement.Domain
         /// </summary>
         private List<ScenarioAsset> _scenarioAssets;
 
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string Name { get; private set; }
 
         /// <summary>

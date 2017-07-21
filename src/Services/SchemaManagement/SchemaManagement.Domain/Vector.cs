@@ -10,25 +10,12 @@ namespace SchemaManagement.Domain
     public class Vector : ValueObject
     {
         /// <summary>
-        /// The x
-        /// </summary>
-        private float _x;
-        /// <summary>
-        /// The y
-        /// </summary>
-        private float _y;
-        /// <summary>
-        /// The z
-        /// </summary>
-        private float _z;
-
-        /// <summary>
         /// Gets the x.
         /// </summary>
         /// <value>
         /// The x.
         /// </value>
-        public float X => this._x;
+        public float X { get; private set; }
 
         /// <summary>
         /// Gets the y.
@@ -36,7 +23,7 @@ namespace SchemaManagement.Domain
         /// <value>
         /// The y.
         /// </value>
-        public float Y => this._y;
+        public float Y { get; private set; }
 
         /// <summary>
         /// Gets the z.
@@ -44,7 +31,7 @@ namespace SchemaManagement.Domain
         /// <value>
         /// The z.
         /// </value>
-        public float Z => this._z;
+        public float Z { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Vector" /> class.
@@ -54,9 +41,9 @@ namespace SchemaManagement.Domain
         /// <param name="z">The z.</param>
         public Vector(float x, float y, float z)
         {
-            this._x = x;
-            this._y = y;
-            this._z = z;
+            this.X = x;
+            this.Y = y;
+            this.Z = z;
         }
 
         /// <summary>
@@ -65,9 +52,9 @@ namespace SchemaManagement.Domain
         /// <returns></returns>
         protected override IEnumerable<object> GetAtomicValues()
         {
-            yield return this._x;
-            yield return this._y;
-            yield return this._z;
+            yield return this.X;
+            yield return this.Y;
+            yield return this.Z;
         }
     }
 }

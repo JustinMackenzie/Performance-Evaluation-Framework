@@ -5,26 +5,17 @@ namespace SchemaManagement.Domain
     /// <summary>
     /// 
     /// </summary>
+    /// <seealso cref="SchemaManagement.Domain.SeedWork.Entity" />
     /// <seealso cref="Schema.Domain.SeedWork.Entity" />
     public class Asset : Entity
     {
-        /// <summary>
-        /// The name
-        /// </summary>
-        private string _name;
-
-        /// <summary>
-        /// The tag
-        /// </summary>
-        private string _tag;
-
         /// <summary>
         /// Gets the name.
         /// </summary>
         /// <value>
         /// The name.
         /// </value>
-        public string Name => this._name;
+        public string Name { get; private set; }
 
         /// <summary>
         /// Gets the tag.
@@ -32,7 +23,7 @@ namespace SchemaManagement.Domain
         /// <value>
         /// The tag.
         /// </value>
-        public string Tag => this._tag;
+        public string Tag { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Asset" /> class.
@@ -41,9 +32,8 @@ namespace SchemaManagement.Domain
         /// <param name="tag">The tag.</param>
         public Asset(string name, string tag)
         {
-            this._name = name;
-            this._tag = tag;
+            this.Name = name;
+            this.Tag = tag;
         }
-
     }
 }
