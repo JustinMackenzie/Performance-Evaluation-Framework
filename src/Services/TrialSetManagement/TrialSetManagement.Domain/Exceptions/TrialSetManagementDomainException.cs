@@ -6,13 +6,13 @@ namespace TrialSetManagement.Domain.Exceptions
     /// 
     /// </summary>
     /// <seealso cref="System.Exception" />
-    public class ScenarioManagementDomainException : Exception
+    public class TrialSetManagementDomainException : Exception
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScenarioManagementDomainException"/> class.
+        /// Initializes a new instance of the <see cref="TrialSetManagementDomainException"/> class.
         /// </summary>
         /// <param name="message">The message that describes the error.</param>
-        public ScenarioManagementDomainException(string message)
+        public TrialSetManagementDomainException(string message)
             : base(message)
         {
         }

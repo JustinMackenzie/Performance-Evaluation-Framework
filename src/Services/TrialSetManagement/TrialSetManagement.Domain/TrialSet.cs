@@ -33,7 +33,7 @@ namespace TrialSetManagement.Domain
         public string Name { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TrialSet"/> class.
+        /// Initializes a new instance of the <see cref="TrialSet" /> class.
         /// </summary>
         /// <param name="name">The name.</param>
         public TrialSet(string name)
@@ -54,11 +54,19 @@ namespace TrialSetManagement.Domain
             this._scenarioIds.Add(scenarioId);
         }
 
+        /// <summary>
+        /// Removes the scenario.
+        /// </summary>
+        /// <param name="scenarioId">The scenario identifier.</param>
         public void RemoveScenario(Guid scenarioId)
         {
             this._scenarioIds.Remove(scenarioId);
         }
 
+        /// <summary>
+        /// Changes the name.
+        /// </summary>
+        /// <param name="name">The name.</param>
         public void ChangeName(string name)
         {
             if (string.IsNullOrEmpty(name))

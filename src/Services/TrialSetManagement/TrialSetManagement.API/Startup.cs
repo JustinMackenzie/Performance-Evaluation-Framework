@@ -41,9 +41,7 @@ namespace TrialSetManagement.API
             services.AddMediatR();
             services.AddRawRabbit(cfg => cfg.SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("rawrabbit.json"),
                 ioc => ioc.AddSingleton<IMessageSerializer, TypelessJsonSerializer>());
-
-            services.AddTransient<IScenarioRepository, ScenarioRepository>(provder =>
-                new ScenarioRepository(Configuration.GetConnectionString("ScenarioDatabase"), "scenario-context"));
+            
             services.AddTransient<ITrialSetRepository, TrialSetRepository>(provder =>
                 new TrialSetRepository(Configuration.GetConnectionString("ScenarioDatabase"), "scenario-context"));
             services.AddTransient<ITrialSetQueries, TrialSetQueries>();

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using TrialSetManagement.API.Application.Queries;
 using TrialSetManagement.Infrastructure;
@@ -52,6 +53,8 @@ namespace TrialSetManagement.API.Repositories
         {
             _connectionString = connectionString;
             _databaseName = databaseName;
+
+            this.RegisterClassMaps();
         }
 
         /// <summary>
@@ -91,6 +94,58 @@ namespace TrialSetManagement.API.Repositories
         public async Task Add(TrialSetQueryDto trialSetQuery)
         {
             await this.Collection.InsertOneAsync(trialSetQuery);
+        }
+
+        /// <summary>
+        /// Registers the class maps.
+        /// </summary>
+        private void RegisterClassMaps()
+        {
+            if (!BsonClassMap.IsClassMapRegistered(typeof(TrialSetQueryDto)))
+            {
+                BsonClassMap.RegisterClassMap<TrialSetQueryDto>(cm =>
+                {
+                    cm.AutoMap();
+                    cm.MapProperty(t => t.Id);
+                    cm.MapProperty(t => t.Name);
+                    cm.MapProperty(t => t.Scenarios);
+                });
+            }
+
+            if (!BsonClassMap.IsClassMapRegistered(typeof(ScenarioQueryDto)))
+            {
+                BsonClassMap.RegisterClassMap<ScenarioQueryDto>(cm =>
+                {
+                    cm.AutoMap();
+                    cm.MapProperty(s => s.Id);
+                    cm.MapProperty(s => s.Name);
+                    cm.MapProperty(s => s.Assets);
+                });
+            }
+
+            if (!BsonClassMap.IsClassMapRegistered(typeof(AssetQueryDto)))
+            {
+                BsonClassMap.RegisterClassMap<AssetQueryDto>(cm =>
+                {
+                    cm.AutoMap();
+                    cm.MapProperty(a => a.AssetId);
+                    cm.MapProperty(a => a.Tag);
+                    cm.MapProperty(a => a.Position);
+                    cm.MapProperty(a => a.Rotation);
+                    cm.MapProperty(a => a.Scale);
+                });
+            }
+
+            if (!BsonClassMap.IsClassMapRegistered(typeof(VectorQueryDto)))
+            {
+                BsonClassMap.RegisterClassMap<VectorQueryDto>(cm =>
+                {
+                    cm.AutoMap();
+                    cm.MapProperty(v => v.X);
+                    cm.MapProperty(v => v.Y);
+                    cm.MapProperty(v => v.Z);
+                });
+            }
         }
     }
 }

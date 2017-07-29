@@ -96,14 +96,6 @@ namespace TrialSetManagement.Infrastructure
                     cm.MapField("_scenarioIds").SetElementName("ScenarioIds");
                 });
             }
-
-            if (!BsonClassMap.IsClassMapRegistered(typeof(Scenario)))
-            {
-                BsonClassMap.RegisterClassMap<Scenario>(cm =>
-                {
-                    cm.AutoMap();
-                });
-            }
         }
     }
 }
