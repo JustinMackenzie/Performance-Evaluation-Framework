@@ -9,8 +9,8 @@ namespace TrialSetManagement.API.Infrastructure.Services
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="TrialSetManagement.API.Infrastructure.Services.ISchemaManagementService" />
-    public class SchemaManagementService : ISchemaManagementService
+    /// <seealso cref="IScenarioManagementService" />
+    public class ScenarioManagementService : IScenarioManagementService
     {
         /// <summary>
         /// The base URL
@@ -18,10 +18,10 @@ namespace TrialSetManagement.API.Infrastructure.Services
         private readonly string _baseUrl;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SchemaManagementService"/> class.
+        /// Initializes a new instance of the <see cref="ScenarioManagementService"/> class.
         /// </summary>
         /// <param name="baseUrl">The base URL.</param>
-        public SchemaManagementService(string baseUrl)
+        public ScenarioManagementService(string baseUrl)
         {
             _baseUrl = baseUrl;
         }

@@ -18,7 +18,7 @@ namespace TrialSetManagement.API.IntegrationEvents.EventHandling
         /// <summary>
         /// The service
         /// </summary>
-        private readonly ISchemaManagementService _service;
+        private readonly IScenarioManagementService _service;
         /// <summary>
         /// The repository
         /// </summary>
@@ -29,7 +29,7 @@ namespace TrialSetManagement.API.IntegrationEvents.EventHandling
         /// </summary>
         /// <param name="service">The service.</param>
         /// <param name="repository">The repository.</param>
-        public ScenarioAddedToTrialSetIntegrationEventHandler(ISchemaManagementService service, ITrialSetQueryRepository repository)
+        public ScenarioAddedToTrialSetIntegrationEventHandler(IScenarioManagementService service, ITrialSetQueryRepository repository)
         {
             this._service = service;
             _repository = repository;

@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using ScenarioManagement.API.Application.Commands;
+using ScenarioManagement.API.Application.Queries;
 using ScenarioManagement.Domain;
 
 namespace ScenarioManagement.API.Controllers
@@ -21,12 +22,39 @@ namespace ScenarioManagement.API.Controllers
         private readonly IMediator _mediator;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScenarioController"/> class.
+        /// The queries
+        /// </summary>
+        private readonly IScenarioQueries _queries;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ScenarioController" /> class.
         /// </summary>
         /// <param name="mediator">The mediator.</param>
-        public ScenarioController(IMediator mediator)
+        /// <param name="queries">The queries.</param>
+        public ScenarioController(IMediator mediator, IScenarioQueries queries)
         {
             _mediator = mediator;
+            _queries = queries;
+        }
+
+        /// <summary>
+        /// Gets the scenario.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> GetScenario(Guid id)
+        {
+            try
+            {
+                ScenarioDto scenario = await this._queries.GetScenario(id);
+                return Ok(scenario);
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
 
         /// <summary>

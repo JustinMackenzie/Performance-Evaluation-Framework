@@ -4,7 +4,7 @@ using TrialSetManagement.API.Application.Queries;
 
 namespace TrialSetManagement.API.Infrastructure.Services
 {
-    public interface ISchemaManagementService
+    public interface IScenarioManagementService
     {
         Task<ScenarioQueryDto> GetScenario(Guid id);
     }

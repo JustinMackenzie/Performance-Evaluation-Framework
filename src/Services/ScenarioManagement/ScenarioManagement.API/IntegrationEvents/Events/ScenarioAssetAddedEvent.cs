@@ -8,7 +8,7 @@ namespace ScenarioManagement.API.IntegrationEvents.Events
     /// 
     /// </summary>
     /// <seealso cref="BuildingBlocks.EventBus.Events.IntegrationEvent" />
-    public class ScenarioAssetSetIntegrationEvent : IntegrationEvent
+    public class ScenarioAssetAddedEvent : IntegrationEvent
     {
         /// <summary>
         /// Gets or sets the scenario identifier.
@@ -51,14 +51,14 @@ namespace ScenarioManagement.API.IntegrationEvents.Events
         public VectorDto Scale { get; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScenarioAssetSetIntegrationEvent" /> class.
+        /// Initializes a new instance of the <see cref="ScenarioAssetAddedEvent" /> class.
         /// </summary>
         /// <param name="scenarioId">The scenario identifier.</param>
         /// <param name="tag">The tag.</param>
         /// <param name="position">The position.</param>
         /// <param name="rotation">The rotation.</param>
         /// <param name="scale">The scale.</param>
-        public ScenarioAssetSetIntegrationEvent(Guid scenarioId, string tag, VectorDto position,
+        public ScenarioAssetAddedEvent(Guid scenarioId, string tag, VectorDto position,
             VectorDto rotation, VectorDto scale)
         {
             this.ScenarioId = scenarioId;

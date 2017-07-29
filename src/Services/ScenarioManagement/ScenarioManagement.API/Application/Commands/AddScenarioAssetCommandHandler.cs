@@ -46,7 +46,7 @@ namespace ScenarioManagement.API.Application.Commands
 
             await this._scenarioRepository.Update(scenario);
 
-            this._eventBus.Publish(new ScenarioAssetSetIntegrationEvent(command.ScenarioId, asset.Tag, command.Position, command.Rotation, command.Scale));
+            this._eventBus.Publish(new ScenarioAssetAddedEvent(command.ScenarioId, asset.Tag, command.Position, command.Rotation, command.Scale));
 
             return asset;
         }

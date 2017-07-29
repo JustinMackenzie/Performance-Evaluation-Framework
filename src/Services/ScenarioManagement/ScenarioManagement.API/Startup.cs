@@ -1,14 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.IO;
 using BuildingBlocks.EventBus.Abstractions;
 using EventBus.RawRabbit;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using RawRabbit.Serialization;
+using RawRabbit.vNext;
+using ScenarioManagement.API.Application.Queries;
+using ScenarioManagement.API.IntegrationEvents.EventHandlers;
+using ScenarioManagement.API.IntegrationEvents.Events;
+using ScenarioManagement.API.Repositories;
 using ScenarioManagement.Domain;
 using ScenarioManagement.Infrastructure;
 
@@ -33,11 +37,19 @@ namespace ScenarioManagement.API
         {
             // Add framework services.
             services.AddMvc();
+            services.AddMediatR();
+            services.AddRawRabbit(cfg => cfg.SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("rawrabbit.json"),
+                ioc => ioc.AddSingleton<IMessageSerializer, TypelessJsonSerializer>());
 
             services.AddTransient<IScenarioRepository, ScenarioRepository>(provder =>
                 new ScenarioRepository(Configuration.GetConnectionString("SchemaDatabase"), "schema-context"));
+            services.AddTransient<IScenarioQueries, ScenarioQueries>();
+            services.AddTransient<IScenarioQueryRepository, ScenarioQueryRepository>(provider =>
+                new ScenarioQueryRepository(Configuration.GetConnectionString("SchemaDatabase"), "schema-context"));
             services.AddSingleton<IRawRabbitSubscriptionRepository, InMemoryRawRabbitSubscriptionRepository>();
             services.AddSingleton<IEventBus, RawRabbitEventBus>();
+            services.AddTransient<ScenarioCreatedEventHandler>();
+            services.AddTransient<ScenarioAssetAddedEventHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +59,17 @@ namespace ScenarioManagement.API
             loggerFactory.AddDebug();
 
             app.UseMvc();
+            this.ConfigureEventBus(app);
+        }
+
+        protected void ConfigureEventBus(IApplicationBuilder app)
+        {
+            IEventBus eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
+
+            eventBus.Subscribe<ScenarioCreatedEvent, ScenarioCreatedEventHandler>
+                (() => app.ApplicationServices.GetRequiredService<ScenarioCreatedEventHandler>());
+            eventBus.Subscribe<ScenarioAssetAddedEvent, ScenarioAssetAddedEventHandler>
+                (() => app.ApplicationServices.GetRequiredService<ScenarioAssetAddedEventHandler>());
         }
     }
 }

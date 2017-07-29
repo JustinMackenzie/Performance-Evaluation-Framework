@@ -7,7 +7,7 @@ namespace ScenarioManagement.API.IntegrationEvents.Events
     /// 
     /// </summary>
     /// <seealso cref="BuildingBlocks.EventBus.Events.IntegrationEvent" />
-    public class ScenarioCreatedIntegrationEvent : IntegrationEvent
+    public class ScenarioCreatedEvent : IntegrationEvent
     {
         /// <summary>
         /// Gets the scenario identifier.
@@ -26,11 +26,11 @@ namespace ScenarioManagement.API.IntegrationEvents.Events
         public string Name { get; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScenarioCreatedIntegrationEvent"/> class.
+        /// Initializes a new instance of the <see cref="ScenarioCreatedEvent"/> class.
         /// </summary>
         /// <param name="scenarioId">The scenario identifier.</param>
         /// <param name="name">The name.</param>
-        public ScenarioCreatedIntegrationEvent(Guid scenarioId, string name)
+        public ScenarioCreatedEvent(Guid scenarioId, string name)
         {
             this.ScenarioId = scenarioId;
             this.Name = name;

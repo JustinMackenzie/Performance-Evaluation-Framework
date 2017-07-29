@@ -43,7 +43,7 @@ namespace ScenarioManagement.API.Application.Commands
             Scenario scenario = new Scenario(command.Name);
             await this._repository.Add(scenario);
 
-            this._eventBus.Publish(new ScenarioCreatedIntegrationEvent(scenario.Id, scenario.Name));
+            this._eventBus.Publish(new ScenarioCreatedEvent(scenario.Id, scenario.Name));
 
             return scenario;
         }

@@ -48,7 +48,7 @@ namespace TrialSetManagement.API
             services.AddSingleton<IRawRabbitSubscriptionRepository, InMemoryRawRabbitSubscriptionRepository>();
             services.AddSingleton<IEventBus, RawRabbitEventBus>();
             services.AddTransient<ITrialSetQueryRepository, TrialSetQueryRepository>();
-            services.AddTransient<ISchemaManagementService, SchemaManagementService>();
+            services.AddTransient<IScenarioManagementService, ScenarioManagementService>();
             services.AddTransient<TrialSetCreatedIntegrationEventHandler>();
             services.AddTransient<ScenarioAddedToTrialSetIntegrationEventHandler>();
             services.AddTransient<ScenarioRemovedFromTrialSetIntegrationEventHandler>();
