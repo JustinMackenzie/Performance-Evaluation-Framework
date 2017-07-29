@@ -7,7 +7,7 @@ namespace TrialSetManagement.API.Application.Queries
     /// <summary>
     /// 
     /// </summary>
-    public class TrialSetDto
+    public class TrialSetQueryDto
     {
         /// <summary>
         /// Gets or sets the scenarios.
@@ -15,7 +15,7 @@ namespace TrialSetManagement.API.Application.Queries
         /// <value>
         /// The scenarios.
         /// </value>
-        public IEnumerable<Scenario> Scenarios { get; set; }
+        public List<ScenarioQueryDto> Scenarios { get; set; }
 
         /// <summary>
         /// Gets or sets the name.

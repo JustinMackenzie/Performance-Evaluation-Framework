@@ -1,38 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using MongoDB.Driver;
 using TrialSetManagement.Domain;
 
 namespace TrialSetManagement.API.Application.Queries
 {
     public class TrialSetQueries : ITrialSetQueries
     {
-        private readonly ITrialSetRepository _trialSetRepository;
-
-        private readonly IScenarioRepository _scenarioRepository;
-
-        public TrialSetQueries(ITrialSetRepository trialSetRepository, IScenarioRepository scenarioRepository)
+        public IEnumerable<TrialSetQueryDto> GetAllTrialSets()
         {
-            _trialSetRepository = trialSetRepository;
-            _scenarioRepository = scenarioRepository;
+            IMongoClient client = new MongoClient("");
+            IMongoDatabase db = client.GetDatabase("");
+
+            IMongoCollection<TrialSetQueryDto> trialSetCollection = db.GetCollection<TrialSetQueryDto>("TrialSetProjection");
+
+            return trialSetCollection.Find(t => true).ToEnumerable();
         }
 
-        public IEnumerable<TrialSet> GetAllTrialSets()
+        public TrialSetQueryDto GetTrialSetById(Guid id)
         {
-            IEnumerable<TrialSet> trialSet = this._trialSetRepository.GetAll();
+            IMongoClient client = new MongoClient("");
+            IMongoDatabase db = client.GetDatabase("");
+
+            IMongoCollection<TrialSetQueryDto> trialSetCollection = db.GetCollection<TrialSetQueryDto>("TrialSetProjection");
+
+            TrialSetQueryDto trialSet = trialSetCollection.Find(t => t.Id == id).SingleOrDefault();
+
             return trialSet;
-        }
-
-        public TrialSetDto GetTrialSetById(Guid id)
-        {
-            TrialSet trialSet = this._trialSetRepository.Get(id);
-            TrialSetDto dto = new TrialSetDto
-            {
-                Id = trialSet.Id,
-                Name = trialSet.Name,
-                Scenarios = this._scenarioRepository.GetScenarios(trialSet.ScenarioIds.ToList())
-            };
-            return dto;
         }
     }
 }
