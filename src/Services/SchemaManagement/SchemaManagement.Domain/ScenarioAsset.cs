@@ -25,7 +25,7 @@ namespace SchemaManagement.Domain
         /// <value>
         /// The position.
         /// </value>
-        public Vector Position { get; set; }
+        public Vector Position { get; private set; }
 
         /// <summary>
         /// The rotation
