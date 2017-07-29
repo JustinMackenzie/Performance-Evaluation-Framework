@@ -54,32 +54,6 @@ namespace SchemaManagement.API.Controllers
         }
 
         /// <summary>
-        /// Creates the scenario.
-        /// </summary>
-        /// <param name="id">The identifier.</param>
-        /// <param name="command">The command.</param>
-        /// <returns></returns>
-        [HttpPost]
-        [Route("{id}/scenario")]
-        public async Task<IActionResult> CreateScenario(Guid id, [FromBody] CreateScenarioCommand command)
-        {
-            try
-            {
-                command.SchemaId = id;
-                Scenario scenario = await this._mediator.Send(command);
-                return Ok(scenario);
-            }
-            catch (SchemaDomainException e)
-            {
-                return BadRequest(e.Message);
-            }
-            catch
-            {
-                return BadRequest();
-            }
-        }
-
-        /// <summary>
         /// Creates the event.
         /// </summary>
         /// <param name="id">The identifier.</param>
@@ -181,25 +155,6 @@ namespace SchemaManagement.API.Controllers
             {
                 return BadRequest();
             }
-        }
-
-        [HttpPut]
-        [Route("{id}/scenario/{scenarioId}/asset")]
-        public async Task<IActionResult> SetScenarioAsset(Guid id, Guid scenarioId,
-            [FromBody] SetScenarioAssetCommand command)
-        {
-            try
-            {
-                command.SchemaId = id;
-                command.ScenarioId = scenarioId;
-                ScenarioAsset asset = await this._mediator.Send(command);
-                return Ok(asset);
-            }
-            catch (SchemaDomainException e)
-            {
-                return BadRequest(e.Message);
-            }
-            
         }
     }
 }

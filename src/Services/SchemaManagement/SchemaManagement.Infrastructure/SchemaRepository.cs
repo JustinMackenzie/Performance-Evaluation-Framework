@@ -107,8 +107,7 @@ namespace SchemaManagement.Infrastructure
                     cm.AutoMap();
                     cm.MapField("_id").SetElementName("Id");
                     cm.SetIsRootClass(true);
-                    cm.AddKnownType(typeof(Domain.Schema));
-                    cm.AddKnownType(typeof(Scenario));
+                    cm.AddKnownType(typeof(Schema));
                     cm.AddKnownType(typeof(Task));
                     cm.AddKnownType(typeof(Asset));
                 });
@@ -126,16 +125,6 @@ namespace SchemaManagement.Infrastructure
                     cm.MapField("_events").SetElementName("Events");
                     cm.MapField("_tasks").SetElementName("Tasks");
                     cm.MapField("_taskTransitions").SetElementName("TaskTransitions");
-                });
-            }
-
-            if (!BsonClassMap.IsClassMapRegistered(typeof(Scenario)))
-            {
-                BsonClassMap.RegisterClassMap<Scenario>(cm =>
-                {
-                    cm.AutoMap();
-                    cm.MapProperty(s => s.Name);
-                    cm.MapCreator(scenario => new Scenario(scenario.Name));
                 });
             }
 
@@ -179,31 +168,6 @@ namespace SchemaManagement.Infrastructure
                     cm.MapProperty(a => a.Name);
                     cm.MapProperty(a => a.Tag);
                     cm.MapCreator(a => new Asset(a.Name, a.Tag));
-                });
-            }
-
-            if (!BsonClassMap.IsClassMapRegistered(typeof(ScenarioAsset)))
-            {
-                BsonClassMap.RegisterClassMap<ScenarioAsset>(cm =>
-                {
-                    cm.AutoMap();
-                    cm.MapProperty(a => a.AssetId);
-                    cm.MapProperty(a => a.Position);
-                    cm.MapProperty(a => a.Rotation);
-                    cm.MapProperty(a => a.Scale);
-                    cm.MapCreator(a => new ScenarioAsset(a.AssetId, a.Position, a.Rotation, a.Scale));
-                });
-            }
-
-            if (!BsonClassMap.IsClassMapRegistered(typeof(Vector)))
-            {
-                BsonClassMap.RegisterClassMap<Vector>(cm =>
-                {
-                    cm.AutoMap();
-                    cm.MapProperty(v => v.X);
-                    cm.MapProperty(v => v.Y);
-                    cm.MapProperty(v => v.Z);
-                    cm.MapCreator(v => new Vector(v.X, v.Y, v.Z));
                 });
             }
         }

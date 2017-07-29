@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BuildingBlocks.EventBus.Abstractions;
+using EventBus.RawRabbit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using ScenarioManagement.Domain;
+using ScenarioManagement.Infrastructure;
 
 namespace ScenarioManagement.API
 {
@@ -29,6 +33,11 @@ namespace ScenarioManagement.API
         {
             // Add framework services.
             services.AddMvc();
+
+            services.AddTransient<IScenarioRepository, ScenarioRepository>(provder =>
+                new ScenarioRepository(Configuration.GetConnectionString("SchemaDatabase"), "schema-context"));
+            services.AddSingleton<IRawRabbitSubscriptionRepository, InMemoryRawRabbitSubscriptionRepository>();
+            services.AddSingleton<IEventBus, RawRabbitEventBus>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

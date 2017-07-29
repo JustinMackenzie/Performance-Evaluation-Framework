@@ -1,11 +1,10 @@
 using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Abstractions;
 using MediatR;
-using SchemaManagement.API.IntegrationEvents.Events;
-using SchemaManagement.Domain;
-using Task = System.Threading.Tasks.Task;
+using ScenarioManagement.API.IntegrationEvents.Events;
+using ScenarioManagement.Domain;
 
-namespace SchemaManagement.API.Application.Commands
+namespace ScenarioManagement.API.Application.Commands
 {
     /// <summary>
     /// 
@@ -16,7 +15,7 @@ namespace SchemaManagement.API.Application.Commands
         /// <summary>
         /// The repository
         /// </summary>
-        private readonly ISchemaRepository _repository;
+        private readonly IScenarioRepository _repository;
 
         /// <summary>
         /// The event bus
@@ -28,26 +27,25 @@ namespace SchemaManagement.API.Application.Commands
         /// </summary>
         /// <param name="repository">The repository.</param>
         /// <param name="eventBus">The event bus.</param>
-        public CreateScenarioCommandHandler(ISchemaRepository repository, IEventBus eventBus)
+        public CreateScenarioCommandHandler(IScenarioRepository repository, IEventBus eventBus)
         {
             this._repository = repository;
             _eventBus = eventBus;
         }
 
         /// <summary>
-        /// Handles the specified message.
+        /// Handles the specified command.
         /// </summary>
-        /// <param name="message">The message.</param>
+        /// <param name="command">The command.</param>
         /// <returns></returns>
-        public Task<Scenario> Handle(CreateScenarioCommand message)
+        public async Task<Scenario> Handle(CreateScenarioCommand command)
         {
-            Schema schema = this._repository.Get(message.SchemaId);
-            Scenario scenario = schema.AddScenario(message.Name);
-            this._repository.Update(schema);
+            Scenario scenario = new Scenario(command.Name);
+            await this._repository.Add(scenario);
 
-            this._eventBus.Publish(new ScenarioCreatedIntegrationEvent(scenario.Id, schema.Id, scenario.Name));
+            this._eventBus.Publish(new ScenarioCreatedIntegrationEvent(scenario.Id, scenario.Name));
 
-            return Task.FromResult(scenario);
+            return scenario;
         }
     }
 }

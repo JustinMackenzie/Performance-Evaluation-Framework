@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{12C1D84A-7AEA-4957-9CE3-64BDEAA99EB5}"
 EndProject
@@ -53,11 +53,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.RawRabbit", "src\B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScenarioManagement", "ScenarioManagement", "{3DC89F16-EC1A-474E-941E-F80E9F0B453B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioManagement.Domain", "src\Services\ScenarioManagement\ScenarioManagement.Domain\ScenarioManagement.Domain.csproj", "{14D4A819-E634-49F6-8C8A-3864A956106E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScenarioManagement.Domain", "src\Services\ScenarioManagement\ScenarioManagement.Domain\ScenarioManagement.Domain.csproj", "{14D4A819-E634-49F6-8C8A-3864A956106E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioManagement.Infrastructure", "src\Services\ScenarioManagement\ScenarioManagement.Infrastructure\ScenarioManagement.Infrastructure.csproj", "{0AAE3A07-EAEF-4B0D-B307-9E44924559E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScenarioManagement.Infrastructure", "src\Services\ScenarioManagement\ScenarioManagement.Infrastructure\ScenarioManagement.Infrastructure.csproj", "{0AAE3A07-EAEF-4B0D-B307-9E44924559E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioManagement.API", "src\Services\ScenarioManagement\ScenarioManagement.API\ScenarioManagement.API.csproj", "{6D75D3E1-8463-44E7-AA84-3F145A104A13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioManagement.API", "src\Services\ScenarioManagement\ScenarioManagement.API\ScenarioManagement.API.csproj", "{3C56B329-EA77-46E7-B2CE-E95678A01C4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -133,10 +133,10 @@ Global
 		{0AAE3A07-EAEF-4B0D-B307-9E44924559E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AAE3A07-EAEF-4B0D-B307-9E44924559E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AAE3A07-EAEF-4B0D-B307-9E44924559E7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6D75D3E1-8463-44E7-AA84-3F145A104A13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6D75D3E1-8463-44E7-AA84-3F145A104A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6D75D3E1-8463-44E7-AA84-3F145A104A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6D75D3E1-8463-44E7-AA84-3F145A104A13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C56B329-EA77-46E7-B2CE-E95678A01C4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C56B329-EA77-46E7-B2CE-E95678A01C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C56B329-EA77-46E7-B2CE-E95678A01C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C56B329-EA77-46E7-B2CE-E95678A01C4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -168,6 +168,6 @@ Global
 		{3DC89F16-EC1A-474E-941E-F80E9F0B453B} = {12C1D84A-7AEA-4957-9CE3-64BDEAA99EB5}
 		{14D4A819-E634-49F6-8C8A-3864A956106E} = {3DC89F16-EC1A-474E-941E-F80E9F0B453B}
 		{0AAE3A07-EAEF-4B0D-B307-9E44924559E7} = {3DC89F16-EC1A-474E-941E-F80E9F0B453B}
-		{6D75D3E1-8463-44E7-AA84-3F145A104A13} = {3DC89F16-EC1A-474E-941E-F80E9F0B453B}
+		{3C56B329-EA77-46E7-B2CE-E95678A01C4D} = {3DC89F16-EC1A-474E-941E-F80E9F0B453B}
 	EndGlobalSection
 EndGlobal

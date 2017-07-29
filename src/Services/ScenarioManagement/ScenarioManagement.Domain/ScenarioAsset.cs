@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using ScenarioManagement.Domain.SeedWork;
 
 namespace ScenarioManagement.Domain
@@ -11,24 +10,12 @@ namespace ScenarioManagement.Domain
     public class ScenarioAsset : ValueObject
     {
         /// <summary>
-        /// The asset identifier
+        /// Gets the tag.
         /// </summary>
-        private Guid _assetId;
-
-        /// <summary>
-        /// The position
-        /// </summary>
-        private Vector _position;
-
-        /// <summary>
-        /// The rotation
-        /// </summary>
-        private Vector _rotation;
-
-        /// <summary>
-        /// The scale
-        /// </summary>
-        private Vector _scale;
+        /// <value>
+        /// The tag.
+        /// </value>
+        public string Tag { get; private set; }
 
         /// <summary>
         /// Gets the position.
@@ -36,7 +23,7 @@ namespace ScenarioManagement.Domain
         /// <value>
         /// The position.
         /// </value>
-        public Vector Position => this._position;
+        public Vector Position { get; private set; }
 
         /// <summary>
         /// Gets the rotation.
@@ -44,7 +31,7 @@ namespace ScenarioManagement.Domain
         /// <value>
         /// The rotation.
         /// </value>
-        public Vector Rotation => this._rotation;
+        public Vector Rotation { get; private set; }
 
         /// <summary>
         /// Gets the scale.
@@ -52,21 +39,21 @@ namespace ScenarioManagement.Domain
         /// <value>
         /// The scale.
         /// </value>
-        public Vector Scale => this._scale;
+        public Vector Scale { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ScenarioAsset" /> class.
         /// </summary>
-        /// <param name="assetId">The asset identifier.</param>
+        /// <param name="tag">The asset identifier.</param>
         /// <param name="position">The position.</param>
         /// <param name="rotation">The rotation.</param>
         /// <param name="scale">The scale.</param>
-        public ScenarioAsset(Guid assetId, Vector position, Vector rotation, Vector scale)
+        public ScenarioAsset(string tag, Vector position, Vector rotation, Vector scale)
         {
-            this._assetId = assetId;
-            this._position = position;
-            this._rotation = rotation;
-            this._scale = scale;
+            this.Tag = tag;
+            this.Position = position;
+            this.Rotation = rotation;
+            this.Scale = scale;
         }
 
         /// <summary>
@@ -75,10 +62,10 @@ namespace ScenarioManagement.Domain
         /// <returns></returns>
         protected override IEnumerable<object> GetAtomicValues()
         {
-            yield return this._assetId;
-            yield return this._position;
-            yield return this._rotation;
-            yield return this._scale;
+            yield return this.Tag;
+            yield return this.Position;
+            yield return this.Rotation;
+            yield return this.Scale;
         }
     }
 }

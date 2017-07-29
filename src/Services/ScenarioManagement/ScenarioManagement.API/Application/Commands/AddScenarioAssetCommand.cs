@@ -1,23 +1,15 @@
 using System;
 using MediatR;
-using SchemaManagement.Domain;
+using ScenarioManagement.Domain;
 
-namespace SchemaManagement.API.Application.Commands
+namespace ScenarioManagement.API.Application.Commands
 {
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="MediatR.IRequest{SchemaManagement.Domain.ScenarioAsset}" />
-    public class SetScenarioAssetCommand : IRequest<ScenarioAsset>
+    /// <seealso cref="ScenarioAsset" />
+    public class AddScenarioAssetCommand : IRequest<ScenarioAsset>
     {
-        /// <summary>
-        /// Gets or sets the schema identifier.
-        /// </summary>
-        /// <value>
-        /// The schema identifier.
-        /// </value>
-        public Guid SchemaId { get; set; }
-
         /// <summary>
         /// Gets or sets the scenario identifier.
         /// </summary>
@@ -51,11 +43,11 @@ namespace SchemaManagement.API.Application.Commands
         public VectorDto Scale { get; set; }
 
         /// <summary>
-        /// Gets or sets the asset identifier.
+        /// Gets or sets the tag.
         /// </summary>
         /// <value>
-        /// The asset identifier.
+        /// The tag.
         /// </value>
-        public Guid AssetId { get; set; }
+        public string Tag { get; set; }
     }
 }

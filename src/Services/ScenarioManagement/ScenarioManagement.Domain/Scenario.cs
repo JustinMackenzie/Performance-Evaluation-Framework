@@ -32,7 +32,7 @@ namespace ScenarioManagement.Domain
         public IReadOnlyList<ScenarioAsset> Assets => this._scenarioAssets.AsReadOnly();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Scenario"/> class.
+        /// Initializes a new instance of the <see cref="Scenario" /> class.
         /// </summary>
         /// <param name="name">The name.</param>
         public Scenario(string name)
@@ -44,14 +44,15 @@ namespace ScenarioManagement.Domain
         /// <summary>
         /// Adds the asset.
         /// </summary>
-        /// <param name="assetId">The asset identifier.</param>
+        /// <param name="tag">The asset identifier.</param>
         /// <param name="position">The position.</param>
         /// <param name="rotation">The rotation.</param>
         /// <param name="scale">The scale.</param>
-        public void AddAsset(Guid assetId, Vector position, Vector rotation, Vector scale)
+        public ScenarioAsset AddAsset(string tag, Vector position, Vector rotation, Vector scale)
         {
-            ScenarioAsset asset = new ScenarioAsset(assetId, position, rotation, scale);
+            ScenarioAsset asset = new ScenarioAsset(tag, position, rotation, scale);
             this._scenarioAssets.Add(asset);
+            return asset;
         }
     }
 }

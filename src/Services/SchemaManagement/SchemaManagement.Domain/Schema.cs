@@ -14,11 +14,6 @@ namespace SchemaManagement.Domain
     public class Schema : Entity, IAggregateRoot
     {
         /// <summary>
-        /// The scenarios
-        /// </summary>
-        private List<Scenario> _scenarios;
-
-        /// <summary>
         /// The events
         /// </summary>
         private List<Event> _events;
@@ -53,14 +48,6 @@ namespace SchemaManagement.Domain
         /// The description.
         /// </value>
         public string Description { get; private set; }
-
-        /// <summary>
-        /// Gets the scenarios.
-        /// </summary>
-        /// <value>
-        /// The scenarios.
-        /// </value>
-        public IReadOnlyList<Scenario> Scenarios => this._scenarios.AsReadOnly();
 
         /// <summary>
         /// Gets the events.
@@ -103,23 +90,10 @@ namespace SchemaManagement.Domain
         {
             this.Name = name;
             this.Description = description;
-            this._scenarios = new List<Scenario>();
             this._events = new List<Event>();
             this._taskTransitions = new List<TaskTransition>();
             this._tasks = new List<Task>();
             this._assets = new List<Asset>();
-        }
-
-        /// <summary>
-        /// Adds the scenario.
-        /// </summary>
-        /// <param name="name">The name.</param>
-        /// <returns>The newly created scenario.</returns>
-        public Scenario AddScenario(string name)
-        {
-            Scenario scenario = new Scenario(name);
-            this._scenarios.Add(scenario);
-            return scenario;
         }
 
         /// <summary>
@@ -195,31 +169,6 @@ namespace SchemaManagement.Domain
             Asset asset = new Asset(name, tag);
             this._assets.Add(asset);
             return asset;
-        }
-
-        /// <summary>
-        /// Sets the asset in scenario.
-        /// </summary>
-        /// <param name="scenarioId">The scenario identifier.</param>
-        /// <param name="assetId">The asset identifier.</param>
-        /// <param name="position">The position.</param>
-        /// <param name="rotation">The rotation.</param>
-        /// <param name="scale">The scale.</param>
-        public ScenarioAsset SetAssetInScenario(Guid scenarioId, Guid assetId, Vector position, Vector rotation, Vector scale)
-        {
-            Scenario scenario = this._scenarios.FirstOrDefault(s => s.Id == scenarioId);
-
-            if (scenario == null)
-            {
-                throw new SchemaDomainException($"Cannot set asset in scenario. Scenario with Id given '{scenarioId}', does not exist in the schema.");
-            }
-
-            if (!this._assets.Any(a => a.Id == assetId))
-            {
-                throw new SchemaDomainException($"Cannot set asset in scenario. The asset with the Id given '{assetId}', does not exist in the schema.");
-            }
-
-            return scenario.AddAsset(assetId, position, rotation, position);
         }
     }
 }
