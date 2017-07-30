@@ -2,9 +2,11 @@ using System;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using TrialSetManagement.API.Application.Commands;
 using TrialSetManagement.API.Application.Queries;
 using TrialSetManagement.Domain;
+using TrialSetManagement.Domain.Exceptions;
 
 namespace TrialSetManagement.API.Controllers
 {
@@ -27,14 +29,21 @@ namespace TrialSetManagement.API.Controllers
         private readonly IMediator _mediator;
 
         /// <summary>
+        /// The logger
+        /// </summary>
+        private readonly ILogger<TrialSetController> _logger;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="TrialSetController" /> class.
         /// </summary>
         /// <param name="trialSetQueries">The trial set queries.</param>
         /// <param name="mediator">The mediator.</param>
-        public TrialSetController(ITrialSetQueries trialSetQueries, IMediator mediator)
+        /// <param name="logger">The logger.</param>
+        public TrialSetController(ITrialSetQueries trialSetQueries, IMediator mediator, ILogger<TrialSetController> logger)
         {
             _trialSetQueries = trialSetQueries;
             _mediator = mediator;
+            _logger = logger;
         }
 
         /// <summary>
@@ -56,10 +65,19 @@ namespace TrialSetManagement.API.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("{id}")]
-        public IActionResult Get(Guid id)
+        public async Task<IActionResult> Get(Guid id)
         {
-            var trial = this._trialSetQueries.GetTrialSetById(id);
-            return Ok(trial);
+            try
+            {
+                TrialSetQueryDto trialSet = await this._trialSetQueries.GetTrialSetById(id);
+                return Ok(trialSet);
+            }
+            catch (Exception ex)
+            {
+                this._logger.LogError(2, ex, "Get trial failed.");
+                return BadRequest();
+            }
+
         }
 
         /// <summary>
@@ -106,22 +124,28 @@ namespace TrialSetManagement.API.Controllers
         /// <summary>
         /// Adds the scenario.
         /// </summary>
-        /// <param name="trialSetId">The trial set identifier.</param>
+        /// <param name="id">The trial set identifier.</param>
         /// <param name="command">The command.</param>
         /// <returns></returns>
         [HttpPost]
         [Route("{id}/scenario")]
-        public async Task<IActionResult> AddScenario(Guid trialSetId, [FromBody] AddScenarioCommand command)
+        public async Task<IActionResult> AddScenario(Guid id, [FromBody] AddScenarioCommand command)
         {
-            command.TrialSetId = trialSetId;
+            command.TrialSetId = id;
 
             try
             {
                 await this._mediator.Send(command);
                 return Ok();
             }
-            catch
+            catch (TrialSetManagementDomainException ex)
             {
+                this._logger.LogError(1, ex, ex.Message);
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                this._logger.LogError(1, ex, "There was an error adding a scenario to the trial.");
                 return BadRequest();
             }
         }
@@ -133,7 +157,7 @@ namespace TrialSetManagement.API.Controllers
         /// <param name="scenarioId">The scenario identifier.</param>
         /// <returns></returns>
         [HttpDelete]
-        [Route("{trialSetId}/scenario/{scenarioId}")]
+        [Route("{id}/scenario/{scenarioId}")]
         public async Task<IActionResult> RemoveScenario(Guid trialSetId, Guid scenarioId)
         {
             RemoveScenarioCommand command = new RemoveScenarioCommand(trialSetId, scenarioId);

@@ -43,12 +43,14 @@ namespace TrialSetManagement.API
                 ioc => ioc.AddSingleton<IMessageSerializer, TypelessJsonSerializer>());
             
             services.AddTransient<ITrialSetRepository, TrialSetRepository>(provder =>
-                new TrialSetRepository(Configuration.GetConnectionString("ScenarioDatabase"), "scenario-context"));
+                new TrialSetRepository(Configuration.GetConnectionString("TrialSetDatabase"), "trial-set-context"));
             services.AddTransient<ITrialSetQueries, TrialSetQueries>();
             services.AddSingleton<IRawRabbitSubscriptionRepository, InMemoryRawRabbitSubscriptionRepository>();
             services.AddSingleton<IEventBus, RawRabbitEventBus>();
-            services.AddTransient<ITrialSetQueryRepository, TrialSetQueryRepository>();
-            services.AddTransient<IScenarioManagementService, ScenarioManagementService>();
+            services.AddTransient<ITrialSetQueryRepository, TrialSetQueryRepository>(provder =>
+                new TrialSetQueryRepository(Configuration.GetConnectionString("TrialSetDatabase"), "trial-set-context"));
+            services.AddTransient<IScenarioManagementService, ScenarioManagementService>(provider =>
+                new ScenarioManagementService("http://scenariosim-scenario-management.azurewebsites.net"));
             services.AddTransient<TrialSetCreatedIntegrationEventHandler>();
             services.AddTransient<ScenarioAddedToTrialSetIntegrationEventHandler>();
             services.AddTransient<ScenarioRemovedFromTrialSetIntegrationEventHandler>();
@@ -59,6 +61,7 @@ namespace TrialSetManagement.API
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+            loggerFactory.AddAzureWebAppDiagnostics();
 
             app.UseMvc();
             this.ConfigureEventBus(app);

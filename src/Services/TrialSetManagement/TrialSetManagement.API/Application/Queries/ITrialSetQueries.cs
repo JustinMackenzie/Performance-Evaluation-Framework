@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TrialSetManagement.Domain;
 
 namespace TrialSetManagement.API.Application.Queries
@@ -13,13 +14,13 @@ namespace TrialSetManagement.API.Application.Queries
         /// Gets all trial sets.
         /// </summary>
         /// <returns></returns>
-        IEnumerable<TrialSetQueryDto> GetAllTrialSets();
+        Task<IEnumerable<TrialSetQueryDto>> GetAllTrialSets();
 
         /// <summary>
         /// Gets the trial set by identifier.
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        TrialSetQueryDto GetTrialSetById(Guid id);
+        Task<TrialSetQueryDto> GetTrialSetById(Guid id);
     }
 }

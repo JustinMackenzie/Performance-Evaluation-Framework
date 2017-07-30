@@ -19,6 +19,7 @@ namespace TrialSetManagement.API.IntegrationEvents.EventHandling
         /// The service
         /// </summary>
         private readonly IScenarioManagementService _service;
+
         /// <summary>
         /// The repository
         /// </summary>

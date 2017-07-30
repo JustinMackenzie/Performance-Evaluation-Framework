@@ -1,32 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using MongoDB.Driver;
+using TrialSetManagement.API.Repositories;
 using TrialSetManagement.Domain;
 
 namespace TrialSetManagement.API.Application.Queries
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="TrialSetManagement.API.Application.Queries.ITrialSetQueries" />
     public class TrialSetQueries : ITrialSetQueries
     {
-        public IEnumerable<TrialSetQueryDto> GetAllTrialSets()
+        /// <summary>
+        /// The repository
+        /// </summary>
+        private readonly ITrialSetQueryRepository _repository;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TrialSetQueries"/> class.
+        /// </summary>
+        /// <param name="repository">The repository.</param>
+        public TrialSetQueries(ITrialSetQueryRepository repository)
         {
-            IMongoClient client = new MongoClient("");
-            IMongoDatabase db = client.GetDatabase("");
-
-            IMongoCollection<TrialSetQueryDto> trialSetCollection = db.GetCollection<TrialSetQueryDto>("TrialSetProjection");
-
-            return trialSetCollection.Find(t => true).ToEnumerable();
+            _repository = repository;
         }
 
-        public TrialSetQueryDto GetTrialSetById(Guid id)
+        /// <summary>
+        /// Gets all trial sets.
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<TrialSetQueryDto>> GetAllTrialSets()
         {
-            IMongoClient client = new MongoClient("");
-            IMongoDatabase db = client.GetDatabase("");
+            IEnumerable<TrialSetQueryDto> trialSetCollection = await this._repository.GetAll();
+            return trialSetCollection;
+        }
 
-            IMongoCollection<TrialSetQueryDto> trialSetCollection = db.GetCollection<TrialSetQueryDto>("TrialSetProjection");
-
-            TrialSetQueryDto trialSet = trialSetCollection.Find(t => t.Id == id).SingleOrDefault();
-
+        /// <summary>
+        /// Gets the trial set by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
+        public async Task<TrialSetQueryDto> GetTrialSetById(Guid id)
+        {
+            TrialSetQueryDto trialSet = await this._repository.GetTrialSet(id);
             return trialSet;
         }
     }

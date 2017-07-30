@@ -3,6 +3,7 @@ using BuildingBlocks.EventBus.Abstractions;
 using MediatR;
 using TrialSetManagement.API.IntegrationEvents.Events;
 using TrialSetManagement.Domain;
+using TrialSetManagement.Domain.Exceptions;
 
 namespace TrialSetManagement.API.Application.Commands
 {
@@ -41,6 +42,9 @@ namespace TrialSetManagement.API.Application.Commands
         public Task Handle(AddScenarioCommand message)
         {
             TrialSet trialSet = this._trialSetRepository.Get(message.TrialSetId);
+
+            if (trialSet == null)
+                throw new TrialSetManagementDomainException("There is no trial set with the given identifier.");
 
             trialSet.AddScenario(message.ScenarioId);
 
