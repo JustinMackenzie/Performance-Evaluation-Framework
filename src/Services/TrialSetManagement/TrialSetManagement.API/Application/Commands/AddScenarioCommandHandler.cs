@@ -39,20 +39,18 @@ namespace TrialSetManagement.API.Application.Commands
         /// </summary>
         /// <param name="message">The message.</param>
         /// <returns></returns>
-        public Task Handle(AddScenarioCommand message)
+        public async Task Handle(AddScenarioCommand message)
         {
-            TrialSet trialSet = this._trialSetRepository.Get(message.TrialSetId);
+            TrialSet trialSet = await this._trialSetRepository.Get(message.TrialSetId);
 
             if (trialSet == null)
                 throw new TrialSetManagementDomainException("There is no trial set with the given identifier.");
 
             trialSet.AddScenario(message.ScenarioId);
 
-            this._trialSetRepository.Update(trialSet);
+            await this._trialSetRepository.Update(trialSet);
 
             this._eventBus.Publish(new ScenarioAddedToTrialSetIntegrationEvent(message.TrialSetId, message.ScenarioId));
-
-            return Task.CompletedTask;
         }
     }
 }

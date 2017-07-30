@@ -38,15 +38,13 @@ namespace TrialSetManagement.API.Application.Commands
         /// </summary>
         /// <param name="message">The message.</param>
         /// <returns></returns>
-        public Task Handle(RemoveScenarioCommand message)
+        public async Task Handle(RemoveScenarioCommand message)
         {
-            TrialSet trialSet = this._trialSetRepository.Get(message.TrialSetId);
+            TrialSet trialSet = await this._trialSetRepository.Get(message.TrialSetId);
             trialSet.RemoveScenario(message.ScenarioId);
-            this._trialSetRepository.Update(trialSet);
+            await this._trialSetRepository.Update(trialSet);
 
             this._eventBus.Publish(new ScenarioRemovedFromTrialIntegrationEvent(message.TrialSetId, message.ScenarioId));
-
-            return Task.CompletedTask;
         }
     }
 }

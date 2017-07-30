@@ -38,15 +38,13 @@ namespace TrialSetManagement.API.Application.Commands
         /// </summary>
         /// <param name="message">The message.</param>
         /// <returns></returns>
-        public Task Handle(UpdateNameCommand message)
+        public async Task Handle(UpdateNameCommand message)
         {
-            TrialSet trialSet = this._trialSetRepository.Get(message.TrialSetId);
+            TrialSet trialSet = await this._trialSetRepository.Get(message.TrialSetId);
             trialSet.ChangeName(message.Name);
-            this._trialSetRepository.Update(trialSet);
+            await this._trialSetRepository.Update(trialSet);
 
             this._eventBus.Publish(new TrialSetNameChangedIntegrationEvent(trialSet.Id, trialSet.Name));
-
-            return Task.CompletedTask;
         }
     }
 }

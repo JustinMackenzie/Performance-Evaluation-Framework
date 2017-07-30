@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TrialSetManagement.Domain.SeedWork;
 
 namespace TrialSetManagement.Domain
@@ -14,31 +15,25 @@ namespace TrialSetManagement.Domain
         /// Adds the specified trial set.
         /// </summary>
         /// <param name="trialSet">The trial set.</param>
-        void Add(TrialSet trialSet);
+        Task Add(TrialSet trialSet);
 
         /// <summary>
         /// Updates the specified trial set.
         /// </summary>
         /// <param name="trialSet">The trial set.</param>
-        void Update(TrialSet trialSet);
+        Task Update(TrialSet trialSet);
 
         /// <summary>
         /// Gets the specified identifier.
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        TrialSet Get(Guid id);
-
-        /// <summary>
-        /// Gets all trial sets.
-        /// </summary>
-        /// <returns></returns>
-        IEnumerable<TrialSet> GetAll();
+        Task<TrialSet> Get(Guid id);
 
         /// <summary>
         /// Deletes the trial set with the specified identifier.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        void Delete(Guid id);
+        Task Delete(Guid id);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using MongoDB.Driver;
 using TrialSetManagement.Domain;
 
@@ -11,18 +12,18 @@ namespace TrialSetManagement.Infrastructure
         /// Adds the specified trial set.
         /// </summary>
         /// <param name="trialSet">The trial set.</param>
-        public void Add(TrialSet trialSet)
+        public async Task Add(TrialSet trialSet)
         {
-            this.Collection.InsertOne(trialSet);
+            await this.Collection.InsertOneAsync(trialSet);
         }
 
         /// <summary>
         /// Updates the specified trial set.
         /// </summary>
         /// <param name="trialSet">The trial set.</param>
-        public void Update(TrialSet trialSet)
+        public async Task Update(TrialSet trialSet)
         {
-            this.Collection.ReplaceOne(t => t.Id == trialSet.Id, trialSet);
+            await this.Collection.ReplaceOneAsync(t => t.Id == trialSet.Id, trialSet);
         }
 
         /// <summary>
@@ -30,27 +31,18 @@ namespace TrialSetManagement.Infrastructure
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public TrialSet Get(Guid id)
+        public async Task<TrialSet> Get(Guid id)
         {
-            return this.Collection.Find(t => t.Id == id).FirstOrDefault();
-        }
-
-        /// <summary>
-        /// Gets all trial sets.
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<TrialSet> GetAll()
-        {
-            return this.Collection.Find(t => true).ToList();
+            return await this.Collection.Find(t => t.Id == id).SingleOrDefaultAsync();
         }
 
         /// <summary>
         /// Deletes the trial set with the specified identifier.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        public void Delete(Guid id)
+        public async Task Delete(Guid id)
         {
-            this.Collection.DeleteOne(t => t.Id == id);
+            await this.Collection.DeleteOneAsync(t => t.Id == id);
         }
 
         /// <summary>
