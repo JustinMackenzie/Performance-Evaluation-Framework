@@ -37,14 +37,14 @@ namespace TrialManagement.API.Application.Commands
         /// </summary>
         /// <param name="message">The message.</param>
         /// <returns></returns>
-        public Task<Trial> Handle(AddTrialCommand message)
+        public async Task<Trial> Handle(AddTrialCommand message)
         {
             Trial trial = new Trial(message.ScenarioId, message.UserId, message.Start, message.End);
 
             foreach (var @event in message.Events)
                 trial.AddEvent(new Event(@event.Name, @event.Timestamp, @event.Properties));
 
-            this._trialRepository.Add(trial);
+            await this._trialRepository.Add(trial);
 
             this._eventBus.Publish(new TrialAddedIntegrationEvent(
                 trial.Id,
@@ -54,7 +54,7 @@ namespace TrialManagement.API.Application.Commands
                 trial.End, 
                 message.Events));
 
-            return Task.FromResult(trial);
+            return trial;
         }
     }
 }

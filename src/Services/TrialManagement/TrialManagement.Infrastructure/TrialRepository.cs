@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using TrialManagement.Domain;
@@ -67,19 +68,9 @@ namespace TrialManagement.Infrastructure
         /// Adds the specified schema.
         /// </summary>
         /// <param name="schema">The schema.</param>
-        public void Add(Trial schema)
+        public async Task Add(Trial schema)
         {
-            this.Collection.InsertOne(schema);
-        }
-
-        /// <summary>
-        /// Gets the schema with the given identifier.
-        /// </summary>
-        /// <param name="id">The identifier.</param>
-        /// <returns></returns>
-        public Trial Get(Guid id)
-        {
-            return this.Collection.Find(s => s.Id == id).FirstOrDefault();
+            await this.Collection.InsertOneAsync(schema);
         }
 
         /// <summary>

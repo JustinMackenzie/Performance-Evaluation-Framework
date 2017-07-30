@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using TrialManagement.Domain.SeedWork;
 
 namespace TrialManagement.Domain
@@ -10,16 +11,9 @@ namespace TrialManagement.Domain
     public interface ITrialRepository : IRepository<Trial>
     {
         /// <summary>
-        /// Gets the trial with the specified identifier.
-        /// </summary>
-        /// <param name="id">The identifier.</param>
-        /// <returns></returns>
-        Trial Get(Guid id);
-
-        /// <summary>
         /// Adds the specified trial.
         /// </summary>
         /// <param name="trial">The trial.</param>
-        void Add(Trial trial);
+        Task Add(Trial trial);
     }
 }
