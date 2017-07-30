@@ -35,15 +35,15 @@ namespace SchemaManagement.API.Application.Commands
         /// </summary>
         /// <param name="message">The message.</param>
         /// <returns></returns>
-        public Task<Domain.Task> Handle(CreateSchemaTaskEventCommand message)
+        public async Task<Domain.Task> Handle(CreateSchemaTaskEventCommand message)
         {
-            Schema schema = this._repository.Get(message.SchemaId);
+            Schema schema = await this._repository.Get(message.SchemaId);
             Domain.Task task = schema.AddTask(message.Name);
-            this._repository.Update(schema);
+            await this._repository.Update(schema);
 
             this._eventBus.Publish(new TaskCreatedIntegrationEvent(message.SchemaId, message.Name));
 
-            return Task.FromResult(task);
+            return task;
         }
     }
 }

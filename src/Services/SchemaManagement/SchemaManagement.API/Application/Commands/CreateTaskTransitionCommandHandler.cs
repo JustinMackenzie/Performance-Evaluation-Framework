@@ -40,16 +40,16 @@ namespace SchemaManagement.API.Application.Commands
         /// </summary>
         /// <param name="message">The message.</param>
         /// <returns></returns>
-        public Task<TaskTransition> Handle(CreateTaskTransitionCommand message)
+        public async Task<TaskTransition> Handle(CreateTaskTransitionCommand message)
         {
-            Schema schema = this._repository.Get(message.SchemaId);
+            Schema schema = await this._repository.Get(message.SchemaId);
             TaskTransition taskTransition = schema.AddTaskTransition(message.EventName, message.SourceTaskName, message.DestinationTaskName);
-            this._repository.Update(schema);
+            await this._repository.Update(schema);
 
             this._eventBus.Publish(new TaskTransitionCreatedIntegrationEvent(message.SchemaId, message.SourceTaskName, 
                 message.DestinationTaskName, message.EventName));
 
-            return Task.FromResult(taskTransition);
+            return taskTransition;
         }
     }
 }

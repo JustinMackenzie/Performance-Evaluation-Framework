@@ -19,15 +19,15 @@ namespace SchemaManagement.API.Application.Commands
             _eventBus = eventBus;
         }
 
-        public Task<Event> Handle(CreateSchemaEventCommand message)
+        public async Task<Event> Handle(CreateSchemaEventCommand message)
         {
-            Schema schema = this._repository.Get(message.SchemaId);
+            Schema schema = await this._repository.Get(message.SchemaId);
             Event @event = schema.AddEvent(message.Name);
-            this._repository.Update(schema);
+            await this._repository.Update(schema);
 
             this._eventBus.Publish(new EventCreatedIntegrationEvent(message.SchemaId, message.Name));
 
-            return Task.FromResult(@event);
+            return @event;
         }
     }
 }

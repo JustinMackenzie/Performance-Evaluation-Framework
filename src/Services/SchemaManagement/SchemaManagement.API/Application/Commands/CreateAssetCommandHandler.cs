@@ -38,16 +38,16 @@ namespace SchemaManagement.API.Application.Commands
         /// </summary>
         /// <param name="message">The message.</param>
         /// <returns></returns>
-        public Task<Asset> Handle(CreateAssetCommand message)
+        public async Task<Asset> Handle(CreateAssetCommand message)
         {
-            Schema schema = this._schemaRepository.Get(message.SchemaId);
+            Schema schema = await this._schemaRepository.Get(message.SchemaId);
             Asset asset = schema.AddAsset(message.Name, message.Tag);
 
-            this._schemaRepository.Update(schema);
+            await this._schemaRepository.Update(schema);
 
             this._eventBus.Publish(new AssetCreatedIntegrationEvent(asset.Id, schema.Id, asset.Name, asset.Tag));
 
-            return System.Threading.Tasks.Task.FromResult(asset);
+            return asset;
         }
     }
 }

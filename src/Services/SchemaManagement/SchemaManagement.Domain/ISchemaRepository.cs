@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using SchemaManagement.Domain.SeedWork;
 
 namespace SchemaManagement.Domain
@@ -6,26 +7,26 @@ namespace SchemaManagement.Domain
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="Schema.Domain.IRepository{Schema.Domain.Schema}" />
+    /// <seealso cref="Schema" />
     public interface ISchemaRepository : IRepository<Schema>
     {
         /// <summary>
         /// Adds the specified schema.
         /// </summary>
         /// <param name="schema">The schema.</param>
-        void Add(Schema schema);
+        System.Threading.Tasks.Task Add(Schema schema);
 
         /// <summary>
         /// Updates the specified schema.
         /// </summary>
         /// <param name="schema">The schema.</param>
-        void Update(Schema schema);
+        System.Threading.Tasks.Task Update(Schema schema);
 
         /// <summary>
         /// Gets the specified identifier.
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        Schema Get(Guid id);
+        Task<Schema> Get(Guid id);
     }
 }

@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Threading.Tasks;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using SchemaManagement.Domain;
 using SchemaManagement.Domain.SeedWork;
+using Task = SchemaManagement.Domain.Task;
 
 namespace SchemaManagement.Infrastructure
 {
@@ -71,18 +73,18 @@ namespace SchemaManagement.Infrastructure
         /// Adds the specified schema.
         /// </summary>
         /// <param name="schema">The schema.</param>
-        public void Add(Domain.Schema schema)
+        public async System.Threading.Tasks.Task Add(Schema schema)
         {
-            this.Collection.InsertOne(schema);
+            await this.Collection.InsertOneAsync(schema);
         }
 
         /// <summary>
         /// Updates the specified schema.
         /// </summary>
         /// <param name="schema">The schema.</param>
-        public void Update(Domain.Schema schema)
+        public async System.Threading.Tasks.Task Update(Schema schema)
         {
-            this.Collection.ReplaceOne(s => s.Id == schema.Id, schema);
+            await this.Collection.ReplaceOneAsync(s => s.Id == schema.Id, schema);
         }
 
         /// <summary>
@@ -90,9 +92,9 @@ namespace SchemaManagement.Infrastructure
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public Domain.Schema Get(Guid id)
+        public Task<Schema> Get(Guid id)
         {
-            return this.Collection.Find(s => s.Id == id).FirstOrDefault();
+            return this.Collection.Find(s => s.Id == id).SingleOrDefaultAsync();
         }
 
         /// <summary>
