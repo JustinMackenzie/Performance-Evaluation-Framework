@@ -42,10 +42,10 @@ namespace ScenarioManagement.API
                 ioc => ioc.AddSingleton<IMessageSerializer, TypelessJsonSerializer>());
 
             services.AddTransient<IScenarioRepository, ScenarioRepository>(provder =>
-                new ScenarioRepository(Configuration.GetConnectionString("SchemaDatabase"), "schema-context"));
+                new ScenarioRepository(Configuration.GetConnectionString("ScenarioDatabase"), "scenario-context"));
             services.AddTransient<IScenarioQueries, ScenarioQueries>();
             services.AddTransient<IScenarioQueryRepository, ScenarioQueryRepository>(provider =>
-                new ScenarioQueryRepository(Configuration.GetConnectionString("SchemaDatabase"), "schema-context"));
+                new ScenarioQueryRepository(Configuration.GetConnectionString("ScenarioDatabase"), "scenario-context"));
             services.AddSingleton<IRawRabbitSubscriptionRepository, InMemoryRawRabbitSubscriptionRepository>();
             services.AddSingleton<IEventBus, RawRabbitEventBus>();
             services.AddTransient<ScenarioCreatedEventHandler>();
