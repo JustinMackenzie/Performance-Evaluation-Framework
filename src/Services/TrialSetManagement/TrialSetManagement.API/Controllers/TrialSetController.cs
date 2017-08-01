@@ -140,13 +140,13 @@ namespace TrialSetManagement.API.Controllers
             }
             catch (TrialSetManagementDomainException ex)
             {
-                this._logger.LogError(1, ex, ex.Message);
-                return BadRequest(ex.Message);
+                this._logger.LogError(0, ex, ex.Message);
+                return BadRequest(new { ex.Message });
             }
             catch (Exception ex)
             {
-                this._logger.LogError(1, ex, "There was an error adding a scenario to the trial.");
-                return BadRequest();
+                this._logger.LogError(0, ex, "There was an error adding a scenario to the trial.");
+                return BadRequest(new { Message = "There was an error adding a scenario to the trial."});
             }
         }
 
