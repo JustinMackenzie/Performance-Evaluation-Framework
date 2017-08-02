@@ -25,6 +25,11 @@ namespace ConsoleSchemaManager.CommandHandlers
             this._service = service;
         }
 
+        /// <summary>
+        /// Handles the specified command.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <returns></returns>
         public int Handle(CreateTaskTransitionCommand command)
         {
             CreateTaskTransitionRequest request = new CreateTaskTransitionRequest
