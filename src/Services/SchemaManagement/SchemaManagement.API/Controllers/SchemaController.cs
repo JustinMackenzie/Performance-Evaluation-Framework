@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using SchemaManagement.API.Application.Commands;
 using SchemaManagement.Domain;
 using SchemaManagement.Domain.Exceptions;
@@ -22,12 +23,18 @@ namespace SchemaManagement.API.Controllers
         private readonly IMediator _mediator;
 
         /// <summary>
+        /// The logger
+        /// </summary>
+        private readonly ILogger<SchemaController> _logger;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="SchemaController" /> class.
         /// </summary>
         /// <param name="mediator">The mediator.</param>
-        public SchemaController(IMediator mediator)
+        public SchemaController(IMediator mediator, ILogger<SchemaController> logger)
         {
             this._mediator = mediator;
+            _logger = logger;
         }
 
         /// <summary>
@@ -43,12 +50,14 @@ namespace SchemaManagement.API.Controllers
                 Schema schema = await this._mediator.Send(command);
                 return Ok(schema);
             }
-            catch (SchemaDomainException e)
+            catch (SchemaDomainException exception)
             {
-                return BadRequest(e.Message);
+                this._logger.LogError(0, exception, exception.Message);
+                return BadRequest(new { Reason = exception.Message});
             }
-            catch
+            catch (Exception exception)
             {
+                this._logger.LogError(0, exception, exception.Message);
                 return BadRequest();
             }
         }
@@ -69,12 +78,14 @@ namespace SchemaManagement.API.Controllers
                 Event @event = await this._mediator.Send(command);
                 return Ok(@event);
             }
-            catch (SchemaDomainException e)
+            catch (SchemaDomainException exception)
             {
-                return BadRequest(e.Message);
+                this._logger.LogError(0, exception, exception.Message);
+                return BadRequest(exception.Message);
             }
-            catch
+            catch (Exception exception)
             {
+                this._logger.LogError(0, exception, exception.Message);
                 return BadRequest();
             }
         }
@@ -95,12 +106,14 @@ namespace SchemaManagement.API.Controllers
                 Domain.Task task = await this._mediator.Send(command);
                 return Ok(task);
             }
-            catch (SchemaDomainException e)
+            catch (SchemaDomainException exception)
             {
-                return BadRequest(e.Message);
+                this._logger.LogError(0, exception, exception.Message);
+                return BadRequest(exception.Message);
             }
-            catch
+            catch (Exception exception)
             {
+                this._logger.LogError(0, exception, exception.Message);
                 return BadRequest();
             }
         }
@@ -121,12 +134,14 @@ namespace SchemaManagement.API.Controllers
                 TaskTransition taskTransition = await this._mediator.Send(command);
                 return Ok(taskTransition);
             }
-            catch (SchemaDomainException e)
+            catch (SchemaDomainException exception)
             {
-                return BadRequest(e.Message);
+                this._logger.LogError(0, exception, exception.Message);
+                return BadRequest(exception.Message);
             }
-            catch
+            catch (Exception exception)
             {
+                this._logger.LogError(0, exception, exception.Message);
                 return BadRequest();
             }
         }
@@ -147,12 +162,14 @@ namespace SchemaManagement.API.Controllers
                 Asset asset = await this._mediator.Send(command);
                 return Ok(asset);
             }
-            catch (SchemaDomainException e)
+            catch (SchemaDomainException exception)
             {
-                return BadRequest(e.Message);
+                this._logger.LogError(0, exception, exception.Message);
+                return BadRequest(exception.Message);
             }
-            catch
+            catch (Exception exception)
             {
+                this._logger.LogError(0, exception, exception.Message);
                 return BadRequest();
             }
         }
