@@ -15,6 +15,8 @@ namespace ConsoleSchemaManager.Services
         /// Creates the schema.
         /// </summary>
         /// <param name="request">The request.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
         /// <exception cref="Exception"></exception>
         public ApiResponse CreateSchema(CreateSchemaRequest request)
         {
@@ -33,30 +35,11 @@ namespace ConsoleSchemaManager.Services
         }
 
         /// <summary>
-        /// Creates the scenario.
-        /// </summary>
-        /// <param name="request">The request.</param>
-        /// <exception cref="Exception"></exception>
-        public ApiResponse CreateScenario(CreateScenarioRequest request)
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                string json = JsonConvert.SerializeObject(request);
-                var response = client.PostAsync($"{request.ServerUrl}/api/Schema/{request.SchemaId}/Scenario", new StringContent(json, Encoding.UTF8, "application/json")).Result;
-
-                if (!response.IsSuccessStatusCode)
-                {
-                    throw new Exception(response.Content.ReadAsStringAsync().Result);
-                }
-
-                return new ApiResponse(response.Content.ReadAsStringAsync().Result);
-            }
-        }
-
-        /// <summary>
         /// Creates the schema event.
         /// </summary>
         /// <param name="request">The request.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
         /// <exception cref="Exception"></exception>
         public ApiResponse CreateSchemaEvent(CreateSchemaEventRequest request)
         {
@@ -78,6 +61,8 @@ namespace ConsoleSchemaManager.Services
         /// Creates the schema task.
         /// </summary>
         /// <param name="request">The request.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
         /// <exception cref="Exception"></exception>
         public ApiResponse CreateSchemaTask(CreateSchemaTaskRequest request)
         {
@@ -99,6 +84,8 @@ namespace ConsoleSchemaManager.Services
         /// Creates the task transition.
         /// </summary>
         /// <param name="request">The request.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
         /// <exception cref="Exception"></exception>
         public ApiResponse CreateTaskTransition(CreateTaskTransitionRequest request)
         {
@@ -116,29 +103,18 @@ namespace ConsoleSchemaManager.Services
             }
         }
 
+        /// <summary>
+        /// Creates the schema asset.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
         public ApiResponse CreateSchemaAsset(CreateSchemaAssetRequest request)
         {
             using (HttpClient client = new HttpClient())
             {
                 string json = JsonConvert.SerializeObject(request);
                 var response = client.PostAsync($"{request.ServerUrl}/api/Schema/{request.SchemaId}/Asset",
-                    new StringContent(json, Encoding.UTF8, "application/json")).Result;
-
-                if (!response.IsSuccessStatusCode)
-                {
-                    throw new Exception(response.Content.ReadAsStringAsync().Result);
-                }
-
-                return new ApiResponse(response.Content.ReadAsStringAsync().Result);
-            }
-        }
-
-        public ApiResponse SetScenarioAsset(SetScenarioAssetRequest request)
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                string json = JsonConvert.SerializeObject(request);
-                var response = client.PutAsync($"{request.ServerUrl}/api/Schema/{request.SchemaId}/Scenario/{request.ScenarioId}/Asset",
                     new StringContent(json, Encoding.UTF8, "application/json")).Result;
 
                 if (!response.IsSuccessStatusCode)

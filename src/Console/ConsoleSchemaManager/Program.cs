@@ -16,21 +16,17 @@ namespace ConsoleSchemaManager
 
             ISchemaService schemaService = serviceProvider.GetService<ISchemaService>();
 
-            Parser.Default.ParseArguments<CreateSchemaCommand, 
-                CreateScenarioCommand, 
+            Parser.Default.ParseArguments<CreateSchemaCommand,
                 CreateSchemaEventCommand, 
                 CreateSchemaTaskCommand,
                 CreateTaskTransitionCommand,
-                CreateSchemaAssetCommand,
-                SetScenarioAssetCommand>(args)
+                CreateSchemaAssetCommand>(args)
                 .MapResult(
                     (CreateSchemaCommand command) => new CreateSchemaCommandHandler(schemaService).Handle(command),
-                    (CreateScenarioCommand command) => new CreateScenarioCommandHandler(schemaService).Handle(command),
                     (CreateSchemaEventCommand command) => new CreateSchemaEventCommandHandler(schemaService).Handle(command),
                     (CreateSchemaTaskCommand command) => new CreateSchemaTaskCommandHandler(schemaService).Handle(command),
                     (CreateTaskTransitionCommand command) => new CreateTaskTransitionCommandHandler(schemaService).Handle(command),
                     (CreateSchemaAssetCommand command) => new CreateSchemaAssetCommandHandler(schemaService).Handle(command),
-                    (SetScenarioAssetCommand command) => new SetScenarioAssetCommandHandler(schemaService).Handle(command),
                     errs => 1);
         }
     }

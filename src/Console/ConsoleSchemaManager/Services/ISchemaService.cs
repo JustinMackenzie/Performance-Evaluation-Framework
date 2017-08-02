@@ -12,12 +12,6 @@
         ApiResponse CreateSchema(CreateSchemaRequest request);
 
         /// <summary>
-        /// Creates the scenario.
-        /// </summary>
-        /// <param name="request">The request.</param>
-        ApiResponse CreateScenario(CreateScenarioRequest request);
-
-        /// <summary>
         /// Creates the schema event.
         /// </summary>
         /// <param name="request">The request.</param>
@@ -35,8 +29,11 @@
         /// <param name="request">The request.</param>
         ApiResponse CreateTaskTransition(CreateTaskTransitionRequest request);
 
+        /// <summary>
+        /// Creates the schema asset.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns></returns>
         ApiResponse CreateSchemaAsset(CreateSchemaAssetRequest request);
-
-        ApiResponse SetScenarioAsset(SetScenarioAssetRequest request);
     }
 }
