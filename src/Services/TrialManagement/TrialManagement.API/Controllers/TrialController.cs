@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using TrialManagement.API.Application.Commands;
 using TrialManagement.Domain;
 
@@ -21,12 +22,18 @@ namespace TrialManagement.API.Controllers
         private readonly IMediator _mediator;
 
         /// <summary>
+        /// The logger
+        /// </summary>
+        private readonly ILogger<TrialController> _logger;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="TrialController"/> class.
         /// </summary>
         /// <param name="mediator">The mediator.</param>
-        public TrialController(IMediator mediator)
+        public TrialController(IMediator mediator, ILogger<TrialController> logger)
         {
             this._mediator = mediator;
+            this._logger = logger;
         }
 
         /// <summary>
@@ -42,8 +49,9 @@ namespace TrialManagement.API.Controllers
                 Trial trial = await this._mediator.Send(command);
                 return Ok(trial);
             }
-            catch
+            catch (Exception ex)
             {
+                this._logger.LogError(0, ex, ex.Message);
                 return BadRequest();
             }
         }

@@ -48,6 +48,7 @@ namespace TrialManagement.API
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+            loggerFactory.AddAzureWebAppDiagnostics();
 
             app.UseMvc(routes =>
             {
