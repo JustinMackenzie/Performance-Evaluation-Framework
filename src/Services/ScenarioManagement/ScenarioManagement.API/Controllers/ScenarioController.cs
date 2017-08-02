@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using ScenarioManagement.API.Application.Commands;
 using ScenarioManagement.API.Application.Queries;
 using ScenarioManagement.Domain;
@@ -27,14 +28,20 @@ namespace ScenarioManagement.API.Controllers
         private readonly IScenarioQueries _queries;
 
         /// <summary>
+        /// The logger
+        /// </summary>
+        private readonly ILogger<ScenarioController> _logger;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ScenarioController" /> class.
         /// </summary>
         /// <param name="mediator">The mediator.</param>
         /// <param name="queries">The queries.</param>
-        public ScenarioController(IMediator mediator, IScenarioQueries queries)
+        public ScenarioController(IMediator mediator, IScenarioQueries queries, ILogger<ScenarioController> logger)
         {
             _mediator = mediator;
             _queries = queries;
+            _logger = logger;
         }
 
         /// <summary>
@@ -51,8 +58,9 @@ namespace ScenarioManagement.API.Controllers
                 ScenarioDto scenario = await this._queries.GetScenario(id);
                 return Ok(scenario);
             }
-            catch
+            catch (Exception ex)
             {
+                this._logger.LogError(0, ex, ex.Message);
                 return BadRequest();
             }
         }
@@ -71,10 +79,11 @@ namespace ScenarioManagement.API.Controllers
                 Scenario scenario = await this._mediator.Send(command);
                 return Ok(scenario);
             }
-            catch
+            catch (Exception ex)
             {
+                this._logger.LogError(0, ex, ex.Message);
                 return BadRequest();
-            }            
+            }
         }
 
         /// <summary>
@@ -93,8 +102,9 @@ namespace ScenarioManagement.API.Controllers
                 ScenarioAsset asset = await this._mediator.Send(command);
                 return Ok(asset);
             }
-            catch
+            catch (Exception ex)
             {
+                this._logger.LogError(0, ex, ex.Message);
                 return BadRequest();
             }
         }

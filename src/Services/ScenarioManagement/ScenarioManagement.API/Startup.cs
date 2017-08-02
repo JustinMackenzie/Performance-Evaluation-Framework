@@ -57,6 +57,7 @@ namespace ScenarioManagement.API
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+            loggerFactory.AddAzureWebAppDiagnostics();
 
             app.UseMvc();
             this.ConfigureEventBus(app);
