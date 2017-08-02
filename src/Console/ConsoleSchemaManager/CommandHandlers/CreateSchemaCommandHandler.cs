@@ -1,14 +1,15 @@
 using System;
 using ConsoleSchemaManager.Commands;
 using ConsoleSchemaManager.Services;
+using MediatR;
 
 namespace ConsoleSchemaManager.CommandHandlers
 {
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="ConsoleSchemaManager.CommandHandlers.ICommandHandler{ConsoleSchemaManager.Commands.CreateSchemaCommand}" />
-    public class CreateSchemaCommandHandler : ICommandHandler<CreateSchemaCommand>
+    /// <seealso cref="MediatR.IRequestHandler{ConsoleSchemaManager.Commands.CreateSchemaCommand, System.Int32}" />
+    public class CreateSchemaCommandHandler : IRequestHandler<CreateSchemaCommand, int>
     {
         /// <summary>
         /// The schema service

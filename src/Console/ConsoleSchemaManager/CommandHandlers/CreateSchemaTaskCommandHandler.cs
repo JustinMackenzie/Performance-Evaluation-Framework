@@ -1,14 +1,15 @@
 ﻿using System;
 using ConsoleSchemaManager.Commands;
 using ConsoleSchemaManager.Services;
+using MediatR;
 
 namespace ConsoleSchemaManager.CommandHandlers
 {
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="ConsoleSchemaManager.CommandHandlers.ICommandHandler{ConsoleSchemaManager.Commands.CreateSchemaTaskCommand}" />
-    public class CreateSchemaTaskCommandHandler : ICommandHandler<CreateSchemaTaskCommand>
+    /// <seealso cref="MediatR.IRequestHandler{ConsoleSchemaManager.Commands.CreateSchemaTaskCommand, System.Int32}" />
+    public class CreateSchemaTaskCommandHandler : IRequestHandler<CreateSchemaTaskCommand, int>
     {
         /// <summary>
         /// The service

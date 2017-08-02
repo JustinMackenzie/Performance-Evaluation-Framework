@@ -1,7 +1,8 @@
-﻿using CommandLine;
-using ConsoleSchemaManager.CommandHandlers;
+﻿using System;
+using CommandLine;
 using ConsoleSchemaManager.Commands;
 using ConsoleSchemaManager.Services;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ConsoleSchemaManager
@@ -10,11 +11,13 @@ namespace ConsoleSchemaManager
     {
         static void Main(string[] args)
         {
-            var serviceProvider = new ServiceCollection()
-                .AddTransient<ISchemaService, SchemaService>()
-                .BuildServiceProvider();
+            IServiceCollection serviceCollection = new ServiceCollection();
+            serviceCollection.AddMediatR();
+            serviceCollection.AddTransient<ISchemaService, SchemaService>();
 
-            ISchemaService schemaService = serviceProvider.GetService<ISchemaService>();
+            IServiceProvider provider = serviceCollection.BuildServiceProvider();
+
+            IMediator mediator = provider.GetService<IMediator>();
 
             Parser.Default.ParseArguments<CreateSchemaCommand,
                 CreateSchemaEventCommand, 
@@ -22,11 +25,11 @@ namespace ConsoleSchemaManager
                 CreateTaskTransitionCommand,
                 CreateSchemaAssetCommand>(args)
                 .MapResult(
-                    (CreateSchemaCommand command) => new CreateSchemaCommandHandler(schemaService).Handle(command),
-                    (CreateSchemaEventCommand command) => new CreateSchemaEventCommandHandler(schemaService).Handle(command),
-                    (CreateSchemaTaskCommand command) => new CreateSchemaTaskCommandHandler(schemaService).Handle(command),
-                    (CreateTaskTransitionCommand command) => new CreateTaskTransitionCommandHandler(schemaService).Handle(command),
-                    (CreateSchemaAssetCommand command) => new CreateSchemaAssetCommandHandler(schemaService).Handle(command),
+                    (CreateSchemaCommand command) => mediator.Send(command).Result,
+                    (CreateSchemaEventCommand command) => mediator.Send(command).Result,
+                    (CreateSchemaTaskCommand command) => mediator.Send(command).Result,
+                    (CreateTaskTransitionCommand command) => mediator.Send(command).Result,
+                    (CreateSchemaAssetCommand command) => mediator.Send(command).Result,
                     errs => 1);
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using ConsoleSchemaManager.Commands;
 using ConsoleSchemaManager.Services;
+using MediatR;
 
 namespace ConsoleSchemaManager.CommandHandlers
 {
@@ -8,12 +9,12 @@ namespace ConsoleSchemaManager.CommandHandlers
     /// 
     /// </summary>
     /// <seealso cref="ConsoleSchemaManager.CommandHandlers.ICommandHandler{ConsoleSchemaManager.Commands.CreateSchemaEventCommand}" />
-    public class CreateSchemaEventCommandHandler : ICommandHandler<CreateSchemaEventCommand>
+    public class CreateSchemaEventCommandHandler : IRequestHandler<CreateSchemaEventCommand, int>
     {
         /// <summary>
         /// The service
         /// </summary>
-        private ISchemaService _service;
+        private readonly ISchemaService _service;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateSchemaEventCommandHandler"/> class.

@@ -1,14 +1,15 @@
 ﻿using System;
 using ConsoleSchemaManager.Commands;
 using ConsoleSchemaManager.Services;
+using MediatR;
 
 namespace ConsoleSchemaManager.CommandHandlers
 {
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="ConsoleSchemaManager.CommandHandlers.ICommandHandler{ConsoleSchemaManager.Commands.CreateTaskTransitionCommand}" />
-    public class CreateTaskTransitionCommandHandler : ICommandHandler<CreateTaskTransitionCommand>
+    /// <seealso cref="MediatR.IRequestHandler{ConsoleSchemaManager.Commands.CreateTaskTransitionCommand, System.Int32}" />
+    public class CreateTaskTransitionCommandHandler : IRequestHandler<CreateTaskTransitionCommand, int>
     {
         /// <summary>
         /// The service
@@ -24,11 +25,6 @@ namespace ConsoleSchemaManager.CommandHandlers
             this._service = service;
         }
 
-        /// <summary>
-        /// Handles the specified command.
-        /// </summary>
-        /// <param name="command">The command.</param>
-        /// <returns></returns>
         public int Handle(CreateTaskTransitionCommand command)
         {
             CreateTaskTransitionRequest request = new CreateTaskTransitionRequest

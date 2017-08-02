@@ -1,12 +1,13 @@
 ﻿using CommandLine;
+using MediatR;
 
 namespace ConsoleSchemaManager.Commands
 {
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="ConsoleSchemaManager.Commands.ICommand" />
-    public abstract class ApiCommand : ICommand
+    /// <seealso cref="int" />
+    public abstract class ApiCommand : IRequest<int>
     {
         /// <summary>
         /// Gets or sets the server URL.
