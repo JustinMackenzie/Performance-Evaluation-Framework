@@ -1,0 +1,31 @@
+﻿using System;
+using CommandLine;
+using ConsoleScenarioManager.Commands;
+using MediatR;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace ConsoleScenarioManager
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            IServiceCollection serviceCollection = new ServiceCollection();
+            serviceCollection.AddMediatR();
+
+            IServiceProvider provider = serviceCollection.BuildServiceProvider();
+
+            IMediator mediator = provider.GetService<IMediator>();
+
+            Parser.Default.ParseArguments<CreateScenarioCommand,
+                AddScenarioAssetCommand>(args)
+                .MapResult(
+                    (CreateScenarioCommand command) => mediator.Send(command).Result,
+                    (AddScenarioAssetCommand command) => mediator.Send(command).Result,
+                    errs => 1);
+        }
+    }
+}

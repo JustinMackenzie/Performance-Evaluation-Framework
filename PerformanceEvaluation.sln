@@ -57,7 +57,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScenarioManagement.Domain",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScenarioManagement.Infrastructure", "src\Services\ScenarioManagement\ScenarioManagement.Infrastructure\ScenarioManagement.Infrastructure.csproj", "{0AAE3A07-EAEF-4B0D-B307-9E44924559E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioManagement.API", "src\Services\ScenarioManagement\ScenarioManagement.API\ScenarioManagement.API.csproj", "{3C56B329-EA77-46E7-B2CE-E95678A01C4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScenarioManagement.API", "src\Services\ScenarioManagement\ScenarioManagement.API\ScenarioManagement.API.csproj", "{3C56B329-EA77-46E7-B2CE-E95678A01C4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleScenarioManager", "src\Console\ConsoleScenarioManager\ConsoleScenarioManager.csproj", "{14612120-661F-4072-AFCB-180E501673F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -137,6 +139,10 @@ Global
 		{3C56B329-EA77-46E7-B2CE-E95678A01C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C56B329-EA77-46E7-B2CE-E95678A01C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C56B329-EA77-46E7-B2CE-E95678A01C4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14612120-661F-4072-AFCB-180E501673F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14612120-661F-4072-AFCB-180E501673F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14612120-661F-4072-AFCB-180E501673F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14612120-661F-4072-AFCB-180E501673F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -169,5 +175,6 @@ Global
 		{14D4A819-E634-49F6-8C8A-3864A956106E} = {3DC89F16-EC1A-474E-941E-F80E9F0B453B}
 		{0AAE3A07-EAEF-4B0D-B307-9E44924559E7} = {3DC89F16-EC1A-474E-941E-F80E9F0B453B}
 		{3C56B329-EA77-46E7-B2CE-E95678A01C4D} = {3DC89F16-EC1A-474E-941E-F80E9F0B453B}
+		{14612120-661F-4072-AFCB-180E501673F0} = {739EFDCC-F592-4B57-99E5-793FD6A9C4D3}
 	EndGlobalSection
 EndGlobal
