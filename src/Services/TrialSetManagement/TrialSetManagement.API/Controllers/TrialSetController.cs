@@ -74,10 +74,9 @@ namespace TrialSetManagement.API.Controllers
             }
             catch (Exception ex)
             {
-                this._logger.LogError(2, ex, "Get trial failed.");
+                this._logger.LogError(0, ex, ex.Message);
                 return BadRequest();
             }
-
         }
 
         /// <summary>
@@ -93,8 +92,9 @@ namespace TrialSetManagement.API.Controllers
                 TrialSet trialSet = await this._mediator.Send(command);
                 return Ok(trialSet);
             }
-            catch
+            catch (Exception ex)
             {
+                this._logger.LogError(0, ex, ex.Message);
                 return BadRequest();
             }
         }
@@ -115,8 +115,9 @@ namespace TrialSetManagement.API.Controllers
                 await this._mediator.Send(command);
                 return Ok();
             }
-            catch
+            catch (Exception ex)
             {
+                this._logger.LogError(0, ex, ex.Message);
                 return BadRequest();
             }
         }
@@ -145,8 +146,8 @@ namespace TrialSetManagement.API.Controllers
             }
             catch (Exception ex)
             {
-                this._logger.LogError(0, ex, "There was an error adding a scenario to the trial.");
-                return BadRequest(new { Message = "There was an error adding a scenario to the trial."});
+                this._logger.LogError(0, ex, ex.Message);
+                return BadRequest();
             }
         }
 
@@ -167,8 +168,9 @@ namespace TrialSetManagement.API.Controllers
                 await this._mediator.Send(command);
                 return Ok();
             }
-            catch
+            catch (Exception ex)
             {
+                this._logger.LogError(0, ex, ex.Message);
                 return BadRequest();
             }
         }
@@ -190,8 +192,9 @@ namespace TrialSetManagement.API.Controllers
                 await this._mediator.Send(command);
                 return Ok();
             }
-            catch
+            catch (Exception ex)
             {
+                this._logger.LogError(0, ex, ex.Message);
                 return BadRequest();
             }
         }
