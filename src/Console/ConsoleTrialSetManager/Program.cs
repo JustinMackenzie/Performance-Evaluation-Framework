@@ -18,10 +18,11 @@ namespace ConsoleTrialSetManager
             IMediator mediator = provider.GetService<IMediator>();
 
             Parser.Default.ParseArguments<CreateTrialSetCommand, AddScenarioToTrialSetCommand, 
-                RemoveScenarioFromTrialSetCommand>(args)
+                RemoveScenarioFromTrialSetCommand, UpdateTrialSetNameCommand>(args)
                 .MapResult((CreateTrialSetCommand command) => mediator.Send(command).Result,
                     (AddScenarioToTrialSetCommand command) => mediator.Send(command).Result,
                     (RemoveScenarioFromTrialSetCommand command) => mediator.Send(command).Result,
+                    (UpdateTrialSetNameCommand command) => mediator.Send(command).Result,
                     errs => 1);
         }
     }
