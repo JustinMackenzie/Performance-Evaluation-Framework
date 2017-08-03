@@ -23,12 +23,14 @@ namespace ConsoleScenarioManager
             Parser.Default.ParseArguments<CreateScenarioCommand,
                 AddScenarioAssetCommand,
                 RemoveScenarioAssetCommand,
-                RemoveScenarioCommand>(args)
+                RemoveScenarioCommand,
+                ViewScenarioCommand>(args)
                 .MapResult(
                     (CreateScenarioCommand command) => mediator.Send(command).Result,
                     (AddScenarioAssetCommand command) => mediator.Send(command).Result,
                     (RemoveScenarioAssetCommand command) => mediator.Send(command).Result,
                     (RemoveScenarioCommand command) => mediator.Send(command).Result,
+                    (ViewScenarioCommand command) => mediator.Send(command).Result,
                     errs => 1);
         }
     }
