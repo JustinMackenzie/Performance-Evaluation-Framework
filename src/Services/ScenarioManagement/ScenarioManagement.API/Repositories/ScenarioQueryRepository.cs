@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using ScenarioManagement.API.Application.Queries;
@@ -93,6 +94,17 @@ namespace ScenarioManagement.API.Repositories
         public async Task Remove(Guid id)
         {
             await this.Collection.DeleteOneAsync(s => s.Id == id);
+        }
+
+        /// <summary>
+        /// Gets all the scenarios.
+        /// </summary>
+        /// <returns>
+        /// A collection of all scenarios.
+        /// </returns>
+        public Task<IEnumerable<ScenarioDto>> GetAll()
+        {
+            return Task.FromResult(this.Collection.Find(s => true).ToEnumerable());
         }
     }
 }

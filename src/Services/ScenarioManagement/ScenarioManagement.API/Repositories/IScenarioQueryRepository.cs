@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using ScenarioManagement.API.Application.Queries;
 
@@ -36,5 +37,11 @@ namespace ScenarioManagement.API.Repositories
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
         Task Remove(Guid id);
+
+        /// <summary>
+        /// Gets all the scenarios.
+        /// </summary>
+        /// <returns>A collection of all scenarios.</returns>
+        Task<IEnumerable<ScenarioDto>> GetAll();
     }
 }

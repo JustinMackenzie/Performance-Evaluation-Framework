@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using ScenarioManagement.API.Repositories;
 
@@ -29,9 +30,18 @@ namespace ScenarioManagement.API.Application.Queries
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public async Task<ScenarioDto> GetScenario(Guid id)
+        public Task<ScenarioDto> GetScenario(Guid id)
         {
-            return await this._scenarioQueryRepository.Get(id);
+            return this._scenarioQueryRepository.Get(id);
+        }
+
+        /// <summary>
+        /// Gets all scenarios.
+        /// </summary>
+        /// <returns></returns>
+        public Task<IEnumerable<ScenarioDto>> GetAllScenarios()
+        {
+            return this._scenarioQueryRepository.GetAll();
         }
     }
 }

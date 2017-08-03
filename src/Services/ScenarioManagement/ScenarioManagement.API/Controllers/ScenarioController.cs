@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -43,6 +44,26 @@ namespace ScenarioManagement.API.Controllers
             _mediator = mediator;
             _queries = queries;
             _logger = logger;
+        }
+
+        /// <summary>
+        /// Gets all scenarios.
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("")]
+        public async Task<IActionResult> GetAllScenarios()
+        {
+            try
+            {
+                IEnumerable<ScenarioDto> scenarios = await this._queries.GetAllScenarios();
+                return Ok(scenarios);
+            }
+            catch (Exception ex)
+            {
+                this._logger.LogError(0, ex, ex.Message);
+                return BadRequest();
+            }
         }
 
         /// <summary>
