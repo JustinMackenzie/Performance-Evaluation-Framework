@@ -50,6 +50,7 @@ namespace ScenarioManagement.API
             services.AddSingleton<IEventBus, RawRabbitEventBus>();
             services.AddTransient<ScenarioCreatedEventHandler>();
             services.AddTransient<ScenarioAssetAddedEventHandler>();
+            services.AddTransient<ScenarioRemovedEventHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,6 +72,8 @@ namespace ScenarioManagement.API
                 (() => app.ApplicationServices.GetRequiredService<ScenarioCreatedEventHandler>());
             eventBus.Subscribe<ScenarioAssetAddedEvent, ScenarioAssetAddedEventHandler>
                 (() => app.ApplicationServices.GetRequiredService<ScenarioAssetAddedEventHandler>());
+            eventBus.Subscribe<ScenarioRemovedEvent, ScenarioRemovedEventHandler>
+                (() => app.ApplicationServices.GetRequiredService<ScenarioRemovedEventHandler>());
         }
     }
 }

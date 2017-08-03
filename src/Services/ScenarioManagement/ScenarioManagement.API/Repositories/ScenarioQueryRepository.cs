@@ -84,5 +84,15 @@ namespace ScenarioManagement.API.Repositories
         {
             await this.Collection.ReplaceOneAsync(s => s.Id == scenario.Id, scenario);
         }
+
+        /// <summary>
+        /// Removes the scenario with the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
+        public async Task Remove(Guid id)
+        {
+            await this.Collection.DeleteOneAsync(s => s.Id == id);
+        }
     }
 }
