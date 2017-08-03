@@ -21,10 +21,12 @@ namespace ConsoleScenarioManager
             IMediator mediator = provider.GetService<IMediator>();
 
             Parser.Default.ParseArguments<CreateScenarioCommand,
-                AddScenarioAssetCommand>(args)
+                AddScenarioAssetCommand,
+                RemoveScenarioAssetCommand>(args)
                 .MapResult(
                     (CreateScenarioCommand command) => mediator.Send(command).Result,
                     (AddScenarioAssetCommand command) => mediator.Send(command).Result,
+                    (RemoveScenarioAssetCommand command) => mediator.Send(command).Result,
                     errs => 1);
         }
     }
