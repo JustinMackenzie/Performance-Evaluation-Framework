@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using ScenarioManagement.API.Application.Commands;
 using ScenarioManagement.API.Application.Queries;
 using ScenarioManagement.Domain;
+using ScenarioManagement.Domain.Exceptions;
 
 namespace ScenarioManagement.API.Controllers
 {
@@ -101,6 +102,28 @@ namespace ScenarioManagement.API.Controllers
                 command.ScenarioId = scenarioId;
                 ScenarioAsset asset = await this._mediator.Send(command);
                 return Ok(asset);
+            }
+            catch (Exception ex)
+            {
+                this._logger.LogError(0, ex, ex.Message);
+                return BadRequest();
+            }
+        }
+
+        [HttpDelete]
+        [Route("{scenarioId}/asset/{tag}")]
+        public async Task<IActionResult> RemoveAsset(Guid scenarioId, string tag)
+        {
+            try
+            {
+                RemoveAssetFromScenarioCommand command = new RemoveAssetFromScenarioCommand(scenarioId, tag);
+                await this._mediator.Send(command);
+                return Ok();
+            }
+            catch (ScenarioManagementDomainException ex)
+            {
+                this._logger.LogError(0, ex, ex.Message);
+                return BadRequest(new { Reason = ex.Message });
             }
             catch (Exception ex)
             {

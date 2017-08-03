@@ -1,5 +1,6 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
+using ScenarioManagement.Domain.Exceptions;
 using ScenarioManagement.Domain.SeedWork;
 
 namespace ScenarioManagement.Domain
@@ -53,6 +54,23 @@ namespace ScenarioManagement.Domain
             ScenarioAsset asset = new ScenarioAsset(tag, position, rotation, scale);
             this._scenarioAssets.Add(asset);
             return asset;
+        }
+
+        /// <summary>
+        /// Removes the asset.
+        /// </summary>
+        /// <param name="tag">The tag.</param>
+        /// <exception cref="ScenarioManagementDomainException">There is no asset with the given tag.</exception>
+        public void RemoveAsset(string tag)
+        {
+            ScenarioAsset asset = this._scenarioAssets.FirstOrDefault(a => a.Tag == tag);
+
+            if (asset == null)
+            {
+                throw new ScenarioManagementDomainException("There is no asset with the given tag.");
+            }
+
+            this._scenarioAssets.Remove(asset);
         }
     }
 }
