@@ -30,5 +30,13 @@ namespace ScenarioManagement.Domain
         /// <param name="scenario">The scenario.</param>
         /// <returns></returns>
         Task Update(Scenario scenario);
+
+
+        /// <summary>
+        /// Deletes the scenario with the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
+        Task Delete(Guid id);
     }
 }

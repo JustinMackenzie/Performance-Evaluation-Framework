@@ -159,5 +159,10 @@ namespace ScenarioManagement.Infrastructure
         {
             await this.Collection.ReplaceOneAsync(s => s.Id == scenario.Id, scenario);
         }
+
+        public async Task Delete(Guid id)
+        {
+            await this.Collection.DeleteOneAsync(s => s.Id == id);
+        }
     }
 }

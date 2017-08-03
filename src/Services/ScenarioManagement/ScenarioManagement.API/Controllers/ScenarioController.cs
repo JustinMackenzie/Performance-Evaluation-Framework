@@ -131,5 +131,27 @@ namespace ScenarioManagement.API.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpDelete]
+        [Route("{scenarioId}")]
+        public async Task<IActionResult> RemoveScenario(Guid scenarioId)
+        {
+            try
+            {
+                RemoveScenarioCommand command = new RemoveScenarioCommand(scenarioId);
+                await this._mediator.Send(command);
+                return Ok();
+            }
+            catch (ScenarioManagementDomainException ex)
+            {
+                this._logger.LogError(0, ex, ex.Message);
+                return BadRequest(new { Reason = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                this._logger.LogError(0, ex, ex.Message);
+                return BadRequest();
+            }
+        }
     }
 }
