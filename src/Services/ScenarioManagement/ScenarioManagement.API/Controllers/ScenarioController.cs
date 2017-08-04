@@ -101,6 +101,11 @@ namespace ScenarioManagement.API.Controllers
                 Scenario scenario = await this._mediator.Send(command);
                 return Ok(scenario);
             }
+            catch (ScenarioManagementDomainException ex)
+            {
+                this._logger.LogError(0, ex, ex.Message);
+                return BadRequest(new { Reason = ex.Message });
+            }
             catch (Exception ex)
             {
                 this._logger.LogError(0, ex, ex.Message);
@@ -123,6 +128,11 @@ namespace ScenarioManagement.API.Controllers
                 command.ScenarioId = scenarioId;
                 ScenarioAsset asset = await this._mediator.Send(command);
                 return Ok(asset);
+            }
+            catch (ScenarioManagementDomainException ex)
+            {
+                this._logger.LogError(0, ex, ex.Message);
+                return BadRequest(new { Reason = ex.Message });
             }
             catch (Exception ex)
             {
