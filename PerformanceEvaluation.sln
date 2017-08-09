@@ -61,7 +61,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScenarioManagement.API", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleScenarioManager", "src\Console\ConsoleScenarioManager\ConsoleScenarioManager.csproj", "{14612120-661F-4072-AFCB-180E501673F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTrialSetManager", "src\Console\ConsoleTrialSetManager\ConsoleTrialSetManager.csproj", "{424ECEE0-88D2-4C43-B644-3FEA7976BAE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTrialSetManager", "src\Console\ConsoleTrialSetManager\ConsoleTrialSetManager.csproj", "{424ECEE0-88D2-4C43-B644-3FEA7976BAE2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B4E5FF28-9447-4125-B621-50A2E98887EF}"
 EndProject
@@ -69,9 +69,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{C2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScenarioManagement", "ScenarioManagement", "{43601414-E217-4AD4-A1D9-D011C247FF76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioManagement.API.UnitTests", "tests\Services\ScenarioManagement\ScenarioManagement.API.UnitTests\ScenarioManagement.API.UnitTests.csproj", "{B6C6116B-2F98-4082-A15D-CEC827704F51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScenarioManagement.API.UnitTests", "tests\Services\ScenarioManagement\ScenarioManagement.API.UnitTests\ScenarioManagement.API.UnitTests.csproj", "{B6C6116B-2F98-4082-A15D-CEC827704F51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioManagement.Domain.UnitTests", "tests\Services\ScenarioManagement\ScenarioManagement.Domain.UnitTests\ScenarioManagement.Domain.UnitTests.csproj", "{2309F31C-DE46-470F-8E64-875E663AD90C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScenarioManagement.Domain.UnitTests", "tests\Services\ScenarioManagement\ScenarioManagement.Domain.UnitTests\ScenarioManagement.Domain.UnitTests.csproj", "{2309F31C-DE46-470F-8E64-875E663AD90C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SchemaManagement", "SchemaManagement", "{893DC50E-1AE1-4097-BAF4-F67C7B769392}"
 EndProject
@@ -79,9 +79,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TrialSetManagement", "Trial
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TrialManagement", "TrialManagement", "{31835577-EEE3-4780-860B-3AC002A37238}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchemaManagement.API.UnitTests", "tests\Services\SchemaManagement\SchemaManagement.API.UnitTests\SchemaManagement.API.UnitTests.csproj", "{EF1A9038-0A51-48AE-8A8A-D5C37DBD78B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchemaManagement.API.UnitTests", "tests\Services\SchemaManagement\SchemaManagement.API.UnitTests\SchemaManagement.API.UnitTests.csproj", "{EF1A9038-0A51-48AE-8A8A-D5C37DBD78B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchemaManagement.Domain.UnitTests", "tests\Services\SchemaManagement\SchemaManagement.Domain.UnitTests\SchemaManagement.Domain.UnitTests.csproj", "{9933FE4E-FA77-45E2-855E-A58B661C341E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchemaManagement.Domain.UnitTests", "tests\Services\SchemaManagement\SchemaManagement.Domain.UnitTests\SchemaManagement.Domain.UnitTests.csproj", "{9933FE4E-FA77-45E2-855E-A58B661C341E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BF44DFE9-0591-4C7F-A0FD-10514C7F45FC}"
+	ProjectSection(SolutionItems) = preProject
+		.travis.yml = .travis.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

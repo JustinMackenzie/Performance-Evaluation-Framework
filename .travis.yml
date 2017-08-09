@@ -1,0 +1,10 @@
+language: csharp
+solution: PerformanceEvaluation.sln
+
+mono: none
+dotnet: 1.1.2
+dist: trusty
+
+script:
+ - dotnet restore
+ - dotnet build
