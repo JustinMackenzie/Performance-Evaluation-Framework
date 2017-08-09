@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Abstractions;
 using MediatR;
@@ -29,8 +30,8 @@ namespace ScenarioManagement.API.Application.Commands
         /// <param name="eventBus">The event bus.</param>
         public CreateScenarioCommandHandler(IScenarioRepository repository, IEventBus eventBus)
         {
-            this._repository = repository;
-            _eventBus = eventBus;
+            this._repository = repository ?? throw new ArgumentNullException(nameof(repository));
+            this._eventBus = eventBus ?? throw  new ArgumentNullException(nameof(eventBus));
         }
 
         /// <summary>
@@ -40,6 +41,11 @@ namespace ScenarioManagement.API.Application.Commands
         /// <returns></returns>
         public async Task<Scenario> Handle(CreateScenarioCommand command)
         {
+            if (command == null)
+            {
+                throw new ArgumentNullException(nameof(command));
+            }
+
             Scenario scenario = new Scenario(command.Name);
             await this._repository.Add(scenario);
 
