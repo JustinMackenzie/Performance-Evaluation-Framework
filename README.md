@@ -1,4 +1,7 @@
 # Performance Evaluation Framework
+
+[![Build Status](https://travis-ci.com/JustinMackenzie/Performance-Evaluation-Framework.svg?token=1Ux1AmbxqaJQd9wZmsG2&branch=master)](https://travis-ci.com/JustinMackenzie/Performance-Evaluation-Framework)
+
 A framework developed in C# .NET that provides tools and services for gathering, analyzing and evaluating user performance in augmented reality and virtual reality simulator scenarios.
 
 ## Features
