@@ -20,4 +20,5 @@ before_script:
   dotnet restore
 
 script:
-  dotnet build
+  - dotnet build
+  - dotnet test tests\Services\ScenarioManagement\ScenarioManagement.API.UnitTests\ScenarioManagement.API.UnitTests.csproj
