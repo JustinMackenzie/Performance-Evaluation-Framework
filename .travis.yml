@@ -21,4 +21,4 @@ before_script:
 
 script:
   - dotnet build
-  - dotnet test tests\Services\ScenarioManagement\ScenarioManagement.API.UnitTests\ScenarioManagement.API.UnitTests.csproj
+  - dotnet test tests/Services/ScenarioManagement/ScenarioManagement.API.UnitTests/ScenarioManagement.API.UnitTests.csproj
