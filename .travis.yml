@@ -17,8 +17,9 @@ addons:
     - dotnet-dev-1.0.4
 
 before_script:
-  dotnet restore
+  dotnet restore PerformanceEvaluation.sln
 
 script:
-  - dotnet build
+  - dotnet build PerformanceEvaluation.sln
   - dotnet test tests/Services/ScenarioManagement/ScenarioManagement.API.UnitTests/ScenarioManagement.API.UnitTests.csproj
+  - dotnet test tests/Services/ScenarioManagement/ScenarioManagement.Domain.UnitTests/ScenarioManagement.Domain.UnitTests.csproj
