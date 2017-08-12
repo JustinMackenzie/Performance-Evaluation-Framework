@@ -41,13 +41,11 @@ namespace ScenarioManagement.API.Controllers
         /// <param name="mediator">The mediator.</param>
         /// <param name="logger">The logger.</param>
         /// <param name="procedureQueries">The procedure queries.</param>
-        /// <exception cref="ArgumentNullException">
-        /// procedureQueries
+        /// <exception cref="ArgumentNullException">procedureQueries
         /// or
         /// mediator
         /// or
-        /// logger
-        /// </exception>
+        /// logger</exception>
         public ProcedureController(IMediator mediator, ILogger<ProcedureController> logger, IProcedureQueries procedureQueries)
         {
             this._procedureQueries = procedureQueries ?? throw new ArgumentNullException(nameof(procedureQueries));
@@ -196,6 +194,33 @@ namespace ScenarioManagement.API.Controllers
             {
                 this._logger.LogError(0, ex, ex.Message);
                 return BadRequest(new { Reason = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                this._logger.LogError(0, ex, ex.Message);
+                return BadRequest();
+            }
+        }
+
+        /// <summary>
+        /// Removes the procedure.
+        /// </summary>
+        /// <param name="procedureId">The procedure identifier.</param>
+        /// <returns></returns>
+        [HttpDelete]
+        [Route("{procedureId}")]
+        public async Task<IActionResult> RemoveProcedure(Guid procedureId)
+        {
+            try
+            {
+                RemoveProcedureCommand command = new RemoveProcedureCommand(procedureId);
+                await this._mediator.Send(command);
+                return Ok();
+            }
+            catch (ScenarioManagementDomainException ex)
+            {
+                this._logger.LogError(0, ex, ex.Message);
+                return BadRequest(new {Reason = ex.Message});
             }
             catch (Exception ex)
             {
