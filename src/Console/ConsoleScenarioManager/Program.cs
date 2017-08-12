@@ -25,7 +25,8 @@ namespace ConsoleScenarioManager
                 RemoveScenarioAssetCommand,
                 RemoveScenarioCommand,
                 ViewScenarioCommand,
-                ViewAllScenariosCommand>(args)
+                ViewAllScenariosCommand,
+                CreateProcedureCommand>(args)
                 .MapResult(
                     (CreateScenarioCommand command) => mediator.Send(command).Result,
                     (AddScenarioAssetCommand command) => mediator.Send(command).Result,
@@ -33,6 +34,7 @@ namespace ConsoleScenarioManager
                     (RemoveScenarioCommand command) => mediator.Send(command).Result,
                     (ViewScenarioCommand command) => mediator.Send(command).Result,
                     (ViewAllScenariosCommand command) => mediator.Send(command).Result,
+                    (CreateProcedureCommand command) => mediator.Send(command).Result,
                     errs => 1);
         }
     }
