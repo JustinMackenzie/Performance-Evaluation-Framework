@@ -37,5 +37,12 @@ namespace ScenarioManagement.API.Repositories
         /// <param name="procedureId">The procedure identifier.</param>
         /// <returns></returns>
         Task Delete(Guid procedureId);
+
+        /// <summary>
+        /// Updates the specified procedure.
+        /// </summary>
+        /// <param name="procedure">The procedure.</param>
+        /// <returns></returns>
+        Task Update(ProcedureQueryDto procedure);
     }
 }

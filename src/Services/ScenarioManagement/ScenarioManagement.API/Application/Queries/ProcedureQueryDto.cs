@@ -30,6 +30,14 @@ namespace ScenarioManagement.API.Application.Queries
         /// <value>
         /// The scenarios.
         /// </value>
-        public List<ScenarioDto> Scenarios { get; set; }
+        public List<ScenarioQueryDto> Scenarios { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProcedureQueryDto"/> class.
+        /// </summary>
+        public ProcedureQueryDto()
+        {
+            this.Scenarios = new List<ScenarioQueryDto>();
+        }
     }
 }

@@ -14,17 +14,24 @@ namespace ScenarioManagement.API.IntegrationEvents.EventHandlers
     public class ScenarioAssetRemovedEventHandler : IIntegrationEventHandler<ScenarioAssetRemovedEvent>
     {
         /// <summary>
-        /// The repository
+        /// The scenario query repository
         /// </summary>
-        private readonly IScenarioQueryRepository _repository;
+        private readonly IScenarioQueryRepository _scenarioQueryRepository;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScenarioAssetRemovedEventHandler"/> class.
+        /// The procedure query repository
         /// </summary>
-        /// <param name="repository">The repository.</param>
-        public ScenarioAssetRemovedEventHandler(IScenarioQueryRepository repository)
+        private readonly IProcedureQueryRepository _procedureQueryRepository;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ScenarioAssetRemovedEventHandler" /> class.
+        /// </summary>
+        /// <param name="scenarioQueryRepository">The scenario query repository.</param>
+        /// <param name="procedureQueryRepository">The procedure query repository.</param>
+        public ScenarioAssetRemovedEventHandler(IScenarioQueryRepository scenarioQueryRepository, IProcedureQueryRepository procedureQueryRepository)
         {
-            this._repository = repository;
+            this._scenarioQueryRepository = scenarioQueryRepository;
+            _procedureQueryRepository = procedureQueryRepository;
         }
 
         /// <summary>
@@ -34,16 +41,25 @@ namespace ScenarioManagement.API.IntegrationEvents.EventHandlers
         /// <returns></returns>
         public async Task Handle(ScenarioAssetRemovedEvent @event)
         {
-            ScenarioDto scenario = await this._repository.Get(@event.ScenarioId);
-            ScenarioAssetDto asset = scenario.Assets.FirstOrDefault(a => a.Tag == @event.Tag);
+            ProcedureQueryDto procedure = await this._procedureQueryRepository.Get(@event.ProcedureId);
+            ScenarioQueryDto scenario = procedure.Scenarios.SingleOrDefault(s => s.Id == @event.ScenarioId);
 
-            if (asset == null)
+            ScenarioAssetDto scenarioAsset = scenario?.Assets.SingleOrDefault(a => a.Tag == @event.Tag);
+
+            if (scenarioAsset != null)
             {
-                return;
+                scenario.Assets.Remove(scenarioAsset);
+                await this._procedureQueryRepository.Update(procedure);
             }
 
-            scenario.Assets.Remove(asset);
-            await this._repository.Update(scenario);
+            scenario = await this._scenarioQueryRepository.Get(@event.ScenarioId);
+            ScenarioAssetDto asset = scenario.Assets.SingleOrDefault(a => a.Tag == @event.Tag);
+
+            if (asset != null)
+            {
+                scenario.Assets.Remove(asset);
+                await this._scenarioQueryRepository.Update(scenario);
+            }
         }
     }
 }

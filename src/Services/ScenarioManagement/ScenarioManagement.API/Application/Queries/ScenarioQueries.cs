@@ -30,7 +30,7 @@ namespace ScenarioManagement.API.Application.Queries
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public Task<ScenarioDto> GetScenario(Guid id)
+        public Task<ScenarioQueryDto> GetScenario(Guid id)
         {
             return this._scenarioQueryRepository.Get(id);
         }
@@ -39,7 +39,7 @@ namespace ScenarioManagement.API.Application.Queries
         /// Gets all scenarios.
         /// </summary>
         /// <returns></returns>
-        public Task<IEnumerable<ScenarioDto>> GetAllScenarios()
+        public Task<IEnumerable<ScenarioQueryDto>> GetAllScenarios()
         {
             return this._scenarioQueryRepository.GetAll();
         }

@@ -14,12 +14,12 @@ namespace ScenarioManagement.API.Application.Queries
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        Task<ScenarioDto> GetScenario(Guid id);
+        Task<ScenarioQueryDto> GetScenario(Guid id);
 
         /// <summary>
         /// Gets all scenarios.
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<ScenarioDto>> GetAllScenarios();
+        Task<IEnumerable<ScenarioQueryDto>> GetAllScenarios();
     }
 }

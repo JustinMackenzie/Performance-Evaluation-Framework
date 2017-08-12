@@ -14,17 +14,24 @@ namespace ScenarioManagement.API.IntegrationEvents.EventHandlers
     public class ScenarioCreatedEventHandler : IIntegrationEventHandler<ScenarioCreatedEvent>
     {
         /// <summary>
-        /// The repository
+        /// The scenario query repository
         /// </summary>
-        private readonly IScenarioQueryRepository _repository;
+        private readonly IScenarioQueryRepository _scenarioQueryRepository;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScenarioCreatedEventHandler"/> class.
+        /// The procedure query repository
         /// </summary>
-        /// <param name="repository">The repository.</param>
-        public ScenarioCreatedEventHandler(IScenarioQueryRepository repository)
+        private readonly IProcedureQueryRepository _procedureQueryRepository;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ScenarioCreatedEventHandler" /> class.
+        /// </summary>
+        /// <param name="scenarioQueryRepository">The scenario query repository.</param>
+        /// <param name="procedureQueryRepository">The procedure query repository.</param>
+        public ScenarioCreatedEventHandler(IScenarioQueryRepository scenarioQueryRepository, IProcedureQueryRepository procedureQueryRepository)
         {
-            this._repository = repository;
+            this._scenarioQueryRepository = scenarioQueryRepository;
+            this._procedureQueryRepository = procedureQueryRepository;
         }
 
         /// <summary>
@@ -34,14 +41,16 @@ namespace ScenarioManagement.API.IntegrationEvents.EventHandlers
         /// <returns></returns>
         public async Task Handle(ScenarioCreatedEvent @event)
         {
-            ScenarioDto scenario = new ScenarioDto
+            ScenarioQueryDto scenario = new ScenarioQueryDto
             {
                 Id = @event.ScenarioId,
-                Name = @event.Name,
-                Assets = new List<ScenarioAssetDto>()
+                Name = @event.Name
             };
 
-            await this._repository.Add(scenario);
+            ProcedureQueryDto procedure = await this._procedureQueryRepository.Get(@event.ProcedureId);
+            procedure.Scenarios.Add(scenario);
+            await this._procedureQueryRepository.Update(procedure);
+            await this._scenarioQueryRepository.Add(scenario);
         }
     }
 }

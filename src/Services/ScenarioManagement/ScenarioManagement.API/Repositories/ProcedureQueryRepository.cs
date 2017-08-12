@@ -95,5 +95,15 @@ namespace ScenarioManagement.API.Repositories
         {
             await this.Collection.DeleteOneAsync(p => p.Id == procedureId);
         }
+
+        /// <summary>
+        /// Updates the specified procedure.
+        /// </summary>
+        /// <param name="procedure">The procedure.</param>
+        /// <returns></returns>
+        public async Task Update(ProcedureQueryDto procedure)
+        {
+            await this.Collection.ReplaceOneAsync(p => p.Id == procedure.Id, procedure);
+        }
     }
 }

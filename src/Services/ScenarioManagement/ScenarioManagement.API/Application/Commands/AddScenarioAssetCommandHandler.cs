@@ -45,7 +45,7 @@ namespace ScenarioManagement.API.Application.Commands
                 command.Rotation.ToVector(), command.Scale.ToVector());
             await this._repository.Update(procedure);
 
-            this._eventBus.Publish(new ScenarioAssetAddedEvent(command.ScenarioId, command.Tag, command.Position, command.Rotation, command.Scale));
+            this._eventBus.Publish(new ScenarioAssetAddedEvent(command.ProcedureId, command.ScenarioId, command.Tag, command.Position, command.Rotation, command.Scale));
 
             return scenarioAsset;
         }

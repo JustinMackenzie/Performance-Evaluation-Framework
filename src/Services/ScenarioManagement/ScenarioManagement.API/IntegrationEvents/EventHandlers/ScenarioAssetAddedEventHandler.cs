@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Abstractions;
 using ScenarioManagement.API.Application.Queries;
@@ -13,17 +14,23 @@ namespace ScenarioManagement.API.IntegrationEvents.EventHandlers
     public class ScenarioAssetAddedEventHandler : IIntegrationEventHandler<ScenarioAssetAddedEvent>
     {
         /// <summary>
-        /// The repository
+        /// The scenario query repository
         /// </summary>
-        private readonly IScenarioQueryRepository _repository;
+        private readonly IScenarioQueryRepository _scenarioQueryRepository;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScenarioAssetAddedEventHandler"/> class.
+        /// The procedure query repository
         /// </summary>
-        /// <param name="repository">The repository.</param>
-        public ScenarioAssetAddedEventHandler(IScenarioQueryRepository repository)
+        private IProcedureQueryRepository _procedureQueryRepository;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ScenarioAssetAddedEventHandler" /> class.
+        /// </summary>
+        /// <param name="scenarioQueryRepository">The scenario query repository.</param>
+        public ScenarioAssetAddedEventHandler(IScenarioQueryRepository scenarioQueryRepository, IProcedureQueryRepository procedureQueryRepository)
         {
-            this._repository = repository;
+            this._scenarioQueryRepository = scenarioQueryRepository;
+            this._procedureQueryRepository = procedureQueryRepository;
         }
 
         /// <summary>
@@ -33,8 +40,6 @@ namespace ScenarioManagement.API.IntegrationEvents.EventHandlers
         /// <returns></returns>
         public async Task Handle(ScenarioAssetAddedEvent @event)
         {
-            ScenarioDto scenario = await this._repository.Get(@event.ScenarioId);
-
             ScenarioAssetDto asset = new ScenarioAssetDto
             {
                 Tag = @event.Tag,
@@ -42,9 +47,16 @@ namespace ScenarioManagement.API.IntegrationEvents.EventHandlers
                 Rotation = @event.Rotation,
                 Scale = @event.Scale
             };
-            scenario.Assets.Add(asset);
 
-            await this._repository.Update(scenario);
+            ProcedureQueryDto procedure = await this._procedureQueryRepository.Get(@event.ProcedureId);
+            ScenarioQueryDto scenario = procedure.Scenarios.SingleOrDefault(s => s.Id == @event.ScenarioId);
+
+            scenario?.Assets.Add(asset);
+            await this._procedureQueryRepository.Update(procedure);
+
+            scenario = await this._scenarioQueryRepository.Get(@event.ScenarioId);
+            scenario?.Assets.Add(asset);
+            await this._scenarioQueryRepository.Update(scenario);
         }
     }
 }

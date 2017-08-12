@@ -6,7 +6,7 @@ namespace ScenarioManagement.API.Application.Queries
     /// <summary>
     /// 
     /// </summary>
-    public class ScenarioDto
+    public class ScenarioQueryDto
     {
         /// <summary>
         /// Gets or sets the identifier.
@@ -31,5 +31,13 @@ namespace ScenarioManagement.API.Application.Queries
         /// The assets.
         /// </value>
         public List<ScenarioAssetDto> Assets { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ScenarioQueryDto"/> class.
+        /// </summary>
+        public ScenarioQueryDto()
+        {
+            this.Assets = new List<ScenarioAssetDto>();
+        }
     }
 }

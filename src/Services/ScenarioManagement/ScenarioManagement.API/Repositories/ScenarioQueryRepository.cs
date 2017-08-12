@@ -53,7 +53,7 @@ namespace ScenarioManagement.API.Repositories
         /// <value>
         /// The collection.
         /// </value>
-        private IMongoCollection<ScenarioDto> Collection => Database.GetCollection<ScenarioDto>("ScenarioProjection");
+        private IMongoCollection<ScenarioQueryDto> Collection => Database.GetCollection<ScenarioQueryDto>("ScenarioProjection");
 
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace ScenarioManagement.API.Repositories
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public async Task<ScenarioDto> Get(Guid id)
+        public async Task<ScenarioQueryDto> Get(Guid id)
         {
             return await this.Collection.Find(s => s.Id == id).SingleOrDefaultAsync();
         }
@@ -71,7 +71,7 @@ namespace ScenarioManagement.API.Repositories
         /// </summary>
         /// <param name="scenario">The scenario.</param>
         /// <returns></returns>
-        public async Task Add(ScenarioDto scenario)
+        public async Task Add(ScenarioQueryDto scenario)
         {
             await this.Collection.InsertOneAsync(scenario);
         }
@@ -81,7 +81,7 @@ namespace ScenarioManagement.API.Repositories
         /// </summary>
         /// <param name="scenario">The scenario.</param>
         /// <returns></returns>
-        public async Task Update(ScenarioDto scenario)
+        public async Task Update(ScenarioQueryDto scenario)
         {
             await this.Collection.ReplaceOneAsync(s => s.Id == scenario.Id, scenario);
         }
@@ -102,7 +102,7 @@ namespace ScenarioManagement.API.Repositories
         /// <returns>
         /// A collection of all scenarios.
         /// </returns>
-        public Task<IEnumerable<ScenarioDto>> GetAll()
+        public Task<IEnumerable<ScenarioQueryDto>> GetAll()
         {
             return Task.FromResult(this.Collection.Find(s => true).ToEnumerable());
         }

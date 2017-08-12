@@ -49,6 +49,9 @@ namespace ScenarioManagement.API
             services.AddTransient<IProcedureQueries, ProcedureQueries>();
             services.AddTransient<IProcedureQueryRepository, ProcedureQueryRepository>(provider =>
                 new ProcedureQueryRepository(Configuration.GetConnectionString("ScenarioDatabase"), "scenario-context"));
+            services.AddTransient<IScenarioQueries, ScenarioQueries>();
+            services.AddTransient<IScenarioQueryRepository, ScenarioQueryRepository>(provider =>
+                new ScenarioQueryRepository(Configuration.GetConnectionString("ScenarioDatabase"), "scenario-context"));
 
             // Infrastructure
             services.AddSingleton<IRawRabbitSubscriptionRepository, InMemoryRawRabbitSubscriptionRepository>();
@@ -61,7 +64,6 @@ namespace ScenarioManagement.API
             services.AddTransient<ScenarioAssetRemovedEventHandler>();
             services.AddTransient<ProcedureCreatedEventHandler>();
             services.AddTransient<ProcedureRemovedEventHandler>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
