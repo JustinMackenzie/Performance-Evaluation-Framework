@@ -55,5 +55,8 @@ namespace ConsoleScenarioManager.Commands
         /// </value>
         [Option("scale", HelpText = "The scale vector of the asset.", Separator = ',')]
         public IList<string> Scale { get; set; }
+
+        [Option("procedure-id", HelpText = "The identifier of the procedure this scenario applies to.")]
+        public string ProcedureId { get; set; }
     }
 }

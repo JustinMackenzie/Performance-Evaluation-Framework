@@ -24,5 +24,8 @@ namespace ConsoleScenarioManager.Commands
         /// </value>
         [Option("tag", HelpText = "The tag of the asset to remove.")]
         public string Tag { get; set; }
+
+        [Option("procedure-id", HelpText = "The identifier of the procedure this scenario applies to.")]
+        public string ProcedureId { get; set; }
     }
 }

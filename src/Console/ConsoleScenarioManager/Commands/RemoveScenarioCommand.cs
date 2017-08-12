@@ -17,5 +17,8 @@ namespace ConsoleScenarioManager.Commands
         /// </value>
         [Option("scenario-id", HelpText = "The identifier of the scenario.")]
         public string ScenarioId { get; set; }
+
+        [Option("procedure-id", HelpText = "The identifier of the procedure this scenario applies to.")]
+        public string ProcedureId { get; set; }
     }
 }

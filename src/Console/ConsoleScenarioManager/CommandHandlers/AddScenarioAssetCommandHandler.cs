@@ -30,7 +30,7 @@ namespace ConsoleScenarioManager.CommandHandlers
                     Rotation = VectorDto.GetVector(command.Rotation),
                     Scale = VectorDto.GetVector(command.Scale)
                 });
-                HttpResponseMessage response = await client.PostAsync($"{command.ServerUrl}/api/scenario/{command.ScenarioId}/asset",
+                HttpResponseMessage response = await client.PostAsync($"{command.ServerUrl}/api/procedure/{command.ProcedureId}/scenario/{command.ScenarioId}/asset",
                     new StringContent(json, Encoding.UTF8, "application/json"));
                 string content = await response.Content.ReadAsStringAsync();
 

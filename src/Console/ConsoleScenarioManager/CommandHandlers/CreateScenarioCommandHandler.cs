@@ -24,7 +24,7 @@ namespace ConsoleScenarioManager.CommandHandlers
             using (HttpClient client = new HttpClient())
             {
                 string json = JsonConvert.SerializeObject(new {command.Name});
-                HttpResponseMessage response = await client.PostAsync($"{command.ServerUrl}/api/scenario",
+                HttpResponseMessage response = await client.PostAsync($"{command.ServerUrl}/api/procedure/{command.ProcedureId}/scenario",
                     new StringContent(json, Encoding.UTF8, "application/json"));
                 string content = await response.Content.ReadAsStringAsync();
 

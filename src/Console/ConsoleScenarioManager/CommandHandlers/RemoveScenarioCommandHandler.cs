@@ -21,7 +21,7 @@ namespace ConsoleScenarioManager.CommandHandlers
             using (HttpClient client = new HttpClient())
             {
                 HttpResponseMessage response =
-                    await client.DeleteAsync($"{message.ServerUrl}/api/Scenario/{message.ScenarioId}");
+                    await client.DeleteAsync($"{message.ServerUrl}/api/procedure/{message.ProcedureId}/scenario/{message.ScenarioId}");
                 string content = await response.Content.ReadAsStringAsync();
 
                 Console.WriteLine(content);
