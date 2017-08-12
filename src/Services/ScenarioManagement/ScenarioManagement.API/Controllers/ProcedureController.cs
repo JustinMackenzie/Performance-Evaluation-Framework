@@ -59,7 +59,7 @@ namespace ScenarioManagement.API.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("")]
-        public async Task<IActionResult> CreateProcedure(CreateProcedureCommand command)
+        public async Task<IActionResult> CreateProcedure([FromBody]CreateProcedureCommand command)
         {
             try
             {
