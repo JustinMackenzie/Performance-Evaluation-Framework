@@ -14,7 +14,7 @@ namespace ScenarioManagement.Domain
         /// <summary>
         /// The scenario assets
         /// </summary>
-        private List<ScenarioAsset> _scenarioAssets;
+        private readonly List<ScenarioAsset> _scenarioAssets;
 
         /// <summary>
         /// Gets the name.

@@ -11,19 +11,19 @@ namespace ScenarioManagement.API.Application.Commands
     public class CreateScenarioCommand : IRequest<Scenario>
     {
         /// <summary>
-        /// Gets or sets the schema identifier.
-        /// </summary>
-        /// <value>
-        /// The schema identifier.
-        /// </value>
-        public Guid SchemaId { get; set; }
-
-        /// <summary>
         /// Gets or sets the name.
         /// </summary>
         /// <value>
         /// The name.
         /// </value>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the procedure identifier.
+        /// </summary>
+        /// <value>
+        /// The procedure identifier.
+        /// </value>
+        public Guid ProcedureId { get; set; }
     }
 }

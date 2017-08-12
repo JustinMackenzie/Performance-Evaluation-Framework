@@ -11,6 +11,14 @@ namespace ScenarioManagement.API.Application.Commands
     public class AddScenarioAssetCommand : IRequest<ScenarioAsset>
     {
         /// <summary>
+        /// Gets or sets the procedure identifier.
+        /// </summary>
+        /// <value>
+        /// The procedure identifier.
+        /// </value>
+        public Guid ProcedureId { get; set; }
+
+        /// <summary>
         /// Gets or sets the scenario identifier.
         /// </summary>
         /// <value>

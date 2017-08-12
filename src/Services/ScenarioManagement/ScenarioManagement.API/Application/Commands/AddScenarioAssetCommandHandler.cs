@@ -15,7 +15,7 @@ namespace ScenarioManagement.API.Application.Commands
         /// <summary>
         /// The schema repository
         /// </summary>
-        private readonly IScenarioRepository _scenarioRepository;
+        private readonly IProcedureRepository _repository;
 
         /// <summary>
         /// The event bus
@@ -25,11 +25,11 @@ namespace ScenarioManagement.API.Application.Commands
         /// <summary>
         /// Initializes a new instance of the <see cref="AddScenarioAssetCommandHandler"/> class.
         /// </summary>
-        /// <param name="scenarioRepository">The schema repository.</param>
+        /// <param name="repository">The schema repository.</param>
         /// <param name="eventBus">The event bus.</param>
-        public AddScenarioAssetCommandHandler(IScenarioRepository scenarioRepository, IEventBus eventBus)
+        public AddScenarioAssetCommandHandler(IProcedureRepository repository, IEventBus eventBus)
         {
-            _scenarioRepository = scenarioRepository;
+            _repository = repository;
             _eventBus = eventBus;
         }
 
@@ -40,15 +40,14 @@ namespace ScenarioManagement.API.Application.Commands
         /// <returns></returns>
         public async Task<ScenarioAsset> Handle(AddScenarioAssetCommand command)
         {
-            Scenario scenario = await this._scenarioRepository.Get(command.ScenarioId);
+            Procedure procedure = await this._repository.Get(command.ProcedureId);
+            ScenarioAsset scenarioAsset = procedure.AddScenarioAsset(command.ScenarioId, command.Tag, command.Position.ToVector(),
+                command.Rotation.ToVector(), command.Scale.ToVector());
+            await this._repository.Update(procedure);
 
-            ScenarioAsset asset = scenario.AddAsset(command.Tag, command.Position.ToVector(), command.Rotation.ToVector(), command.Scale.ToVector());
+            this._eventBus.Publish(new ScenarioAssetAddedEvent(command.ScenarioId, command.Tag, command.Position, command.Rotation, command.Scale));
 
-            await this._scenarioRepository.Update(scenario);
-
-            this._eventBus.Publish(new ScenarioAssetAddedEvent(command.ScenarioId, asset.Tag, command.Position, command.Rotation, command.Scale));
-
-            return asset;
+            return scenarioAsset;
         }
     }
 }

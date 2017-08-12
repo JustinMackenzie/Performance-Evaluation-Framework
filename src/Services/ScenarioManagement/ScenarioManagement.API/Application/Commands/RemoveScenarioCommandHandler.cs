@@ -16,7 +16,7 @@ namespace ScenarioManagement.API.Application.Commands
         /// <summary>
         /// The repository
         /// </summary>
-        private readonly IScenarioRepository _repository;
+        private readonly IProcedureRepository _repository;
 
         /// <summary>
         /// The event bus
@@ -28,21 +28,23 @@ namespace ScenarioManagement.API.Application.Commands
         /// </summary>
         /// <param name="repository">The repository.</param>
         /// <param name="eventBus">The event bus.</param>
-        public RemoveScenarioCommandHandler(IScenarioRepository repository, IEventBus eventBus)
+        public RemoveScenarioCommandHandler(IProcedureRepository repository, IEventBus eventBus)
         {
             _repository = repository;
             _eventBus = eventBus;
         }
 
         /// <summary>
-        /// Handles the specified message.
+        /// Handles the specified command.
         /// </summary>
-        /// <param name="message">The message.</param>
+        /// <param name="command">The command.</param>
         /// <returns></returns>
-        public async Task Handle(RemoveScenarioCommand message)
+        public async Task Handle(RemoveScenarioCommand command)
         {
-            await this._repository.Delete(message.ScenarioId);
-            this._eventBus.Publish(new ScenarioRemovedEvent(message.ScenarioId));
+            Procedure procedure = await this._repository.Get(command.ProcedureId);
+            procedure.RemoveScenario(command.ScenarioId);
+            await this._repository.Update(procedure);
+            this._eventBus.Publish(new ScenarioRemovedEvent(command.ProcedureId, command.ScenarioId));
         }
     }
 }

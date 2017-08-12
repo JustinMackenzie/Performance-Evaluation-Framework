@@ -1,11 +1,11 @@
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ScenarioManagement.API.Application.Commands;
 using ScenarioManagement.API.Application.Queries;
+using ScenarioManagement.API.IntegrationEvents.Events;
 using ScenarioManagement.Domain;
 using ScenarioManagement.Domain.Exceptions;
 
@@ -16,8 +16,8 @@ namespace ScenarioManagement.API.Controllers
     /// </summary>
     /// <seealso cref="Microsoft.AspNetCore.Mvc.Controller" />
     [Produces("application/json")]
-    [Route("api/Scenario")]
-    public class ScenarioController : Controller
+    [Route("api/Procedure")]
+    public class ProcedureController : Controller
     {
         /// <summary>
         /// The mediator
@@ -25,79 +25,83 @@ namespace ScenarioManagement.API.Controllers
         private readonly IMediator _mediator;
 
         /// <summary>
-        /// The queries
-        /// </summary>
-        private readonly IScenarioQueries _queries;
-
-        /// <summary>
         /// The logger
         /// </summary>
-        private readonly ILogger<ScenarioController> _logger;
+        private readonly ILogger<ProcedureController> _logger;
+
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScenarioController" /> class.
+        /// The procedure queries
+        /// </summary>
+        private readonly IProcedureQueries _procedureQueries;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProcedureController" /> class.
         /// </summary>
         /// <param name="mediator">The mediator.</param>
-        /// <param name="queries">The queries.</param>
-        public ScenarioController(IMediator mediator, IScenarioQueries queries, ILogger<ScenarioController> logger)
+        /// <param name="logger">The logger.</param>
+        /// <param name="procedureQueries">The procedure queries.</param>
+        /// <exception cref="ArgumentNullException">
+        /// procedureQueries
+        /// or
+        /// mediator
+        /// or
+        /// logger
+        /// </exception>
+        public ProcedureController(IMediator mediator, ILogger<ProcedureController> logger, IProcedureQueries procedureQueries)
         {
-            _mediator = mediator;
-            _queries = queries;
-            _logger = logger;
+            this._procedureQueries = procedureQueries ?? throw new ArgumentNullException(nameof(procedureQueries));
+            this._mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+            this._logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         /// <summary>
-        /// Gets all scenarios.
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        [Route("")]
-        public async Task<IActionResult> GetAllScenarios()
-        {
-            try
-            {
-                IEnumerable<ScenarioDto> scenarios = await this._queries.GetAllScenarios();
-                return Ok(scenarios);
-            }
-            catch (Exception ex)
-            {
-                this._logger.LogError(0, ex, ex.Message);
-                return BadRequest();
-            }
-        }
-
-        /// <summary>
-        /// Gets the scenario.
-        /// </summary>
-        /// <param name="id">The identifier.</param>
-        /// <returns></returns>
-        [HttpGet]
-        [Route("{id}")]
-        public async Task<IActionResult> GetScenario(Guid id)
-        {
-            try
-            {
-                ScenarioDto scenario = await this._queries.GetScenario(id);
-                return Ok(scenario);
-            }
-            catch (Exception ex)
-            {
-                this._logger.LogError(0, ex, ex.Message);
-                return BadRequest();
-            }
-        }
-
-        /// <summary>
-        /// Adds the scenario.
+        /// Creates the procedure.
         /// </summary>
         /// <param name="command">The command.</param>
         /// <returns></returns>
         [HttpPost]
         [Route("")]
-        public async Task<IActionResult> AddScenario([FromBody] CreateScenarioCommand command)
+        public async Task<IActionResult> CreateProcedure(CreateProcedureCommand command)
         {
             try
             {
+                Procedure procedure = await this._mediator.Send(command);
+                return Ok(procedure);
+            }
+            catch (Exception ex)
+            {
+                this._logger.LogError(0, ex, ex.Message);
+                return BadRequest();
+            }
+        }
+
+        /// <summary>
+        /// Gets the procedure.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> GetProcedure(Guid id)
+        {
+            ProcedureQueryDto procedure = await this._procedureQueries.GetProcedure(id);
+            return Ok(procedure);
+        }
+
+        /// <summary>
+        /// Adds the scenario.
+        /// </summary>
+        /// <param name="procedureId">The procedure identifier.</param>
+        /// <param name="command">The command.</param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("{procedureId}/scenario")]
+        public async Task<IActionResult> AddScenario(Guid procedureId, [FromBody] CreateScenarioCommand command)
+        {
+            try
+            {
+                command.ProcedureId = procedureId;
                 Scenario scenario = await this._mediator.Send(command);
                 return Ok(scenario);
             }
@@ -116,15 +120,17 @@ namespace ScenarioManagement.API.Controllers
         /// <summary>
         /// Adds the asset.
         /// </summary>
+        /// <param name="procedureId">The procedure identifier.</param>
         /// <param name="scenarioId">The scenario identifier.</param>
         /// <param name="command">The command.</param>
         /// <returns></returns>
         [HttpPost]
-        [Route("{id}/asset")]
-        public async Task<IActionResult> AddAsset(Guid scenarioId, [FromBody] AddScenarioAssetCommand command)
+        [Route("{procedureId}/scenario/{scenarioId}/asset")]
+        public async Task<IActionResult> AddAsset(Guid procedureId, Guid scenarioId, [FromBody] AddScenarioAssetCommand command)
         {
             try
             {
+                command.ProcedureId = procedureId;
                 command.ScenarioId = scenarioId;
                 ScenarioAsset asset = await this._mediator.Send(command);
                 return Ok(asset);
@@ -141,13 +147,20 @@ namespace ScenarioManagement.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Removes the asset.
+        /// </summary>
+        /// <param name="procedureId">The procedure identifier.</param>
+        /// <param name="scenarioId">The scenario identifier.</param>
+        /// <param name="tag">The tag.</param>
+        /// <returns></returns>
         [HttpDelete]
-        [Route("{scenarioId}/asset/{tag}")]
-        public async Task<IActionResult> RemoveAsset(Guid scenarioId, string tag)
+        [Route("{procedureId}/scenario/{scenarioId}/asset/{tag}")]
+        public async Task<IActionResult> RemoveAsset(Guid procedureId, Guid scenarioId, string tag)
         {
             try
             {
-                RemoveAssetFromScenarioCommand command = new RemoveAssetFromScenarioCommand(scenarioId, tag);
+                RemoveAssetFromScenarioCommand command = new RemoveAssetFromScenarioCommand(procedureId, scenarioId, tag);
                 await this._mediator.Send(command);
                 return Ok();
             }
@@ -163,13 +176,19 @@ namespace ScenarioManagement.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Removes the scenario.
+        /// </summary>
+        /// <param name="procedureId">The procedure identifier.</param>
+        /// <param name="scenarioId">The scenario identifier.</param>
+        /// <returns></returns>
         [HttpDelete]
-        [Route("{scenarioId}")]
-        public async Task<IActionResult> RemoveScenario(Guid scenarioId)
+        [Route("{procedureId}/scenario/{scenarioId}")]
+        public async Task<IActionResult> RemoveScenario(Guid procedureId, Guid scenarioId)
         {
             try
             {
-                RemoveScenarioCommand command = new RemoveScenarioCommand(scenarioId);
+                RemoveScenarioCommand command = new RemoveScenarioCommand(procedureId, scenarioId);
                 await this._mediator.Send(command);
                 return Ok();
             }

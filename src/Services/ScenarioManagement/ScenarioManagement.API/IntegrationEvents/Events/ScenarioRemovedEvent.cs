@@ -18,11 +18,21 @@ namespace ScenarioManagement.API.IntegrationEvents.Events
         public Guid ScenarioId { get; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScenarioRemovedEvent"/> class.
+        /// Gets the procedure identifier.
         /// </summary>
+        /// <value>
+        /// The procedure identifier.
+        /// </value>
+        public Guid ProcedureId { get; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ScenarioRemovedEvent" /> class.
+        /// </summary>
+        /// <param name="procedureId">The procedure identifier.</param>
         /// <param name="scenarioId">The scenario identifier.</param>
-        public ScenarioRemovedEvent(Guid scenarioId)
+        public ScenarioRemovedEvent(Guid procedureId, Guid scenarioId)
         {
+            this.ProcedureId = procedureId;
             this.ScenarioId = scenarioId;
         }
     }

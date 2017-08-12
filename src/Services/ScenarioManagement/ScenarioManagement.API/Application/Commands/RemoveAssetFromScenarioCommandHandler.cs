@@ -16,7 +16,7 @@ namespace ScenarioManagement.API.Application.Commands
         /// <summary>
         /// The repository
         /// </summary>
-        private readonly IScenarioRepository _repository;
+        private readonly IProcedureRepository _repository;
 
         /// <summary>
         /// The event bus
@@ -28,31 +28,30 @@ namespace ScenarioManagement.API.Application.Commands
         /// </summary>
         /// <param name="repository">The repository.</param>
         /// <param name="eventBus">The event bus.</param>
-        public RemoveAssetFromScenarioCommandHandler(IScenarioRepository repository, IEventBus eventBus)
+        public RemoveAssetFromScenarioCommandHandler(IProcedureRepository repository, IEventBus eventBus)
         {
             this._repository = repository;
             _eventBus = eventBus;
         }
 
         /// <summary>
-        /// Handles the specified message.
+        /// Handles the specified command.
         /// </summary>
-        /// <param name="message">The message.</param>
+        /// <param name="command">The command.</param>
         /// <returns></returns>
         /// <exception cref="ScenarioManagementDomainException">A scenario with the given identifier does not exist.</exception>
-        public async Task Handle(RemoveAssetFromScenarioCommand message)
+        public async Task Handle(RemoveAssetFromScenarioCommand command)
         {
-            Scenario scenario = await this._repository.Get(message.ScenarioId);
+            Procedure procedure = await this._repository.Get(command.ProcedureId);
 
-            if (scenario == null)
+            if (procedure == null)
             {
-                throw new ScenarioManagementDomainException("A scenario with the given identifier does not exist.");
+                throw new ScenarioManagementDomainException("A procedure with the given identifier does not exist.");
             }
 
-            scenario.RemoveAsset(message.Tag);
-            this._eventBus.Publish(new ScenarioAssetRemovedEvent(scenario.Id, message.Tag));
-
-            await this._repository.Update(scenario);
+            procedure.RemoveScenarioAsset(command.ScenarioId, command.Tag);
+            await this._repository.Update(procedure);
+            this._eventBus.Publish(new ScenarioAssetRemovedEvent(procedure.Id, command.ScenarioId, command.Tag));
         }
     }
 }

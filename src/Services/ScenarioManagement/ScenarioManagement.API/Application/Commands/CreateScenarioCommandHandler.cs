@@ -16,7 +16,7 @@ namespace ScenarioManagement.API.Application.Commands
         /// <summary>
         /// The repository
         /// </summary>
-        private readonly IScenarioRepository _repository;
+        private readonly IProcedureRepository _repository;
 
         /// <summary>
         /// The event bus
@@ -28,7 +28,7 @@ namespace ScenarioManagement.API.Application.Commands
         /// </summary>
         /// <param name="repository">The repository.</param>
         /// <param name="eventBus">The event bus.</param>
-        public CreateScenarioCommandHandler(IScenarioRepository repository, IEventBus eventBus)
+        public CreateScenarioCommandHandler(IProcedureRepository repository, IEventBus eventBus)
         {
             this._repository = repository ?? throw new ArgumentNullException(nameof(repository));
             this._eventBus = eventBus ?? throw  new ArgumentNullException(nameof(eventBus));
@@ -46,10 +46,11 @@ namespace ScenarioManagement.API.Application.Commands
                 throw new ArgumentNullException(nameof(command));
             }
 
-            Scenario scenario = new Scenario(command.Name);
-            await this._repository.Add(scenario);
+            Procedure procedure = await this._repository.Get(command.ProcedureId);
+            Scenario scenario = procedure.AddScenario(command.Name);
+            await this._repository.Update(procedure);
 
-            this._eventBus.Publish(new ScenarioCreatedEvent(scenario.Id, scenario.Name));
+            this._eventBus.Publish(new ScenarioCreatedEvent(procedure.Id, scenario.Id, scenario.Name));
 
             return scenario;
         }

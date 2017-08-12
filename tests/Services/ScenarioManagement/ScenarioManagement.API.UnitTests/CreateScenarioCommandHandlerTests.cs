@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Abstractions;
@@ -11,17 +12,29 @@ using ScenarioManagement.Domain;
 
 namespace ScenarioManagement.API.UnitTests
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [TestClass]
     public class CreateScenarioCommandHandlerTests
     {
-        private Mock<IScenarioRepository> _repositoryMock;
+        /// <summary>
+        /// The repository mock
+        /// </summary>
+        private Mock<IProcedureRepository> _repositoryMock;
 
+        /// <summary>
+        /// The event bus mock
+        /// </summary>
         private Mock<IEventBus> _eventBusMock;
 
+        /// <summary>
+        /// Initializes this instance.
+        /// </summary>
         [TestInitialize]
         public void Initialize()
         {
-            this._repositoryMock = new Mock<IScenarioRepository>();
+            this._repositoryMock = new Mock<IProcedureRepository>();
             this._eventBusMock = new Mock<IEventBus>();
         }
 
@@ -56,20 +69,6 @@ namespace ScenarioManagement.API.UnitTests
         }
 
         [TestMethod]
-        public void Handle_ValidCommand_AddsScenarioWithCorrectNameToRepository()
-        {
-            CreateScenarioCommand command = new CreateScenarioCommand { Name = "Test" };
-            this._repositoryMock
-                .Setup(r => r.Add(It.IsAny<Scenario>()))
-                .Returns(Task.CompletedTask);
-            CreateScenarioCommandHandler handler = this.CreateHandler();
-
-            handler.Handle(command).Wait();
-
-            this._repositoryMock.Verify(r => r.Add(It.Is<Scenario>(s => s.Name == command.Name)), Times.Once());
-        }
-
-        [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void Handle_NullCommand_ThrowsArgumentNullException()
         {
@@ -88,35 +87,57 @@ namespace ScenarioManagement.API.UnitTests
         }
 
         [TestMethod]
-        public void Handle_ValidCommand_PublishesEventWithCorrectData()
+        public void Handle_ValidCommand_AddsScenarioWithCorrectNameToRepository()
         {
-            Guid scenarioId = Guid.Empty;
-            CreateScenarioCommand command = new CreateScenarioCommand { Name = "Test" };
+            Procedure procedure = new Procedure("Test Procedure");
+            CreateScenarioCommand command = new CreateScenarioCommand { Name = "Test", ProcedureId = procedure.Id };
             this._repositoryMock
-                .Setup(r => r.Add(It.IsAny<Scenario>()))
-                .Returns(Task.CompletedTask)
-                .Callback<Scenario>(scenario =>
-                {
-                    scenarioId = scenario.Id;
-                });
+                .Setup(r => r.Get(command.ProcedureId))
+                .Returns(Task.FromResult(procedure));
+            this._repositoryMock
+                .Setup(r => r.Update(procedure))
+                .Returns(Task.CompletedTask);
             CreateScenarioCommandHandler handler = this.CreateHandler();
 
             handler.Handle(command).Wait();
 
-            this._eventBusMock.Verify(b => b.Publish(It.Is<ScenarioCreatedEvent>(e => e.Name == command.Name && e.ScenarioId == scenarioId)));
+            this._repositoryMock.Verify(r => r.Update(It.Is<Procedure>(p => p.Scenarios.Any(s => s.Name == command.Name))), Times.Once());
+        }
+
+        [TestMethod]
+        public void Handle_ValidCommand_PublishesEventWithCorrectData()
+        {
+            Procedure procedure = new Procedure("Test Procedure");
+            CreateScenarioCommand command = new CreateScenarioCommand { Name = "Test", ProcedureId = procedure.Id };
+            this._repositoryMock
+                .Setup(r => r.Get(command.ProcedureId))
+                .Returns(Task.FromResult(procedure));
+            this._repositoryMock
+                .Setup(r => r.Update(It.IsAny<Procedure>()))
+                .Returns(Task.CompletedTask);
+
+            CreateScenarioCommandHandler handler = this.CreateHandler();
+
+            Scenario scenario = handler.Handle(command).Result;
+
+            this._eventBusMock.Verify(b => b.Publish(It.Is<ScenarioCreatedEvent>(e => e.ProcedureId == procedure.Id && e.Name == command.Name && e.ScenarioId == scenario.Id)));
         }
 
         [TestMethod]
         public void Handle_ValidCommand_ReturnsSavedScenario()
         {
+            Procedure procedure = new Procedure("Test Procedure");
             Scenario scenario = null;
-            CreateScenarioCommand command = new CreateScenarioCommand { Name = "Test" };
+            CreateScenarioCommand command = new CreateScenarioCommand { Name = "Test", ProcedureId = procedure.Id };
             this._repositoryMock
-                .Setup(r => r.Add(It.IsAny<Scenario>()))
+                .Setup(r => r.Get(command.ProcedureId))
+                .Returns(Task.FromResult(procedure));
+            this._repositoryMock
+                .Setup(r => r.Update(It.IsAny<Procedure>()))
                 .Returns(Task.CompletedTask)
-                .Callback<Scenario>(s =>
+                .Callback<Procedure>(p =>
                 {
-                    scenario = s;
+                    scenario = p.Scenarios.First();
                 });
             CreateScenarioCommandHandler handler = this.CreateHandler();
 
@@ -125,6 +146,10 @@ namespace ScenarioManagement.API.UnitTests
             Assert.AreEqual(scenario, result);
         }
 
+        /// <summary>
+        /// Creates the handler.
+        /// </summary>
+        /// <returns></returns>
         private CreateScenarioCommandHandler CreateHandler()
         {
             return new CreateScenarioCommandHandler(this._repositoryMock.Object, this._eventBusMock.Object);

@@ -41,17 +41,25 @@ namespace ScenarioManagement.API
             services.AddRawRabbit(cfg => cfg.SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("rawrabbit.json"),
                 ioc => ioc.AddSingleton<IMessageSerializer, TypelessJsonSerializer>());
 
-            services.AddTransient<IScenarioRepository, ScenarioRepository>(provder =>
-                new ScenarioRepository(Configuration.GetConnectionString("ScenarioDatabase"), "scenario-context"));
-            services.AddTransient<IScenarioQueries, ScenarioQueries>();
-            services.AddTransient<IScenarioQueryRepository, ScenarioQueryRepository>(provider =>
-                new ScenarioQueryRepository(Configuration.GetConnectionString("ScenarioDatabase"), "scenario-context"));
+            // Command Stack
+            services.AddTransient<IProcedureRepository, ProcedureRepository>(provider =>
+                new ProcedureRepository(Configuration.GetConnectionString("ScenarioDatabase"), "scenario-context"));
+
+            // Query Stack
+            services.AddTransient<IProcedureQueries, ProcedureQueries>();
+            services.AddTransient<IProcedureQueryRepository, ProcedureQueryRepository>(provider =>
+                new ProcedureQueryRepository(Configuration.GetConnectionString("ScenarioDatabase"), "scenario-context"));
+
+            // Infrastructure
             services.AddSingleton<IRawRabbitSubscriptionRepository, InMemoryRawRabbitSubscriptionRepository>();
             services.AddSingleton<IEventBus, RawRabbitEventBus>();
+
+            // Event Handlers
             services.AddTransient<ScenarioCreatedEventHandler>();
             services.AddTransient<ScenarioAssetAddedEventHandler>();
             services.AddTransient<ScenarioRemovedEventHandler>();
             services.AddTransient<ScenarioAssetRemovedEventHandler>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
