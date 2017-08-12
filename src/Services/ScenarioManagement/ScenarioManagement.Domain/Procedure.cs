@@ -16,7 +16,7 @@ namespace ScenarioManagement.Domain
         /// <summary>
         /// The scenarios
         /// </summary>
-        private readonly List<Scenario> _scenarios;
+        private List<Scenario> _scenarios;
 
         /// <summary>
         /// Gets the name.
