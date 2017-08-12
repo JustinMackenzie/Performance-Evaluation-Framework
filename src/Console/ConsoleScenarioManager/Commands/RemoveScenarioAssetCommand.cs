@@ -13,7 +13,7 @@ namespace ConsoleScenarioManager.Commands
         /// <value>
         /// The scenario identifier.
         /// </value>
-        [Option("scenarioId", HelpText = "The identifier of the scenario to remove the asset from.")]
+        [Option("scenario-id", HelpText = "The identifier of the scenario to remove the asset from.")]
         public string ScenarioId { get; set; }
 
         /// <summary>
