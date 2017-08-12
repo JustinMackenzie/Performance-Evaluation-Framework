@@ -1,6 +1,7 @@
 using System;
+using System.Collections.Generic;
 
-namespace ScenarioManagement.API.IntegrationEvents.Events
+namespace ScenarioManagement.API.Application.Queries
 {
     /// <summary>
     /// 
@@ -14,6 +15,7 @@ namespace ScenarioManagement.API.IntegrationEvents.Events
         /// The identifier.
         /// </value>
         public Guid Id { get; set; }
+
         /// <summary>
         /// Gets or sets the name.
         /// </summary>
@@ -21,5 +23,13 @@ namespace ScenarioManagement.API.IntegrationEvents.Events
         /// The name.
         /// </value>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the scenarios.
+        /// </summary>
+        /// <value>
+        /// The scenarios.
+        /// </value>
+        public List<ScenarioDto> Scenarios { get; set; }
     }
 }

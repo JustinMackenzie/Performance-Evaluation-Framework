@@ -30,5 +30,12 @@ namespace ScenarioManagement.API.Repositories
         /// </summary>
         /// <returns></returns>
         Task<IEnumerable<ProcedureQueryDto>> GetAll();
+
+        /// <summary>
+        /// Deletes the specified procedure identifier.
+        /// </summary>
+        /// <param name="procedureId">The procedure identifier.</param>
+        /// <returns></returns>
+        Task Delete(Guid procedureId);
     }
 }

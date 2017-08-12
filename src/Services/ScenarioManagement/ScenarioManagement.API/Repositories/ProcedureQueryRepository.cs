@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Driver;
+using ScenarioManagement.API.Application.Queries;
 using ScenarioManagement.API.IntegrationEvents.Events;
 
 namespace ScenarioManagement.API.Repositories
@@ -83,6 +84,16 @@ namespace ScenarioManagement.API.Repositories
         public async Task<IEnumerable<ProcedureQueryDto>> GetAll()
         {
             return await this.Collection.Find(p => true).ToListAsync();
+        }
+
+        /// <summary>
+        /// Deletes the specified procedure identifier.
+        /// </summary>
+        /// <param name="procedureId">The procedure identifier.</param>
+        /// <returns></returns>
+        public async Task Delete(Guid procedureId)
+        {
+            await this.Collection.DeleteOneAsync(p => p.Id == procedureId);
         }
     }
 }

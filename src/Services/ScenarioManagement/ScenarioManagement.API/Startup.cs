@@ -59,6 +59,8 @@ namespace ScenarioManagement.API
             services.AddTransient<ScenarioAssetAddedEventHandler>();
             services.AddTransient<ScenarioRemovedEventHandler>();
             services.AddTransient<ScenarioAssetRemovedEventHandler>();
+            services.AddTransient<ProcedureCreatedEventHandler>();
+            services.AddTransient<ProcedureRemovedEventHandler>();
 
         }
 
@@ -85,6 +87,10 @@ namespace ScenarioManagement.API
                 (() => app.ApplicationServices.GetRequiredService<ScenarioRemovedEventHandler>());
             eventBus.Subscribe<ScenarioAssetRemovedEvent, ScenarioAssetRemovedEventHandler>
                 (() => app.ApplicationServices.GetRequiredService<ScenarioAssetRemovedEventHandler>());
+            eventBus.Subscribe<ProcedureCreatedEvent, ProcedureCreatedEventHandler>
+                (() => app.ApplicationServices.GetRequiredService<ProcedureCreatedEventHandler>());
+            eventBus.Subscribe<ProcedureRemovedEvent, ProcedureRemovedEventHandler>
+                (() => app.ApplicationServices.GetRequiredService<ProcedureRemovedEventHandler>());
         }
     }
 }

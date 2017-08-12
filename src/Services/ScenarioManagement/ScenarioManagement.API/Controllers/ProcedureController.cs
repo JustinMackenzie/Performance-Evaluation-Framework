@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ScenarioManagement.API.Application.Commands;
 using ScenarioManagement.API.Application.Queries;
-using ScenarioManagement.API.IntegrationEvents.Events;
 using ScenarioManagement.Domain;
 using ScenarioManagement.Domain.Exceptions;
 

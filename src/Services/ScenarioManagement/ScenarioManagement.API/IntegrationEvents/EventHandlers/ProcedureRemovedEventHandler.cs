@@ -1,6 +1,5 @@
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Abstractions;
-using ScenarioManagement.API.Application.Queries;
 using ScenarioManagement.API.IntegrationEvents.Events;
 using ScenarioManagement.API.Repositories;
 
@@ -9,8 +8,8 @@ namespace ScenarioManagement.API.IntegrationEvents.EventHandlers
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="BuildingBlocks.EventBus.Abstractions.IIntegrationEventHandler{ScenarioManagement.API.IntegrationEvents.Events.ProcedureCreatedEvent}" />
-    public class ProcedureCreatedEventHandler : IIntegrationEventHandler<ProcedureCreatedEvent>
+    /// <seealso cref="BuildingBlocks.EventBus.Abstractions.IIntegrationEventHandler{ScenarioManagement.API.IntegrationEvents.Events.ProcedureRemovedEvent}" />
+    public class ProcedureRemovedEventHandler : IIntegrationEventHandler<ProcedureRemovedEvent>
     {
         /// <summary>
         /// The repository
@@ -18,10 +17,10 @@ namespace ScenarioManagement.API.IntegrationEvents.EventHandlers
         private readonly IProcedureQueryRepository _repository;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProcedureCreatedEventHandler"/> class.
+        /// Initializes a new instance of the <see cref="ProcedureRemovedEventHandler"/> class.
         /// </summary>
         /// <param name="repository">The repository.</param>
-        public ProcedureCreatedEventHandler(IProcedureQueryRepository repository)
+        public ProcedureRemovedEventHandler(IProcedureQueryRepository repository)
         {
             this._repository = repository;
         }
@@ -31,9 +30,9 @@ namespace ScenarioManagement.API.IntegrationEvents.EventHandlers
         /// </summary>
         /// <param name="event">The event.</param>
         /// <returns></returns>
-        public async Task Handle(ProcedureCreatedEvent @event)
+        public async Task Handle(ProcedureRemovedEvent @event)
         {
-            await this._repository.Add(new ProcedureQueryDto{ Id = @event.ProcedureId, Name = @event.ProcedureName });
+            await this._repository.Delete(@event.ProcedureId);
         }
     }
 }
