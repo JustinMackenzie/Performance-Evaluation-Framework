@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Abstractions;
 using MediatR;
-using SchemaManagement.API.IntegrationEvents.Events;
+using SchemaManagement.API.Events.Events;
 using SchemaManagement.Domain;
 using Task = System.Threading.Tasks.Task;
 
@@ -41,7 +41,7 @@ namespace SchemaManagement.API.Application.Commands
             Domain.Task task = schema.AddTask(message.Name);
             await this._repository.Update(schema);
 
-            this._eventBus.Publish(new TaskCreatedIntegrationEvent(message.SchemaId, message.Name));
+            this._eventBus.Publish(new TaskCreatedEvent(message.SchemaId, message.Name));
 
             return task;
         }

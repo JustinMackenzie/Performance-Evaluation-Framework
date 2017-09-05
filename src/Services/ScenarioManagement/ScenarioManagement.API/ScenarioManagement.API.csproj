@@ -9,6 +9,7 @@
     <Folder Include="wwwroot\" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="BuildingBlocks.EventBus.RawRabbit" Version="1.0.0.8" />
     <PackageReference Include="MediatR" Version="3.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="2.0.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
@@ -28,8 +29,6 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\BuildingBlocks\EventBus.RawRabbit\EventBus.RawRabbit.csproj" />
-    <ProjectReference Include="..\..\..\BuildingBlocks\EventBus\EventBus.csproj" />
     <ProjectReference Include="..\ScenarioManagement.Domain\ScenarioManagement.Domain.csproj" />
     <ProjectReference Include="..\ScenarioManagement.Infrastructure\ScenarioManagement.Infrastructure.csproj" />
   </ItemGroup>

@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Abstractions;
 using MediatR;
-using SchemaManagement.API.IntegrationEvents.Events;
+using SchemaManagement.API.Events.Events;
 using SchemaManagement.Domain;
 
 namespace SchemaManagement.API.Application.Commands
@@ -45,7 +45,7 @@ namespace SchemaManagement.API.Application.Commands
 
             await this._schemaRepository.Update(schema);
 
-            this._eventBus.Publish(new AssetCreatedIntegrationEvent(asset.Id, schema.Id, asset.Name, asset.Tag));
+            this._eventBus.Publish(new AssetCreatedEvent(asset.Id, schema.Id, asset.Name, asset.Tag));
 
             return asset;
         }

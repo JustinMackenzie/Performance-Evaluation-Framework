@@ -6,8 +6,8 @@ namespace ScenarioManagement.API.IntegrationEvents.Events
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="BuildingBlocks.EventBus.Events.IntegrationEvent" />
-    public class ProcedureCreatedEvent : IntegrationEvent
+    /// <seealso cref="Event" />
+    public class ProcedureCreatedEvent : Event
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ProcedureCreatedEvent" /> class.

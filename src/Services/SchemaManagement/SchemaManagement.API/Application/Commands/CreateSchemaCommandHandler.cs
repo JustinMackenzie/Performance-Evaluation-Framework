@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Abstractions;
 using MediatR;
-using SchemaManagement.API.IntegrationEvents.Events;
+using SchemaManagement.API.Events.Events;
 using SchemaManagement.Domain;
 
 namespace SchemaManagement.API.Application.Commands
@@ -44,7 +44,7 @@ namespace SchemaManagement.API.Application.Commands
 
             this._repository.Add(schema);
 
-            this._eventBus.Publish(new SchemaCreatedIntegrationEvent(schema.Id, schema.Name, schema.Description));
+            this._eventBus.Publish(new SchemaCreatedEvent(schema.Id, schema.Name, schema.Description));
 
             return System.Threading.Tasks.Task.FromResult(schema);
         }

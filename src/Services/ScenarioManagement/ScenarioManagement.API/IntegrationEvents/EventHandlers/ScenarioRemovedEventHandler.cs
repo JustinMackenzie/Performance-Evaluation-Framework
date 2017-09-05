@@ -10,8 +10,8 @@ namespace ScenarioManagement.API.IntegrationEvents.EventHandlers
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="BuildingBlocks.EventBus.Abstractions.IIntegrationEventHandler{ScenarioManagement.API.IntegrationEvents.Events.ScenarioRemovedEvent}" />
-    public class ScenarioRemovedEventHandler : IIntegrationEventHandler<ScenarioRemovedEvent>
+    /// <seealso cref="IEventHandler{TIntegrationEvent}.API.IntegrationEvents.Events.ScenarioRemovedEvent}" />
+    public class ScenarioRemovedEventHandler : IEventHandler<ScenarioRemovedEvent>
     {
         /// <summary>
         /// The scenario query repository

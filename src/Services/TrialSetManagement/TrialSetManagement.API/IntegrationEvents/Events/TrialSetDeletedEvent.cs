@@ -1,13 +1,13 @@
 using System;
 using BuildingBlocks.EventBus.Events;
 
-namespace TrialSetManagement.API.IntegrationEvents.Events
+namespace TrialSetManagement.API.Events.Events
 {
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="BuildingBlocks.EventBus.Events.IntegrationEvent" />
-    public class TrialSetDeletedEvent : IntegrationEvent
+    /// <seealso cref="BuildingBlocks.EventBus.Events.Event" />
+    public class TrialSetDeletedEvent : Event
     {
         /// <summary>
         /// Gets the trial set identifier.

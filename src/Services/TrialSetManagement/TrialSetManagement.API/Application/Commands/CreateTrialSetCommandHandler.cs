@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Abstractions;
 using MediatR;
-using TrialSetManagement.API.IntegrationEvents.Events;
+using TrialSetManagement.API.Events.Events;
 using TrialSetManagement.Domain;
 
 namespace TrialSetManagement.API.Application.Commands
@@ -42,7 +42,7 @@ namespace TrialSetManagement.API.Application.Commands
             TrialSet trialSet = new TrialSet(message.Name);
             this._trialSetRepository.Add(trialSet);
 
-            this._eventBus.Publish(new TrialSetCreatedIntegrationEvent(trialSet.Id, trialSet.Name));
+            this._eventBus.Publish(new TrialSetCreatedEvent(trialSet.Id, trialSet.Name));
 
             return Task.FromResult(trialSet);
         }

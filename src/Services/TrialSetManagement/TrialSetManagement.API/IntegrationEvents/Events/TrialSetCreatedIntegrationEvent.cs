@@ -1,13 +1,13 @@
 ﻿using System;
 using BuildingBlocks.EventBus.Events;
 
-namespace TrialSetManagement.API.IntegrationEvents.Events
+namespace TrialSetManagement.API.Events.Events
 {
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="BuildingBlocks.EventBus.Events.IntegrationEvent" />
-    public class TrialSetCreatedIntegrationEvent : IntegrationEvent
+    /// <seealso cref="BuildingBlocks.EventBus.Events.Event" />
+    public class TrialSetCreatedEvent : Event
     {
         /// <summary>
         /// Gets the trial set identifier.
@@ -26,11 +26,11 @@ namespace TrialSetManagement.API.IntegrationEvents.Events
         public string Name { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TrialSetCreatedIntegrationEvent"/> class.
+        /// Initializes a new instance of the <see cref="TrialSetCreatedEvent"/> class.
         /// </summary>
         /// <param name="trialSetId">The trial set identifier.</param>
         /// <param name="name">The name.</param>
-        public TrialSetCreatedIntegrationEvent(Guid trialSetId, string name)
+        public TrialSetCreatedEvent(Guid trialSetId, string name)
         {
             this.TrialSetId = trialSetId;
             this.Name = name;

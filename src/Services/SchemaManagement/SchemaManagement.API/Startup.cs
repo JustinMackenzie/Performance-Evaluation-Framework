@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using RawRabbit.Serialization;
 using RawRabbit.vNext;
-using SchemaManagement.API.IntegrationEvents.Events;
+using SchemaManagement.API.Events.Events;
 using SchemaManagement.Domain;
 using SchemaManagement.Infrastructure;
 

@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Abstractions;
 using MediatR;
-using TrialSetManagement.API.IntegrationEvents.Events;
+using TrialSetManagement.API.Events.Events;
 using TrialSetManagement.Domain;
 
 namespace TrialSetManagement.API.Application.Commands

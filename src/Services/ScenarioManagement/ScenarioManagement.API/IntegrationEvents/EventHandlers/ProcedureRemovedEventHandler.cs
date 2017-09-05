@@ -8,8 +8,8 @@ namespace ScenarioManagement.API.IntegrationEvents.EventHandlers
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="BuildingBlocks.EventBus.Abstractions.IIntegrationEventHandler{ScenarioManagement.API.IntegrationEvents.Events.ProcedureRemovedEvent}" />
-    public class ProcedureRemovedEventHandler : IIntegrationEventHandler<ProcedureRemovedEvent>
+    /// <seealso cref="IEventHandler{TIntegrationEvent}.API.IntegrationEvents.Events.ProcedureRemovedEvent}" />
+    public class ProcedureRemovedEventHandler : IEventHandler<ProcedureRemovedEvent>
     {
         /// <summary>
         /// The repository

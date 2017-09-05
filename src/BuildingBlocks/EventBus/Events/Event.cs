@@ -2,9 +2,9 @@
 
 namespace BuildingBlocks.EventBus.Events
 {
-    public class IntegrationEvent
+    public class Event
     {
-        public IntegrationEvent()
+        public Event()
         {
             Id = Guid.NewGuid();
             CreationDate = DateTime.UtcNow;

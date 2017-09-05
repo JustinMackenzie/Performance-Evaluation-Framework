@@ -1,9 +1,9 @@
 ﻿using System;
 using BuildingBlocks.EventBus.Events;
 
-namespace SchemaManagement.API.IntegrationEvents.Events
+namespace SchemaManagement.API.Events.Events
 {
-    public class SchemaCreatedIntegrationEvent : IntegrationEvent
+    public class SchemaCreatedEvent : Event
     {
         /// <summary>
         /// Gets or sets the schema identifier.
@@ -30,12 +30,12 @@ namespace SchemaManagement.API.IntegrationEvents.Events
         public string Description { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SchemaCreatedIntegrationEvent"/> class.
+        /// Initializes a new instance of the <see cref="SchemaCreatedEvent"/> class.
         /// </summary>
         /// <param name="schemaId">The schema identifier.</param>
         /// <param name="name">The name.</param>
         /// <param name="description">The description.</param>
-        public SchemaCreatedIntegrationEvent(Guid schemaId, string name, string description)
+        public SchemaCreatedEvent(Guid schemaId, string name, string description)
         {
             this.SchemaId = schemaId;
             this.Name = name;

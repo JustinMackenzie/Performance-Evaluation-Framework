@@ -7,13 +7,13 @@ namespace BuildingBlocks.EventBus.Abstractions
     public interface IEventBus
     {
         void Subscribe<T, TH>(Func<TH> handler)
-            where T : IntegrationEvent
-            where TH : IIntegrationEventHandler<T>;
+            where T : Event
+            where TH : IEventHandler<T>;
 
         void Unsubscribe<T, TH>()
-            where TH : IIntegrationEventHandler<T>
-            where T : IntegrationEvent;
+            where TH : IEventHandler<T>
+            where T : Event;
 
-        void Publish(IntegrationEvent @event);
+        void Publish(Event @event);
     }
 }

@@ -9,8 +9,8 @@ namespace ScenarioManagement.API.IntegrationEvents.EventHandlers
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="BuildingBlocks.EventBus.Abstractions.IIntegrationEventHandler{ScenarioManagement.API.IntegrationEvents.Events.ProcedureCreatedEvent}" />
-    public class ProcedureCreatedEventHandler : IIntegrationEventHandler<ProcedureCreatedEvent>
+    /// <seealso cref="IEventHandler{TIntegrationEvent}.API.IntegrationEvents.Events.ProcedureCreatedEvent}" />
+    public class ProcedureCreatedEventHandler : IEventHandler<ProcedureCreatedEvent>
     {
         /// <summary>
         /// The repository

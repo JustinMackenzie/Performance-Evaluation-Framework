@@ -6,8 +6,8 @@ namespace ScenarioManagement.API.IntegrationEvents.Events
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="BuildingBlocks.EventBus.Events.IntegrationEvent" />
-    public class ScenarioCreatedEvent : IntegrationEvent
+    /// <seealso cref="Event" />
+    public class ScenarioCreatedEvent : Event
     {
         /// <summary>
         /// Gets or sets the procedure identifier.

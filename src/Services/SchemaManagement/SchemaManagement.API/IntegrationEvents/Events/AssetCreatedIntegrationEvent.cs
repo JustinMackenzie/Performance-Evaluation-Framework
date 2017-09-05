@@ -1,13 +1,13 @@
 using System;
 using BuildingBlocks.EventBus.Events;
 
-namespace SchemaManagement.API.IntegrationEvents.Events
+namespace SchemaManagement.API.Events.Events
 {
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="BuildingBlocks.EventBus.Events.IntegrationEvent" />
-    public class AssetCreatedIntegrationEvent : IntegrationEvent
+    /// <seealso cref="BuildingBlocks.EventBus.Events.Event" />
+    public class AssetCreatedEvent : Event
     {
         /// <summary>
         /// Gets or sets the asset identifier.
@@ -42,13 +42,13 @@ namespace SchemaManagement.API.IntegrationEvents.Events
         public string Tag { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AssetCreatedIntegrationEvent"/> class.
+        /// Initializes a new instance of the <see cref="AssetCreatedEvent"/> class.
         /// </summary>
         /// <param name="assetId">The asset identifier.</param>
         /// <param name="schemaId">The schema identifier.</param>
         /// <param name="name">The name.</param>
         /// <param name="tag">The tag.</param>
-        public AssetCreatedIntegrationEvent(Guid assetId, Guid schemaId, string name, string tag)
+        public AssetCreatedEvent(Guid assetId, Guid schemaId, string name, string tag)
         {
             this.AssetId = assetId;
             this.SchemaId = schemaId;

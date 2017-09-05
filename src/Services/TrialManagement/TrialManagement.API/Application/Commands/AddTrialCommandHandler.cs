@@ -46,7 +46,7 @@ namespace TrialManagement.API.Application.Commands
 
             await this._trialRepository.Add(trial);
 
-            this._eventBus.Publish(new TrialAddedIntegrationEvent(
+            this._eventBus.Publish(new TrialAddedEvent(
                 trial.Id,
                 trial.ScenarioId,
                 trial.UserId,

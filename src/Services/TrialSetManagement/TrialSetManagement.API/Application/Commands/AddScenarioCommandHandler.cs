@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Abstractions;
 using MediatR;
-using TrialSetManagement.API.IntegrationEvents.Events;
+using TrialSetManagement.API.Events.Events;
 using TrialSetManagement.Domain;
 using TrialSetManagement.Domain.Exceptions;
 
@@ -50,7 +50,7 @@ namespace TrialSetManagement.API.Application.Commands
 
             await this._trialSetRepository.Update(trialSet);
 
-            this._eventBus.Publish(new ScenarioAddedToTrialSetIntegrationEvent(message.TrialSetId, message.ScenarioId));
+            this._eventBus.Publish(new ScenarioAddedToTrialSetEvent(message.TrialSetId, message.ScenarioId));
         }
     }
 }

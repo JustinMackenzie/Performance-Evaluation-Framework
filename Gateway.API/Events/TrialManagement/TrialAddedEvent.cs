@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using BuildingBlocks.EventBus.Events;
-using TrialManagement.API.Application.Commands;
+using Gateway.API.Command.TrialManagement;
 
-namespace TrialManagement.API.IntegrationEvents.Events
+namespace Gateway.API.Events.TrialManagement
 {
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="BuildingBlocks.EventBus.Events.IntegrationEvent" />
-    public class TrialAddedIntegrationEvent : IntegrationEvent
+    /// <seealso cref="Event" />
+    public class TrialAddedEvent : Event
     {
         /// <summary>
         /// Gets or sets the trial identifier.
@@ -60,7 +60,7 @@ namespace TrialManagement.API.IntegrationEvents.Events
         public IEnumerable<EventDto> Events { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TrialAddedIntegrationEvent" /> class.
+        /// Initializes a new instance of the <see cref="TrialAddedEvent" /> class.
         /// </summary>
         /// <param name="trialId">The trial identifier.</param>
         /// <param name="scenarioId">The scenario identifier.</param>
@@ -68,7 +68,7 @@ namespace TrialManagement.API.IntegrationEvents.Events
         /// <param name="start">The start.</param>
         /// <param name="end">The end.</param>
         /// <param name="events">The events.</param>
-        public TrialAddedIntegrationEvent(
+        public TrialAddedEvent(
             Guid trialId, 
             Guid scenarioId, 
             Guid userId, 

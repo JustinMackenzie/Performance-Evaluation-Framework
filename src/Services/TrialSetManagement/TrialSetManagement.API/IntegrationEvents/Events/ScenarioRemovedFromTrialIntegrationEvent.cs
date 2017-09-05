@@ -1,13 +1,13 @@
 using System;
 using BuildingBlocks.EventBus.Events;
 
-namespace TrialSetManagement.API.IntegrationEvents.Events
+namespace TrialSetManagement.API.Events.Events
 {
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="BuildingBlocks.EventBus.Events.IntegrationEvent" />
-    public class ScenarioRemovedFromTrialIntegrationEvent : IntegrationEvent
+    /// <seealso cref="BuildingBlocks.EventBus.Events.Event" />
+    public class ScenarioRemovedFromTrialEvent : Event
     {
         /// <summary>
         /// Gets the scenario identifier.
@@ -26,11 +26,11 @@ namespace TrialSetManagement.API.IntegrationEvents.Events
         public Guid TrialSetId { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScenarioRemovedFromTrialIntegrationEvent"/> class.
+        /// Initializes a new instance of the <see cref="ScenarioRemovedFromTrialEvent"/> class.
         /// </summary>
         /// <param name="trialSetId">The trial set identifier.</param>
         /// <param name="scenarioId">The scenario identifier.</param>
-        public ScenarioRemovedFromTrialIntegrationEvent(Guid trialSetId, Guid scenarioId)
+        public ScenarioRemovedFromTrialEvent(Guid trialSetId, Guid scenarioId)
         {
             this.TrialSetId = trialSetId;
             this.ScenarioId = scenarioId;

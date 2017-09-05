@@ -6,8 +6,8 @@ namespace ScenarioManagement.API.IntegrationEvents.Events
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="BuildingBlocks.EventBus.Events.IntegrationEvent" />
-    public class ScenarioRemovedEvent : IntegrationEvent
+    /// <seealso cref="Event" />
+    public class ScenarioRemovedEvent : Event
     {
         /// <summary>
         /// Gets the scenario identifier.

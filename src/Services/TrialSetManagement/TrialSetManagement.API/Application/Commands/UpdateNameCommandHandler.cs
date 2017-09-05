@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Abstractions;
 using MediatR;
-using TrialSetManagement.API.IntegrationEvents.Events;
+using TrialSetManagement.API.Events.Events;
 using TrialSetManagement.Domain;
 
 namespace TrialSetManagement.API.Application.Commands
@@ -44,7 +44,7 @@ namespace TrialSetManagement.API.Application.Commands
             trialSet.ChangeName(message.Name);
             await this._trialSetRepository.Update(trialSet);
 
-            this._eventBus.Publish(new TrialSetNameChangedIntegrationEvent(trialSet.Id, trialSet.Name));
+            this._eventBus.Publish(new TrialSetNameChangedEvent(trialSet.Id, trialSet.Name));
         }
     }
 }

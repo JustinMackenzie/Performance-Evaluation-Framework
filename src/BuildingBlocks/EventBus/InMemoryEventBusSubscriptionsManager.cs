@@ -24,8 +24,8 @@ namespace BuildingBlocks.EventBus
         public void Clear() => _handlers.Clear();
 
         public void AddSubscription<T, TH>(Func<TH> handler) 
-            where T : IntegrationEvent
-            where TH : IIntegrationEventHandler<T>
+            where T : Event
+            where TH : IEventHandler<T>
         {
             var key = GetEventKey<T>();
             if (!HasSubscriptionsForEvent<T>())
@@ -37,8 +37,8 @@ namespace BuildingBlocks.EventBus
         }
 
         public void RemoveSubscription<T, TH>()
-            where TH : IIntegrationEventHandler<T>
-            where T : IntegrationEvent
+            where TH : IEventHandler<T>
+            where T : Event
         {
             var handlerToRemove = FindHandlerToRemove<T, TH>();
             if (handlerToRemove != null)
@@ -59,7 +59,7 @@ namespace BuildingBlocks.EventBus
             }
         }
 
-        public IEnumerable<Delegate> GetHandlersForEvent<T>() where T : IntegrationEvent
+        public IEnumerable<Delegate> GetHandlersForEvent<T>() where T : Event
         {
             var key = GetEventKey<T>();
             return GetHandlersForEvent(key);
@@ -76,8 +76,8 @@ namespace BuildingBlocks.EventBus
         }
 
         private Delegate FindHandlerToRemove<T, TH>()
-            where T : IntegrationEvent
-            where TH : IIntegrationEventHandler<T>
+            where T : Event
+            where TH : IEventHandler<T>
         {
             if (!HasSubscriptionsForEvent<T>())
             {
@@ -97,7 +97,7 @@ namespace BuildingBlocks.EventBus
             return null;
         }
 
-        public bool HasSubscriptionsForEvent<T>() where T : IntegrationEvent
+        public bool HasSubscriptionsForEvent<T>() where T : Event
         {
             var key = GetEventKey<T>();
             return HasSubscriptionsForEvent(key);

@@ -1,13 +1,13 @@
 ﻿using System;
 using BuildingBlocks.EventBus.Events;
 
-namespace SchemaManagement.API.IntegrationEvents.Events
+namespace SchemaManagement.API.Events.Events
 {
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="BuildingBlocks.EventBus.Events.IntegrationEvent" />
-    public class TaskTransitionCreatedIntegrationEvent : IntegrationEvent
+    /// <seealso cref="BuildingBlocks.EventBus.Events.Event" />
+    public class TaskTransitionCreatedEvent : Event
     {
         /// <summary>
         /// Gets the schema identifier.
@@ -42,13 +42,13 @@ namespace SchemaManagement.API.IntegrationEvents.Events
         public string EventName { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TaskTransitionCreatedIntegrationEvent" /> class.
+        /// Initializes a new instance of the <see cref="TaskTransitionCreatedEvent" /> class.
         /// </summary>
         /// <param name="schemaId">The schema identifier.</param>
         /// <param name="sourceTaskName">Name of the source task.</param>
         /// <param name="destinationTaskName">Name of the destination task.</param>
         /// <param name="eventName">Name of the event.</param>
-        public TaskTransitionCreatedIntegrationEvent(Guid schemaId, string sourceTaskName, string destinationTaskName,
+        public TaskTransitionCreatedEvent(Guid schemaId, string sourceTaskName, string destinationTaskName,
             string eventName)
         {
             this.SchemaId = schemaId;

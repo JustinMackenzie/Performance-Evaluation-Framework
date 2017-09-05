@@ -1,0 +1,39 @@
+﻿using System;
+using BuildingBlocks.EventBus.Events;
+
+namespace Gateway.API.Events.SchemaManagement
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="Event" />
+    public class EventCreatedEvent : Event
+    {
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
+        public string Name { get; private set; }
+
+        /// <summary>
+        /// Gets the schema identifier.
+        /// </summary>
+        /// <value>
+        /// The schema identifier.
+        /// </value>
+        public Guid SchemaId { get; private set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EventCreatedEvent"/> class.
+        /// </summary>
+        /// <param name="schemaId">The schema identifier.</param>
+        /// <param name="name">The name.</param>
+        public EventCreatedEvent(Guid schemaId, string name)
+        {
+            this.SchemaId = schemaId;
+            this.Name = name;
+        }
+    }
+}

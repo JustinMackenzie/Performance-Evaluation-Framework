@@ -41,7 +41,7 @@ namespace EventBus.RawRabbit
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="TH">The type of the h.</typeparam>
         /// <param name="handler">The handler.</param>
-        public void Subscribe<T, TH>(Func<TH> handler) where T : IntegrationEvent where TH : IIntegrationEventHandler<T>
+        public void Subscribe<T, TH>(Func<TH> handler) where T : Event where TH : IEventHandler<T>
         {
             ISubscription subscription = this._busClient.SubscribeAsync<T>(async (msg, context) =>
             {
@@ -59,7 +59,7 @@ namespace EventBus.RawRabbit
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="TH">The type of the h.</typeparam>
         /// <exception cref="System.ArgumentNullException"></exception>
-        public void Unsubscribe<T, TH>() where T : IntegrationEvent where TH : IIntegrationEventHandler<T>
+        public void Unsubscribe<T, TH>() where T : Event where TH : IEventHandler<T>
         {
             throw new ArgumentNullException();
         }
@@ -68,7 +68,7 @@ namespace EventBus.RawRabbit
         /// Publishes the specified event.
         /// </summary>
         /// <param name="event">The event.</param>
-        public void Publish(IntegrationEvent @event)
+        public void Publish(Event @event)
         {
             this._busClient.PublishAsync(@event, configuration: cfg => cfg.WithExchange(e => e.WithName(ExchangeName)).WithRoutingKey(@event.GetType().Name)).Wait();
         }

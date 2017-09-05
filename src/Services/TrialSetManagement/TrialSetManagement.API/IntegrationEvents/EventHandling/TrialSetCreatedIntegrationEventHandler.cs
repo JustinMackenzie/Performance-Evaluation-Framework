@@ -1,16 +1,16 @@
 ﻿using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Abstractions;
 using TrialSetManagement.API.Application.Queries;
-using TrialSetManagement.API.IntegrationEvents.Events;
+using TrialSetManagement.API.Events.Events;
 using TrialSetManagement.API.Repositories;
 
-namespace TrialSetManagement.API.IntegrationEvents.EventHandling
+namespace TrialSetManagement.API.Events.EventHandling
 {
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="BuildingBlocks.EventBus.Abstractions.IIntegrationEventHandler{ScenarioManagement.API.IntegrationEvents.Events.ScenarioCreatedIntegrationEvent}" />
-    public class TrialSetCreatedIntegrationEventHandler : IIntegrationEventHandler<TrialSetCreatedIntegrationEvent>
+    /// <seealso cref="BuildingBlocks.EventBus.Abstractions.IEventHandler{ScenarioManagement.API.Events.Events.ScenarioCreatedEvent}" />
+    public class TrialSetCreatedEventHandler : IEventHandler<TrialSetCreatedEvent>
     {
         /// <summary>
         /// The repository
@@ -18,10 +18,10 @@ namespace TrialSetManagement.API.IntegrationEvents.EventHandling
         private readonly ITrialSetQueryRepository _repository;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TrialSetCreatedIntegrationEventHandler" /> class.
+        /// Initializes a new instance of the <see cref="TrialSetCreatedEventHandler" /> class.
         /// </summary>
         /// <param name="repository">The repository.</param>
-        public TrialSetCreatedIntegrationEventHandler(ITrialSetQueryRepository repository)
+        public TrialSetCreatedEventHandler(ITrialSetQueryRepository repository)
         {
             _repository = repository;
         }
@@ -31,7 +31,7 @@ namespace TrialSetManagement.API.IntegrationEvents.EventHandling
         /// </summary>
         /// <param name="event">The @event.</param>
         /// <returns></returns>
-        public async Task Handle(TrialSetCreatedIntegrationEvent @event)
+        public async Task Handle(TrialSetCreatedEvent @event)
         {
             TrialSetQueryDto trialSetQuery = new TrialSetQueryDto
             {

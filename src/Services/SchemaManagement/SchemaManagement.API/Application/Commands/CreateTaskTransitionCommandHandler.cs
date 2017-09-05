@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Abstractions;
 using MediatR;
-using SchemaManagement.API.IntegrationEvents.Events;
+using SchemaManagement.API.Events.Events;
 using SchemaManagement.Domain;
 using Task = System.Threading.Tasks.Task;
 
@@ -46,7 +46,7 @@ namespace SchemaManagement.API.Application.Commands
             TaskTransition taskTransition = schema.AddTaskTransition(message.EventName, message.SourceTaskName, message.DestinationTaskName);
             await this._repository.Update(schema);
 
-            this._eventBus.Publish(new TaskTransitionCreatedIntegrationEvent(message.SchemaId, message.SourceTaskName, 
+            this._eventBus.Publish(new TaskTransitionCreatedEvent(message.SchemaId, message.SourceTaskName, 
                 message.DestinationTaskName, message.EventName));
 
             return taskTransition;

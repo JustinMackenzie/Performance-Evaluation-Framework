@@ -1,13 +1,13 @@
 ﻿using System;
 using BuildingBlocks.EventBus.Events;
 
-namespace SchemaManagement.API.IntegrationEvents.Events
+namespace SchemaManagement.API.Events.Events
 {
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="BuildingBlocks.EventBus.Events.IntegrationEvent" />
-    public class EventCreatedIntegrationEvent : IntegrationEvent
+    /// <seealso cref="BuildingBlocks.EventBus.Events.Event" />
+    public class EventCreatedEvent : Event
     {
         /// <summary>
         /// Gets the name.
@@ -26,11 +26,11 @@ namespace SchemaManagement.API.IntegrationEvents.Events
         public Guid SchemaId { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EventCreatedIntegrationEvent"/> class.
+        /// Initializes a new instance of the <see cref="EventCreatedEvent"/> class.
         /// </summary>
         /// <param name="schemaId">The schema identifier.</param>
         /// <param name="name">The name.</param>
-        public EventCreatedIntegrationEvent(Guid schemaId, string name)
+        public EventCreatedEvent(Guid schemaId, string name)
         {
             this.SchemaId = schemaId;
             this.Name = name;

@@ -11,8 +11,8 @@ using RawRabbit.Serialization;
 using RawRabbit.vNext;
 using TrialSetManagement.API.Application.Queries;
 using TrialSetManagement.API.Infrastructure.Services;
-using TrialSetManagement.API.IntegrationEvents.EventHandling;
-using TrialSetManagement.API.IntegrationEvents.Events;
+using TrialSetManagement.API.Events.EventHandling;
+using TrialSetManagement.API.Events.Events;
 using TrialSetManagement.API.Repositories;
 using TrialSetManagement.Domain;
 using TrialSetManagement.Infrastructure;
@@ -51,9 +51,9 @@ namespace TrialSetManagement.API
                 new TrialSetQueryRepository(Configuration.GetConnectionString("TrialSetDatabase"), "trial-set-context"));
             services.AddTransient<IScenarioManagementService, ScenarioManagementService>(provider =>
                 new ScenarioManagementService("http://scenariosim-scenario-management.azurewebsites.net"));
-            services.AddTransient<TrialSetCreatedIntegrationEventHandler>();
-            services.AddTransient<ScenarioAddedToTrialSetIntegrationEventHandler>();
-            services.AddTransient<ScenarioRemovedFromTrialSetIntegrationEventHandler>();
+            services.AddTransient<TrialSetCreatedEventHandler>();
+            services.AddTransient<ScenarioAddedToTrialSetEventHandler>();
+            services.AddTransient<ScenarioRemovedFromTrialSetEventHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,12 +71,12 @@ namespace TrialSetManagement.API
         {
             IEventBus eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
 
-            eventBus.Subscribe<TrialSetCreatedIntegrationEvent, TrialSetCreatedIntegrationEventHandler>
-                (() => app.ApplicationServices.GetRequiredService<TrialSetCreatedIntegrationEventHandler>());
-            eventBus.Subscribe<ScenarioAddedToTrialSetIntegrationEvent, ScenarioAddedToTrialSetIntegrationEventHandler>
-                (() => app.ApplicationServices.GetRequiredService<ScenarioAddedToTrialSetIntegrationEventHandler>());
-            eventBus.Subscribe<ScenarioRemovedFromTrialIntegrationEvent, ScenarioRemovedFromTrialSetIntegrationEventHandler>
-                (() => app.ApplicationServices.GetRequiredService<ScenarioRemovedFromTrialSetIntegrationEventHandler>());
+            eventBus.Subscribe<TrialSetCreatedEvent, TrialSetCreatedEventHandler>
+                (() => app.ApplicationServices.GetRequiredService<TrialSetCreatedEventHandler>());
+            eventBus.Subscribe<ScenarioAddedToTrialSetEvent, ScenarioAddedToTrialSetEventHandler>
+                (() => app.ApplicationServices.GetRequiredService<ScenarioAddedToTrialSetEventHandler>());
+            eventBus.Subscribe<ScenarioRemovedFromTrialEvent, ScenarioRemovedFromTrialSetEventHandler>
+                (() => app.ApplicationServices.GetRequiredService<ScenarioRemovedFromTrialSetEventHandler>());
         }
     }
 }

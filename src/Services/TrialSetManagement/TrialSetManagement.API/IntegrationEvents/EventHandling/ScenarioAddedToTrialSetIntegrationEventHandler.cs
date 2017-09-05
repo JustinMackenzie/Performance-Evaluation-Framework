@@ -3,17 +3,17 @@ using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Abstractions;
 using TrialSetManagement.API.Application.Queries;
 using TrialSetManagement.API.Infrastructure.Services;
-using TrialSetManagement.API.IntegrationEvents.Events;
+using TrialSetManagement.API.Events.Events;
 using TrialSetManagement.API.Repositories;
 
-namespace TrialSetManagement.API.IntegrationEvents.EventHandling
+namespace TrialSetManagement.API.Events.EventHandling
 {
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="BuildingBlocks.EventBus.Abstractions.IIntegrationEventHandler{TrialSetManagement.API.IntegrationEvents.Events.ScenarioAddedToTrialSetIntegrationEvent}" />
-    public class ScenarioAddedToTrialSetIntegrationEventHandler 
-        : IIntegrationEventHandler<ScenarioAddedToTrialSetIntegrationEvent>
+    /// <seealso cref="BuildingBlocks.EventBus.Abstractions.IEventHandler{TrialSetManagement.API.Events.Events.ScenarioAddedToTrialSetEvent}" />
+    public class ScenarioAddedToTrialSetEventHandler 
+        : IEventHandler<ScenarioAddedToTrialSetEvent>
     {
         /// <summary>
         /// The service
@@ -26,11 +26,11 @@ namespace TrialSetManagement.API.IntegrationEvents.EventHandling
         private readonly ITrialSetQueryRepository _repository;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScenarioAddedToTrialSetIntegrationEventHandler"/> class.
+        /// Initializes a new instance of the <see cref="ScenarioAddedToTrialSetEventHandler"/> class.
         /// </summary>
         /// <param name="service">The service.</param>
         /// <param name="repository">The repository.</param>
-        public ScenarioAddedToTrialSetIntegrationEventHandler(IScenarioManagementService service, ITrialSetQueryRepository repository)
+        public ScenarioAddedToTrialSetEventHandler(IScenarioManagementService service, ITrialSetQueryRepository repository)
         {
             this._service = service;
             _repository = repository;
@@ -41,7 +41,7 @@ namespace TrialSetManagement.API.IntegrationEvents.EventHandling
         /// </summary>
         /// <param name="event">The event.</param>
         /// <returns></returns>
-        public async Task Handle(ScenarioAddedToTrialSetIntegrationEvent @event)
+        public async Task Handle(ScenarioAddedToTrialSetEvent @event)
         {
             TrialSetQueryDto trialSetQuery = await this._repository.GetTrialSet(@event.TrialSetId);
             ScenarioQueryDto scenarioQuery = await this._service.GetScenario(@event.ScenarioId);

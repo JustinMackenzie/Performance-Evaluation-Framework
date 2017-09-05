@@ -2,17 +2,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Abstractions;
 using TrialSetManagement.API.Application.Queries;
-using TrialSetManagement.API.IntegrationEvents.Events;
+using TrialSetManagement.API.Events.Events;
 using TrialSetManagement.API.Repositories;
 
-namespace TrialSetManagement.API.IntegrationEvents.EventHandling
+namespace TrialSetManagement.API.Events.EventHandling
 {
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="BuildingBlocks.EventBus.Abstractions.IIntegrationEventHandler{TrialSetManagement.API.IntegrationEvents.Events.ScenarioRemovedFromTrialIntegrationEvent}" />
-    public class ScenarioRemovedFromTrialSetIntegrationEventHandler
-        : IIntegrationEventHandler<ScenarioRemovedFromTrialIntegrationEvent>
+    /// <seealso cref="BuildingBlocks.EventBus.Abstractions.IEventHandler{TrialSetManagement.API.Events.Events.ScenarioRemovedFromTrialEvent}" />
+    public class ScenarioRemovedFromTrialSetEventHandler
+        : IEventHandler<ScenarioRemovedFromTrialEvent>
     {
         /// <summary>
         /// The repository
@@ -20,10 +20,10 @@ namespace TrialSetManagement.API.IntegrationEvents.EventHandling
         private readonly ITrialSetQueryRepository _repository;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScenarioRemovedFromTrialSetIntegrationEventHandler"/> class.
+        /// Initializes a new instance of the <see cref="ScenarioRemovedFromTrialSetEventHandler"/> class.
         /// </summary>
         /// <param name="repository">The repository.</param>
-        public ScenarioRemovedFromTrialSetIntegrationEventHandler(ITrialSetQueryRepository repository)
+        public ScenarioRemovedFromTrialSetEventHandler(ITrialSetQueryRepository repository)
         {
             _repository = repository;
         }
@@ -33,7 +33,7 @@ namespace TrialSetManagement.API.IntegrationEvents.EventHandling
         /// </summary>
         /// <param name="event">The event.</param>
         /// <returns></returns>
-        public async Task Handle(ScenarioRemovedFromTrialIntegrationEvent @event)
+        public async Task Handle(ScenarioRemovedFromTrialEvent @event)
         {
             TrialSetQueryDto trialSetQuery = await this._repository.GetTrialSet(@event.TrialSetId);
 
