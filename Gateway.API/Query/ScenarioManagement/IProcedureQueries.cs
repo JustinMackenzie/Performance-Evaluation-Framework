@@ -21,5 +21,12 @@ namespace Gateway.API.Query.ScenarioManagement
         /// </summary>
         /// <returns></returns>
         Task<IEnumerable<ProcedureQueryDto>> GetProcedures();
+
+        /// <summary>
+        /// Gets the procedure by scenario identifier.
+        /// </summary>
+        /// <param name="scenarioId">The scenario identifier.</param>
+        /// <returns></returns>
+        Task<ProcedureQueryDto> GetProcedureByScenarioId(Guid scenarioId);
     }
 }

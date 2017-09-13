@@ -1,3 +1,4 @@
+using System;
 using Gateway.API.Command.ScenarioManagement;
 using Gateway.API.DataTransfer;
 
@@ -39,5 +40,13 @@ namespace Gateway.API.Query.ScenarioManagement
         /// The scale.
         /// </value>
         public VectorDto Scale { get; set; }
+
+        /// <summary>
+        /// Gets or sets the asset identifier.
+        /// </summary>
+        /// <value>
+        /// The asset identifier.
+        /// </value>
+        public Guid AssetId { get; set; }
     }
 }

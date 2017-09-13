@@ -4,17 +4,26 @@ using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
 using BuildingBlocks.EventBus.Abstractions;
+using Gateway.API.Command.TrialManagement;
+using Gateway.API.Events.TrialManagement;
+using Gateway.API.Query.PerformanceEvaluation;
+using Gateway.API.Query.ScenarioManagement;
 using Microsoft.Extensions.Logging;
-using PerformanceEvaluation.API.IntegrationEvents.Events;
 
-namespace PerformanceEvaluation.API.IntegrationEvents.EventHandlers
+namespace Gateway.API.EventHandlers
 {
     public class TrialAddedEventHandler : IEventHandler<TrialAddedEvent>
     {
         /// <summary>
         /// The scenario service
         /// </summary>
-        private readonly IScenarioService _scenarioService;
+        private readonly IScenarioQueryRepository _scenarioQueryRepository;
+
+        /// <summary>
+        /// The procedure query
+        /// </summary>
+        private readonly IProcedureQueries _procedureQuery;
+
         /// <summary>
         /// The repository
         /// </summary>
@@ -29,12 +38,13 @@ namespace PerformanceEvaluation.API.IntegrationEvents.EventHandlers
         /// Initializes a new instance of the <see cref="TrialAddedEventHandler" /> class.
         /// </summary>
         /// <param name="repository">The repository.</param>
-        /// <param name="scenarioService">The scenario service.</param>
-        public TrialAddedEventHandler(ITrialAnalysisRepository repository, IScenarioService scenarioService, ILogger<TrialAddedEventHandler> logger)
+        /// <param name="scenarioQueryRepository">The scenario service.</param>
+        public TrialAddedEventHandler(ITrialAnalysisRepository repository, IScenarioQueryRepository scenarioQueryRepository, ILogger<TrialAddedEventHandler> logger, IProcedureQueries procedureQuery)
         {
             this._repository = repository;
-            this._scenarioService = scenarioService;
+            this._scenarioQueryRepository = scenarioQueryRepository;
             this._logger = logger;
+            this._procedureQuery = procedureQuery;
         }
 
         /// <summary>
@@ -46,7 +56,9 @@ namespace PerformanceEvaluation.API.IntegrationEvents.EventHandlers
         {
             try
             {
-                Scenario scenario = await this._scenarioService.GetScenario(@event.ScenarioId);
+                ScenarioQueryDto scenario = await this._scenarioQueryRepository.Get(@event.ScenarioId);
+                ProcedureQueryDto procedure = await this._procedureQuery.GetProcedureByScenarioId(@event.ScenarioId);
+
                 List<EventDto> events = @event.Events.OrderBy(e => e.Timestamp).ToList();
                 int currentTarget = 1;
                 EventDto taskStartEvent = null;
@@ -62,7 +74,7 @@ namespace PerformanceEvaluation.API.IntegrationEvents.EventHandlers
                     {
                         dynamic taskStartProperties = taskStartEvent.Properties;
                         dynamic eventProperties = eventDto.Properties;
-                        AssetQueryDto asset = scenario.Assets.First(a => a.Tag == $"Target {currentTarget}");
+                        ScenarioAssetDto asset = scenario.Assets.First(a => a.Tag == $"Target {currentTarget}");
 
                         float distance = Vector2.Distance(
                             new Vector2((float)taskStartProperties.MouseX, (float)taskStartProperties.MouseY),
@@ -76,7 +88,9 @@ namespace PerformanceEvaluation.API.IntegrationEvents.EventHandlers
                             Width = width,
                             Milliseconds = milliseconds,
                             TrialId = @event.TrialId,
-                            UserId = @event.UserId
+                            UserId = @event.UserId,
+                            ScenarioId = @event.ScenarioId,
+                            ProcedureId = procedure.Id
                         };
 
                         await this._repository.Add(analysis);

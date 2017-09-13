@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Gateway.API.Query.ScenarioManagement
@@ -41,6 +42,17 @@ namespace Gateway.API.Query.ScenarioManagement
         public async Task<IEnumerable<ProcedureQueryDto>> GetProcedures()
         {
             return await this._repository.GetAll();
+        }
+
+        /// <summary>
+        /// Gets the procedure by scenario identifier.
+        /// </summary>
+        /// <param name="scenarioId">The scenario identifier.</param>
+        /// <returns></returns>
+        public async Task<ProcedureQueryDto> GetProcedureByScenarioId(Guid scenarioId)
+        {
+            IEnumerable<ProcedureQueryDto> procedures = await this.GetProcedures();
+            return procedures.FirstOrDefault(p => p.Scenarios.Select(s => s.Id).Contains(scenarioId));
         }
     }
 }

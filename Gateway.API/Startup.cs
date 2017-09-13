@@ -1,8 +1,10 @@
 ﻿using BuildingBlocks.EventBus.Abstractions;
 using Gateway.API.EventHandlers;
 using Gateway.API.Events.ScenarioManagement;
+using Gateway.API.Events.TrialManagement;
 using Gateway.API.Events.TrialSetManagement;
 using Gateway.API.Infrastructure;
+using Gateway.API.Query.PerformanceEvaluation;
 using Gateway.API.Query.ScenarioManagement;
 using Gateway.API.Query.TrialSetManagement;
 using MediatR;
@@ -66,6 +68,8 @@ namespace Gateway.API
             services.AddTransient<ITrialSetQueries, TrialSetQueries>();
             services.AddTransient<ITrialSetQueryRepository, TrialSetQueryRepository>(provder =>
                 new TrialSetQueryRepository(Configuration.GetConnectionString("TrialSetDatabase"), "trial-set-context"));
+            services.AddTransient<ITrialAnalysisRepository, TrialAnalysisRepository>(
+                provider => new TrialAnalysisRepository(Configuration.GetConnectionString("TrialAnalysisContext"), "trial-analysis-context"));
 
             // Event Handlers
             services.AddTransient<ScenarioCreatedEventHandler>();
@@ -77,6 +81,7 @@ namespace Gateway.API
             services.AddTransient<TrialSetCreatedEventHandler>();
             services.AddTransient<ScenarioAddedToTrialSetEventHandler>();
             services.AddTransient<ScenarioRemovedFromTrialSetEventHandler>();
+            services.AddTransient<TrialAddedEventHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -113,6 +118,9 @@ namespace Gateway.API
                 (() => app.ApplicationServices.GetRequiredService<ScenarioAddedToTrialSetEventHandler>());
             eventBus.Subscribe<ScenarioRemovedFromTrialEvent, ScenarioRemovedFromTrialSetEventHandler>
                 (() => app.ApplicationServices.GetRequiredService<ScenarioRemovedFromTrialSetEventHandler>());
+
+            eventBus.Subscribe<TrialAddedEvent, TrialAddedEventHandler>
+                (() => app.ApplicationServices.GetRequiredService<TrialAddedEventHandler>());
         }
     }
 }
